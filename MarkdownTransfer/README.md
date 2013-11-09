@@ -5,4 +5,4 @@
 
 ## 说明 ##
 
- 此版本与 [@冰剑][https://github.com/typecho-fans/plugins/tree/master/Html2Text] 的版本差别不大，区别在于使用的类较新一点。
+ 此版本与 [@冰剑](https://github.com/typecho-fans/plugins/tree/master/Html2Text) 的版本差别不大，区别在于使用的类较新一点。
