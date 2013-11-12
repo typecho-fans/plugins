@@ -58,7 +58,8 @@ class MarkdownTransfer_Action extends Typecho_Widget implements Widget_Interface
      * @access public
      * @return void
      */
-    public function action(){
+    public function action()
+    {
         $this->widget('Widget_User')->pass('administrator');
         $this->on($this->request->is('transform'))->transform();
     }
