@@ -1,6 +1,6 @@
 <?php
 /**
- * Markdown 编辑器扩展
+ * Markdown 语法增强扩展
  * 
  * @package MarkdownExtra
  * @author ShingChi
