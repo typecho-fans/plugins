@@ -6,7 +6,7 @@
 ## 目录结构 ##
 
  - CommenToMail4BAE: 邮件回复 BAE 版本
- - Html2Text: Html 转 Markdown 插件，[@冰剑](https://github.com/typecho-fans/plugins/tree/master/Html2Text) 出品
- - MarkdownExtra: Markdown 语法增加扩展
+ - Html2Text: Html 转 Markdown 插件，[@冰剑](https://github.com/binjoo) 出品
+ - MarkdownExtra: Markdown 语法增强扩展
  - MarkdownTransfer: Markdown 转换助手
  - RoutesHelper: 路由助手
