@@ -1,7 +1,7 @@
 ## 使用帮助 ##
 
-这是一个 Markdown 语法补充插件，支持 div、table、abbr、dl 等等 HTML 标签的输入，更多具体语法格式，请参考：  
-<http://michelf.ca/projects/php-markdown/extra/>
+这是一个 Markdown 语法增强插件，直接引用 Typecho 官方包里的 Markdwon.php 来实现。  
+支持 div、table、abbr、dl 等等 HTML 标签的输入，更多具体语法格式请看下面的语法说明。
 
 ## 语法说明 ##
 
