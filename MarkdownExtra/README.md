@@ -83,10 +83,12 @@ PHP Markdown Extra v1.2 引进了不需要缩进的代码块语法，栅栏式�
 
 PHP Markdown Extra支持创建简单的表格。“简单”是指这样的：
 
-    First Header  | Second Header
-    ------------- | -------------
-    Content Cell  | Content Cell
-    Content Cell  | Content Cell
+```
+First Header  | Second Header
+------------- | -------------
+Content Cell  | Content Cell
+Content Cell  | Content Cell
+```
 
 第一行是表头；第二行是分隔行，将表头与下面内容分开；再下面的每一行都是表格中的一行。列之间由管道符(|)分开。转换结果：
 
