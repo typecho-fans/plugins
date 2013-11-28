@@ -15,3 +15,4 @@
  - MarkdownTransfer: Markdown 转换助手
  - Prism 代码高亮
  - RoutesHelper: 路由助手
+ - prism: 轻量级语法高亮
