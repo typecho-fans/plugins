@@ -13,5 +13,6 @@
  - Html2Text: Html 转 Markdown 插件，[@冰剑](https://github.com/binjoo) 出品
  - MarkdownExtra: Markdown 语法增强扩展[因最新版直接支持，故不再更新]
  - MarkdownTransfer: Markdown 转换助手
- - RoutesHelper: 路由助手
  - Prism: 轻量级语法高亮 [@冰剑](https://github.com/binjoo)
+ - RoutesHelper: 路由助手
+ - Watermark: 图片水印插件
