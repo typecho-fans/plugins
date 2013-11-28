@@ -147,8 +147,8 @@ class CommentToMail_Plugin implements Typecho_Plugin_Interface
         && in_array($comment->status, $settings->status) 
         && in_array('to_other', $settings->goal)) {
             $select = $db->select('author', 'mail', 'text')
-                         ->from('table.comments')
-                         ->where('coid = ?', $comment->parent);
+                ->from('table.comments')
+                ->where('coid = ?', $comment->parent);
             $result = $db->query($select);
             $row = $db->fetchRow($result);
             $mail['to'] = array($row['mail']); //发送地址
@@ -203,7 +203,7 @@ class CommentToMail_Plugin implements Typecho_Plugin_Interface
             /** 格式化评论发布时间 */
             $date = getdate($comment->created);
             $time = $date['year'] . '年' . $date['mon'] . '月' . $date['mday'] . '日' 
-                   . $date['hours'] . ':' . $date['minutes'] . ':' . $date['seconds'];
+                  . $date['hours'] . ':' . $date['minutes'] . ':' . $date['seconds'];
 
             /** 评论状态 */
             switch ($comment->status) {
@@ -268,7 +268,8 @@ class CommentToMail_Plugin implements Typecho_Plugin_Interface
         self::sendMail($settings->queue, $mail['text'], $mail['to'], $optional);
     }
     
-    public static function sendMail($queueName, $message, $address, $optional = array()) {
+    public static function sendMail($queueName, $message, $address, $optional = array())
+    {
         /** 载入BCMS SDK */
         require_once('Bcms.class.php');
 
