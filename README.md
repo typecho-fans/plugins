@@ -16,3 +16,7 @@
  - Prism: 轻量级语法高亮 [@冰剑](https://github.com/binjoo)
  - RoutesHelper: 路由助手
  - Watermark: 图片水印插件
+ - XiaMiPlayer: 音乐播放器插件 [@lizheming](https://github.com/lizheming)
+ - Editor: 非官方Markdown编辑器插件 [@lizheming](https://github.com/lizheming)
+ - LREditor: 编辑器增强插件 [@lizheming](http://github.com/lizheming)
+ - OriginalEditor: 让编辑器回归0.8版HTML模式 [@lizheming](http://github.com/lizheming)
