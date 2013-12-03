@@ -9,15 +9,16 @@
 
 ## 目录结构 ##
 
+ - AutoSlug: 自动生成缩略名
  - CommenToMail4BAE: 邮件回复 BAE 版本
+ - Editor: 非官方Markdown编辑器插件 [@lizheming](https://github.com/lizheming)
  - Html2Text: Html 转 Markdown 插件，[@冰剑](https://github.com/binjoo) 出品
+ - LREditor: 编辑器增强插件 [@lizheming](http://github.com/lizheming)
  - MarkdownExtra: Markdown 语法增强扩展[因最新版直接支持，故不再更新]
  - MarkdownTransfer: Markdown 转换助手
+ - OriginalEditor: 让编辑器回归0.8版HTML模式 [@lizheming](http://github.com/lizheming)
  - Prism: 轻量级语法高亮 [@冰剑](https://github.com/binjoo)
  - RoutesHelper: 路由助手
+ - Snowstorm: 纯娱乐插件 博客飘雪 (ONLY FOR 0.9) [@阳光](http://ysido.com/Snowstorm_plugin.html)
  - Watermark: 图片水印插件
  - XiaMiPlayer: 音乐播放器插件 [@lizheming](https://github.com/lizheming)
- - Editor: 非官方Markdown编辑器插件 [@lizheming](https://github.com/lizheming)
- - LREditor: 编辑器增强插件 [@lizheming](http://github.com/lizheming)
- - OriginalEditor: 让编辑器回归0.8版HTML模式 [@lizheming](http://github.com/lizheming)
- - Snowstorm: 纯娱乐插件 博客飘雪 (ONLY FOR 0.9) [@阳光](http://ysido.com/Snowstorm_plugin.html)
