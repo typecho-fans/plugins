@@ -2,6 +2,8 @@
 /**
  * 汉字转拼音
  *
+ * 参考资料来源于网络
+ *
  * @package Pinyin
  * @author ShingChi
  * @version 1.0
@@ -12,7 +14,7 @@
  * 汉字转拼音类
  *
  * @package Pinyin
- * @copyright Copyright (c) 2008 Typecho Fans (https://github.com/typecho-fans)
+ * @copyright Copyright (c) 2013 Typecho Fans (https://github.com/typecho-fans)
  * @license GNU General Public License 2.0
  */
 class Pinyin

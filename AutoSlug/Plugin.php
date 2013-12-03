@@ -75,7 +75,7 @@ class AutoSlug_Plugin implements Typecho_Plugin_Interface
      * 插件实现方法
      *
      * @access public
-     * @param array 文章信息数组
+     * @param array $contents 文章输入信息
      * @return void
      */
     public static function render($contents)

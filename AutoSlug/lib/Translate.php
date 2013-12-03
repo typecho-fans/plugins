@@ -12,7 +12,7 @@
  * 百度翻译类
  *
  * @package DuTranslate
- * @copyright Copyright (c) 2008 Typecho Fans (https://github.com/typecho-fans)
+ * @copyright Copyright (c) 2013 Typecho Fans (https://github.com/typecho-fans)
  * @license GNU General Public License 2.0
  */
 class DuTranslate
