@@ -555,7 +555,7 @@ class Pinyin
         // 转换非 utf-8 字符
         if (strlen('中文') > 4) {
             $word = iconv('UTF-8', 'GBK', $word);
-		}
+        }
 
         for ($i = 0; $i < strlen($word); $i++) {
             if (ord($word[$i]) > 128) {
