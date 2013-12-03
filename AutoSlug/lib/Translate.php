@@ -36,7 +36,9 @@ class DuTranslate
      * 翻译
      *
      * @access public
-     * @param mixed $config 配置列表
+     * @param string $word 待翻译的字符串
+     * @param string $from 翻译前的语言
+     * @param string $to 翻译后的语言
      * @return string
      */
     public function transform($word, $from = 'zh', $to = 'en')
