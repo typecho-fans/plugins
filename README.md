@@ -20,3 +20,4 @@
  - Editor: 非官方Markdown编辑器插件 [@lizheming](https://github.com/lizheming)
  - LREditor: 编辑器增强插件 [@lizheming](http://github.com/lizheming)
  - OriginalEditor: 让编辑器回归0.8版HTML模式 [@lizheming](http://github.com/lizheming)
+ - Snowstorm: 纯娱乐插件 博客飘雪 (ONLY FOR 0.9) [@阳光](http://ysido.com/Snowstorm_plugin.html)

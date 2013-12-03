@@ -1,0 +1,11 @@
+@font-face {
+    font-family: 'wwflakesregular';
+    src: url('wwflakes-webfont.eot');
+    src: url('wwflakes-webfont.eot') format('embedded-opentype'),
+         url('wwflakes-webfont.woff') format('woff'),
+         url('wwflakes-webfont.ttf') format('truetype'),
+         url('wwflakes-webfont.svg#wwflakesregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
