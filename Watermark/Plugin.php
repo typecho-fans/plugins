@@ -4,7 +4,7 @@
  * 
  * @package Watermark
  * @author DEFE
- * @version 1.0.0
+ * @version 1.1.0
  * @link http://defe.me
  */
 
@@ -19,6 +19,9 @@ class Watermark_Plugin implements Typecho_Plugin_Interface
      */
     public static function activate()
     {
+        if(!function_exists('gd_info')){
+            throw new Typecho_Plugin_Exception(_t('对不起, 您的主机没有PHP中开启GD库支持'));
+        }
         Typecho_Plugin::factory('Widget_Abstract_Contents')->filter = array('Watermark_Plugin', 'parse');
         Helper::addAction('Watermark', 'Watermark_Action');
         $dir =  __TYPECHO_ROOT_DIR__ . '/usr/img';                
@@ -83,12 +86,12 @@ class Watermark_Plugin implements Typecho_Plugin_Interface
         $form->addInput($vm_size);
         
         $vm_color = new Typecho_Widget_Helper_Form_Element_Text('vm_color', NULL, '255,0,0',
-                _t('文字颜色'),  _t('格式：255,255,255'));
+                _t('文字颜色'),  _t('格式：255,255,255 或 #FF0000'));
         $vm_color->input->setAttribute('class', 'mini');
         $form->addInput($vm_color);
         
         $vm_m_x = new Typecho_Widget_Helper_Form_Element_Text('vm_m_x', NULL, '0',
-                _t('水平微调'), _t('调节文字的水平位置，输入整数'));
+                _t('水平微调'), _t('调节文字的水平位置，输入整数，可以为负'));
         $vm_m_x->input->setAttribute('class', 'mini');
         $form->addInput($vm_m_x->addRule('isInteger', _t('必须是纯数字')));
         
@@ -104,13 +107,16 @@ class Watermark_Plugin implements Typecho_Plugin_Interface
         
         $dir =  __TYPECHO_ROOT_DIR__ . '/usr/img';          
         if(is_dir($dir) && is_writable($dir)){
-            $url = Typecho_Widget::widget('Widget_Options')->index . "/action/Watermark?clear";
-            $vm_cache= new Typecho_Widget_Helper_Form_Element_Radio('vm_cache',
-                    array( 'cache' => '使用缓存',
-                           'nocache' => '不使用缓存'),
-                    'nocache', '使用缓存',_t('清除缓存文件可以 <a href="'.$url.'"> 点击这里 </a> 执行清空缓存功能。'));
-            $form->addInput($vm_cache);
-        }
+			$url = Typecho_Widget::widget('Widget_Options')->index . "/action/Watermark?clear";
+			$msg = '清除缓存文件可以 <a href="'.$url.'" target="_blank"> 点击这里 </a> 执行清空缓存功能。';
+		}else{
+			$msg = '缓存已清空，或是缓存不可用（如果启用缓存后每次设置均出现此提示，请检查目录权限）';
+		}        
+        $vm_cache= new Typecho_Widget_Helper_Form_Element_Radio('vm_cache',
+            array( 'cache' => '使用缓存',
+                'nocache' => '不使用缓存'),
+                'nocache', '使用缓存',_t($msg));
+        $form->addInput($vm_cache);
     }
     
     /**
@@ -138,7 +144,7 @@ class Watermark_Plugin implements Typecho_Plugin_Interface
             $value = $value_o['text'];
 
             if($value_o['isMarkdown']){
-                $regex = "/\[\d{1,}\]:\s(http:\/\/[\w\/\.]*.(gif|jpg|png))/";   
+                $regex = "/\[\d{1,}\]:\s(.*?.(gif|jpg|png))/";   
             }else{
                 $regex = "/<img.*?src=\"(.*?)\".*?[\/]?>/"; 
             }
@@ -148,14 +154,14 @@ class Watermark_Plugin implements Typecho_Plugin_Interface
             for($i = 0;$i < $count;$i++) {
                 $url = $matches[1][$i];
                 $m = parse_url($url);
-                $ext = pathinfo($m['path'], PATHINFO_EXTENSION);
-                if( ($ext=='GIF' || $ext=='gif') && self::IsAnimatedGif( Watermark_Action::lujin(__TYPECHO_ROOT_DIR__ .$m['path']))){ continue;}//避开动态gif
+                $ext = strtolower(pathinfo($m['path'], PATHINFO_EXTENSION));
+                if( $ext=='gif' && self::IsAnimatedGif( Watermark_Action::lujin(__TYPECHO_ROOT_DIR__ .$m['path']))){ continue;}//避开动态gif
 
                 $cache_file = 'usr/img/'.md5($m['path']).'.'.$ext; 
                 if('cache' == $cache_ab && file_exists('./'.$cache_file)){
                     $mUrl = $options->siteUrl . $cache_file;
                 }else{
-                    $mUrl = $options->index.'action/Watermark?mark='.base64_encode($m['path']);
+                    $mUrl = $options->index.'/action/Watermark?mark='.base64_encode($m['path']);
                 }
                 $url = str_replace($url, $mUrl, $matches[0][$i]);           
 
@@ -168,7 +174,8 @@ class Watermark_Plugin implements Typecho_Plugin_Interface
     
     public static function IsAnimatedGif($filename){
         $fp = fopen($filename, 'rb');
-        $filecontent = fread($fp, filesize($filename));
+        $size = filesize($filename)>1024?1024:filesize($filename);
+        $filecontent = fread($fp, $size);
         fclose($fp);
         return strpos($filecontent,chr(0x21).chr(0xff).chr(0x0b).'NETSCAPE2.0') === FALSE?0:1;
     }

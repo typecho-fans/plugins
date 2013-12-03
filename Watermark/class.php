@@ -14,6 +14,7 @@ class WaterMark{
      private $font_size;       // 字体大小
      private $font_color;      // 字体颜色
      private $type;            //类型
+     private $mime;
              
     function setImSrc($img,$width = 0){
         $this->im_src = $img;
@@ -22,6 +23,7 @@ class WaterMark{
         $this->im_src_width = $srcInfo[0];
         $this->im_src_height = $srcInfo[1];
         $this->type = $srcInfo[2];
+        $this->mime = $srcInfo['mime'];
         //取得背景图片
         $this->src_im = $this->getType($this->im_src, $srcInfo[2]);
         if($width){
@@ -55,19 +57,19 @@ class WaterMark{
       */
      function getType($img, $type)
      {
-      switch($type){
-       case 1:
-        $im = imagecreatefromgif($img);
-        break;
-       case 2:
-        $im = imagecreatefromjpeg($img);
-        break;
-       case 3:
-        $im = imagecreatefrompng($img);
-        imagesavealpha($im, true);
-        break;
-       default:break;
-      }
+        switch($type){
+            case 1:
+                $im = imagecreatefromgif($img);                
+                break;
+            case 2:
+                $im = imagecreatefromjpeg($img);
+                break;
+            case 3:
+                $im = imagecreatefrompng($img);
+                imagesavealpha($im, true);
+                break;
+            default:break;
+        }
       return $im;
      }
 
@@ -180,11 +182,16 @@ class WaterMark{
            
                $posArr = $this->getPos($text_pos, $w, $h);
                $posX = $posArr[0]+$mic_x;
-               $posY = $posArr[1]+$h+$mic_y;
+               $posY = $posArr[1]+$mic_y;
                // 打印文本 
                $rgb = explode(',', $this->font_color);
-               $color = imagecolorallocate($this->src_im, $rgb[0], $rgb[1], $rgb[2]);
-
+               if (count($rgb) != 3){
+				   $rgb = $this->hex2rgb($this->font_color);
+				   file_put_contents('log.txt',$this->font_color);
+				   $color = imagecolorallocate($this->src_im, $rgb['r'], $rgb['g'], $rgb['b']);
+			   }else{
+					$color = imagecolorallocate($this->src_im, $rgb[0], $rgb[1], $rgb[2]);
+				}
                imagettftext($this->src_im, $this->font_size, 0, $posX, $posY, $color, $this->font, $this->font_text);
           }
           // 输出
@@ -200,15 +207,24 @@ class WaterMark{
       * 输出图像
       */
      function show() {
-          ob_clean();
-          header("Content-type: image/png; charset=UTF-8");
-          imagepng($this->src_im);
+         ob_clean();
+         header("Content-type: {$this->mime}; charset=UTF-8");
+         if (2 === $this->type){ 
+            imagejpeg($this->src_im);
+         }else{
+            imagepng($this->src_im);
+         }
      }
       /**
       * 存储图像
       */
-    function save($file){
-        imagepng($this->src_im,$file);       
+    function save($file){       
+        if (2 === $this->type){ 
+            imagejpeg($this->src_im,$file);
+        }else{
+            imagepng($this->src_im,$file);
+        }
+              
     }
      /**
       * 清理
@@ -218,6 +234,33 @@ class WaterMark{
           imagedestroy($this->src_im);
      } 
      
+    /**
+     * 将十六进制颜色转为RGB
+     * @param type $hexColor
+     * @return array
+     */
+    function hex2rgb($hexColor) {
+        $color = substr($hexColor,1);
+        if (strlen($color) > 3) {
+            $rgb = array(
+                'r' => hexdec(substr($color, 0, 2)),
+                'g' => hexdec(substr($color, 2, 2)),
+                'b' => hexdec(substr($color, 4, 2))
+            );
+        } else {
+            $color = $hexColor;
+            $r = substr($color, 0, 1) . substr($color, 0, 1);
+            $g = substr($color, 1, 1) . substr($color, 1, 1);
+            $b = substr($color, 2, 1) . substr($color, 2, 1);
+            $rgb = array(
+                'r' => hexdec($r),
+                'g' => hexdec($g),
+                'b' => hexdec($b)
+            );
+        }
+        return $rgb;
+    }
+    
      function resize($maxwidth=600){
         $im = $this->src_im;
         $width = imagesx($im);
@@ -228,22 +271,21 @@ class WaterMark{
             $this->im_src_height = $height * $ratio;
             if(function_exists("imagecopyresampled")){
                   $newim = imagecreatetruecolor($this->im_src_width , $this->im_src_height);
-                  if(2 != $this->type){
+                  if(3 === $this->type){
                       imagealphablending($newim, false);
                       imagesavealpha($newim, true);
                   }
                   imagecopyresampled($newim, $im, 0, 0, 0, 0, $this->im_src_width , $this->im_src_height, $width, $height);
             }else{
                 $newim = imagecreate($this->im_src_width , $this->im_src_height); 
-                if(2 != $this->type){
+                if(3 === $this->type){
                       imagealphablending($newim, false);
                       imagesavealpha($newim, true);
                   }
                 imagecopyresized($newim, $im, 0, 0, 0, 0, $this->im_src_width , $this->im_src_height, $width, $height);
             }
-            $im = $newim;
-        }  
-        $this->src_im = $im;
+             $this->src_im = $newim;
+        }          
      }
 }
 ?>
