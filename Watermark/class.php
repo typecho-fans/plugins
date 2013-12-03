@@ -209,22 +209,31 @@ class WaterMark{
      function show() {
          ob_clean();
          header("Content-type: {$this->mime}; charset=UTF-8");
-         if (2 === $this->type){ 
-            imagejpeg($this->src_im);
-         }else{
-            imagepng($this->src_im);
-         }
+         switch ($this->type){
+             case 1:
+                 imagegif($this->src_im);
+                 break;
+             case 2:
+                 imagejpeg($this->src_im);
+                 break;
+             default :
+                 imagepng($this->src_im);
+         }         
      }
       /**
       * 存储图像
       */
-    function save($file){       
-        if (2 === $this->type){ 
-            imagejpeg($this->src_im,$file);
-        }else{
-            imagepng($this->src_im,$file);
-        }
-              
+    function save($file){
+        switch ($this->type){
+             case 1:
+                 imagegif($this->src_im,$file);
+                 break;
+             case 2:
+                 imagejpeg($this->src_im,$file);
+                 break;
+             default :
+                 imagepng($this->src_im,$file);
+         }     
     }
      /**
       * 清理
