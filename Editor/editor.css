@@ -1,10 +1,10 @@
 @font-face {
 	font-family: 'icomoon';
-	src:url('http://lab.lepture.com/editor/fonts/icomoon.eot');
-	src:url('http://lab.lepture.com/editor/fonts/icomoon.eot?#iefix') format('embedded-opentype'),
-		url('http://lab.lepture.com/editor/fonts/icomoon.woff') format('woff'),
-		url('http://lab.lepture.com/editor/fonts/icomoon.ttf') format('truetype'),
-		url('http://lab.lepture.com/editor/fonts/icomoon.svg#icomoon') format('svg');
+	src:url('fonts/icomoon.eot');
+	src:url('fonts/icomoon.eot?#iefix') format('embedded-opentype'),
+		url('fonts/icomoon.woff') format('woff'),
+		url('fonts/icomoon.ttf') format('truetype'),
+		url('fonts/icomoon.svg#icomoon') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }

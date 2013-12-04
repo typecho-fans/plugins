@@ -4,7 +4,7 @@
  *
  * @package Editor
  * @author 公子
- * @version 1.0.0
+ * @version 1.0.2
  * @link http://zh.eming.li/#typecho
  */
 class Editor_Plugin implements Typecho_Plugin_Interface
@@ -13,7 +13,7 @@ class Editor_Plugin implements Typecho_Plugin_Interface
      * 插件版本号
      * @var string
      */
-    const _VERSION = '1.0.0';
+    const _VERSION = '1.0.2';
 
     /**
      * 激活插件方法,如果激活失败,直接抛出异常
