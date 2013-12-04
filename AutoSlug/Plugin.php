@@ -97,7 +97,7 @@ class AutoSlug_Plugin implements Typecho_Plugin_Interface
      * 获取生成器实例化对象
      *
      * @access public
-     * @return Pinyin 或 DuTranslate
+     * @return object Pinyin or DuTranslate
      */
     public static function get()
     {
