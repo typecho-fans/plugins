@@ -13,6 +13,7 @@
  - CommenToMail4BAE: 邮件回复 BAE 版本
  - Editor: 非官方Markdown编辑器插件 [@lizheming](https://github.com/lizheming)
  - GoLinks: 外链转为内链插件
+ - GoogleCodePrettfy: 代码高亮插件 [@lizheming](https://github.com/lizheming)
  - Html2Text: Html 转 Markdown 插件，[@冰剑](https://github.com/binjoo) 出品
  - LREditor: 编辑器增强插件 [@lizheming](http://github.com/lizheming)
  - MarkdownExtra: Markdown 语法增强扩展[因最新版直接支持，故不再更新]
