@@ -150,58 +150,62 @@ class WaterMark{
       * @param $is_text    是1否0水印文字
       * @param $text_pos   水印文字位置（0~9）
       */
-     function mark($is_image=0, $image_pos=0, $is_text=0, $text_pos=0, $mic_x=0, $mic_y=0, $save=FALSE){
+    function mark($is_image=0, $image_pos=0, $is_text=0, $text_pos=0, $mic_x=0, $mic_y=0, $alpha=0, $save=FALSE){
         // 水印图片情况
         if ($is_image)
         { 
-          // 校验图片大小，太小无法加水印直接返回
-           if (!$this->check_range($this->im_water_width, $this->im_water_height)){
+            // 校验图片大小，太小无法加水印直接返回
+            if (!$this->check_range($this->im_water_width, $this->im_water_height)){
                 $this->show();
                 $this->clean();
                 return;
-           }
-           $posArr = $this->getPos($image_pos, $this->im_water_width, $this->im_water_height);
-           $posX = $posArr[0];
-           $posY = $posArr[1];
-           // 拷贝水印到目标文件
-           imagecopy($this->src_im, $this->water_im, $posX, $posY, 0, 0, $this->im_water_width, $this->im_water_height);
-          }
-          // 水印文字情况
-          if ($is_text){          
-               //取得此字体的文本的范围
-               $temp = imagettfbbox($this->font_size, 0, $this->font, $this->font_text);
-               $w = $temp[2] - $temp[0];
-               $h = $temp[1] - $temp[7];
-               unset($temp);
-               // 校验图片大小，太小无法加水印直接返回
-               if (!$this->check_range($w, $h)){
-                    $this->show();
-                    $this->clean();
-                    return;
-               }
-           
-               $posArr = $this->getPos($text_pos, $w, $h);
-               $posX = $posArr[0]+$mic_x;
-               $posY = $posArr[1]+$mic_y;
-               // 打印文本 
-               $rgb = explode(',', $this->font_color);
-               if (count($rgb) != 3){
-				   $rgb = $this->hex2rgb($this->font_color);
-				   file_put_contents('log.txt',$this->font_color);
-				   $color = imagecolorallocate($this->src_im, $rgb['r'], $rgb['g'], $rgb['b']);
-			   }else{
-					$color = imagecolorallocate($this->src_im, $rgb[0], $rgb[1], $rgb[2]);
-				}
-               imagettftext($this->src_im, $this->font_size, 0, $posX, $posY, $color, $this->font, $this->font_text);
-          }
-          // 输出
-          $this->show();
-          if($save){
-              $this->save($save);            
-          }
-          // 清理
-          $this->clean();
-     }
+            }
+            $posArr = $this->getPos($image_pos, $this->im_water_width, $this->im_water_height);
+            $posX = $posArr[0];
+            $posY = $posArr[1];
+            // 拷贝水印到目标文件
+            if($alpha){
+                $this->imagecopymerge_alpha($this->src_im, $this->water_im, $posX, $posY, 0, 0, $this->im_water_width, $this->im_water_height, $alpha);
+            }else{
+                imagecopy($this->src_im, $this->water_im, $posX, $posY, 0, 0, $this->im_water_width, $this->im_water_height);
+            }
+        }
+        // 水印文字情况
+        if ($is_text){          
+            //取得此字体的文本的范围
+            $temp = imagettfbbox($this->font_size, 0, $this->font, $this->font_text);
+            $w = $temp[2] - $temp[0];
+            $h = $temp[1] - $temp[7];
+            unset($temp);
+            // 校验图片大小，太小无法加水印直接返回
+            if (!$this->check_range($w, $h)){
+                $this->show();
+                $this->clean();
+                return;
+            }
+
+            $posArr = $this->getPos($text_pos, $w, $h);
+            $posX = $posArr[0]+$mic_x;
+            $posY = $posArr[1]+$mic_y;
+            // 打印文本 
+            $rgb = explode(',', $this->font_color);
+            if (count($rgb) != 3){
+                $rgb = $this->hex2rgb($this->font_color);
+                file_put_contents('log.txt',$this->font_color);
+                $color = imagecolorallocate($this->src_im, $rgb['r'], $rgb['g'], $rgb['b']);
+            }else{
+                $color = imagecolorallocate($this->src_im, $rgb[0], $rgb[1], $rgb[2]);
+            }
+            imagettftext($this->src_im, $this->font_size, 0, $posX, $posY, $color, $this->font, $this->font_text);
+        }
+        // 输出
+        $this->show();
+        if($save){
+        $this->save($save);            
+        }
+        // 清理
+        $this->clean();
+    }
 
      /**
       * 输出图像
@@ -270,6 +274,27 @@ class WaterMark{
         return $rgb;
     }
     
+     function imagecopymerge_alpha($dst_im, $src_im, $dst_x, $dst_y, $src_x, $src_y, $src_w, $src_h, $pct){
+        $opacity=$pct;
+        // getting the watermark width
+        $w = imagesx($src_im);
+        // getting the watermark height
+        $h = imagesy($src_im);         
+        // creating a cut resource
+        $cut = imagecreatetruecolor($src_w, $src_h);
+        // copying that section of the background to the cut
+        imagecopy($cut, $dst_im, 0, 0, $dst_x, $dst_y, $src_w, $src_h);
+        // inverting the opacity
+        $opacity = 100 - $opacity;         
+        // placing the watermark now
+        imagecopy($cut, $src_im, 0, 0, $src_x, $src_y, $src_w, $src_h);
+        imagecopymerge($dst_im, $cut, $dst_x, $dst_y, $src_x, $src_y, $src_w, $src_h, $opacity);
+    }
+    /**
+     * 重设图片大小
+     * 
+     * @param type $maxwidth
+     */
      function resize($maxwidth=600){
         $im = $this->src_im;
         $width = imagesx($im);

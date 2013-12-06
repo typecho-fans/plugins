@@ -133,6 +133,11 @@ class Watermark_Plugin implements Typecho_Plugin_Interface
         $vm_width->input->setAttribute('class', 'mini');
         $form->addInput($vm_width->addRule('isInteger', _t('必须是纯数字')));
         
+        $vm_alpha = new Typecho_Widget_Helper_Form_Element_Text('vm_alpha', NULL, '0',
+                _t('图片透明度'), _t('取0-100之间的整数，0为不透明，100为全透明。'));
+        $vm_alpha->input->setAttribute('class', 'mini');
+        $form->addInput($vm_alpha->addRule('isInteger', _t('必须是纯数字')));
+        
         $dir =  __TYPECHO_ROOT_DIR__ . '/usr/img';          
         if(is_dir($dir) && is_writable($dir)){
 			$url = Typecho_Widget::widget('Widget_Options')->index . "/action/Watermark?clear";

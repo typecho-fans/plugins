@@ -15,7 +15,7 @@ class Watermark_Action extends Typecho_Widget implements Widget_Interface_Do
 	$options = $this->widget('Widget_Options');
         $cfg = $options->plugin('Watermark');
         
-        $img1 = $this->lujin( __TYPECHO_ROOT_DIR__ . base64_decode($img));        
+        $img1 = self::lujin( __TYPECHO_ROOT_DIR__ . base64_decode($img));        
 	$dir='.'.__TYPECHO_PLUGIN_DIR__ . '/Watermark/';
 		
 	$ck_p = 0;
@@ -33,6 +33,8 @@ class Watermark_Action extends Typecho_Widget implements Widget_Interface_Do
         $mic_y = $cfg->vm_m_y;
         $width = $cfg->vm_width;
 	$wmpic = $cfg->vm_pic?$cfg->vm_pic:'WM.png';
+        $alpha = $cfg->vm_alpha;
+        $file = false;
         
         if(file_exists($img1)){
             require_once($dir.'class.php');
@@ -45,11 +47,9 @@ class Watermark_Action extends Typecho_Widget implements Widget_Interface_Do
                 $ext = pathinfo($file, PATHINFO_EXTENSION);
                 $dir_cache =  __TYPECHO_ROOT_DIR__ . '/usr/img';
                 if(!is_dir($dir_cache)) @mkdir($dir_cache, 0777);//检测缓存目录是否存在，自动创建
-                $file = './usr/img/'.md5($file).'.'.$ext;
-                $wm->mark($ck_p, $pos_p, $ck_t, $pos_t, $mic_x, $mic_y, $file);                
-            }else{
-                $wm->mark($ck_p, $pos_p, $ck_t, $pos_t, $mic_x, $mic_y); // 设置是否打印图、位置；是否打印字体、位置
+                $file = './usr/img/'.md5($file).'.'.$ext;      
             }
+            $wm->mark($ck_p, $pos_p, $ck_t, $pos_t, $mic_x, $mic_y, $alpha, $file);       
         }else{
             $this->widget('Widget_Archive@404', 'type=404')->render();
         }
@@ -88,7 +88,7 @@ class Watermark_Action extends Typecho_Widget implements Widget_Interface_Do
      * @param string $uri
      * @return string
      */
-    public function lujin($uri){
+    public static function lujin($uri){
         $uri = str_replace("\\","/",$uri);
         $a = explode('/', $uri);
         $b = array_unique($a);
