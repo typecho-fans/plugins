@@ -16,8 +16,6 @@
  - GoogleCodePrettfy: 代码高亮插件 [@lizheming](https://github.com/lizheming)
  - Html2Text: Html 转 Markdown 插件，[@冰剑](https://github.com/binjoo) 出品
  - LREditor: 编辑器增强插件 [@lizheming](http://github.com/lizheming)
- - MarkdownExtra: Markdown 语法增强扩展[因最新版直接支持，故不再更新]
- - MarkdownTransfer: Markdown 转换助手
  - OriginalEditor: 让编辑器回归0.8版HTML模式 [@lizheming](http://github.com/lizheming)
  - Prism: 轻量级语法高亮 [@冰剑](https://github.com/binjoo)
  - RoutesHelper: 路由助手
