@@ -15,6 +15,7 @@
  - At: 评论@ 支持插件 [@lizheming](https://github.com/lizheming)
  - AutoSlug: 自动生成缩略名
  - CommenToMail4BAE: 邮件回复 BAE 版本
+ - Duoshuo: 多说同步插件 [@rakiy] (https://github.com/rakiy)
  - Editor: 非官方Markdown编辑器插件 [@lizheming](https://github.com/lizheming)
  - GoLinks: 外链转为内链插件
  - GoogleCodePrettfy: 代码高亮插件 [@lizheming](https://github.com/lizheming)
@@ -23,7 +24,7 @@
  - OriginalEditor: 让编辑器回归0.8版HTML模式 [@lizheming](http://github.com/lizheming)
  - Prism: 轻量级语法高亮 [@冰剑](https://github.com/binjoo)
  - RoutesHelper: 路由助手
- - Snowstorm: 纯娱乐插件 博客飘雪 (ONLY FOR 0.9) [@阳光](http://ysido.com/Snowstorm_plugin.html)
+ - Snowstorm: 纯娱乐插件 博客飘雪 (ONLY FOR 0.9) [@rakiy](https://github.com/rakiy)
  - UploadPlugin 能在后台上传插件和模版的zip格式压缩包，自动解压到对应目录。
  - Watermark: 图片水印插件(同时支持0.8和0.9)
  - XiaMiPlayer: 音乐播放器插件 [@lizheming](https://github.com/lizheming)
