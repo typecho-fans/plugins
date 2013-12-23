@@ -14,8 +14,9 @@
 
  - At: 评论@ 支持插件 [@lizheming](https://github.com/lizheming)
  - AutoSlug: 自动生成缩略名
- - CommenToMail4BAE: 邮件回复 BAE 版本
- - Duoshuo: 多说同步插件 [@rakiy] (https://github.com/rakiy)
+ - CommenToMail4BAE: 邮件回复 BAE 版本   
+ - CateFilter: 首页指定分类不显示 [@rakiy] (https://github.com/rakiy)   
+ - Duoshuo: 多说同步插件 [@rakiy] (https://github.com/rakiy)   
  - Editor: 非官方Markdown编辑器插件 [@lizheming](https://github.com/lizheming)
  - GoLinks: 外链转为内链插件
  - GoogleCodePrettfy: 代码高亮插件 [@lizheming](https://github.com/lizheming)
