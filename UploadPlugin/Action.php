@@ -6,6 +6,7 @@
 class UploadPlugin_Action extends Typecho_Widget implements Widget_Interface_Do
 {
 
+    private $_file;
     /**
      * 删除插件
      * @param mixed $plugName 待删除的插件名称
@@ -107,25 +108,25 @@ class UploadPlugin_Action extends Typecho_Widget implements Widget_Interface_Do
                     echo '<script>alert("上传失败！")</script>';
                     exit(0);
             }elseif ($filead) {
-                $file = basename($filead);
-                $part = pathinfo($file);
-                if($part['extension'] !== "zip"){
-                    $this->showMsg('不支持的文件类型'.$part['extension'] , FALSE, TRUE);
+                $this->_file = basename($filead);
+                $part = pathinfo($this->_file);
+                if($part['extension'] !== "zip"){                    
+                    $this->_file = "tmp".Typecho_Common::randString(6).".zip";
                 }
                 $ff = file_get_contents($filead);
                 if($ff){
-                    file_put_contents($file, $ff);
+                    file_put_contents($this->_file, $ff);
                     $up = False;
+                    if(!$this->isZip($this->_file)) $this->showMsg('取得的文件不是zip类型' , FALSE, TRUE);
                 }else{
                     $this->showMsg('获取远程文件失败。' , FALSE, TRUE);
                 }
                 
             }  else {
-                $file = $_FILES['file']['tmp_name'];
+                $this->_file = $_FILES['file']['tmp_name'];
                 $up = True;
-            }           
-
-           
+            }
+            
             $path = '';
             $upType = '插件';
             if (class_exists('ZipArchive')) {
@@ -134,7 +135,7 @@ class UploadPlugin_Action extends Typecho_Widget implements Widget_Interface_Do
                 $this->showMsg("服务器不支持 php ZipArchive 类", $up);
             }
             
-            if ($zip->open($file) === TRUE) {
+            if ($zip->open($this->_file) === TRUE) {
                 //单文件插件
                  if($zip->numFiles === 1){
                       $contents = $zip->getFromIndex(0);
@@ -144,8 +145,7 @@ class UploadPlugin_Action extends Typecho_Widget implements Widget_Interface_Do
                     $index=$zip->locateName('Plugin.php', ZIPARCHIVE::FL_NOCASE|ZIPARCHIVE::FL_NODIR);
                     if($index || 0===$index){
                         $dirs = count(explode('/', $zip->getNameIndex($index)));
-                        if($dirs>2){
-                            @unlink($file);
+                        if($dirs>2){                           
                             $this->showMsg('压缩路径太深，无法正常安装', $up, TRUE) ;
                         }
                         $contents = $zip->getFromIndex($index);
@@ -163,8 +163,7 @@ class UploadPlugin_Action extends Typecho_Widget implements Widget_Interface_Do
                         if($index || 0===$index){
                             $upType = '外观';
                             $dirs = count(explode('/', $zip->getNameIndex($index)));
-                            if($dirs>2){
-                                @unlink($file);  
+                            if($dirs>2){                               
                                 $this->showMsg('压缩路径太深，无法正常安装', $up, TRUE) ;
                             }
                             $contents = $zip->getFromIndex($index);                                                     
@@ -181,8 +180,7 @@ class UploadPlugin_Action extends Typecho_Widget implements Widget_Interface_Do
                 }
                 if($path!==''){
                     if($zip->extractTo($path)){
-                        $zip->close();
-                        @unlink($file);   
+                        $zip->close();                        
                         $this->showMsg("安装成功，请到 控制台-->" . $upType . " 中激活使用。", $up, TRUE);
                     }else{
                         $this->showMsg("解压失败,请确认" . $upType . "目录是否有写权限。", $up) ;                       
@@ -195,7 +193,7 @@ class UploadPlugin_Action extends Typecho_Widget implements Widget_Interface_Do
             } else {
                 $this->showMsg('无法打开压缩包，请检查压缩包是否损坏。', $up);            
             }
-            @unlink($file); 
+            @unlink($this->_file); 
         }else{
             $this->widget('Widget_Archive@404', 'type=404')->render();
             exit;
@@ -207,10 +205,14 @@ class UploadPlugin_Action extends Typecho_Widget implements Widget_Interface_Do
             echo("<script>parent.fileUploadError('" . $this->request->_id . "','" . $str . "');</script>"); 
         }
         if($up && $exit){
+            @unlink($this->_file);   
             exit("<script>parent.fileUploadComplete('" . $this->request->_id
                             . "','typecho','" . $str . "');</script>"); 
         }
-        if(!$up && $exit) exit($str); 
+        if(!$up && $exit){
+            @unlink($this->_file);   
+            exit($str); 
+        }
         if(!$up && !$exit) echo($str);         
     }
 
@@ -219,7 +221,7 @@ class UploadPlugin_Action extends Typecho_Widget implements Widget_Interface_Do
      * @param type $contents
      * @return boolean
      */
-    public  function isPlugin($contents){
+    public function isPlugin($contents){
          $info =  $this->parseInfo($contents);
          if( $info['description']!=="" && $info['name']!=="" && !empty($info['version']) && !empty($info['author'])){
             return $info['name'] ;
@@ -232,13 +234,34 @@ class UploadPlugin_Action extends Typecho_Widget implements Widget_Interface_Do
      * @param type $contents
      * @return boolean
      */
-    public  function isTheme($contents){
+    public function isTheme($contents){
          $info =  $this->parseInfo($contents);
          if($info['title']!=="" && !empty($info['version']) && !empty($info['author'])){
             return TRUE;
          }else{
             return FALSE;
          }
+    }
+    
+    /**
+     * 
+     * @param type $file
+     * @return boolean
+     */
+    public function isZip($file){
+        $file = @fopen($file,"rb");
+        $bin = fread($file, 15);
+        fclose($file);
+
+        $blen=strlen(pack("H*","504B0304")); //得到文件头标记字节数
+        $tbin=substr($bin,0,intval($blen)); ///需要比较文件头长度
+        
+        if(strtolower("504B0304")==strtolower(array_shift(unpack("H*",$tbin)))) 
+        {
+            return TRUE;
+        }  else {
+            return FALSE;
+        }
     }
 
     //解析Plugin.php文件

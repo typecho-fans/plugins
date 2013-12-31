@@ -45,13 +45,23 @@ $(document).ready(function() {
         if(flink === ""){
             alert("地址为空");
         }else{
-            popupDiv("loading");
-            $.get(url, { upload: flink },
-              function(data){
-                hideDiv("loading");
-                alert(data);
-                window.location.reload();
-              });
+            var i = flink.length;
+            var e = flink.substring(i-3);
+            var ck = false;
+            if(e !== "zip"){                
+                if(confirm("链接中未包含zip文件名，你确认此链接能获得zip文件?")) ck = true;              
+            }else{
+                ck = true;
+            }
+            if(ck){
+                popupDiv("loading");
+                $.get(url, { upload: flink },
+                  function(data){
+                    hideDiv("loading");
+                    alert(data);
+                    window.location.reload();
+                  });
+            }
         }
     });
     function popupDiv(div_id) {   
