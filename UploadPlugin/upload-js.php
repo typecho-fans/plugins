@@ -19,21 +19,57 @@ $(document).ready(function() {
         loading = $('<img src="<?php $options->adminUrl('img/ajax-loader.gif'); ?>" style="display:none" />')
             .appendTo(document.body);
 
-    function fileUploadStart () {  }
+    function fileUploadStart () { popupDiv("loading"); }
 
-    function fileUploadComplete () { }
+    function fileUploadComplete (id,url,data) { 
+        hideDiv("loading"); 
+        alert(data);
+        window.location.reload();
+    } 
 
     $('.upload-file').fileUpload({
         url         :   '<?php  $options->index('/action/upload-plugin?upload');?>',
         types       :    [".zip"],
         typesError  :   '<?php _e('文件 %s 的类型不被支持'); ?>',
         onUpload    :   fileUploadStart,
-        onError     :   function (id) {            
-            alert(errorWord);
+        onError     :   function (id,word) {
+            hideDiv("loading");
+            alert(word);
         },
         onComplete  :   fileUploadComplete
     });
     
+    $("#inst").click(function(){        
+        var flink = $("#adrs").val();
+        var url = "<?php $options->index('/action/upload-plugin'); ?>";
+        if(flink === ""){
+            alert("地址为空");
+        }else{
+            popupDiv("loading");
+            $.get(url, { upload: flink },
+              function(data){
+                hideDiv("loading");
+                alert(data);
+                window.location.reload();
+              });
+        }
+    });
+    function popupDiv(div_id) {   
+        var div_obj = $("#"+div_id);  
+        var windowWidth = document.body.clientWidth;       
+        var windowHeight = document.body.clientHeight;  
+        var popupHeight = div_obj.height();       
+        var popupWidth = div_obj.width();    
+      
+        div_obj.css({"position": "absolute"})   
+               .animate({left: windowWidth/2-popupWidth/2,    
+                         top: 250, opacity: "show" }, "slow");   
+                        
+    }
+    function hideDiv(div_id) {   
+        $("#mask").remove();   
+        $("#" + div_id).animate({left: 0, top: 0, opacity: "hide" }, "normal");   
+    }
 });
 </script>
 

@@ -52,19 +52,19 @@ class UploadPlugin_Action extends Typecho_Widget implements Widget_Interface_Do
         $this->widget('Widget_User')->pass('administrator'); 
         $dir='.'.__TYPECHO_THEME_DIR__;
         if (is_writable($dir)){
-			chdir($dir);
-			if(is_dir($themeName)){
-				if(false==$this->delTree($themeName)){
-					$this->widget('Widget_Notice')->set(_t('模板：'.$themeName.'删除失败'), NULL, 'error');
-				}else{
-					$this->widget('Widget_Notice')->set(_t('成功删除模板：'.$themeName), NULL, 'success');
-				}
-			}else{
-				$this->widget('Widget_Notice')->set(_t('没发现'.$themeName.'模板！'), NULL, 'notice');
-			}
-		}else{
-			$this->widget('Widget_Notice')->set(_t('themes主目录没有写权限：'.$themeName.'删除失败'), NULL, 'error');
-		}
+            chdir($dir);
+            if(is_dir($themeName)){
+                if(false==$this->delTree($themeName)){
+                    $this->widget('Widget_Notice')->set(_t('模板：'.$themeName.'删除失败'), NULL, 'error');
+                }else{
+                    $this->widget('Widget_Notice')->set(_t('成功删除模板：'.$themeName), NULL, 'success');
+                }
+            }else{
+                $this->widget('Widget_Notice')->set(_t('没发现'.$themeName.'模板！'), NULL, 'notice');
+            }
+        }else{
+            $this->widget('Widget_Notice')->set(_t('themes主目录没有写权限：'.$themeName.'删除失败'), NULL, 'error');
+        }
     }
     
     /**
@@ -73,15 +73,15 @@ class UploadPlugin_Action extends Typecho_Widget implements Widget_Interface_Do
      * @access public
      * @return boolean
      */
-    public function delTree($dir){
+    private function delTree($dir){
         chdir($dir);
         $dh=opendir('.');
         while(false !== ($et=readdir($dh))){
             if(is_file($et)){
                 if(!@unlink($et)){
-					return false;
-					break;
-				}
+                    return false;
+                    break;
+                }
             }else{
                 if(is_dir($et) && $et!='.' && $et!='..'){
                     $this->delTree('./'.$et);
@@ -100,85 +100,121 @@ class UploadPlugin_Action extends Typecho_Widget implements Widget_Interface_Do
     /**
      * 上传处理功能
      */
-    public function upload(){
-		
-        if (!empty($_FILES['file']['name'])) {
-            
-            if (!isset($_FILES['file']) || !is_uploaded_file($_FILES['file']['tmp_name']) || $_FILES['file']['error'] != 0) {
+    public function upload($filead){
+        
+        if (!empty($_FILES['file']['name']) || $filead) {            
+            if (!$filead and !isset($_FILES['file']) || !is_uploaded_file($_FILES['file']['tmp_name']) || $_FILES['file']['error'] != 0) {
                     echo '<script>alert("上传失败！")</script>';
                     exit(0);
-            }
+            }elseif ($filead) {
+                $file = basename($filead);
+                $part = pathinfo($file);
+                if($part['extension'] !== "zip"){
+                    $this->showMsg('不支持的文件类型'.$part['extension'] , FALSE, TRUE);
+                }
+                $ff = file_get_contents($filead);
+                if($ff){
+                    file_put_contents($file, $ff);
+                    $up = False;
+                }else{
+                    $this->showMsg('获取远程文件失败。' , FALSE, TRUE);
+                }
+                
+            }  else {
+                $file = $_FILES['file']['tmp_name'];
+                $up = True;
+            }           
 
-            //判断上传的是否是typecho插件
-            $isPlugin= false;
+           
             $path = '';
             $upType = '插件';
             if (class_exists('ZipArchive')) {
                 $zip = new ZipArchive;
-            }else{
-                echo '<script>alert("服务器不支持 php ZipArchive 类")</script>';
-                exit(0);
+            }else{                
+                $this->showMsg("服务器不支持 php ZipArchive 类", $up);
             }
-            //$zip = new ZipArchive;
-            if ($zip->open($_FILES['file']['tmp_name']) === TRUE) {
+            
+            if ($zip->open($file) === TRUE) {
                 //单文件插件
-                 if($zip->numFiles ==1){
+                 if($zip->numFiles === 1){
                       $contents = $zip->getFromIndex(0);
                       if($this->isPlugin($contents)) $path= '.' . __TYPECHO_PLUGIN_DIR__.'/' ;
                  }else{
                      //多文件插件，搜索Plugin.php文件路径，获取插件信息
                     $index=$zip->locateName('Plugin.php', ZIPARCHIVE::FL_NOCASE|ZIPARCHIVE::FL_NODIR);
                     if($index || 0===$index){
-                            $dirs = count ( split('/', $zip->getNameIndex($index)));
-                            if($dirs>2) exit('<script>alert("压缩路径太深，无法正常安装！")</script>');
-                            $contents = $zip->getFromIndex($index);
-                            $name = $this->isPlugin($contents);                           
-                            if($name && 2==$dirs){
+                        $dirs = count(explode('/', $zip->getNameIndex($index)));
+                        if($dirs>2){
+                            @unlink($file);
+                            $this->showMsg('压缩路径太深，无法正常安装', $up, TRUE) ;
+                        }
+                        $contents = $zip->getFromIndex($index);
+                        $name = $this->isPlugin($contents);                           
+                        if($name){
+                            if(2==$dirs){
                                 $path='.' . __TYPECHO_PLUGIN_DIR__.'/';
                             }else{
                                 $path='.' . __TYPECHO_PLUGIN_DIR__ .'/'. $name.'/';
-                            }
-                        }else{
-							//如果不是插件，则按模板搜索判断
-							$index=$zip->locateName('index.php', ZIPARCHIVE::FL_NOCASE|ZIPARCHIVE::FL_NODIR);
-							if($index || 0===$index){
-								$upType = '外观';
-								$dirs = count ( split('/', $zip->getNameIndex($index)));
-								if($dirs>2) exit('<script>alert("压缩路径太深，无法正常安装！")</script>');
-								$contents = $zip->getFromIndex($index);														
-								if($this->isTheme($contents) && 2==$dirs){									
-									$path='.' . __TYPECHO_THEME_DIR__.'/';
-								}else{
-									$name = basename($_FILES['file']['name'],'.zip');
-									$path='.' . __TYPECHO_THEME_DIR__ .'/'. $name.'/';
-								}
-							}else{
-								echo '<script>alert("上传的文件不是Typecho插件和模板")</script>';
-								exit(0);
-							}
+                            } 
                         }
+                    }else{
+                        //如果不是插件，则按模板搜索判断
+                        $index=$zip->locateName('index.php', ZIPARCHIVE::FL_NOCASE|ZIPARCHIVE::FL_NODIR);
+                        if($index || 0===$index){
+                            $upType = '外观';
+                            $dirs = count(explode('/', $zip->getNameIndex($index)));
+                            if($dirs>2){
+                                @unlink($file);  
+                                $this->showMsg('压缩路径太深，无法正常安装', $up, TRUE) ;
+                            }
+                            $contents = $zip->getFromIndex($index);                                                     
+                            if($this->isTheme($contents)){
+                                if(2==$dirs){    
+                                    $path='.' . __TYPECHO_THEME_DIR__.'/';
+                                }else{
+                                    $name = basename($_FILES['file']['name'],'.zip');
+                                    $path='.' . __TYPECHO_THEME_DIR__ .'/'. $name.'/';
+                                }
+                            }
+                        }
+                    }
                 }
                 if($path!==''){
                     if($zip->extractTo($path)){
                         $zip->close();
-                        echo '<script>alert("安装成功，请到 控制台-->' . $upType . ' 中激活使用。")</script>';
+                        @unlink($file);   
+                        $this->showMsg("安装成功，请到 控制台-->" . $upType . " 中激活使用。", $up, TRUE);
                     }else{
-                        exit('<script>alert('. $upType . "解压失败,请确认" . $upType . '目录是否有写权限。")</script>');
+                        $this->showMsg("解压失败,请确认" . $upType . "目录是否有写权限。", $up) ;                       
                     }
 
-                }  else {
-                    echo '<script>alert("法获取正确的解压路径，解压失败。")</script>';
+                }  else {                    
+                    $this->showMsg('上传的文件不是Typecho插件和模板', $up);
                 }
 
             } else {
-                exit( 'FAILURE:无法打开压缩包，请重试。');
+                $this->showMsg('无法打开压缩包，请检查压缩包是否损坏。', $up);            
             }
+            @unlink($file); 
         }else{
             $this->widget('Widget_Archive@404', 'type=404')->render();
             exit;
         }
     }
-    /**
+    
+    public function showMsg($str, $up = True, $exit=FALSE){
+        if($up && !$exit){
+            echo("<script>parent.fileUploadError('" . $this->request->_id . "','" . $str . "');</script>"); 
+        }
+        if($up && $exit){
+            exit("<script>parent.fileUploadComplete('" . $this->request->_id
+                            . "','typecho','" . $str . "');</script>"); 
+        }
+        if(!$up && $exit) exit($str); 
+        if(!$up && !$exit) echo($str);         
+    }
+
+        /**
      * 判断上传文件是否为插件
      * @param type $contents
      * @return boolean
@@ -277,7 +313,8 @@ class UploadPlugin_Action extends Typecho_Widget implements Widget_Interface_Do
     }
 
     public function action()
-    {        
+    {   
+        $this->widget('Widget_User')->pass('administrator'); 
         $this->on($this->request->is('del'))->del($this->request->del);
         $this->on($this->request->is('delTheme'))->delTheme($this->request->delTheme); 
         $this->on($this->request->is('upload'))->upload($this->request->upload);

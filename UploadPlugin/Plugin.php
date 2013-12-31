@@ -4,7 +4,7 @@
  *
  * @package Upload Plugin
  * @author DEFE
- * @version 1.0.2
+ * @version 1.1.0
  * @link http://defe.me
  */
 class UploadPlugin_Plugin implements Typecho_Plugin_Interface
