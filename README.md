@@ -18,6 +18,7 @@
  - CateFilter: 首页指定分类不显示 [@rakiy] (https://github.com/rakiy)   
  - Duoshuo: 多说同步插件 [@rakiy] (https://github.com/rakiy)   
  - Editor: 非官方Markdown编辑器插件 [@lizheming](https://github.com/lizheming)
+ - Export: 数据备份插件
  - GoLinks: 外链转为内链插件
  - GoogleCodePrettfy: 代码高亮插件 [@lizheming](https://github.com/lizheming)
  - Html2Text: Html 转 Markdown 插件，[@冰剑](https://github.com/binjoo) 出品
