@@ -1,24 +1,12 @@
 <?php
-// error_reporting(E_ERROR| E_WARNING| E_PARSE);
-// error_reporting(E_ALL&~E_NOTICE);
-
 if (!defined('__TYPECHO_ROOT_DIR__')) {
     exit;
 }
 
 $db = Typecho_Db::get();
-
 // 表前缀
 $dbPrefix = $db->getPrefix();
 $prefixLength = strlen($dbPrefix);
-
-// 数据库配置
-// $config = $db->getConfig();
-// $dbConfig = $config[0];
-
-// 数据库名
-// $database = $dbConfig->database;
-
 // 数据表
 $tables = array();
 $resource = $db->fetchAll($db->query('SHOW TABLES'));

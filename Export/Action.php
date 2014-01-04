@@ -3,7 +3,7 @@
 class Export_Action extends Typecho_Widget implements Widget_Interface_Do
 {
     /**
-     * 导出动作
+     * 导出备份
      *
      * @access public
      * @return void
@@ -40,22 +40,19 @@ class Export_Action extends Typecho_Widget implements Widget_Interface_Do
     }
 
     /**
-     * 导入动作
+     * 导入备份
      *
      * @access public
      * @return void
      */
     public function doImport()
     {
-        // 暂时不写导入功能了
-        // $this->response->goBack();
-        // die();
-
         // 数据库对象
         $db = Typecho_Db::get();
         // 表前缀
         $dbPrefix = $db->getPrefix();
         $prefixLength = strlen($dbPrefix);
+
         // 数据表
         $dropTable = 'DROP TABLE';
         $resource = $db->fetchAll($db->query('SHOW TABLES'));
@@ -78,15 +75,13 @@ class Export_Action extends Typecho_Widget implements Widget_Interface_Do
 
         if ($bid) {
             $imports = is_array($bid) ? $bid : array($bid);
-
             foreach ($imports as $import) {
                 $scripts .= file_get_contents($path . $import);
                 $deleteCount ++;
             }
 
-            // 删除存在的同名数据表
+            // 删除同名数据表并导入数据
             $db->query($dropTable, Typecho_Db::WRITE);
-
             $scripts = explode(";\r\n", $scripts);
             foreach ($scripts as $script) {
                 $script = trim($script);
@@ -114,10 +109,8 @@ class Export_Action extends Typecho_Widget implements Widget_Interface_Do
 
         $bid = $this->request->get('bid');
         $deleteCount = 0;
-
         if ($bid) {
             $backups = is_array($bid) ? $bid : array($bid);
-
             foreach ($backups as $backup) {
                 @unlink($path . $backup);
                 $deleteCount ++;
@@ -173,10 +166,8 @@ class Export_Action extends Typecho_Widget implements Widget_Interface_Do
             if ($rows) {
                 // 字段组合SQL语句
                 $fieldText = '';
-
                 // 值的组合SQL语句
                 $recordText = '';
-
                 // 所有记录
                 $records = array();
 
@@ -208,7 +199,6 @@ class Export_Action extends Typecho_Widget implements Widget_Interface_Do
                 $recordText = rtrim($recordText, ",\r\n") . ";\r\n\r\n";
                 $insertSql .= $recordText;
             }
-
             $sql .= $createSql . $insertSql;
         }
 
