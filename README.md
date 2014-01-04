@@ -25,7 +25,7 @@
  - LREditor: 编辑器增强插件 [@lizheming](http://github.com/lizheming)
  - OriginalEditor: 让编辑器回归0.8版HTML模式 [@lizheming](http://github.com/lizheming)
  - Prism: 轻量级语法高亮 [@冰剑](https://github.com/binjoo)
- - RoutesHelper: 路由助手
+ - RoutesHelper: 路由助手 [@兜兜有矿石](https://github.com/qqff01)
  - Snowstorm: 纯娱乐插件 博客飘雪 (ONLY FOR 0.9) [@rakiy](https://github.com/rakiy)
  - UploadPlugin 能在后台上传插件和模版的zip格式压缩包，自动解压到对应目录。
  - Watermark: 图片水印插件(同时支持0.8和0.9)
