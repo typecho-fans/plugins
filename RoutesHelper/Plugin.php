@@ -4,9 +4,10 @@
  *
  * @package RoutesHelper
  * @author doudou
- * @version 1.0.2
+ * @version 1.0.3
+ * @dependence 13.12.12-*
  * @link http://doudou.me
- * @date 2013-11-3
+ * @date 2014-1-4
  */
 class RoutesHelper_Plugin implements Typecho_Plugin_Interface
 {
