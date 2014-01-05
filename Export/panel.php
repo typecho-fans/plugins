@@ -117,7 +117,7 @@ include 'menu.php';
                                         </tr>
                                     <?php endforeach; ?>
                                     <?php else: ?>
-                                        <tr id="bid-<?php echo $key; ?>">
+                                        <tr id="bid-no">
                                             <td></td>
                                             <td colspan="4">暂无备份文件</td>
                                             <td></td>
