@@ -1,4 +1,4 @@
-<?php if(!defined('__TYPECHO_ADMIN__')) exit; ?>
+<?php if (!defined('__TYPECHO_ROOT_DIR__')) exit; ?>
 <script>
 $(document).ready(function () {
     $('#export-plugin .typecho-option-tabs li').click(function() {

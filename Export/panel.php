@@ -1,8 +1,4 @@
 <?php
-if (!defined('__TYPECHO_ROOT_DIR__')) {
-    exit;
-}
-
 $db = Typecho_Db::get();
 // 表前缀
 $dbPrefix = $db->getPrefix();
