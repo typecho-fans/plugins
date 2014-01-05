@@ -30,7 +30,7 @@
  - Snowstorm: 纯娱乐插件 博客飘雪 (ONLY FOR 0.9) [@rakiy](https://github.com/rakiy)
  - ThemeDemo: 主题演示插件 [@兜兜有矿石](https://github.com/qqff01)
  - UploadPlugin 能在后台上传插件和模版的zip格式压缩包，自动解压到对应目录。
- - Watermark: 图片水印插件(同时支持0.8和0.9)
+ - Watermark: 图片水印插件(同时支持0.8和0.9) [@阿飞](https://github.com/defeme)
  - Snowstorm: 纯娱乐插件，博客飘雪(ONLY FOR 0.9) [@rakiy](https://github.com/rakiy)
  - UploadPlugin: 在线安装模板和插件 [@阿飞](https://github.com/defeme)
  - Watermark: 图片水印插件(同时支持0.8和0.9) [@阿飞](https://github.com/defeme)
