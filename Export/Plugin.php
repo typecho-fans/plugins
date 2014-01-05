@@ -4,7 +4,7 @@
  *
  * @package Export
  * @author ShingChi
- * @version 1.0.0
+ * @version 1.0.1
  * @link http://lcz.me
  */
 class Export_Plugin implements Typecho_Plugin_Interface
