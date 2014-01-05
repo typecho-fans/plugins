@@ -27,7 +27,14 @@
  - OriginalEditor: 让编辑器回归0.8版HTML模式 [@lizheming](http://github.com/lizheming)
  - Prism: 轻量级语法高亮 [@冰剑](https://github.com/binjoo)
  - RoutesHelper: 路由助手 [@兜兜有矿石](https://github.com/qqff01)
+<<<<<<< HEAD
+ - Snowstorm: 纯娱乐插件 博客飘雪 (ONLY FOR 0.9) [@rakiy](https://github.com/rakiy)
+ - ThemeDemo: 主题演示插件 [@兜兜有矿石](https://github.com/qqff01)
+ - UploadPlugin 能在后台上传插件和模版的zip格式压缩包，自动解压到对应目录。
+ - Watermark: 图片水印插件(同时支持0.8和0.9)
+=======
  - Snowstorm: 纯娱乐插件，博客飘雪(ONLY FOR 0.9) [@rakiy](https://github.com/rakiy)
  - UploadPlugin: 在线安装模板和插件 [@阿飞](https://github.com/defeme)
  - Watermark: 图片水印插件(同时支持0.8和0.9) [@阿飞](https://github.com/defeme)
+>>>>>>> 46e7abff422fbea0761ec8ae70a049932f9fc48c
  - XiaMiPlayer: 音乐播放器插件 [@lizheming](https://github.com/lizheming)
