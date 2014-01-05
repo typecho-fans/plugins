@@ -5,9 +5,9 @@
 ## 使用帮助 ##
 
  1. 下载插件
- 2. 将插件上传导 `/usr/plugins/` 这个目录下
+ 2. 将插件上传到 `/usr/plugins/` 这个目录下
  3. 登陆后台，在“控制台”下拉菜单中进入“插件管理”
- 4. 激活相关插件
+ 4. 启用相关插件
  5. 根据相关插件要求更新设置
 
 ## 目录结构(按首字排序) ##
@@ -28,6 +28,6 @@
  - Prism: 轻量级语法高亮 [@冰剑](https://github.com/binjoo)
  - RoutesHelper: 路由助手 [@兜兜有矿石](https://github.com/qqff01)
  - Snowstorm: 纯娱乐插件，博客飘雪(ONLY FOR 0.9) [@rakiy](https://github.com/rakiy)
- - UploadPlugin 在线安装模板和插件 [@阿飞](https://github.com/defeme)
+ - UploadPlugin: 在线安装模板和插件 [@阿飞](https://github.com/defeme)
  - Watermark: 图片水印插件(同时支持0.8和0.9) [@阿飞](https://github.com/defeme)
  - XiaMiPlayer: 音乐播放器插件 [@lizheming](https://github.com/lizheming)
