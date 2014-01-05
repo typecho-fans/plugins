@@ -49,21 +49,6 @@ class Export_Action extends Typecho_Widget implements Widget_Interface_Do
     {
         // 数据库对象
         $db = Typecho_Db::get();
-        // 表前缀
-        $dbPrefix = $db->getPrefix();
-        $prefixLength = strlen($dbPrefix);
-
-        // 数据表
-        $dropTable = 'DROP TABLE';
-        $resource = $db->fetchAll($db->query('SHOW TABLES'));
-        foreach ($resource as $value) {
-            foreach ($value as $tableName) {
-                if ($dbPrefix == substr($tableName, 0, $prefixLength)) {
-                    $dropTable .= ' `' . $tableName . '`, ';
-                }
-            }
-        }
-        $dropTable = rtrim($dropTable, ', ') . ';';
 
         // 获取备份目录并设置文件
         $config = Typecho_Widget::widget('Widget_Options')->plugin('Export');
@@ -80,8 +65,7 @@ class Export_Action extends Typecho_Widget implements Widget_Interface_Do
                 $deleteCount ++;
             }
 
-            // 删除同名数据表并导入数据
-            $db->query($dropTable, Typecho_Db::WRITE);
+            // 导入数据
             $scripts = explode(";\r\n", $scripts);
             foreach ($scripts as $script) {
                 $script = trim($script);
@@ -156,10 +140,10 @@ class Export_Action extends Typecho_Widget implements Widget_Interface_Do
                 . '--' . "\r\n\r\n";
 
             /* 表结构 */
-            $replace = 'CREATE TABLE IF NOT EXISTS';
+            $dropTable = "DROP TABLE IF EXISTS `$table`;\r\n";
             $showTable = $db->fetchRow($db->query('SHOW CREATE TABLE ' . $table));
-            $createTable = $showTable['Create Table'];
-            $createSql .= str_replace('CREATE TABLE', $replace, $createTable) . ';' . "\r\n\r\n";
+            $createTable = $showTable['Create Table'] . ";\r\n\r\n";
+            $createSql .= $dropTable . $createTable;
 
             /* 表记录 */
             $rows = $db->fetchAll($db->select()->from($table));
