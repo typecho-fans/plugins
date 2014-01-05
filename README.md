@@ -13,21 +13,21 @@
 ## 目录结构(按首字排序) ##
 
  - At: 评论@ 支持插件 [@lizheming](https://github.com/lizheming)
- - AutoSlug: 自动生成缩略名
+ - AutoSlug: 自动生成缩略名 [@ShingChi](https://github.com/shingchi)
  - BaeUpload: BAE附件上传插件 [@兜兜有矿石](https://github.com/qqff01)
- - CommenToMail4BAE: 邮件回复 BAE 版本   
+ - CommenToMail4BAE: BAE版邮件回复插件 [@ShingChi](https://github.com/shingchi)
  - CateFilter: 首页指定分类不显示 [@rakiy] (https://github.com/rakiy)   
  - Duoshuo: 多说同步插件 [@rakiy] (https://github.com/rakiy)   
  - Editor: 非官方Markdown编辑器插件 [@lizheming](https://github.com/lizheming)
- - Export: 数据备份插件
- - GoLinks: 外链转为内链插件
+ - Export: 数据备份插件 [@ShingChi](https://github.com/shingchi)
+ - GoLinks: 外链转为内链插件 [@阿飞](https://github.com/defeme)
  - GoogleCodePrettfy: 代码高亮插件 [@lizheming](https://github.com/lizheming)
- - Html2Text: Html 转 Markdown 插件，[@冰剑](https://github.com/binjoo) 出品
+ - Html2Text: Html转Markdown插件 [@冰剑](https://github.com/binjoo)
  - LREditor: 编辑器增强插件 [@lizheming](http://github.com/lizheming)
  - OriginalEditor: 让编辑器回归0.8版HTML模式 [@lizheming](http://github.com/lizheming)
  - Prism: 轻量级语法高亮 [@冰剑](https://github.com/binjoo)
  - RoutesHelper: 路由助手 [@兜兜有矿石](https://github.com/qqff01)
- - Snowstorm: 纯娱乐插件 博客飘雪 (ONLY FOR 0.9) [@rakiy](https://github.com/rakiy)
- - UploadPlugin 能在后台上传插件和模版的zip格式压缩包，自动解压到对应目录。
- - Watermark: 图片水印插件(同时支持0.8和0.9)
+ - Snowstorm: 纯娱乐插件，博客飘雪(ONLY FOR 0.9) [@rakiy](https://github.com/rakiy)
+ - UploadPlugin 在线安装模板和插件 [@阿飞](https://github.com/defeme)
+ - Watermark: 图片水印插件(同时支持0.8和0.9) [@阿飞](https://github.com/defeme)
  - XiaMiPlayer: 音乐播放器插件 [@lizheming](https://github.com/lizheming)
