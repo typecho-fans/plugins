@@ -14,6 +14,7 @@
 
  - At: 评论@ 支持插件 [@lizheming](https://github.com/lizheming)
  - AutoSlug: 自动生成缩略名
+ - BaeUpload: BAE附件上传插件 [@兜兜有矿石](https://github.com/qqff01)
  - CommenToMail4BAE: 邮件回复 BAE 版本   
  - CateFilter: 首页指定分类不显示 [@rakiy] (https://github.com/rakiy)   
  - Duoshuo: 多说同步插件 [@rakiy] (https://github.com/rakiy)   
