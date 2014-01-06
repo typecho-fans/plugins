@@ -10,32 +10,49 @@ class Export_Action extends Typecho_Widget implements Widget_Interface_Do
      */
     public function doExport()
     {
-        // 获取POST值
+        // 需要备份的数据表
         $tableSelect = $this->request->get('tableSelect');
-
-        // 获取SQL语句
+        // 备份的数据
         $content = $this->getSql($tableSelect);
-
-        // 获取备份目录并设置文件
-        $config = Typecho_Widget::widget('Widget_Options')->plugin('Export');
-        $path = __TYPECHO_ROOT_DIR__ . '/' . trim($config->path, '/') . '/';
+        // 备份文件名
         $fileName = $this->request->get('fileName');
-        $file = $path . $fileName;
 
-        if (!empty($fileName)) {
-            if ((is_dir($path) || @mkdir($path, 0777)) && is_writable($path)) {
-                $handle = fopen($file, 'wb');
-                if ($handle && fwrite($handle, $content)) {
-                    fclose($handle);
-                    $this->widget('Widget_Notice')->set(_t('备份文件 ' . $fileName . ' 已创建'), 'success');
+        if (0 == $this->request->get('bakplace')) {
+            header('Content-Type: text/x-sql');
+            header('Content-Disposition: attachment; filename=' . $fileName);
+            if (preg_match("/MSIE ([0-9].[0-9]{1,2})/", $_SERVER['HTTP_USER_AGENT'])) {
+                header('Cache-Control: must-revalidate, post-check=0, pre-check=0');
+                header('Pragma: public');
+            } else {
+                header('Pragma: no-cache');
+                header('Last-Modified: '. gmdate('D, d M Y H:i:s',
+                    Typecho_Date::gmtTime() + (Typecho_Date::$timezoneOffset - Typecho_Date::$serverTimezoneOffset)) . ' GMT');
+            }
+            header('Expires: ' . gmdate('D, d M Y H:i:s',
+                Typecho_Date::gmtTime() + (Typecho_Date::$timezoneOffset - Typecho_Date::$serverTimezoneOffset)) . ' GMT');
+            echo $content;
+        } else {
+            // 备份目录及路径
+            $config = Typecho_Widget::widget('Widget_Options')->plugin('Export');
+            $path = __TYPECHO_ROOT_DIR__ . '/' . trim($config->path, '/') . '/';
+            $file = $path . $fileName;
+
+            if (!empty($fileName)) {
+                if ((is_dir($path) || @mkdir($path, 0777)) && is_writable($path)) {
+                    $handle = fopen($file, 'wb');
+                    if ($handle && fwrite($handle, $content)) {
+                        fclose($handle);
+                        $this->widget('Widget_Notice')->set(_t('备份文件 ' . $fileName . ' 已创建'), 'success');
+                    } else {
+                        $this->widget('Widget_Notice')->set(_t('备份文件创建失败，请检查目录权限'), 'error');
+                    }
                 } else {
-                    $this->widget('Widget_Notice')->set(_t('备份文件创建失败，请检查目录权限'), 'error');
+                    $this->widget('Widget_Notice')->set(_t('文件夹创建失败或目录权限限制'), 'error');
                 }
             } else {
-                $this->widget('Widget_Notice')->set(_t('文件夹创建失败或目录权限限制'), 'error');
+                $this->widget('Widget_Notice')->set(_t('备份文件名不能为空'), 'error');
             }
-        } else {
-            $this->widget('Widget_Notice')->set(_t('备份文件名不能为空'), 'error');
+            $this->response->goBack();
         }
     }
 
@@ -77,6 +94,7 @@ class Export_Action extends Typecho_Widget implements Widget_Interface_Do
 
         $this->widget('Widget_Notice')->set($deleteCount > 0 ? _t('备份已经被导入') : _t('没有备份被导入'),
         $deleteCount > 0 ? 'success' : 'notice');
+        $this->response->goBack();
     }
 
     /**
@@ -94,15 +112,16 @@ class Export_Action extends Typecho_Widget implements Widget_Interface_Do
         $bid = $this->request->get('bid');
         $deleteCount = 0;
         if ($bid) {
-            $backups = is_array($bid) ? $bid : array($bid);
-            foreach ($backups as $backup) {
-                @unlink($path . $backup);
+            $fileNames = is_array($bid) ? $bid : array($bid);
+            foreach ($fileNames as $fileName) {
+                @unlink($path . $fileName);
                 $deleteCount ++;
             }
         }
 
         $this->widget('Widget_Notice')->set($deleteCount > 0 ? _t('备份已经被删除') : _t('没有备份被删除'),
         $deleteCount > 0 ? 'success' : 'notice');
+        $this->response->goBack();
     }
 
     /**
@@ -201,6 +220,5 @@ class Export_Action extends Typecho_Widget implements Widget_Interface_Do
         $this->on($this->request->is('export'))->doExport();
         $this->on($this->request->is('import'))->doImport();
         $this->on($this->request->is('delete'))->doDelete();
-        $this->response->goBack();
     }
 }

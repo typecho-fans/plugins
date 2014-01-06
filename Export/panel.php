@@ -62,7 +62,21 @@ include 'menu.php';
                                 <p class="description"><?php _e('备份文件默认生成在插件的 backup 文件夹下'); ?></p>
                             </li>
                         </ul>
-                        <ul class="typecho-option typecho-option-submit" id="typecho-option-item-submit-2">
+                        <ul class="typecho-option" id="typecho-option-item-bakplace-2">
+                            <li>
+                                <label class="typecho-label"><?php _e('备份保存'); ?></label>
+                                <span>
+                                    <input name="bakplace" type="radio" value="0" id="bakplace-0" checked="true">
+                                    <label for="bakplace-0"><?php _e('本地'); ?></label>
+                                </span>
+                                <span>
+                                    <input name="bakplace" type="radio" value="1" id="bakplace-1">
+                                    <label for="bakplace-1"><?php _e('服务器'); ?></label>
+                                </span>
+                                <p class="description"></p>
+                            </li>
+                        </ul>
+                        <ul class="typecho-option typecho-option-submit" id="typecho-option-item-submit-3">
                             <li>
                                 <button type="submit" class="primary"><?php _e('开始备份'); ?></button>
                             </li>
@@ -74,12 +88,12 @@ include 'menu.php';
                         <div class="typecho-list-operate clearfix">
                             <form method="get">
                                 <div class="operate">
-                                    <label><i class="sr-only">全选</i><input type="checkbox" class="typecho-table-select-all"></label>
+                                    <label><i class="sr-only"><?php _e('全选'); ?></i><input type="checkbox" class="typecho-table-select-all"></label>
                                     <div class="btn-group btn-drop">
-                                        <button class="dropdown-toggle btn-s" type="button"><i class="sr-only">操作</i>选中项 <i class="i-caret-down"></i></button>
+                                        <button class="dropdown-toggle btn-s" type="button"><i class="sr-only"><?php _e('操作'); ?></i><?php _e('选中项'); ?> <i class="i-caret-down"></i></button>
                                         <ul class="dropdown-menu">
-                                            <li><a lang="你确认要导入这些备份吗?" href="<?php $options->index('/action/export?import'); ?>">导入</a></li>
-                                            <li><a lang="你确认要删除这些备份吗?" href="<?php $options->index('/action/export?delete'); ?>">删除</a></li>
+                                            <li><a lang="<?php _e('你确认要导入这些备份吗?'); ?>" href="<?php $options->index('/action/export?import'); ?>"><?php _e('导入'); ?></a></li>
+                                            <li><a lang="<?php _e('你确认要删除这些备份吗?'); ?>" href="<?php $options->index('/action/export?delete'); ?>"><?php _e('删除'); ?></a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -97,9 +111,9 @@ include 'menu.php';
                                     <thead>
                                         <tr>
                                             <th> </th>
-                                            <th>备份文件</th>
-                                            <th>备份时间</th>
-                                            <th>文件大小</th>
+                                            <th><?php _e('备份文件'); ?></th>
+                                            <th><?php _e('备份时间'); ?></th>
+                                            <th><?php _e('文件大小'); ?></th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -115,7 +129,7 @@ include 'menu.php';
                                     <?php else: ?>
                                         <tr id="bid-no">
                                             <td></td>
-                                            <td colspan="4">暂无备份文件</td>
+                                            <td colspan="4"><?php _e('暂无备份文件'); ?></td>
                                             <td></td>
                                             <td></td>
                                         </tr>
