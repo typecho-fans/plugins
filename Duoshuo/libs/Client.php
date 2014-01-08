@@ -25,8 +25,9 @@ class Duoshuo_Client{
 		$this->generator = Typecho_Widget::widget('Widget_Options')->generator;
 		$this->http = Typecho_Http_Client::get();
 		$this->userAgent = $this->generator . '|Duoshuo/'. Duoshuo_Typecho::VERSION;
-		if(Duoshuo_Typecho::getPlugOption('end_point') !== NULL)
-			$this->end_point = Duoshuo_Typecho::$PointMap[intval(Duoshuo_Typecho::getPlugOption('end_point'))];
+		$this->plugin = Duoshuo_Typecho::getInstance();
+		if($this->plugin->getPlugOption('end_point') !== NULL)
+			$this->end_point = Duoshuo_Typecho::$PointMap[intval($this->plugin->getPlugOption('end_point'))];
 	}
 	
 	/**

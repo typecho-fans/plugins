@@ -4,18 +4,10 @@
  * 
  * @package Duoshuo
  * @author Rakiy
- * @version 1.1.0
- * @link http://www.ysido.com/duoshuo.htm
+ * @version 1.1.2
+ * @link http://ysido.com/duoshuo.htm
  *
- * 历史版本
  *
- * version 1.1.0 -- 2013-12-04
- * 修正几处已知BUG
- * 增加初始化跳过功能，节约流量	
- * 
- * version 1.0.0 -- 2013-12-04
- * 实现多说评论的实时同步功能
- * 包括: 添加 删除 
  */
 class Duoshuo_Plugin implements Typecho_Plugin_Interface
 {

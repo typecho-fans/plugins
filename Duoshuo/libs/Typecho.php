@@ -9,7 +9,7 @@
  */
 class Duoshuo_Typecho extends Duoshuo_Abstract{
 	
-	const VERSION = '1.1.0';
+	const VERSION = '1.1.3';
 	
 	public static $errorMessages = array();
 
@@ -319,9 +319,9 @@ class Duoshuo_Typecho extends Duoshuo_Abstract{
 			'author_email'	=>	$comment['mail'] ? $comment['mail'] : '',
 			'author_url'	=>	$comment['url'],
 			'created_at'	=>	date('Y-m-d\TH:i:s+00:00',$comment['created']),
-			'message'		=>	$comment['text'],
+			'message'		=>	empty($comment['text']) ? '' : $comment['text'],
 			'agent'			=>	$comment['agent'],
-			'type'			=>	'',
+			//'type'			=>	'',				//不能加，加了会有问题
 			'ip'			=>	$comment['ip'],
 			'status'		=>	$statusMap[$comment['status']],
 			'parent_key'	=>	$comment['parent'],	// TODO 接收的地方要处理一下
@@ -375,22 +375,15 @@ class Duoshuo_Typecho extends Duoshuo_Abstract{
 			$params['threads'][] = $this->packageThread($post);
 		}
 		//导出评论
-		$columns = array('coid', 'cid', 'parent', 'author', 'authorId', 'mail', 'url', 'agent', 'ip', 'text', 'status', 'type', 'created');
-		$sql = $this->db->select(implode(',', $columns))->from('table.comments')->where('type = ?', 'comment');
+		$columns = array('coid', 'cid', 'parent', 'author', 'authorId', 'mail', 'url', 'agent', 'ip', 'text', 'status', 'created');
+		$sql = $this->db->select(implode(',', $columns))->from('table.comments');
 		$comments = $this->db->fetchAll($sql);
 		if(!$posts) return false;
 		foreach ($comments as $index => $comment) {
 			$params['posts'][] = $this->packageComment($comment);
 		}
-		$str = json_encode($params);
-		$filename = 'Typecho-to-duoshuo-'.date("Y-m-d-h:i:s").'.txt';
-		header("Content-type: text/plain");
-		header("Accept-Ranges: bytes");
-		header("Content-Disposition: attachment; filename=".$filename);
-		header("Cache-Control: must-revalidate, post-check=0, pre-check=0" );
-		header("Pragma: no-cache" );
-		header("Expires: 0" ); 
-		echo($str);
-		return true;
+		var_dump($params);
+		die();
+		
 	}
 }
