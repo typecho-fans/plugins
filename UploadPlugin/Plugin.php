@@ -5,6 +5,7 @@
  * @package Upload Plugin
  * @author DEFE
  * @version 1.1.1
+ * @dependence 10.6.24-*
  * @link http://defe.me
  */
 class UploadPlugin_Plugin implements Typecho_Plugin_Interface
@@ -21,9 +22,11 @@ class UploadPlugin_Plugin implements Typecho_Plugin_Interface
         if (!class_exists('ZipArchive')) {
             throw new Typecho_Plugin_Exception(_t('对不起, 您的服务器不支持 ZipArchive 类, 无法正常使用此插件'));
         }
+        if(!is_writable(__TYPECHO_PLUGIN_DIR__)){
+            throw new Typecho_Plugin_Exception(_t('插件目录无写入权限, 无法正常使用此插件'));
+        }
         Helper::addPanel(1, 'UploadPlugin/panel.php', _t('上传'), _t('在线插件管理'), 'administrator');
         Helper::addAction('upload-plugin', 'UploadPlugin_Action');
-        //return _t('请设置插件仓库的服务地址，以便能在线安装插件！');
     }
 
     /**
