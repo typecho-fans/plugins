@@ -4,7 +4,7 @@
  * 
  * @package At 
  * @author 公子
- * @version 0.1.0
+ * @version 0.1.1
  * @link http://zh.eming.li
  */
 class At_Plugin implements Typecho_Plugin_Interface
@@ -48,7 +48,7 @@ class At_Plugin implements Typecho_Plugin_Interface
         {
         	$text = mb_strimwidth(strip_tags($comment['text']), 0, 23, '...','UTF-8');
         	$text = str_replace(array("\r\n", "\n", "\r"), ' ', $text);
-        	$data[] = "{id: {$comment['coid']}, name: '{$comment['author']}', text: '{$comment['author']}: $text' }";
+        	$data[] = array('id'=>$comment['coid'], 'name'=>$comment['author'], 'text'=>$comment['author'].$text);
         }
         if($options->plugin('At')->jquery) {
         	echo '<script type="text/javascript" src="http://lib.sinaapp.com/js/jquery/1.9.1/jquery-1.9.1.min.js"></script>';
@@ -100,7 +100,7 @@ class At_Plugin implements Typecho_Plugin_Interface
 		   	}
 		//]]>
         $(function() {
-	        var data = [<?php echo implode(',', $data); ?>];
+	        var data = <?php echo json_encode($data); ?>;
 	        $('textarea').atwho('run').atwho({
 	            at: "@",
 	            data: data,
