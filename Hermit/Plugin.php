@@ -4,7 +4,7 @@
  * 
  * @package Hermit 
  * @author mufeng
- * @version 1.0.0
+ * @version 1.0.1
  * @update: 2014.2.11
  * @link http://mufeng.me/
  */
