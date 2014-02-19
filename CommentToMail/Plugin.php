@@ -172,7 +172,7 @@ class CommentToMail_Plugin implements Typecho_Plugin_Interface
         $url = rtrim($url, '/') . '/action/' . self::$_actionName . '?send=' . $fileName;
         self::saveLog("开始发送请求：{$url}\n");
 
-        $client = Typecho_Http_Client::get('Socket');
+        $client = Typecho_Http_Client::get('Socket', 'Curl');
         if (false == $client) {
             self::saveLog("'主机不支持 php-curl 扩展而且没有打开 allow_url_fopen 功能, 无法正常使用此功能'\n");
             return false;
@@ -191,32 +191,38 @@ class CommentToMail_Plugin implements Typecho_Plugin_Interface
     public static function asyncRequest($url)
     {
         $params = parse_url($url);
+        $path = $params['path'] . '?' . $params['query'];
         $host = $params['host'];
-        $port = 'https' == $params['scheme'] ? 443 : 80;
+        $port = 80;
+        $http = '';
 
-        $head = "GET " . $params['path'] . '?' . $params['query'] . " HTTP/1.1\r\n";
-        $head .= "Host: $host\r\n";
-        $head .= "Connection: Close\r\n";
-        $head .= "\r\n";
-
-        self::saveLog(var_export($params, true)."\n");
-        self::saveLog($head."\n");
-
-        if (function_exists('fsockopen')) {
-            $socket = @fsockopen($host, $port, $errno, $errstr, 30);
-        } elseif (function_exists('pfsockopen')) {
-            $socket = @pfsockopen($host, $port, $errno, $errstr, 30);
-        } else {
-            $socket = stream_socket_client($host . ":$port", $errno, $errstr, 30);
+        if ('https' == $params['scheme']) {
+            $port = 443;
+            $http = 'ssl://';
         }
 
-        if (!$socket) {
+        if (function_exists('fsockopen')) {
+            $fp = @fsockopen($http . $host, $port, $errno, $errstr, 30);
+        } elseif (function_exists('pfsockopen')) {
+            $fp = @pfsockopen($http . $host, $port, $errno, $errstr, 30);
+        } else {
+            $fp = @stream_socket_client($http . $host . ":$port", $errno, $errstr, 30);
+        }
+
+        if (!$fp) {
             self::saveLog("SOCKET错误," . $errno . ':' . $errstr);
             return false;
         }
 
-        fwrite($socket, $head);
-        fclose($socket);
+        $out = "GET " . $path . " HTTP/1.1\r\n";
+        $out .= "Host: $host\r\n";
+        $out .= "Connection: Close\r\n\r\n";
+
+        self::saveLog(var_export($params, true)."\n");
+        self::saveLog($out."\n");
+
+        fwrite($fp, $out);
+        fclose($fp);
         self::saveLog("请求结束\n");
     }
 

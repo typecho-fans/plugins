@@ -71,9 +71,6 @@ class CommentToMail_Action extends Typecho_Widget implements Widget_Interface_Do
                 break;
         }
 
-        //是否记录邮件错误日志
-        $this->_isMailLog = in_array('to_log', $this->_cfg->other) ? true : false;
-
         //向博主发邮件的标题格式
         $this->smtp->titleForOwner = $this->_cfg->titleForOwner;
         
@@ -299,6 +296,9 @@ class CommentToMail_Action extends Typecho_Widget implements Widget_Interface_Do
         $this->_db  = Typecho_Db::get();
         $this->_dir = dirname(__FILE__);
         $this->_cfg = Helper::options()->plugin('CommentToMail');
+
+        //是否记录邮件错误日志
+        $this->_isMailLog = in_array('to_log', $this->_cfg->other) ? true : false;
         $this->mailLog(false, "开始发送邮件Action：" . $this->request->send . "\n");
 
         $this->on($this->request->is('send'))->process($this->request->send);
