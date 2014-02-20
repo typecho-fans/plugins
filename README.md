@@ -17,7 +17,7 @@
  - BaeUpload: BAE附件上传插件 [@兜兜有矿石](https://github.com/qqff01)
  - CateFilter: 首页指定分类不显示 [@rakiy](https://github.com/rakiy)
  - CommenToMail4BAE: BAE版邮件回复插件 [@ShingChi](https://github.com/shingchi)
- - CommentToMail: 评论邮件提醒插件 [@byends](https://github.com/byends)、[@阿飞](https://github.com/defeme)
+ - CommentToMail: 评论邮件提醒插件 [@byends](https://github.com/byends) [@阿飞](https://github.com/defeme)
  - Duoshuo: 多说同步插件 [@rakiy](https://github.com/rakiy)
  - Editor: 非官方Markdown编辑器插件 [@lizheming](https://github.com/lizheming)
  - Export: 数据备份插件 [@ShingChi](https://github.com/shingchi)
