@@ -24,7 +24,7 @@ class OptimizeDB_Action extends Typecho_Widget implements Widget_Interface_Do
         foreach($dblist as $row){
             $result = $this->db->fetchAll('OPTIMIZE TABLE ' . $row['Name']);
         }
-        $this->widget('Widget_Notice')->set(_t('数据库优化成功！'), 'success');
+        $this->widget('Widget_Notice')->set(_t('数据库优化完成！'), 'success');
         $this->response->goBack();
     }
 
