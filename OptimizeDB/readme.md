@@ -1,8 +1,8 @@
 ## 插件说明 ##
-插件名称：OptimizeDB
-开发作者：冰剑
-作者网址：[http://www.binjoo.net](http://www.binjoo.net)
-兼容版本：0.9
+ - 插件名称：OptimizeDB
+ - 开发作者：冰剑
+ - 作者网址：[http://www.binjoo.net](http://www.binjoo.net)
+ - 兼容版本：0.9
 
 ## 使用帮助 ##
 
