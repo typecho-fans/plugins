@@ -1,6 +1,6 @@
 <?php
 /**
- * 数据库优化插件
+ * 数据库优化插件，只支持MySQL数据库。
  * 
  * @package OptimizeDB
  * @author 冰剑

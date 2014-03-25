@@ -13,6 +13,7 @@ include 'menu.php';
         <div class="colgroup typecho-page-main" role="main">
             <div class="col-mb-12 col-tb-8 col-tb-offset-2">
                 <div class="typecho-table-wrap">
+                    <?php if(Typecho_Db::get()->getAdapterName() == 'Mysql'): ?>
                     <table class="typecho-list-table">
                         <colgroup>
                             <col width="50%">
@@ -60,6 +61,9 @@ include 'menu.php';
                             </tr>
                         </tfoot>
                     </table>
+                    <?php else: ?>
+                        对不起，本插件仅支持MySql数据库优化！
+                    <?php endif; ?>
                 </div>           
             </div>
         </div>
