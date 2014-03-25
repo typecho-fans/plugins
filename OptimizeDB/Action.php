@@ -10,13 +10,11 @@
 class OptimizeDB_Action extends Typecho_Widget implements Widget_Interface_Do
 {
     private $db;
-    private $opstions;
 
     public function __construct($request, $response, $params = NULL)
     {
         parent::__construct($request, $response, $params);
         $this->db = Typecho_Db::get();
-        $this->opstions = Helper::options()->plugin('OptimizeDB');
     }
     public function optimize(){
         $config = Typecho_Db::get()->getConfig();
