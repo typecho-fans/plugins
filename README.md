@@ -26,6 +26,7 @@
  - Hermit: 虾米音乐播放器，支持专辑 [@牧风](https://github.com/iMuFeng)
  - Html2Text: Html转Markdown插件 [@冰剑](https://github.com/binjoo)
  - LREditor: 编辑器增强插件 [@lizheming](http://github.com/lizheming)
+ - OptimizeDB: 数据库优化插件 [@冰剑](https://github.com/binjoo)
  - OriginalEditor: 让编辑器回归0.8版HTML模式 [@lizheming](http://github.com/lizheming)
  - Prism: 轻量级语法高亮 [@冰剑](https://github.com/binjoo)
  - RoutesHelper: 路由助手 [@兜兜有矿石](https://github.com/qqff01)
