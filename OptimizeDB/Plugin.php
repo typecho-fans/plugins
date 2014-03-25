@@ -4,7 +4,7 @@
  * 
  * @package OptimizeDB
  * @author 冰剑
- * @version 1.0.1
+ * @version 1.0.2
  * @link http://www.binjoo.net
  */
 class OptimizeDB_Plugin implements Typecho_Plugin_Interface {
