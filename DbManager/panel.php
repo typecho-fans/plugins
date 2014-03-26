@@ -15,7 +15,7 @@ foreach ($resource as $value) {
 }
 
 // 获取备份目录并设置文件
-$exportConfig = $options->plugin('Export');
+$exportConfig = $options->plugin('DbManager');
 $path = __TYPECHO_ROOT_DIR__ . '/' . trim($exportConfig->path, '/');
 if (is_dir($path)) {
     $filePaths = glob($path . '/*.sql', GLOB_BRACE);
@@ -38,13 +38,14 @@ include 'menu.php';
             <h2><?php _e('数据备份'); ?></h2>
         </div>
         <div class="row typecho-page-main" role="form">
-            <div id="export-plugin" class="col-mb-12 col-tb-8 col-tb-offset-2">
+            <div id="dbmanager-plugin" class="col-mb-12 col-tb-8 col-tb-offset-2">
                 <ul class="typecho-option-tabs clearfix">
-                    <li class="w-50 active"><a href="#tab-export"><?php _e('备份'); ?></a></li>
-                    <li class="w-50"><a href="#tab-import" id="tab-files-btn"><?php _e('导入'); ?></a></li>
+                    <li style="width:33%;" class="active"><a href="#tab-export"><?php _e('备份'); ?></a></li>
+                    <li style="width:33%;"><a href="#tab-import" id="tab-files-btn"><?php _e('导入'); ?></a></li>
+                    <li style="width:33%;"><a href="#tab-optimize" id="tab-files-btn"><?php _e('优化'); ?></a></li>
                 </ul>
                 <div id="tab-export" class="tab-content">
-                    <form action="<?php $options->index('/action/export?export'); ?>" method="post" enctype="application/x-www-form-urlencoded">
+                    <form action="<?php $options->index('/action/dbmanager?export'); ?>" method="post" enctype="application/x-www-form-urlencoded">
                         <ul class="typecho-option" id="typecho-option-item-tableSelect-0">
                             <li>
                                 <label class="typecho-label" for="tableSelect-0"><?php _e('数据表'); ?></label>
@@ -92,8 +93,8 @@ include 'menu.php';
                                     <div class="btn-group btn-drop">
                                         <button class="dropdown-toggle btn-s" type="button"><i class="sr-only"><?php _e('操作'); ?></i><?php _e('选中项'); ?> <i class="i-caret-down"></i></button>
                                         <ul class="dropdown-menu">
-                                            <li><a lang="<?php _e('你确认要导入这些备份吗?'); ?>" href="<?php $options->index('/action/export?import'); ?>"><?php _e('导入'); ?></a></li>
-                                            <li><a lang="<?php _e('你确认要删除这些备份吗?'); ?>" href="<?php $options->index('/action/export?delete'); ?>"><?php _e('删除'); ?></a></li>
+                                            <li><a lang="<?php _e('你确认要导入这些备份吗?'); ?>" href="<?php $options->index('/action/dbmanager?import'); ?>"><?php _e('导入'); ?></a></li>
+                                            <li><a lang="<?php _e('你确认要删除这些备份吗?'); ?>" href="<?php $options->index('/action/dbmanager?delete'); ?>"><?php _e('删除'); ?></a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -140,6 +141,25 @@ include 'menu.php';
                         </form>
                     </div>
                 </div>
+                <div id="tab-optimize" class="tab-content hidden">
+                    <form action="<?php $options->index('/action/dbmanager?optimize'); ?>" method="post" enctype="application/x-www-form-urlencoded">
+                        <ul class="typecho-option" id="typecho-option-item-tableSelect-0">
+                            <li>
+                                <label class="typecho-label" for="tableSelect-0"><?php _e('数据表'); ?></label>
+                                <select name="tableSelect[]" id="tableSelect-0" size="10" multiple="multiple" class="w-100 mono" style="height: 100%;">
+                                    <?php foreach ($tables as $table): ?>
+                                    <option value="<?php echo $table; ?>" selected="selected"><?php echo $table; ?></option>
+                                    <?php endforeach; ?>
+                                </select>
+                            </li>
+                        </ul>
+                        <ul class="typecho-option typecho-option-submit" id="typecho-option-item-submit-1">
+                            <li>
+                                <button type="submit" class="primary"><?php _e('开始优化'); ?></button>
+                            </li>
+                        </ul>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
@@ -148,7 +168,7 @@ include 'menu.php';
 <?php
 include 'copyright.php';
 include 'common-js.php';
-include 'export-js.php';
+include 'dbmanager-js.php';
 include 'table-js.php';
 include 'footer.php';
 ?>

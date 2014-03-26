@@ -1,6 +1,6 @@
 <?php
 
-class Export_Action extends Typecho_Widget implements Widget_Interface_Do
+class DbManager_Action extends Typecho_Widget implements Widget_Interface_Do
 {
     /**
      * 导出备份
@@ -33,7 +33,7 @@ class Export_Action extends Typecho_Widget implements Widget_Interface_Do
             echo $content;
         } else {
             // 备份目录及路径
-            $config = Typecho_Widget::widget('Widget_Options')->plugin('Export');
+            $config = Typecho_Widget::widget('Widget_Options')->plugin('DbManager');
             $path = __TYPECHO_ROOT_DIR__ . '/' . trim($config->path, '/') . '/';
             $file = $path . $fileName;
 
@@ -68,7 +68,7 @@ class Export_Action extends Typecho_Widget implements Widget_Interface_Do
         $db = Typecho_Db::get();
 
         // 获取备份目录并设置文件
-        $config = Typecho_Widget::widget('Widget_Options')->plugin('Export');
+        $config = Typecho_Widget::widget('Widget_Options')->plugin('DbManager');
         $path = __TYPECHO_ROOT_DIR__ . '/' . trim($config->path, '/') . '/';
 
         $bid = $this->request->get('bid');
@@ -106,7 +106,7 @@ class Export_Action extends Typecho_Widget implements Widget_Interface_Do
     public function doDelete()
     {
         // 获取备份目录并设置文件
-        $config = Typecho_Widget::widget('Widget_Options')->plugin('Export');
+        $config = Typecho_Widget::widget('Widget_Options')->plugin('DbManager');
         $path = __TYPECHO_ROOT_DIR__ . '/' . trim($config->path, '/') . '/';
 
         $bid = $this->request->get('bid');
@@ -121,6 +121,28 @@ class Export_Action extends Typecho_Widget implements Widget_Interface_Do
 
         $this->widget('Widget_Notice')->set($deleteCount > 0 ? _t('备份已经被删除') : _t('没有备份被删除'),
         $deleteCount > 0 ? 'success' : 'notice');
+        $this->response->goBack();
+    }
+
+    /**
+     * 数据库优化
+     *
+     * @access public
+     * @return void
+     */
+    public function doOptimize()
+    {
+        $db = Typecho_Db::get();
+        $select = $this->request->get('tableSelect');
+        $sql = 'OPTIMIZE TABLE  ';
+        foreach ($select as $value) {
+            $sql .= '`' . $value . '`, ';
+        }
+        $sql = rtrim($sql, ', ') . ';';
+
+        $result = $db->query($sql, Typecho_Db::WRITE);
+        $this->widget('Widget_Notice')->set($result ? _t('所选表已优化')
+            : _t('数据库优化失败'), $result ? 'success' : 'notice');
         $this->response->goBack();
     }
 
@@ -140,7 +162,7 @@ class Export_Action extends Typecho_Widget implements Widget_Interface_Do
         $sql = '-- Typecho Backup SQL' . "\r\n"
              . '-- 程序版本: ' . Typecho_Common::VERSION . "\r\n"
              . '--' . "\r\n"
-             . '-- 备份工具: Export' . "\r\n"
+             . '-- 数据管理: DbManager' . "\r\n"
              . '-- 插件作者: ShingChi' . "\r\n"
              . '-- 主页链接: http://lcz.me' . "\r\n"
              . '-- 生成日期: ' . date('Y 年 m 月 d 日', Typecho_Date::gmtTime()) . "\r\n\r\n";
@@ -220,5 +242,6 @@ class Export_Action extends Typecho_Widget implements Widget_Interface_Do
         $this->on($this->request->is('export'))->doExport();
         $this->on($this->request->is('import'))->doImport();
         $this->on($this->request->is('delete'))->doDelete();
+        $this->on($this->request->is('optimize'))->doOptimize();
     }
 }
