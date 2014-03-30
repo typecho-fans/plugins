@@ -1,14 +1,12 @@
 <?php
 $db = Typecho_Db::get();
-// 表前缀
-$dbPrefix = $db->getPrefix();
-$prefixLength = strlen($dbPrefix);
+
 // 数据表
 $tables = array();
 $resource = $db->fetchAll($db->query('SHOW TABLES'));
 foreach ($resource as $value) {
     foreach ($value as $tableName) {
-        if ($dbPrefix == substr($tableName, 0, $prefixLength)) {
+        if (!is_null(strpos($tableName, $db->getPrefix()))) {
             $tables[] = $tableName;
         }
     }

@@ -13,7 +13,7 @@ class DbManager_Action extends Typecho_Widget implements Widget_Interface_Do
         // 需要备份的数据表
         $tableSelect = $this->request->get('tableSelect');
         // 备份的数据
-        $content = $this->getSql($tableSelect);
+        $content = $this->sqlBuild($tableSelect);
         // 备份文件名
         $fileName = $this->request->get('fileName');
 
@@ -153,78 +153,42 @@ class DbManager_Action extends Typecho_Widget implements Widget_Interface_Do
      * @param  array $tables 数据表数组
      * @return string $sql SQL语句
      */
-    public function getSql(array $tables)
+    public function sqlBuild(array $tables)
     {
         // 数据库对象
         $db = Typecho_Db::get();
 
         // SQL语句
-        $sql = '-- Typecho Backup SQL' . "\r\n"
-             . '-- 程序版本: ' . Typecho_Common::VERSION . "\r\n"
-             . '--' . "\r\n"
-             . '-- 数据管理: DbManager' . "\r\n"
-             . '-- 插件作者: ShingChi' . "\r\n"
-             . '-- 主页链接: http://lcz.me' . "\r\n"
-             . '-- 生成日期: ' . date('Y 年 m 月 d 日', Typecho_Date::gmtTime()) . "\r\n\r\n";
+        $sql = "-- Typecho Backup SQL\r\n"
+             . "-- version: " . Typecho_Common::VERSION . "\r\n"
+             . "--\r\n"
+             . "-- generator: DbManager\r\n"
+             . "-- author: ShingChi <http://lcz.me>\r\n"
+             . "-- date: " . date('F jS, Y', Typecho_Date::gmtTime()) . "\r\n\r\n";
 
-        // 循环构建每张表的SQL语句
         foreach ($tables as $table) {
-            // 创建表语句
-            $createSql = '';
-            // 插入记录语句
-            $insertSql = '';
+            $sql .= "\r\n-- ----------------------------------"
+                . "----------------------\r\n\r\n"
+                . "--\r\n"
+                . "-- 数据表 $table\r\n"
+                . "--\r\n\r\n";
+            $sql .= "DROP TABLE IF EXISTS `$table`;\r\n";
+            $createSql = $db->fetchRow($db->query("SHOW CREATE TABLE $table"));
+            $sql .= $createSql['Create Table'] . ";\r\n\r\n";
+            $resource = $db->query($db->select()->from($table));
 
-            // 创建表注释
-            $createSql .= '-- --------------------------------------------------------' . "\r\n\r\n"
-                . '--' . "\r\n"
-                . '-- 表的结构 `' . $table . "`\r\n"
-                . '--' . "\r\n\r\n";
-
-            /* 表结构 */
-            $dropTable = "DROP TABLE IF EXISTS `$table`;\r\n";
-            $showTable = $db->fetchRow($db->query('SHOW CREATE TABLE ' . $table));
-            $createTable = $showTable['Create Table'] . ";\r\n\r\n";
-            $createSql .= $dropTable . $createTable;
-
-            /* 表记录 */
-            $rows = $db->fetchAll($db->select()->from($table));
-            if ($rows) {
-                // 字段组合SQL语句
-                $fieldText = '';
-                // 值的组合SQL语句
-                $recordText = '';
-                // 所有记录
-                $records = array();
-
-                // 插入注释
-                $insertSql .= '--' . "\r\n"
-                    . '-- 转存表中的数据 `' . $table . "`\r\n"
-                    . '--' . "\r\n\r\n";
-
-                // 组合字段语句
-                foreach ($rows[0] as $key => $value) {
-                    $fieldText .= '`' . $key . '`, ';
+            while ($row = $db->fetchRow($resource)) {
+                foreach ($row as $key => $value) {
+                    $keys[] = "`" . $key . "`";
+                    $values[] = "'" . mysql_escape_string($value) . "'";
                 }
-                $fieldText = rtrim($fieldText, ', ');
-                $insertSql .= 'INSERT INTO ' . $table . ' (' . $fieldText . ') VALUES' . "\r\n";
+                $sql .= "INSERT INTO `" . $table . "` ("
+                    . implode(", ", $keys) . ") VALUES ("
+                    . implode(", ", $values) . ");\r\n";
 
-                // 组合一条记录的语法
-                foreach ($rows as $k => $row) {
-                    $records[$k] = '';
-                    foreach ($row as $record) {
-                        $records[$k] .= isset($record) ? '\'' . mysql_escape_string($record) . '\', ' : 'NULL, ';
-                    }
-                    $records[$k] = rtrim($records[$k], ', ');
-                }
-
-                // 组合所有记录的语法
-                foreach ($records as $val) {
-                    $recordText .= '(' . $val . '),' . "\r\n";
-                }
-                $recordText = rtrim($recordText, ",\r\n") . ";\r\n\r\n";
-                $insertSql .= $recordText;
+                unset($keys);
+                unset($values);
             }
-            $sql .= $createSql . $insertSql;
         }
 
         return $sql;

@@ -4,7 +4,7 @@
  *
  * @package DbManager
  * @author ShingChi
- * @version 2.0.0
+ * @version 2.0.1
  * @link http://lcz.me
  */
 class DbManager_Plugin implements Typecho_Plugin_Interface
