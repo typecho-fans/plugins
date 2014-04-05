@@ -30,6 +30,7 @@
  - OriginalEditor: 让编辑器回归0.8版HTML模式 [@lizheming](http://github.com/lizheming)
  - Prism: 轻量级语法高亮 [@冰剑](https://github.com/binjoo)
  - RoutesHelper: 路由助手 [@兜兜有矿石](https://github.com/qqff01)
+ - Reposidget: Github Repo插件 [@西秦公子](https://github.com/xiqingongzi)
  - Snowstorm: 纯娱乐插件 博客飘雪 (ONLY FOR 0.9) [@rakiy](https://github.com/rakiy)
  - SyncPost: 同步微博插件 [@冰剑](https://github.com/binjoo)
  - ThemeDemo: 主题演示插件 [@兜兜有矿石](https://github.com/qqff01)
