@@ -229,7 +229,9 @@ class Contribute_Action extends Typecho_Widget implements Widget_Interface_Do
         }
 
         /* 获取最大的cid, 并生成审核文章的slug */
-        $cid = $this->_db->fetchObject($this->_db->select('cid')->from('table.contents')->limit(1)->order('cid', Typecho_Db::SORT_DESC))->cid;
+        $cid = $this->_db->fetchObject($this->_db->select('cid')
+            ->from('table.contents')->limit(1)
+            ->order('cid', Typecho_Db::SORT_DESC))->cid;
         $content['slug'] = $this->_applySlug($content['slug'], $cid);
 
         $insertId = $this->_db->query($this->_db->insert('table.contents')->rows($content));
