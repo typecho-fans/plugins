@@ -118,8 +118,7 @@ class Contribute_Action extends Typecho_Widget implements Widget_Interface_Do
         $created = $this->request->filter('strip_tags', 'trim', 'xss')->date;
 
         /* 处理空值 */
-        $content['title'] = empty($content['title']) ? _t('未命名文档')
-            : $content['title'];
+        $content['title'] = empty($content['title']) ? _t('未命名文档') : $content['title'];
         $content['category'] = empty($content['category'])
             ? array($this->_options->defaultCategory) : $content['category'];
 
@@ -143,7 +142,6 @@ class Contribute_Action extends Typecho_Widget implements Widget_Interface_Do
 
         $realId = $this->_insert($content);
 
-        /* 返回信息，记得写 */
         $this->widget('Widget_Notice')->set($realId > 0 ? _t('提交稿件成功') : _t('提交稿件失败'),
             $realId > 0 ? 'success' : 'notice');
         $this->response->goBack();
@@ -230,7 +228,7 @@ class Contribute_Action extends Typecho_Widget implements Widget_Interface_Do
             $content['type'] = 'post_draft';
         }
 
-        /* 获取最大的cid, 并声称审核文章的slug */
+        /* 获取最大的cid, 并生成审核文章的slug */
         $cid = $this->_db->fetchObject($this->_db->select('cid')->from('table.contents')->limit(1)->order('cid', Typecho_Db::SORT_DESC))->cid;
         $content['slug'] = $this->_applySlug($content['slug'], $cid);
 
@@ -294,8 +292,7 @@ class Contribute_Action extends Typecho_Widget implements Widget_Interface_Do
 
             /* 更新分类表 */
             $this->_db->query($this->_db->update('table.metas')
-            ->expression('count', 'count + 1')
-            ->where('mid = ?', $category));
+            ->expression('count', 'count + 1')->where('mid = ?', $category));
         }
     }
 
@@ -325,8 +322,7 @@ class Contribute_Action extends Typecho_Widget implements Widget_Interface_Do
                 )));
 
                 $this->_db->query($this->_db->update('table.metas')
-                ->expression('count', 'count + 1')
-                ->where('mid = ?', $tag));
+                ->expression('count', 'count + 1')->where('mid = ?', $tag));
             }
         }
     }

@@ -2,7 +2,7 @@
 
  - 版本: v1.0.0
  - 作者: [ShingChi](https://github.com/shingchi)
- - 主页: <https://github.com/typecho-fans/plugins/blob/master/contribute>
+ - 主页: <https://github.com/typecho-fans/plugins/tree/master/Contribute>
 
 此插件涉及数据库操作，有潜在的未知风险，请慎用！
 
@@ -21,7 +21,7 @@
 
 ## 插件结构 ##
 
-```txt
+```
 Contribute_v1.0.0
 |-- plugins/
 |   |-- Contribute/
