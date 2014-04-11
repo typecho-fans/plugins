@@ -96,10 +96,10 @@ $this->widget('Widget_Metas_Category_List')->to($category);
 </div>
 <div class="typecho-foot" role="contentinfo">
     <div class="copyright">
-        <p><?php _e('投稿由 <a href="https://github.com/typecho-fans/plugins/blob/master/contribute" target="_blank">Contribute</a> 插件提供'); ?></p>
+        <p><?php _e('投稿由 <a href="https://github.com/typecho-fans/plugins/tree/master/Contribute" target="_blank">Contribute</a> 插件提供'); ?></p>
     </div>
     <nav class="resource">
-        <a href="https://github.com/typecho-fans/plugins/blob/master/contribute/README.md" target="_blank">插件说明</a> •
+        <a href="https://github.com/typecho-fans/plugins/blob/master/Contribute/plugins/Contribute/README.md" target="_blank">插件说明</a> •
         <a href="https://github.com/typecho-fans/plugins/issues" target="_blank">报告错误</a> •
         <a href="https://github.com/typecho-fans/plugins" target="_blank">插件下载</a>
     </nav>
