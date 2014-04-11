@@ -4,8 +4,8 @@
  * 
  * @package Hermit 
  * @author mufeng
- * @version 1.0.1
- * @update: 2014.2.11
+ * @version 1.0.4
+ * @update: 2014.4.17
  * @link http://mufeng.me/
  */
 class Hermit_Plugin implements Typecho_Plugin_Interface
@@ -75,7 +75,10 @@ class Hermit_Plugin implements Typecho_Plugin_Interface
     }
 
     /**
-     * 短代码实现方法 [hermit]songlist#:1772276934,1772276930,1772276933[/hermit] [hermit]album#:1772276934[/hermit]
+     * 短代码实现方法
+     * 歌曲列表 [hermit auto="1" loop="1"]songlist#:1772276934,1772276930,1772276933[/hermit]
+     * 专辑 [hermit auto="1" loop="1"]album#:1772276934[/hermit]
+     * 精选集 [hermit auto="1" loop="1"]collect#:28721332[/hermit]
      * 
      * @access public
      * @return void
@@ -84,8 +87,8 @@ class Hermit_Plugin implements Typecho_Plugin_Interface
     {
         $text = empty($lastResult) ? $text : $lastResult;
         if ($widget instanceof Widget_Archive) {
-			$text = preg_replace("/\[hermit\](.+?)\[\/hermit\]/is", 
-            "<!--Hermit for typecho v1.0.0 start--><div class=\"hermit\" songs=\"\\1\"><div class=\"hermit-box\"><div class=\"hermit-controls\"><div class=\"hermit-button\"></div><div class=\"hermit-detail\">单击鼠标左键播放或暂停。</div><div class=\"hermit-duration\"></div><div class=\"hermit-listbutton\"></div></div><div class=\"hermit-prosess\"><div class=\"hermit-loaded\"></div><div class=\"hermit-prosess-bar\"><div class=\"hermit-prosess-after\"></div></div></div></div><div class=\"hermit-list\"></div></div><!--Hermit for typecho v1.0.0 end-->",
+			$text = preg_replace("/\[hermit(.+?)?\](.+?)\[\/hermit\]/i",
+            "<!--Hermit for typecho v1.0.0 start--><div class=\"hermit\" \\1 songs=\"\\2\"><div class=\"hermit-box\"><div class=\"hermit-controls\"><div class=\"hermit-button\"></div><div class=\"hermit-detail\">单击鼠标左键播放或暂停。</div><div class=\"hermit-duration\"></div><div class=\"hermit-listbutton\"></div></div><div class=\"hermit-prosess\"><div class=\"hermit-loaded\"></div><div class=\"hermit-prosess-bar\"><div class=\"hermit-prosess-after\"></div></div></div></div><div class=\"hermit-list\"></div></div><!--Hermit for typecho v1.0.0 end-->",
             $text);
         }
         return $text;
