@@ -18,6 +18,7 @@
  - CateFilter: 首页指定分类不显示 [@rakiy](https://github.com/rakiy)
  - CommenToMail4BAE: BAE版邮件回复插件 [@ShingChi](https://github.com/shingchi)
  - CommentToMail: 评论邮件提醒插件 [@byends](https://github.com/byends) [@阿飞](https://github.com/defeme)
+ - Contribute: 投稿插件 [@ShingChi](https://github.com/shingchi)
  - DbManager: 数据管理工具 [@ShingChi](https://github.com/shingchi)
  - Duoshuo: 多说同步插件 [@rakiy](https://github.com/rakiy)
  - Editor: 非官方Markdown编辑器插件 [@lizheming](https://github.com/lizheming)
