@@ -2,7 +2,7 @@
 
  - 版本: v2.0.0
  - 作者: [冰剑](https://github.com/binjoo)
- - 主页: <https://github.com/typecho-fans/plugins/blob/master/contribute>
+ - 主页: <https://github.com/typecho-fans/plugins/tree/master/WeChatHelper>
 
 此插件涉及数据库操作，有潜在的未知风险，请慎用！
 
