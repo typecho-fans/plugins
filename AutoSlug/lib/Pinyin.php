@@ -5,16 +5,8 @@
  * 参考资料来源于网络
  *
  * @package Pinyin
- * @author ShingChi
  * @version 1.0
  * @link https://github.com/typecho-fans/plugins/tree/master/AutoSlug/
- */
-
-/**
- * 汉字转拼音类
- *
- * @package Pinyin
- * @copyright Copyright (c) 2013 Typecho Fans (https://github.com/typecho-fans)
  * @license GNU General Public License 2.0
  */
 class Pinyin

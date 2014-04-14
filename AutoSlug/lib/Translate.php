@@ -3,16 +3,8 @@
  * 百度翻译
  *
  * @package DuTranslate
- * @author ShingChi
  * @version 1.0
  * @link https://github.com/typecho-fans/plugins/tree/master/AutoSlug/
- */
-
-/**
- * 百度翻译类
- *
- * @package DuTranslate
- * @copyright Copyright (c) 2013 Typecho Fans (https://github.com/typecho-fans)
  * @license GNU General Public License 2.0
  */
 class DuTranslate
