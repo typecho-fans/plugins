@@ -37,4 +37,5 @@
  - ThemeDemo: 主题演示插件 [@兜兜有矿石](https://github.com/qqff01)
  - UploadPlugin: 在线安装模板和插件 [@阿飞](https://github.com/defeme)
  - Watermark: 图片水印插件(同时支持0.8和0.9) [@阿飞](https://github.com/defeme)
+ - WeChatHelper: 微信公众号插件 [@冰剑](https://github.com/binjoo)
  - XiaMiPlayer: 音乐播放器插件 [@lizheming](https://github.com/lizheming)
