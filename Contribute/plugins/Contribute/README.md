@@ -45,3 +45,15 @@ Contribute_v1.0.0
  2. 把 `themes/contribute.php` 文件上传到当前使用的模板文件夹下
  3. 把 `plugins/Contribute` 文件夹上传到插件目录
  4. 启用插件，并设置使用插件
+
+## 投稿模板参数说明 ##
+
+ - 提交: `action="<?php $this->options->index('/action/contribute?write'); ?>"`
+ - 标题: `name="title"`, 字符串类型
+ - 缩略名: `name="slug"`, 字符串类型
+ - 内容: `name="text"`, 字符串类型
+ - 撰稿人: `name="author"`, 字符串类型
+ - 日期: `name="date"`, 格式为 Y-m-d H:i, 字符串类型
+ - 分类: `name="category[]"`, 数组类型
+ - 标签: `name="tags"`, 字符串类型
+ - markdown: `name="markdown"`, value 为0或1
