@@ -22,6 +22,7 @@
  - DbManager: 数据管理工具 [@ShingChi](https://github.com/shingchi)
  - Duoshuo: 多说同步插件 [@rakiy](https://github.com/rakiy)
  - Editor: 非官方Markdown编辑器插件 [@lizheming](https://github.com/lizheming)
+ - EmlogToTypecho: Emlog 转换到 Typecho [@ShingChi](https://github.com/shingchi)
  - GoLinks: 外链转为内链插件 [@阿飞](https://github.com/defeme)
  - GoogleCodePrettfy: 代码高亮插件 [@lizheming](https://github.com/lizheming)
  - Hermit: 虾米音乐播放器，支持专辑 [@牧风](https://github.com/iMuFeng)
