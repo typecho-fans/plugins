@@ -23,14 +23,11 @@ class UploadPlugin_Plugin implements Typecho_Plugin_Interface
             throw new Typecho_Plugin_Exception(_t('对不起, 您的服务器不支持 ZipArchive 类, 无法正常使用此插件'));
         }
         if(!is_writable(__TYPECHO_PLUGIN_DIR__)){
-<<<<<<< HEAD
-            //throw new Typecho_Plugin_Exception(_t('插件目录无写入权限, 无法正常使用此插件'));
+            throw new Typecho_Plugin_Exception(_t('插件目录无写入权限, 无法正常使用此插件'));
         }
         if(!function_exists('file_put_contents') && !function_exists('fopen')){
             throw new Typecho_Plugin_Exception(_t('file_put_contents、fopen函数被禁用, 无法正常使用此插件'));
-=======
             throw new Typecho_Plugin_Exception(_t('插件目录无写入权限, 无法正常使用此插件'));
->>>>>>> bbd8eb6e279f1bd0ba8de67dff54eee82b6193e1
         }
         Helper::addPanel(1, 'UploadPlugin/panel.php', _t('上传'), _t('在线插件管理'), 'administrator');
         Helper::addAction('upload-plugin', 'UploadPlugin_Action');
