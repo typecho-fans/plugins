@@ -17,7 +17,7 @@ include 'menu.php';
                 <ul class="typecho-option-tabs">
                     <li <?php if(!isset($request->p)){ ?>class="current"<?php }?>><a href="<?php $options->adminUrl('extending.php?panel=UploadPlugin%2Fpanel.php'); ?>"><?php _e('插件管理'); ?></a></li>
                     <li <?php if(1 == $request->p){ ?>class="current"<?php }?>><a href="<?php $options->adminUrl('extending.php?panel=UploadPlugin%2Fpanel.php&p=1'); ?>"><?php _e('模板管理'); ?></a></li>
-                    <li><?php  _e(' %s选择文件上传%s', '<a href="###" class="upload-file">', '</a>'); ?></li>                
+                    <li><a href='###'><span id="singleupload">上传插件</span></a></li>                
                  </ul>
                 </div>
                 

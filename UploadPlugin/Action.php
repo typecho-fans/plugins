@@ -1,7 +1,7 @@
 <?php
-/* 
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
+/** 
+ * @author DEFE
+ * @link http://defe.me
  */
 class UploadPlugin_Action extends Typecho_Widget implements Widget_Interface_Do
 {
@@ -202,12 +202,13 @@ class UploadPlugin_Action extends Typecho_Widget implements Widget_Interface_Do
     
     public function showMsg($str, $up = True, $exit=FALSE){
         if($up && !$exit){
-            echo("<script>parent.fileUploadError('" . $this->request->_id . "','" . $str . "');</script>"); 
+            //echo("<script>parent.fileUploadError('" . $this->request->_id . "','" . $str . "');</script>"); 
+			$this->widget('Widget_Notice')->set(_t($str), NULL, 'error');
         }
         if($up && $exit){
             @unlink($this->_file);   
-            exit("<script>parent.fileUploadComplete('" . $this->request->_id
-                            . "','typecho','" . $str . "');</script>"); 
+            //exit("<script>parent.fileUploadComplete('" . $this->request->_id . "','typecho','" . $str . "');</script>"); 
+			$this->widget('Widget_Notice')->set(_t($str), NULL, 'success');
         }
         if(!$up && $exit){
             @unlink($this->_file);   
