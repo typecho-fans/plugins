@@ -4,9 +4,12 @@
  *
  * @package CommentToMail
  * @author Byends Upgrade
- * @version 1.3.1
+ * @version 1.3.2
  * @link http://www.byends.com
  * @oriAuthor DEFE (http://defe.me)
+ * 
+ * 原作者是  DEFE (http://defe.me),请尊重版权
+ * 
  */
 class CommentToMail_Plugin implements Typecho_Plugin_Interface
 {
@@ -170,7 +173,7 @@ class CommentToMail_Plugin implements Typecho_Plugin_Interface
         file_put_contents(dirname(__FILE__) . '/cache/' . $fileName, serialize($cfg));
         $url = ($options->rewrite) ? $options->siteUrl : $options->siteUrl . 'index.php';
         $url = rtrim($url, '/') . '/action/' . self::$_actionName . '?send=' . $fileName;
-        self::saveLog("开始发送请求：{$url}\n");
+
 
         $client = Typecho_Http_Client::get('Socket', 'Curl');
         if (false == $client) {
@@ -178,9 +181,10 @@ class CommentToMail_Plugin implements Typecho_Plugin_Interface
             return false;
         }
 
-        $client->send($url);
-
-        //self::asyncRequest($url);
+//        $client->send($url);
+        
+        self::saveLog("开始发送请求：{$url}\n");
+        self::asyncRequest($url);
     }
 
     /**
@@ -201,15 +205,9 @@ class CommentToMail_Plugin implements Typecho_Plugin_Interface
             $http = 'ssl://';
         }
 
-        if (function_exists('fsockopen')) {
-            $fp = @fsockopen($http . $host, $port, $errno, $errstr, 30);
-        } elseif (function_exists('pfsockopen')) {
-            $fp = @pfsockopen($http . $host, $port, $errno, $errstr, 30);
-        } else {
-            $fp = @stream_socket_client($http . $host . ":$port", $errno, $errstr, 30);
-        }
+        $fp = @fsockopen($http . $host, $port, $errno, $errstr, 30);
 
-        if (!$fp) {
+        if ($fp === false) {
             self::saveLog("SOCKET错误," . $errno . ':' . $errstr);
             return false;
         }
@@ -222,6 +220,7 @@ class CommentToMail_Plugin implements Typecho_Plugin_Interface
         self::saveLog($out."\n");
 
         fwrite($fp, $out);
+        sleep(1);
         fclose($fp);
         self::saveLog("请求结束\n");
     }
