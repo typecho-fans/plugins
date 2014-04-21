@@ -1,0 +1,3 @@
+[submodule "CommentToMail"]
+	path = CommentToMail
+	url = https://github.com/byends/CommentToMail
