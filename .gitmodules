@@ -1,3 +1,6 @@
 [submodule "CommentToMail"]
 	path = CommentToMail
 	url = https://github.com/byends/CommentToMail
+[submodule "WeChatHelper"]
+	path = WeChatHelper
+	url = https://github.com/binjoo/WeChatHelper
