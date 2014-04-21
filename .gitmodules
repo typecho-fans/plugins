@@ -4,6 +4,3 @@
 [submodule "WeChatHelper"]
     path = WeChatHelper
     url = https://github.com/binjoo/WeChatHelper
-[submodule "SlimBox2-for-Typecho"]
-    path = SlimBox2-for-Typecho
-    url = https://github.com/binjoo/SlimBox2-for-Typecho
