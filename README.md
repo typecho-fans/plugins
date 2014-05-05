@@ -36,6 +36,7 @@
  - Reposidget: Github Repo插件 [@西秦公子](https://github.com/xiqingongzi)
  - Snowstorm: 纯娱乐插件 博客飘雪 (ONLY FOR 0.9) [@rakiy](https://github.com/rakiy)
  - SyncPost: 同步微博插件 [@冰剑](https://github.com/binjoo)
+ - TeKit: Typecho多功能工具箱 [@冰剑](https://github.com/binjoo)
  - ThemeDemo: 主题演示插件 [@兜兜有矿石](https://github.com/qqff01)
  - UploadPlugin: 在线安装模板和插件 [@阿飞](https://github.com/defeme)
  - Watermark: 图片水印插件(同时支持0.8和0.9) [@阿飞](https://github.com/defeme)
