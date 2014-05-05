@@ -4,3 +4,6 @@
 [submodule "WeCahtHelper"]
 	path = WeCahtHelper
 	url = https://github.com/binjoo/WeChatHelper
+[submodule "Tekit"]
+	path = Tekit
+	url = https://github.com/binjoo/TeKit
