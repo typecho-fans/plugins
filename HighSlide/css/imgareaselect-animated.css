@@ -1,0 +1,41 @@
+/*
+ * ias animated border style
+ */
+
+.ias-border1 {
+	background: url(border-anim-v.gif) repeat-y left top;
+}
+
+.ias-border2 {
+    background: url(border-anim-h.gif) repeat-x left top;
+}
+
+.ias-border3 {
+    background: url(border-anim-v.gif) repeat-y right top;
+}
+
+.ias-border4 {
+    background: url(border-anim-h.gif) repeat-x left bottom;
+}
+
+.ias-border1, .ias-border2,
+.ias-border3, .ias-border4 {
+    filter: alpha(opacity=50);
+	opacity: 0.5;
+}
+
+.ias-handle {
+    background-color: #fff;
+	border: solid 1px #000;
+    filter: alpha(opacity=50);
+	opacity: 0.5;
+}
+
+.ias-outer {
+	background-color: #000;
+    filter: alpha(opacity=50);
+	opacity: 0.5;
+}
+
+.ias-selection {
+}
