@@ -7,3 +7,6 @@
 [submodule "Tekit"]
 	path = Tekit
 	url = https://github.com/binjoo/TeKit
+[submodule "HighSlide"]
+	path = HighSlide
+	url = https://github.com/jzwalk/HighSlide
