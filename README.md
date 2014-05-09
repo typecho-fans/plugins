@@ -27,6 +27,7 @@
  - GoLinks: 外链转为内链插件 [@阿飞](https://github.com/defeme)
  - GoogleCodePrettfy: 代码高亮插件 [@lizheming](https://github.com/lizheming)
  - Hermit: 虾米音乐播放器，支持专辑 [@牧风](https://github.com/iMuFeng)
+ - HighSlide: 强大的弹窗相册插件 [@羽中](https://github.com/jzwalk)
  - Html2Text: Html转Markdown插件 [@冰剑](https://github.com/binjoo)
  - LREditor: 编辑器增强插件 [@lizheming](http://github.com/lizheming)
  - OptimizeDB: 数据库优化插件 [@冰剑](https://github.com/binjoo)
