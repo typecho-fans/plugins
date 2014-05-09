@@ -1,4 +1,5 @@
 <?php
+if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 $fileurl = HighSlide_Plugin::filedata()->url;
 //异步加载上传列表
 if(isset($_GET["action"])&&$_GET["action"]=="loadlist") {

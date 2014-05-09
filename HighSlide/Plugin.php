@@ -1,4 +1,5 @@
 <?php
+if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 /**
  * 无缝集成HighSlide双核版实现自动化弹窗与页面相册功能. 
  * @package HighSlide
