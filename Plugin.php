@@ -4,7 +4,7 @@
  *
  * @package AppStore
  * @author chekun
- * @version 1.0.1
+ * @version 1.0.0
  * @link http://typecho.dilicms.com
  */
 class AppStore_Plugin implements Typecho_Plugin_Interface
@@ -37,8 +37,8 @@ class AppStore_Plugin implements Typecho_Plugin_Interface
 
         //创建菜单和路由
         Helper::addPanel(3, 'AppStore/market.php', '应用商店', '应用商店', 'administrator');
-        Helper::addRoute('app.store.market', '/admin/app-store/market', 'AppStore_Action', 'market');
-        Helper::addRoute('app.store.install', '/admin/app-store/install', 'AppStore_Action', 'install');
+        Helper::addRoute('app.store.market', __TYPECHO_ADMIN_DIR__.'app-store/market', 'AppStore_Action', 'market');
+        Helper::addRoute('app.store.install', __TYPECHO_ADMIN_DIR__.'app-store/install', 'AppStore_Action', 'install');
     }
 
     /**
