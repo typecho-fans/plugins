@@ -4,7 +4,7 @@
  *
  * @package AppStore
  * @author chekun
- * @version 1.0.0
+ * @version 1.0.2
  * @link http://typecho.dilicms.com
  */
 class AppStore_Plugin implements Typecho_Plugin_Interface

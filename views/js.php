@@ -34,7 +34,7 @@
                 }
 
                 $.ajax({
-                    url: '<?php echo $options->adminUrl('app-store/install'); ?>',
+                    url: '<?php echo str_replace('/market', '/install', Typecho_Request::getInstance()->getRequestUrl()); ?>',
                     dataType: 'json',
                     data: {
                         version: $version.val(),
