@@ -1,0 +1,7 @@
+<ul id="wp-xiami-sync-ul">
+    <li class="wp-xiami-series" ng-class="{selected: collects.selected == $index}" ng-repeat="collect in collects.data | WPXiaMiFilter:collects.type">
+        <img ng-src="{{collect.collect_cover}}" class="wp-xiami-series-cover" width="148" height="148">
+        <span class="wp-xiami-series-title">{{collect.collect_title}}</span>
+        <span class="wp-xiami-series-author">{{collect.collect_author}}</span><span class="wp-xiami-series-count">{{collect.collect_count}}</span>
+    </li>
+</ul>
