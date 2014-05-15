@@ -32,13 +32,13 @@ $this->need('header.php');?>
                     {@if it.collect_cover}
                         <li class="wpxm_music" data-id="${it.collect_id}" data-index="${index}">
                             <div class="wpxm_music-image">
-                                <img src="{@if it.collect_cover}${it.collect_cover}{@/if}" alt="${it.collect_title}">
+                                <img src="{@if it.collect_cover}${it.collect_cover|parseCover}{@/if}" alt="${it.collect_title}">
                                 <span class="wpxm_music-mask"></span>
                             </div>
                             <span class="wpxm_music-title">${it.collect_title|parseText}</span>
                             <span class="wpxm_music-author">${it.collect_author}</span>
                         </li>
-                    {{@/if}}
+                    {@/if}
                 {@/each}
             </ul>
         </script>
