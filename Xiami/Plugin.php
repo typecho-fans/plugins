@@ -4,7 +4,7 @@
  * 
  * @package Xiami
  * @author Mufeng
- * @version 0.0.1
+ * @version 0.0.2
  * @link http://mufeng.me
  */
 class Xiami_Plugin implements Typecho_Plugin_Interface
