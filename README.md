@@ -39,6 +39,7 @@
 4. 推送作品应确保为原创或经过作者同意能够在这里进行维护和更新
 
  > 插件目录内无license则默认视作采用与Typecho相同的[GPL](https://github.com/typecho/typecho/blob/master/license.txt)开源许可
+
 ### 作品索引(按首字排序)
 
 | 名称 | 介绍 | 作者 |
