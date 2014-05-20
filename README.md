@@ -36,7 +36,7 @@
  
  > 下方作品索引请按照格式加入一句话介绍和作者内链
 
-4. 推送作品应确保为原创或经过作者同意能够在这里进行维护和更新
+ 4. 推送作品应确保为原创或经过作者同意能够在这里进行维护和更新
 
  > 插件目录内无license则默认视作采用与Typecho相同的[GPL](https://github.com/typecho/typecho/blob/master/license.txt)开源许可
 
