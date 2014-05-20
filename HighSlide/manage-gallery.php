@@ -1,6 +1,8 @@
 <?php
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
+
 $fileurl = HighSlide_Plugin::filedata()->url;
+
 //异步加载上传列表
 if(isset($_GET["action"])&&$_GET["action"]=="loadlist") {
 	$lists = HighSlide_Plugin::filelist();
@@ -38,11 +40,14 @@ if(isset($_GET["action"])&&$_GET["action"]=="loadlist") {
 } else {
 include'header.php';
 include'menu.php';
+
 $phpMaxFilesize = function_exists('ini_get')?trim(ini_get('upload_max_filesize')):0;
 if (preg_match("/^([0-9]+)([a-z]{1,2})$/i",$phpMaxFilesize,$matches)) {
-    $phpMaxFilesize = strtolower($matches[1].$matches[2].(1 == strlen($matches[2])?'b':''));
+	$phpMaxFilesize = strtolower($matches[1].$matches[2].(1 == strlen($matches[2])?'b':''));
 }
+
 $settings = $options->plugin('HighSlide');
+
 //获取相册数据
 $datas1 = $db->fetchAll($db->select('sort')->from('table.gallery')->order('order',Typecho_Db::SORT_ASC));
 foreach ($datas1 as $data1) {
@@ -54,6 +59,7 @@ if(!empty($sorts)) {
 	$group1 = array_shift($groups);
 	$galleries1 = $db->fetchAll($db->select()->from('table.gallery')->where('sort=?',$group1)->order('order',Typecho_Db::SORT_ASC));
 }
+
 //获取缩略比例
 $ratio = ($settings->thumbfix=='fixedratio')?$settings->fixedratio:'false';
 ?>
@@ -61,7 +67,9 @@ $ratio = ($settings->thumbfix=='fixedratio')?$settings->fixedratio:'false';
 	<div class="body container">
 		<?php include 'page-title.php'; ?>
 		<div class="row typecho-page-main manage-galleries">
+
 			<div class="col-mb-12 typecho-list">
+
 				<div class="clearfix">
 					<ul class="typecho-option-tabs right">
 						<li<?php if(!isset($request->tab)||'images'==$request->get('tab')): ?> class="active w-50"<?php else: ?> class="w-50"<?php endif; ?>><a href="<?php $options->adminUrl('extending.php?panel=HighSlide%2Fmanage-gallery.php'); ?>"><?php _e('图片编辑'); ?></a></li>
@@ -79,11 +87,13 @@ $ratio = ($settings->thumbfix=='fixedratio')?$settings->fixedratio:'false';
 						<li><a href="http://www.jzwalk.com/archives/net/highslide-for-typecho/" title="查看页面相册使用帮助" target="_blank"><?php _e('帮助'); ?></a></li>
 					</ul>
 				</div>
+
 				<div class="col-mb-12 col-tb-7" role="main">
 					<form method="post" name="manage_galleries" class="operate-form">
+
 					<div class="typecho-list-operate clearfix">
 						<div class="operate">
-                        	<label><i class="sr-only"><?php _e('全选'); ?></i><input type="checkbox" class="typecho-table-select-all" /></label>
+							<label><i class="sr-only"><?php _e('全选'); ?></i><input type="checkbox" class="typecho-table-select-all" /></label>
 							<div class="btn-group btn-drop">
 								<button class="btn dropdown-toggle btn-s" type="button"><i class="sr-only"><?php _e('操作'); ?></i><?php _e('选中项'); ?> <i class="i-caret-down"></i></button>
 								<ul class="dropdown-menu">
@@ -92,6 +102,7 @@ $ratio = ($settings->thumbfix=='fixedratio')?$settings->fixedratio:'false';
 							</div>
 						</div>
 					</div>
+
 					<div class="typecho-table-wrap">
 						<table class="typecho-list-table">
 							<colgroup>
@@ -138,9 +149,12 @@ $ratio = ($settings->thumbfix=='fixedratio')?$settings->fixedratio:'false';
 							</tbody>
 						</table>
 					</div>
+
 					</form>
 				</div>
+
 				<div class="col-mb-12 col-tb-5" role="complementary">
+
 				<?php if(!isset($request->tab)||'images'==$request->get('tab')): ?>
 					<link rel="stylesheet" type="text/css" media="all" href="<?php $options->pluginUrl('HighSlide/css/imgareaselect-animated.css'); ?>" />
 					<div id="tab-files" class="tab-content">
@@ -150,24 +164,30 @@ $ratio = ($settings->thumbfix=='fixedratio')?$settings->fixedratio:'false';
 							<ul id="file-list"></ul>
 						</div>
 					</div>
+
 					<div id="tab-forms"><?php HighSlide_Plugin::form()->render(); ?></div>
 				<?php else: ?>
 					<div id="tab-settings" class="typecho-content-panel">
 						<?php HighSlide_Plugin::form('sync','2')->render(); ?>
 					</div><!-- end #tab-advance -->
 				<?php endif; ?>
+
 			</div>
+
 		</div>
 	</div>
 </div>
+
 <?php
 include'copyright.php';
 include'common-js.php';
 include'form-js.php';
 ?>
+
 <script src="<?php $options->adminUrl('js/moxie.js?v=' . $suffixVersion); ?>"></script>
 <script src="<?php $options->adminUrl('js/plupload.js?v=' . $suffixVersion); ?>"></script>
 <script src="<?php $options->pluginUrl('HighSlide/js/imgareaselect.js'); ?>"></script>
+	
 <script type="text/javascript">
 $(document).ready(function() {
 	var table = $('.typecho-list-table').tableDnD({
@@ -205,23 +225,23 @@ $(document).ready(function() {
 	$('.typecho-mini-panel').effect('highlight', '#AACB36');
 	<?php endif; ?>
 
-    $('.upload-area').bind({
-        dragenter:function(){
-            $(this).parent().addClass('drag');
-        },
-        dragover:function(e){
-            $(this).parent().addClass('drag');
-        },
-        drop:function(){
-            $(this).parent().removeClass('drag');
-        },
-        dragend:function(){
-            $(this).parent().removeClass('drag');
-        },
-        dragleave:function(){
-            $(this).parent().removeClass('drag');
-        }
-    });
+	$('.upload-area').bind({
+		dragenter:function(){
+			$(this).parent().addClass('drag');
+		},
+		dragover:function(e){
+			$(this).parent().addClass('drag');
+		},
+		drop:function(){
+			$(this).parent().removeClass('drag');
+		},
+		dragend:function(){
+			$(this).parent().removeClass('drag');
+		},
+		dragleave:function(){
+			$(this).parent().removeClass('drag');
+		}
+	});
 
 	var list = $('#file-list');
 	$.ajax({
@@ -245,40 +265,40 @@ $(document).ready(function() {
 		}
 	});
 
-    function fileUploadStart(file){
-        $('<li id="'+file.id+'" class="loading">'
-            +file.name+'</li>').prependTo('#file-list');
-    }
-    function fileUploadError(error){
-        var file = error.file,code = error.code,word;
-        switch (code) {
-            case plupload.FILE_SIZE_ERROR:
-                word = '<?php _e('文件大小超过限制'); ?>';
-                break;
-            case plupload.FILE_EXTENSION_ERROR:
-                word = '<?php _e('文件扩展名不被支持'); ?>';
-                break;
-            case plupload.FILE_DUPLICATE_ERROR:
-                word = '<?php _e('文件已经上传过'); ?>';
-                break;
-            case plupload.HTTP_ERROR:
-            default:
-                word = '<?php _e('上传出现错误'); ?>';
-                break;
-        }
-        var fileError = '<?php _e('%s 上传失败'); ?>'.replace('%s',file.name),
-            li,exist = $('#'+file.id);
-        if (exist.length>0){
-            li = exist.removeClass('loading').html(fileError);
-        }else{
-            li = $('<li>'+fileError+'<br />'+word+'</li>').prependTo('#file-list');
-        }
-        li.effect('highlight',{color:'#FBC2C4'},2000,function(){
-            $(this).remove();
-        });
-    }
+	function fileUploadStart(file){
+		$('<li id="'+file.id+'" class="loading">'
+			+file.name+'</li>').prependTo('#file-list');
+	}
+	function fileUploadError(error){
+		var file = error.file,code = error.code,word;
+		switch (code) {
+			case plupload.FILE_SIZE_ERROR:
+				word = '<?php _e('文件大小超过限制'); ?>';
+				break;
+			case plupload.FILE_EXTENSION_ERROR:
+				word = '<?php _e('文件扩展名不被支持'); ?>';
+				break;
+			case plupload.FILE_DUPLICATE_ERROR:
+				word = '<?php _e('文件已经上传过'); ?>';
+				break;
+			case plupload.HTTP_ERROR:
+			default:
+				word = '<?php _e('上传出现错误'); ?>';
+				break;
+		}
+		var fileError = '<?php _e('%s 上传失败'); ?>'.replace('%s',file.name),
+			li,exist = $('#'+file.id);
+		if (exist.length>0){
+			li = exist.removeClass('loading').html(fileError);
+		} else {
+			li = $('<li>'+fileError+'<br />'+word+'</li>').prependTo('#file-list');
+		}
+		li.effect('highlight',{color:'#FBC2C4'},2000,function(){
+			$(this).remove();
+		});
+	}
 
-    var completeFile = null;
+	var completeFile = null;
 	function fileUploadComplete(id,data) {
 		var li = $('#'+id).removeClass('loading').data('name',data.name)
 			.html('<input type="hidden" name="imgname" value="'+data.name+'" />'
@@ -298,59 +318,59 @@ $(document).ready(function() {
 		imageDeleteEvent(li);
 		thumbCropEvent(li);
 		autoSelectEvent(li);
-        if (!completeFile) {
-            completeFile = data;
-        }
+		if (!completeFile) {
+			completeFile = data;
+		}
 	}
 
-        var uploader = new plupload.Uploader({
-            browse_button   :   $('.upload-file').get(0),
-            url             :   '<?php $security->index('/action/gallery-edit?do=upload'); ?>',
-            runtimes        :   'html5,flash,html4',
-            flash_swf_url   :   '<?php $options->adminUrl('js/Moxie.swf'); ?>',
-            drop_element    :   $('.upload-area').get(0),
-            filters         :   {
-                max_file_size       :   '<?php echo $phpMaxFilesize ?>',
-                mime_types          :   [{'title' : '<?php _e('允许上传的文件'); ?>', 'extensions' : 'gif,jpg,jpeg,png,tiff,bmp'}],
-                prevent_duplicates  :   true
-            },
+		var uploader = new plupload.Uploader({
+			browse_button   :   $('.upload-file').get(0),
+			url			 :   '<?php $security->index('/action/gallery-edit?do=upload'); ?>',
+			runtimes		:   'html5,flash,html4',
+			flash_swf_url   :   '<?php $options->adminUrl('js/Moxie.swf'); ?>',
+			drop_element	:   $('.upload-area').get(0),
+			filters		 :   {
+				max_file_size	   :   '<?php echo $phpMaxFilesize ?>',
+				mime_types		  :   [{'title' : '<?php _e('允许上传的文件'); ?>', 'extensions' : 'gif,jpg,jpeg,png,tiff,bmp'}],
+				prevent_duplicates  :   true
+			},
 
-            init            :   {
-                FilesAdded      :   function (up, files) {
-                    plupload.each(files, function(file) {
-                        fileUploadStart(file);
-                    });
+			init			:   {
+				FilesAdded	  :   function (up, files) {
+					plupload.each(files, function(file) {
+						fileUploadStart(file);
+					});
 
-                    completeFile = null;
-                    uploader.start();
-                },
+					completeFile = null;
+					uploader.start();
+				},
 
-                UploadComplete  :   function () {
-                },
+				UploadComplete  :   function () {
+				},
 
-                FileUploaded    :   function (up, file, result) {
-                    if (200 == result.status) {
-                        var data = $.parseJSON(result.response);
+				FileUploaded	:   function (up, file, result) {
+					if (200 == result.status) {
+						var data = $.parseJSON(result.response);
 
-                        if (data) {
-                            fileUploadComplete(file.id, data[0], data[1]);
-                            return;
-                        }
-                    }
+						if (data) {
+							fileUploadComplete(file.id, data[0], data[1]);
+							return;
+						}
+					}
 
-                    fileUploadError({
-                        code : plupload.HTTP_ERROR,
-                        file : file
-                    });
-                },
+					fileUploadError({
+						code : plupload.HTTP_ERROR,
+						file : file
+					});
+				},
 
-                Error           :   function (up, error) {
-                    fileUploadError(error);
-                }
-            }
-        });
+				Error		   :   function (up, error) {
+					fileUploadError(error);
+				}
+			}
+		});
 
-        uploader.init();
+		uploader.init();
 
 	function imageAddtoEvent(el) {
 		$('.addto',el).click(function () {
@@ -430,7 +450,7 @@ $(document).ready(function() {
 			handles:true,
 			instance:true,
 			classPrefix:'ias-'+id+' ias',
-			aspectRatio:'<?php echo $ratio;?>',
+			aspectRatio:'<?php echo $ratio; ?>',
 			onSelectEnd:function(img,selection) {
 				$('#x1',el).val(selection.x1);
 				$('#y1',el).val(selection.y1);
@@ -480,5 +500,7 @@ $(document).ready(function() {
 	$('#file-list').css({'max-height':'5000px'});
 });
 </script>
+
 <?php include'footer.php';
+
 } ?>

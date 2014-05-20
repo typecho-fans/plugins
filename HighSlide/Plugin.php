@@ -1,5 +1,6 @@
 <?php
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
+
 /**
  * 无缝集成HighSlide双核版实现自动化弹窗与页面相册功能. 
  * @package HighSlide
@@ -20,15 +21,20 @@ class HighSlide_Plugin implements Typecho_Plugin_Interface
 	public static function activate()
 	{
 		$info = HighSlide_Plugin::galleryinstall();
+
 		Helper::addPanel(3,'HighSlide/manage-gallery.php',_t('页面相册'),_t('配置页面相册 <span style="color:#999;">(HighSlide全功能版核心支持)</span>'),'administrator');
 		Helper::addAction('gallery-edit','HighSlide_Action');
+
 		Typecho_Plugin::factory('Widget_Archive')->header = array('HighSlide_Plugin','headlink');
 		Typecho_Plugin::factory('Widget_Archive')->footer = array('HighSlide_Plugin','footlink');
+
 		Typecho_Plugin::factory('Widget_Abstract_Contents')->contentEx = array('HighSlide_Plugin','autohighslide');
 		Typecho_Plugin::factory('Widget_Abstract_Contents')->excerptEx = array('HighSlide_Plugin','autohighslide');
+
 		Typecho_Plugin::factory('admin/write-post.php')->bottom = array('HighSlide_Plugin','jshelper');
 		Typecho_Plugin::factory('admin/write-page.php')->bottom = array('HighSlide_Plugin','jshelper');
 		Typecho_Plugin::factory('admin/write-post.php')->option = array('HighSlide_Plugin','uploadpanel');
+
 		return _t($info);
 	}
    
@@ -70,11 +76,11 @@ $(function() {
 	}
 	full.click(function() {
 		adv.attr('style','color:#467B96;font-weight:bold');
- 		option.removeAttr('style');
+		option.removeAttr('style');
 	});
 	basic.click(function() {
 		adv.attr('style','color:#999;font-weight:bold');
- 		option.attr('style','color:#999');
+		option.attr('style','color:#999');
 	});
 });
 </script>
@@ -82,120 +88,116 @@ $(function() {
 		$mode = new Typecho_Widget_Helper_Form_Element_Radio('mode',
 			array('highslide.packed.js'=>_t('基础版 <span style="color:#999;font-size:0.92857em;">(25.2K)支持插图弹窗</span>'),'highslide-full.packed.js'=>_t('全功能版 <span style="color:#999;font-size:0.92857em;">(46.8K)支持插图幻灯/html弹窗/页面相册等</span>')),'highslide.packed.js',_t('核心选择'));
 		$form->addInput($mode);
+
 		$rpmode = new Typecho_Widget_Helper_Form_Element_Radio('rpmode',
 			array('ahref'=>_t('链接图片'),'imgsrc'=>_t('所有图片')),'ahref',_t('应用模式'),NULL);
 		$form->addInput($rpmode);
+
 		$rplist = new Typecho_Widget_Helper_Form_Element_Checkbox('rplist',
 			array('index'=>_t('首页'),'post'=>_t('文章页'),'page'=>_t('独立页'),'archive'=>_t('索引页')),array('index','post','page','archive'),_t('应用范围'),NULL);
 		$form->addInput($rplist);
+
 		$lang = new Typecho_Widget_Helper_Form_Element_Radio('lang',
 			array('chs'=>_t('中文'),'eng'=>_t('英文')),'chs',_t('提示语言'));
 		$form->addInput($lang);
+
 		$outline= new Typecho_Widget_Helper_Form_Element_Radio('outline',
 			array(''=>_t('无边框'),'rounded-white'=>_t('圆角白'),'rounded-black'=>_t('圆角黑'),'glossy-dark'=>_t('亮泽黑'),'outer-glow'=>_t('外发光'),'beveled'=>_t('半透明')),'',_t('边框风格'));
 		$form->addInput($outline);
+
 		$butn = new Typecho_Widget_Helper_Form_Element_Radio('butn',
 			array('false'=>_t('不显示'),'true'=>_t('显示')),'false',_t('关闭按钮'));
 		$form->addInput($butn);
+
 		$ltext = new Typecho_Widget_Helper_Form_Element_Text('ltext',
 			NULL,'&copy; '.$_SERVER['HTTP_HOST'].'',_t('角标文字'),_t('弹窗logo文字与显示位置，留空则不显示'));
 		$ltext->input->setAttribute('class','mini');
 		$form->addInput($ltext);
+
 		$lpos = new Typecho_Widget_Helper_Form_Element_Select('lpos',
 			array('top left'=>_t('左上'),'top center'=>_t('中上'),'top right'=>_t('右上'),'bottom left'=>_t('左下'),'bottom center'=>_t('中下'),'bottom right'=>_t('右下')),'top left','');
 		$lpos->removeAttribute('class','typecho-label');
 		$lpos->input->setAttribute('style','position:absolute;bottom:42px;left:165px;');
 		$lpos->setAttribute('style','list-style:none;position:relative;');
 		$form->addInput($lpos);
+
 		$capt = new Typecho_Widget_Helper_Form_Element_Radio('capt',
 			array(''=>_t('不显示'),'this.a.title'=>_t('显示链接title'),'this.thumb.alt'=>_t('显示图片alt')),'',_t('图片说明'),_t('例: &#60;a href="http://xx.jpg" title="图片说明写这"&#62;&#60;img src="http://xxx.jpg" alt="或者写这显示"/&#62;&#60;/a&#62;<p class="advanced" style="color:#467B96;font-weight:bold;">全功能版设置 ———————————————————————————————————————</p>'));
 		$form->addInput($capt);
+
 		$align = new Typecho_Widget_Helper_Form_Element_Radio('align',
 			array('default'=>_t('默认'),'center'=>_t('居中')),'default',_t('弹窗位置'));
 		$form->addInput($align);
+
 		$opac = new Typecho_Widget_Helper_Form_Element_Text('opac',
 			NULL,'0.65',_t('背景遮罩'),_t('可填入0~1之间小数, 代表透明至纯黑'));
 		$opac->input->setAttribute('class','mini');
 		$form->addInput($opac->addRule('isFloat',_t('请填写数字')));
+
 		$slide = new Typecho_Widget_Helper_Form_Element_Radio('slide',
 			array('false'=>_t('关闭'),'true'=>_t('开启')),'true',_t('幻灯按钮'));
 		$form->addInput($slide);
+
 		$nextimg = new Typecho_Widget_Helper_Form_Element_Radio('nextimg',
 			array('false'=>_t('否'),'true'=>_t('是')),'false',_t('自动翻页'),_t('开启后点击图片为显示下一张'));
 		$form->addInput($nextimg);
+
 		$cpos = new Typecho_Widget_Helper_Form_Element_Radio('cpos',
 			array(''=>_t('不显示'),'caption'=>_t('底部显示'),'heading'=>_t('顶部显示')),'',_t('图片序数'));
 		$form->addInput($cpos);
+
 		$wrap = new Typecho_Widget_Helper_Form_Element_Checkbox('wrap',
 			array('draggable-header'=>_t('标题栏 <span style="color:#999;font-size:0.92857em;">支持&#60;hs title="标题"&#62;显示</span>'),'no-footer'=>_t('无拉伸')),NULL,_t('html弹窗效果'));
 		$form->addInput($wrap);
-		//相册同步设置
-		$storage = new Typecho_Widget_Helper_Form_Element_Radio('storage',
-			array('local'=>_t('本地'),'qiniu'=>_t('七牛'),'upyun'=>_t('又拍云'),'bcs'=>_t('百度BCS')),'local','');
-		$form->addInput($storage->setAttribute('style','display:none;'));
-		$local = new Typecho_Widget_Helper_Form_Element_Text('local',
-			NULL,'/usr/uploads/HSgallery/','');
-		$form->addInput($local->setAttribute('style','display:none;'));
-		$qiniubucket = new Typecho_Widget_Helper_Form_Element_Text('qiniubucket',
-			NULL,'','');
-		$form->addInput($qiniubucket->setAttribute('style','display:none;'));
-		$qiniudomain = new Typecho_Widget_Helper_Form_Element_Text('qiniudomain',
-			NULL,'http://','');
-		$form->addInput($qiniudomain->setAttribute('style','display:none;'));
-		$qiniuaccesskey = new Typecho_Widget_Helper_Form_Element_Text('qiniuaccesskey',
-			NULL,'','');
-		$form->addInput($qiniuaccesskey->setAttribute('style','display:none;'));
-		$qiniusecretkey = new Typecho_Widget_Helper_Form_Element_Text('qiniusecretkey',
-			NULL,'','');
-		$form->addInput($qiniusecretkey->setAttribute('style','display:none;'));
-		$qiniuprefix = new Typecho_Widget_Helper_Form_Element_Text('qiniuprefix',
-			NULL,'usr/uploads/HSgallery/','');
-		$form->addInput($qiniuprefix->setAttribute('style','display:none;'));
-		$upyunbucket = new Typecho_Widget_Helper_Form_Element_Text('upyunbucket',
-			NULL,'','');
-		$form->addInput($upyunbucket->setAttribute('style','display:none;'));
-		$upyundomain = new Typecho_Widget_Helper_Form_Element_Text('upyundomain',
-			NULL,'http://','');
-		$form->addInput($upyundomain->setAttribute('style','display:none;'));
-		$upyunuser = new Typecho_Widget_Helper_Form_Element_Text('upyunuser',
-			NULL,'','');
-		$form->addInput($upyunuser->setAttribute('style','display:none;'));
-		$upyunpwd = new Typecho_Widget_Helper_Form_Element_Text('upyunpwd',
-			NULL,'','');
-		$form->addInput($upyunpwd->setAttribute('style','display:none;'));
-		$upyunkey = new Typecho_Widget_Helper_Form_Element_Text('upyunkey',
-			NULL,'','');
-		$form->addInput($upyunkey->setAttribute('style','display:none;'));
-		$upyunprefix = new Typecho_Widget_Helper_Form_Element_Text('upyunprefix',
-			NULL,'/usr/uploads/HSgallery/','');
-		$form->addInput($upyunprefix->setAttribute('style','display:none;'));
-		$bcsbucket = new Typecho_Widget_Helper_Form_Element_Text('bcsbucket',
-			NULL,'','');
-		$form->addInput($bcsbucket->setAttribute('style','display:none;'));
-		$bcsapikey = new Typecho_Widget_Helper_Form_Element_Text('bcsapikey',
-			NULL,'','');
-		$form->addInput($bcsapikey->setAttribute('style','display:none;'));
-		$bcssecretkey = new Typecho_Widget_Helper_Form_Element_Text('bcssecretkey',
-			NULL,'','');
-		$form->addInput($bcssecretkey->setAttribute('style','display:none;'));
-		$bcsprefix = new Typecho_Widget_Helper_Form_Element_Text('bcsprefix',
-			NULL,'/usr/uploads/HSgallery/','');
-		$form->addInput($bcsprefix->setAttribute('style','display:none;'));
-		$thumbfix = new Typecho_Widget_Helper_Form_Element_Radio('thumbfix',
-			array('fixedwidth'=>_t('固定宽度'),'fixedheight'=>_t('固定高度'),'fixedratio'=>_t('固定比例')),'fixedwidth','');
-		$form->addInput($thumbfix->setAttribute('style','display:none;'));
-		$fixedwidth = new Typecho_Widget_Helper_Form_Element_Text('fixedwidth',
-			NULL,'100','');
-		$form->addInput($fixedwidth->setAttribute('style','display:none;'));
-		$fixedheight = new Typecho_Widget_Helper_Form_Element_Text('fixedheight',
-			NULL,'200','');
-		$form->addInput($fixedheight->setAttribute('style','display:none;'));
-		$fixedratio = new Typecho_Widget_Helper_Form_Element_Text('fixedratio',
-			NULL,'4:3','');
-		$form->addInput($fixedratio->setAttribute('style','display:none;'));
-		$gallery = new Typecho_Widget_Helper_Form_Element_Select('gallery',
-			array('gallery-horizontal-strip'=>'','gallery-thumbstrip-above'=>'','gallery-vertical-strip'=>'','gallery-in-box'=>'','gallery-floating-thumbs'=>'','gallery-floating-caption'=>'','gallery-controls-in-heading'=>'','gallery-in-page'=>''),'gallery-horizontal-strip','');
-		$form->addInput($gallery->setAttribute('style','display:none;'));
+
+		//相册设置隐藏域
+		$storage = new Typecho_Widget_Helper_Form_Element_Hidden('storage',
+			array('local','qiniu','upyun','bcs'),'local');
+		$form->addInput($storage);
+		$local = new Typecho_Widget_Helper_Form_Element_Hidden('local',NULL,'/usr/uploads/HSgallery/');
+		$form->addInput($local);
+		$qiniubucket = new Typecho_Widget_Helper_Form_Element_Hidden('qiniubucket',NULL,'');
+		$form->addInput($qiniubucket);
+		$qiniudomain = new Typecho_Widget_Helper_Form_Element_Hidden('qiniudomain',NULL,'http://');
+		$form->addInput($qiniudomain);
+		$qiniuaccesskey = new Typecho_Widget_Helper_Form_Element_Hidden('qiniuaccesskey',NULL,'');
+		$form->addInput($qiniuaccesskey);
+		$qiniusecretkey = new Typecho_Widget_Helper_Form_Element_Hidden('qiniusecretkey',NULL,'');
+		$form->addInput($qiniusecretkey);
+		$qiniuprefix = new Typecho_Widget_Helper_Form_Element_Hidden('qiniuprefix',NULL,'usr/uploads/HSgallery/');
+		$form->addInput($qiniuprefix);
+		$upyunbucket = new Typecho_Widget_Helper_Form_Element_Hidden('upyunbucket',NULL,'');
+		$form->addInput($upyunbucket);
+		$upyundomain = new Typecho_Widget_Helper_Form_Element_Hidden('upyundomain',NULL,'http://');
+		$form->addInput($upyundomain);
+		$upyunuser = new Typecho_Widget_Helper_Form_Element_Hidden('upyunuser',NULL,'');
+		$form->addInput($upyunuser);
+		$upyunpwd = new Typecho_Widget_Helper_Form_Element_Hidden('upyunpwd',NULL,'');
+		$form->addInput($upyunpwd);
+		$upyunkey = new Typecho_Widget_Helper_Form_Element_Hidden('upyunkey',NULL,'');
+		$form->addInput($upyunkey);
+		$upyunprefix = new Typecho_Widget_Helper_Form_Element_Hidden('upyunprefix',NULL,'/usr/uploads/HSgallery/');
+		$form->addInput($upyunprefix);
+		$bcsbucket = new Typecho_Widget_Helper_Form_Element_Hidden('bcsbucket',NULL,'');
+		$form->addInput($bcsbucket);
+		$bcsapikey = new Typecho_Widget_Helper_Form_Element_Hidden('bcsapikey',NULL,'');
+		$form->addInput($bcsapikey);
+		$bcssecretkey = new Typecho_Widget_Helper_Form_Element_Hidden('bcssecretkey',NULL,'');
+		$form->addInput($bcssecretkey);
+		$bcsprefix = new Typecho_Widget_Helper_Form_Element_Hidden('bcsprefix',NULL,'/usr/uploads/HSgallery/');
+		$form->addInput($bcsprefix);
+		$thumbfix = new Typecho_Widget_Helper_Form_Element_Hidden('thumbfix',
+			array('fixedwidth','fixedheight','fixedratio'),'fixedwidth');
+		$form->addInput($thumbfix);
+		$fixedwidth = new Typecho_Widget_Helper_Form_Element_Hidden('fixedwidth',NULL,'100');
+		$form->addInput($fixedwidth);
+		$fixedheight = new Typecho_Widget_Helper_Form_Element_Hidden('fixedheight',NULL,'200');
+		$form->addInput($fixedheight);
+		$fixedratio = new Typecho_Widget_Helper_Form_Element_Hidden('fixedratio',NULL,'4:3');
+		$form->addInput($fixedratio);
+		$gallery = new Typecho_Widget_Helper_Form_Element_Hidden('gallery',
+			array('gallery-horizontal-strip','gallery-thumbstrip-above','gallery-vertical-strip','gallery-in-box','gallery-floating-thumbs','gallery-floating-caption','gallery-controls-in-heading','gallery-in-page'),'gallery-horizontal-strip');
+		$form->addInput($gallery);
 	}
 
 	/**
@@ -220,10 +222,12 @@ $(function() {
 		$type = explode('_',$installdb->getAdapterName());
 		$type = array_pop($type);
 		$prefix = $installdb->getPrefix();
+
 		$scripts = file_get_contents('usr/plugins/HighSlide/'.$type.'.sql');
 		$scripts = str_replace('typecho_',$prefix,$scripts);
 		$scripts = str_replace('%charset%','utf8',$scripts);
 		$scripts = explode(';',$scripts);
+
 		try {
 			foreach ($scripts as $script) {
 				$script = trim($script);
@@ -302,6 +306,8 @@ $(function() {
 	{
 		$options = Helper::options();
 		$settings = $options->plugin('HighSlide');
+
+		//判断本地附件源
 		if (strpos($url,$options->siteUrl)===false) {
 			if ($settings->storage=='local') {
 				$prefix = ($path)?$path:$settings->local;
@@ -323,11 +329,11 @@ $(function() {
 				$fileurl = Typecho_Common::url($prefix,'http://bcs.duapp.com');
 				$filedir = Typecho_Common::url($prefix,'');
 			}
-		//本地附件源删除
 		} else {
 			$fileurl = Typecho_Common::url($path,$options->siteUrl);
 			$filedir = Typecho_Common::url($path,__TYPECHO_ROOT_DIR__);
 		}
+
 		return new Typecho_Config(array('url'=>$fileurl,'dir'=>$filedir));
 	}
 
@@ -344,6 +350,7 @@ $(function() {
 		$filedata = self::filedata();
 		$fileurl = $filedata->url;
 		$filedir = $filedata->dir;
+
 		//获取对比数据
 		$urls = $db->fetchAll($db->select('image','thumb')->from('table.gallery'));
 		$images = array();
@@ -352,6 +359,7 @@ $(function() {
 			$images[] = $url['image'];
 			$thumbs[] = $url['thumb'];
 		}
+
 		//获取本地列表
 		if ($settings->storage=='local') {
 			$lists = glob($filedir.'*[0-9].{gif,jpg,jpeg,png,tiff,bmp,GIF,JPG,JPEG,PNG,TIFF,BMP}',GLOB_BRACE|GLOB_NOSORT);
@@ -359,6 +367,7 @@ $(function() {
 				$datas[] = array('key'=>$list,'fsize'=>filesize($list));
 			}
 		}
+
 		//获取七牛列表
 		if ($settings->storage=='qiniu') {
 			self::qiniuset($settings->qiniuaccesskey,$settings->qiniusecretkey);
@@ -368,6 +377,7 @@ $(function() {
 				$datas = $result;
 			}
 		}
+
 		//获取又拍云列表
 		if ($settings->storage=='upyun') {
 			$upyun = self::upyunset();
@@ -376,10 +386,11 @@ $(function() {
 				$datas[] = array('key'=>$list['name'],'fsize'=>$list['size']);
 			}
 		}
+
 		//获取百度BCS列表
 		if ($settings->storage=='bcs') {
 			$bcs = self::bcsset();
-			$result = $bcs->list_object($settings->bcsbucket,array('prefix' =>$filedir));
+			$result = $bcs->list_object($settings->bcsbucket,array('prefix'=>$filedir));
 			if ($result->isOK()) {
 				$decode = json_decode($result->body,true);
 				$lists = $decode['object_list'];
@@ -388,6 +399,7 @@ $(function() {
 				}
 			}
 		}
+
 		//重构处理排序
 		if (!empty($datas)) {
 			foreach ($datas as $data) {
@@ -400,6 +412,7 @@ $(function() {
 			return false;
 		}
 		ksort($files);
+
 		$filelist = array();
 		$id=0;
 		foreach ($files as $file) {
@@ -410,6 +423,7 @@ $(function() {
 				$filelist[] = array('id'=>$id++,'name'=>$filename,'size'=>$filesize);
 			}
 		}
+
 		return $filelist;
 	}
 
@@ -424,99 +438,130 @@ $(function() {
 	{
 		$options = Helper::options();
 		$settings = $options->plugin('HighSlide');
+
 		//图片编辑表单
 		$form1 = new Typecho_Widget_Helper_Form(Typecho_Common::url('/action/gallery-edit',$options->index),
 		Typecho_Widget_Helper_Form::POST_METHOD);
+
 		$image = new Typecho_Widget_Helper_Form_Element_Text('image',
 			NULL,"http://",_t('原图地址*'));
 		$form1->addInput($image);
+
 		$thumb = new Typecho_Widget_Helper_Form_Element_Text('thumb',
 			NULL,"http://",_t('缩略图地址*'));
 		$form1->addInput($thumb);
+
 		$name = new Typecho_Widget_Helper_Form_Element_Text('name',
 			NULL,NULL,_t('图片名称'));
 		$name->input->setAttribute('class','mini');
 		$form1->addInput($name);
+
 		$description = new Typecho_Widget_Helper_Form_Element_Textarea('description',
 			NULL,NULL,_t('图片描述'),_t('推荐填写, 用于展示相册中图片的文字说明效果'));
 		$form1->addInput($description);
+
 		$sort = new Typecho_Widget_Helper_Form_Element_Text('sort',
 			NULL,"1",_t('相册组*'),_t('输入数字, 对应写入[GALLERY-数字]在页面调用'));
 		$sort->input->setAttribute('class','w-10');
 		$form1->addInput($sort);
+
 		$do = new Typecho_Widget_Helper_Form_Element_Hidden('do');
 		$form1->addInput($do);
+
 		$gid = new Typecho_Widget_Helper_Form_Element_Hidden('gid');
 		$form1->addInput($gid);
+
 		$submit = new Typecho_Widget_Helper_Form_Element_Submit();
-    	$submit->input->setAttribute('class','btn');
+		$submit->input->setAttribute('class','btn');
 		$form1->addItem($submit);
+
 		//相册设置表单
 		$form2 = new Typecho_Widget_Helper_Form(Typecho_Common::url('/action/gallery-edit?do=sync',$options->index),
 		Typecho_Widget_Helper_Form::POST_METHOD);
+
 		$gallery = new Typecho_Widget_Helper_Form_Element_Select('gallery',
 			array('gallery-horizontal-strip'=>_t('连环画册'),'gallery-thumbstrip-above'=>_t('黑色影夹'),'gallery-vertical-strip'=>_t('时光胶带'),'gallery-in-box'=>_t('纯白记忆'),'gallery-floating-thumbs'=>_t('往事片段'),'gallery-floating-caption'=>_t('沉默注脚'),'gallery-controls-in-heading'=>_t('岁月名片'),'gallery-in-page'=>_t('幻影橱窗(单相册)')),$settings->gallery,_t('相册风格'),_t('套装效果, 不受插件通用设置影响'));
 		$form2->addInput($gallery);
+
 		$thumboptions = array(
-			'fixedwidth'	=>  _t('固定宽度 %s', ' <input type="text" class="w-10 text-s mono" name="fixedwidth" value="'.$settings->fixedwidth.'" />'),
-			'fixedheight'	=>  _t('固定高度 %s', ' <input type="text" class="w-10 text-s mono" name="fixedheight" value="'.$settings->fixedheight.'" />'),
-			'fixedratio'	=>  _t('固定比例 %s', ' <input type="text" class="w-10 text-s mono" name="fixedratio" value="'.$settings->fixedratio.'" />'),
+			'fixedwidth'=>_t('固定宽度 %s',' <input type="text" class="w-10 text-s mono" name="fixedwidth" value="'.$settings->fixedwidth.'" />'),
+			'fixedheight'=>_t('固定高度 %s',' <input type="text" class="w-10 text-s mono" name="fixedheight" value="'.$settings->fixedheight.'" />'),
+			'fixedratio'=>_t('固定比例 %s',' <input type="text" class="w-10 text-s mono" name="fixedratio" value="'.$settings->fixedratio.'" />'),
 		);
 		$thumbfix = new Typecho_Widget_Helper_Form_Element_Radio('thumbfix',
 			$thumboptions,$settings->thumbfix,_t('缩略图规格'),_t('宽高单位px(无需填写), 比例注意使用半角冒号'));
 		$form2->addInput($thumbfix->multiMode());
+
 		$storage = new Typecho_Widget_Helper_Form_Element_Radio('storage',
 			array('local'=>_t('本地'),'qiniu'=>_t('七牛'),'upyun'=>_t('又拍云'),'bcs'=>_t('百度BCS')),$settings->storage,_t('储存位置'));
 		$form2->addInput($storage);
+
 		$local = new Typecho_Widget_Helper_Form_Element_Text('local',
 			NULL,$settings->local,_t('本地路径'),_t('确保首层目录可写, 结尾带/号'));
 		$form2->addInput($local);
+
 		$qiniubucket = new Typecho_Widget_Helper_Form_Element_Text('qiniubucket',
 			NULL,$settings->qiniubucket,_t('空间名称'));
 		$form2->addInput($qiniubucket);
+
 		$qiniudomain = new Typecho_Widget_Helper_Form_Element_Text('qiniudomain',
 			NULL,$settings->qiniudomain,_t('空间域名'));
-		$form2->addInput($qiniudomain->setAttribute('style','display:block;'));
+		$form2->addInput($qiniudomain);
+
 		$qiniuaccesskey = new Typecho_Widget_Helper_Form_Element_Text('qiniuaccesskey',
 			NULL,$settings->qiniuaccesskey,_t('AccessKey'));
-		$form2->addInput($qiniuaccesskey->setAttribute('style','display:block;'));
+		$form2->addInput($qiniuaccesskey);
+
 		$qiniusecretkey = new Typecho_Widget_Helper_Form_Element_Text('qiniusecretkey',
 			NULL,$settings->qiniusecretkey,_t('SecretKey'));
-		$form2->addInput($qiniusecretkey->setAttribute('style','display:block;'));
+		$form2->addInput($qiniusecretkey);
+
 		$qiniuprefix = new Typecho_Widget_Helper_Form_Element_Text('qiniuprefix',
 			NULL,$settings->qiniuprefix,_t('路径前缀'),_t('注意开头不要加/号'));
-		$form2->addInput($qiniuprefix->setAttribute('style','display:block;'));
+		$form2->addInput($qiniuprefix);
+
 		$upyunbucket = new Typecho_Widget_Helper_Form_Element_Text('upyunbucket',
 			NULL,$settings->upyunbucket,_t('空间名称'));
-		$form2->addInput($upyunbucket->setAttribute('style','display:block;'));
+		$form2->addInput($upyunbucket);
+
 		$upyundomain = new Typecho_Widget_Helper_Form_Element_Text('upyundomain',
 			NULL,$settings->upyundomain,_t('绑定域名'));
-		$form2->addInput($upyundomain->setAttribute('style','display:block;'));
+		$form2->addInput($upyundomain);
+
 		$upyunuser = new Typecho_Widget_Helper_Form_Element_Text('upyunuser',
 			NULL,$settings->upyunuser,_t('操作员'));
-		$form2->addInput($upyunuser->setAttribute('style','display:block;'));
+		$form2->addInput($upyunuser);
+
 		$upyunpwd = new Typecho_Widget_Helper_Form_Element_Text('upyunpwd',
 			NULL,$settings->upyunpwd,_t('密码'));
-		$form2->addInput($upyunpwd->setAttribute('style','display:block;'));
+		$form2->addInput($upyunpwd);
+
 		$upyunkey = new Typecho_Widget_Helper_Form_Element_Text('upyunkey',
 			NULL,$settings->upyunkey,_t('密匙'));
-		$form2->addInput($upyunkey->setAttribute('style','display:block;'));
+		$form2->addInput($upyunkey);
+
 		$upyunprefix = new Typecho_Widget_Helper_Form_Element_Text('upyunprefix',
 			NULL,$settings->upyunprefix,_t('路径前缀'));
-		$form2->addInput($upyunprefix->setAttribute('style','display:block;'));
+		$form2->addInput($upyunprefix);
+
 		$bcsbucket = new Typecho_Widget_Helper_Form_Element_Text('bcsbucket',
 			NULL,$settings->bcsbucket,_t('空间名称'));
-		$form2->addInput($bcsbucket->setAttribute('style','display:block;'));
+		$form2->addInput($bcsbucket);
+
 		$bcsapikey = new Typecho_Widget_Helper_Form_Element_Text('bcsapikey',
 			NULL,$settings->bcsapikey,_t('APIKey'));
-		$form2->addInput($bcsapikey->setAttribute('style','display:block;'));
+		$form2->addInput($bcsapikey);
+
 		$bcssecretkey = new Typecho_Widget_Helper_Form_Element_Text('bcssecretkey',
 			NULL,$settings->bcssecretkey,_t('SecretKey'));
-		$form2->addInput($bcssecretkey->setAttribute('style','display:block;'));
+		$form2->addInput($bcssecretkey);
+
 		$bcsprefix = new Typecho_Widget_Helper_Form_Element_Text('bcsprefix',
 			NULL,$settings->bcsprefix,_t('路径前缀'));
-		$form2->addInput($bcsprefix->setAttribute('style','display:block;'));
+		$form2->addInput($bcsprefix);
+
 		$form2->addItem($submit);
+
 		//隐藏模式
 		switch ($settings->storage) {
 			case 'local':
@@ -576,23 +621,29 @@ $(function() {
 				$upyunprefix->setAttribute('style','display:none;');
 				break;
 		}
+
 		//更新模式
 		$request = Typecho_Request::getInstance();
+
 		if (isset($request->gid)&&$action!=='insert') {
 			$db = Typecho_Db::get();
 			$prefix = $db->getPrefix();
+
 			$gallery = $db->fetchRow($db->select()->from($prefix.'gallery')->where('gid=?',$request->gid));
 			if (!$gallery) {
 				throw new Typecho_Widget_Exception(_t('图片不存在'),404);
 			}
+
 			$thumb->value($gallery['thumb']);
 			$image->value($gallery['image']);
 			$sort->value($gallery['sort']);
 			$name->value($gallery['name']);
 			$description->value($gallery['description']);
+
 			$do->value('update');
 			$gid->value($gallery['gid']);
 			$submit->value(_t('修改图片'));
+
 			$_action = 'update';
 		} elseif ($action=='sync'&&$render=='2') {
 			$submit->value(_t('保存设置'));
@@ -605,6 +656,7 @@ $(function() {
 		if (empty($action)) {
 			$action = $_action;
 		}
+
 		//验证规则
 		if ($action=='insert'||$action=='update') {
 			$thumb->addRule('required',_t('缩略图地址不能为空'));
@@ -618,6 +670,7 @@ $(function() {
 			$gid->addRule('required',_t('图片主键不存在'));
 			$gid->addRule(array(new HighSlide_Plugin,'galleryexists'),_t('图片不存在'));
 		}
+
 		$form = ($render=='1')?$form1:$form2;
 		return $form;
 	}
@@ -661,28 +714,34 @@ $(function() {
 		$content = empty($lastResult)?$content:$lastResult;
 		$settings = Helper::options()->plugin('HighSlide');
 		$istype = self::replacelist();
+
 		//替换范围
 		if ($widget->is(''.$istype->index.'')||$widget->is(''.$istype->archive.'')||$widget->is(''.$istype->post.'')||$widget->is(''.$istype->page.'')) {
 			$pattern = '/<a(.*?)href\=\"([^\s]+)\.(jpg|gif|png|bmp)\"(.*?)>(.*?)<\/a>/si';
 			$replacement = '<a$1href="$2.$3" class="highslide" onclick="return hs.expand(this,{slideshowGroup:\'images\'})"$4>$5</a>';
 			$content = preg_replace($pattern,$replacement,$content);
+
 			//全图替换
 			if ($settings->rpmode=='imgsrc') {
 				$pattern = '/(<img[^>]+src\s*=\s*"?([^>"\s]+)"?[^>]*>)(?!<\/a>)/si';
 				$replacement = '<a href="$2" class="highslide" onclick="return hs.expand(this,{slideshowGroup:\'images\'})">$1</a>';
 				$content = preg_replace($pattern,$replacement,$content);
 			}
+
 			//附件链接替换
 			$content = preg_replace_callback('/<a(.*?)href\=\"([^\s]+)\/attachment\/(\d*|n)\/\"(.*?)>/i',array('HighSlide_Plugin','linkparse'),$content);
 		}
+
 		//页面相册标签替换
 		if ($widget->is('page')&&$settings->mode=='highslide-full.packed.js') {
 			$content = preg_replace_callback("/\[GALLERY([\-\d|\,]*?)\]/i",array('HighSlide_Plugin','galleryparse'),$content);
 		}
+
 		//html弹窗标签替换
 		if ($settings->mode=='highslide-full.packed.js') {
-			$content = preg_replace_callback("/\s*<(hs)(\s*[^>]*)>(.*?)<\/\\1>\s*/si",array('HighSlide_Plugin','htmlparse'),$content);
+			$content = preg_replace_callback("/<(hs)([^>]*)>(.*?)<\/\\1>/si",array('HighSlide_Plugin','htmlparse'),$content);
 		}
+
 		return $content;
 	}
 
@@ -696,12 +755,14 @@ $(function() {
 	{
 		$rplist = Helper::options()->plugin('HighSlide')->rplist;
 		$rplists = array();
+
 		if ($rplist) {
 			foreach ($rplist as $key=>$val) {
 				$key = $val;
 				$rplists[$key] = $val;
 			}
 		}
+
 		return new Typecho_Config($rplists);
 	}
 
@@ -719,11 +780,14 @@ $(function() {
 		$prefix = $db->getPrefix();
 		$tmp = '';
 		$cover = '';
+
 		$param = substr(trim($matches[1]),1);
 		$sorts = ($param)?explode(',',$param):array(self::defaultsort());
+
 		foreach ($sorts as $sort) {
 			$gallerys = $db->fetchAll($db->select()->from($prefix.'gallery')->where('sort=?',''.$sort.'')->order($prefix.'gallery.order',Typecho_Db::SORT_ASC));
 			if (!empty($gallerys)) {
+
 				//封面部分
 				$coversets = array(array_shift($gallerys));
 				foreach ($coversets as $coverset) {
@@ -731,10 +795,12 @@ $(function() {
 					if ($settings->gallery=='gallery-in-page') {
 						$cover.='<a id="thumb'.$sort.'" class="highslide" href="'.$coverset['image'].'" title="'.$coverset['description'].'" onclick="return hs.expand(this,inPageOptions)"><img src="'.$coverset['thumb'].'" alt="'.$coverset['description'].'"/></a> ';
 					}
+
 					//岁月名片
 					elseif ($settings->gallery=='gallery-controls-in-heading') {
 						$cover.='<a id="thumb'.$sort.'" class="highslide" href="'.$coverset['image'].'" title="'.$coverset['description'].'" onclick="return hs.expand(this,{slideshowGroup:\'group'.$sort.'\'})"><img src="'.$coverset['thumb'].'" alt="'.$coverset['description'].'"/></a><div class="highslide-heading">'.$coverset['description'].'</div> ';
 					}
+
 					//纯白记忆
 					elseif ($settings->gallery=='gallery-in-box') {
 						$cover.='<a id="thumb'.$sort.'" class="highslide" href="'.$coverset['image'].'" title="'.$coverset['description'].'" onclick="return hs.expand(this,{slideshowGroup:\'group'.$sort.'\'})"><img src="'.$coverset['thumb'].'" alt="'.$coverset['description'].'"/></a><div class="highslide-caption">'.$coverset['description'].'</div> ';
@@ -742,16 +808,19 @@ $(function() {
 						$cover.='<a id="thumb'.$sort.'" class="highslide" href="'.$coverset['image'].'" title="'.$coverset['description'].'" onclick="return hs.expand(this,{slideshowGroup:\'group'.$sort.'\'})"><img src="'.$coverset['thumb'].'" alt="'.$coverset['description'].'"/></a> ';
 					}
 				}
+
 				//列表部分
 				foreach ($gallerys as $gallery) {
 					//幻影橱窗
 					if ($settings->gallery=='gallery-in-page') {
 						$tmp.='<a class="highslide" href="'.$gallery['image'].'" title="'.$gallery['description'].'" onclick="return hs.expand(this,inPageOptions)"><img src="'.$gallery['thumb'].'" alt="'.$gallery['description'].'"/></a>';
 					}
+
 					//岁月名片
 					elseif ($settings->gallery=='gallery-controls-in-heading') {
 						$tmp.='<a class="highslide" href="'.$gallery['image'].'" title="'.$gallery['description'].'" onclick="return hs.expand(this,{slideshowGroup:\'group'.$sort.'\'})"><img src="'.$gallery['thumb'].'" alt="'.$gallery['description'].'"/></a><div class="highslide-heading">'.$gallery['description'].'</div>';
 					}
+
 					//纯白记忆
 					elseif ($settings->gallery=='gallery-in-box') {
 						$tmp.='<a class="highslide" href="'.$gallery['image'].'" title="'.$gallery['description'].'" onclick="return hs.expand(this,{slideshowGroup:\'group'.$sort.'\'})"><img src="'.$gallery['thumb'].'" alt="'.$gallery['description'].'"/></a><div class="highslide-caption">'.$gallery['description'].'</div>';
@@ -761,15 +830,17 @@ $(function() {
 				}
 			}
 		}
-		$container = '<div class="hidden-container">'.$tmp.'</div>';
+
 		//合并输出
+		$container = '<div class="hidden-container">'.$tmp.'</div>';
 		if ($settings->gallery=='gallery-in-page') {
 			$output = '<div id="gallery-area" style="width: 620px; height: 520px; margin: 0 auto; border: 1px solid silver"><div class="hidden-container">'.$cover.$tmp.'</div></div>';
 		} else {
 			$output = '<div class="highslide-gallery">'.$cover.$container.'</div>';
 		}
+
 		return $output;
- 	}
+	}
 
 	/**
 	 * 缺省相册分类
@@ -796,6 +867,7 @@ $(function() {
 	{
 		$settings = Helper::options()->plugin('HighSlide');
 		$param = trim($matches[2]);
+
 		$id = 'highslide-html';
 		$text = 'text';
 		$title = '';
@@ -808,6 +880,7 @@ $(function() {
 		$Closetext = 'Close';
 		$Closetitle = 'Close (esc)';
 		$Resizetitle = 'Resize';
+
 		if ($settings->lang == 'chs') {
 			$Movetext = '移动';
 			$Movetitle = '移动';
@@ -815,6 +888,7 @@ $(function() {
 			$Closetitle = '关闭 (esc)';
 			$Resizetitle = '拉伸';
 		}
+
 		//标签参数解析
 		if (!empty($param)) {
 			if (preg_match("/id=[\"']([\w-]*)[\"']/i",$param,$out)) {
@@ -826,7 +900,7 @@ $(function() {
 			if (preg_match("/title=[\"'](.*?)[\"']/si",$param,$out)) {
 				$title = trim($out[1])==''?$title:trim($out[1]);
 			}
-			if (preg_match("/ajax=[\"'](.*?)[\"']/si",$param,$out)) {
+			if (preg_match("/ajax=[\"'](.*?)[\"']/i",$param,$out)) {
 				$ajax = trim($out[1])==''?$ajax:trim($out[1]);
 			}
 			if (preg_match("/width=[\"']([\w-]*)[\"']/i",$param,$out)) {
@@ -836,13 +910,16 @@ $(function() {
 				$height = trim($out[1])==''?$height:',height:'.str_replace('px','',trim($out[1]));
 			}
 		}
+
 		//标题栏支持
 		if ($settings->wrap) {
 			$addt = (in_array('draggable-header',$settings->wrap)&&$title)?',headingText:\''.$title.'\'':'';
 		}
+
 		//ajax模式判断
 		$href = ($ajax)?$ajax:'#';
 		$shift = ($ajax)?'objectType:\'ajax\'':'contentId:\''.$id.'\'';
+
 		$output = '<a href="'.$href.'" onclick="return hs.htmlExpand(this,{'.$shift.$addt.$width.$height.'})" class="highslide">'.$text.'</a>';
 		$output .= '<div class="highslide-html-content" id="'.$id.'">';
 		$output .= '<div class="highslide-header"><ul><li class="highslide-move"><a href="#" onclick="return false" title="'.$Movetitle.'"><span>'.$Movetext.'</span></a></li>';
@@ -851,6 +928,7 @@ $(function() {
 		$output .= '<div class="highslide-footer"><div><span class="highslide-resize" title="'.$Resizetitle.'"><span></span></span></div></div>';
 		$output .= '</div>
 		';
+
 		return $output;
 	}
 
@@ -941,13 +1019,14 @@ $(function() {
 			});
 		return false;
 	});
+
 	function iasEffectEvent(el) {
 		var id = $(el).attr('id');
 		$('img#uploadimg-'+id+'',el).imgAreaSelect({
 			handles:true,
 			instance:true,
 			classPrefix:'ias-'+id+' ias',
-			aspectRatio:'<?php echo $ratio;?>',
+			aspectRatio:'<?php echo $ratio; ?>',
 			onSelectEnd:function(img,selection) {
 				$('#x1',el).val(selection.x1);
 				$('#y1',el).val(selection.y1);
@@ -958,6 +1037,7 @@ $(function() {
 			}
 		});
 	}
+
 	function thumbCropEvent(el) {
 		$('.crop',el).click(function() {
 			var pli = $(this).parents('li'),
@@ -997,6 +1077,7 @@ $(function() {
 			return false;
 		});
 	}
+
 	function imageDeleteEvent(el) {
 		$('.delete',el).click(function() {
 			var pli = $(this).parents('li'),
@@ -1015,6 +1096,7 @@ $(function() {
 			return false;
 		});
 	}
+
 	function imageAddtoEvent(el) {
 		$('.addto',el).click(function() {
 			var pli = $(this).parents('li'),
@@ -1057,8 +1139,10 @@ $(function() {
 		$settings = $options->plugin('HighSlide');
 		$widget = Typecho_Widget::widget('Widget_Archive');
 		$hsurl = $options->pluginUrl.'/HighSlide/';
+
 		$istype = self::replacelist();
 		$cssurl = '';
+
 		//输出范围
 		if ($widget->is(''.$istype->index.'')||$widget->is(''.$istype->archive.'')||$widget->is(''.$istype->post.'')||$widget->is(''.$istype->page.'')) {
 			$cssurl = '
@@ -1086,6 +1170,7 @@ padding: .5em 0;
 </style>
 ';
 				}
+
 				//时光胶带
 				if ($settings->gallery == 'gallery-vertical-strip') {
 					$cssurl.= '<style type="text/css">
@@ -1106,6 +1191,7 @@ color: white;
 				}
 			}
 		}
+
 		echo $cssurl;
 	}
 
@@ -1121,9 +1207,12 @@ color: white;
 		$settings = $options->plugin('HighSlide');
 		$widget = Typecho_Widget::widget('Widget_Archive');
 		$hsurl = $options->pluginUrl.'/HighSlide/';
+
 		$closetitle = ($settings->lang=='chs')?'关闭':'Close';
 		$istype = self::replacelist();
+
 		$links = '';
+
 		//输出范围
 		if ($widget->is(''.$istype->index.'')||$widget->is(''.$istype->archive.'')||$widget->is(''.$istype->post.'')||$widget->is(''.$istype->page.'')) {
 			$links = '
@@ -1134,6 +1223,7 @@ color: white;
 hs.graphicsDir = "'.$hsurl.'css/graphics/";
 hs.fadeInOut = true;
 hs.transitions = ["expand","crossfade"];';
+
 			//角标设置
 			if ($settings->ltext=='') {
 				$links.='
@@ -1146,6 +1236,7 @@ hs.lang.creditsTitle = "'.$settings->ltext.'";
 hs.creditsHref = "'.$options->index.'";
 hs.creditsPosition = "'.$settings->lpos.'";';
 			}
+
 			//中文支持
 			if ($settings->lang=='chs') {
 				$links.='
@@ -1213,6 +1304,7 @@ hs.wrapperClassName = "outer-glow";';
 					$links.='
 hs.wrapperClassName = "borderless";';
 				}
+
 				//关闭按钮
 				if ($settings->butn=='true') {
 					$links.='
@@ -1222,27 +1314,32 @@ position: "top right",
 fade: 2
 });';
 				}
+
 				//图片说明
 				if ($settings->capt!=='') {
 					$links.='
 hs.captionEval = "'.$settings->capt.'";';
 				}
+
 				if ($settings->mode=='highslide-full.packed.js') {
 					//图片序数
 					if ($settings->cpos!=='') {
 						$links.='
 hs.numberPosition = "'.$settings->cpos.'";';
 					}
+
 					//背景遮罩
 					if ($settings->opac!=='') {
 						$links.='
 hs.dimmingOpacity = '.$settings->opac.';';
 					}
+
 					//弹窗位置
 					if ($settings->align=='center') {
 						$links.='
 hs.align = "center";';
 					}
+
 					//幻灯按钮
 					if ($settings->slide=='true') {
 						$links.='
@@ -1259,6 +1356,7 @@ hideOnMouseOut: true
 }
 });';
 					}
+
 					//自动翻页
 					if ($settings->nextimg=='true') {
 						$links.='
@@ -1271,25 +1369,30 @@ return hs.next();
 
 			//页面相册套装
 			elseif ($settings->mode=='highslide-full.packed.js'&&$widget->is(''.$istype->page.'')) {
+
 				//获取相册组参数
 				preg_match_all("/\[GALLERY([\-\d|\,]*?)\]/i",$widget->text,$matches);
 				$params = array();
 				foreach ($matches[1] as $param) {
 					$params[] = substr(trim($param),1);
 				}
+
 				//兼容性处理
 				$groups = (array_filter($params))?explode(',',implode(',',$params)):array(self::defaultsort());
 				function groupsalter(&$item,$key,$prefix) {
 					$item = '"'.$prefix.''.$item.'"';
 				}
+
 				//格式化输出
 				array_walk($groups,'groupsalter','group');
 				$group = implode(',',array_unique($groups));
+
 				$links.='
 if (hs.addSlideshow) hs.addSlideshow({
 interval: 5000,
 repeat: true,
 useControls: true,';
+
 				//连环画册
 				if ($settings->gallery=='gallery-horizontal-strip') {
 					$links.='
@@ -1313,6 +1416,7 @@ hs.captionEval = "this.thumb.alt";
 hs.marginBottom = 105;
 hs.numberPosition = "caption";';
 				}
+
 				//黑色影夹
 				if ($settings->gallery=='gallery-thumbstrip-above') {
 					$links.='
@@ -1338,6 +1442,7 @@ hs.useBox = true;
 hs.width = 600;
 hs.height = 400;';
 				}
+
 				//幻影橱窗
 				if ($settings->gallery=='gallery-in-page') {
 					$restoreTitle = ($settings->lang == 'chs')?'点击查看下一张':'Click for next image';
@@ -1389,7 +1494,7 @@ y = exp.y;
 	exp.tpos = hs.getPosition(exp.el);
 	x.calcThumb();
 	y.calcThumb();
- 	x.pos = x.tpos - x.cb + x.tb;
+	x.pos = x.tpos - x.cb + x.tb;
 	x.scroll = hs.page.scrollLeft;
 	x.clientSize = hs.page.width;
 	y.pos = y.tpos - y.cb + y.tb;
@@ -1402,6 +1507,7 @@ y = exp.y;
 }
 });';
 				}
+
 				//时光胶带
 				if ($settings->gallery=='gallery-vertical-strip') {
 					$links.='
@@ -1433,6 +1539,7 @@ hs.marginBottom = 80;
 hs.numberPosition = "caption";
 hs.lang.number = "%1/%2";';
 				}
+
 				//纯白记忆
 				if ($settings->gallery=='gallery-in-box') {
 					$links.='
@@ -1451,6 +1558,7 @@ hs.useBox = true;
 hs.width = 640;
 hs.height = 480;';
 				}
+
 				//往事片段
 				if ($settings->gallery=='gallery-floating-thumbs') {
 					$links.='
@@ -1476,6 +1584,7 @@ hs.useBox = true;
 hs.width = 600;
 hs.height = 400;';
 				}
+
 				//沉默注脚
 				if ($settings->gallery=='gallery-floating-caption') {
 					$links.='
@@ -1492,6 +1601,7 @@ hs.wrapperClassName = "dark borderless floating-caption";
 hs.dimmingOpacity = .75;
 hs.captionEval = "this.a.title";';
 				}
+
 				//岁月名片
 				if ($settings->gallery=='gallery-controls-in-heading') {
 					$links.='
@@ -1508,11 +1618,13 @@ hs.outlineType = "rounded-white";
 hs.wrapperClassName = "controls-in-heading";';
 				}
 			}
+
 			$links.='
 //]]>
 </script>
 		';
 		}
+
 		echo $links;
 	}
 
@@ -1528,13 +1640,16 @@ hs.wrapperClassName = "controls-in-heading";';
 		if (empty($file['name'])) {
 			return false;
 		}
+
 		$imgname = preg_split("(\/|\\|:)",$file['name']);
 		$file['name'] = array_pop($imgname);
+
 		//扩展名
-        $ext = self::getsafename($file['name']);
-        if (!self::checkimgtype($ext)||Typecho_Common::isAppEngine()) {
-            return false;
-        }
+		$ext = self::getsafename($file['name']);
+		if (!self::checkimgtype($ext)||Typecho_Common::isAppEngine()) {
+			return false;
+		}
+
 		//上传路径
 		$settings = Helper::options()->plugin('HighSlide');
 		$imgdir = self::filedata()->dir;
@@ -1543,6 +1658,7 @@ hs.wrapperClassName = "controls-in-heading";';
 				return false;
 			}
 		}
+
 		//文件名
 		$imgname = sprintf('%u',crc32(uniqid())).'.'.$ext;
 		$imgpath = $imgdir.$imgname;
@@ -1550,12 +1666,14 @@ hs.wrapperClassName = "controls-in-heading";';
 		if (!isset($filename)) {
 			return false;
 		}
+
 		//本地上传
 		if ($settings->storage=='local') {
 			if (!@move_uploaded_file($file['tmp_name'],$imgpath)) {
 				return false;
 			}
 		}
+
 		//七牛上传
 		if ($settings->storage=='qiniu') {
 			self::qiniuset($settings->qiniuaccesskey,$settings->qiniusecretkey);
@@ -1568,23 +1686,26 @@ hs.wrapperClassName = "controls-in-heading";';
 				return false;
 			}
 		}
+
 		//又拍云上传
 		if ($settings->storage=='upyun') {
 			$upyun = self::upyunset();
 			$upyun->writeFile('/'.$imgpath,file_get_contents($filename),TRUE);
 		}
+
 		//百度BCS上传
 		if ($settings->storage=='bcs') {
 			$bcs = self::bcsset();
-			$result = $bcs->create_object($settings->bcsbucket,$imgpath,$filename,array("acl" => "public-read"));
+			$result = $bcs->create_object($settings->bcsbucket,$imgpath,$filename,array("acl"=>"public-read"));
 			if (!$result->isOK()) {
 				return false;
 			}
 		}
+
 		return array(
-			'name' => $imgname,
-			'title' => $file['name'],
-			'size' => $file['size']
+			'name'=>$imgname,
+			'title'=>$file['name'],
+			'size'=>$file['size']
 		);
 	}
 
@@ -1602,8 +1723,10 @@ hs.wrapperClassName = "controls-in-heading";';
 		$options = Helper::options();
 		$settings = $options->plugin('HighSlide');
 		$imgdir = self::filedata($path,$url)->dir;
+
 		$imgpath = $imgdir.$imgname;
 		$thumbpath = $imgdir.'thumb_'.$imgname;
+
 		if (strpos($url,$options->siteUrl)===false) {
 			//本地删除
 			if ($settings->storage=='local') {
@@ -1616,6 +1739,7 @@ hs.wrapperClassName = "controls-in-heading";';
 				return !Typecho_Common::isAppEngine()
 				&& @unlink($imgpath);
 			}
+
 			//七牛删除
 			if ($settings->storage=='qiniu') {
 				self::qiniuset($settings->qiniuaccesskey,$settings->qiniusecretkey);
@@ -1624,12 +1748,14 @@ hs.wrapperClassName = "controls-in-heading";';
 				Qiniu_RS_Delete($client,$settings->qiniubucket,$imgpath);
 				return true;
 			}
+
 			//又拍云删除
 			if ($settings->storage=='upyun') {
 				$upyun = self::upyunset();
 				$upyun->delete($thumbpath);
 				return $upyun->delete($imgpath);
 			}
+
 			//百度BCS删除
 			if ($settings->storage=='bcs') {
 				$bcs = self::bcsset();
@@ -1637,6 +1763,7 @@ hs.wrapperClassName = "controls-in-heading";';
 				$bcs->delete_object($settings->bcsbucket,$imgpath);
 				return true;
 			}
+
 		//本地附件源删除
 		} else {
 			if (!file_exists($imgpath)) {
@@ -1660,6 +1787,7 @@ hs.wrapperClassName = "controls-in-heading";';
 		$options = Helper::options();
 		$settings = $options->plugin('HighSlide');
 		$filedata = self::filedata($path,$url);
+
 		$imgdir = ($settings->storage=='local')?$filedata->dir:$filedata->url;
 		$imgfile = ($url)?$url:$imgdir.$imgname;
 		$thumbdir = ($settings->storage=='local')?$imgdir:__TYPECHO_ROOT_DIR__.__TYPECHO_PLUGIN_DIR__.'/HighSlide/tmp/';
@@ -1668,8 +1796,10 @@ hs.wrapperClassName = "controls-in-heading";';
 				return false;
 			}
 		}
+
 		$thumbfile = $thumbdir.'thumb_'.$imgname;
 		$thumbpath = $filedata->dir.'thumb_'.$imgname;
+
 		//预览尺寸适应
 		list($imgwidth,$imgheight,$imgtype) = getimagesize($imgfile);
 		$imgtype = image_type_to_mime_type($imgtype);
@@ -1681,6 +1811,7 @@ hs.wrapperClassName = "controls-in-heading";';
 		$yset *= $adjust;
 		$width *= $adjust;
 		$height *= $adjust;
+
 		//缩放规格
 		switch ($settings->thumbfix) {
 			case 'fixedwidth':
@@ -1696,6 +1827,7 @@ hs.wrapperClassName = "controls-in-heading";';
 		}
 		$newwidth = $width*$scale;
 		$newheight = $height*$scale;
+
 		//采样
 		$newimg = imagecreatetruecolor($newwidth,$newheight);
 		switch ($imgtype) {
@@ -1711,25 +1843,28 @@ hs.wrapperClassName = "controls-in-heading";';
 			case "image/x-png":
 				$source = imagecreatefrompng($imgfile);
 				break;
-  		}
+		}
+
 		//渲染
 		imagecopyresampled($newimg,$source,0,0,$xset,$yset,$newwidth,$newheight,$width,$height);
 		switch ($imgtype) {
 			case "image/gif":
-	  			imagegif($newimg,$thumbfile);
+				imagegif($newimg,$thumbfile);
 				break;
-	  		case "image/pjpeg":
+			case "image/pjpeg":
 			case "image/jpeg":
 			case "image/jpg":
-	  			imagejpeg($newimg,$thumbfile,100);
+				imagejpeg($newimg,$thumbfile,100);
 				break;
 			case "image/png":
 			case "image/x-png":
 				imagepng($newimg,$thumbfile);
 				break;
 		}
+
 		chmod($thumbfile,0777);
 		$thumbsize = filesize($thumbfile);
+
 		if (strpos($url,$options->siteUrl)===false) {
 			//七牛上传
 			if ($settings->storage=='qiniu') {
@@ -1746,6 +1881,7 @@ hs.wrapperClassName = "controls-in-heading";';
 				}
 				unlink($thumbfile);
 			}
+
 			//又拍云上传
 			if ($settings->storage=='upyun') {
 				$upyun = self::upyunset();
@@ -1753,6 +1889,7 @@ hs.wrapperClassName = "controls-in-heading";';
 				$upyun->writeFile($thumbpath,file_get_contents($thumbfile),TRUE);
 				unlink($thumbfile);
 			}
+
 			//百度BCS上传
 			if ($settings->storage=='bcs') {
 				$bcs = self::bcsset();
@@ -1763,10 +1900,12 @@ hs.wrapperClassName = "controls-in-heading";';
 				}
 				unlink($thumbfile);
 			}
+
 		//本地附件源移动
 		} else {
 			rename($thumbfile,$thumbpath);
 		}
+
 		return $thumbsize;
 	}
 
@@ -1788,22 +1927,22 @@ hs.wrapperClassName = "controls-in-heading";';
 		return true;
 	}
 
-    /**
-     * 获取安全的文件名
-     * 
-     * @access private
-     * @param string $name
-     * @return string
-     */
-    private static function getsafename(&$name)
-    {
-        $name = str_replace(array('"','<','>'),'',$name);
-        $name = str_replace('\\', '/', $name);
-        $name = false === strpos($name,'/')?('a'.$name):str_replace('/','/a',$name);
-        $info = pathinfo($name);
-        $name = substr($info['basename'],1);
-        return isset($info['extension'])?$info['extension']:'';
-    }
+	/**
+	 * 获取安全的文件名
+	 * 
+	 * @access private
+	 * @param string $name
+	 * @return string
+	 */
+	private static function getsafename(&$name)
+	{
+		$name = str_replace(array('"','<','>'),'',$name);
+		$name = str_replace('\\','/', $name);
+		$name = false === strpos($name,'/')?('a'.$name):str_replace('/','/a',$name);
+		$info = pathinfo($name);
+		$name = substr($info['basename'],1);
+		return isset($info['extension'])?$info['extension']:'';
+	}
 
 	/**
 	 * 图片扩展名检查
