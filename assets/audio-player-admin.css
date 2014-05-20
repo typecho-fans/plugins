@@ -1,0 +1,90 @@
+#ap_colorscheme {
+	position:relative;
+}
+#ap_colorselector {
+	position:absolute;
+	top:130px;
+	left:165px;
+}
+#ap_colorselector input {
+	float: left;
+	margin: 0 5px 0 0;
+	padding: 2px;
+}
+
+#ap_colorselector input {
+	padding: 2px;
+}
+
+#ap_colorsample {
+	float: left;
+	width: 19px;
+	height: 19px;
+	border: 1px solid #000000;
+	background: #FFFFFF;
+}
+
+#ap_picker-btn {
+	display: block;
+	float: left;
+	height: 21px;
+	background: url(picker-icon.png) no-repeat left top;
+	padding-left: 28px;
+	padding-top: 3px;
+	margin-left: 10px;
+	font-size: 11px;
+	cursor: pointer;
+	color: #0000FF;
+	text-decoration: underline;
+}
+
+#ap_themecolor-btn {
+	display: block;
+	float: left;
+	height: 21px;
+	background: url(theme-picker-icon.png) no-repeat left top;
+	padding-left: 28px;
+	padding-top: 3px;
+	margin-left: 10px;
+	font-size: 11px;
+	cursor: pointer;
+	color: #0000FF;
+	text-decoration: underline;
+}
+
+#ap_themecolor {
+	display: none;
+	width: 134px;
+	padding: 0 0 13px 0;
+	float: left;
+	background: url(thcpck-bottom.png) no-repeat left bottom;
+}
+
+#ap_themecolor span {
+	display: block;
+	text-indent: -9999px;
+	height: 13px;
+	line-height: 0;
+	font-size: 0;
+	background: url(thcpck-top.png) no-repeat left top;
+}
+
+#ap_themecolor ul {
+	background: url(thcpck-slice.png) repeat-y left top;
+	padding: 1px 14px 1px 15px;
+	float: left;
+	width: 105px;
+	margin: 0;
+}
+
+#ap_themecolor li {
+	cursor: pointer;
+	display: block;
+	text-indent: -9999px;
+	float: left;
+	width: 20px;
+	height: 20px;
+	margin: 0 1px 1px 0;
+	line-height: 0;
+	font-size: 0;
+}
