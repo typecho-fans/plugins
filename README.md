@@ -14,7 +14,7 @@
 
  1. 使用git工具克隆本项目，或点击右侧下方Download ZIP下载所有
 
- 
+ 推荐初级用户安装[Typecho应用商店](https://github.com/typecho-app-store/AppStore)插件，可在后台自由选择安装本项目所有作品
 
  2. 选择需要的插件，按照说明上传至Typecho`/usr/plugins/`目录
 
