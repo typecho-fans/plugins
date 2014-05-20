@@ -14,7 +14,7 @@
 
  1. 使用git工具克隆本项目，或点击右侧下方Download ZIP下载所有
 
- 推荐初级用户安装[Typecho应用商店](https://github.com/typecho-app-store/AppStore)插件，可在后台自由选择安装本项目所有作品
+ > 推荐使用[Typecho应用商店](https://github.com/typecho-app-store/AppStore)，可在后台自动下载安装所选插件
 
  2. 选择需要的插件，按照说明上传至Typecho`/usr/plugins/`目录
 
@@ -26,20 +26,19 @@
 
  1. 推荐直接提交插件并入本项目，或使用[subtree](http://aoxuis.me/posts/2013/08/07/git-subtree/)方法推送分支
 
- submodule可链接原项目，但也会给打包下载和协作更新带来一定麻烦
+ > submodule可链接原项目，但也会给打包下载和协作更新带来一定麻烦
 
  2. 若暂无成员权限可先fork进行修改，然后提交pull request或issues申请
 
- 通常owner会很快进行审核处理并将新作者加入进来
+ > 通常几位owner会很快处理审核并将新作者加进组织
 
- 3. 插件根目录下应有README.md提供简要说明或链接，方便用户选择使用
+ 3. 插件根目录下应有README.md提供简要说明或链接，方便用户预览
  
- 下方作品索引内请按照格式加入一句话介绍和作者内链
+ > 下方作品索引请按照格式加入一句话介绍和作者内链
 
-4. 推送作品应确保为原创，或经过作者同意能够在这里进行更新维护
+4. 推送作品应确保为原创或经过作者同意能够在这里进行维护和更新
 
- 插件目录内若无license声明，默认视为采用与Typecho相同的[GPL](https://github.com/typecho/typecho/blob/master/license.txt)开源许可
-
+ > 插件目录内无license则默认视作采用与Typecho相同的[GPL](https://github.com/typecho/typecho/blob/master/license.txt)开源许可
 ### 作品索引(按首字排序)
 
 | 名称 | 介绍 | 作者 |
