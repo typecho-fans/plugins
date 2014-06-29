@@ -4,8 +4,8 @@
  * 
  * @package Hermit 
  * @author mufeng
- * @version 1.0.4
- * @update: 2014.4.17
+ * @version 1.3.0
+ * @update: 2014.6.30
  * @link http://mufeng.me/
  */
 class Hermit_Plugin implements Typecho_Plugin_Interface
@@ -85,10 +85,12 @@ class Hermit_Plugin implements Typecho_Plugin_Interface
      */
     public static function parse($text, $widget, $lastResult)
     {
+        $options = Helper::options();
+        $cover_url = Typecho_Common::url('Hermit/assets/images/cover.png', $options->pluginUrl);
         $text = empty($lastResult) ? $text : $lastResult;
         if ($widget instanceof Widget_Archive) {
 			$text = preg_replace("/\[hermit(.+?)?\](.+?)\[\/hermit\]/i",
-            "<!--Hermit for typecho v1.0.0 start--><div class=\"hermit\" \\1 songs=\"\\2\"><div class=\"hermit-box\"><div class=\"hermit-controls\"><div class=\"hermit-button\"></div><div class=\"hermit-detail\">单击鼠标左键播放或暂停。</div><div class=\"hermit-duration\"></div><div class=\"hermit-listbutton\"></div></div><div class=\"hermit-prosess\"><div class=\"hermit-loaded\"></div><div class=\"hermit-prosess-bar\"><div class=\"hermit-prosess-after\"></div></div></div></div><div class=\"hermit-list\"></div></div><!--Hermit for typecho v1.0.0 end-->",
+            "<!--Hermit for typecho v1.3.0 start--><div class=\"hermit\" \\1 songs=\"\\2\"><div class=\"hermit-box hermit-clear\"><div class=\"hermit-covbtn\"><img class=\"hermit-cover\" src=\"{$cover_url}\" width=\"36\" height=\"36\"></div><div class=\"hermit-conpros\"><div class=\"hermit-controls\"><div class=\"hermit-button\"></div><div class=\"hermit-detail\">单击鼠标左键播放或暂停。</div><div class=\"hermit-duration\"></div><div class=\"hermit-volume\"></div><div class=\"hermit-listbutton\"></div></div><div class=\"hermit-prosess\"><div class=\"hermit-loaded\"></div><div class=\"hermit-prosess-bar\"><div class=\"hermit-prosess-after\"></div></div></div></div></div><div class=\"hermit-list\"></div></div><!--Hermit for typecho v1.3.0 end-->",
             $text);
         }
         return $text;
@@ -116,8 +118,9 @@ class Hermit_Plugin implements Typecho_Plugin_Interface
     public static function footerScript()
     {
 		$options = Helper::options();
+        $ajax_url = Typecho_Common::url('Hermit/ajax.php', $options->pluginUrl);
 		$swf_url = Typecho_Common::url('Hermit/assets/swf', $options->pluginUrl);
 		$js_url = Typecho_Common::url('Hermit/assets/script/hermit.min.js', $options->pluginUrl);
-		echo "<script>var hermit = {url: \"{$swf_url}\"};\n</script><script src='{$js_url}'></script>\n";	
+		echo "<script>var hermit = {url: \"{$swf_url}\", ajax_url: \"{$ajax_url}\"};\n</script><script src='{$js_url}'></script>\n";	
     }
 }
