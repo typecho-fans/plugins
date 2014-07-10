@@ -1,0 +1,30 @@
+@charset 'utf-8';
+@media(min-width: 760px) {
+    #theContentIndex {
+        position:fixed;
+        display:block;
+        left:-50%;
+        bottom:0;
+        max-height:100%;
+        overflow-y:auto;
+        background: #fff;
+        padding-right: 20px;
+        transition: left 0.5s;
+    }
+    #theContentIndex:hover {
+        left:0;
+    }
+    #theContentIndex:before {
+        position:fixed;
+        bottom:0;
+        left:0;
+        content:'CONTENTS';
+        background:#eee;
+        padding:10px 20px;
+        transition: bottom .5s;
+    }
+    #theContentIndex:hover:before {
+        bottom: -5em;
+        transition-delay:.3s;
+    }
+}
