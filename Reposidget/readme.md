@@ -1,7 +1,7 @@
 ## 插件说明 ##
  - 插件名称：Reposidget
  - 开发作者：西秦公子
- - 作者网址：[http://www.cslab.pw](http://www.cslab.pw)
+ - 作者网址：[http://www.ixiqin.com](http://www.ixiiqn.com)
  - 兼容版本：0.9
 
 ## 使用帮助 ##
@@ -14,8 +14,7 @@
 ## 更新日志 ##
 
 
-## 其他说明 ##
-Demo:http://www.cslab.pw/2014/04/05/22.html
+
 
 备注:可能出现的卡顿是因为Json加载，Github有被墙的可能性。1-2S加载完成。
 
