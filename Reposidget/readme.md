@@ -1,7 +1,7 @@
 ## 插件说明 ##
  - 插件名称：Reposidget
  - 开发作者：西秦公子
- - 作者网址：[http://www.ixiqin.com](http://www.ixiiqn.com)
+ - 作者网址：[http://www.ixiqin.com](http://www.ixiqin.com)
  - 兼容版本：0.9
 
 ## 使用帮助 ##
