@@ -1,0 +1,25 @@
+#smchuncai {opacity:0.85;width:160px;height:160px;position:fixed;top:400px;left:800px;font-size:12px;}
+* html #smchuncai {position:absolute;}
+#chuncaiface {width:160px;height:160px;background-repeat:no-repeat;position:absolute;top:0px;left:0px;}
+/*#chuncaimenu {width:46px;line-height:16px;float:left;font-size:12px;cursor:pointer;background-color:#666;color:#FFF;text-align:center;}*/
+#showchuncaimenu {float:left;text-align:left;width:100%;overflow:hidden;display:none;}
+/*#showchuncaimenu ul, */#tempsaying ul {margin:1px 0px 0px 0px;padding:0px 0px 0px 5px;float:left;width:100%;line-height:16px;cursor:pointer;overflow:hidden;}
+.wcc_mlist {text-align:center;width:47%;float:left;line-height:16px;margin:0;padding:0px 0px 4px 0px;cursor:pointer;overflow:hidden;}
+#tempsaying ul {width:96%;}
+#callchuncai {position:fixed;width:60px;line-height:16px;cursor:pointer;display:none;font-size:12px;border:1px solid #e87a73;background-color:#FFF;}
+* html #callchuncai {position:absolute;}
+#dialog_chat {position:absolute;top:0px;left:-205px;width:200px;line-height:23px;text-align:left;}
+#dialog_chat_loading {width:200px;height:30px;background:url("./loading.gif") no-repeat center center;display:none;}
+#chat_top {float:left;width:200px;height:5px;overflow:hidden;background:url("./chat_top.gif") no-repeat;}
+#dialog_chat_contents, #chuncaisaying, #getmenu, #tempsaying {float:left;margin:0;padding-left:0px;width:198px;line-height:23px;background-color:#ffffee;}
+#getmenu, #tempsaying,#chuncaisaying {padding:0px 0px 0px 2px; width:196px;}
+#dialog_chat_contents {width:198px;border-left:1px solid #e87a73;border-right:1px solid #e87a73;}
+#chat_bottom {width:200px;height:10px;float:left;background:url("./chat_bottom.gif") no-repeat;}
+#chat_top, #chat_bottom {}
+#tempsaying, #hiddenfaces {display:none;}
+#getmenu {width:95%;height:16px;margin:0;padding:0;cursor:pointer;background:url("./menu.jpg") no-repeat top right;}
+#addinput {width:240px;height:20px;position:absolute;top:150px;left:-260px;border:1px solid #888;background-color:#FFF;padding-top:2px;overflow:hidden;display:none;}
+#inp_l {float:left;width:220px;height:20px;}
+#inp_r {float:right;width:20px;height:20px;font-size:12px;text-align:center;cursor:pointer;}
+#talk {border:none;float:left;width:180px;height:16px;padding: 0;}
+#talkto {float:left;border:none;width:30px;height:16px;background:url("./ok.jpg");cursor:pointer;}

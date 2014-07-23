@@ -78,6 +78,7 @@
 | TeKit | Typecho常用扩展功能工具箱插件 | [@冰剑](https://github.com/binjoo) |
 | ThemeDemo | 外观主题演示插件 | [@兜兜有矿石](https://github.com/qqff01) |
 | UploadPlugin | 在线安装模板/插件的插件 | [@阿飞](https://github.com/defeme) |
+| Ugauka | 一只萌萌的春菜	| [@Kunr](https://github.com/Kunr) |
 | Watermark | 图片加水印插件(向下兼容0.8) | [@阿飞](https://github.com/defeme) |
 | WeChatHelper | 微信公众号平台插件 | [@冰剑](https://github.com/binjoo) |
 | XiaMiPlayer | 虾米迷你型播放器插件 | [@lizheming](https://github.com/lizheming) |
