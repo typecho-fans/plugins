@@ -26,6 +26,5 @@ CREATE TABLE `typecho_contribute` (
   `category` varchar(200) default NULL,
   `tags` varchar(200) default NULL,
   PRIMARY KEY  (`cid`),
-  UNIQUE KEY `slug` (`slug`),
   KEY `created` (`created`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8;
