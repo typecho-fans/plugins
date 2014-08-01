@@ -3,6 +3,7 @@ $jqueryScriptUrl = Helper::options()->pluginUrl . '/Likes/js/jquery.js';
 $macaroonScriptUrl = Helper::options()->pluginUrl . '/Likes/js/jquery.fs.macaroon.js';
 $settings = Helper::options()->plugin('Likes');
 ?>
+
 <script type="text/javascript" src="<?php echo $jqueryScriptUrl; ?>"></script>
 <script type="text/javascript" src="<?php echo $macaroonScriptUrl; ?>"></script>
 <script>

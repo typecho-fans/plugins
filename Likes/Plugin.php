@@ -6,7 +6,7 @@
  * @package Likes
  * @author skylzl
  * @version 1.0.0
- * @link http://www.woyoudian.com
+ * @link http://www.phoneshuo.com
  */
 
 class Likes_Plugin implements Typecho_Plugin_Interface
@@ -81,7 +81,7 @@ class Likes_Plugin implements Typecho_Plugin_Interface
      * 语法: Likes_Plugin::theLikes();
      * 输出: '<a href="javascript:;" class="post-like" data-pid="'.$cid.'">赞 (<span>'.$row['likes'].'</span>)</a>'
      *
-     * 语法: Views_Plugin::theViews(false);
+     * 语法: Likes_Plugin::theLikes(false);
      * 输出: 0
      *
      * @access public
@@ -100,36 +100,36 @@ class Likes_Plugin implements Typecho_Plugin_Interface
     }
 
     /**
-     * 输出最受欢迎文章
+     * 输出点赞最多的文章
      *
-     * 语法: Views_Plugin::theMostViewed();
+     * 语法: Likes_Plugin::theMostLiked();
      *
      * @access public
      * @param int     $limit  文章数目
-     * @param string  $shownum 是否显示浏览数量
+     * @param string  $shownum 是否显示点赞数量
      * @param string  $before 前字串
      * @param string  $after  后字串
      * @return string
      */
-    public static function theMostViewed($limit = 10, $shownum = true, $before = '<br/> - ( 访问: ', $after = ' 次 ) ')
+    public static function theMostLiked($limit = 10, $shownum = true, $before = '<br/> - ( 访问: ', $after = ' 次 ) ')
     {
         $db = Typecho_Db::get();
         $options = Typecho_Widget::widget('Widget_Options');
         $limit = is_numeric($limit) ? $limit : 10;
         $posts = $db->fetchAll($db->select()->from('table.contents')
                  ->where('type = ? AND status = ? AND password IS NULL', 'post', 'publish')
-                 ->order('views', Typecho_Db::SORT_DESC)
+                 ->order('likes', Typecho_Db::SORT_DESC)
                  ->limit($limit)
                  );
 
         if ($posts) {
             foreach ($posts as $post) {
                 $result = Typecho_Widget::widget('Widget_Abstract_Contents')->push($post);
-                $post_views = number_format($result['views']);
+                $post_likes = number_format($result['likes']);
                 $post_title = htmlspecialchars($result['title']);
                 $permalink = $result['permalink'];
                 if($shownum == true){
-                	echo "<li><a href='$permalink' title='$post_title'>$post_title</a><span style='font-size:70%'>$before $post_views $after</span></li>\n";
+                	echo "<li><a href='$permalink' title='$post_title'>$post_title</a><span style='font-size:70%'>$before $post_likes $after</span></li>\n";
               	}else{
               		echo "<li><a href='$permalink' title='$post_title'>$post_title</a></li>\n";
               	}
@@ -143,14 +143,14 @@ class Likes_Plugin implements Typecho_Plugin_Interface
      * 点赞相关css加载在头部
      */
     public static function header() {
-    	$cssUrl = Helper::options()->pluginUrl . '/Likes/css/style.css';
+        $cssUrl = Helper::options()->pluginUrl . '/Likes/css/style.css';
         echo '<link rel="stylesheet" type="text/css" href="' . $cssUrl . '" />';
     }   
     
     /**
      * 点赞相关js加载在尾部
      */
-    public static function footer() {
+    public static function footer() {    
         include 'likes-js.php';
     }    
 }
