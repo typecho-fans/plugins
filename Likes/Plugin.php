@@ -49,20 +49,13 @@ class Likes_Plugin implements Typecho_Plugin_Interface
      * @return void
      */
     public static function config(Typecho_Widget_Helper_Form $form){
-        /** 列表A标签点赞的class */
-        $listLikeClass = new Typecho_Widget_Helper_Form_Element_Text(
-            'listClass', NULL,'list-like', 
-            _t('列表点赞A标签的class'),
-            _t('列表页点赞的自定义样式，默认为.list-like可自写CSS样式')
-        );
-        $form->addInput($listLikeClass);
         /** 文章页A标签点赞的class */
-        $postLikeClass = new Typecho_Widget_Helper_Form_Element_Text(
-            'postClass',NULL ,'post-like', 
-            _t('文章点赞A标签的class'),
-            _t('文章页点赞的自定义样式，默认为.post-like可自写CSS样式')
+        $likeClass = new Typecho_Widget_Helper_Form_Element_Text(
+            'likeClass',NULL ,'post-like', 
+            _t('点赞A标签的class'),
+            _t('点赞的自定义样式，默认为.post-like。可自定义CSS样式，无需加.')
         );
-        $form->addInput($postLikeClass);           
+        $form->addInput($likeClass);           
     }
 
     /**
@@ -85,7 +78,7 @@ class Likes_Plugin implements Typecho_Plugin_Interface
      * 输出: 0
      *
      * @access public
-     * @param bool    $link   是否输入链接 (false为显示纯数字，用于自定义显示样式)
+     * @param bool    $link   是否输入链接 (false为显示纯数字)
      * @return string
      */  
     public static function theLikes($link = true){
@@ -93,7 +86,8 @@ class Likes_Plugin implements Typecho_Plugin_Interface
         $cid = Typecho_Widget::widget('Widget_Archive')->cid;
         $row = $db->fetchRow($db->select('likes')->from('table.contents')->where('cid = ?', $cid));
         if($link){
-            echo '<a href="javascript:;" class="post-like" data-pid="'.$cid.'"><i class="fa-thumbs-up"></i>赞 (<span>'.$row['likes'].'</span>)</a>';
+            $settings = Helper::options()->plugin('Likes');
+            echo '<a href="javascript:;" class="'.$settings->likeClass.'" data-pid="'.$cid.'"><i class="fa-thumbs-up"></i>赞 (<span>'.$row['likes'].'</span>)</a>';
         }else{
             return $row['likes'];
         }
@@ -111,10 +105,9 @@ class Likes_Plugin implements Typecho_Plugin_Interface
      * @param string  $after  后字串
      * @return string
      */
-    public static function theMostLiked($limit = 10, $shownum = true, $before = '<br/> - ( 访问: ', $after = ' 次 ) ')
+    public static function theMostLiked($limit = 10, $shownum = true, $before = '<br/> - ( 点赞: ', $after = ' 次 ) ')
     {
         $db = Typecho_Db::get();
-        $options = Typecho_Widget::widget('Widget_Options');
         $limit = is_numeric($limit) ? $limit : 10;
         $posts = $db->fetchAll($db->select()->from('table.contents')
                  ->where('type = ? AND status = ? AND password IS NULL', 'post', 'publish')

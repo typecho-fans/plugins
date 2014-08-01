@@ -7,7 +7,7 @@ $settings = Helper::options()->plugin('Likes');
 <script type="text/javascript" src="<?php echo $jqueryScriptUrl; ?>"></script>
 <script type="text/javascript" src="<?php echo $macaroonScriptUrl; ?>"></script>
 <script>
-    $(".<?php echo $settings->listClass; ?>,.<?php echo $settings->postClass; ?>").on("click", function(){
+    $(".<?php echo $settings->likeClass; ?>").on("click", function(){
     	var th = $(this);
 		var id = th.attr('data-pid');
 		var cookies = $.macaroon('_syan_like') || "";
