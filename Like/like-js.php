@@ -1,7 +1,7 @@
 <?php if (!defined('__TYPECHO_ROOT_DIR__')) exit; 
-$jqueryScriptUrl = Helper::options()->pluginUrl . '/Likes/js/jquery.js';
-$macaroonScriptUrl = Helper::options()->pluginUrl . '/Likes/js/jquery.fs.macaroon.js';
-$settings = Helper::options()->plugin('Likes');
+$jqueryScriptUrl = Helper::options()->pluginUrl . '/Like/js/jquery.js';
+$macaroonScriptUrl = Helper::options()->pluginUrl . '/Like/js/jquery.fs.macaroon.js';
+$settings = Helper::options()->plugin('Like');
 ?>
 
 <script type="text/javascript" src="<?php echo $jqueryScriptUrl; ?>"></script>
@@ -16,7 +16,7 @@ $settings = Helper::options()->plugin('Likes');
 		cookies ? cookies.length >= 160 ? (cookies = cookies.substring(0, cookies.length - 1), cookies = cookies.substr
 (1).split(","), cookies.splice(0, 1), cookies.push(id), cookies = cookies.join(","), $.macaroon("_syan_like", "," + cookies + 
 ",")) : $.macaroon("_syan_like", cookies + id + ",") : $.macaroon("_syan_like", "," + id + ",");
-		$.post('<?php Helper::options()->index('/action/likes?like'); ?>',{
+		$.post('<?php Helper::options()->index('/action/like?up'); ?>',{
 		cid:id
 		},function(data){
 		th.addClass('actived');
