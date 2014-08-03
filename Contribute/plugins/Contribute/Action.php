@@ -25,9 +25,8 @@ class Contribute_Action extends Typecho_Widget implements Widget_Interface_Do
      */
     public function approved()
     {
-        $cid = $this->request->filter('int')->cid;
+        $cid = $this->request->getArray('cid');
         $approvedCount = 0;
-
         if ($cid) {
             /* 格式化文章主键 */
             $posts = is_array($cid) ? $cid : array($cid);
@@ -44,7 +43,6 @@ class Contribute_Action extends Typecho_Widget implements Widget_Interface_Do
                 unset($content['author']);
                 unset($content['category']);
                 unset($content['tags']);
-
                 /* 从草稿中取出分类及标签 */
                 $category = unserialize($draft['category']);
                 $tags = $draft['tags'];
@@ -83,7 +81,7 @@ class Contribute_Action extends Typecho_Widget implements Widget_Interface_Do
      */
     public function delete()
     {
-        $cid = $this->request->filter('int')->cid;
+        $cid = $this->request->getArray("cid");
         $deleteCount = 0;
 
         if ($cid) {
@@ -185,6 +183,7 @@ class Contribute_Action extends Typecho_Widget implements Widget_Interface_Do
      */
     private function _insert(array $content)
     {
+
         /** 构建插入结构 */
         $insertStruct = array(
             'title'         =>  htmlspecialchars($content['title']),
@@ -233,7 +232,7 @@ class Contribute_Action extends Typecho_Widget implements Widget_Interface_Do
             ->from('table.contents')->limit(1)
             ->order('cid', Typecho_Db::SORT_DESC))->cid;
         $content['slug'] = $this->_applySlug($content['slug'], $cid);
-
+        
         $insertId = $this->_db->query($this->_db->insert('table.contents')->rows($content));
 
         return $insertId;

@@ -5,7 +5,7 @@
  * @package MostCache
  * @author skylzl
  * @version 1.0.0
- * @link http://www.woyoudian.com
+ * @link http://www.phoneshuo.com
  */
 class MostCache_Plugin implements Typecho_Plugin_Interface
 { 

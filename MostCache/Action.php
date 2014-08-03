@@ -59,7 +59,7 @@ class MostCache_Action extends Typecho_Widget implements Widget_Interface_Do
 		$mc = memcache_init();
 		memcache_flush($mc);
 	}        
-        Typecho_Response::throwJson('success');
+        $this->request->throwJson('success');
     }
 
     public function action(){
