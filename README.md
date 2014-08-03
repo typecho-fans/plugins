@@ -83,3 +83,5 @@
 | WeChatHelper | 微信公众号平台插件 | [@冰剑](https://github.com/binjoo) |
 | XiaMiPlayer | 虾米迷你型播放器插件 | [@lizheming](https://github.com/lizheming) |
 | Xiami | 虾米页面型播放器插件(支持专辑) | [@牧风](https://github.com/iMuFeng) |
+| MostCache | 支持mysql缓存及 SAE的memcache缓存，自动更新缓存 | [@skylzl](https://github.com/xiaogouxo) |
+| Like | typecho点赞插件like | [@skylzl](https://github.com/xiaogouxo) |
