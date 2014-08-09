@@ -67,7 +67,7 @@
 | Keywords | 关键词和标签自动内链插件 | [@羽中](https://github.com/jzwalk) |
 | LREditor | Markdown编辑器增强插件 | [@lizheming](http://github.com/lizheming) |
 | Like | typecho点赞插件like | [@skylzl](https://github.com/xiaogouxo) |
-| MostCache | 支持mysql缓存及 SAE的memcache缓存，自动更新缓存 | [@skylzl](https://github.com/xiaogouxo) |
+| MostCache | mysql、SAE memcache 缓存插件 | [@skylzl](https://github.com/xiaogouxo) |
 | MyPlayer | 播放页面链接转为外链播放器插件 | [@perichr](http://github.com/perichr) |
 | OptimizeDB | 数据库优化插件 | [@冰剑](https://github.com/binjoo) |
 | OriginalEditor | 屏蔽Markdown模式插件 | [@lizheming](http://github.com/lizheming) |
