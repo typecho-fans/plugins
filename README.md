@@ -66,6 +66,7 @@
 | Html2Text | Html代码转Markdown格式插件 | [@冰剑](https://github.com/binjoo) |
 | Keywords | 关键词和标签自动内链插件 | [@羽中](https://github.com/jzwalk) |
 | LREditor | Markdown编辑器增强插件 | [@lizheming](http://github.com/lizheming) |
+| MyPlayer | 播放页面链接转为外链播放器插件 | [@perichr](http://github.com/perichr) |
 | OptimizeDB | 数据库优化插件 | [@冰剑](https://github.com/binjoo) |
 | OriginalEditor | 屏蔽Markdown模式插件 | [@lizheming](http://github.com/lizheming) |
 | Prism | 轻量级语法高亮插件 | [@冰剑](https://github.com/binjoo) |
