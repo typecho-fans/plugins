@@ -4,7 +4,7 @@
  *
  * @package MyPlayer
  * @author perichr
- * @version 1.0.8.25
+ * @version 1.0.9
  * @link http://perichr.org
  */
 class MyPlayer_Plugin implements Typecho_Plugin_Interface

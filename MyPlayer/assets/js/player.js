@@ -86,7 +86,7 @@
 	}
 	function parseLyric(text){
 		text = text.split('\r\n')
-		lyric = []
+		var lyric = []
 		$.each(text, function(index, value){
 			value = $.trim(value)
 			var d = value.match(/^\[\d{2}:\d{2}((\.|\:)\d{2})\]/g)
