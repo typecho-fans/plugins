@@ -16,26 +16,11 @@ P({
                     return href && 0 == href.indexOf('http://www.xiami.com/song/')
                 },
                 'create': function(href) {
-                    /*
                     this.base = 'flash'
                     this.attributes.width = 257
                     this.attributes.height = 33
                     this.attributes.src = href.replace(/.*\/(\d+)\/?/, 'http://www.xiami.com/widget/1426712_$1/singlePlayer.swf')
                     this.callback()
-                    */
-                    this.base = 'iframe'
-                    var op = {media: [], theme: f.trim(o('theme'))}
-                    op.media.push({
-                        xiami: href.replace(/.*\/(\d+)\/?/, '$1'),
-                    })
-                    if(this.element.getAttribute(o.auto_sign)){
-                        op.autoplay = true
-                    }
-                    this.attributes.src = me.GetPath('../../player/#') + JSON.stringify(op)
-                    this.attributes.width = 223
-                    this.attributes.height = 24
-                    this.callback()
-
                 }
             },
             '优酷视频': {

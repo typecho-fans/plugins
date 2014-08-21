@@ -71,8 +71,11 @@ Typecho外链播放器转换插件
 
 开发版发布地址：[MyPlayer On Github][2]
 
+历史版本：[MyPlayer Releases][5]
+
 [1]:http://typecho.org
 [2]:https://github.com/perichr/Typecho_Plugin_MyPlayer
 [3]:https://github.com/typecho-fans/plugins/tree/master/MyPlayer
 [4]:https://github.com/typecho-app-store/AppStore
+[5]:https://github.com/perichr/Typecho_Plugin_MyPlayer/releases
 
