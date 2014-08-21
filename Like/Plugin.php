@@ -89,7 +89,7 @@ class Like_Plugin implements Typecho_Plugin_Interface
             $settings = Helper::options()->plugin('Like');
             echo '<a href="javascript:;" class="'.$settings->likeClass.'" data-pid="'.$cid.'"><i class="fa-thumbs-up"></i>赞 (<span>'.$row['likes'].'</span>)</a>';
         }else{
-            return $row['likes'];
+            echo $row['likes'];
         }
     }
 
