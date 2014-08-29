@@ -2,7 +2,7 @@
 /*
  * 歌词文件
  */
-class LYRIC extends API{
+class lyric extends API{
     protected function LoadRemote( ) {
         if( TryGetParam( 'url', $url ) ) {
             $source =  GetUrlContent( $url );

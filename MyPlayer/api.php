@@ -43,7 +43,7 @@ abstract class API {
     protected abstract function LoadRemote( );
 }
 if( TryGetParam( 'service', $service ) ) {
-    $service = strtoupper( $service );
+    $service = strtolower( $service );
     $apifile = "api/{$service}.php";
     if( file_exists( $apifile ) ){
         include( $apifile );

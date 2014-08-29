@@ -2,7 +2,7 @@
 /*
  * 爱奇艺
  */
-class IQIYI extends API{
+class iqiyi extends API{
     protected function LoadRemote( ) {
         if( TryGetParam( 'id', $id ) ) {
             $html = GetUrlContent( "http://www.iqiyi.com/v_{$id}.html" );
