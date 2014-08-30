@@ -44,45 +44,45 @@
 
 | 名称 | 介绍 | 作者 |
 | ---- |:----:| ----:|
-| AudioPlayer | Flash音乐文件播放器插件 | [@羽中](https://github.com/jzwalk) |
-| At | 评论@ 型回复模式插件 | [@lizheming](https://github.com/lizheming) |
-| AutoSlug | 自动生成文章缩略名插件 | [@ShingChi](https://github.com/shingchi) |
-| Avatars | 读者墙头像排名插件(支持缓存) | [@羽中](https://github.com/jzwalk) |
-| BaeUpload | BAE附件上传插件 | [@兜兜有矿石](https://github.com/qqff01) |
-| CateFilter | 首页指定分类不显示插件 | [@rakiy](https://github.com/rakiy) |
-| CommentToMail | 评论邮件提醒插件 | [@byends](https://github.com/byends) [@阿飞](https://github.com/defeme) |
-| CommenToMail4BAE | BAE版评论提醒插件 | [@ShingChi](https://github.com/shingchi) |
-| Contribute | 用户投稿审查管理插件 | [@ShingChi](https://github.com/shingchi) |
-| DbManager | 数据库管理工具插件 | [@ShingChi](https://github.com/shingchi) |
-| Duoshuo | 多说社会化评论同步插件 | [@rakiy](https://github.com/rakiy) |
-| Editor | 非官方Markdown编辑器插件 | [@lizheming](https://github.com/lizheming) |
-| EmlogToTypecho | Emlog转换Typecho插件 | [@ShingChi](https://github.com/shingchi) |
-| GHbutton | Github功能按钮展示插件 | [@羽中](https://github.com/jzwalk) |
-| GithubCard | Github项目或用户模块展示插件 | [@chekun](https://github.com/chekun) |
-| GoLinks | 外链转为内链跳转插件 | [@阿飞](https://github.com/defeme) |
-| GoogleCodePrettfy | 代码高亮插件 | [@lizheming](https://github.com/lizheming) |
-| Hermit | 虾米列表型播放器插件(支持专辑) | [@牧风](https://github.com/iMuFeng) |
-| HighSlide | 灯箱弹窗特效及页面相册插件 | [@羽中](https://github.com/jzwalk) |
-| Html2Text | Html代码转Markdown格式插件 | [@冰剑](https://github.com/binjoo) |
-| Keywords | 关键词和标签自动内链插件 | [@羽中](https://github.com/jzwalk) |
-| LREditor | Markdown编辑器增强插件 | [@lizheming](http://github.com/lizheming) |
-| Like | typecho点赞插件like | [@skylzl](https://github.com/xiaogouxo) |
-| MostCache | mysql、SAE memcache 缓存插件 | [@skylzl](https://github.com/xiaogouxo) |
-| MyPlayer | 播放页面链接转为外链播放器插件 | [@perichr](http://github.com/perichr) |
-| OptimizeDB | 数据库优化插件 | [@冰剑](https://github.com/binjoo) |
-| OriginalEditor | 屏蔽Markdown模式插件 | [@lizheming](http://github.com/lizheming) |
-| Prism | 轻量级语法高亮插件 | [@冰剑](https://github.com/binjoo) |
-| RoutesHelper | 路由助手插件 | [@兜兜有矿石](https://github.com/qqff01) |
-| Reposidget | Github Repo内容展示插件 | [@西秦公子](https://github.com/xiqingongzi) |
-| Smilies | 自带评论表情功能插件 | [@羽中](https://github.com/jzwalk) [Willin Kan](http://kan.willin.org) |
-| Snowstorm | 纯娱乐用 博客飘雪插件 | [@rakiy](https://github.com/rakiy) |
-| Subscriber | 文章仅对登录会员可见插件 | [@羽中](https://github.com/jzwalk) |
-| SyncPost | 同步文章发布到微博插件 | [@冰剑](https://github.com/binjoo) |
-| TeKit | Typecho常用扩展功能工具箱插件 | [@冰剑](https://github.com/binjoo) |
-| ThemeDemo | 外观主题演示插件 | [@兜兜有矿石](https://github.com/qqff01) |
-| UploadPlugin | 在线安装模板/插件的插件 | [@阿飞](https://github.com/defeme) |
-| Ugauka | 一只萌萌的春菜	| [@Kunr](https://github.com/Kunr) |
-| Watermark | 图片加水印插件(向下兼容0.8) | [@阿飞](https://github.com/defeme) |
-| WeChatHelper | 微信公众号平台插件 | [@冰剑](https://github.com/binjoo) |
-| XiaMiPlayer | 虾米迷你型播放器插件 | [@lizheming](https://github.com/lizheming) |
-| Xiami | 虾米页面型播放器插件(支持专辑) | [@牧风](https://github.com/iMuFeng) |
+| [AudioPlayer](tree/master/AudioPlayer) | Flash音乐文件播放器插件 | [@羽中](https://github.com/jzwalk) |
+| [At](tree/master/At) | 评论@ 型回复模式插件 | [@lizheming](https://github.com/lizheming) |
+| [AutoSlug](tree/master/AutoSlug) | 自动生成文章缩略名插件 | [@ShingChi](https://github.com/shingchi) |
+| [Avatars](tree/master/Avatars) | 读者墙头像排名插件(支持缓存) | [@羽中](https://github.com/jzwalk) |
+| [BaeUpload](tree/master/BaeUpload) | BAE附件上传插件 | [@兜兜有矿石](https://github.com/qqff01) |
+| [CateFilter](tree/master/CateFilter) | 首页指定分类不显示插件 | [@rakiy](https://github.com/rakiy) |
+| [CommentToMail](https://github.com/byends/CommentToMail) | 评论邮件提醒插件 | [@byends](https://github.com/byends) [@阿飞](https://github.com/defeme) |
+| [CommenToMail4BAE](tree/master/CommenToMail4BAE) | BAE版评论提醒插件 | [@ShingChi](https://github.com/shingchi) |
+| [Contribute](tree/master/Contribute) | 用户投稿审查管理插件 | [@ShingChi](https://github.com/shingchi) |
+| [DbManager](tree/master/DbManager) | 数据库管理工具插件 | [@ShingChi](https://github.com/shingchi) |
+| [Duoshuo](tree/master/Duoshuo) | 多说社会化评论同步插件 | [@rakiy](https://github.com/rakiy) |
+| [Editor](tree/master/Editor) | 非官方Markdown编辑器插件 | [@lizheming](https://github.com/lizheming) |
+| [EmlogToTypecho](tree/master/EmlogToTypecho) | Emlog转换Typecho插件 | [@ShingChi](https://github.com/shingchi) |
+| [GHbutton](tree/master/GHbutton) | Github功能按钮展示插件 | [@羽中](https://github.com/jzwalk) |
+| [GithubCard](tree/master/GithubCard) | Github项目或用户模块展示插件 | [@chekun](https://github.com/chekun) |
+| [GoLinks](tree/master/GoLinks) | 外链转为内链跳转插件 | [@阿飞](https://github.com/defeme) |
+| [GoogleCodePrettfy](tree/master/GoogleCodePrettfy) | 代码高亮插件 | [@lizheming](https://github.com/lizheming) |
+| [Hermit](tree/master/Hermit) | 虾米列表型播放器插件(支持专辑) | [@牧风](https://github.com/iMuFeng) |
+| [HighSlide](tree/master/HighSlide) | 灯箱弹窗特效及页面相册插件 | [@羽中](https://github.com/jzwalk) |
+| [Html2Text](tree/master/Html2Text) | Html代码转Markdown格式插件 | [@冰剑](https://github.com/binjoo) |
+| [Keywords](tree/master/Keywords) | 关键词和标签自动内链插件 | [@羽中](https://github.com/jzwalk) |
+| [LREditor](tree/master/LREditor) | Markdown编辑器增强插件 | [@lizheming](http://github.com/lizheming) |
+| [Like](tree/master/Like) | typecho点赞插件like | [@skylzl](https://github.com/xiaogouxo) |
+| [MostCache](tree/master/MostCache) | mysql、SAE memcache 缓存插件 | [@skylzl](https://github.com/xiaogouxo) |
+| [MyPlayer](tree/master/MyPlayer) | 播放页面链接转为外链播放器插件 | [@perichr](http://github.com/perichr) |
+| [OptimizeDB](tree/master/OptimizeDB) | 数据库优化插件 | [@冰剑](https://github.com/binjoo) |
+| [OriginalEditor](tree/master/OriginalEditor) | 屏蔽Markdown模式插件 | [@lizheming](http://github.com/lizheming) |
+| [Prism](tree/master/Prism) | 轻量级语法高亮插件 | [@冰剑](https://github.com/binjoo) |
+| [RoutesHelper](tree/master/RoutesHelper) | 路由助手插件 | [@兜兜有矿石](https://github.com/qqff01) |
+| [Reposidget](tree/master/Reposidget) | Github Repo内容展示插件 | [@西秦公子](https://github.com/xiqingongzi) |
+| [Smilies](tree/master/Smilies) | 自带评论表情功能插件 | [@羽中](https://github.com/jzwalk) [Willin Kan](http://kan.willin.org) |
+| [Snowstorm](tree/master/Snowstorm) | 纯娱乐用 博客飘雪插件 | [@rakiy](https://github.com/rakiy) |
+| [Subscriber](tree/master/Subscriber) | 文章仅对登录会员可见插件 | [@羽中](https://github.com/jzwalk) |
+| [SyncPost](tree/master/SyncPost) | 同步文章发布到微博插件 | [@冰剑](https://github.com/binjoo) |
+| [TeKit](https://github.com/binjoo/TeKit) | Typecho常用扩展功能工具箱插件 | [@冰剑](https://github.com/binjoo) |
+| [ThemeDemo](tree/master/ThemeDemo) | 外观主题演示插件 | [@兜兜有矿石](https://github.com/qqff01) |
+| [UploadPlugin](tree/master/UploadPlugin) | 在线安装模板/插件的插件 | [@阿飞](https://github.com/defeme) |
+| [Ugauka](tree/master/Ugauka) | 一只萌萌的春菜	| [@Kunr](https://github.com/Kunr) |
+| [Watermark](tree/master/Watermark) | 图片加水印插件(向下兼容0.8) | [@阿飞](https://github.com/defeme) |
+| [WeChatHelper](https://github.com/binjoo/WeChatHelper) | 微信公众号平台插件 | [@冰剑](https://github.com/binjoo) |
+| [XiaMiPlayer](tree/master/XiaMiPlayer) | 虾米迷你型播放器插件 | [@lizheming](https://github.com/lizheming) |
+| [Xiami](tree/master/Xiami) | 虾米页面型播放器插件(支持专辑) | [@牧风](https://github.com/iMuFeng) |
