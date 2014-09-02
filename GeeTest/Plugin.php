@@ -1,8 +1,8 @@
 <?php
 /**
- * gtCaptcha验证码插件
+ * 极验验证
  * 
- * @package gtCaptcha
+ * @package GeeTest
  * @author 啸傲居士
  * @version 1.0.0
  * @link http://jiya.io
@@ -10,7 +10,7 @@
 
 require_once('SDK/geetestlib.php');
 
-class gtCaptcha_Plugin implements Typecho_Plugin_Interface
+class GeeTest_Plugin implements Typecho_Plugin_Interface
 {
 
     /**
@@ -63,13 +63,13 @@ class gtCaptcha_Plugin implements Typecho_Plugin_Interface
 	 * 展示验证码
 	 */
 	public static function output() {
-		$publickey = Typecho_Widget::widget('Widget_Options')->plugin('gtCaptcha')->publickey;
+		$publickey = Typecho_Widget::widget('Widget_Options')->plugin('GeeTest')->publickey;
 		
 		echo geetest_get_html($publickey);
 	}
   
 	public static function filter($comment, $obj) {
-		$privatekey = Typecho_Widget::widget('Widget_Options')->plugin('gtCaptcha')->privatekey;
+		$privatekey = Typecho_Widget::widget('Widget_Options')->plugin('GeeTest')->privatekey;
 		$challenge = $_POST['geetest_challenge'];
 		$validate = $_POST['geetest_validate'];
 		$seccode = $_POST['geetest_seccode'];
