@@ -86,3 +86,4 @@
 | [WeChatHelper](https://github.com/binjoo/WeChatHelper) | 微信公众号平台插件 | [@冰剑](https://github.com/binjoo) |
 | [XiaMiPlayer](https://github.com/typecho-fans/plugins/tree/master/XiaMiPlayer) | 虾米迷你型播放器插件 | [@lizheming](https://github.com/lizheming) |
 | [Xiami](https://github.com/typecho-fans/plugins/tree/master/Xiami) | 虾米页面型播放器插件(支持专辑) | [@牧风](https://github.com/iMuFeng) |
+| [gtCaptcha](https://github.com/typecho-fans/plugins/tree/master/gtCaptcha) | gtCaptcha验证码插件 | [@shuxiao9058](https://github.com/shuxiao9058) |
