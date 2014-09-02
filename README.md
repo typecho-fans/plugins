@@ -57,6 +57,7 @@
 | [Duoshuo](https://github.com/typecho-fans/plugins/tree/master/Duoshuo) | 多说社会化评论同步插件 | [@rakiy](https://github.com/rakiy) |
 | [Editor](https://github.com/typecho-fans/plugins/tree/master/Editor) | 非官方Markdown编辑器插件 | [@lizheming](https://github.com/lizheming) |
 | [EmlogToTypecho](https://github.com/typecho-fans/plugins/tree/master/EmlogToTypecho) | Emlog转换Typecho插件 | [@ShingChi](https://github.com/shingchi) |
+| [GeeTest](https://github.com/typecho-fans/plugins/tree/master/GeeTest) | GeeTest验证码插件 | [@啸傲居士](https://github.com/shuxiao9058) |
 | [GHbutton](https://github.com/typecho-fans/plugins/tree/master/GHbutton) | Github功能按钮展示插件 | [@羽中](https://github.com/jzwalk) |
 | [GithubCard](https://github.com/typecho-fans/plugins/tree/master/GithubCard) | Github项目或用户模块展示插件 | [@chekun](https://github.com/chekun) |
 | [GoLinks](https://github.com/typecho-fans/plugins/tree/master/GoLinks) | 外链转为内链跳转插件 | [@阿飞](https://github.com/defeme) |
@@ -86,4 +87,3 @@
 | [WeChatHelper](https://github.com/binjoo/WeChatHelper) | 微信公众号平台插件 | [@冰剑](https://github.com/binjoo) |
 | [XiaMiPlayer](https://github.com/typecho-fans/plugins/tree/master/XiaMiPlayer) | 虾米迷你型播放器插件 | [@lizheming](https://github.com/lizheming) |
 | [Xiami](https://github.com/typecho-fans/plugins/tree/master/Xiami) | 虾米页面型播放器插件(支持专辑) | [@牧风](https://github.com/iMuFeng) |
-| [gtCaptcha](https://github.com/typecho-fans/plugins/tree/master/gtCaptcha) | gtCaptcha验证码插件 | [@shuxiao9058](https://github.com/shuxiao9058) |
