@@ -48,6 +48,7 @@
 | [At](https://github.com/typecho-fans/plugins/tree/master/At) | 评论@ 型回复模式插件 | [@lizheming](https://github.com/lizheming) |
 | [AutoSlug](https://github.com/typecho-fans/plugins/tree/master/AutoSlug) | 自动生成文章缩略名插件 | [@ShingChi](https://github.com/shingchi) |
 | [Avatars](https://github.com/typecho-fans/plugins/tree/master/Avatars) | 读者墙头像排名插件(支持缓存) | [@羽中](https://github.com/jzwalk) |
+| [Announcement](https://github.com/typecho-fans/plugins/tree/master/Announcement) | 公告栏插件 | [@skylzl](https://github.com/xiaogouxo) |
 | [BaeUpload](https://github.com/typecho-fans/plugins/tree/master/BaeUpload) | BAE附件上传插件 | [@兜兜有矿石](https://github.com/qqff01) |
 | [CateFilter](https://github.com/typecho-fans/plugins/tree/master/CateFilter) | 首页指定分类不显示插件 | [@rakiy](https://github.com/rakiy) |
 | [CommentToMail](https://github.com/byends/CommentToMail) | 评论邮件提醒插件 | [@byends](https://github.com/byends) [@阿飞](https://github.com/defeme) |
