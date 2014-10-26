@@ -23,7 +23,7 @@ include 'menu.php';
                 
                 <!---插件管理--->
                 <?php if(!isset($request->p)): ?>
-                <?php Typecho_Widget::widget('Widget_Plugins_List_Deactivated')->to($deactivatedPlugins); ?>
+                <?php Typecho_Widget::widget('Widget_Plugins_List@unactivated', 'activated=0')->to($deactivatedPlugins); ?>
                 
                 <h4 class="typecho-list-table-title"><?php _e('可删除的插件'); ?></h4>
                 <div class="typecho-table-wrap">
@@ -65,7 +65,7 @@ include 'menu.php';
                     </table>
                 </div>
                 
-              <?php Typecho_Widget::widget('Widget_Plugins_List_Activated')->to($activatedPlugins); ?>
+              <?php Typecho_Widget::widget('Widget_Plugins_List@activated', 'activated=1')->to($activatedPlugins); ?>
                 <?php if ($activatedPlugins->have() || !empty($activatedPlugins->activatedPlugins)): ?>
                 <h4 class="typecho-list-table-title"><?php _e('启用的插件'); ?></h4>
                 <div class="typecho-table-wrap">
