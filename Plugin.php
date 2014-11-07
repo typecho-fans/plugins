@@ -13,13 +13,26 @@ class Ckeditor4Typecho_Plugin implements Typecho_Plugin_Interface
      * 默认设置的值
      */
     private static $_defaultConfig = array(
-        'width' => 850,
-        'height' => 400,
+        'widthAndHeight' => '850x400',
         'toolbar' => 'SIMPLE',
+        'toolbarCanCollapse' => 'false',
     );
 
-    private static function getDefaultConfig(){
+    private static function getDefaultConfig($key = null){
+        if( isset($key) )
+            return self::$_defaultConfig[$key];
         return (object)self::$_defaultConfig;
+    }
+
+    private static function getLayoutArr($savedWidthAndHeight){
+        $widthAndHeight = explode('x', $savedWidthAndHeight);
+        @list($width, $height) = $widthAndHeight;
+
+        if( is_numeric($width) && is_numeric($height) ) {
+            return $widthAndHeight;
+        }else{
+            return explode('x', self::getDefaultConfig('widthAndHeight'));
+        }
     }
 
     /**
@@ -60,11 +73,8 @@ class Ckeditor4Typecho_Plugin implements Typecho_Plugin_Interface
      */
     public static function config(Typecho_Widget_Helper_Form $form){
         $defaultConfig = self::getDefaultConfig();
-        $width = new Typecho_Widget_Helper_Form_Element_Text('width', NULL, $defaultConfig->width, _t('设置宽度'));
-        $form->addInput($width);
-
-        $height = new Typecho_Widget_Helper_Form_Element_Text('height', NULL, $defaultConfig->height, _t('设置高度'));
-        $form->addInput($height);
+        $widthAndHeight = new Typecho_Widget_Helper_Form_Element_Text('widthAndHeight', NULL, $defaultConfig->widthAndHeight, _t('设置宽度和高度'));
+        $form->addInput($widthAndHeight);
 
         //*工具栏按钮样式
         $toolbar = new Typecho_Widget_Helper_Form_Element_Select(
@@ -79,6 +89,17 @@ class Ckeditor4Typecho_Plugin implements Typecho_Plugin_Interface
             _t('工具栏按钮设置')
         );
         $form->addInput($toolbar);
+
+        $toolbarCanCollapse = new Typecho_Widget_Helper_Form_Element_Radio(
+            'toolbarCanCollapse' ,
+            array(
+                'true' => '是',
+                'false' => '否',
+            ),
+            $defaultConfig->toolbarCanCollapse ,
+            _t('是否可收缩')
+        );
+        $form->addInput($toolbarCanCollapse);
     }
     
     /**
@@ -114,7 +135,8 @@ class Ckeditor4Typecho_Plugin implements Typecho_Plugin_Interface
         $options = Helper::options();
         $plugin_options = $options->plugin('Ckeditor4Typecho');
         $pluginRoot = Typecho_Common::url('Ckeditor4Typecho/ckeditor', $options->pluginUrl);
-        
+        list($width, $height) = self::getLayoutArr($plugin_options->widthAndHeight);
+
         //调用编辑器
         echo <<<CODE
         <script type="text/javascript" src="{$pluginRoot}/ckeditor.js"></script>
@@ -124,8 +146,9 @@ class Ckeditor4Typecho_Plugin implements Typecho_Plugin_Interface
             filebrowserUploadUrl : '{$pluginRoot}/upload.php?no_db=1&no_thumb=1&return=ckeditor',
             filebrowserImageUploadUrl : '{$pluginRoot}/upload.php?type=images&no_db=1&no_thumb=1&return=ckeditor',
             extraPlugins : 'autogrow',
-            width: {$plugin_options->width},
-            height: {$plugin_options->height},
+            width: {$width},
+            height: {$height},
+            toolbarCanCollapse: {$plugin_options->toolbarCanCollapse},
             autoGrow_minHeight : 400
         });
 
