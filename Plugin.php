@@ -136,6 +136,7 @@ class Ckeditor4Typecho_Plugin implements Typecho_Plugin_Interface
         $plugin_options = $options->plugin('Ckeditor4Typecho');
         $pluginRoot = Typecho_Common::url('Ckeditor4Typecho/ckeditor', $options->pluginUrl);
         list($width, $height) = self::getLayoutArr($plugin_options->widthAndHeight);
+        $isEdit = isset($_GET['cid']) && $_GET['cid'] > 0 ? 'false' : 'true';
 
         //调用编辑器
         echo <<<CODE
@@ -152,8 +153,8 @@ class Ckeditor4Typecho_Plugin implements Typecho_Plugin_Interface
             autoGrow_minHeight : 400
         });
 
-        window.onbeforeunload = function(event){   
-            if(ckeditors.getData() != ''){   
+        window.onbeforeunload = function(event){
+            if(ckeditors.getData() != '' && {$isEdit}){
               event.returnValue = '即将离开页面，是否确认编辑的内容已使用？';   
             }
         }
