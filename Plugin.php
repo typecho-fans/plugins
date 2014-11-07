@@ -11,6 +11,9 @@ class Ckeditor4Typecho_Plugin implements Typecho_Plugin_Interface
 {
     /**
      * 默认设置的值
+     *
+     * @access private
+     * @static var
      */
     private static $_defaultConfig = array(
         'widthAndHeight' => '850x400',
@@ -18,13 +21,27 @@ class Ckeditor4Typecho_Plugin implements Typecho_Plugin_Interface
         'toolbarCanCollapse' => 'false',
     );
 
-    private static function getDefaultConfig($key = null){
+    /**
+     * 获取默认的配置
+     *
+     * @access private
+     * @return mixed
+     */
+    private static function getDefaultConfig($key = null)
+    {
         if( isset($key) )
             return self::$_defaultConfig[$key];
         return (object)self::$_defaultConfig;
     }
 
-    private static function getLayoutArr($savedWidthAndHeight){
+    /**
+     * 获取编辑器长和宽的数组
+     *
+     * @access private
+     * @return array
+     */
+    private static function getLayoutArr($savedWidthAndHeight)
+    {
         $widthAndHeight = explode('x', $savedWidthAndHeight);
         @list($width, $height) = $widthAndHeight;
 
