@@ -2,13 +2,26 @@
 /**
  * 集成CkEditor编辑器,支持上传图片功能
  * 
- * @package CkEditor4Typecho
+ * @package Ckeditor4Typecho
  * @author zhulin3141
  * @version 1.0.0
  * @link http://zhulin31410.blog.163.com/
  */
-class CkEditor4Typecho_Plugin implements Typecho_Plugin_Interface
+class Ckeditor4Typecho_Plugin implements Typecho_Plugin_Interface
 {
+    /**
+     * 默认设置的值
+     */
+    private static $_defaultConfig = array(
+        'width' => 850,
+        'height' => 400,
+        'tool_style' => 'SIMPLE',
+    );
+
+    private static function getDefaultConfig(){
+        return (object)self::$_defaultConfig;
+    }
+
     /**
      * 激活插件方法,如果激活失败,直接抛出异常
      * 
@@ -18,12 +31,12 @@ class CkEditor4Typecho_Plugin implements Typecho_Plugin_Interface
      */
     public static function activate()
     {
-        Typecho_Plugin::factory('admin/write-post.php')->richEditor = array('CkEditor4Typecho_Plugin', 'render');
-        Typecho_Plugin::factory('admin/write-page.php')->richEditor = array('CkEditor4Typecho_Plugin', 'render');
+        Typecho_Plugin::factory('admin/write-post.php')->richEditor = array('Ckeditor4Typecho_Plugin', 'render');
+        Typecho_Plugin::factory('admin/write-page.php')->richEditor = array('Ckeditor4Typecho_Plugin', 'render');
         
         //去除段落
-        Typecho_Plugin::factory('Widget_Contents_Post_Edit')->write = array('CkEditor4Typecho_Plugin', 'filter');    
-        Typecho_Plugin::factory('Widget_Contents_Page_Edit')->write = array('CkEditor4Typecho_Plugin', 'filter');
+        Typecho_Plugin::factory('Widget_Contents_Post_Edit')->write = array('Ckeditor4Typecho_Plugin', 'filter');    
+        Typecho_Plugin::factory('Widget_Contents_Page_Edit')->write = array('Ckeditor4Typecho_Plugin', 'filter');
     }
     
     /**
@@ -46,25 +59,26 @@ class CkEditor4Typecho_Plugin implements Typecho_Plugin_Interface
      * @return void
      */
     public static function config(Typecho_Widget_Helper_Form $form){
-        $ck_width = new Typecho_Widget_Helper_Form_Element_Text('ck_width', NULL, '850', _t('设置宽度'));
-        $form->addInput($ck_width);
+        $defaultConfig = self::getDefaultConfig();
+        $width = new Typecho_Widget_Helper_Form_Element_Text('width', NULL, $defaultConfig->width, _t('设置宽度'));
+        $form->addInput($width);
 
-        $ck_height = new Typecho_Widget_Helper_Form_Element_Text('ck_height', NULL, '400', _t('设置高度'));
-        $form->addInput($ck_height);
+        $height = new Typecho_Widget_Helper_Form_Element_Text('height', NULL, $defaultConfig->height, _t('设置高度'));
+        $form->addInput($height);
 
         //*工具栏按钮样式
-        $ck_tool_style = new Typecho_Widget_Helper_Form_Element_Select(
-            'ck_tool_style' ,
+        $tool_style = new Typecho_Widget_Helper_Form_Element_Select(
+            'tool_style' ,
             array(
                 'STANDARD' => '标准模式' ,
                 'SIMPLE' => '简单模式' ,
                 'MINI' => '迷你模式' ,
             ) ,
-            'SIMPLE' , 
+            $defaultConfig->tool_style , 
             _t('工具按钮'),
             _t('工具栏按钮设置')
         );
-        $form->addInput($ck_tool_style);
+        $form->addInput($tool_style);
     }
     
     /**
@@ -98,20 +112,20 @@ class CkEditor4Typecho_Plugin implements Typecho_Plugin_Interface
     public static function render($post)
     {
         $options = Helper::options();
-        $plugin_options = Typecho_Widget::widget('Widget_Options')->plugin('CkEditor4Typecho');
-
-        $pluginRoot = Typecho_Common::url('CkEditor4Typecho/ckeditor', $options->pluginUrl);
+        $plugin_options = $options->plugin('Ckeditor4Typecho');
+        $pluginRoot = Typecho_Common::url('Ckeditor4Typecho/ckeditor', $options->pluginUrl);
         
         //调用编辑器
-        echo sprintf("<script type=\"text/javascript\" src=\"%s/ckeditor.js\"></script>
-        <script type=\"text/javascript\">
+        echo <<<CODE
+        <script type="text/javascript" src="{$pluginRoot}/ckeditor.js"></script>
+        <script type="text/javascript">
         var ckeditors = CKEDITOR.replace( 'text', {
-            toolbar : '%s',
-            filebrowserUploadUrl : '%s/upload.php?no_db=1&no_thumb=1&return=ckeditor',
-            filebrowserImageUploadUrl : '%s/upload.php?type=images&no_db=1&no_thumb=1&return=ckeditor',
+            toolbar : '{$plugin_options->tool_style}',
+            filebrowserUploadUrl : '{$pluginRoot}/upload.php?no_db=1&no_thumb=1&return=ckeditor',
+            filebrowserImageUploadUrl : '{$pluginRoot}/upload.php?type=images&no_db=1&no_thumb=1&return=ckeditor',
             extraPlugins : 'autogrow',
-            width: %d,
-            height: %d,
+            width: {$plugin_options->width},
+            height: {$plugin_options->height},
             autoGrow_minHeight : 400
         });
 
@@ -120,7 +134,8 @@ class CkEditor4Typecho_Plugin implements Typecho_Plugin_Interface
               event.returnValue = '即将离开页面，是否确认编辑的内容已使用？';   
             }
         }
-        </script>", $pluginRoot, $plugin_options->ck_tool_style, $pluginRoot, $pluginRoot, $plugin_options->ck_width, $plugin_options->ck_height);
+        </script>
+CODE;
 
     }
 }
