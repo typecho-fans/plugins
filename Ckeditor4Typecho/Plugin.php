@@ -53,6 +53,24 @@ class Ckeditor4Typecho_Plugin implements Typecho_Plugin_Interface
     }
 
     /**
+     * 获取目录下的文件夹
+     *
+     * @access private
+     * @return array
+     */
+    private static function getDir($targetDir)  
+    {
+        $dirs = array();
+        $files = scandir($targetDir);
+        foreach($files as $file){
+            if( is_dir($targetDir . '/' . $file) && !in_array($file, array('.', '..')) ){
+                $dirs[] = $file;
+            }
+        }
+        return $dirs;
+    }
+
+    /**
      * 激活插件方法,如果激活失败,直接抛出异常
      * 
      * @access public
@@ -106,6 +124,18 @@ class Ckeditor4Typecho_Plugin implements Typecho_Plugin_Interface
             _t('工具栏按钮设置')
         );
         $form->addInput($toolbar);
+
+        //皮肤
+        $skins = self::getDir(dirname(__FILE__) . '/ckeditor/skins');
+        $skins = array_combine($skins, $skins);
+        $skin = new Typecho_Widget_Helper_Form_Element_Select(
+            'skin' ,
+            $skins ,
+            in_array('moono', $skins) ? 'moono' : $skins[0] ,
+            _t('皮肤'),
+            null
+        );
+        $form->addInput($skin);
 
         $toolbarCanCollapse = new Typecho_Widget_Helper_Form_Element_Radio(
             'toolbarCanCollapse' ,
@@ -166,6 +196,7 @@ class Ckeditor4Typecho_Plugin implements Typecho_Plugin_Interface
             extraPlugins : 'autogrow',
             width: {$width},
             height: {$height},
+            skin: '{$plugin_options->skin}',
             toolbarCanCollapse: {$plugin_options->toolbarCanCollapse},
             autoGrow_minHeight : 400
         });
