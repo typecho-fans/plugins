@@ -92,6 +92,7 @@
 | [Announcement](https://github.com/typecho-fans/plugins/tree/master/Announcement) | 公告栏插件 | [@skylzl](https://github.com/xiaogouxo) |
 | [BaeUpload](https://github.com/typecho-fans/plugins/tree/master/BaeUpload) | BAE附件上传插件 | [@兜兜有矿石](https://github.com/qqff01) |
 | [CateFilter](https://github.com/typecho-fans/plugins/tree/master/CateFilter) | 首页指定分类不显示插件 | [@rakiy](https://github.com/rakiy) |
+| [Ckeditor4Typecho](https://github.com/typecho-fans/plugins/tree/master/Ckeditor4Typecho) | 带上传功能的ckeditor插件 | [@zhulin3141](https://github.com/zhulin3141) |
 | [CommentToMail](https://github.com/byends/CommentToMail) | 评论邮件提醒插件 | [@byends](https://github.com/byends) [@阿飞](https://github.com/defeme) |
 | [CommenToMail4BAE](https://github.com/typecho-fans/plugins/tree/master/CommenToMail4BAE) | BAE版评论提醒插件 | [@ShingChi](https://github.com/shingchi) |
 | [Contribute](https://github.com/typecho-fans/plugins/tree/master/Contribute) | 用户投稿审查管理插件 | [@ShingChi](https://github.com/shingchi) |
