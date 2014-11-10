@@ -16,6 +16,7 @@ class Ueditor_Plugin implements Typecho_Plugin_Interface
      * @static var
      */
     private static $_defaultConfig = array(
+        'theme' => 'default',
     );
 
     /**
@@ -85,7 +86,21 @@ class Ueditor_Plugin implements Typecho_Plugin_Interface
      * @param Typecho_Widget_Helper_Form $form 配置面板
      * @return void
      */
-    public static function config(Typecho_Widget_Helper_Form $form){}
+    public static function config(Typecho_Widget_Helper_Form $form){
+        $defaultConfig = self::getDefaultConfig();
+
+        //皮肤
+        $skins = self::getDir(dirname(__FILE__) . '/ueditor/themes');
+        $skins = array_combine($skins, $skins);
+        $skin = new Typecho_Widget_Helper_Form_Element_Select(
+            'skin' ,
+            $skins ,
+            in_array($defaultConfig->theme, $skins) ? $defaultConfig->theme : $skins[0] ,
+            _t('皮肤'),
+            null
+        );
+        $form->addInput($skin);
+    }
     
     /**
      * 个人用户的配置面板
