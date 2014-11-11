@@ -19,6 +19,7 @@ class Ckeditor4Typecho_Plugin implements Typecho_Plugin_Interface
         'widthAndHeight' => '850x400',
         'toolbar' => 'SIMPLE',
         'toolbarCanCollapse' => 'false',
+        'enterMode' => 'CKEDITOR.ENTER_P',
         'skin' => 'moono',
     );
 
@@ -126,6 +127,18 @@ class Ckeditor4Typecho_Plugin implements Typecho_Plugin_Interface
         );
         $form->addInput($toolbar);
 
+        $enterMode = new Typecho_Widget_Helper_Form_Element_Select(
+            'enterMode' ,
+            array(
+                'CKEDITOR.ENTER_P' => 'P' ,
+                'CKEDITOR.ENTER_BR' => 'BR' ,
+                'CKEDITOR.ENTER_DIV' => 'DIV' ,) ,
+            $defaultConfig->enterMode ,
+            _t('回车产生的标签'),
+            NULL
+        );
+        $form->addInput($enterMode);
+
         //皮肤
         $skins = self::getDir(dirname(__FILE__) . '/ckeditor/skins');
         $skins = array_combine($skins, $skins);
@@ -197,6 +210,7 @@ class Ckeditor4Typecho_Plugin implements Typecho_Plugin_Interface
             extraPlugins : 'autogrow',
             width: {$width},
             height: {$height},
+            enterMode : {$plugin_options->enterMode},
             skin: '{$plugin_options->skin}',
             toolbarCanCollapse: {$plugin_options->toolbarCanCollapse},
             autoGrow_minHeight : 400
