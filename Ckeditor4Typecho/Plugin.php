@@ -9,6 +9,7 @@
  */
 class Ckeditor4Typecho_Plugin implements Typecho_Plugin_Interface
 {
+    const CONTACT_CHAR = 'x';
     /**
      * 默认设置的值
      *
@@ -16,7 +17,8 @@ class Ckeditor4Typecho_Plugin implements Typecho_Plugin_Interface
      * @static var
      */
     private static $_defaultConfig = array(
-        'widthAndHeight' => '850x400',
+        'width' => '850',
+        'height' => '400',
         'toolbar' => 'SIMPLE',
         'toolbarCanCollapse' => 'false',
         'enterMode' => 'CKEDITOR.ENTER_P',
@@ -44,13 +46,13 @@ class Ckeditor4Typecho_Plugin implements Typecho_Plugin_Interface
      */
     private static function getLayoutArr($savedWidthAndHeight)
     {
-        $widthAndHeight = explode('x', $savedWidthAndHeight);
+        $widthAndHeight = explode(self::CONTACT_CHAR, $savedWidthAndHeight);
         @list($width, $height) = $widthAndHeight;
 
         if( is_numeric($width) && is_numeric($height) ) {
             return $widthAndHeight;
         }else{
-            return explode('x', self::getDefaultConfig('widthAndHeight'));
+            return self::getDefaultConfig('width') . self::CONTACT_CHAR . self::getDefaultConfig('height');
         }
     }
 
@@ -110,7 +112,11 @@ class Ckeditor4Typecho_Plugin implements Typecho_Plugin_Interface
      */
     public static function config(Typecho_Widget_Helper_Form $form){
         $defaultConfig = self::getDefaultConfig();
-        $widthAndHeight = new Typecho_Widget_Helper_Form_Element_Text('widthAndHeight', NULL, $defaultConfig->widthAndHeight, _t('设置宽度和高度'));
+        $widthAndHeight = new Typecho_Widget_Helper_Form_Element_Text(
+            'widthAndHeight',
+            NULL, 
+            $defaultConfig->width . self::CONTACT_CHAR . $defaultConfig->height,
+            _t('设置宽度和高度'));
         $form->addInput($widthAndHeight);
 
         //*工具栏按钮样式
