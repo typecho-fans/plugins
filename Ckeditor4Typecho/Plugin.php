@@ -17,8 +17,8 @@ class Ckeditor4Typecho_Plugin implements Typecho_Plugin_Interface
      * @static var
      */
     private static $_defaultConfig = array(
-        'width' => '850',
-        'height' => '400',
+        'width' => 'auto',
+        'height' => 'auto',
         'toolbar' => 'SIMPLE',
         'toolbarCanCollapse' => 'false',
         'enterMode' => 'CKEDITOR.ENTER_P',
@@ -49,11 +49,34 @@ class Ckeditor4Typecho_Plugin implements Typecho_Plugin_Interface
         $widthAndHeight = explode(self::CONTACT_CHAR, $savedWidthAndHeight);
         @list($width, $height) = $widthAndHeight;
 
-        if( is_numeric($width) && is_numeric($height) ) {
+        if( self::validWidthAndHeight($width, $height) ) {
             return $widthAndHeight;
         }else{
-            return self::getDefaultConfig('width') . self::CONTACT_CHAR . self::getDefaultConfig('height');
+            return array(self::getDefaultConfig('width'), self::getDefaultConfig('height'));
         }
+    }
+
+    /**
+     * 验证宽度和高度的有效性
+     *
+     * @param mixed $expression [, mixed $... ]
+     * @return boolean
+     */
+    private static function validWidthAndHeight()
+    {
+        $params = func_get_args ();
+        $pass = false;
+
+        if( count($params) > 0 ){
+            foreach ($params as $val) {
+                $pass = ( is_numeric($val) || in_array($val, array('auto')) ) ? true : false;
+                if( ! $pass ){
+                    return $pass;
+                }
+            }
+        }
+
+        return $pass;
     }
 
     /**
@@ -214,8 +237,8 @@ class Ckeditor4Typecho_Plugin implements Typecho_Plugin_Interface
             filebrowserUploadUrl : '{$pluginRoot}/upload.php?no_db=1&no_thumb=1&return=ckeditor',
             filebrowserImageUploadUrl : '{$pluginRoot}/upload.php?type=images&no_db=1&no_thumb=1&return=ckeditor',
             extraPlugins : 'autogrow',
-            width: {$width},
-            height: {$height},
+            width: '{$width}',
+            height: '{$height}',
             enterMode : {$plugin_options->enterMode},
             skin: '{$plugin_options->skin}',
             toolbarCanCollapse: {$plugin_options->toolbarCanCollapse},
