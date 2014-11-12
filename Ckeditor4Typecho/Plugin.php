@@ -9,6 +9,7 @@
  */
 class Ckeditor4Typecho_Plugin implements Typecho_Plugin_Interface
 {
+    const CONTACT_CHAR = 'x';
     /**
      * 默认设置的值
      *
@@ -16,9 +17,11 @@ class Ckeditor4Typecho_Plugin implements Typecho_Plugin_Interface
      * @static var
      */
     private static $_defaultConfig = array(
-        'widthAndHeight' => '850x400',
+        'width' => 'auto',
+        'height' => 'auto',
         'toolbar' => 'SIMPLE',
         'toolbarCanCollapse' => 'false',
+        'enterMode' => 'CKEDITOR.ENTER_P',
         'skin' => 'moono',
     );
 
@@ -43,14 +46,37 @@ class Ckeditor4Typecho_Plugin implements Typecho_Plugin_Interface
      */
     private static function getLayoutArr($savedWidthAndHeight)
     {
-        $widthAndHeight = explode('x', $savedWidthAndHeight);
+        $widthAndHeight = explode(self::CONTACT_CHAR, $savedWidthAndHeight);
         @list($width, $height) = $widthAndHeight;
 
-        if( is_numeric($width) && is_numeric($height) ) {
+        if( self::validWidthAndHeight($width, $height) ) {
             return $widthAndHeight;
         }else{
-            return explode('x', self::getDefaultConfig('widthAndHeight'));
+            return array(self::getDefaultConfig('width'), self::getDefaultConfig('height'));
         }
+    }
+
+    /**
+     * 验证宽度和高度的有效性
+     *
+     * @param mixed $expression [, mixed $... ]
+     * @return boolean
+     */
+    private static function validWidthAndHeight()
+    {
+        $params = func_get_args ();
+        $pass = false;
+
+        if( count($params) > 0 ){
+            foreach ($params as $val) {
+                $pass = ( is_numeric($val) || in_array($val, array('auto')) ) ? true : false;
+                if( ! $pass ){
+                    return $pass;
+                }
+            }
+        }
+
+        return $pass;
     }
 
     /**
@@ -109,7 +135,11 @@ class Ckeditor4Typecho_Plugin implements Typecho_Plugin_Interface
      */
     public static function config(Typecho_Widget_Helper_Form $form){
         $defaultConfig = self::getDefaultConfig();
-        $widthAndHeight = new Typecho_Widget_Helper_Form_Element_Text('widthAndHeight', NULL, $defaultConfig->widthAndHeight, _t('设置宽度和高度'));
+        $widthAndHeight = new Typecho_Widget_Helper_Form_Element_Text(
+            'widthAndHeight',
+            NULL, 
+            $defaultConfig->width . self::CONTACT_CHAR . $defaultConfig->height,
+            _t('设置宽度和高度'));
         $form->addInput($widthAndHeight);
 
         //*工具栏按钮样式
@@ -125,6 +155,18 @@ class Ckeditor4Typecho_Plugin implements Typecho_Plugin_Interface
             _t('工具栏按钮设置')
         );
         $form->addInput($toolbar);
+
+        $enterMode = new Typecho_Widget_Helper_Form_Element_Select(
+            'enterMode' ,
+            array(
+                'CKEDITOR.ENTER_P' => 'P' ,
+                'CKEDITOR.ENTER_BR' => 'BR' ,
+                'CKEDITOR.ENTER_DIV' => 'DIV' ,) ,
+            $defaultConfig->enterMode ,
+            _t('回车产生的标签'),
+            NULL
+        );
+        $form->addInput($enterMode);
 
         //皮肤
         $skins = self::getDir(dirname(__FILE__) . '/ckeditor/skins');
@@ -195,8 +237,9 @@ class Ckeditor4Typecho_Plugin implements Typecho_Plugin_Interface
             filebrowserUploadUrl : '{$pluginRoot}/upload.php?no_db=1&no_thumb=1&return=ckeditor',
             filebrowserImageUploadUrl : '{$pluginRoot}/upload.php?type=images&no_db=1&no_thumb=1&return=ckeditor',
             extraPlugins : 'autogrow',
-            width: {$width},
-            height: {$height},
+            width: '{$width}',
+            height: '{$height}',
+            enterMode : {$plugin_options->enterMode},
             skin: '{$plugin_options->skin}',
             toolbarCanCollapse: {$plugin_options->toolbarCanCollapse},
             autoGrow_minHeight : 400
