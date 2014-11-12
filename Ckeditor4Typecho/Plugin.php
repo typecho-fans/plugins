@@ -23,6 +23,7 @@ class Ckeditor4Typecho_Plugin implements Typecho_Plugin_Interface
         'toolbarCanCollapse' => 'false',
         'enterMode' => 'CKEDITOR.ENTER_P',
         'skin' => 'moono',
+        'extraPlugins' => '',
     );
 
     /**
@@ -190,6 +191,15 @@ class Ckeditor4Typecho_Plugin implements Typecho_Plugin_Interface
             _t('是否可收缩')
         );
         $form->addInput($toolbarCanCollapse);
+
+        $extraPlugins = new Typecho_Widget_Helper_Form_Element_Textarea(
+            'extraPlugins',
+            NULL, 
+            $defaultConfig->extraPlugins,
+            _t('需要加载的插件'));
+
+        $extraPlugins->input->setAttribute('style', 'height: 60px;');
+        $form->addInput($extraPlugins);
     }
     
     /**
@@ -236,7 +246,7 @@ class Ckeditor4Typecho_Plugin implements Typecho_Plugin_Interface
             toolbar : '{$plugin_options->toolbar}',
             filebrowserUploadUrl : '{$pluginRoot}/upload.php?no_db=1&no_thumb=1&return=ckeditor',
             filebrowserImageUploadUrl : '{$pluginRoot}/upload.php?type=images&no_db=1&no_thumb=1&return=ckeditor',
-            extraPlugins : 'autogrow',
+            extraPlugins : '{$plugin_options->extraPlugins}',
             width: '{$width}',
             height: '{$height}',
             enterMode : {$plugin_options->enterMode},
