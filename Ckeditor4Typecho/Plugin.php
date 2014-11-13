@@ -2,6 +2,7 @@
 /**
  * 集成CkEditor编辑器,支持上传图片功能
  * 
+ * @category editor
  * @package Ckeditor4Typecho
  * @author zhulin3141
  * @version 1.0.0
