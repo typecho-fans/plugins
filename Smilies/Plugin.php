@@ -4,6 +4,7 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 /**
  * 新版评论表情与贴图插件 原作者<a href="http://kan.willin.org/typecho/smilies-plugin.html">willin kan</a>
  * 
+ * @category comment
  * @package Smilies
  * @author 羽中
  * @version 1.0.7

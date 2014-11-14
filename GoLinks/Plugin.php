@@ -3,6 +3,7 @@
  * 把外部链接转换为 your_blog_path/go/key/<br>
  * 通过菜单“创建->链接转换”设置
  *
+ * @category system
  * @package 链接转换 GoLinks
  * @author DEFE
  * @version 0.3.0

@@ -2,6 +2,7 @@
 /**
  * 我的播放器
  *
+ * @category player
  * @package MyPlayer
  * @author perichr
  * @version 1.1.3

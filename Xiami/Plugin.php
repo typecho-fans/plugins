@@ -2,6 +2,7 @@
 /**
  * Xiami
  * 
+ * @category player
  * @package Xiami
  * @author Mufeng
  * @version 0.0.2

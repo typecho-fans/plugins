@@ -2,6 +2,7 @@
 /**
  * 上传、删除插件和模板
  *
+ * @category system
  * @package Upload Plugin
  * @author DEFE
  * @version 1.1.2

@@ -3,6 +3,7 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 
 /**
  * 自动为文章中出现的关键词添加链接
+ * @category content
  * @package Keywords
  * @author 羽中
  * @version 1.1.1

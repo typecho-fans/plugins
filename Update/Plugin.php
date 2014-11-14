@@ -2,6 +2,7 @@
 /**
  * Typecho 后台自动升级
  * 
+ * @category system
  * @package Update 
  * @author 公子
  * @version 0.0.1

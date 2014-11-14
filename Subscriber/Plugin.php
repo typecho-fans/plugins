@@ -4,6 +4,7 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 /**
  * 配合自定义字段功能实现指定内容仅注册会员可读。
  * 
+ * @category system
  * @package Subscriber
  * @author 羽中
  * @version 1.0.0beta

@@ -2,6 +2,7 @@
 /**
  * 多说实时同步插件
  * 
+ * @category comment
  * @package Duoshuo
  * @author Rakiy
  * @version 1.1.2
