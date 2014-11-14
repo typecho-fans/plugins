@@ -2,6 +2,7 @@
 /**
  * 另外一款Markdown开源编辑器（By <a href="https://github.com/lepture/editor">@lepture</a>）
  *
+ * @category editor
  * @package Editor
  * @author 公子
  * @version 1.0.2

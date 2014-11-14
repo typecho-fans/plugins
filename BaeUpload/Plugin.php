@@ -2,6 +2,7 @@
 /**
  * <a href="http://developer.baidu.com/bae/bcs/bucket/" target="_blank">Baidu App Engine</a> 附件上传插件
  * 
+ * @category system
  * @package BaeUpload
  * @author doudou
  * @version 1.0.1

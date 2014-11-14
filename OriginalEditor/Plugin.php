@@ -2,6 +2,7 @@
 /**
  * 禁止Typecho使用Markdown编辑器回归老版纯HTML模式
  *
+ * @category editor
  * @package OriginalEditor
  * @author 公子
  * @version 1.0.0

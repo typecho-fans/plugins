@@ -2,6 +2,7 @@
 /**
  * 自动生成缩略名
  *
+ * @category system
  * @package AutoSlug
  * @author ShingChi
  * @version 1.0.0

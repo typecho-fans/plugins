@@ -2,6 +2,7 @@
 /**
  * 数据库优化插件，只支持MySQL数据库。
  * 
+ * @category system
  * @package OptimizeDB
  * @author 冰剑
  * @version 1.0.2

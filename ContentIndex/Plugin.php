@@ -2,6 +2,7 @@
 /**
  * 为含有多个标题的文章生成目录
  * 
+ * @category content
  * @package ContentIndex
  * @author laobubu
  * @version 1.0.0

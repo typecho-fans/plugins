@@ -3,6 +3,7 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 
 /**
  * 使用iframe方式嵌入GitHub项目多功能按钮
+ * @category widget
  * @package GHbutton
  * @author 羽中
  * @version 1.0.2
