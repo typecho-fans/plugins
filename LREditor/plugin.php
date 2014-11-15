@@ -2,6 +2,7 @@
 /**
  * 修改Markdown编辑器为左右样式
  *
+ * @category editor
  * @package LREditor
  * @author Austin
  * @version 0.0.3

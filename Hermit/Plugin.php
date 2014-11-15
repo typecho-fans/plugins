@@ -2,6 +2,7 @@
 /**
  * 虾米音乐播放器 Hermit for typecho xiami music player
  * 
+ * @category player
  * @package Hermit 
  * @author mufeng
  * @version 1.3.0

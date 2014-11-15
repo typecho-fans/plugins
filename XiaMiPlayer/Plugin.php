@@ -2,6 +2,7 @@
 /**
  * 虾米音乐播放器：虾米音乐搜索+引用
  *
+ * @category player
  * @package XiaMiPlayer
  * @author 公子
  * @version 3.0.6

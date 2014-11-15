@@ -2,6 +2,7 @@
 /**
  * 首页过滤指定分类
  * 
+ * @category widget
  * @package CateFilter
  * @author Rakiy
  * @version 1.0.0

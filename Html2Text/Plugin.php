@@ -2,6 +2,7 @@
 /**
  * 让0.9之前的日志内容可用系统自带的Markdown编辑器编辑。
  * 
+ * @category system
  * @package Html2Text
  * @author 冰剑
  * @version 0.1.0

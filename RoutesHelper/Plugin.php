@@ -2,6 +2,7 @@
 /**
  * 路由助手
  *
+ * @category system
  * @package RoutesHelper
  * @author doudou
  * @version 1.0.3

@@ -2,6 +2,7 @@
 /**
  * 极验验证
  * 
+ * @category widget
  * @package GeeTest
  * @author 啸傲居士
  * @version 1.0.0
