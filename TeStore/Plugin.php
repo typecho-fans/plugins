@@ -41,6 +41,7 @@ class TeStore_Plugin implements Typecho_Plugin_Interface
             throw new Typecho_Plugin_Exception('无法创建数据目录.');
         }
 
+        Typecho_Plugin::factory('admin/menu.php')->navBar = array('TeStore_Plugin', 'render');
         Helper::addPanel(1, 'TeStore/market.php', 'TE应用商店', 'TE应用商店', 'administrator');
         Helper::addRoute('te-store_market', __TYPECHO_ADMIN_DIR__ . 'te-store/market', 'TeStore_Action', 'market');
         Helper::addRoute('te-store_install', __TYPECHO_ADMIN_DIR__ . 'te-store/install', 'TeStore_Action', 'install');
@@ -90,6 +91,17 @@ class TeStore_Plugin implements Typecho_Plugin_Interface
             '应用数据的缓存时间'
         );
         $form->addInput($cache);
+
+        $showNavMenu = new Typecho_Widget_Helper_Form_Element_Radio(
+            'showNavMenu' ,
+            array(
+                'true' => '是',
+                'false' => '否',
+            ),
+            'true' ,
+            _t('是否显示菜单栏按钮')
+        );
+        $form->addInput($showNavMenu);
     }
     
     /**
@@ -100,4 +112,21 @@ class TeStore_Plugin implements Typecho_Plugin_Interface
      * @return void
      */
     public static function personalConfig(Typecho_Widget_Helper_Form $form){}
+
+    /**
+     * 插件实现方法
+     * 
+     * @access public
+     * @return void
+     */
+    public static function render()
+    {
+        $options = Helper::options();
+        $pluginOpts = Typecho_Widget::widget('Widget_Options')->plugin('TeStore');
+        if( $pluginOpts->showNavMenu == 'true' ){
+            echo '<a href="';
+            $options->adminUrl('extending.php?panel=TeStore%2Fmarket.php');
+            echo '">TE应用商店</a>';
+        }
+    }
 }
