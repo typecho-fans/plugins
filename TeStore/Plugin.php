@@ -1,7 +1,7 @@
 <?php
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 /**
- * TeStore
+ * 用来管理插件，可以下载，安装，卸载插件
  * 
  * @category system
  * @package TeStore 
