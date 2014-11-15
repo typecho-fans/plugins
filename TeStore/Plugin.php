@@ -44,6 +44,7 @@ class TeStore_Plugin implements Typecho_Plugin_Interface
         Helper::addPanel(1, 'TeStore/market.php', 'TE应用商店', 'TE应用商店', 'administrator');
         Helper::addRoute('te-store_market', __TYPECHO_ADMIN_DIR__ . 'te-store/market', 'TeStore_Action', 'market');
         Helper::addRoute('te-store_install', __TYPECHO_ADMIN_DIR__ . 'te-store/install', 'TeStore_Action', 'install');
+        Helper::addRoute('te-store_uninstall', __TYPECHO_ADMIN_DIR__ . 'te-store/uninstall', 'TeStore_Action', 'uninstall');
     }
     
     /**
@@ -58,6 +59,7 @@ class TeStore_Plugin implements Typecho_Plugin_Interface
         Helper::removePanel(1, 'TeStore/market.php');
         Helper::removeRoute('te-store_market');
         Helper::removeRoute('te-store_install');
+        Helper::removeRoute('te-store_uninstall');
     }
     
     /**

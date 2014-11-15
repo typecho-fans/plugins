@@ -193,6 +193,23 @@ class TeStore_Action extends Typecho_Widget {
         }
     }
 
+    public function uninstall()
+    {
+        $plugin  = $this->request->get('plugin');
+        $activatedPlugins = $this->getActivePlugins();
+        $ret = array(
+            'status' => false
+        );
+
+        if( ! in_array($plugin, $activatedPlugins) ){
+            $pluginPath = $this->pluginRoot . $plugin . '/';
+            @self::delTree($pluginPath);
+            $ret['status'] = true;
+        }
+
+        echo json_encode($ret);
+    }
+
     public function getPluginByName($name)
     {
         foreach ($this->pluginInfo as $plugin) {
@@ -200,5 +217,13 @@ class TeStore_Action extends Typecho_Widget {
                 return $plugin;
         }
         return false;
+    }
+
+    public static function delTree($dir) { 
+        $files = array_diff(scandir($dir), array('.','..')); 
+        foreach ($files as $file) { 
+            (is_dir("$dir/$file")) ? self::delTree("$dir/$file") : unlink("$dir/$file"); 
+        } 
+        return rmdir($dir); 
     }
 }
