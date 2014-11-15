@@ -1,9 +1,9 @@
-CkEditor4Typecho
+Ueditor
 ================
 
 ## 插件说明 ##
- - 插件名称：CkEditor4Typecho
- - 功能描述: typecho上带图片上传功能的ckeditor插件
+ - 插件名称：Ueditor
+ - 功能描述: 百度编辑器
  - 开发作者：[zhulin3141](http://zhulin31410.blog.163.com)
 
  ## 使用帮助 ##
