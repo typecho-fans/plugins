@@ -3,6 +3,7 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 /**
  * TeStore
  * 
+ * @category system
  * @package TeStore 
  * @author zhulin3141
  * @version 1.0.0
