@@ -19,6 +19,7 @@ class TeStore_Action extends Typecho_Widget {
         $this->server = $pluginOpts->server;
         $this->cacheTime = $pluginOpts->cache_time;
         $this->cacheDir = dirname(__FILE__) . '/data/';
+        define('TYPEHO_ADMIN_PATH', __TYPECHO_ROOT_DIR__ . __TYPECHO_ADMIN_DIR__.'/');
     }
 
     /**
@@ -117,7 +118,12 @@ class TeStore_Action extends Typecho_Widget {
     public function market()
     {
         $pluginInfo = $this->getAppData();
-        
+        if( $pluginInfo ){
+            $activatedPlugins = Typecho_Plugin::export();
+            $activatedPlugins = array_keys( $activatedPlugins['activated'] );
+        }
+
+        include_once 'views/market.php';
     }
 
     public function install()
