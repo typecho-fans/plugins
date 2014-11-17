@@ -2,9 +2,15 @@
 $jqueryScriptUrl = Helper::options()->pluginUrl . '/Like/js/jquery.js';
 $macaroonScriptUrl = Helper::options()->pluginUrl . '/Like/js/jquery.fs.macaroon.js';
 $settings = Helper::options()->plugin('Like');
+$thumbUpImg = Helper::options()->pluginUrl . '/Like/thumb_up.png';
+if($settings->jquery){
+   echo '<script src="'.$jqueryScriptUrl.'"></script>'; 
+}
 ?>
+    <style type='text/css'>
+		.fa-thumbs-up{margin-right: 5px;top: 2px;width: 16px;height: 16px;display: inline-block; background: url(<?php echo $thumbUpImg; ?>) no-repeat left center; }
+    </style>
 
-<script type="text/javascript" src="<?php echo $jqueryScriptUrl; ?>"></script>
 <script type="text/javascript" src="<?php echo $macaroonScriptUrl; ?>"></script>
 <script>
     $(".<?php echo $settings->likeClass; ?>").on("click", function(){

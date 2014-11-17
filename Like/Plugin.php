@@ -5,7 +5,7 @@
  * 
  * @package Like
  * @author skylzl
- * @version 1.0.0
+ * @version 1.0.1
  * @link http://www.phoneshuo.com
  */
 
@@ -20,7 +20,6 @@ class Like_Plugin implements Typecho_Plugin_Interface
      */
     public static function activate()
     {
-        Typecho_Plugin::factory('Widget_Archive')->footer = array('Like_Plugin', 'header');
         Typecho_Plugin::factory('Widget_Archive')->footer = array('Like_Plugin', 'footer');
         Helper::addAction('like', 'Like_Action');
         $db = Typecho_Db::get();
@@ -39,7 +38,9 @@ class Like_Plugin implements Typecho_Plugin_Interface
      * @return void
      * @throws Typecho_Plugin_Exception
      */
-    public static function deactivate(){}
+    public static function deactivate(){
+    	Helper::removeAction('like');
+    }
     
     /**
      * 获取插件配置面板
@@ -53,8 +54,13 @@ class Like_Plugin implements Typecho_Plugin_Interface
         $likeClass = new Typecho_Widget_Helper_Form_Element_Text(
             'likeClass',NULL ,'post-like', 
             _t('点赞A标签的class'),
-            _t('点赞的自定义样式，默认为.post-like。可自定义CSS样式，无需加.')
+            _t('点赞的自定义样式，默认为.post-like。可自定义CSS样式，无需加.<br><a href="www.phoneshuo.com/PHP/typecho-like-plugin.html">使用帮助与更新</a>')
         );
+        /** 是否加载jquery */
+        $jquery = new Typecho_Widget_Helper_Form_Element_Radio(
+        'jquery', array('0'=> '手动加载', '1'=> '自动加载'), 0, '选择jQuery来源',
+            '若选择"手动加载",则需要你手动加载jQuery到你的主题里,若选择"自动加载",本插件会自动加载jQuery到你的主题里。');
+        $form->addInput($jquery);        
         $form->addInput($likeClass);           
     }
 
@@ -133,13 +139,6 @@ class Like_Plugin implements Typecho_Plugin_Interface
             echo "<li>N/A</li>\n";
         }
     }
-    /**
-     * 点赞相关css加载在头部
-     */
-    public static function header() {
-        $cssUrl = Helper::options()->pluginUrl . '/Like/css/style.css';
-        echo '<link rel="stylesheet" type="text/css" href="' . $cssUrl . '" />';
-    }   
     
     /**
      * 点赞相关js加载在尾部
