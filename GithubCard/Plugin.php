@@ -2,6 +2,7 @@
 /**
  * Github Card
  *
+ * @category content
  * @package Github Card
  * @author chekun
  * @version 1.0.0

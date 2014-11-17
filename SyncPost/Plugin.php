@@ -2,6 +2,7 @@
 /**
  * Sync Post
  * 
+ * @category system
  * @package SyncPost
  * @author 冰剑
  * @version 1.0.0

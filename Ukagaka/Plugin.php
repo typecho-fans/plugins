@@ -2,6 +2,7 @@
 /**
  * 一只萌萌的春菜
  * 
+ * @category effect
  * @package 伪春菜 
  * @author Kunr
  * @version 1.0.0

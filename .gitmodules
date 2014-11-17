@@ -7,3 +7,6 @@
 [submodule "Tekit"]
 	path = Tekit
 	url = https://github.com/binjoo/TeKit
+[submodule "Update"]
+	path = Update
+	url = https://github.com/lizheming/typecho-update.git

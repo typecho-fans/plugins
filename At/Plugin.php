@@ -2,6 +2,7 @@
 /**
  * 为评论提供当前页面@ 功能
  * 
+ * @category comment
  * @package At 
  * @author 公子
  * @version 0.1.1

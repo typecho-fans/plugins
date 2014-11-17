@@ -3,6 +3,7 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 /**
  * Emlog 转换到 Typecho
  *
+ * @category data
  * @package EmlogToTypecho
  * @author ShingChi
  * @version 1.0.0

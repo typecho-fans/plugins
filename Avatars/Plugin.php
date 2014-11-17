@@ -4,6 +4,7 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 /**
  * 按评论数量排序输出活跃读者头像墙
  * 
+ * @category widget
  * @package Avatars
  * @author 羽中
  * @version 1.2.1
