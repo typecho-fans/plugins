@@ -106,6 +106,7 @@ class TeStore_Action extends Typecho_Widget {
         $fieldNum = count($this->pluginInfo);
         $fieldName = array('zipFile', 'pluginName', 'desc', 'version', 'site', 'author', 'pluginUrl', 'source');
         foreach( range(0, count($this->pluginInfo[0]) - 1 ) as $plugIdx ){
+            $pluginData[$plugIdx] = (object)NULL;
             foreach ( range(0, $fieldNum - 1 ) as $fieldIdx) {
                 $pluginData[$plugIdx]->$fieldName[$fieldIdx] = $this->pluginInfo[$fieldIdx][$plugIdx];
             }
