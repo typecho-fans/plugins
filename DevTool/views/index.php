@@ -20,7 +20,7 @@ include TYPEHO_ADMIN_PATH . 'menu.php';
                         <a href="<?php $options->adminUrl('dev-tool/options'); ?>">查看Option数据</a>
                     </li>
                     <li>
-                        
+                        <a href="<?php $options->adminUrl('dev-tool/post'); ?>">生成文章</a>
                     </li>
                 </ul>
             </div>

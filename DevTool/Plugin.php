@@ -26,6 +26,7 @@ class DevTool_Plugin implements Typecho_Plugin_Interface
         Helper::addPanel(1, 'DevTool/index.php', self::NAME, self::NAME, 'administrator');
         Helper::addRoute('dev-tool_index', __TYPECHO_ADMIN_DIR__ . 'dev-tool/index', 'DevTool_Action', 'index');
         Helper::addRoute('dev-tool_options', __TYPECHO_ADMIN_DIR__ . 'dev-tool/options', 'DevTool_Action', 'options');
+        Helper::addRoute('dev-tool_post', __TYPECHO_ADMIN_DIR__ . 'dev-tool/post', 'DevTool_Action', 'post');
     }
 
     /**
@@ -40,6 +41,7 @@ class DevTool_Plugin implements Typecho_Plugin_Interface
         Helper::removePanel(1, 'DevTool/index.php');
         Helper::removeRoute('dev-tool_index');
         Helper::removeRoute('dev-tool_options');
+        Helper::removeRoute('dev-tool_post');
     }
 
     /**
