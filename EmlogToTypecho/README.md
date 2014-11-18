@@ -3,7 +3,7 @@
  - 版本: v1.0.0
  - 作者: [ShingChi](https://github.com/shingchi)
  - 主页: <https://github.com/typecho-fans/plugins/tree/master/EmlogToTypecho>
- - 适用: Typecho 0.9 (14.3.14)
+ - 适用: [Typecho 0.9 (14.3.14)](https://github.com/typecho/typecho/releases/tag/v0.9-14.5.25-beta)
 
 此插件涉及数据库操作，有潜在的未知风险，请慎用！
 
