@@ -37,8 +37,16 @@ class TeStore_Plugin implements Typecho_Plugin_Interface
             throw new Typecho_Plugin_Exception('无法创建临时目录.');
         }
 
+        if( ! self::testWrite($tempDir) ){
+            throw new Typecho_Plugin_Exception('.tmp目录没有写入的权限');
+        }
+
         if ( ! file_exists($dataDir) and ! @mkdir($dataDir) ) {
             throw new Typecho_Plugin_Exception('无法创建数据目录.');
+        }
+
+        if( ! self::testWrite($dataDir) ){
+            throw new Typecho_Plugin_Exception('data目录没有写入的权限');
         }
 
         Typecho_Plugin::factory('admin/menu.php')->navBar = array('TeStore_Plugin', 'render');
@@ -128,5 +136,22 @@ class TeStore_Plugin implements Typecho_Plugin_Interface
             $options->adminUrl('extending.php?panel=TeStore%2Fmarket.php');
             echo '">TE应用商店</a>';
         }
+    }
+
+    /**
+     * 判断目录是否可写
+     */
+    public static function testWrite($dir) {
+        $testFile = "_test.txt";
+        $fp = @fopen($dir . "/" . $testFile, "w");
+        if (!$fp) {
+            return false;
+        }
+        fclose($fp);
+        $rs = @unlink($dir . "/" . $testFile);
+        if ($rs) {
+            return true;
+        }
+        return false;
     }
 }
