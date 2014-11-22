@@ -20,7 +20,7 @@ class ThemeDemo_Plugin implements Typecho_Plugin_Interface
      */
     public static function activate()
     {
-        Typecho_Plugin::factory('Widget_Archive')->handleInit = array('ThemeDemo_Plugin', 'settheme');
+        Typecho_Plugin::factory('Widget_Archive')->handleInit = array('ThemeDemo_Plugin', 'setTheme');
     }
 
     /**
@@ -57,7 +57,7 @@ class ThemeDemo_Plugin implements Typecho_Plugin_Interface
      * @access public
      * @return void
      */
-    public static function settheme($widget)
+    public static function setTheme($widget)
     {
         $cookie = Array (
             'name'   => '__typecho_theme',
@@ -68,7 +68,7 @@ class ThemeDemo_Plugin implements Typecho_Plugin_Interface
         if (isset($widget->request->theme) && $widget->request->isGet()) {
             if ($widget->request->theme) {
                 $theme = $widget->request->theme;
-                if (self::check($theme)) {
+                if (static::check($theme)) {
                     Typecho_Cookie::set($cookie['name'], $widget->request->theme, $options->gmtTime + $cookie['expire'], $options->siteUrl);
                 } else {
                     $widget->response->redirect(Typecho_Common::url($widget->request->getPathInfo(), $options->siteUrl));
@@ -80,7 +80,7 @@ class ThemeDemo_Plugin implements Typecho_Plugin_Interface
         } else {
             $theme = Typecho_Cookie::get($cookie['name']);
             if (!$theme) return;
-            if (!self::check($theme)) {
+            if (!static::check($theme)) {
                 Typecho_Cookie::delete($cookie['name']);
                 return;
             }
