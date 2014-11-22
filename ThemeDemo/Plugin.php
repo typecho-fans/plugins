@@ -1,7 +1,8 @@
 <?php
+if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 /**
  * URL后添加 ?theme={主题目录} | 为空则删除cookie，恢复默认
- * 
+ *
  * @category system
  * @package ThemeDemo
  * @author doudou
@@ -12,7 +13,7 @@ class ThemeDemo_Plugin implements Typecho_Plugin_Interface
 {
     /**
      * 激活插件方法,如果激活失败,直接抛出异常
-     * 
+     *
      * @access public
      * @return void
      * @throws Typecho_Plugin_Exception
@@ -21,38 +22,38 @@ class ThemeDemo_Plugin implements Typecho_Plugin_Interface
     {
         Typecho_Plugin::factory('Widget_Archive')->handleInit = array('ThemeDemo_Plugin', 'settheme');
     }
-    
+
     /**
      * 禁用插件方法,如果禁用失败,直接抛出异常
-     * 
+     *
      * @static
      * @access public
      * @return void
      * @throws Typecho_Plugin_Exception
      */
     public static function deactivate(){}
-    
+
     /**
      * 获取插件配置面板
-     * 
+     *
      * @access public
      * @param Typecho_Widget_Helper_Form $form 配置面板
      * @return void
      */
     public static function config(Typecho_Widget_Helper_Form $form){}
-    
+
     /**
      * 个人用户的配置面板
-     * 
+     *
      * @access public
      * @param Typecho_Widget_Helper_Form $form
      * @return void
      */
     public static function personalConfig(Typecho_Widget_Helper_Form $form){}
-    
+
     /**
      * 插件实现方法
-     * 
+     *
      * @access public
      * @return void
      */
@@ -63,7 +64,8 @@ class ThemeDemo_Plugin implements Typecho_Plugin_Interface
             'expire' => 86400, //默认cookie存活时间
         );
         $options = Typecho_Widget::widget('Widget_Options');
-        if ($widget->request->__isSet('theme') && $widget->request->isGet()) {
+
+        if (isset($widget->request->theme) && $widget->request->isGet()) {
             if ($widget->request->theme) {
                 $theme = $widget->request->theme;
                 if (self::check($theme)) {
@@ -83,17 +85,21 @@ class ThemeDemo_Plugin implements Typecho_Plugin_Interface
                 return;
             }
         }
+
         /** 删除旧主题的相关设置 */
-        $rowName = 'theme:' . $options->theme;
-        if ($options->__isSet($rowName)) {
-            $config = unserialize($options->$rowName);
-            $options->__set($rowName, '');
-            foreach ($config as $key => $value) {
-                $options->__set($key, '');
+        $themeRow = 'theme:' . $options->theme;
+        if (isset($options->{$themeRow})) {
+            $config = unserialize($options->{$themeRow});
+            $options->{$themeRow} = '';
+            foreach ($config as $row => $value) {
+                $options->{$row} = '';
             }
         }
+
         /** 载入新主题的相关设置 参考var/Widget/Themes/Edit.php */
-        $configFile = __TYPECHO_ROOT_DIR__ . __TYPECHO_THEME_DIR__ . '/' . $theme . '/functions.php';
+        $themeDir = __TYPECHO_ROOT_DIR__ . __TYPECHO_THEME_DIR__ . DIRECTORY_SEPARATOR . $theme . DIRECTORY_SEPARATOR;
+        $configFile = $themeDir . 'functions.php';
+
         if (file_exists($configFile)) {
             require_once $configFile;
             if (function_exists('themeConfig')) {
@@ -101,32 +107,32 @@ class ThemeDemo_Plugin implements Typecho_Plugin_Interface
                 themeConfig($form);
                 $config = $form->getValues();
                 if ($config) {
-                    $options->__set('theme:' . $theme, serialize($config));
-                    foreach ($config as $key => $value) {
-                        $options->__set($key, $value);
+                    $options->{'theme:' . $theme} = serialize($config);
+                    foreach ($config as $row => $value) {
+                        $options->{$row} = $value;
                     }
                 }
             }
         }
+
         /** 修改$this->options->theme */
-        $options->__set('theme', $theme);
+        $options->theme = $theme;
+
         /** 修改$this->_themeDir */
-        $widget->setThemeDir(__TYPECHO_ROOT_DIR__ . '/' . __TYPECHO_THEME_DIR__ . '/' . $theme . '/');
+        $widget->setThemeDir($themeDir);
     }
 
     /**
      * 检查主题目录是否存在
-     * 
+     *
      * @access public
      * @return void
      */
-    public static function check($path){
-        $dir = __TYPECHO_ROOT_DIR__ . __TYPECHO_THEME_DIR__ . '/' . $path;
-        $themes = glob(__TYPECHO_ROOT_DIR__ . __TYPECHO_THEME_DIR__ . '/*');
-        foreach ($themes as $key => $value) {
-            if ($value == $dir) {
-                return true;
-            }
+    public static function check($theme)
+    {
+        $themeDir = __TYPECHO_ROOT_DIR__ . __TYPECHO_THEME_DIR__ . DIRECTORY_SEPARATOR . $theme;
+        if (is_dir($themeDir)) {
+            return true;
         }
         return false;
     }
