@@ -71,7 +71,7 @@ class ThemeDemo_Plugin implements Typecho_Plugin_Interface
                 if (self::check($theme)) {
                     Typecho_Cookie::set($cookie['name'], $widget->request->theme, $options->gmtTime + $cookie['expire'], $options->siteUrl);
                 } else {
-                    $widget->response->redirect(Typecho_Common::url($widget->request->getPathInfo(),$options->siteUrl));
+                    $widget->response->redirect(Typecho_Common::url($widget->request->getPathInfo(), $options->siteUrl));
                 }
             } else {
                 Typecho_Cookie::delete($cookie['name']); //直接提交?theme将删除cookie，恢复默认主题
