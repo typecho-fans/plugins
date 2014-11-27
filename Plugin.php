@@ -75,7 +75,7 @@ class AppStore_Plugin implements Typecho_Plugin_Interface
     public static function config(Typecho_Widget_Helper_Form $form)
     {
         /** 应用服务器地址 */
-        $name = new Typecho_Widget_Helper_Form_Element_Text('server', NULL, 'http://typecho.dilicms.com/', _t('应用服务器地址'));
+        $name = new Typecho_Widget_Helper_Form_Element_Text('server', NULL, 'http://typecho.chekun.me/', _t('应用服务器地址'));
         $form->addInput($name);
     }
 
