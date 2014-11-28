@@ -4,6 +4,10 @@
     <script>
         var $jQuery = jQuery.noConflict(true);
     </script>
+<?php else: ?>
+    <script>
+        var $jQuery = $;
+    </script>
 <?php endif; ?>
 <script>
     (function($) {
