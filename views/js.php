@@ -1,6 +1,12 @@
 <?php ! defined('__TYPECHO_ROOT_DIR__') and exit();?>
+<?php  if ($typechoVersion <= 0.8): ?>
+    <script src="<?php echo $options->pluginUrl('AppStore/static/js/jquery.js'); ?>"></script>
+    <script>
+        var $jQuery = jQuery.noConflict(true);
+    </script>
+<?php endif; ?>
 <script>
-    (function() {
+    (function($) {
 
         "use strict"
 
@@ -32,9 +38,8 @@
                         }
                     }
                 }
-
                 $.ajax({
-                    url: '<?php echo str_replace('/market', '/install', Typecho_Request::getInstance()->getRequestUrl()); ?>',
+                    url: '<?php echo str_replace('/market', '/install', Typecho_Request::getInstance()->makeUriByRequest()); ?>',
                     dataType: 'json',
                     data: {
                         version: $version.val(),
@@ -52,6 +57,7 @@
                     if (result.status) {
                         $card.data('existed', 1);
                         $version.data('activated', result.activated);
+                        $this.next().children('i').addClass('as-existed active');
                         alert('安装成功');
                     } else {
                         alert(result.error);
@@ -63,5 +69,5 @@
         }
 
         init();
-    })();
+    })($jQuery);
 </script>

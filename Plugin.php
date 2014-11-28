@@ -4,7 +4,7 @@
  *
  * @package AppStore
  * @author chekun
- * @version 1.0.2
+ * @version 1.1.0
  * @link http://typecho.dilicms.com
  */
 class AppStore_Plugin implements Typecho_Plugin_Interface
@@ -36,7 +36,7 @@ class AppStore_Plugin implements Typecho_Plugin_Interface
         }
 
         //创建菜单和路由
-        Helper::addPanel(3, 'AppStore/market.php', '应用商店', '应用商店', 'administrator');
+        Helper::addPanel(1, 'AppStore/market.php', '应用商店', '应用商店', 'administrator');
         Helper::addRoute('app.store.market', __TYPECHO_ADMIN_DIR__.'app-store/market', 'AppStore_Action', 'market');
         Helper::addRoute('app.store.install', __TYPECHO_ADMIN_DIR__.'app-store/install', 'AppStore_Action', 'install');
     }
@@ -59,7 +59,7 @@ class AppStore_Plugin implements Typecho_Plugin_Interface
         }
 
         //移除菜单和路由
-        Helper::removePanel(3, 'AppStore/market.php');
+        Helper::removePanel(1, 'AppStore/market.php');
         Helper::removeRoute('app.store.market');
         Helper::removeRoute('app.store.install');
 
@@ -75,7 +75,7 @@ class AppStore_Plugin implements Typecho_Plugin_Interface
     public static function config(Typecho_Widget_Helper_Form $form)
     {
         /** 应用服务器地址 */
-        $name = new Typecho_Widget_Helper_Form_Element_Text('server', NULL, 'http://typecho.dilicms.com/', _t('应用服务器地址'));
+        $name = new Typecho_Widget_Helper_Form_Element_Text('server', NULL, 'http://typecho.chekun.me/', _t('应用服务器地址'));
         $form->addInput($name);
     }
 

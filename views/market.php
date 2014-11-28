@@ -3,8 +3,11 @@
     $menu->title = _t('应用商店');
     include TYPEHO_ADMIN_PATH.'header.php';
     include TYPEHO_ADMIN_PATH.'menu.php';
+    list($version, $buildVersion) = explode('/', Typecho_Common::VERSION);
+    $typechoVersion = floatval($version);
 ?>
 <link rel="stylesheet" href="<?php echo $options->pluginUrl('AppStore/static/css/font-awesome.min.css'); ?>">
+<link rel="stylesheet" href="<?php echo $options->pluginUrl('AppStore/static/css/pure.css'); ?>">
 <style>
     .as-description {
         height: 4.2em;
@@ -23,57 +26,43 @@
         color: green
     }
 </style>
-<div class="main">
-    <div class="body container">
-        <div class="colgroup">
-            <div class="typecho-page-title col-mb-12">
-                <h2><?php echo $menu->title; ?> <small><cite>The missing plugins store for Typecho</cite></small></h2>
+
+<?php if ($typechoVersion <= 0.8): ?>
+    <div class="main">
+        <div class="body body-950">
+            <div class="container typecho-page-title">
+                <div class="column-24">
+                    <h2><?php echo $menu->title; ?> <small><cite>The missing plugins' store for Typecho</cite></small></h2>
+                    <p> 
+                        <i class="fa fa-heart" title="<?php echo _t('提建议/吐槽专用'); ?>"></i>
+                        <a href="http://chekun.me/typecho-app-store.html" target="_blank"><?php echo _t('提建议/吐槽专用'); ?></a>
+                    </p>
+                </div>
             </div>
-        </div>
-        <div class="colgroup typecho-page-main" role="main">
-            <div class="col-mb-12 typecho-list">
-                <?php if ($result): ?>
-                    <?php foreach ($result->packages as $plugin): ?>
-                    <div class="col-mb-12 col-tb-3 as-card" data-name="<?php echo $plugin->name; ?>" data-existed="<?php echo $plugin->existed ?>">
-                        <h3><?php echo $plugin->name; ?></h3>
-                        <p class="as-description" title="<?php echo $plugin->versions[0]->description; ?>">
-                            <?php echo $plugin->versions[0]->description; ?>
-                        </p>
-                        <p class="as-author">
-                            <?php echo _t('作者'); ?>:
-                            <cite><?php echo $plugin->versions[0]->author; ?></cite>
-                        </p>
-                        <p class="as-versions">
-                            <?php echo _t('版本'); ?>:
-                            <select class="as-version-selector">
-                                <?php foreach ($plugin->versions as $version): ?>
-                                    <option value="<?php echo $version->version; ?>" data-activated="<?php echo $version->activated; ?>" data-author="<?php echo $version->author; ?>" data-require="<?php echo $version->require; ?>" data-description="<?php echo $version->description; ?>"><?php echo $version->version; ?></option>
-                                <?php endforeach; ?>
-                            </select>
-                        </p>
-                        <p class="as-require">
-                            <?php echo _t('版本要求'); ?>:
-                            <cite><?php echo $plugin->versions[0]->require; ?></cite>
-                        </p>
-                        <p class="as-operations">
-                            <button class="btn-s as-install"><?php echo _t('安装'); ?></button>
-                            <span class="as-status" style="display:none">
-                                <i class="fa fa-meh-o as-existed active"></i>
-                                <i class="fa fa-check-circle as-activated"></i>
-                            </span>
-                        </p>
-                    </div>
-                    <?php endforeach; ?>
-                <?php else: ?>
-                    <div class="message" style="width:20em;text-align: center;margin:0 auto">
-                        <p><i class="fa fa-frown-o" style="font-size: 5em"></i></p>
-                        <h3>没有找到任何插件</h3>
-                    </div>
-                <?php endif; ?>
+            <div class="container typecho-page-main">
+                <?php include 'list.php'; ?>
             </div>
         </div>
     </div>
-</div>
+<?php else: ?>
+    <div class="main">
+        <div class="body container">
+            <div class="colgroup">
+                <div class="typecho-page-title col-mb-12">
+                    <h2>
+                        <?php echo $menu->title; ?> <small><cite>The missing plugins' store for Typecho</cite></small>
+                        <p style="float:right"> 
+                            <a href="http://chekun.me/typecho-app-store.html" target="_blank"><i class="fa fa-heart" title="<?php echo _t('提建议/吐槽专用'); ?>"></i><?php echo _t('提建议/吐槽专用'); ?></a>
+                        </p>
+                    </h2>
+                </div>
+            </div>
+            <div class="colgroup typecho-page-main" role="main">
+                <?php include 'list.php'; ?>
+            </div>
+        </div>
+    </div>
+<?php endif; ?>
 
 <?php
     include TYPEHO_ADMIN_PATH.'copyright.php';
