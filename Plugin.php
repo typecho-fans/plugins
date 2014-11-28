@@ -36,7 +36,7 @@ class AppStore_Plugin implements Typecho_Plugin_Interface
         }
 
         //创建菜单和路由
-        Helper::addPanel(3, 'AppStore/market.php', '应用商店', '应用商店', 'administrator');
+        Helper::addPanel(1, 'AppStore/market.php', '应用商店', '应用商店', 'administrator');
         Helper::addRoute('app.store.market', __TYPECHO_ADMIN_DIR__.'app-store/market', 'AppStore_Action', 'market');
         Helper::addRoute('app.store.install', __TYPECHO_ADMIN_DIR__.'app-store/install', 'AppStore_Action', 'install');
     }
@@ -59,7 +59,7 @@ class AppStore_Plugin implements Typecho_Plugin_Interface
         }
 
         //移除菜单和路由
-        Helper::removePanel(3, 'AppStore/market.php');
+        Helper::removePanel(1, 'AppStore/market.php');
         Helper::removeRoute('app.store.market');
         Helper::removeRoute('app.store.install');
 
