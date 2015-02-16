@@ -12,7 +12,6 @@ The missing plugins store for Typecho!
 
 下载后自行添加后缀.zip上传至服务器
 
-## 如何使用
 
 ## Contributors
 
