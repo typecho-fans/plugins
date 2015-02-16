@@ -3,11 +3,16 @@ Typecho 应用商店 插件
 
 The missing plugins store for Typecho!
 
+##Sae 修改版 说明
+移出插件激活文件读写权限检查
+
+商店安装按钮转为下载地址
+
+修改后版本不支持自动安装，需要手动安装
+
+下载后自行添加后缀.zip上传至服务器
+
 ## 如何使用
-
-下载地址: https://github.com/typecho-app-store/AppStore/releases
-
-解压到usr/plugins/AppStore，启用插件即可。
 
 ## Contributors
 
