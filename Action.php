@@ -48,9 +48,11 @@ class AppStore_Action extends Typecho_Widget {
         //获取插件列表
         $result = json_decode(http_get($this->server.'packages.json'));
 
+	
         if ($result) {
-
-            //导出已激活插件
+	
+       
+	    //导出已激活插件
             $activatedPlugins = Typecho_Plugin::export();
 
             foreach ($result->packages as &$_package) {
