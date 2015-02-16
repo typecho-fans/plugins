@@ -18,12 +18,13 @@
                     <?php endforeach; ?>
                 </select>
             </p>
+
             <p class="as-require">
                 <?php echo _t('版本要求'); ?>:
                 <cite><?php echo $plugin->versions[0]->require; ?></cite>
             </p>
             <p class="as-operations">
-                <button class="btn-s as-install"><?php echo _t('安装'); ?></button>
+                 <input size=10 value="<?php	echo $this->server.'archive/'.$plugin->name.'/'.str_replace(' ', '%20', $version->version); ?>">
                 <span class="as-status" style="">
                     <?php if ($plugin->existed): ?>
                         <i class="fa fa-check-circle as-activated as-existed active" title="<?php echo _t('已安装'); ?>"></i>
