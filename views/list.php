@@ -1,5 +1,14 @@
  <?php if ($result): ?>
     <div class="pure-g typecho-list">
+	<?php 
+	$tempDir = __TYPECHO_ROOT_DIR__.__TYPECHO_PLUGIN_DIR__.'/.app_store/';
+	//is write
+        if (! file_exists($tempDir) and ! @mkdir($tempDir)) {	
+		$plu_inst = FALSE; 	
+        }else{
+		$plu_inst = TRUE;		
+	}
+	?>
         <?php foreach ($result->packages as $plugin): ?>
         <div class="pure-u-1-4 as-card" data-name="<?php echo $plugin->name; ?>" data-existed="<?php echo $plugin->existed ?>">
             <h3><?php echo $plugin->name; ?></h3>
@@ -9,6 +18,7 @@
             <p class="as-author">
                 <?php echo _t('作者'); ?>:
                 <cite><?php echo $plugin->versions[0]->author; ?></cite>
+		     
             </p>
             <p class="as-versions">
                 <?php echo _t('版本'); ?>:
@@ -24,7 +34,11 @@
                 <cite><?php echo $plugin->versions[0]->require; ?></cite>
             </p>
             <p class="as-operations">
-                 <input size=10 value="<?php	echo $this->server.'archive/'.$plugin->name.'/'.str_replace(' ', '%20', $version->version); ?>">
+                 <?php if ($plu_inst):  ?>
+		<button class="btn-s as-install"><?php echo _t("安装"); ?></button>
+		<?php else: ?>
+		<input size=10 value="<?php echo $this->server.'archive/'.$plugin->name.'/'.str_replace(' ', '%20', $version->version);?>">
+		<?php endif; ?>
                 <span class="as-status" style="">
                     <?php if ($plugin->existed): ?>
                         <i class="fa fa-check-circle as-activated as-existed active" title="<?php echo _t('已安装'); ?>"></i>
