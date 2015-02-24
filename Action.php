@@ -31,7 +31,7 @@ class AppStore_Action extends Typecho_Widget
         parent::__construct($request, $response, $params);
 
         //检测是否可以自动下载安装
-        $tempDir = __TYPECHO_ROOT_DIR__.__TYPECHO_PLUGIN_DIR__.self::$tempPath;
+        $tempDir = __TYPECHO_ROOT_DIR__.__TYPECHO_PLUGIN_DIR__.'/.app_store/';
         if (! @touch($tempDir.'.installable'.time())) {
             $this->installale = false;
         } else {
