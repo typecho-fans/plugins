@@ -11,15 +11,6 @@ class AppStore_Plugin implements Typecho_Plugin_Interface
 {
 
     /**
-     * 是否支持自动下载安装
-     *
-     * 如果在云平台上，则处理为手动下载模式。
-     * 
-     * @var boolean
-     */
-    public static $installale = true;
-
-    /**
      * 插件下载临时目录
      *
      * @var string
@@ -43,18 +34,7 @@ class AppStore_Plugin implements Typecho_Plugin_Interface
         //创建下载临时目录
         $tempDir = __TYPECHO_ROOT_DIR__.__TYPECHO_PLUGIN_DIR__.self::$tempPath;
 
-        if (! file_exists($tempDir) and ! @mkdir($tempDir)) {
-        
-            self::downloadbale = false;
-        
-        } else {
-
-            if (! @touch($tempDir.'.installable')) {
-                self::downloadbale = false;
-            }
-        
-        }
-
+        ! file_exists($tempDir) and ! @mkdir($tempDir);
 
         //创建菜单和路由
         Helper::addPanel(1, 'AppStore/market.php', '应用商店', '应用商店', 'administrator');

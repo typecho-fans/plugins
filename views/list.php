@@ -25,10 +25,10 @@
                 <cite><?php echo $plugin->versions[0]->require; ?></cite>
             </p>
             <p class="as-operations">
-                <?php if (AppStore_Plugin::installable):  ?>
+                <?php if ($this->installale):  ?>
 		          <button class="btn-s as-install"><?php echo _t("安装"); ?></button>
 		        <?php else: ?>
-                  <a class="btn-s" href="<?php echo $this->server.'archive/'.$plugin->name.'/'.str_replace(' ', '%20', $version->version);?>"><?php echo _t('下载'); ?></a>
+                  <a class="btn-s" onclick="return confirm('没有写入权限或者运行在云平台中\n点击确认后将进行下载，请手动传到服务器上!');" href="<?php echo $this->server.'archive/'.$plugin->name.'/'.str_replace(' ', '%20', $version->version);?>"><?php echo _t('下载'); ?></a>
 		        <?php endif; ?>
                 <span class="as-status" style="">
                     <?php if ($plugin->existed): ?>
