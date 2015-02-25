@@ -13,5 +13,6 @@ The missing plugins store for Typecho!
 
 - [@chekun](https://github.com/chekun)
 - [@jzwalk](https://github.com/jzwalk)
+- [@fengyunljp](https://github.com/fengyunljp)
 
 ### 欢迎一起完善该项目.
