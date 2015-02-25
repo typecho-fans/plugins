@@ -1,6 +1,16 @@
 <?php ! defined('__TYPECHO_ROOT_DIR__') and exit();
 
-class AppStore_Action extends Typecho_Widget {
+class AppStore_Action extends Typecho_Widget 
+{
+
+    /**
+     * 是否支持自动下载安装
+     *
+     * 如果在云平台上，则处理为手动下载模式。
+     * 
+     * @var boolean
+     */
+    private $installale = true;
 
     /**
      * 应用商店服务器
@@ -19,6 +29,14 @@ class AppStore_Action extends Typecho_Widget {
     public function __construct($request, $response, $params = NULL)
     {
         parent::__construct($request, $response, $params);
+
+        //检测是否可以自动下载安装
+        $tempDir = __TYPECHO_ROOT_DIR__.__TYPECHO_PLUGIN_DIR__.'/.app_store/';
+        if (! @touch($tempDir.'.installable'.time())) {
+            $this->installale = false;
+        } else {
+            unlink($tempDir.'.installable'.time());
+        }
 
         //如果没有json库，加载兼容包
         ! extension_loaded('json') and include('libs/compat_json.php');
@@ -48,9 +66,11 @@ class AppStore_Action extends Typecho_Widget {
         //获取插件列表
         $result = json_decode(http_get($this->server.'packages.json'));
 
+	
         if ($result) {
-
-            //导出已激活插件
+	
+       
+	    //导出已激活插件
             $activatedPlugins = Typecho_Plugin::export();
 
             foreach ($result->packages as &$_package) {

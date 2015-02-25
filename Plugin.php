@@ -4,11 +4,12 @@
  *
  * @package AppStore
  * @author chekun
- * @version 1.1.1
+ * @version 1.2.0
  * @link http://typecho.dilicms.com
  */
 class AppStore_Plugin implements Typecho_Plugin_Interface
 {
+
     /**
      * 插件下载临时目录
      *
@@ -29,11 +30,11 @@ class AppStore_Plugin implements Typecho_Plugin_Interface
         if (! extension_loaded('curl')) {
             throw new Typecho_Plugin_Exception('缺少curl扩展支持.');
         }
+
         //创建下载临时目录
         $tempDir = __TYPECHO_ROOT_DIR__.__TYPECHO_PLUGIN_DIR__.self::$tempPath;
-        if (! file_exists($tempDir) and ! @mkdir($tempDir)) {
-            throw new Typecho_Plugin_Exception('无法创建插件下载临时目录.');
-        }
+
+        ! file_exists($tempDir) and ! @mkdir($tempDir);
 
         //创建菜单和路由
         Helper::addPanel(1, 'AppStore/market.php', '应用商店', '应用商店', 'administrator');

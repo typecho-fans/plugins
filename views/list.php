@@ -9,6 +9,7 @@
             <p class="as-author">
                 <?php echo _t('作者'); ?>:
                 <cite><?php echo $plugin->versions[0]->author; ?></cite>
+		     
             </p>
             <p class="as-versions">
                 <?php echo _t('版本'); ?>:
@@ -18,12 +19,17 @@
                     <?php endforeach; ?>
                 </select>
             </p>
+
             <p class="as-require">
                 <?php echo _t('版本要求'); ?>:
                 <cite><?php echo $plugin->versions[0]->require; ?></cite>
             </p>
             <p class="as-operations">
-                <button class="btn-s as-install"><?php echo _t('安装'); ?></button>
+                <?php if ($this->installale):  ?>
+		          <button class="btn-s as-install"><?php echo _t("安装"); ?></button>
+		        <?php else: ?>
+                  <a class="btn-s" onclick="return confirm('没有写入权限或者运行在云平台中\n点击确认后将进行下载，请手动传到服务器上!');" href="<?php echo $this->server.'archive/'.$plugin->name.'/'.str_replace(' ', '%20', $version->version);?>"><?php echo _t('下载'); ?></a>
+		        <?php endif; ?>
                 <span class="as-status" style="">
                     <?php if ($plugin->existed): ?>
                         <i class="fa fa-check-circle as-activated as-existed active" title="<?php echo _t('已安装'); ?>"></i>
