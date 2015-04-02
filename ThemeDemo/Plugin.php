@@ -7,7 +7,7 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
  * @package ThemeDemo
  * @author doudou
  * @version 1.0.1
- * @link http://doudou.me
+ * @link https://github.com/doudoutime
  */
 class ThemeDemo_Plugin implements Typecho_Plugin_Interface
 {
