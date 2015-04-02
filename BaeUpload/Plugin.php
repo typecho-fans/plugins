@@ -6,7 +6,7 @@
  * @package BaeUpload
  * @author doudou
  * @version 1.0.1
- * @link http://doudou.me
+ * @link https://github.com/doudoutime
  * @date 2014-1-5
  */
 
