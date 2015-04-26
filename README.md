@@ -83,6 +83,7 @@
 | [SyncPost](https://github.com/typecho-fans/plugins/tree/master/SyncPost) | 同步文章发布到微博插件 | [@冰剑](https://github.com/binjoo) |
 | [TeKit](https://github.com/binjoo/TeKit) | Typecho常用扩展功能工具箱插件 | [@冰剑](https://github.com/binjoo) |
 | [ThemeDemo](https://github.com/typecho-fans/plugins/tree/master/ThemeDemo) | 外观主题演示插件 | [@兜兜](https://github.com/doudoutime) |
+| [typechoSignPlugin](https://github.com/hmoe/typechoSignPlugin) | 用户个性签名插件 | [@H萌](https://github.com/hmoe) |
 | [Update](https://github.com/typecho-fans/plugins/tree/master/Update) | Typecho自动在线升级插件 | [@lizheming](https://github.com/lizheming) |
 | [UploadPlugin](https://github.com/typecho-fans/plugins/tree/master/UploadPlugin) | 在线安装模板/插件的插件 | [@阿飞](https://github.com/defeme) |
 | [Ugauka](https://github.com/typecho-fans/plugins/tree/master/Ugauka) | 一只萌萌的春菜	| [@Kunr](https://github.com/Kunr) |
