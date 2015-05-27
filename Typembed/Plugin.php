@@ -5,6 +5,7 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
  * 
  * @package Typembed
  * @author Fengzi
+ * @version 1.0.5
  * @dependence 13.12.12-*
  * @link http://www.fengziliu.com/typembed.html
  */
@@ -67,6 +68,7 @@ class Typembed_Plugin implements Typecho_Plugin_Interface{
                 'http://i7.imgs.letv.com/player/swfPlayer.swf?id={video_id}&autoplay=0',
                 '',
             ),
+            'www.acfun.tv' => array(
                 '#https?://www\.acfun\.tv/v/ac(?<video_id>\d+)#i',
                 'http://static.acfun.mm111.net/player/ACFlashPlayer.out.swf?type=page&url=http://www.acfun.tv/v/ac{video_id}',
                 '',
