@@ -114,7 +114,7 @@ class Sinauth_AuthorizeAction extends Typecho_Widget implements Widget_Interface
         exit;
         //$this->widget('Widget_User')->pass('administrator');
         //$this->on($this->request->is('del'))->del($this->request->del);
-        //$this->on($this->request->is('resetCache'))->resetCache();
+        
         //$this->on($this->request->is('edit'))->edit();
         //$this->response->goBack();
     }
