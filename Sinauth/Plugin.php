@@ -21,14 +21,12 @@ class Sinauth_Plugin implements Typecho_Plugin_Interface
      */
     public static function activate()
     {
-        //$meg = MostCache_Plugin::install();
         Typecho_Plugin::factory('Widget_User')->___sinauthAuthorizeIcon = array('Sinauth_Plugin', 'authorizeIcon');
         
         Helper::addAction('sinauthAuthorize', 'Sinauth_AuthorizeAction');
         Helper::addRoute('sinauthAuthorize', '/sinauthAuthorize/', 'Sinauth_AuthorizeAction', 'action');
         Helper::addRoute('sinauthCallback', '/sinauthCallback/', 'Sinauth_AuthorizeAction', 'callback');
-        //Helper::addPanel(1, 'MostCache/panel.php', 'MostCache', 'MostCache缓存管理',   'administrator');
-        
+
         return _t($meg.'。请进行<a href="options-plugin.php?config='.self::$pluginName.'">初始化设置</a>');
     }
     
@@ -103,7 +101,6 @@ class Sinauth_Plugin implements Typecho_Plugin_Interface
         //$callback_url = new Typecho_Widget_Helper_Form_Element_Text('email_domain', NULL,'v.sina.com', _t('虚拟email后缀'),'创建用户帐号时构造一个虚拟email，如uid@v.sina.com');
         //$form->addInput($callback_url);
         
-        //$form->addInput($client_id->addRule(array('SaeUpload_Plugin', 'validateDomainName'), _t('Domain名称错误，或者未上传文件！')));
     }
     
     /**
