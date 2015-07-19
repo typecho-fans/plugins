@@ -32,7 +32,7 @@
 
  > 通常几位owner会很快处理审核并将新作者加进组织
 
- 3. 插件根目录下应有README.md提供简要说明或链接，方便用户预览
+ 3. 插件根目录下应有**README.md**提供简要说明或链接，方便用户预览
  
  > 下方作品索引请按照格式加入一句话介绍和作者内链
 
@@ -84,7 +84,7 @@
 | [TeKit](https://github.com/binjoo/TeKit) | Typecho常用扩展功能工具箱插件 | [@冰剑](https://github.com/binjoo) |
 | [ThemeDemo](https://github.com/typecho-fans/plugins/tree/master/ThemeDemo) | 外观主题演示插件 | [@兜兜](https://github.com/doudoutime) |
 | [Typembed](https://github.com/typecho-fans/plugins/tree/master/Typembed) | 国内视频网站视频播放插件 | [@我才是疯子](https://github.com/nothingisover) |
-| [typechoSignPlugin](https://github.com/hmoe/typechoSignPlugin) | 用户个性签名插件 | [@H萌](https://github.com/hmoe) |
+| [typechoSignPlugin](https://github.com/typecho-fans/plugins/tree/master/typechoSignPlugin) | 用户个性签名插件 | [@H萌](https://github.com/hmoe/typechoSignPlugin) |
 | [Update](https://github.com/typecho-fans/plugins/tree/master/Update) | Typecho自动在线升级插件 | [@lizheming](https://github.com/lizheming) |
 | [UploadPlugin](https://github.com/typecho-fans/plugins/tree/master/UploadPlugin) | 在线安装模板/插件的插件 | [@阿飞](https://github.com/defeme) |
 | [Ugauka](https://github.com/typecho-fans/plugins/tree/master/Ugauka) | 一只萌萌的春菜	| [@Kunr](https://github.com/Kunr) |
