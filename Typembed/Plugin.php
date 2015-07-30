@@ -5,7 +5,7 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
  * 
  * @package Typembed
  * @author Fengzi
- * @version 1.0.5
+ * @version 1.0.6
  * @dependence 13.12.12-*
  * @link http://www.fengziliu.com/typembed.html
  */
@@ -25,7 +25,7 @@ class Typembed_Plugin implements Typecho_Plugin_Interface{
     public static function parse($content, $widget, $lastResult){
         $content = empty($lastResult) ? $content : $lastResult;
         if ($widget instanceof Widget_Archive){
-            $content = preg_replace_callback('/<p>(?:(?:<a[^>]+>)?(?<video_url>(?:(http|https):\/\/)?[a-z0-9_\-\/.%]+)(?:<\/a>)?)<\/p>/si', array('Typembed_Plugin', 'parseCallback'), $content);
+            $content = preg_replace_callback('/<p>(?:(?:<a[^>]+>)?(?<video_url>(?:(http|https):\/\/)+[a-z0-9_\-\/.%]+)(?:<\/a>)?)<\/p>/si', array('Typembed_Plugin', 'parseCallback'), $content);
         }
         return $content;
     }
@@ -96,14 +96,14 @@ class Typembed_Plugin implements Typecho_Plugin_Interface{
         }
         preg_match_all($providers[$site][0], $matches['video_url'], $match);
         $id = $match['video_id'][0] == '' ? $match['video_id2'][0] : $match['video_id'][0];
-        if(self::is_mobile()){
+        if(self::isMobile()){
             $width = Typecho_Widget::widget('Widget_Options')->plugin('Typembed')->mobile_width;
             $height = Typecho_Widget::widget('Widget_Options')->plugin('Typembed')->mobile_height;
         }else{
             $width = Typecho_Widget::widget('Widget_Options')->plugin('Typembed')->width;
             $height = Typecho_Widget::widget('Widget_Options')->plugin('Typembed')->height;
         }
-        if(self::is_mobile() && !in_array($site, $no_html5)){
+        if(self::isMobile() && !in_array($site, $no_html5)){
             $url = str_replace('{video_id}', $id, $providers[$site][2]);
             $html = sprintf(
                 '<iframe src="%1$s" width="%2$s" height="%3$s" frameborder="0" allowfullscreen="true"></iframe>',
@@ -160,12 +160,12 @@ class Typembed_Plugin implements Typecho_Plugin_Interface{
      * 
      * @return boolean
      */
-    private static function is_mobile(){
+    private static function isMobile(){
         $user_agent = $_SERVER['HTTP_USER_AGENT'];
         $mobile_browser = Array(
             "mqqbrowser", // 手机QQ浏览器
             "opera mobi", // 手机opera
-            "juc","iuc", // uc浏览器
+            "juc","iuc", 'ucbrowser', // uc浏览器
             "fennec","ios","applewebKit/420","applewebkit/525","applewebkit/532","ipad","iphone","ipaq","ipod",
             "iemobile", "windows ce", // windows phone
             "240x320","480x640","acer","android","anywhereyougo.com","asus","audio","blackberry",
