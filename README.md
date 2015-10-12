@@ -77,6 +77,7 @@
 | [Prism](https://github.com/typecho-fans/plugins/tree/master/Prism) | 轻量级语法高亮插件 | [@冰剑](https://github.com/binjoo) |
 | [RoutesHelper](https://github.com/typecho-fans/plugins/tree/master/RoutesHelper) | 路由助手插件 | [@兜兜](https://github.com/doudoutime) |
 | [Reposidget](https://github.com/typecho-fans/plugins/tree/master/Reposidget) | Github Repo内容展示插件 | [@西秦公子](https://github.com/xiqingongzi) |
+| [Sinauth](https://github.com/typecho-fans/plugins/tree/master/Sinauth) | 新浪oauth登陆插件 | [@Web3D](https://github.com/web3d) |
 | [Smilies](https://github.com/typecho-fans/plugins/tree/master/Smilies) | 自带评论表情功能插件 | [@羽中](https://github.com/jzwalk) [Willin Kan](http://kan.willin.org) |
 | [Snowstorm](https://github.com/typecho-fans/plugins/tree/master/Snowstorm) | 纯娱乐用 博客飘雪插件 | [@rakiy](https://github.com/rakiy) |
 | [Subscriber](https://github.com/typecho-fans/plugins/tree/master/Subscriber) | 文章仅对登录会员可见插件 | [@羽中](https://github.com/jzwalk) |
