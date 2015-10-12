@@ -26,6 +26,7 @@ class Sinauth_Plugin implements Typecho_Plugin_Interface
         Helper::addAction('sinauthAuthorize', 'Sinauth_AuthorizeAction');
         Helper::addRoute('sinauthAuthorize', '/sinauthAuthorize/', 'Sinauth_AuthorizeAction', 'action');
         Helper::addRoute('sinauthCallback', '/sinauthCallback/', 'Sinauth_AuthorizeAction', 'callback');
+        Helper::addPanel(1, 'Sinauth/panel.php', 'Sinauth', 'Sinauth用户管理',   'administrator');
 
         return _t($meg.'。请进行<a href="options-plugin.php?config='.self::$pluginName.'">初始化设置</a>');
     }
