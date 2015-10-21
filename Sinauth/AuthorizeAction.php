@@ -23,14 +23,13 @@ class Sinauth_AuthorizeAction extends Typecho_Widget implements Widget_Interface
 
     public function action(){
         //跳转
-        require 'saetv2.ex.class.php';
-        //var_dump(class_exists('SaeTOAuthV2'));
+        if (!class_exists('SaeTOAuthV2')) {
+            require_once './saetv2.ex.class.php';
+        }
         $saeto_client = new SaeTOAuthV2($this->config->client_id, $this->config->client_secret);
         $authorize_url = $saeto_client->getAuthorizeURL($this->config->callback_url, 'code');
         $this->response->redirect($authorize_url);
-        
-        //echo $authorize_url;
-        
+
         exit;
     }
     
@@ -43,8 +42,10 @@ class Sinauth_AuthorizeAction extends Typecho_Widget implements Widget_Interface
         }
         
         //跳转
-        require 'saetv2.ex.class.php';
-        //var_dump(class_exists('SaeTOAuthV2'));
+        if (!class_exists('SaeTOAuthV2')) {
+            require_once './saetv2.ex.class.php';
+        }
+        
         $saeto_client = new SaeTOAuthV2($this->config->client_id, $this->config->client_secret);
         //取access_token
         $access_token = $saeto_client->getAccessToken('code', array('code' => trim($_GET['code']), 'redirect_uri' => $this->config->callback_url));
@@ -52,8 +53,6 @@ class Sinauth_AuthorizeAction extends Typecho_Widget implements Widget_Interface
         if (empty($access_token) || !is_array($access_token) || empty($access_token['uid'])) {
         	throw new Typecho_Exception(_t('获取access_token失败，请返回重新授权！'));
         }
-        
-        //var_dump($access_token);
         
         $table = $this->db->getPrefix() . self::$tableName;
         $query = $this->db->query("SELECT * FROM {$table} WHERE openid='{$access_token['uid']}' AND plateform='sina'");
@@ -91,7 +90,6 @@ class Sinauth_AuthorizeAction extends Typecho_Widget implements Widget_Interface
             $saetc_client = new SaeTClientV2($this->config->client_id, $this->config->client_secret, $access_token['access_token']);
             
             $weibo_user = $saetc_client->show_user_by_id($access_token['uid']);
-            //var_dump($weibo_user);//exit;
             
             //创建用户
             $uid = $this->registerFromWeiboUser($weibo_user);
@@ -112,11 +110,6 @@ class Sinauth_AuthorizeAction extends Typecho_Widget implements Widget_Interface
         //构造用户帐号
         
         exit;
-        //$this->widget('Widget_User')->pass('administrator');
-        //$this->on($this->request->is('del'))->del($this->request->del);
-        
-        //$this->on($this->request->is('edit'))->edit();
-        //$this->response->goBack();
     }
     
     /**
@@ -130,7 +123,6 @@ class Sinauth_AuthorizeAction extends Typecho_Widget implements Widget_Interface
         
         $uname = $weibo_user['name'];
         
-        //var_dump($this->nameExists($uname));
         $i = 0;
         if (!Typecho_Widget::widget('Widget_Abstract_Users')->nameExists($uname)) { //用户名存在
             echo 'here';
@@ -153,12 +145,8 @@ class Sinauth_AuthorizeAction extends Typecho_Widget implements Widget_Interface
             'group'     =>  'subscriber'
         );
         
-        var_dump($dataStruct);//exit;
-        
-        
         $insertId = Typecho_Widget::widget('Widget_Abstract_Users')->insert($dataStruct);
-        
-        
+
         return $insertId;
     }
     
@@ -171,7 +159,6 @@ class Sinauth_AuthorizeAction extends Typecho_Widget implements Widget_Interface
 
         $user = $this->db->fetchRow($select);
         
-        var_dump($user);
         return $user ? false : true;
     }
     
