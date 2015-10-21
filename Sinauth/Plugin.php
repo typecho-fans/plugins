@@ -21,6 +21,8 @@ class Sinauth_Plugin implements Typecho_Plugin_Interface
      */
     public static function activate()
     {
+    	$meg = self::install();
+    	
         Typecho_Plugin::factory('Widget_User')->___sinauthAuthorizeIcon = array('Sinauth_Plugin', 'authorizeIcon');
         
         Helper::addAction('sinauthAuthorize', 'Sinauth_AuthorizeAction');
