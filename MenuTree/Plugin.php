@@ -162,7 +162,7 @@ class MenuTree_Plugin implements Typecho_Plugin_Interface {
         static $is_content = null;
         if($is_content === null) {
             $widget = Typecho_Widget::widget('Widget_Archive');
-            $is_content = !($widget->is('index') || $widget->is('search') || $widget->is('date') || $widget->is('category'));
+            $is_content = !($widget->is('index') || $widget->is('search') || $widget->is('date') || $widget->is('category') || $widget->is('author'));
         }
         return $is_content;
     }
