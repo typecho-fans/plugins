@@ -40,6 +40,16 @@
     color: #2c3e50;
     padding-left: 0;
 }
+
+#tree_nav {
+    margin: 10px;
+    cursor: pointer;
+}
+
+#tree_nav:hover {
+    fill:#666;
+}
+
 #toc-list {
     background-clip:padding-box;
     border-radius:4px;
