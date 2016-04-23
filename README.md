@@ -72,6 +72,7 @@
 | [Like](https://github.com/typecho-fans/plugins/tree/master/Like) | typecho点赞插件like | [@skylzl](https://github.com/xiaogouxo) |
 | [MostCache](https://github.com/typecho-fans/plugins/tree/master/MostCache) | mysql、SAE memcache 缓存插件 | [@skylzl](https://github.com/xiaogouxo) |
 | [MyPlayer](https://github.com/typecho-fans/plugins/tree/master/MyPlayer) | 播放页面链接转为外链播放器插件 | [@perichr](http://github.com/perichr) |
+| [MyTagCloud](https://github.com/typecho-fans/plugins/tree/master/MyTagCloud) | 标签云插件 | [@马燕龙](https://github.com/YanlongMa) |
 | [OptimizeDB](https://github.com/typecho-fans/plugins/tree/master/OptimizeDB) | 数据库优化插件 | [@冰剑](https://github.com/binjoo) |
 | [OriginalEditor](https://github.com/typecho-fans/plugins/tree/master/OriginalEditor) | 屏蔽Markdown模式插件 | [@lizheming](http://github.com/lizheming) |
 | [Prism](https://github.com/typecho-fans/plugins/tree/master/Prism) | 轻量级语法高亮插件 | [@冰剑](https://github.com/binjoo) |
