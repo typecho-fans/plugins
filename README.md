@@ -33,7 +33,7 @@
  > 通常几位owner会很快处理审核并将新作者加进组织
 
  3. 插件根目录下应包含有 **README.md** 使用说明，方便用户预览
- 
+
  > 下方作品索引请按照格式加入一句话介绍和作者内链
 
  4. 推送作品应确保为原创或经过作者同意能够在这里进行维护和更新
@@ -75,6 +75,7 @@
 | [MyTagCloud](https://github.com/typecho-fans/plugins/tree/master/MyTagCloud) | 标签云插件 | [@马燕龙](https://github.com/YanlongMa) |
 | [OptimizeDB](https://github.com/typecho-fans/plugins/tree/master/OptimizeDB) | 数据库优化插件 | [@冰剑](https://github.com/binjoo) |
 | [OriginalEditor](https://github.com/typecho-fans/plugins/tree/master/OriginalEditor) | 屏蔽Markdown模式插件 | [@lizheming](http://github.com/lizheming) |
+| [Passport](https://github.com/typecho-fans/plugins/tree/master/Passport) | 密码找回插件 | [@ShingChi](https://github.com/shingchi) |
 | [Prism](https://github.com/typecho-fans/plugins/tree/master/Prism) | 轻量级语法高亮插件 | [@冰剑](https://github.com/binjoo) |
 | [RoutesHelper](https://github.com/typecho-fans/plugins/tree/master/RoutesHelper) | 路由助手插件 | [@兜兜](https://github.com/doudoutime) |
 | [Reposidget](https://github.com/typecho-fans/plugins/tree/master/Reposidget) | Github Repo内容展示插件 | [@西秦公子](https://github.com/xiqingongzi) |
