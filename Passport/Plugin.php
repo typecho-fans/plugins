@@ -22,6 +22,8 @@ class Passport_Plugin implements Typecho_Plugin_Interface
     {
         Helper::addRoute('passport_forgot', '/passport/forgot', 'Passport_Widget', 'doForgot');
         Helper::addRoute('passport_reset', '/passport/reset', 'Passport_Widget', 'doReset');
+
+        return _t('请配置此插件的SMTP信息, 以使您的插件生效');
     }
 
     /**
@@ -44,8 +46,8 @@ class Passport_Plugin implements Typecho_Plugin_Interface
      * @param Typecho_Widget_Helper_Form $form 配置面板
      * @return void
      */
-    public static function config(Typecho_Widget_Helper_Form $form){
-
+    public static function config(Typecho_Widget_Helper_Form $form)
+    {
         $host = new Typecho_Widget_Helper_Form_Element_Text('host', NULL, '', _t('服务器(SMTP)'), _t('如: smtp.exmail.qq.com'));
         $port = new Typecho_Widget_Helper_Form_Element_Text('port', NULL, '465', _t('端口'), _t('如: 25、465(SSL)、587(SSL)'));
 
