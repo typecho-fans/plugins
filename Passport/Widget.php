@@ -119,7 +119,7 @@ class Passport_Widget extends Typecho_Widget
             if(!$phpMailer->send()) {
                 $this->notice->set(_t('邮件发送失败, 请重试或联系站长'), 'error');
             } else {
-                $this->notice->set(_t('邮件成功已发送, 请注意查收'), 'success');
+                $this->notice->set(_t('邮件已成功发送, 请注意查收'), 'success');
             }
         }
     }
@@ -152,7 +152,7 @@ class Passport_Widget extends Typecho_Widget
 
         if (!$hashValidate) {
             // token错误, 返回登录页
-            $this->notice->set(_t('该链接无效, 请重新获取'), 'notice');
+            $this->notice->set(_t('该链接已失效, 请重新获取'), 'notice');
             $this->response->redirect($this->options->loginUrl);
         }
 
@@ -173,7 +173,7 @@ class Passport_Widget extends Typecho_Widget
                 ->rows(array('password' => $password))
                 ->where('uid = ?', $user['uid']));
 
-            if (!update) {
+            if (!$update) {
                 $this->notice->set(_t('重置密码失败'), 'error');
             }
 
