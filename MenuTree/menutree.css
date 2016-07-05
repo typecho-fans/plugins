@@ -116,3 +116,17 @@
 .open > .dropdown-menu {
     display: block;
 }
+
+@media (max-width: 550px) {
+    .in-page-preview-buttons-full-reader {
+        right:30px;
+        top:-15px;
+        border-radius: 50%;
+        width: 38px;
+        height: 38px;
+    }
+    #toc-list {
+        max-width:270px;
+    }
+
+}
