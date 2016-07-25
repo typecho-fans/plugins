@@ -20,7 +20,7 @@
 <?php
     $activates = array_keys(Typecho_Plugin::export()['activated']);
     if (in_array('Passport', $activates)) {
-        echo '<a href="' . Typecho_Common::url('Passport/forgot', $options->index) . '">' . '忘记密码' . '</a>';
+        echo '<a href="' . Typecho_Common::url('passport/forgot', $options->index) . '">' . '忘记密码' . '</a>';
     }
 ?>
  ```
