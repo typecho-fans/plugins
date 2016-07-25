@@ -1,15 +1,13 @@
-## ²å¼þËµÃ÷ ##
- - ²å¼þÃû³Æ£ºUkagaka
- - ¿ª·¢×÷Õß£ºKunr
- - ×÷ÕßÍøÖ·£º[http://www.kunr.me](http://www.kunr.me)
- - ¼æÈÝ°æ±¾£º0.9
+## æ’ä»¶è¯´æ˜Ž
+- æ’ä»¶åç§°ï¼šUkagaka
+- å¼€å‘ä½œè€…ï¼šKunr
+- ä½œè€…ç½‘å€ï¼š[http://www.kunr.me](http://www.kunr.me)
+- å…¼å®¹ç‰ˆæœ¬ï¼š0.9+
 
-## Ê¹ÓÃ°ïÖú ##
+## ä½¿ç”¨å¸®åŠ©
 
- 1. ÏÂÔØ²å¼þ
- 2. ½«²å¼þÉÏ´«µ½ `/usr/plugins/` Õâ¸öÄ¿Â¼ÏÂ
- 3. µÇÂ½ºóÌ¨£¬ÔÚ¡°¿ØÖÆÌ¨¡±ÏÂÀ­²Ëµ¥ÖÐ½øÈë¡°²å¼þ¹ÜÀí¡±
- 4. ÆôÓÃÏà¹Ø²å¼þ
- 5. ÅäÖÃ²å¼þ
-
-²å¼þËµÃ÷:[´«ËÍÃÅ](http://www.kunr.me/Ugauka/)
+ 1. ä¸‹è½½æ’ä»¶
+ 2. å°†æ’ä»¶ä¸Šä¼ åˆ° `/usr/plugins/` è¿™ä¸ªç›®å½•ä¸‹
+ 3. ç™»é™†åŽå°ï¼Œåœ¨â€œæŽ§åˆ¶å°â€ä¸‹æ‹‰èœå•ä¸­è¿›å…¥â€œæ’ä»¶ç®¡ç†â€
+ 4. å¯ç”¨ç›¸å…³æ’ä»¶
+ 5. é…ç½®æ’ä»¶
