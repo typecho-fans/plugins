@@ -1,7 +1,7 @@
 ## 插件说明
 - 插件名称：Ukagaka
 - 开发作者：Kunr
-- 作者网址：[http://www.kunr.me](http://www.kunr.me)
+- 作者网址：[https://rakume.com](https://rakume.com)
 - 兼容版本：0.9+
 
 ## 使用帮助
