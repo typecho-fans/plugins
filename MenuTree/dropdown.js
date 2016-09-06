@@ -10,6 +10,9 @@
 +function ($) {
   'use strict';
 
+  if (typeof $.fn.dropdown !== 'undefined')
+    return
+
   // DROPDOWN CLASS DEFINITION
   // =========================
 
