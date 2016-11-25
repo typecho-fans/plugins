@@ -2,13 +2,15 @@
 /**
  * 首页过滤指定分类
  * 
- * @category widget
  * @package CateFilter
  * @author Rakiy
- * @version 1.0.0
+ * @version 1.1.0
  * @link http://ysido.com/
  *
  * 历史版本
+ *
+ * version 1.1.0 -- 2016-11-25
+ * 修复过滤分类时同时会过滤FEED的BUG
  *
  * version 1.0.0 -- 2013-12-22
  * 实现功能
@@ -63,14 +65,17 @@ class CateFilter_Plugin implements Typecho_Plugin_Interface
     }
 
 	public static function CateFilter($this, $select){
-        $CateIds = Typecho_Widget::widget('Widget_Options')->plugin('CateFilter')->CateId;
-        if(!$CateIds) return $select;       //没有写入值，则直接返回
-        $select = $select->join('table.relationships','table.relationships.cid = table.contents.cid','right')->join('table.metas','table.relationships.mid = table.metas.mid','right')->where('table.metas.type=?','category');
-        $CateIds = explode(',', $CateIds);
-        $CateIds = array_unique($CateIds);  //去除重复值
-        foreach ($CateIds as $k => $v) {
-            $select = $select->where('table.relationships.mid != '.intval($CateIds[$k]));//确保每个值都是数字
-        }          
+        if('/feed' != strtolower(Typecho_Router::getPathInfo())){
+            $CateIds = Typecho_Widget::widget('Widget_Options')->plugin('CateFilter')->CateId;
+            if($CateIds){
+                $select = $select->join('table.relationships','table.relationships.cid = table.contents.cid','right')->join('table.metas','table.relationships.mid = table.metas.mid','right')->where('table.metas.type=?','category');
+                $CateIds = explode(',', $CateIds);
+                $CateIds = array_unique($CateIds);  //去除重复值
+                foreach ($CateIds as $k => $v) {
+                    $select = $select->where('table.relationships.mid != '.intval($v));//确保每个值都是数字
+                }          
+            }
+        }
         return $select;
     }
 }
