@@ -1,12 +1,12 @@
 <?php
 /**
- * 七牛附件上传 更新至1.2.0,适用于typecho 1.0,七牛SDK提升至6.1.13
+ * 七牛云附件上传 
  * 
  * @package QNUpload
  * @author rakiy
- * @version 1.2.0
+ * @version 1.3.0
  * @link http://ysido.com
- * @date 2016-11-28
+ * @date 2016-12-09
  */
 
 class QNUpload_Plugin implements Typecho_Plugin_Interface
@@ -67,10 +67,18 @@ class QNUpload_Plugin implements Typecho_Plugin_Interface
         _t(''));
         $form->addInput($bucketName);
 
+        $server = new Typecho_Widget_Helper_Form_Element_Radio('server', 
+            array('0'=>_t('华东'), '1'=>_t('华北'), '2'=>_t('华南'), '3'=>_t('北美')), 
+            '0', 
+            _t('选择bucket节点'),
+            _t('一般在七牛面板右下角显示')
+        );
+        $form->addInput($server);
+
         $domain = new Typecho_Widget_Helper_Form_Element_Text('domain',
         NULL, 'http://',
-        _t('绑定的域名,如果你想使用绑定了的域名,请填写，否则请留空'),
-        _t(''));
+        _t('使用的域名,必填,请带上http://'),
+        _t('一般在七牛存储面板右上角，形如 xxx.bkt.clouddn.com/xxx.u.qiniu.com'));
         $form->addInput($domain);
     }
     
@@ -112,10 +120,10 @@ class QNUpload_Plugin implements Typecho_Plugin_Interface
         if($err !== null) return false;
         return array(
             'name' => $file['name'],
-            'path' => $fileName,
+            'path' => $filePath . $fileName,
             'size' => $file['size'],
             'type' => $ext,
-            'mime' => @Typecho_Common::mimeContentType(rtrim($options->domain,'/') . '/' . $fileName),
+            'mime' => @Typecho_Common::mimeContentType(rtrim($options->domain,'/') . '/' . $filePath . $fileName),
         );
     }
      /**
@@ -211,6 +219,7 @@ class QNUpload_Plugin implements Typecho_Plugin_Interface
      * @return object
      */
     private static function __qninit__($options){
+        $server = intval($options->server);
         require_once("Qiniu/rs.php");
         require_once("Qiniu/io.php");
         $accessKey = $options->ak;
