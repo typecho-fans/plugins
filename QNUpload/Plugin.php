@@ -4,7 +4,7 @@
  * 
  * @package QNUpload
  * @author rakiy
- * @version 1.3.0
+ * @version 1.3.1
  * @link http://ysido.com
  * @date 2016-12-09
  */
@@ -202,14 +202,10 @@ class QNUpload_Plugin implements Typecho_Plugin_Interface
      */
     public static function attachmentHandle(array $content){
         $domain = Typecho_Widget::widget('Widget_Options')->plugin('QNUpload')->domain;
-        $tmp    = preg_match('/http:\/\/[\w\d\.\-]+$/is', $domain);    //粗略验证域名
-        if($tmp && !empty($domain)){
-            $url = $domain . '/';
-        }else{
-            $bucket = Typecho_Widget::widget('Widget_Options')->plugin('QNUpload')->bucket;
-            $url = 'http://' . $bucket . '.u.qiniudn.com/';
-        }
-        return Typecho_Common::url($content['attachment']->path, $url);
+        //因为七牛放弃了默认的 xxx.u.qiniudn.com,且api中并无域名返回，所以域名为必填
+        $tmp    = preg_match('/http(s)?:\/\/[\w\d\.\-\/]+$/is', $domain);    //粗略验证域名
+        if(!$tmp) return false;
+        return Typecho_Common::url($content['attachment']->path, $domain);
     }
 
     /**
