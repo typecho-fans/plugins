@@ -70,6 +70,7 @@
 | [Keywords](https://github.com/typecho-fans/plugins/tree/master/Keywords) | 关键词和标签自动内链插件 | [@羽中](https://github.com/jzwalk) |
 | [LREditor](https://github.com/typecho-fans/plugins/tree/master/LREditor) | Markdown编辑器增强插件 | [@lizheming](http://github.com/lizheming) |
 | [Like](https://github.com/typecho-fans/plugins/tree/master/Like) | typecho点赞插件like | [@skylzl](https://github.com/xiaogouxo) |
+| [MarkdownParser](https://github.com/typecho-fans/plugins/tree/master/MarkdownParser) | 主流的PHP MarkeDown 解析插件| [@Gourd](https://github.com/Shangshj) |
 | [MostCache](https://github.com/typecho-fans/plugins/tree/master/MostCache) | mysql、SAE memcache 缓存插件 | [@skylzl](https://github.com/xiaogouxo) |
 | [MyPlayer](https://github.com/typecho-fans/plugins/tree/master/MyPlayer) | 播放页面链接转为外链播放器插件 | [@perichr](http://github.com/perichr) |
 | [MyTagCloud](https://github.com/typecho-fans/plugins/tree/master/MyTagCloud) | 标签云插件 | [@马燕龙](https://github.com/YanlongMa) |
