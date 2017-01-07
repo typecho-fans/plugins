@@ -2,7 +2,7 @@
 
 ![logo](https://raw.githubusercontent.com/typecho-fans/typecho-fans.github.io/master/soapgroup.png)
 
-本项目中的插件原则上均支持0.9版本，请根据需要进行选择。
+本项目中的插件原则上均支持0.9+版本，请根据需要选择测试。
 
 如有问题或建议可提交至[issues](https://github.com/typecho-fans/plugins/issues)，插件作者会收到通知并尽快回复解决。
 
@@ -12,11 +12,11 @@
 
 ### 使用帮助
 
- 1. 使用git工具克隆本项目，或点击右侧下方Download ZIP下载所有
+ 1. 使用git工具克隆本项目，或点击右侧下方Download ZIP打包下载
 
- > 推荐使用[Typecho应用商店](https://github.com/typecho-app-store/AppStore)，可在后台自动下载安装所选插件
+ > 还可以使用[Typecho应用商店](https://github.com/typecho-app-store/AppStore)在后台自动下载并安装所选插件
 
- 2. 选择需要的插件，按照说明上传至Typecho`/usr/plugins/`目录
+ 2. 选择所需插件，按照说明上传至Typecho的`/usr/plugins/`目录
 
  3. 登陆Typecho后台，在“控制台”下拉菜单中点击进入“插件管理”
 
@@ -24,7 +24,7 @@
 
 ### 作者须知
 
- 1. 推荐直接提交插件并入本项目，或使用[subtree](http://aoxuis.me/posts/2013/08/07/git-subtree/)方法推送分支
+ 1. 建议在本项目中提交插件，或使用[subtree](http://aoxuis.me/post/2013-08-06-git-subtree)方法推送分支
 
  > submodule可链接原项目，但也会给打包下载和协作更新带来一定麻烦
 
@@ -44,18 +44,21 @@
 
 | 名称 | 介绍 | 作者 |
 | ---- |:----:| ----:|
-| [AudioPlayer](https://github.com/typecho-fans/plugins/tree/master/AudioPlayer) | Flash音乐文件播放器插件 | [@羽中](https://github.com/jzwalk) |
-| [At](https://github.com/typecho-fans/plugins/tree/master/At) | 评论@ 型回复模式插件 | [@lizheming](https://github.com/lizheming) |
+| [Announcement](https://github.com/typecho-fans/plugins/tree/master/Announcement) | 公告栏插件 | [@skylzl](https://github.com/xiaogouxo) |
+| [At](https://github.com/typecho-fans/plugins/tree/master/At) | 评论@型回复模式插件 | [@lizheming](https://github.com/lizheming) |
+| [AudioPlayer](https://github.com/typecho-fans/plugins/tree/master/AudioPlayer) | flash音乐文件播放器插件 | [@羽中](https://github.com/jzwalk) |
 | [AutoSlug](https://github.com/typecho-fans/plugins/tree/master/AutoSlug) | 自动生成文章缩略名插件 | [@ShingChi](https://github.com/shingchi) |
 | [Avatars](https://github.com/typecho-fans/plugins/tree/master/Avatars) | 读者墙头像排名插件(支持缓存) | [@羽中](https://github.com/jzwalk) |
-| [Announcement](https://github.com/typecho-fans/plugins/tree/master/Announcement) | 公告栏插件 | [@skylzl](https://github.com/xiaogouxo) |
 | [BaeUpload](https://github.com/typecho-fans/plugins/tree/master/BaeUpload) | BAE附件上传插件 | [@兜兜](https://github.com/doudoutime) |
 | [CateFilter](https://github.com/typecho-fans/plugins/tree/master/CateFilter) | 首页指定分类不显示插件 | [@rakiy](https://github.com/rakiy) |
 | [Ckeditor4Typecho](https://github.com/typecho-fans/plugins/tree/master/Ckeditor4Typecho) | 带上传功能的ckeditor插件 | [@zhulin3141](https://github.com/zhulin3141) |
-| [CommentToMail](https://github.com/byends/CommentToMail) | 评论邮件提醒插件 | [@byends](https://github.com/byends) [@阿飞](https://github.com/defeme) |
+| [CodeMirror](https://github.com/typecho-fans/plugins/tree/master/CodeMirror) | 主题编辑器插件 | [@zhulin3141](https://github.com/zhulin3141) |
 | [CommenToMail4BAE](https://github.com/typecho-fans/plugins/tree/master/CommenToMail4BAE) | BAE版评论提醒插件 | [@ShingChi](https://github.com/shingchi) |
+| [CommentToMail](https://github.com/byends/CommentToMail) | 评论邮件提醒插件 | [@byends](https://github.com/byends) [@阿飞](https://github.com/defeme) |
+| [ContentIndex](https://github.com/typecho-fans/plugins/tree/master/ContentIndex) | 文章内容生成目录插件 | [@laobubu](https://github.com/laobubu) |
 | [Contribute](https://github.com/typecho-fans/plugins/tree/master/Contribute) | 用户投稿审查管理插件 | [@ShingChi](https://github.com/shingchi) |
 | [DbManager](https://github.com/typecho-fans/plugins/tree/master/DbManager) | 数据库管理工具插件 | [@ShingChi](https://github.com/shingchi) |
+| [DevTool](https://github.com/typecho-fans/plugins/tree/master/DevTool) | 开发者工具插件 | [@zhulin3141](https://github.com/zhulin3141) |
 | [Duoshuo](https://github.com/typecho-fans/plugins/tree/master/Duoshuo) | 多说社会化评论同步插件 | [@rakiy](https://github.com/rakiy) |
 | [Editor](https://github.com/typecho-fans/plugins/tree/master/Editor) | 非官方Markdown编辑器插件 | [@lizheming](https://github.com/lizheming) |
 | [EmlogToTypecho](https://github.com/typecho-fans/plugins/tree/master/EmlogToTypecho) | Emlog转换Typecho插件 | [@ShingChi](https://github.com/shingchi) |
@@ -67,9 +70,9 @@
 | [Hermit](https://github.com/typecho-fans/plugins/tree/master/Hermit) | 虾米列表型播放器插件(支持专辑) | [@牧风](https://github.com/iMuFeng) |
 | [HighSlide](https://github.com/typecho-fans/plugins/tree/master/HighSlide) | 灯箱弹窗特效及页面相册插件 | [@羽中](https://github.com/jzwalk) |
 | [Html2Text](https://github.com/typecho-fans/plugins/tree/master/Html2Text) | Html代码转Markdown格式插件 | [@冰剑](https://github.com/binjoo) |
-| [Keywords](https://github.com/typecho-fans/plugins/tree/master/Keywords) | 关键词和标签自动内链插件 | [@羽中](https://github.com/jzwalk) |
+| [Keywords](https://github.com/typecho-fans/plugins/tree/master/Keywords) | 关键词和标签自动链接插件 | [@羽中](https://github.com/jzwalk) |
+| [Like](https://github.com/typecho-fans/plugins/tree/master/Like) | 文章点赞功能插件 | [@skylzl](https://github.com/xiaogouxo) |
 | [LREditor](https://github.com/typecho-fans/plugins/tree/master/LREditor) | Markdown编辑器增强插件 | [@lizheming](http://github.com/lizheming) |
-| [Like](https://github.com/typecho-fans/plugins/tree/master/Like) | typecho点赞插件like | [@skylzl](https://github.com/xiaogouxo) |
 | [MostCache](https://github.com/typecho-fans/plugins/tree/master/MostCache) | mysql、SAE memcache 缓存插件 | [@skylzl](https://github.com/xiaogouxo) |
 | [MyPlayer](https://github.com/typecho-fans/plugins/tree/master/MyPlayer) | 播放页面链接转为外链播放器插件 | [@perichr](http://github.com/perichr) |
 | [MyTagCloud](https://github.com/typecho-fans/plugins/tree/master/MyTagCloud) | 标签云插件 | [@马燕龙](https://github.com/YanlongMa) |
@@ -77,21 +80,24 @@
 | [OriginalEditor](https://github.com/typecho-fans/plugins/tree/master/OriginalEditor) | 屏蔽Markdown模式插件 | [@lizheming](http://github.com/lizheming) |
 | [Passport](https://github.com/typecho-fans/plugins/tree/master/Passport) | 密码找回插件 | [@ShingChi](https://github.com/shingchi) |
 | [Prism](https://github.com/typecho-fans/plugins/tree/master/Prism) | 轻量级语法高亮插件 | [@冰剑](https://github.com/binjoo) |
-| [RoutesHelper](https://github.com/typecho-fans/plugins/tree/master/RoutesHelper) | 路由助手插件 | [@兜兜](https://github.com/doudoutime) |
+| [QNUpload](https://github.com/typecho-fans/plugins/tree/master/QNUpload) | 七牛云附件上传插件 | [@rakiy](https://github.com/rakiy) |
 | [Reposidget](https://github.com/typecho-fans/plugins/tree/master/Reposidget) | Github Repo内容展示插件 | [@西秦公子](https://github.com/xiqingongzi) |
+| [RewriteRule](https://github.com/typecho-fans/plugins/tree/master/RewriteRule) | 指定地址404重定向插件 | [@laobubu](https://github.com/laobubu) |
+| [RoutesHelper](https://github.com/typecho-fans/plugins/tree/master/RoutesHelper) | 路由助手插件 | [@兜兜](https://github.com/doudoutime) |
 | [Sinauth](https://github.com/typecho-fans/plugins/tree/master/Sinauth) | 新浪oauth登陆插件 | [@Web3D](https://github.com/web3d) |
-| [Smilies](https://github.com/typecho-fans/plugins/tree/master/Smilies) | 自带评论表情功能插件 | [@羽中](https://github.com/jzwalk) [Willin Kan](http://kan.willin.org) |
-| [Snowstorm](https://github.com/typecho-fans/plugins/tree/master/Snowstorm) | 纯娱乐用 博客飘雪插件 | [@rakiy](https://github.com/rakiy) |
+| [Smilies](https://github.com/typecho-fans/plugins/tree/master/Smilies) | 评论表情功能插件 | [@羽中](https://github.com/jzwalk) [Willin Kan](http://kan.willin.org) |
+| [Snowstorm](https://github.com/typecho-fans/plugins/tree/master/Snowstorm) | (纯娱乐用)博客飘雪插件 | [@rakiy](https://github.com/rakiy) |
 | [Subscriber](https://github.com/typecho-fans/plugins/tree/master/Subscriber) | 文章仅对登录会员可见插件 | [@羽中](https://github.com/jzwalk) |
 | [SyncPost](https://github.com/typecho-fans/plugins/tree/master/SyncPost) | 同步文章发布到微博插件 | [@冰剑](https://github.com/binjoo) |
 | [TeKit](https://github.com/binjoo/TeKit) | Typecho常用扩展功能工具箱插件 | [@冰剑](https://github.com/binjoo) |
 | [ThemeDemo](https://github.com/typecho-fans/plugins/tree/master/ThemeDemo) | 外观主题演示插件 | [@兜兜](https://github.com/doudoutime) |
-| [Typembed](https://github.com/typecho-fans/plugins/tree/master/Typembed) | 国内视频网站视频播放插件 | [@我才是疯子](https://github.com/nothingisover) |
 | [typechoSignPlugin](https://github.com/typecho-fans/plugins/tree/master/typechoSignPlugin) | 用户个性签名插件 | [@H萌](https://github.com/hmoe/typechoSignPlugin) |
+| [Typembed](https://github.com/typecho-fans/plugins/tree/master/Typembed) | 国内视频网站视频播放插件 | [@我才是疯子](https://github.com/nothingisover) |
+| [Ueditor](https://github.com/typecho-fans/plugins/tree/master/Ueditor) | 百度编辑器ueditor插件 | [@zhulin3141](https://github.com/zhulin3141) |
+| [Ugauka](https://github.com/typecho-fans/plugins/tree/master/Ugauka) | 二次元女仆春菜插件 | [@Kunr](https://github.com/Kunr) |
 | [Update](https://github.com/typecho-fans/plugins/tree/master/Update) | Typecho自动在线升级插件 | [@lizheming](https://github.com/lizheming) |
 | [UploadPlugin](https://github.com/typecho-fans/plugins/tree/master/UploadPlugin) | 在线安装模板/插件的插件 | [@阿飞](https://github.com/defeme) |
-| [Ugauka](https://github.com/typecho-fans/plugins/tree/master/Ugauka) | 一只萌萌的春菜	| [@Kunr](https://github.com/Kunr) |
 | [Watermark](https://github.com/typecho-fans/plugins/tree/master/Watermark) | 图片加水印插件(向下兼容0.8) | [@阿飞](https://github.com/defeme) |
 | [WeChatHelper](https://github.com/binjoo/WeChatHelper) | 微信公众号平台插件 | [@冰剑](https://github.com/binjoo) |
-| [XiaMiPlayer](https://github.com/typecho-fans/plugins/tree/master/XiaMiPlayer) | 虾米迷你型播放器插件 | [@lizheming](https://github.com/lizheming) |
 | [Xiami](https://github.com/typecho-fans/plugins/tree/master/Xiami) | 虾米页面型播放器插件(支持专辑) | [@牧风](https://github.com/iMuFeng) |
+| [XiaMiPlayer](https://github.com/typecho-fans/plugins/tree/master/XiaMiPlayer) | 虾米迷你型播放器插件 | [@lizheming](https://github.com/lizheming) |
