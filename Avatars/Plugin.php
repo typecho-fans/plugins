@@ -1,17 +1,15 @@
 <?php
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
-
 /**
- * 按评论数量排序输出活跃读者头像墙
+ * 为博客添加Gravatar头像墙功能, 支持镜像加速与缓存
  * 
  * @category widget
  * @package Avatars
  * @author 羽中
- * @version 1.2.1
- * @dependence 13.12.12-*
- * @link http://www.jzwalk.com/archives/net/avatars-for-typecho
+ * @version 1.2.4
+ * @dependence 14.10.10
+ * @link http://www.yzmb.me/archives/net/avatars-for-typecho
  */
-
 class Avatars_Plugin implements Typecho_Plugin_Interface
 {
 	/**
@@ -23,8 +21,8 @@ class Avatars_Plugin implements Typecho_Plugin_Interface
 	 */
 	public static function activate()
 	{
-		Typecho_Plugin::factory('Widget_Abstract_Contents')->contentEx = array('Avatars_Plugin','parse');
-		Helper::addAction('avatars-delete','Avatars_Action');
+		Typecho_Plugin::factory('Widget_Abstract_Contents')->contentEx = array('Avatars_Plugin','walls');
+		Typecho_Plugin::factory('Widget_Abstract_Comments')->gravatar = array('Avatars_Plugin','avatars');
 	}
 
 	/**
@@ -35,10 +33,7 @@ class Avatars_Plugin implements Typecho_Plugin_Interface
 	 * @return void
 	 * @throws Typecho_Plugin_Exception
 	 */
-	public static function deactivate()
-	{
-		Helper::removeAction('avatars-delete');
-	}
+	public static function deactivate(){}
 
 	/**
 	 * 获取插件配置面板
@@ -49,37 +44,61 @@ class Avatars_Plugin implements Typecho_Plugin_Interface
 	 */
 	public static function config(Typecho_Widget_Helper_Form $form)
 	{
-		Avatars_Plugin::form()->setAttribute('style','position:relative;bottom:-627px;left:217px;')->render();
-		echo "<div style='color:#999;font-size:0.92857em;font-weight:bold;'><p>在模版适当位置插入代码<span style='color:#467B96;font-weight:bold'>&lt;?php Avatars_Plugin::output('<span style='color:#E47E00;'>li</span>','<span style='color:#E47E00;'>mostactive</span>'); ?&gt;</span>, 或在页面内容<br/>写入标签<span style='color:#467B96;font-weight:bold'>[AVATARS|<span style='color:#E47E00;'>li</span>|<span style='color:#E47E00;'>mostactive</span>]</span>均可. 橙色部分为自定义tag名(如span, div, p等)和class名. </p></div>";
+		echo
+'<div style="color:#999;font-size:13px;word-break:break-all;"><p>'
+._t('在主题模版文件中的适当位置插入代码%s<br/>或编辑文章/页面写入%s即可显示读者墙(黑字标签与class名称可自定义)','<span style="color:#467B96;font-weight:bold;">&lt;?php Avatars_Plugin::output("<span style="color:#444;">li</span>","<span style="color:#444;">mostactive</span>"); ?&gt;</span>','<span style="color:#467B96;font-weight:bold;">[AVATARS|<span style="color:#444;">li</span>|<span style="color:#444;">mostactive</span>]</span>').
+'</p></div>';
+
+		$wsize = new Typecho_Widget_Helper_Form_Element_Text('wsize',
+		NULL,'32',_t('读者墙头像大小'),_t('读者墙上的头像尺寸(单位px无需填写)'));
+		$wsize->input->setAttribute('class','w-10');
+		$wsize->addRule('required',_t('头像尺寸不能为空'));
+		$form->addInput($wsize->addRule('isInteger',_t('请填写整数数字')));
+
+		$wdefault = new Typecho_Widget_Helper_Form_Element_Text('wdefault',
+		NULL,'',_t('读者墙缺省头像'),_t('支持gravatar随机头像后缀(identicon/monsterid/wavatar/retro等), 自定义图片url注意尺寸应一致'));
+		$wdefault->input->setAttribute('class','w-60');
+		$form->addInput($wdefault);
 
 		$listnumber = new Typecho_Widget_Helper_Form_Element_Text('listnumber',
-			NULL,'10','读者墙头像数目','设置最多显示多少个评论者头像');
-		$listnumber->input->setAttribute('class','mini');
-		$form->addInput($listnumber->addRule('isInteger','请填入一个数字'));
+		NULL,'10',_t('读者墙头像数目'),_t('读者墙上最多展示的评论者头像个数'));
+		$listnumber->input->setAttribute('class','w-10');
+		$listnumber->addRule('required',_t('头像个数不能为空'));
+		$form->addInput($listnumber->addRule('isInteger',_t('请填写整数数字')));
 
 		$since = new Typecho_Widget_Helper_Form_Element_Text('since',
-			NULL,'30','读者墙收录时间','设置显示多少*天*以内的评论者头像');
-		$since->input->setAttribute('class','mini');
-		$form->addInput($since->addRule('isInteger','请填入一个数字'));
+		NULL,'30',_t('读者墙收录时间'),_t('读者墙将展示该天数以内的评论排行'));
+		$since->input->setAttribute('class','w-10');
+		$form->addInput($since->addRule('isInteger',_t('请填写整数数字')));
 
 		$altword = new Typecho_Widget_Helper_Form_Element_Text('altword',
-			NULL,'条评论','读者墙提示文字','设置评论者头像上的评论数提示后缀');
+		NULL,'条评论',_t('读者墙提示文字'),_t('个性化读者墙头像的评论数提示文字'));
 		$altword->input->setAttribute('class','mini');
 		$form->addInput($altword);
 
-		$avsize = new Typecho_Widget_Helper_Form_Element_Text('avsize',
-			NULL,'32','读者墙头像尺寸','设置读者墙显示的gravatar头像大小(*px*)');
-		$avsize->input->setAttribute('class','mini');
-		$form->addInput($avsize->addRule('isInteger','请填入一个数字'));
+		$proxy = new Typecho_Widget_Helper_Form_Element_Radio('proxy',
+		array(''=>_t('否'),'https://cdn.v2ex.com/gravatar/'=>_t('v2ex镜像'),'moecdn'=>_t('MoeCDN镜像')),'',_t('用代理加速头像'),_t('国内直连gravatar服务器不流畅时可选'));
+		$form->addInput($proxy);
 
-		$avdefault = new Typecho_Widget_Helper_Form_Element_Text('avdefault',
-			NULL,'','读者墙缺省头像','设置没有gravatar头像的读者显示图片url(注意与上一项尺寸一致)');
-		$avdefault->input->setAttribute('style','width:550px;');
-		$form->addInput($avdefault->addRule('url','请填入一个url地址'));
+		$cache = new Typecho_Widget_Helper_Form_Element_Checkbox('cache',
+		array(1=>_t('是')),NULL,_t('在本地缓存头像'),_t('将头像下载到插件的cache目录中调用'));
+		$form->addInput($cache);
 
-		$avcache = new Typecho_Widget_Helper_Form_Element_Radio('avcache',
-			array('false'=>'否','true'=>'是'),'false','读者墙开启缓存','开启后若修改了以上两项设置请点击清空缓存重新生成');
-		$form->addInput($avcache);
+		$comment = new Typecho_Widget_Helper_Form_Element_Checkbox('comment',
+		array(1=>_t('是')),NULL,_t('作用评论区头像'),_t('评论区头像也用上两项设置(加速/缓存)'));
+		$form->addInput($comment);
+
+		if (Typecho_Request::getInstance()->is('action=deletefiles')) {
+			self::deletefiles();
+		}
+		//清空动作按钮
+		$deletefiles = new Typecho_Widget_Helper_Form_Element_Submit();
+		$deletefiles->value(_t('清空缓存'));
+		$deletefiles->setAttribute('style','position:relative');
+		$deletefiles->input->setAttribute('style','position:absolute;bottom:127.5px;left:110px;padding-bottom:1px');
+		$deletefiles->input->setAttribute('class','btn btn-xs btn-warn');
+		$deletefiles->input->setAttribute('formaction',Helper::options()->adminUrl.'options-plugin.php?config=Avatars&action=deletefiles');
+		$form->addItem($deletefiles);
 	}
 
 	/**
@@ -92,163 +111,220 @@ class Avatars_Plugin implements Typecho_Plugin_Interface
 	public static function personalConfig(Typecho_Widget_Helper_Form $form){}
 
 	/**
-	 * 清空缓存功能表单
-	 * 
-	 * @access public
-	 * @return Typecho_Widget_Helper_Form
-	 */
-	public static function form($action = NULL)
-	{
-		$options = Typecho_Widget::widget('Widget_Options');
-		$form = new Typecho_Widget_Helper_Form(Typecho_Common::url('/action/avatars-delete',$options->index),
-			Typecho_Widget_Helper_Form::POST_METHOD);
-
-		$do = new Typecho_Widget_Helper_Form_Element_Hidden('do');
-		$form->addInput($do);
-
-		$submit = new Typecho_Widget_Helper_Form_Element_Submit();
-		$submit->input->setAttribute('class','btn btn-s btn-warn btn-operate');
-		$form->addItem($submit);
-
-		$do->value('delete');
-		$submit->value('清空缓存');
-		$_action = 'delete';
-
-		if (empty($action)) {
-			$action = $_action;
-		}
-
-		return $form;
-	}
-
-	/**
 	 * 读者墙标签解析
 	 * 
 	 * @access public
 	 * @param string $content
 	 * @return string
 	 */
-	public static function parse($content,$widget,$lastResult)
+	public static function walls($content,$widget,$lastResult)
 	{
-		$content = empty($lastResult)?$content:$lastResult;
+		$content = empty($lastResult) ? $content : $lastResult;
 
-		if ($widget instanceof Widget_Archive) {
-			return preg_replace_callback("/\[AVATARS(\w*[^>]*)\]/i",array('Avatars_Plugin','callback'),$content);
-		} else {
-			return $content;
+		if ($widget->is('page') && false!==stripos($content,'[AVATARS')) {
+			$content = preg_replace_callback('/\[AVATARS(\w*[^>]*)\]/i',array('Avatars_Plugin','callback'),$content);
 		}
 
+		return $content;
 	}
 
 	/**
 	 * 标签参数回调
 	 * 
 	 * @access public
-	 * @param array $matches
+	 * @param array $matche
 	 * @return string
 	 */
-	public static function callback($matches)
+	public static function callback($matche)
 	{
 		$listtag = 'li';
 		$class = 'mostactive';
-		if (!empty($matches[1])) {
-			if (preg_match("/\|([\w-]*)\|([\w-]*)/i",$matches[1],$out)) {
-				$listtag = trim($out[1])==''?$listtag:trim($out[1]);
-				$class = trim($out[2])==''?$class:trim($out[2]);
+
+		if ($matche['1']) {
+			if (preg_match('/\|([\w-]*)\|([\w-]*)/i',$matche['1'],$out)) {
+				$listtag = trim($out['1']);
+				$class = trim($out['2']);
 			}
 		}
-		return self::output($listtag,$class);
+
+		return self::output($listtag,$class,true);
 	}
 
 	/**
-	 * 读者墙模板输出
+	 * 读者墙实例输出
 	 * 
 	 * @access public
 	 * @param string $listtag 标签名称
 	 * @param string $class class名称
+	 * @param boolean $iscall 是否回调
 	 * @return void
 	 */
-	public static function output($listtag = 'li',$class = 'mostactive')
+	public static function output($listtag='li',$class='mostactive',$iscall=false)
 	{
 		$options = Helper::options();
 		$settings = $options->plugin('Avatars');
+		$listtag = $listtag ? $listtag : 'li';
+		$wurl = '';
 		$mostactive = '';
 
-		//兼容缓存的默认头像
-		$avdefault = (!empty($settings->avdefault))?$settings->avdefault:'http://gravatar.duoshuo.com/avatar/?s='.$settings->avsize.'&amp;d=';
-
-		//同步系统nofollow设置
-		$nofollow = ($options->commentsUrlNofollow)?'rel="external nofollow"':'';
-
-		//收录时间计算
-		$expire = $options->gmtTime+$options->timezone-$settings->since*24*3600;
-
+		//获取评论计数
 		$db = Typecho_Db::get();
 		$select = $db->select(array('COUNT(author)'=>'cnt'),'author','url','mail')->from('table.comments')
-			->where('status=?','approved')
-			->where('authorId=?','0')
-			->where('type=?','comment')
-			->where('created>?',$expire)
+			->where('status = ?','approved')
+			->where('authorId = ?','0') //排除博主
+			->where('type = ?','comment')
+			->where('created > ?',$options->gmtTime + $options->timezone - $settings->since*24*3600) //收录时间
 			->limit($settings->listnumber)
 			->group('author')
-			->order('cnt',Typecho_Db::SORT_DESC);
+			->order('cnt',Typecho_Db::SORT_DESC); //降序排列
 		$counts = $db->fetchAll($select);
 
 		foreach ($counts as $count) {
-			//url未填写链接静默
-			$visurl = (!empty($count['url']))?$count['url']:'###';
-			$avhash = md5($count['mail']);
+			//获取优化地址
+			$wurl = self::avurl($count['mail'],$settings->wsize,$options->commentsAvatarRating //同步评级设置
+				,$settings->wdefault,Typecho_Widget::widget('Widget_Archive')->request->isSecure() //获取安全请求
+			);
 
-			//同步系统头像评级
-			$avurl = 'http://gravatar.duoshuo.com/avatar/'.$avhash.'?s='.$settings->avsize.'&amp;r='.$options->commentsAvatarRating.'&amp;d='.$avdefault.'';
-
-			//调用缓存地址判断
-			$imgurl = ($settings->avcache=='true')?self::cache($avdefault,$avurl,$avhash):$avurl;
-
-			$mostactive .= 
-				'<'.$listtag.''.(empty($class)?'':' class="'.$class.'"').'>'.'<a href="'.$visurl.'"'.$nofollow.'title="'.$count['author'].' - '.$count['cnt'].$settings->altword.'"><img src="'.$imgurl.'" alt="'.$count['author'].' - '.$count['cnt'].$settings->altword.'" class="avatar" /></a></'.$listtag.'>';
+			$mostactive .= '
+		<'.$listtag;
+			$mostactive .= $class ? ' class="'.$class.'"' : '';
+			$mostactive .= '><a href="';
+			$mostactive .= $count['url'] ? $count['url'] : '###'; //静默空白链接
+			$mostactive .= '"';
+			$mostactive .= $options->commentsUrlNofollow ? ' rel="external nofollow"' : ''; //同步nofollow设置
+			$mostactive .= ' title="'.$count['author'].' - '.$count['cnt'].$settings->altword.'">';
+			$mostactive .= $wurl ? '<img src="'.$wurl.'" alt="'.$count['author'].'" class="avatar" />' : _t('<span style="font-weight:bold;color:#467B96;">%s</span>','缓存出错!');
+			$mostactive .= '</a></'.$listtag.'>';
 		}
 
-		echo $mostactive;
+		//修正替换输出
+		if ($iscall) {
+			return $mostactive;
+		} else {
+			echo $mostactive;
+		}
 	}
 
 	/**
-	 * 读者墙缓存生成
+	 * 输出头像地址
 	 * 
-	 * @access public
+	 * @access private
+	 * @param string $mail 邮箱地址
+	 * @param integer $size 头像尺寸
+	 * @param string $rate 头像评级
 	 * @param string $default 默认头像
-	 * @param string $image 用户头像
-	 * @param string $mailhash 邮箱哈希
+	 * @param boolean $secure https请求
 	 * @return string
 	 */
-	private static function cache($default,$image,$mailhash)
+	private static function avurl($mail,$size,$rating,$default,$secure=false)
 	{
 		$options = Helper::options();
 		$settings = $options->plugin('Avatars');
+		$hash = $mail ? md5(strtolower(trim($mail))) : '';
 
-		//缓存目录绝对路径
-		$setdir = __TYPECHO_ROOT_DIR__.__TYPECHO_PLUGIN_DIR__.'/Avatars/cache/';
-		$defaultdir = $setdir.'default';
-		$sampledir = $setdir.'set';
-		$cachedir = $setdir.$mailhash;
+		$proxy = $settings->proxy;
+		$server = $proxy ? 
+			($proxy=='moecdn' ? ($secure ? 'https://gravatar.moefont.com/avatar/' : 'http://gravatar.moefont.com/avatar/') : $proxy)
+			 : ($secure ? 'https://secure.gravatar.com/avatar/' : 'http://'.rand(0,2).'.gravatar.com/avatar/');
 
-		//缓存默认时限15日
-		$cachetime = 14*24*3600;
+		$url = $server.$hash;
+		$url .= '?s='.$size;
+		$url .= '&r='.$rating;
+		$url .= '&d='.$default;
 
-		if (!is_file($defaultdir))
-			copy($default,$defaultdir);
-		if (!is_file($sampledir))
-			copy('http://gravatar.duoshuo.com/avatar/?s='.$settings->avsize.'&amp;d=',$sampledir);
+		if ($settings->cache) {
+			$path = __TYPECHO_ROOT_DIR__.__TYPECHO_PLUGIN_DIR__.'/Avatars/cache/';
+			//生成缓存目录
+			if (!is_dir($path)) {
+				if (!self::makedir($path)) {
+					return false;
+				}
+			}
 
-		//不存在或过期则生成
-		if (!is_file($cachedir)||(time()-filemtime($cachedir))>$cachetime)
-			copy($image,$cachedir);
+			//默认缓存15日
+			$cachetime = 14*24*3600;
+			$cachedir = $path.$hash.$size;
 
-		//自定义默认头像覆盖
-		if (filesize($cachedir)==filesize($sampledir))
-			copy($defaultdir,$cachedir);
+			//生成缓存头像
+			if (!is_file($cachedir) || (time()-filemtime($cachedir))>$cachetime) {
+				if (!@copy($url,$cachedir)) {
+					return false;
+				}
+			}
 
-		return $options->pluginUrl.'/Avatars/cache/'.$mailhash;
+			$url = $options->pluginUrl.'/Avatars/cache/'.$hash.$size;
+		}
+
+		return $url;
+	}
+
+	/**
+	 * 缓存头像清空
+	 *
+	 * @access private
+	 * @return void
+	 */
+	private function deletefiles()
+	{
+		$path = glob(__TYPECHO_ROOT_DIR__.'/usr/plugins/Avatars/cache/*');
+		if ($path) {
+			foreach ($path as $filename) {
+				@unlink($filename);
+			}
+		}
+
+		Typecho_Widget::widget('Widget_Notice')->set(_t('本地头像缓存已清空!'),'notice');
+		Typecho_Response::getInstance()->goBack();
+	}
+
+	/**
+	 * 本地目录创建
+	 * 
+	 * @access private
+	 * @param string $path 路径
+	 * @return boolean
+	 */
+	private static function makedir($path)
+	{
+		$path = preg_replace("/\\\+/", '/', $path);
+		$current = rtrim($path, '/');
+		$last = $current;
+
+		while (!is_dir($current) && false !== strpos($path, '/')) {
+			$last = $current;
+			$current = dirname($current);
+		}
+		if ($last == $current) {
+			return true;
+		}
+		if (!@mkdir($last)) {
+			return false;
+		}
+
+		$stat = @stat($last);
+		$perms = $stat['mode'] & 0007777;
+		@chmod($last, $perms);
+
+		return self::makedir($path);
+	}
+
+	/**
+	 * 兼容评论区头像
+	 * 
+	 * @access public
+	 * @param integer $size 头像尺寸
+	 * @param string $default 默认头像
+	 * @return void
+	 */
+	public static function avatars($size,$rating,$default,$comments)
+	{
+		$mail = $comments->mail;
+		$issecure = $comments->request->isSecure();
+
+		$url = Helper::options()->plugin('Avatars')->comment ? self::avurl($mail,$size,$rating,$default,$issecure)
+			 : Typecho_Common::gravatarUrl($mail,$size,$rating,$default,$issecure);
+
+		echo $url ? '<img class="avatar" src="'.$url.'" alt="'.$comments->author.'" />' : _t('<span style="font-weight:bold;color:#467B96;">%s</span>','缓存出错!');
 	}
 
 }
