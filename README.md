@@ -4,57 +4,55 @@
 
 本项目中的插件原则上均支持0.9+版本，请根据需要选择测试。
 
-如有问题或建议可提交至[issues](https://github.com/typecho-fans/plugins/issues)，插件作者会收到通知并尽快回复解决。
+欢迎提交问题或建议至[issues](https://github.com/typecho-fans/plugins/issues)，作者们都会看到并协助解决。
 
-欢迎更多作者加入！交流群号：[40412938](http://shang.qq.com/wpa/qunwpa?idkey=a5a8afedf099e18ddf9b530db9217251e39001d52aace42888bf470d9b6cb86a)
+欢迎更多作者加入进来！我们的交流群号是：[40412938](http://shang.qq.com/wpa/qunwpa?idkey=a5a8afedf099e18ddf9b530db9217251e39001d52aace42888bf470d9b6cb86a)
 
 <hr>
 
 ### 使用帮助
 
- 1. 使用git工具克隆本项目，或点击右侧下方Download ZIP打包下载
+ 1. 用git工具克隆本项目或点击右侧绿色按钮打包下载
 
- > 还可以使用[Typecho应用商店](https://github.com/typecho-app-store/AppStore)在后台自动下载并安装所选插件
+ 2. 将所需插件按照作者说明上传至`/usr/plugins/`目录
 
- 2. 选择所需插件，按照说明上传至Typecho的`/usr/plugins/`目录
-
- 3. 登陆Typecho后台，在“控制台”下拉菜单中点击进入“插件管理”
-
- 4. 启用插件，并按照说明进行设置(未找到或启用错误请检查第2步)
+ 3. 登陆Typecho后台在“插件管理”中点击启用插件即可
 
 ### 作者须知
 
- 1. 建议在本项目中提交插件，或使用[subtree](http://aoxuis.me/post/2013-08-06-git-subtree)方法推送分支
+ 1. 建议使用[subtree](http://aoxuis.me/post/2013-08-06-git-subtree)方法推送你的插件repo，或直接在本项目中创建
 
- > submodule可链接原项目，但也会给打包下载和协作更新带来一定麻烦
+ > submodule可以链接至原项目，但也会给打包下载与协作更新带来一定麻烦
 
- 2. 若暂无成员权限可先fork进行修改，然后提交pull request或issues申请
+ 2. 若暂无成员权限可先fork后进行修改，然后提交pull request或issues申请
 
- > 通常几位owner会很快处理审核并将新作者加进组织
+ > 通常我们的几位owner会很快审核处理并将新作者加入进组织的:)
 
- 3. 插件根目录下应包含有 **README.md** 使用说明，方便用户预览
+ 3. 插件根目录下应包含有 **README.md** 使用说明，以方便用户预览了解
 
- > 下方作品索引请按照格式加入一句话介绍和作者内链
+ > 你也可以在下方的作品索引里加入一句话介绍和自己的github内链
 
- 4. 推送作品应确保为原创或经过作者同意能够在这里进行维护和更新
+ 4. 推送作品应确保为原创或经过作者同意能够在这里进行多人维护和更新的
 
- > 插件目录内无license则默认视作采用与Typecho相同的[GPL](https://github.com/typecho/typecho/blob/master/license.txt)开源许可
+ > 插件目录内若无license则默认视作采用与Typecho相同的[GPL](https://github.com/typecho/typecho/blob/master/license.txt)开源许可
 
 ### 作品索引(按首字排序)
 
 | 名称 | 介绍 | 作者 |
 | ---- |:----:| ----:|
-| [Announcement](https://github.com/typecho-fans/plugins/tree/master/Announcement) | 公告栏插件 | [@skylzl](https://github.com/xiaogouxo) |
+| [AjaxComments](https://github.com/typecho-fans/plugins/tree/master/AjaxComments) | 异步嵌套评论插件 | [@羽飞](https://github.com/byends) [Willin Kan](http://kan.willin.org) |
+| [Announcement](https://github.com/typecho-fans/plugins/tree/master/Announcement) | 弹出式公告栏插件 | [@skylzl](https://github.com/xiaogouxo) |
+| [AppStore](https://github.com/typecho-fans/plugins/tree/master/AppStore) | Typecho插件商店插件 | [@chekun](https://github.com/chekun) |
 | [At](https://github.com/typecho-fans/plugins/tree/master/At) | 评论@型回复模式插件 | [@lizheming](https://github.com/lizheming) |
-| [AudioPlayer](https://github.com/typecho-fans/plugins/tree/master/AudioPlayer) | flash音乐文件播放器插件 | [@羽中](https://github.com/jzwalk) |
+| [AudioPlayer](https://github.com/typecho-fans/plugins/tree/master/AudioPlayer) | Flash mp3播放器插件 | [@羽中](https://github.com/jzwalk) |
 | [AutoSlug](https://github.com/typecho-fans/plugins/tree/master/AutoSlug) | 自动生成文章缩略名插件 | [@ShingChi](https://github.com/shingchi) |
 | [Avatars](https://github.com/typecho-fans/plugins/tree/master/Avatars) | 读者墙头像排名插件(支持缓存) | [@羽中](https://github.com/jzwalk) |
 | [BaeUpload](https://github.com/typecho-fans/plugins/tree/master/BaeUpload) | BAE附件上传插件 | [@兜兜](https://github.com/doudoutime) |
 | [CateFilter](https://github.com/typecho-fans/plugins/tree/master/CateFilter) | 首页指定分类不显示插件 | [@rakiy](https://github.com/rakiy) |
 | [Ckeditor4Typecho](https://github.com/typecho-fans/plugins/tree/master/Ckeditor4Typecho) | 带上传功能的ckeditor插件 | [@zhulin3141](https://github.com/zhulin3141) |
-| [CodeMirror](https://github.com/typecho-fans/plugins/tree/master/CodeMirror) | 主题编辑器插件 | [@zhulin3141](https://github.com/zhulin3141) |
+| [CodeMirror](https://github.com/typecho-fans/plugins/tree/master/CodeMirror) | Typecho主题编辑器插件 | [@zhulin3141](https://github.com/zhulin3141) |
 | [CommenToMail4BAE](https://github.com/typecho-fans/plugins/tree/master/CommenToMail4BAE) | BAE版评论提醒插件 | [@ShingChi](https://github.com/shingchi) |
-| [CommentToMail](https://github.com/byends/CommentToMail) | 评论邮件提醒插件 | [@byends](https://github.com/byends) [@阿飞](https://github.com/defeme) |
+| [CommentToMail](https://github.com/byends/CommentToMail) | 评论邮件提醒插件 | [@羽飞](https://github.com/byends) [@阿飞](https://github.com/defeme) |
 | [ContentIndex](https://github.com/typecho-fans/plugins/tree/master/ContentIndex) | 文章内容生成目录插件 | [@laobubu](https://github.com/laobubu) |
 | [Contribute](https://github.com/typecho-fans/plugins/tree/master/Contribute) | 用户投稿审查管理插件 | [@ShingChi](https://github.com/shingchi) |
 | [DbManager](https://github.com/typecho-fans/plugins/tree/master/DbManager) | 数据库管理工具插件 | [@ShingChi](https://github.com/shingchi) |
@@ -67,9 +65,11 @@
 | [GithubCard](https://github.com/typecho-fans/plugins/tree/master/GithubCard) | Github项目/用户展示插件 | [@chekun](https://github.com/chekun) |
 | [GoLinks](https://github.com/typecho-fans/plugins/tree/master/GoLinks) | 外链转内链跳转插件 | [@阿飞](https://github.com/defeme) |
 | [GoogleCodePrettfy](https://github.com/typecho-fans/plugins/tree/master/GoogleCodePrettify) | Google代码高亮插件 | [@lizheming](https://github.com/lizheming) |
+| [GravatarCache](https://github.com/typecho-fans/plugins/tree/master/GravatarCache) | Gravatar头像缓存插件 | [@羽飞](https://github.com/byends) |
 | [Hermit](https://github.com/typecho-fans/plugins/tree/master/Hermit) | Html5+Flash音乐播放器 | [@牧风](https://github.com/iMuFeng) |
 | [HighSlide](https://github.com/typecho-fans/plugins/tree/master/HighSlide) | 灯箱弹窗特效及页面相册插件 | [@羽中](https://github.com/jzwalk) |
 | [Html2Text](https://github.com/typecho-fans/plugins/tree/master/Html2Text) | Html代码转Markdown格式插件 | [@冰剑](https://github.com/binjoo) |
+| [IQapTcha](https://github.com/typecho-fans/plugins/tree/master/IQapTcha) | 滑动解锁验证码插件 | [@羽飞](https://github.com/byends) |
 | [JSON](https://github.com/typecho-fans/plugins/tree/master/JSON) | Typecho开放API插件 | [@lizheming](https://github.com/lizheming) |
 | [Keywords](https://github.com/typecho-fans/plugins/tree/master/Keywords) | 关键词和标签自动链接插件 | [@羽中](https://github.com/jzwalk) |
 | [Like](https://github.com/typecho-fans/plugins/tree/master/Like) | 文章点赞功能插件 | [@skylzl](https://github.com/xiaogouxo) |
