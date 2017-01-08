@@ -94,10 +94,10 @@
 | [typechoSignPlugin](https://github.com/typecho-fans/plugins/tree/master/typechoSignPlugin) | 用户个性签名插件 | [@H萌](https://github.com/hmoe/typechoSignPlugin) |
 | [Typembed](https://github.com/typecho-fans/plugins/tree/master/Typembed) | 国内视频网站视频播放插件 | [@我才是疯子](https://github.com/nothingisover) |
 | [Ueditor](https://github.com/typecho-fans/plugins/tree/master/Ueditor) | 百度编辑器ueditor插件 | [@zhulin3141](https://github.com/zhulin3141) |
-| [Ugauka](https://github.com/typecho-fans/plugins/tree/master/Ugauka) | 二次元女仆春菜插件 | [@Kunr](https://github.com/Kunr) |
+| [Ugauka](https://github.com/typecho-fans/plugins/tree/master/Ukagaka) | 二次元女仆春菜插件 | [@Kunr](https://github.com/Rakume) |
 | [Update](https://github.com/typecho-fans/plugins/tree/master/Update) | Typecho自动在线升级插件 | [@lizheming](https://github.com/lizheming) |
 | [UploadPlugin](https://github.com/typecho-fans/plugins/tree/master/UploadPlugin) | 在线安装模板/插件的插件 | [@阿飞](https://github.com/defeme) |
 | [Watermark](https://github.com/typecho-fans/plugins/tree/master/Watermark) | 图片加水印插件(向下兼容0.8) | [@阿飞](https://github.com/defeme) |
 | [WeChatHelper](https://github.com/binjoo/WeChatHelper) | 微信公众号平台插件 | [@冰剑](https://github.com/binjoo) |
-| [Xiami](https://github.com/typecho-fans/plugins/tree/master/Xiami) | 虾米页面型播放器插件(支持专辑) | [@牧风](https://github.com/iMuFeng) |
+| [Xiami](https://github.com/typecho-fans/plugins/tree/master/Xiami) | 虾米页面型播放器插件 | [@牧风](https://github.com/iMuFeng) |
 | [XiaMiPlayer](https://github.com/typecho-fans/plugins/tree/master/XiaMiPlayer) | 虾米迷你型播放器插件 | [@lizheming](https://github.com/lizheming) |
