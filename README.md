@@ -64,27 +64,30 @@
 | [EmlogToTypecho](https://github.com/typecho-fans/plugins/tree/master/EmlogToTypecho) | Emlog转换Typecho插件 | [@ShingChi](https://github.com/shingchi) |
 | [GeeTest](https://github.com/typecho-fans/plugins/tree/master/GeeTest) | GeeTest验证码插件 | [@啸傲居士](https://github.com/shuxiao9058) |
 | [GHbutton](https://github.com/typecho-fans/plugins/tree/master/GHbutton) | Github功能按钮展示插件 | [@羽中](https://github.com/jzwalk) |
-| [GithubCard](https://github.com/typecho-fans/plugins/tree/master/GithubCard) | Github项目或用户模块展示插件 | [@chekun](https://github.com/chekun) |
-| [GoLinks](https://github.com/typecho-fans/plugins/tree/master/GoLinks) | 外链转为内链跳转插件 | [@阿飞](https://github.com/defeme) |
-| [GoogleCodePrettfy](https://github.com/typecho-fans/plugins/tree/master/GoogleCodePrettfy) | 代码高亮插件 | [@lizheming](https://github.com/lizheming) |
-| [Hermit](https://github.com/typecho-fans/plugins/tree/master/Hermit) | 虾米列表型播放器插件(支持专辑) | [@牧风](https://github.com/iMuFeng) |
+| [GithubCard](https://github.com/typecho-fans/plugins/tree/master/GithubCard) | Github项目/用户展示插件 | [@chekun](https://github.com/chekun) |
+| [GoLinks](https://github.com/typecho-fans/plugins/tree/master/GoLinks) | 外链转内链跳转插件 | [@阿飞](https://github.com/defeme) |
+| [GoogleCodePrettfy](https://github.com/typecho-fans/plugins/tree/master/GoogleCodePrettify) | Google代码高亮插件 | [@lizheming](https://github.com/lizheming) |
+| [Hermit](https://github.com/typecho-fans/plugins/tree/master/Hermit) | Html5+Flash音乐播放器 | [@牧风](https://github.com/iMuFeng) |
 | [HighSlide](https://github.com/typecho-fans/plugins/tree/master/HighSlide) | 灯箱弹窗特效及页面相册插件 | [@羽中](https://github.com/jzwalk) |
 | [Html2Text](https://github.com/typecho-fans/plugins/tree/master/Html2Text) | Html代码转Markdown格式插件 | [@冰剑](https://github.com/binjoo) |
 | [JSON](https://github.com/typecho-fans/plugins/tree/master/JSON) | Typecho开放API插件 | [@lizheming](https://github.com/lizheming) |
 | [Keywords](https://github.com/typecho-fans/plugins/tree/master/Keywords) | 关键词和标签自动链接插件 | [@羽中](https://github.com/jzwalk) |
 | [Like](https://github.com/typecho-fans/plugins/tree/master/Like) | 文章点赞功能插件 | [@skylzl](https://github.com/xiaogouxo) |
-| [LREditor](https://github.com/typecho-fans/plugins/tree/master/LREditor) | Markdown编辑器增强插件 | [@lizheming](http://github.com/lizheming) |
-| [MostCache](https://github.com/typecho-fans/plugins/tree/master/MostCache) | Mysql、SAE memcache 缓存插件 | [@skylzl](https://github.com/xiaogouxo) |
-| [MyPlayer](https://github.com/typecho-fans/plugins/tree/master/MyPlayer) | 播放页面链接转为外链播放器插件 | [@perichr](http://github.com/perichr) |
-| [MyTagCloud](https://github.com/typecho-fans/plugins/tree/master/MyTagCloud) | 标签云插件 | [@马燕龙](https://github.com/YanlongMa) |
-| [OptimizeDB](https://github.com/typecho-fans/plugins/tree/master/OptimizeDB) | 数据库优化插件 | [@冰剑](https://github.com/binjoo) |
+| [LREditor](https://github.com/typecho-fans/plugins/tree/master/LREditor) | Markdown左右预览插件 | [@lizheming](http://github.com/lizheming) |
+| [MostCache](https://github.com/typecho-fans/plugins/tree/master/MostCache) | Mysql/SAE memcache缓存插件 | [@skylzl](https://github.com/xiaogouxo) |
+| [MyPlayer](https://github.com/typecho-fans/plugins/tree/master/MyPlayer) | 影音站点外链转播放器插件 | [@perichr](http://github.com/perichr) |
+| [MyTagCloud](https://github.com/typecho-fans/plugins/tree/master/MyTagCloud) | 定制标签云功能插件 | [@马燕龙](https://github.com/YanlongMa) |
+| [OptimizeDB](https://github.com/typecho-fans/plugins/tree/master/OptimizeDB) | Typecho数据库优化插件 | [@冰剑](https://github.com/binjoo) |
 | [OriginalEditor](https://github.com/typecho-fans/plugins/tree/master/OriginalEditor) | 屏蔽Markdown模式插件 | [@lizheming](http://github.com/lizheming) |
-| [Passport](https://github.com/typecho-fans/plugins/tree/master/Passport) | 密码找回插件 | [@ShingChi](https://github.com/shingchi) |
+| [Passport](https://github.com/typecho-fans/plugins/tree/master/Passport) | 密码找回功能插件 | [@ShingChi](https://github.com/shingchi) |
 | [Prism](https://github.com/typecho-fans/plugins/tree/master/Prism) | 轻量级语法高亮插件 | [@冰剑](https://github.com/binjoo) |
+| [QiniuFile](https://github.com/typecho-fans/plugins/tree/master/QiniuFile) | 七牛云储存支持插件 | [@冰剑](https://github.com/binjoo) |
 | [QNUpload](https://github.com/typecho-fans/plugins/tree/master/QNUpload) | 七牛云附件上传插件 | [@rakiy](https://github.com/rakiy) |
+| [Remix](https://github.com/typecho-fans/plugins/tree/master/Remix) | SoundManager2播放器 | [@ShingChi](https://github.com/shingchi) |
 | [Reposidget](https://github.com/typecho-fans/plugins/tree/master/Reposidget) | Github Repo内容展示插件 | [@西秦公子](https://github.com/xiqingongzi) |
 | [RewriteRule](https://github.com/typecho-fans/plugins/tree/master/RewriteRule) | 指定地址404重定向插件 | [@laobubu](https://github.com/laobubu) |
 | [RoutesHelper](https://github.com/typecho-fans/plugins/tree/master/RoutesHelper) | Typecho路由助手插件 | [@兜兜](https://github.com/doudoutime) |
+| [Simbox2](https://github.com/typecho-fans/plugins/tree/master/Simbox2) | 轻量级图片灯箱效果插件 | [@冰剑](https://github.com/binjoo) |
 | [Sinauth](https://github.com/typecho-fans/plugins/tree/master/Sinauth) | 新浪OAuth2登陆插件 | [@Web3D](https://github.com/web3d) |
 | [Smilies](https://github.com/typecho-fans/plugins/tree/master/Smilies) | 评论表情功能插件 | [@羽中](https://github.com/jzwalk) [Willin Kan](http://kan.willin.org) |
 | [Snowstorm](https://github.com/typecho-fans/plugins/tree/master/Snowstorm) | (娱乐向)博客飘雪插件 | [@rakiy](https://github.com/rakiy) |
@@ -102,3 +105,5 @@
 | [WeChatHelper](https://github.com/binjoo/WeChatHelper) | 微信公众号平台插件 | [@冰剑](https://github.com/binjoo) |
 | [Xiami](https://github.com/typecho-fans/plugins/tree/master/Xiami) | 虾米页面型播放器插件 | [@牧风](https://github.com/iMuFeng) |
 | [XiaMiPlayer](https://github.com/typecho-fans/plugins/tree/master/XiaMiPlayer) | 虾米迷你型播放器插件 | [@lizheming](https://github.com/lizheming) |
+| [YangCong](https://github.com/typecho-fans/plugins/tree/master/YangCong) | 洋葱APP验证登录插件 | [@冰剑](https://github.com/binjoo) |
+| [Zan](https://github.com/typecho-fans/plugins/tree/master/Zan) | 基本点赞效果插件 | [@冰剑](https://github.com/binjoo) |
