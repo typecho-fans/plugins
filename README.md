@@ -1,4 +1,7 @@
-### GHbutton 1.0.2 for Typecho 0.9
+### Typecho的Github项目按钮插件GHbutton
+2017年1月10日更新至**v1.0.3**: 
+- 新版[github-buttons](https://github.com/mdo/github-buttons)
+- 增加issue型按钮支持
 
-详细使用说明和效果演示见blog发布地址: 
-####http://www.jzwalk.com/archives/net/github-btn-typecho
+####详细说明与效果演示见blog发布地址: 
+ > http://www.yzmb.me/archives/net/github-btn-typecho
