@@ -1,0 +1,56 @@
+/* Smilies plugin */
+.table{
+	position: relative;
+	width: 89%;
+	display: table;
+	background-color: #FFF;
+	padding: 3px 5px;
+}
+.sample{
+	margin-bottom: 4px;
+	border-bottom: 2px solid #F0F0EC;
+}
+.gridly {
+	position: relative;
+	background-color: #FFFBCC;
+}
+.textsm{
+	margin-top: 4px;
+	border-top: 2px solid #F0F0EC;
+	padding-top: 3px;
+}
+.td{
+	width: 26px;
+	display: table-cell;
+	border: dashed 1px #467B96;
+}
+.td img{
+	display: block;
+	margin: 0 auto;
+}
+.fix{
+	width: 22px;
+	display: inline-block;
+	margin-right: 3.3px;
+	text-align: center;
+	font-size: 10px;
+}
+.caption{
+	position: relative;
+	top: -27px;
+	right: 3px;
+	float: right;
+	color: #467B96;
+	font-weight: bold;
+	clear: both;
+}
+
+/* jQuery Gridly */
+.gridly, .gridly > :not(.dragging){
+	-webkit-transition: all 0.4s ease-in-out;
+	-moz-transition: all 0.4s ease-in-out;
+	transition: all 0.4s ease-in-out;
+}
+.gridly .dragging{
+	z-index: 800;
+}
