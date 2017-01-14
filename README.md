@@ -40,7 +40,7 @@
 
 | 名称 | 介绍 | 作者 |
 | ---- |:----:| ----:|
-| [Access](https://github.com/typecho-fans/plugins/tree/master/Access) | 访客记录插件 | [@kokororin](https://github.com/kokororin) |
+| [Access](https://github.com/kokororin/typecho-plugin-Access) | 访客记录插件 | [@kokororin](https://github.com/kokororin) |
 | [AjaxComments](https://github.com/typecho-fans/plugins/tree/master/AjaxComments) | 异步嵌套评论插件 | [@羽飞](https://github.com/byends) [Willin Kan](http://kan.willin.org) |
 | [Announcement](https://github.com/typecho-fans/plugins/tree/master/Announcement) | 弹出式公告栏插件 | [@skylzl](https://github.com/xiaogouxo) |
 | [AppStore](https://github.com/typecho-fans/plugins/tree/master/AppStore) | Typecho插件商店插件 | [@chekun](https://github.com/chekun) |
