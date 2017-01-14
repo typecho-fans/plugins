@@ -45,6 +45,7 @@
 | [AppStore](https://github.com/typecho-fans/plugins/tree/master/AppStore) | Typecho插件商店插件 | [@chekun](https://github.com/chekun) |
 | [At](https://github.com/typecho-fans/plugins/tree/master/At) | 评论@型回复模式插件 | [@lizheming](https://github.com/lizheming) |
 | [AudioPlayer](https://github.com/typecho-fans/plugins/tree/master/AudioPlayer) | Flash mp3播放器插件 | [@羽中](https://github.com/jzwalk) |
+| [AutoBaiduSubmit](https://github.com/jinfeijie/AutoBaiduSubmit) | 网站自动推送百度进行链接提交 | [@jin_fj](https://github.com/jinfeijie) |
 | [AutoSlug](https://github.com/typecho-fans/plugins/tree/master/AutoSlug) | 自动生成文章缩略名插件 | [@ShingChi](https://github.com/shingchi) |
 | [Avatars](https://github.com/typecho-fans/plugins/tree/master/Avatars) | 读者墙头像排行插件(支持缓存) | [@羽中](https://github.com/jzwalk) |
 | [BaeUpload](https://github.com/typecho-fans/plugins/tree/master/BaeUpload) | BAE附件上传插件 | [@兜兜](https://github.com/doudoutime) |
@@ -108,3 +109,5 @@
 | [XiaMiPlayer](https://github.com/typecho-fans/plugins/tree/master/XiaMiPlayer) | 虾米迷你型播放器插件 | [@lizheming](https://github.com/lizheming) |
 | [YangCong](https://github.com/typecho-fans/plugins/tree/master/YangCong) | 洋葱APP验证登录插件 | [@冰剑](https://github.com/binjoo) |
 | [Zan](https://github.com/typecho-fans/plugins/tree/master/Zan) | 基本点赞效果插件 | [@冰剑](https://github.com/binjoo) |
+
+
