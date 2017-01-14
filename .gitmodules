@@ -10,3 +10,6 @@
 [submodule "Update"]
 	path = Update
 	url = https://github.com/lizheming/typecho-update.git
+[submodule "Access"]
+	path = Access
+	url = https://github.com/kokororin/typecho-plugin-Access.git
