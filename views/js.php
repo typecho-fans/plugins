@@ -21,9 +21,9 @@
                 var $version = $(this).children(':selected');
                 var $card = $(this).parent().parent();
 
-                $card.children('.as-require').children('cite').html($version.data('require'));
-                $card.children('.as-description').html($version.data('description')).attr('title', $version.data('description'));
-                $card.children('.as-author').children('cite').html($version.data('author'));
+                $card.children('.as-require').html($version.data('require'));
+                $card.children('.as-description').html($version.data('description'));
+                $card.children('.as-author').html($version.data('author'));
 
             });
 
@@ -51,18 +51,24 @@
                         plugin:  $card.data('name')
                     },
                     beforeSend: function() {
-                        $this.attr('disabled', true).text('正在安装, 请稍后...');
+                        $this.attr('disabled', true).text('正在安装');
                     }
                 }).always(function() {
-                    $this.attr('disabled', false).text('安装');
+                    $this.attr('disabled', false);
                 }).fail(function() {
                     alert('安装失败');
+                    if ($card.data('existed')) {
+                        $this.text('重新安装');
+                    } else {
+                        $this.text('立即安装');
+                    }
                 }).done(function(result) {
                     if (result.status) {
                         $card.data('existed', 1);
                         $version.data('activated', result.activated);
                         $this.next().children('i').addClass('as-existed active');
                         alert('安装成功');
+                        $this.removeClass('pure-button-primary').text('重新安装');
                     } else {
                         alert(result.error);
                     }
