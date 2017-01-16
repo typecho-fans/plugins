@@ -51,16 +51,16 @@
                         plugin:  $card.data('name')
                     },
                     beforeSend: function() {
-                        $this.attr('disabled', true).text('正在安装');
+                        $this.attr('disabled', true).text('安装中');
                     }
                 }).always(function() {
                     $this.attr('disabled', false);
                 }).fail(function() {
                     alert('安装失败');
                     if ($card.data('existed')) {
-                        $this.text('重新安装');
+                        $this.text('重装');
                     } else {
-                        $this.text('立即安装');
+                        $this.text('安装');
                     }
                 }).done(function(result) {
                     if (result.status) {
@@ -68,7 +68,7 @@
                         $version.data('activated', result.activated);
                         $this.next().children('i').addClass('as-existed active');
                         alert('安装成功');
-                        $this.removeClass('pure-button-primary').text('重新安装');
+                        window.location.reload();
                     } else {
                         alert(result.error);
                     }
