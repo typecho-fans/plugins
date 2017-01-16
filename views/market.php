@@ -9,34 +9,20 @@
 <link rel="stylesheet" href="<?php echo $options->pluginUrl('AppStore/static/css/font-awesome.min.css'); ?>">
 <link rel="stylesheet" href="<?php echo $options->pluginUrl('AppStore/static/css/pure.css'); ?>">
 <style>
-    .as-description {
-        height: 4.2em;
-        overflow: hidden;
-    }
-    .as-status {
-        float:right;
-        margin-right: 1em;
-    }
-    .as-status i {
-        color: #ccc;
-        margin: 0 0.2em;
-        font-size: 1.5em;
-    }
-    .as-status i.active {
-        color: green
+    .button-small {
+        font-size: 85%;
     }
 </style>
-
 <?php if ($typechoVersion <= 0.8): ?>
     <div class="main">
         <div class="body body-950">
             <div class="container typecho-page-title">
                 <div class="column-24">
                     <h2><?php echo $menu->title; ?> <small><cite>The missing plugins' store for Typecho</cite></small></h2>
-                    <p> 
+                    <div>
                         <i class="fa fa-heart" title="<?php echo _t('提建议/吐槽专用'); ?>"></i>
                         <a href="http://chekun.me/typecho-app-store.html" target="_blank"><?php echo _t('提建议/吐槽专用'); ?></a>
-                    </p>
+                    </div>
                 </div>
             </div>
             <div class="container typecho-page-main">
@@ -51,9 +37,9 @@
                 <div class="typecho-page-title col-mb-12">
                     <h2>
                         <?php echo $menu->title; ?> <small><cite>The missing plugins' store for Typecho</cite></small>
-                        <p style="float:right"> 
+                        <div style="float:right">
                             <a href="http://chekun.me/typecho-app-store.html" target="_blank"><i class="fa fa-heart" title="<?php echo _t('提建议/吐槽专用'); ?>"></i><?php echo _t('提建议/吐槽专用'); ?></a>
-                        </p>
+                        </div>
                     </h2>
                 </div>
             </div>
