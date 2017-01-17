@@ -2,23 +2,21 @@
 
 ![logo](https://raw.githubusercontent.com/typecho-fans/typecho-fans.github.io/master/soapgroup.png)
 
-本项目中的插件原则上支持0.9+版本，请根据需要选择测试。欢迎提交问题或建议至[issues](https://github.com/typecho-fans/plugins/issues)，欢迎更多作者加入。交流群号：[40412938](http://shang.qq.com/wpa/qunwpa?idkey=a5a8afedf099e18ddf9b530db9217251e39001d52aace42888bf470d9b6cb86a)
+本项目中的插件原则上均支持0.9+版本。欢迎提交问题或建议至[issues](https://github.com/typecho-fans/plugins/issues)，也欢迎更多作者加入。交流群：[40412938](http://shang.qq.com/wpa/qunwpa?idkey=a5a8afedf099e18ddf9b530db9217251e39001d52aace42888bf470d9b6cb86a)
+
+- **使用帮助**：在右上角的绿色按钮处选择使用git工具克隆项目地址或打包下载zip即可。
 
 <hr>
 
-### 如何使用
-
-- 在右上角的绿色按钮处选择使用git工具克隆目录地址或打包下载zip
-
-### 作者必读
+### 作者须知
 
  1. 建议使用[subtree](http://aoxuis.me/post/2013-08-06-git-subtree)方法推送你的插件repo，或者直接在本项目中创建
 
  > submodule可链接至repo，但也会给下载与协作更新带来一定麻烦
 
- 2. 暂无成员权限的可先fork进行修改，然后提交pull request或issues申请
+ 2. 暂无成员权限的可先fork进行修改然后提交pull request或issues申请
 
- 3. 插件根目录下应包含有**README**使用说明，方便用户了解插件内容
+ 3. 插件根目录下应包含有**README**使用说明，以方便用户了解插件内容
 
  > 你也可以在下方的作品索引里加入一句话介绍和自己的github链接
 
@@ -34,6 +32,7 @@
 | [AjaxComments](https://github.com/typecho-fans/plugins/tree/master/AjaxComments) | 异步嵌套评论插件 | [@羽飞](https://github.com/byends) [Willin Kan](http://kan.willin.org) |
 | [Announcement](https://github.com/typecho-fans/plugins/tree/master/Announcement) | 弹出式公告栏插件 | [@skylzl](https://github.com/xiaogouxo) |
 | [AppStore](https://github.com/typecho-fans/plugins/tree/master/AppStore) | Typecho插件商店插件 | [@chekun](https://github.com/chekun) |
+| [ArticleList](https://github.com/typecho-fans/plugins/blob/master/ArticleList.php) | 随机文章列表插件(支持缓存) | [@阿飞](https://github.com/defeme) |
 | [At](https://github.com/typecho-fans/plugins/tree/master/At) | 评论@型回复模式插件 | [@lizheming](https://github.com/lizheming) |
 | [AudioPlayer](https://github.com/typecho-fans/plugins/tree/master/AudioPlayer) | Flash mp3播放器插件 | [@羽中](https://github.com/jzwalk) |
 | [AutoBaiduSubmit](https://github.com/jinfeijie/AutoBaiduSubmit) | 百度链接自动提交插件 | [@jin_fj](https://github.com/jinfeijie) |
@@ -88,11 +87,11 @@
 | [TeKit](https://github.com/binjoo/TeKit) | Typecho常用扩展集合插件 | [@冰剑](https://github.com/binjoo) |
 | [TeStore](https://github.com/typecho-fans/plugins/tree/master/TeStore) | Typecho应用商店插件 | [@zhulin3141](https://github.com/zhulin3141) |
 | [ThemeDemo](https://github.com/typecho-fans/plugins/tree/master/ThemeDemo) | 主题外观演示插件 | [@兜兜](https://github.com/doudoutime) |
-| [typechoSignPlugin](https://github.com/typecho-fans/plugins/tree/master/typechoSignPlugin) | 用户个性签名插件 | [@H萌](https://github.com/hmoe) |
 | [Typembed](https://github.com/typecho-fans/plugins/tree/master/Typembed) | 国内视频站转播放器插件 | [@我才是疯子](https://github.com/nothingisover) |
 | [Ueditor](https://github.com/typecho-fans/plugins/tree/master/Ueditor) | 百度编辑器ueditor插件 | [@zhulin3141](https://github.com/zhulin3141) |
 | [Ugauka](https://github.com/typecho-fans/plugins/tree/master/Ukagaka) | (娱乐向)二次元春菜插件 | [@Kunr](https://github.com/Rakume) |
 | [UploadPlugin](https://github.com/typecho-fans/plugins/tree/master/UploadPlugin) | 在线安装模板/插件的插件 | [@阿飞](https://github.com/defeme) |
+| [UserSign](https://github.com/typecho-fans/plugins/tree/master/UserSign) | 用户个性签名插件 | [@H萌](https://github.com/hmoe) |
 | [Watermark](https://github.com/typecho-fans/plugins/tree/master/Watermark) | 图片加水印插件(兼容0.8) | [@阿飞](https://github.com/defeme) |
 | [WeChatHelper](https://github.com/binjoo/WeChatHelper) | 微信公众号平台插件 | [@冰剑](https://github.com/binjoo) |
 | [Xiami](https://github.com/typecho-fans/plugins/tree/master/Xiami) | 虾米页面型播放器插件 | [@牧风](https://github.com/iMuFeng) |
