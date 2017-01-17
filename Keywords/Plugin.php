@@ -136,12 +136,20 @@ class Keywords_Plugin implements Typecho_Plugin_Interface
 
 		if ($kwarray) {
 			//优先处理长词
-			usort($kwarray,function($a,$b){
-				return (strlen($a['0']) < strlen($b['0'])) ? 1 : -1;
-			});
+			usort($kwarray,array(new Keywords_Plugin,'lsort'));
 		}
 
 		return $kwarray;
+	}
+
+	/**
+	 * 按字符长短排序
+	 * 
+	 * @access private
+	 * @return integer
+	 */
+	private static function lsort($a,$b) {
+		return (strlen($a['0']) < strlen($b['0'])) ? 1 : -1;
 	}
 
 }
