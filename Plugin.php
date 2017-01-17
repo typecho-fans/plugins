@@ -259,13 +259,7 @@ $('.gridly').gridly({
 				$locations = in_array($folder,array('qq','wordpress')) ? $desort
 					 : glob($plugindir.$folder.'/*.{gif,jpg,jpeg,png,tiff,bmp,GIF,JPG,JPEG,PNG,TIFF,BMP}',GLOB_BRACE|GLOB_NOSORT);
 
-				array_walk($locations,function(&$value){
-					if (function_exists('iconv')) {
-						$value = iconv('gbk','utf-8',$value);
-					}
-					//兼容中文文件名
-					$value = preg_replace('/^.+[\\\\\\/]/','',$value);
-				},'');
+				array_walk($locations,array(new Smilies_Plugin,'cname'),'');
 				if (function_exists('iconv')) {
 					$folder = iconv('gbk','utf-8',$folder);
 				}
@@ -275,6 +269,19 @@ $('.gridly').gridly({
 		}
 
 		return $results;
+	}
+
+	/**
+	 * 兼容中文文件名
+	 * 
+	 * @access private
+	 * @return array
+	 */
+	private static function cname(&$value) {
+		if (function_exists('iconv')) {
+			$value = iconv('gbk','utf-8',$value);
+		}
+		$value = preg_replace('/^.+[\\\\\\/]/','',$value);
 	}
 
 	/**

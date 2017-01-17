@@ -7,4 +7,4 @@
 - 默认两套表情，配发新扩展包
 
 #### 详细说明与效果演示见blog发布地址: 
- > http://www.jzwalk.com/archives/net/smilies-for-typecho
+ > http://www.yzmb.me/archives/net/smilies-for-typecho
