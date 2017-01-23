@@ -3,9 +3,9 @@
 ![logo](https://raw.githubusercontent.com/typecho-fans/typecho-fans.github.io/master/soapgroup.png)
 
 本项目中插件原则上均支持0.9+版本，欢迎提交问题建议至[issues](https://github.com/typecho-fans/plugins/issues)，欢迎更多作者加入！:penguin:交流群号：[**40412938**](http://shang.qq.com/wpa/qunwpa?idkey=a5a8afedf099e18ddf9b530db9217251e39001d52aace42888bf470d9b6cb86a)
-
-###### **使用帮助**：在右上角的绿色按钮处选择使用git工具克隆项目地址或打包下载zip即可。
-
+```
+**使用帮助**：在右上角的绿色按钮处选择使用git工具克隆项目地址或打包下载zip即可。
+```
 ### 作者须知
 
  1. 建议使用[**subtree**](http://aoxuis.me/post/2013-08-06-git-subtree)方法推送你的插件repo，或者直接在本项目中创建；
@@ -24,7 +24,7 @@
 
 ### 作品索引
 
-    带:warning:：暂不可用，待更新；带:dart:：安装方式特殊，详见说明。
+###### 带:warning:：暂不可用，待更新；带:dart:：安装方式特殊，详见说明。
 
 名称 | 简介 | 作者
 ---- | :----: | ----:
