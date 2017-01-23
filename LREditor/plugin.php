@@ -2,10 +2,9 @@
 /**
  * 修改Markdown编辑器为左右样式
  *
- * @category editor
  * @package LREditor
- * @author Austin
- * @version 0.0.3
+ * @author 公子
+ * @version 0.0.4
  * @link http://zh.eming.li/#typecho
  */
 class LREditor_Plugin implements Typecho_Plugin_Interface
@@ -14,14 +13,13 @@ class LREditor_Plugin implements Typecho_Plugin_Interface
      * 插件版本号
      * @var string
      */
-    const _VERSION = '0.0.3';
+    const _VERSION = '0.0.4';
 
     /**
      * 激活插件方法,如果激活失败,直接抛出异常
      *
      * @access public
      * @return void
-     * @throws Typecho_Plugin_Exception
      */
     public static function activate()
     {
@@ -30,6 +28,12 @@ class LREditor_Plugin implements Typecho_Plugin_Interface
 
     }
 
+    /**
+     * 插件主体函数
+     *
+     * @access public
+     * @return void
+     */
     public static function Change() 
     {
     	$options		= Helper::options();
@@ -46,20 +50,27 @@ class LREditor_Plugin implements Typecho_Plugin_Interface
                 prettyPrint();
             }
  			$(function() {
+ 				/*Show wmd-preview DOM*/
+ 				$('.wmd-edittab').remove();
+ 				$('#wmd-preview').removeClass('wmd-hidetab');
  				setInterval("$('#wmd-preview').css('height', (parseInt($('#text').height()) - 5)+'px');", 500);
                 setInterval("prettify()", 10);
-
- 				//Typecho.editorResize('wmd-preview', '<?php $options->index('/action/ajax?do=editorResize'); ?>');
- 				//$('#wmd-preview').remove();
- 				//$('textarea').after('<div id="wmd-preview"></div>');
  			});
  		</script>
  		<?php
 	}
-	
+
+    /**
+     * 获取插件配置面板
+     * 
+     * @access public
+     * @param Typecho_Widget_Helper_Form $form 配置面板
+     * @return void
+     */	
     public static function config(Typecho_Widget_Helper_Form $form)
     {
     }
+
     /**
      * 个人用户的配置面板
      *
@@ -67,7 +78,9 @@ class LREditor_Plugin implements Typecho_Plugin_Interface
      * @param Typecho_Widget_Helper_Form $form
      * @return void
      */
-    public static function personalConfig(Typecho_Widget_Helper_Form $form){}
+    public static function personalConfig(Typecho_Widget_Helper_Form $form)
+    {
+    }
 
     /**
      * 禁用插件方法,如果禁用失败,直接抛出异常
@@ -77,9 +90,8 @@ class LREditor_Plugin implements Typecho_Plugin_Interface
      * @return void
      * @throws Typecho_Plugin_Exception
      */
-    public static function deactivate(){}
-
- 
-
+    public static function deactivate()
+    {
+    }
 }
 

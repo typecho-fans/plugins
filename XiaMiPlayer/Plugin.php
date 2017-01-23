@@ -4,7 +4,7 @@
  *
  * @package XiaMiPlayer
  * @author 公子
- * @version 3.1.1
+ * @version 3.1.2
  * @link http://zh.eming.li/#typecho
  */
 class XiaMiPlayer_Plugin implements Typecho_Plugin_Interface
@@ -14,7 +14,7 @@ class XiaMiPlayer_Plugin implements Typecho_Plugin_Interface
      * @var string
      */
     const _VERSION = '3.1.1';
-    const music = "http://xiamiplayer.songs.aws-bj-1.goodrain.net:10080/Music.php";
+    const music = "http://xiamiplayer.songs.ali-sh.goodrain.net:10080/Music.php";
     /**
      * 激活插件方法,如果激活失败,直接抛出异常
      *
@@ -44,8 +44,8 @@ class XiaMiPlayer_Plugin implements Typecho_Plugin_Interface
 	       	echo "<script type=\"text/javascript\" src=\"//lib.sinaapp.com/js/jquery/1.9.1/jquery-1.9.1.min.js\"></script>";
 	    }
     	?>
-		<link rel="stylesheet" type="text/css" href="http://xiamiplayer.songs.aws-bj-1.goodrain.net:10080/XiaMiPlayer.css" />
-        <script type="text/javascript" src="http://xiamiplayer.songs.aws-bj-1.goodrain.net:10080/jquery.jplayer.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="http://xiamiplayer.songs.ali-sh.goodrain.net:10080/XiaMiPlayer.css" />
+        <script type="text/javascript" src="http://xiamiplayer.songs.ali-sh.goodrain.net:10080/jquery.jplayer.min.js"></script>
         <?php
 
     ?>
@@ -89,9 +89,9 @@ class XiaMiPlayer_Plugin implements Typecho_Plugin_Interface
 	        break;
         }
 		?>
-		<link rel="stylesheet" type="text/css" href="http://xiamiplayer.songs.aws-bj-1.goodrain.net:10080/XiaMiPlayer.css" />
+		<link rel="stylesheet" type="text/css" href="http://xiamiplayer.songs.ali-sh.goodrain.net:10080/XiaMiPlayer.css" />
         <link rel="stylesheet" type="text/css" href="<?php echo Typecho_Common::url('XiaMiPlayer/style.css' , $options->pluginUrl); ?>" />
-        <script type="text/javascript" src="http://xiamiplayer.songs.aws-bj-1.goodrain.net:10080/jquery.jplayer.min.js"></script>
+        <script type="text/javascript" src="http://xiamiplayer.songs.ali-sh.goodrain.net:10080/jquery.jplayer.min.js"></script>
 		<script type="text/javascript">
 		$(function() {
 			/* 判断是否为默认编辑器插入音乐按钮 */
@@ -243,7 +243,7 @@ class XiaMiPlayer_Plugin implements Typecho_Plugin_Interface
 			$('.next').html('下一页');
 			if(k) {
 				$('#xiami_result').html('正在载入请稍后...');
-				$.getJSON('http://xiamiplayer.songs.aws-bj-1.goodrain.net:10080/search/key/'+k+'/page/'+p+'?callback=?',function(data) {
+				$.getJSON('http://xiamiplayer.songs.ali-sh.goodrain.net:10080/search/key/'+k+'/page/'+p+'?callback=?',function(data) {
 					$('#xiami_result').html('');
 					$.each(data.results,
 					function(i, item) {
@@ -398,7 +398,7 @@ class XiaMiPlayer_Plugin implements Typecho_Plugin_Interface
         if($number) {foreach($match[0] as $key => $string) {
         	$type = $match[3][$key];
         	$id = $match[4][$key];
-        	$result = json_decode(file_get_contents("http:http://xiamiplayer.songs.aws-bj-1.goodrain.net:10080/apiv3.php?type=$type&id=$id"), true);
+        	$result = json_decode(file_get_contents("http:http://xiamiplayer.songs.ali-sh.goodrain.net:10080/apiv3.php?type=$type&id=$id"), true);
         	if(in_array($type, array("album", "collect"))) {
 	        	if(empty($result['songs'])) continue;
 	        	$songs = array();
@@ -421,7 +421,7 @@ class XiaMiPlayer_Plugin implements Typecho_Plugin_Interface
         if($number) {foreach($match[0] as $key => $string) {
         	$type = $match[2][$key];
         	$id = $match[3][$key];
-        	$result = json_decode(file_get_contents("http://xiamiplayer.songs.aws-bj-1.goodrain.net:10080/apiv3.php?type=$type&id=$id"), true);
+        	$result = json_decode(file_get_contents("http://xiamiplayer.songs.ali-sh.goodrain.net:10080/apiv3.php?type=$type&id=$id"), true);
         	if(in_array($type, array("album", "collect"))) {
 	        	if(empty($result['songs'])) continue;
 	        	$songs = array();

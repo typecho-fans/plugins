@@ -6,18 +6,14 @@ form div[role="main"], form div[role="complementary"]{
 	width:100%;
 }
 
-div[role="complementary"] section {
-}
-
 #text, #wmd-preview {
 	width: 47%;
 }
 
 #wmd-preview {
 	position:absolute;
-	top:220px;
 	right:2%;
-	overflow-y:scroll;
+	overflow-y:auto;
 }
 
 #wmd-preview code {

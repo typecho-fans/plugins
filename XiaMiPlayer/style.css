@@ -2,7 +2,8 @@
   font-size: 20px;
   text-align: center;
   color: #AAA;
-  width: 20px
+  width: 20px;
+  float: left;
 }
 .wmd-prompt-background {
   position: absolute;

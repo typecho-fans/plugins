@@ -47,7 +47,7 @@ class GoogleCodePrettify_Plugin implements Typecho_Plugin_Interface
 	    			   'sons-of-obsidian' => _t('Sons of obsidian'),
 	    			   'sunburst' => _t('Sunburst'),
 	    			   'github' => _t('Github'));
-		$type = new Typecho_Widget_Helper_Form_Element_Select('type', $color,'true',_t('请选择代码配色样式'));
+		$type = new Typecho_Widget_Helper_Form_Element_Select('type', $color,'desert',_t('请选择代码配色样式'));
     	$form->addInput($type);
 
     	$textarea = new Typecho_Widget_Helper_Form_Element_Textarea('custom', NULL, NULL, _t('自定义CSS代码'));
@@ -72,7 +72,7 @@ class GoogleCodePrettify_Plugin implements Typecho_Plugin_Interface
      */
     public static function header() {
     	$config = Helper::options()->plugin('GoogleCodePrettify');
-    	$type = $config->type ? $config->type : 'desert';
+    	$type = $config->type;
     	$custom = $config->custom;
     	$cssUrl = Helper::options()->pluginUrl . '/GoogleCodePrettify/src/' . $type . '.css';
         echo '<link rel="stylesheet" type="text/css" href="' . $cssUrl . '" />';
