@@ -13,6 +13,9 @@
  5. 启用当前插件
 
 ## 更新记录 ##
+
+ - jquery库从google改为typecho本地，默认选择.post-content适应1.0主题。（[@羽中](https://github.com/jzwalk)）
+
 #### v1.0.5
  - 使用[林木木的代码](http://immmmm.com/slimbox2-js-picture-box-adaptive.html)修复`图片灯箱自适应`功能；
 

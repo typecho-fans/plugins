@@ -5,7 +5,7 @@
  * @category content
  * @package Prism
  * @author 冰剑
- * @version 1.0.0
+ * @version 1.0.1
  * @link http://www.binjoo.net/
  */
 class Prism_Plugin implements Typecho_Plugin_Interface
@@ -23,8 +23,10 @@ class Prism_Plugin implements Typecho_Plugin_Interface
                   'dark' => 'Dark',
                   'funky' => 'Funky',
                   'okaidia' => 'Okaidia',
-                  'twilight' => 'Wwilight',
-                  'coy' => 'Coy'),
+                  'twilight' => 'Twilight',
+                  'coy' => 'Coy',
+                  'solarizedlight' => 'SolarizedLight',
+                  'tomorrow' => 'Tomorrow'),
                   'default', '高亮样式', NULL);
         $form->addInput($style);
     }

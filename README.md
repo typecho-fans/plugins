@@ -8,23 +8,23 @@
 
 ### 作者须知
 
- 1. 建议使用[**subtree**](http://aoxuis.me/post/2013-08-06-git-subtree)方法推送你的插件repo，或者直接在本项目中创建；
+1. 建议使用[**subtree**](http://aoxuis.me/post/2013-08-06-git-subtree)方法推送你的插件repo，或者直接在本项目中创建；
 
- > submodule可链接至原项目但也会给下载与协作更新带来一定麻烦
+ >submodule可链接至原项目但也会给下载和协作更新带来一定麻烦
 
- 2. 暂无成员权限可先fork项目修改，然后提交pull request或issues申请；
+2. 暂无成员权限可先fork项目修改，然后提交pull request或issues申请；
 
- 3. 插件根目录下应放置有`README`功用说明，以方便用户了解插件特性；
+3. 插件根目录下应放置有**README**功用说明，以方便用户了解插件特性；
 
- > 记得也在下方的作品索引里加上简短介绍和自己的github主页链接
+ >记得在下方的作品索引里也加上简短介绍和自己的github主页链接
 
- 4. 推送作品应确保为原创或经作者同意能够在这里进行多人维护和更新。
+4. 推送作品应确保为原创或经作者同意能够在这里进行多人维护与更新。
 
- > 插件目录内若无license则视作采用与Typecho相同的[GPL2](https://github.com/typecho/typecho/blob/master/LICENSE.txt)开源许可
+ >插件目录内若无license则视作采用与Typecho相同的[GPL2](https://github.com/typecho/typecho/blob/master/LICENSE.txt)开源许可
 
 ### 作品索引
 
-###### :warning:：暂不可用，待更新；:dart:：安装方式特殊，详见说明。
+###### :warning:-暂不可用，待更新。:dart:-安装方式特殊，详见说明。
 
 名称 | 简介 | 作者
 ---- | :----: | ----:
@@ -46,7 +46,7 @@
 [CommentToMail](https://github.com/byends/CommentToMail) | 评论邮件提醒插件 | [@羽飞](https://github.com/byends) [@阿飞](https://github.com/defeme)
 [ContentIndex](/ContentIndex) | 文章内容生成目录插件 | [@laobubu](https://github.com/laobubu)
 [Contribute](/Contribute) :dart: | 用户投稿审查管理插件 | [@ShingChi](https://github.com/shingchi)
-[DbManager](/DbManager) | 数据库管理工具插件 | [@ShingChi](https://github.com/shingchi)
+[DbManager](/DbManager) :warning: | 数据库管理工具插件 | [@ShingChi](https://github.com/shingchi)
 [DevTool](/DevTool) | Typecho开发者工具插件 | [@zhulin3141](https://github.com/zhulin3141)
 [Duoshuo](/Duoshuo) | 多说社会化评论同步插件 | [@阳光](https://github.com/rakiy)
 [Editor](/Editor) | 非官方Markdown编辑器插件 | [@公子](https://github.com/lizheming)
@@ -68,10 +68,9 @@
 [MostCache](/MostCache) | Mysql/SAE memcache缓存插件 | [@skylzl](https://github.com/xiaogouxo)
 [MyPlayer](/MyPlayer) | 影音站点外链转播放器插件 | [@perichr](http://github.com/perichr)
 [MyTagCloud](/MyTagCloud) | 定制标签云功能插件 | [@马燕龙](https://github.com/YanlongMa)
-[OptimizeDB](/OptimizeDB) | Typecho数据库优化插件 | [@冰剑](https://github.com/binjoo)
 [Passport](/Passport) | 密码找回功能插件 | [@ShingChi](https://github.com/shingchi)
 [Prism](/Prism) | 轻量级语法高亮插件 | [@冰剑](https://github.com/binjoo)
-[QiniuFile](/QiniuFile) | 七牛云储存支持插件 | [@冰剑](https://github.com/binjoo) [@abelyao](https://github.com/abelyao)
+[QiniuFile](/QiniuFile) :warning: | 七牛云储存支持插件 | [@冰剑](https://github.com/binjoo) [@abelyao](https://github.com/abelyao)
 [QNUpload](/QNUpload) | 七牛云附件上传插件 | [@阳光](https://github.com/rakiy)
 [Remix](/Remix) | SoundManager2播放器插件 | [@ShingChi](https://github.com/shingchi)
 [Reposidget](/Reposidget) | Github repo内容展示插件 | [@西秦](https://github.com/xiqingongzi)
@@ -82,7 +81,7 @@
 [Smilies](/Smilies) | 评论表情功能插件 | [@羽中](https://github.com/jzwalk) [Willin Kan](http://kan.willin.org)
 [Snowstorm](/Snowstorm) | (娱乐向)博客飘雪插件 | [@阳光](https://github.com/rakiy)
 [Subscriber](/Subscriber) | 文章仅对登录会员可见插件 | [@羽中](https://github.com/jzwalk)
-[SyncPost](/SyncPost) | 同步文章发布到微博插件 | [@冰剑](https://github.com/binjoo)
+[SyncPost](/SyncPost) :warning: | 同步文章发布到微博插件 | [@冰剑](https://github.com/binjoo)
 [TeKit](https://github.com/binjoo/TeKit) | Typecho常用扩展集合插件 | [@冰剑](https://github.com/binjoo)
 [TeStore](/TeStore) | Typecho应用商店插件 | [@zhulin3141](https://github.com/zhulin3141)
 [ThemeDemo](/ThemeDemo) | 主题外观演示插件 | [@兜兜](https://github.com/doudoutime)

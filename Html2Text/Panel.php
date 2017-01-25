@@ -1,5 +1,4 @@
 <?php
-include 'common.php';
 include 'header.php';
 include 'menu.php';
 require_once dirname(__FILE__) . '/markdownify/markdownify.php';
@@ -38,7 +37,7 @@ require_once dirname(__FILE__) . '/markdownify/markdownify.php';
                             </tr>
                         	<tr>
                                 <td>转换之前日志内容</td>
-                                <td>升级前0.9版前，所有日志内容都保存的是HTML代码，该功能可以把HTML代码转换成markdown格式。</td>
+                                <td>升级0.9版前所有日志内容都保存的是HTML代码，该功能可以把HTML代码转换成markdown格式。</td>
                                 <td><button id="act2" name="btnExe" type="submit" class="btn-s">开始执行</button></td>
                             </tr>
                          </tbody>

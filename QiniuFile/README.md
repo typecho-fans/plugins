@@ -1,7 +1,10 @@
 ### Typecho-QiniuFile
----
 
 Qiniu File 是一款 Typecho 的七牛云存储插件，可将 Typecho 的文件功能接入到七牛云存储中，包括上传附件、修改附件、删除附件，以及获取文件在七牛的绝对网址。文件目录结构默认与 Typecho 的 `/year/month/` 保持一致，也可自定义配置，方便迁移。
+
+- :warning:待修复：旧版七牛SDK不支持php5.3以上版本。
+
+ > v1.3.0更新：加入六种缩略图选项（[@冰剑](https://github.com/binjoo)）
 
 #### 使用方法：
 第一步：下载本插件，放在 `usr/plugins/` 目录中；  
@@ -16,7 +19,3 @@ Qiniu File 是一款 Typecho 的七牛云存储插件，可将 Typecho 的文件
 作者：abelyao    
 主页：[www.abelyao.com](http://www.abelyao.com/)  
 或者通过 Typecho 官方QQ群 `8110782` 找到我
-
-#### 版本更新：
-###### v1.3.0
- - 加入六种缩略图选项（[@冰剑](https://github.com/binjoo)）

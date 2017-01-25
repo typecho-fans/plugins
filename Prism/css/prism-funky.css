@@ -6,11 +6,13 @@
 
 code[class*="language-"],
 pre[class*="language-"] {
-	font-family: Consolas, Monaco, 'Andale Mono', monospace;
-	direction: ltr;
+	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
 	text-align: left;
 	white-space: pre;
 	word-spacing: normal;
+	word-break: normal;
+	word-wrap: normal;
+	line-height: 1.5;
 
 	-moz-tab-size: 4;
 	-o-tab-size: 4;
@@ -42,6 +44,7 @@ code[class*="language-"] {
 	padding: .2em;
 	border-radius: .3em;
 	box-shadow: none;
+	white-space: normal;
 }
 
 .token.comment,
@@ -71,6 +74,7 @@ code[class*="language-"] {
 .token.selector,
 .token.attr-name,
 .token.string,
+.token.char,
 .token.builtin {
 	color: yellow;
 }
@@ -79,7 +83,8 @@ code[class*="language-"] {
 .token.entity,
 .token.url,
 .language-css .token.string,
-.toke.variable {
+.toke.variable,
+.token.inserted {
 	color: yellowgreen;
 }
 
@@ -89,17 +94,23 @@ code[class*="language-"] {
 	color: deeppink;
 }
 
-
 .token.regex,
 .token.important {
 	color: orange;
 }
 
-.token.important {
+.token.important,
+.token.bold {
 	font-weight: bold;
+}
+.token.italic {
+	font-style: italic;
 }
 
 .token.entity {
 	cursor: help;
 }
 
+.token.deleted {
+	color: red;
+}

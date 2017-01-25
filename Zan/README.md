@@ -1,7 +1,8 @@
 ## 插件说明 ##
- - 版本: v1.0.0
- - 作者: [冰剑](https://github.com/binjoo)
- - 备注：基于Typecho的插件
+版本: v1.0.0
+作者: [冰剑](https://github.com/binjoo)
+
+ - 神补刀：添加jquery库引用~
  
 ## 使用方法 ##
 
