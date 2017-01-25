@@ -76,7 +76,7 @@
 [Reposidget](/Reposidget) | Github repo内容展示插件 | [@西秦](https://github.com/xiqingongzi)
 [RewriteRule](/RewriteRule) | 指定地址404重定向插件 | [@laobubu](https://github.com/laobubu)
 [RoutesHelper](/RoutesHelper) | Typecho路由助手插件 | [@兜兜](https://github.com/doudoutime)
-[Slimbox2](/Slimbox2) | 轻量级图片灯箱效果插件 | [@冰剑](https://github.com/binjoo)
+[SlimBox2](/SlimBox2) | 轻量级图片灯箱效果插件 | [@冰剑](https://github.com/binjoo)
 [Sinauth](/Sinauth) | 新浪OAuth2登陆插件 | [@Web3D](https://github.com/web3d)
 [Smilies](/Smilies) | 评论表情功能插件 | [@羽中](https://github.com/jzwalk) [Willin Kan](http://kan.willin.org)
 [Snowstorm](/Snowstorm) | (娱乐向)博客飘雪插件 | [@阳光](https://github.com/rakiy)
