@@ -154,6 +154,7 @@ class Contribute_Action extends Typecho_Widget implements Widget_Interface_Do
     public function preview()
     {
         $cid = $this->request->filter('int')->cid;
+        $widget = $this->widget('Widget_Abstract_Contents');
 
         $resource = $this->_db->query($this->_db->select('text')
         ->from('table.contribute')
@@ -166,9 +167,9 @@ class Contribute_Action extends Typecho_Widget implements Widget_Interface_Do
 
         if (false !== $isMarkdown) {
             $content = str_replace('<!--markdown-->', '', $content);
-            $content = MarkdownExtraExtended::defaultTransform($content);
+            $content = $widget->markdown($content);
         } else {
-            $content = Typecho_Common::cutParagraph($content);
+            $content = $widget->autoP($content);
         }
 
         echo $content;

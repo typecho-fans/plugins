@@ -11,7 +11,7 @@ class DbManager_Action extends Typecho_Widget implements Widget_Interface_Do
     public function doExport()
     {
         // 需要备份的数据表
-        $tableSelect = $this->request->get('tableSelect');
+        $tableSelect = $this->request->getArray('tableSelect');
         // 备份的数据
         $content = $this->sqlBuild($tableSelect);
         // 备份文件名
@@ -71,13 +71,12 @@ class DbManager_Action extends Typecho_Widget implements Widget_Interface_Do
         $config = Typecho_Widget::widget('Widget_Options')->plugin('DbManager');
         $path = __TYPECHO_ROOT_DIR__ . '/' . trim($config->path, '/') . '/';
 
-        $bid = $this->request->get('bid');
+        $bid = $this->request->getArray('bid');
         $deleteCount = 0;
         $scripts = '';
 
         if ($bid) {
-            $imports = is_array($bid) ? $bid : array($bid);
-            foreach ($imports as $import) {
+            foreach ($bid as $import) {
                 $scripts .= file_get_contents($path . $import);
                 $deleteCount ++;
             }
@@ -109,11 +108,10 @@ class DbManager_Action extends Typecho_Widget implements Widget_Interface_Do
         $config = Typecho_Widget::widget('Widget_Options')->plugin('DbManager');
         $path = __TYPECHO_ROOT_DIR__ . '/' . trim($config->path, '/') . '/';
 
-        $bid = $this->request->get('bid');
+        $bid = $this->request->getArray('bid');
         $deleteCount = 0;
         if ($bid) {
-            $fileNames = is_array($bid) ? $bid : array($bid);
-            foreach ($fileNames as $fileName) {
+            foreach ($bid as $fileName) {
                 @unlink($path . $fileName);
                 $deleteCount ++;
             }
@@ -133,7 +131,7 @@ class DbManager_Action extends Typecho_Widget implements Widget_Interface_Do
     public function doOptimize()
     {
         $db = Typecho_Db::get();
-        $select = $this->request->get('tableSelect');
+        $select = $this->request->getArray('tableSelect');
         $sql = 'OPTIMIZE TABLE  ';
         foreach ($select as $value) {
             $sql .= '`' . $value . '`, ';

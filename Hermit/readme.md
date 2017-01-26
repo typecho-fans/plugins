@@ -1,6 +1,7 @@
 ###演示地址###
 [演示地址](http://mufeng.me/hermit-for-wordpress.html "Hermit 演示地址 ")
 
+- :warning:待修复：API失效。
 
 ###Hermit Beta 更新历史###
 1.3.0 (14-6-30)

@@ -97,6 +97,7 @@ class Passport_Widget extends Typecho_Widget
             $phpMailer = new PHPMailer();
 
             /* SMTP设置 */
+            $phpMailer->CharSet = 'UTF-8';
             $phpMailer->isSMTP();
             $phpMailer->SMTPAuth = true;
             $phpMailer->Host = $this->config->host;

@@ -1,9 +1,0 @@
-# nodejs
-/node_modules/
-
-# build
-/.temp/
-/dist/css/remix.css
-/dist/js/remix.js
-/dist/swf/
-!/dist/swf/soundmanager2.swf
