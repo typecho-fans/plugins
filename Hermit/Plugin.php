@@ -1,12 +1,12 @@
 <?php
 /**
- * 虾米音乐播放器 Hermit for typecho xiami music player
+ * 虾米音乐播放器 Hermit for typecho xiami music player 复活版@<a href="http://www.yzmb.me" target_"_blank">羽中</a>
  * 
  * @category player
  * @package Hermit 
  * @author mufeng
- * @version 1.3.0
- * @update: 2014.6.30
+ * @version 1.3.1
+ * @update: 2017.1.27
  * @link http://mufeng.me/
  */
 class Hermit_Plugin implements Typecho_Plugin_Interface
@@ -77,9 +77,9 @@ class Hermit_Plugin implements Typecho_Plugin_Interface
 
     /**
      * 短代码实现方法
-     * 歌曲列表 [hermit auto="1" loop="1"]songlist#:1772276934,1772276930,1772276933[/hermit]
-     * 专辑 [hermit auto="1" loop="1"]album#:1772276934[/hermit]
-     * 精选集 [hermit auto="1" loop="1"]collect#:28721332[/hermit]
+     * 歌曲列表 [hermit auto=1 loop=1 unexpand=0 fullheight=0]songlist#:1772276934,1772276930,1772276933[/hermit]
+     * 专辑 [hermit auto=1 loop=1 unexpand=0 fullheight=0]album#:1772276934[/hermit]
+     * 精选集 [hermit auto=1 loop=1 unexpand=0 fullheight=0]collect#:28721332[/hermit]
      * 
      * @access public
      * @return void
@@ -87,16 +87,15 @@ class Hermit_Plugin implements Typecho_Plugin_Interface
     public static function parse($text, $widget, $lastResult)
     {
         $options = Helper::options();
-        $cover_url = Typecho_Common::url('Hermit/assets/images/cover.png', $options->pluginUrl);
+        $cover_url = Typecho_Common::url('Hermit/assets/images/cover@3x.png', $options->pluginUrl);
         $text = empty($lastResult) ? $text : $lastResult;
         if ($widget instanceof Widget_Archive) {
-			$text = preg_replace("/\[hermit(.+?)?\](.+?)\[\/hermit\]/i",
-            "<!--Hermit for typecho v1.3.0 start--><div class=\"hermit\" \\1 songs=\"\\2\"><div class=\"hermit-box hermit-clear\"><div class=\"hermit-covbtn\"><img class=\"hermit-cover\" src=\"{$cover_url}\" width=\"36\" height=\"36\"></div><div class=\"hermit-conpros\"><div class=\"hermit-controls\"><div class=\"hermit-button\"></div><div class=\"hermit-detail\">单击鼠标左键播放或暂停。</div><div class=\"hermit-duration\"></div><div class=\"hermit-volume\"></div><div class=\"hermit-listbutton\"></div></div><div class=\"hermit-prosess\"><div class=\"hermit-loaded\"></div><div class=\"hermit-prosess-bar\"><div class=\"hermit-prosess-after\"></div></div></div></div></div><div class=\"hermit-list\"></div></div><!--Hermit for typecho v1.3.0 end-->",
+			$text = preg_replace('/\[hermit(.+?)unexpand=(0|1) fullheight=(0|1)?\](.+?)\[\/hermit\]/i',
+           "<!--Hermit for typecho v1.3.1 start--><div class=\"hermit hermit-default hermit-unexpand-\\2 hermit-fullheight-\\3\"\\1songs=\"\\4\"><div class=\"hermit-box hermit-clear\"><div class=\"hermit-cover\"><img class=\"hermit-cover-image\" src=\"{$cover_url}\" width=\"80\" height=\"80\"><div class=\"hermit-button\"></div></div><div class=\"hermit-info\"><div class=\"hermit-title\"><div class=\"hermit-detail\"></div></div><div class=\"hermit-controller\"><div class=\"hermit-author\"></div><div class=\"hermit-additive\"><div class=\"hermit-duration\">00:00/00:00</div><div class=\"hermit-volume\"></div><div class=\"hermit-listbutton\"></div></div></div><div class=\"hermit-prosess\"><div class=\"hermit-loaded\"></div><div class=\"hermit-prosess-bar\"><div class=\"hermit-prosess-after\"></div></div></div></div></div><div class=\"hermit-list\"></div></div><!--Hermit for typecho v1.3.1 end-->",
             $text);
         }
         return $text;
     }
-
 	/**
      * 顶部CSS加载
      * 
@@ -122,6 +121,6 @@ class Hermit_Plugin implements Typecho_Plugin_Interface
         $ajax_url = Typecho_Common::url('Hermit/ajax.php', $options->pluginUrl);
 		$swf_url = Typecho_Common::url('Hermit/assets/swf', $options->pluginUrl);
 		$js_url = Typecho_Common::url('Hermit/assets/script/hermit.min.js', $options->pluginUrl);
-		echo "<script>var hermit = {url: \"{$swf_url}\", ajax_url: \"{$ajax_url}\"};\n</script><script src='{$js_url}'></script>\n";	
+		echo "<script>var hermit = {url: \"{$swf_url}\", ajax_url: \"{$ajax_url}\", text_tips: \"点击播放或暂停\", remain_time: \"10\", debug: \"0\", album_source: \"0\"};\n</script><script src='{$js_url}'></script>\n";	
     }
 }

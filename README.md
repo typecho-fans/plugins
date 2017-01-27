@@ -56,7 +56,7 @@
 [GoLinks](/GoLinks) | 外链转内链跳转插件 | [@阿飞](https://github.com/defeme)
 [GoogleCodePrettfy](/GoogleCodePrettify) | Google代码高亮插件 | [@公子](https://github.com/lizheming)
 [GravatarCache](/GravatarCache) :dart: | Gravatar头像缓存插件 | [@羽飞](https://github.com/byends)
-[Hermit](/Hermit) :warning: | Html5+Flash音乐播放器插件 | [@牧风](https://github.com/iMuFeng)
+[Hermit](/Hermit) | 虾米列表型音乐播放器插件 | [@牧风](https://github.com/iMuFeng)
 [HighSlide](/HighSlide) | 灯箱弹窗特效及页面相册插件 | [@羽中](https://github.com/jzwalk)
 [Html2Text](/Html2Text) | Html代码转Markdown格式插件 | [@冰剑](https://github.com/binjoo)
 [IQapTcha](/IQapTcha) | 滑动解锁验证码插件 | [@羽飞](https://github.com/byends)

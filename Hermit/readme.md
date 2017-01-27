@@ -1,7 +1,8 @@
-###演示地址###
-[演示地址](http://mufeng.me/hermit-for-wordpress.html "Hermit 演示地址 ")
+### 虾米列表型音乐播放器插件Hermit v1.3.1
 
-- :warning:待修复：API失效。
+同名wordpress插件作者亲自定制，编辑面板可自如插入播放器短代码，支持虾米单曲、专辑及歌单的HTML5列表播放。
+
+ > 1.3.1复活版(17-1-27)更新：同步原版核心及虾米API，修正标签参数bug。（[@羽中](https://github.com/jzwalk)）
 
 ###Hermit Beta 更新历史###
 1.3.0 (14-6-30)
@@ -32,11 +33,9 @@
 1.0.0  (14-2-11)  
 1.  最初1.0.0版本发布
 
-
 ###感谢开源项目###
 [SoundManager 2](https://github.com/scottschiller/SoundManager2 "SoundManager 2")
 
-
 如果你对这个插件感兴趣, 敬请关注:  
 [作者的博客](http://mufeng.me/ "作者的博客")  
-[插件发布页](http://mufeng.me/hermit-for-wordpress.html "插件发布页")
+[原版发布页](http://mufeng.me/hermit-for-wordpress.html "原版发布页")

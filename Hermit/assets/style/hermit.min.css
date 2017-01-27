@@ -1,11 +1,382 @@
-/** 
-* @name Hermit
-* @version 1.3.0
-* @create 2014-02-07
-* @lastmodified 2014-06-28 14:30
-* @description Hermit Plugin
-* @author MuFeng (http://mufeng.me)
-* @url http://mufeng.me/hermit-for-wordpress.html
-**/
+@font-face {
+	font-family:hermiticon;src:url(../fonts/hermiticon.eot?cez6o0);src:url(../fonts/hermiticon.eot?#iefixcez6o0) format('embedded-opentype'),url(../fonts/hermiticon.ttf?cez6o0) format('truetype'),url(../fonts/hermiticon.woff?cez6o0) format('woff'),url(../fonts/hermiticon.svg?cez6o0#hermiticon) format('svg');font-weight:400;font-style:normal
+}
 
-.hermit{overflow:hidden;background:#fff;margin-bottom:20px;border:1px solid #dfdfdf;-webkit-user-select:none;-moz-user-select:none}.hermit,.hermit *{box-sizing:content-box;-moz-box-sizing:content-box;-webkit-box-sizing:content-box}.hermit-clear:before,.hermit-clear:after{display:table;content:""}.hermit-clear:after{clear:both;overflow:hidden}.hermit-clear{zoom:1}.hermit-detail{height:16px;overflow:hidden}.hermit-box{padding:10px;height:36px;font-size:13px;line-height:16px;background:#fafafa;border-bottom:1px solid #dfdfdf;position:relative}.hermit-covbtn{position:relative;width:36px;height:36px;float:left;-webkit-box-shadow:0 1px 4px rgba(0,0,0,.1);-moz-box-shadow:0 1px 4px rgba(0,0,0,.1);box-shadow:0 1px 4px rgba(0,0,0,.1)}.hermit-conpros{margin-left:50px}.hermit-controls{padding:0 115px 10px 20px;height:16px;position:relative}.hermit-button,.hermit-volume,.hermit-listbutton{position:absolute;width:16px;height:16px;background-position:center;background-repeat:no-repeat;cursor:pointer;top:0}.hermit-duration{position:absolute;width:100px;height:16px;top:0;right:40px;text-align:right}.hermit-button,.hermit-button.playing,.hermit-volume,.hermit-volume.muted,.hermit-listbutton{background-image:url(../images/icon.png)}.hermit-button{left:0;background-position:0 0}.hermit-button.playing{background-position:-20px 0}.hermit-volume{right:20px;background-position:-40px 0}.hermit-volume.muted{background-position:-60px 0}.hermit-listbutton{right:0;background-position:-80px 0}.hermit-prosess{height:3px;margin-bottom:4px;background-color:#ddd;cursor:pointer;position:relative;z-index:1}.hermit-loaded{position:absolute;height:3px;z-index:5;left:0;top:0;background-color:#bbb}.hermit-prosess-bar{height:3px;width:0;background-color:#5895be;position:relative;z-index:10}.hermit-prosess-after{position:absolute;display:block;width:2px;height:2px;background-color:#fff;border:4px solid #5895be;-webkit-border-radius:999px;-moz-border-radius:999px;-ms-border-radius:999px;-o-border-radius:999px;border-radius:999px;top:0;right:0;margin-top:-4px;margin-right:-10px;width:10 px\9;height:10 px\9;border:0\9;background:transparent url(../images/icon.png) 0 -20px no-repeat\9;-webkit-transition:width .1s,height .1s,margin-right .1s,margin-top .1s;-moz-transition:width .1s,height .1s,margin-right .1s,margin-top .1s;-ms-transition:width .1s,height .1s,margin-right .1s,margin-top .1s;-o-transition:width .1s,height .1s,margin-right .1s,margin-top .1s;transition:width .1s,height .1s,margin-right .1s,margin-top .1s}.hermit-prosess,.hermit-loaded,.hermit-prosess-bar{border-width:1px 0;border-style:solid;border-color:#fff}.hermit-box:hover .hermit-prosess{border-color:#ddd}.hermit-box:hover .hermit-loaded{border-color:#bbb}.hermit-box:hover .hermit-prosess-bar{border-color:#5895be}.hermit-box:hover .hermit-prosess-after{width:4px;height:4px;margin-top:-5px;margin-right:-11px}.hermit-list{max-height:360px;overflow-y:auto;*height:360px}.hermit-song{padding:0 10px;border-top:1px solid #e5e5e5;cursor:pointer;font-size:14px;line-height:35px;height:35px;overflow:hidden;-webkit-tap-highlight-color:transparent;-webkit-transition:padding-left .3s,height .6s,background-color .3s;-moz-transition:padding-left .3s,height .6s,background-color .3s;-ms-transition:padding-left .3s,height .6s,background-color .3s;-o-transition:padding-left .3s,height .6s,background-color .3s;transition:padding-left .3s,height .6s,background-color .3s}.hermit-list.unexpand .hermit-song{height:0;border-top:0}.hermit-song.selected,.hermit-song:hover{background-color:#f5f8fa}.hermit-song.selected{padding-left:28px;background-image:url(../images/nowplaying.gif);background-position:10px 50%;background-repeat:no-repeat}.hermit-blue .hermit-prosess-bar{background-color:#5cb85c}.hermit-blue .hermit-prosess-after,.hermit-blue .hermit-box:hover .hermit-prosess-bar{border-color:#5cb85c}.hermit-yellow .hermit-prosess-bar{background-color:#f0ad4e}.hermit-yellow .hermit-prosess-after,.hermit-yellow .hermit-box:hover .hermit-prosess-bar{border-color:#f0ad4e}.hermit-red .hermit-prosess-bar{background-color:#d9534f}.hermit-red .hermit-prosess-after,.hermit-red .hermit-box:hover .hermit-prosess-bar{border-color:#d9534f}@media only screen and (-Webkit-min-device-pixel-ratio:1.5),only screen and (min--moz-device-pixel-ratio:1.5),only screen and (-o-min-device-pixel-ratio:3/2),only screen and (min-device-pixel-ratio:1.5),only screen and (min-resolution:144dpi),only screen and (min-resolution:1.5dppx){.hermit-button,.hermit-button.playing,.hermit-volume,.hermit-volume.muted,.hermit-listbutton{background-image:url(../images/icon2x.png);background-size:120px 35px}}@media all and (min-width:0){.hermit-prosess-after{width:2px;height:2px;background-color:#fff;border:4px solid #5895be}}
+.hermit {
+	overflow: hidden;
+	background: #fff;
+	margin-bottom: 20px;
+	border: 1px solid #dedede;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	font: 13px/1.5 calluna-sans,"Helvetica Neue",Helvetica,Hiragino Sans GB,Microsoft JhengHei,WenQuanYi Micro Hei,sans-serif;
+	text-indent: 0
+}
+
+.hermit,.hermit * {
+	box-sizing: content-box;
+	-moz-box-sizing: content-box;
+	-webkit-box-sizing: content-box
+}
+
+.hermit-clear:after,.hermit-clear:before {
+	display: table;
+	content: ""
+}
+
+.hermit-clear:after {
+	clear: both;
+	overflow: hidden
+}
+
+.hermit-clear {
+	zoom: 1
+}
+
+.hermit-detail span {
+	-webkit-animation: animFlipFront .4s linear;
+	-moz-animation: animFlipFront .4s linear;
+	animation: animFlipFront .4s linear
+}
+
+.hermit-box {
+	padding: 10px 13px;
+	height: 70px;
+	font-size: 14px;
+	line-height: 16px;
+	position: relative;
+	-webkit-box-shadow: 0 1px 10px rgba(0,0,0,.08);
+	box-shadow: 0 1px 10px rgba(0,0,0,.08)
+}
+
+.hermit-cover {
+	width: 65px;
+	float: left;
+	position: relative
+}
+
+.hermit-info {
+	margin-left: 75px
+}
+
+.hermit-title {
+	font-size: 15px;
+	height: 24px;
+	overflow: hidden
+}
+
+.hermit-author {
+	font-size: 14px;
+	color: #999
+}
+
+.hermit-author,.hermit-duration,.hermit-title {
+	line-height: 24px
+}
+
+.hermit-controller {
+	height: 24px;
+	position: relative
+}
+
+.hermit-additive {
+	text-align: right;
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 130px;
+	height: 24px;
+	background: #fff
+}
+
+.hermit-cover-image {
+	width: 65px;
+	height: 65px;
+	padding: 0!important;
+	margin: 0!important;
+	border: none!important;
+	box-shadow: none
+}
+
+.hermit-duration,.hermit-listbutton,.hermit-volume {
+	display: inline-block
+}
+
+.hermit-duration {
+	height: 24px
+}
+
+.hermit-button,.hermit-listbutton,.hermit-volume {
+	speak: none;
+	cursor: pointer;
+	font-family: hermiticon;
+	text-transform: none;
+	vertical-align: middle;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale
+}
+
+.hermit-listbutton,.hermit-volume {
+	color: #666;
+	width: 20px;
+	height: 24px;
+	line-height: 24px;
+	font-size: 17px
+}
+
+.hermit-listbutton {
+	position: relative
+}
+
+.hermit-button {
+	text-align: center;
+	vertical-align: middle;
+	position: absolute;
+	width: 28px;
+	height: 28px;
+	border: 2px solid #fff;
+	border-radius: 50%;
+	color: #fff;
+	left: 50%;
+	top: 50%;
+	margin-left: -16px;
+	margin-top: -16px;
+	background: rgba(0,0,0,.15);
+	text-shadow: 0 1px 1px rgba(0,0,0,.2);
+	box-shadow: 0 1px 1px rgba(0,0,0,.2)
+}
+
+.hermit-volume {
+	right: 20px
+}
+
+.hermit-button:before {
+	content: "\e01b";
+	font-size: 20px;
+	line-height: 28px
+}
+
+.hermit-button.playing:before {
+	content: "\e018";
+	font-size: 18px
+}
+
+.hermit-listbutton:before {
+	content: "\e20e"
+}
+
+.hermit-prevbutton:before {
+	content: "\e028"
+}
+
+.hermit-nextbutton:before {
+	content: "\e027"
+}
+
+.hermit-listbutton:after {
+	position: absolute;
+	content: '';
+	right: -2px;
+	top: 0;
+	width: 4px;
+	height: 4px;
+	border-radius: 50%;
+	background-color: transparent;
+	opacity: 0;
+	-webkit-transition: opacity .6s;
+	-moz-transition: opacity .6s;
+	-ms-transition: opacity .6s;
+	-o-transition: opacity .6s;
+	transition: opacity .6s
+}
+
+.hermit-unexpand-1 .hermit-listbutton:after,.hermit.unexpand .hermit-listbutton:after {
+	opacity: 1;
+	background-color: #f60001
+}
+
+.hermit-unexpand-1.unexpand .hermit-listbutton:after {
+	opacity: 0
+}
+
+.hermit-volume:before {
+	content: "\e033"
+}
+
+.hermit-volume.muted:before {
+	content: "\e031"
+}
+
+.hermit-prosess {
+	height: 3px;
+	background-color: #ddd;
+	cursor: pointer;
+	position: relative;
+	z-index: 1;
+	margin: 10px 0 5px
+}
+
+.hermit-loaded {
+	position: absolute;
+	height: 3px;
+	z-index: 5;
+	left: 0;
+	top: 0;
+	background-color: #ccc
+}
+
+.hermit-prosess-bar {
+	height: 3px;
+	width: 0;
+	background-color: #5895be;
+	position: relative;
+	z-index: 10
+}
+
+.hermit-prosess-after {
+	position: absolute;
+	display: block;
+	width: 8px;
+	height: 8px;
+	background-color: #fff;
+	border: 1px solid #5895be;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	-ms-border-radius: 50%;
+	-o-border-radius: 50%;
+	border-radius: 50%;
+	top: 0;
+	right: 0;
+	margin-top: -4px;
+	margin-right: -10px
+}
+
+.hermit-list {
+	height: auto;
+	max-height: 410px;
+	overflow-y: auto
+}
+
+.hermit-fullheight-1 .hermit-list {
+	height: 100%;
+	max-height: 100%
+}
+
+.hermit-fullheight-1.unexpand .hermit-list,.hermit-unexpand-1 .hermit-list,.hermit.unexpand .hermit-list {
+	height: 0;
+	max-height: 0
+}
+
+.hermit-fullheight-1.hermit-unexpand-1.unexpand .hermit-list,.hermit-unexpand-1.unexpand .hermit-list {
+	height: 100%;
+	max-height: 100%
+}
+
+.hermit-unexpand-1 .hermit-box,.hermit.unexpand .hermit-box {
+	box-shadow: none
+}
+
+.hermit-song {
+	border-top: 1px solid #e5e5e5;
+	cursor: pointer;
+	font-size: 15px;
+	line-height: 40px;
+	height: 40px;
+	overflow: hidden;
+	-webkit-tap-highlight-color: transparent;
+	position: relative
+}
+
+.hermit-deactive, .hermit-deactive .hermit-song-author {
+	color: #ccc
+}
+
+.hermit-song-index {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 40px;
+	text-align: center;
+	color: #999
+}
+
+.hermit-song-title {
+	display: block;
+	margin-left: 40px;
+	margin-right: 55px
+}
+
+.hermit-song-author {
+	color: #777;
+	padding-left: 5px
+}
+
+.hermit-song-duration {
+	position: absolute;
+	top: 0;
+	right: 15px;
+	color: #888;
+	font-size: 14px
+}
+
+.hermit-song.selected,.hermit-song:hover {
+	background-color: #f8f8f8
+}
+
+.hermit-song.selected .hermit-song-index {
+	width: 38px;
+	text-indent: -999em;
+	background-image: url(../images/playing.gif);
+	background-position: 50% 50%;
+	background-repeat: no-repeat;
+	background-size: 16px
+}
+
+.hermit-song.selected.paused .hermit-song-index {
+	background-image: url(../images/playing.png)
+}
+
+.hermit-default .hermit-prosess-after:hover,.hermit-default .hermit-prosess-bar {
+	background-color: #5895be
+}
+
+.hermit-default .hermit-prosess-after {
+	border-color: #5895be
+}
+
+.hermit-ios .hermit-volume {
+	display: none
+}
+
+@-ms-viewport {
+	width:device-width
+}
+
+@viewport {
+	width:device-width
+}
+
+@media screen and (max-width:768px) {
+	.hermit-listbutton {
+		font-size: 20px
+	}
+
+	.hermit-song {
+		height: 44px;
+		line-height: 44px
+	}
+
+	.hermit-list {
+		max-height: 450px
+	}
+
+	.hermit-loaded,.hermit-prosess,.hermit-prosess-bar {
+		height: 4px
+	}
+
+	.hermit-prosess-after {
+		width: 12px;
+		height: 12px;
+		margin-top: -5px
+	}
+}

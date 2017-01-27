@@ -4,7 +4,7 @@
 
 升级时，请先禁用旧版本后，覆盖文件再启用。
 
-:warning:谷歌接口失效，待更新(http://www.liuxiatool.com/t.php)。
+:warning:谷歌接口失效，待更新（http://www.liuxiatool.com/t.php）。
 
 == 更新 2014-12-10 ==
 
