@@ -1,61 +1,69 @@
 #ap_colorscheme {
-	position:relative;
+	position: relative;
 }
+
 #ap_colorselector {
-	position:absolute;
-	top:130px;
-	left:165px;
-}
-#ap_colorselector input {
-	float: left;
-	margin: 0 5px 0 0;
-	padding: 2px;
+	position: absolute;
+	top: 42px;
+	left: 190px;
 }
 
 #ap_colorselector input {
+	float: left;
+	margin-right: 5px;
 	padding: 2px;
+	width: 75px;
+	height: 23px;
+	text-transform : uppercase
 }
 
 #ap_colorsample {
 	float: left;
-	width: 19px;
-	height: 19px;
-	border: 1px solid #000000;
+	width: 20px;
+	height: 20px;
+	border: 1px solid #444;
 	background: #FFFFFF;
 }
 
 #ap_picker-btn {
 	display: block;
 	float: left;
-	height: 21px;
+	height: 23px;
 	background: url(picker-icon.png) no-repeat left top;
+	padding-top: 1px;
 	padding-left: 28px;
-	padding-top: 3px;
-	margin-left: 10px;
-	font-size: 11px;
+	margin-left: 13px;
+	font-size: 13px;
 	cursor: pointer;
-	color: #0000FF;
-	text-decoration: underline;
+	color: #467B96;
 }
 
 #ap_themecolor-btn {
 	display: block;
 	float: left;
-	height: 21px;
+	height: 23px;
 	background: url(theme-picker-icon.png) no-repeat left top;
-	padding-left: 28px;
-	padding-top: 3px;
-	margin-left: 10px;
-	font-size: 11px;
+	padding-top: 1px;
+	padding-left: 24px;
+	margin-left: 11px;
+	font-size: 13px;
 	cursor: pointer;
-	color: #0000FF;
-	text-decoration: underline;
+	color: #467B96;
+}
+
+#ap_resetcolor {
+	position: absolute;
+	bottom: 49px;
+	left: 132px;
+	height: 22px;
+	padding-bottom: 2px;
+	margin-bottom: 1.5px;
 }
 
 #ap_themecolor {
 	display: none;
 	width: 134px;
-	padding: 0 0 13px 0;
+	padding-bottom: 13px;
 	float: left;
 	background: url(thcpck-bottom.png) no-repeat left bottom;
 }
@@ -64,14 +72,14 @@
 	display: block;
 	text-indent: -9999px;
 	height: 13px;
-	line-height: 0;
-	font-size: 0;
 	background: url(thcpck-top.png) no-repeat left top;
 }
 
 #ap_themecolor ul {
 	background: url(thcpck-slice.png) repeat-y left top;
-	padding: 1px 14px 1px 15px;
+	padding-top: 2px;
+	padding-right: 14px;
+	padding-left: 15px;
 	float: left;
 	width: 105px;
 	margin: 0;
@@ -84,7 +92,6 @@
 	float: left;
 	width: 20px;
 	height: 20px;
-	margin: 0 1px 1px 0;
-	line-height: 0;
-	font-size: 0;
+	margin-right: 1px;
+	margin-bottom: 1px;
 }
