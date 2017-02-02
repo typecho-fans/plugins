@@ -64,6 +64,7 @@
 [Keywords](/Keywords) | 关键词和标签自动链接插件 | [@羽中](https://github.com/jzwalk)
 [Like](/Like) | 文章点赞功能插件 | [@skylzl](https://github.com/xiaogouxo)
 [LREditor](/LREditor) | Markdown左右预览插件 | [@公子](http://github.com/lizheming)
+[MenuTree](/MenuTree) | 文章目录树插件 | [@hongweipeng](https://github.com/hongweipeng)
 [MostCache](/MostCache) | Mysql/SAE memcache缓存插件 | [@skylzl](https://github.com/xiaogouxo)
 [MyPlayer](/MyPlayer) | 影音站点外链转播放器插件 | [@perichr](http://github.com/perichr)
 [MyTagCloud](/MyTagCloud) | 定制标签云功能插件 | [@马燕龙](https://github.com/YanlongMa)
