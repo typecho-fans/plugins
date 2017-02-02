@@ -105,7 +105,7 @@ class SlimBox2_Plugin implements Typecho_Plugin_Interface
         $links = '<link rel="stylesheet" type="text/css" href="'.$SlimBox2_url.'css/slimbox2.css" />
 ';
         if($Settings->jquerySelect != "false"){
-            $links .= '<script type="text/javascript" src="'.$Options->adminUrl.'js/jquery.js"></script>
+            $links .= '<script type="text/javascript" src="http://cdn.staticfile.org/jquery/1.8.3/jquery.min.js"></script>
 ';
         }
         echo $links;

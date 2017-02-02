@@ -24,7 +24,8 @@ class Zan_Plugin implements Typecho_Plugin_Interface {
     }
     public static function footlink() {
         //echo Typecho_Common::url('action/WeChat?customreply', '');
-        $script = '<script type="text/javascript" src="'.Helper::options()->adminUrl.'js/jquery.js"></script>
+        $script = '<script type="text/javascript">//<![CDATA[
+	window.jQuery || document.write("<script type=\"text/javascript\" src=\"http://cdn.staticfile.org/jquery/1.8.3/jquery.min.js\"><\/script>")//]]></script>
 ';
         $script .= "<script type=\"text/javascript\">";
         $script .= '$(document).ready(function(){
