@@ -5,8 +5,8 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
  * 
  * @package Smilies
  * @author 羽中
- * @version 1.1.1
- * @dependence 14.10.10
+ * @version 1.1.2
+ * @dependence 14.10.10-*
  * @link http://www.yzmb.me/archives/net/smilies-for-typecho
  */
 class Smilies_Plugin implements Typecho_Plugin_Interface
@@ -86,7 +86,7 @@ class Smilies_Plugin implements Typecho_Plugin_Interface
 		$form->addInput($allowpop);
 
 		$jqmode = new Typecho_Widget_Helper_Form_Element_Radio('jqmode',
-		array(1=>_t('jQuery'),0=>_t('原生js')),0,_t('操作代码模式'),_t('仅兼容性略有差异, jquery将加载typecho自带库文件'));
+		array(1=>_t('jQuery'),0=>_t('原生js')),0,_t('操作代码模式'),_t('仅兼容性略有差异, jquery将自动判断加载CDN库文件'));
 		$form->addInput($jqmode);
 
 		$textareaid = new Typecho_Widget_Helper_Form_Element_Text('textareaid',
@@ -444,7 +444,6 @@ $('.gridly').gridly({
 		$settings = $options->plugin('Smilies');
 		$textareaid = $settings->textareaid;
 		$textareaid = $textareaid ? $textareaid : _t('一般无需填写');
-		$jquery = '<script type="text/javascript" src="'.$options->adminUrl.'js/jquery.js"></script>';
 
 		$idset = $widget->is('single') ? $textareaid : 'text';
 		$txtid = $settings->jqmode ? '#'.$idset : $idset;
@@ -456,53 +455,57 @@ $('.gridly').gridly({
 
 		//jquery模式
 		if ($settings->jqmode) {
+			$auto = '';
 			$js = '
 <script type="text/javascript">
 $(function() {
-	var button = $("#smiliesbutton"),
-	box = $("#smiliesbox");
-	button.click(function(){
+	var box = $("#smiliesbox");
+	$("#smiliesbutton").click(function(){
 		box.show();
 	});
 	$("span",box).click(function() {
-		var b = $(this).attr("data-tag");
-		$("'.$txtid.'").insert(b);';
+		$("'.$txtid.'").insert($(this).attr("data-tag"));';
 			if ($settings->allowpop) {
 				$js .= '
 		box.hide();';
+				$auto = '
+	$(document).mouseup(function(e) {
+		if (!box.is(e.target) && box.has(e.target).length === 0) {
+			box.hide();
+		}
+	});';
 			}
 			$js .= '
-	});
-$.fn.extend({
-	"insert": function(myValue) {
-		var $t = $(this)[0];
-		if (document.selection) {
-			this.focus();
-			sel = document.selection.createRange();
-			sel.text = myValue;
-			this.focus()
-		} else if ($t.selectionStart || $t.selectionStart=="0") {
-			var startPos = $t.selectionStart;
-			var endPos = $t.selectionEnd;
-			var scrollTop = $t.scrollTop;
-			$t.value = $t.value.substring(0, startPos) + myValue + $t.value.substring(endPos, $t.value.length);
-			this.focus();
-			$t.selectionStart = startPos + myValue.length;
-			$t.selectionEnd = startPos + myValue.length;
-			$t.scrollTop = scrollTop
-		} else {
-			this.value += myValue;
-			this.focus()
+	});'.$auto.'
+	$.fn.extend({
+		"insert": function(myValue) {
+			var $t = $(this)[0];
+			if (document.selection) {
+				this.focus();
+				sel = document.selection.createRange();
+				sel.text = myValue;
+				this.focus()
+			} else if ($t.selectionStart || $t.selectionStart=="0") {
+				var startPos = $t.selectionStart;
+				var endPos = $t.selectionEnd;
+				var scrollTop = $t.scrollTop;
+				$t.value = $t.value.substring(0, startPos) + myValue + $t.value.substring(endPos, $t.value.length);
+				this.focus();
+				$t.selectionStart = startPos + myValue.length;
+				$t.selectionEnd = startPos + myValue.length;
+				$t.scrollTop = scrollTop
+			} else {
+				this.value += myValue;
+				this.focus()
+			}
 		}
-	}
-}) 
+	}) 
 });
 </script>
 		';
 		//js模式
 		} else {
-			$js = '
-<script type="text/javascript">
+			$js = '<script type="text/javascript">
 //<![CDATA[
 Smilies = {
 	domId : function(id) {
@@ -544,13 +547,14 @@ Smilies = {
 			}
 			$js .= '
 	}
-}
+} 
 //]]>
 </script>';
 		}
 
 		if ($widget->is('single')) {
-			echo $jquery.$js;
+			echo ($settings->jqmode ? '<script type="text/javascript">//<![CDATA[
+	window.jQuery || document.write("<script type=\"text/javascript\" src=\"http://cdn.staticfile.org/jquery/1.8.3/jquery.min.js\"><\/script>")//]]></script>' : '').$js;
 		}
 		if ($widget instanceof Widget_Contents_Post_Edit && $settings->postmode) {
 			echo $js;
