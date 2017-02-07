@@ -61,6 +61,7 @@
 [Html2Text](/Html2Text) | Html代码转Markdown格式插件 | [@冰剑](https://github.com/binjoo)
 [IQapTcha](/IQapTcha) | 滑动解锁验证码插件 | [@羽飞](https://github.com/byends)
 [JSON](/JSON) | Typecho开放API插件 | [@公子](https://github.com/lizheming)
+[JWPlayer](/JWPlayer) | Html5+flash视频播放器插件 | [@羽中](https://github.com/jzwalk)
 [Keywords](/Keywords) | 关键词和标签自动链接插件 | [@羽中](https://github.com/jzwalk)
 [Like](/Like) | 文章点赞功能插件 | [@skylzl](https://github.com/xiaogouxo)
 [LREditor](/LREditor) | Markdown左右预览插件 | [@公子](http://github.com/lizheming)
