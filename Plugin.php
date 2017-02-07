@@ -554,7 +554,7 @@ Smilies = {
 
 		if ($widget->is('single')) {
 			echo ($settings->jqmode ? '<script type="text/javascript">//<![CDATA[
-	window.jQuery || document.write("<script type=\"text/javascript\" src=\"http://cdn.staticfile.org/jquery/1.8.3/jquery.min.js\"><\/script>")//]]></script>' : '').$js;
+	window.jQuery || document.write("<script type=\"text/javascript\" src=\"http://cdn.staticfile.org/jquery/3.1.1/jquery.min.js\"><\/script>")//]]></script>' : '').$js;
 		}
 		if ($widget instanceof Widget_Contents_Post_Edit && $settings->postmode) {
 			echo $js;
