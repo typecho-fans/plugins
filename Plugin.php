@@ -189,9 +189,14 @@ text-align:center;
 <td class="value">-</td>
 <td>'._t('VR全景模式解析，唯一值%s即360度自由旋转，多个视频可重复该值用<strong>,</strong>号分隔。','<span class="value">monoscopic</span>').'</td>
 </tr>
+<tr>
+<td class="param">cast</td>
+<td class="value">-</td>
+<td>'._t('投屏模式，没有值，留空即可自动检测%s或%s设备并启用相关功能。','<a href="https://www.google.com/cast/" target="_blank">Google Cast</a>','<a href="https://support.apple.com/zh-cn/HT204289" target="_blank">Apple Airplay</a>').'</td>
+</tr>
 </tbody>
 </table>
-<script src="'.Helper::options()->adminUrl().'js/jquery.js"></script>
+<script src="'.Helper::options()->adminUrl.'js/jquery.js"></script>
 <script>
 $(function() {
 	var tab = $("table");
