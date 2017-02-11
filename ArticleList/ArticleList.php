@@ -85,9 +85,11 @@ class ArticleList implements Typecho_Plugin_Interface
         $rst = $db->fetchAll($db->select('cid','title','slug','created','type','commentsNum')->from('table.contents')
             ->where('table.contents.status = ?', 'publish')
             ->where('table.contents.type = ?', 'post')
+//            ->where('created > ?',$option->gmtTime + $option->timezone - 180*24*3600) //热评收录范围：180天内(可修改对应数字，去掉本行开头两斜杠生效)
             ->order('table.contents.commentsNum',Typecho_Db::SORT_DESC)
             ->limit($num));
         foreach($rst as $result){
+            $result['text'] = ''; //fix php5.6 warning
             $value = Typecho_Widget::widget('Widget_Abstract_Contents')->push($result);
             $title = $option->hotlen ? self::cutstr($value['title'],$option->hotlen) : $value['title'];
             echo str_replace(array('{permalink}','{title}','{commentsNum}'),array($value['permalink'],$title,$value['commentsNum']),$format);
@@ -155,6 +157,7 @@ class ArticleList implements Typecho_Plugin_Interface
                     ->offset($index)
                     ->limit(1));
 
+                    $result['text'] = ''; //fix php5.6 warning
                     $value = Typecho_Widget::widget('Widget_Abstract_Contents')->push($result);
                     $title = $option->rndlen ? self::cutstr($value['title'], $option->rndlen ) : $value['title'];
                     echo str_replace(array('{permalink}', '{title}'), array($value['permalink'],  $title), $format);
@@ -171,6 +174,7 @@ class ArticleList implements Typecho_Plugin_Interface
                     ->offset($index)
                     ->limit(1));
 
+                    $result['text'] = ''; //fix php5.6 warning
                     $value = Typecho_Widget::widget('Widget_Abstract_Contents')->push($result);
                     $title = $option->rndlen ? self::cutstr($value['title'], $option->rndlen ) : $value['title'];
                     echo str_replace(array('{permalink}', '{title}'), array($value['permalink'],  $title), $format);

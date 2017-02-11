@@ -4,7 +4,7 @@
  *
  * @package AutoSlug
  * @author ShingChi
- * @version 2.1.0
+ * @version 2.1.1
  * @link http://lcz.me
  * @dependence 14.5.26-*
  */

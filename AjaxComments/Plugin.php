@@ -73,6 +73,7 @@ class AjaxComments_Plugin implements Typecho_Plugin_Interface
             		->select('cid', 'created', 'type', 'slug')->from('table.contents')
             		->where('table.contents.cid = ?', $select['cid'])
             );
+          $select['text'] = ''; //fix php5.6 warning
 
           $select = Typecho_Widget::widget('Widget_Abstract_Contents')->filter($select);
           $permalink = $select['permalink'];
@@ -90,7 +91,7 @@ class AjaxComments_Plugin implements Typecho_Plugin_Interface
 		);
 
         $jq_set = new Typecho_Widget_Helper_Form_Element_Radio(
-        'jq_set', array('0'=> '自己处理', '1'=> '随着本插件载入'), 1, 'jQuery 来源', '若选择 "随着本插件载入", 会从 Google API 自动载入 jQurey 1.4.4 到 header().');
+        'jq_set', array('0'=> '自己处理', '1'=> '随着本插件载入'), 1, 'jQuery 来源', '若选择 "随着本插件载入", 会从 CDN 自动载入 jQurey 1.8.3 到 header().');
         $form->addInput($jq_set);
 
         $trg = $registered ? Helper::options()->plugin('AjaxComments')->_comments : '#comments h4';

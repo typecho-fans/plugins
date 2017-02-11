@@ -4,7 +4,7 @@
 
 升级时，请先禁用旧版本后，覆盖文件再启用。
 
-:warning:谷歌接口失效，待更新（http://www.liuxiatool.com/t.php）。
+ > 2.1.1谷歌修复版(17-2-11)更新：使用[Google Translator API for free](https://github.com/statickidz/php-google-translate-free)转国内节点。（[@羽中](https://github.com/jzwalk)）
 
 == 更新 2014-12-10 ==
 

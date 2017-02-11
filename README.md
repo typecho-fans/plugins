@@ -4,7 +4,7 @@
 
 本项目中插件原则上均支持0.9+版本，欢迎提交问题建议至[issues](https://github.com/typecho-fans/plugins/issues)，欢迎更多作者加入！:penguin:交流群号：[**40412938**](http://shang.qq.com/wpa/qunwpa?idkey=a5a8afedf099e18ddf9b530db9217251e39001d52aace42888bf470d9b6cb86a)
 
-- **使用帮助**：在右上角的绿色按钮处选择使用git工具克隆项目地址或打包下载zip即可。
+- **使用帮助**：点击右上角绿色按钮用git工具克隆或打包下载；使用[应用商店](https://typecho.chekun.me)自动检索安装本项目插件。
 
 ### 作者须知
 
@@ -24,7 +24,7 @@
 
 ### 作品索引
 
-###### :warning:：暂不可用，待更新。:dart:：安装方式特殊，详见说明。
+###### :warning:：暂不可用，待更新。:dart:：安装或用途特殊，详见说明。
 
 名称 | 简介 | 作者
 ---- | :----: | ----:
@@ -37,7 +37,7 @@
 [AudioPlayer](/AudioPlayer) | Flash mp3播放器插件 | [@羽中](https://github.com/jzwalk)
 [AutoBaiduSubmit](/AutoBaiduSubmit) | 百度链接自动提交插件 | [@金斐杰](https://github.com/jinfeijie)
 [AutoSlug](/AutoSlug) | 自动生成文章缩略名插件 | [@ShingChi](https://github.com/shingchi)
-[AutoTags](/AutoTags) | 标签自动生成插件 | [@DT27](https://github.com/DT27)
+[AutoTags](/AutoTags) | 自动生成文章标签插件 | [@DT27](https://github.com/DT27)
 [Avatars](/Avatars) | 读者墙头像排行插件(支持缓存) | [@羽中](https://github.com/jzwalk)
 [BaeUpload](/BaeUpload) | BAE附件上传插件 | [@兜兜](https://github.com/doudoutime)
 [CateFilter](/CateFilter) | 首页指定分类不显示插件 | [@阳光](https://github.com/rakiy)
@@ -48,10 +48,10 @@
 [Contribute](/Contribute) :dart: | 用户投稿审查管理插件 | [@ShingChi](https://github.com/shingchi)
 [DbManager](/DbManager) | 数据库管理工具插件 | [@ShingChi](https://github.com/shingchi)
 [DevTool](/DevTool) | Typecho开发者工具插件 | [@zhulin3141](https://github.com/zhulin3141)
-[DownloadFile](/DownloadFile) | 文件下载插件 | [@DT27](https://github.com/DT27)
+[DownloadFile](/DownloadFile) | 附件保持原名下载插件 | [@DT27](https://github.com/DT27)
 [Duoshuo](/Duoshuo) | 多说社会化评论同步插件 | [@阳光](https://github.com/rakiy)
-[Editor](/Editor) | 非官方Markdown编辑器插件 | [@公子](https://github.com/lizheming)
-[EditorMD](/EditorMD) | Markdown编辑器Editor.md | [@DT27](https://github.com/DT27)
+[Editor](/Editor) | 简要Markdown编辑器插件 | [@公子](https://github.com/lizheming)
+[EditorMD](/EditorMD) | 豪华Markdown编辑器插件 | [@DT27](https://github.com/DT27)
 [EmlogToTypecho](/EmlogToTypecho) | Emlog转换Typecho插件 | [@ShingChi](https://github.com/shingchi)
 [GeeTest](/GeeTest) | GeeTest验证码插件 | [@啸傲居士](https://github.com/shuxiao9058)
 [GHbutton](/GHbutton) | Github功能按钮展示插件 | [@羽中](https://github.com/jzwalk)
@@ -81,12 +81,12 @@
 [RoutesHelper](/RoutesHelper) | Typecho路由助手插件 | [@兜兜](https://github.com/doudoutime)
 [SlimBox2](/SlimBox2) | 轻量级图片灯箱效果插件 | [@冰剑](https://github.com/binjoo)
 [Sinauth](/Sinauth) | 新浪OAuth2登陆插件 | [@Web3D](https://github.com/web3d)
-[SlantedExtend](/SlantedExtend) | [Slanted主题](https://github.com/DT27/Slanted)支持插件 | [@DT27](https://github.com/DT27)
+[SlantedExtend](/SlantedExtend) :dart: | [Slanted主题](https://github.com/DT27/Slanted)配套专用插件 | [@DT27](https://github.com/DT27)
 [Smilies](/Smilies) | 评论表情功能插件 | [@羽中](https://github.com/jzwalk) [Willin Kan](http://kan.willin.org)
 [Snowstorm](/Snowstorm) | (娱乐向)博客飘雪插件 | [@阳光](https://github.com/rakiy)
 [Subscriber](/Subscriber) | 文章仅对登录会员可见插件 | [@羽中](https://github.com/jzwalk)
 [SyncPost](/SyncPost) :warning: | 同步文章发布到微博插件 | [@冰剑](https://github.com/binjoo)
-[TeKit](https://github.com/binjoo/TeKit) | Typecho常用扩展集合插件 | [@冰剑](https://github.com/binjoo)
+[TeKit](/TeKit) | 常用主题扩展集合插件 | [@冰剑](https://github.com/binjoo)
 [TeStore](/TeStore) | Typecho应用商店插件 | [@zhulin3141](https://github.com/zhulin3141)
 [ThemeDemo](/ThemeDemo) | 主题外观演示插件 | [@兜兜](https://github.com/doudoutime)
 [Typembed](/Typembed) | 国内视频站转播放器插件 | [@我才是疯子](https://github.com/nothingisover)

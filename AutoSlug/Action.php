@@ -120,15 +120,12 @@ class AutoSlug_Action extends Typecho_Widget implements Widget_Interface_Do
      */
     public function google($word)
     {
-        $url = 'http://brisk.eu.org/api/translate.php';
-        $data = array('from' => 'chinese', 'to' => 'english', 'text' => $word);
-        $result = $this->translate($url, $data);
+        require_once 'GoogleTranslate.php';
 
-        if (empty($result)) {
-            return;
-        }
+        $trans = new GoogleTranslate();
+        $result = $trans->translate('zh-CN', 'en', $word);
 
-        return $result['res'];
+        return $result;
     }
 
 
