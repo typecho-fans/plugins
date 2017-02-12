@@ -86,7 +86,7 @@
 [Snowstorm](/Snowstorm) | (娱乐向)博客飘雪插件 | [@阳光](https://github.com/rakiy)
 [Subscriber](/Subscriber) | 文章仅对登录会员可见插件 | [@羽中](https://github.com/jzwalk)
 [SyncPost](/SyncPost) :warning: | 同步文章发布到微博插件 | [@冰剑](https://github.com/binjoo)
-[TeKit](/TeKit) | 常用主题扩展集合插件 | [@冰剑](https://github.com/binjoo)
+[TeKit](/TeKit) | 常用侧边栏扩展输出插件 | [@冰剑](https://github.com/binjoo)
 [TeStore](/TeStore) | Typecho应用商店插件 | [@zhulin3141](https://github.com/zhulin3141)
 [ThemeDemo](/ThemeDemo) | 主题外观演示插件 | [@兜兜](https://github.com/doudoutime)
 [Typembed](/Typembed) | 国内视频站转播放器插件 | [@我才是疯子](https://github.com/nothingisover)
