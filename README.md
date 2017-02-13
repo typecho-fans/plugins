@@ -62,7 +62,7 @@
 [Hermit](/Hermit) | 虾米列表型音乐播放器插件 | [@牧风](https://github.com/iMuFeng)
 [HighSlide](/HighSlide) | 灯箱弹窗特效及页面相册插件 | [@羽中](https://github.com/jzwalk)
 [Html2Text](/Html2Text) | Html代码转Markdown格式插件 | [@冰剑](https://github.com/binjoo)
-[IQapTcha](/IQapTcha) | 滑动解锁验证码插件 | [@羽飞](https://github.com/byends)
+[IQapTcha](/IQapTcha) | 评论滑动解锁验证插件 | [@羽飞](https://github.com/byends)
 [JSON](/JSON) | Typecho开放API插件 | [@公子](https://github.com/lizheming)
 [JWPlayer](/JWPlayer) | Html5+flash视频播放器插件 | [@羽中](https://github.com/jzwalk)
 [Keywords](/Keywords) | 关键词和标签自动链接插件 | [@羽中](https://github.com/jzwalk)

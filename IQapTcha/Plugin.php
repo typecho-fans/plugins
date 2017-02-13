@@ -205,7 +205,7 @@ class IQapTcha_Plugin implements Typecho_Plugin_Interface
 (function($){
     $(document).ready(function() {
         if ( ! $('#QapTcha').is('div')) {
-            $('#comment_form textarea').parent().before('<div id="QapTcha"></div>\\n');
+            $('textarea').parent().before('<div id="QapTcha"></div>\\n');
         }
         $('#QapTcha').QapTcha({
             txtLock : '{$iQapTchaOpt->opt_lock_txt}',
