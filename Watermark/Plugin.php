@@ -104,7 +104,7 @@ class Watermark_Plugin implements Typecho_Plugin_Interface
                 _t('水印文字'));
         $form->addInput($vm_text);
         
-        $vm_font = new Typecho_Widget_Helper_Form_Element_Text('vm_font', NULL, '',
+        $vm_font = new Typecho_Widget_Helper_Form_Element_Text('vm_font', NULL, 'lh.ttf',
                 _t('文字字体'),_t($font_msg));
         $vm_font->input->setAttribute('class', 'mini');
         $form->addInput($vm_font);

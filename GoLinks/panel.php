@@ -1,5 +1,4 @@
 <?php
-include 'common.php';
 include 'header.php';
 include 'menu.php';
 ?>
@@ -28,8 +27,8 @@ include 'menu.php';
                 <div class="typecho-table-wrap">
                 <table class="typecho-list-table">
                     <colgroup>                       
-                        <col width="15%"/>
-                        <col width="25%"/>
+                        <col width="8%"/>
+                        <col width="32%"/>
                         <col width="47%"/>
                         <col width="5%"/>
                         <col width="8%"/>
@@ -88,6 +87,16 @@ include 'footer.php';
 ?>
 <script type="text/javascript">
 $(document).ready(function () {
+    $('.operate-delete').click(function () {
+        var t = $(this), href = t.attr('href'), tr = t.parents('tr');
+        if (confirm(t.attr('lang'))) {
+            tr.fadeOut(function () {
+                window.location.href = href;
+            });
+        }
+        return false;
+    });
+    
     $('.operate-edit').click(function () {
        var tr = $(this).parents('tr'), t = $(this), id = tr.attr('id');
        var value = $('#e-'+id).html();

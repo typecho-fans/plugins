@@ -52,12 +52,12 @@ class GoLinks_Action extends Typecho_Widget implements Widget_Interface_Do
         $target = $this->request->url;
         $id = $this->request->id;
         if(trim($target) == "" || $target == "http://"){     
-            Typecho_Response::throwJson('error');
+            $this->response->throwJson('error');
         }else{
             if($id){
             $this->db->query($this->db->update('table.golinks')->rows(array('target' => $target))
                     ->where('id = ?', $id));           
-            Typecho_Response::throwJson('success');
+            $this->response->throwJson('success');
         }}
     }
 
@@ -128,7 +128,7 @@ class GoLinks_Action extends Typecho_Widget implements Widget_Interface_Do
         $link = $this->request->link;
         Helper::removeRoute('go');
         Helper::addRoute('go', $link, 'GoLinks_Action', 'golink');
-        Typecho_Response::throwJson('success');
+        $this->response->throwJson('success');
     }
 
     public function action(){

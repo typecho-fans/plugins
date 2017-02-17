@@ -27,4 +27,4 @@
 ?>
  ```
 
-
+###### 更多详见论坛原帖：http://forum.typecho.org/viewtopic.php?f=6&t=9313

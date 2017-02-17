@@ -1,20 +1,14 @@
 <?php
 /**
- * 虾米音乐播放器：虾米音乐搜索+引用
+ * 虾米音乐播放器：虾米音乐搜索+引用 (复活版<a href="http://www.yzmb.me" target="_blank">@羽中</a>)
  *
  * @package XiaMiPlayer
  * @author 公子
- * @version 3.1.2
+ * @version 3.1.3
  * @link http://zh.eming.li/#typecho
  */
 class XiaMiPlayer_Plugin implements Typecho_Plugin_Interface
 {
-    /**
-     * 插件版本号
-     * @var string
-     */
-    const _VERSION = '3.1.1';
-    const music = "http://xiamiplayer.songs.ali-sh.goodrain.net:10080/Music.php";
     /**
      * 激活插件方法,如果激活失败,直接抛出异常
      *
@@ -24,12 +18,24 @@ class XiaMiPlayer_Plugin implements Typecho_Plugin_Interface
      */
     public static Function activate()
     {
+        Helper::addRoute("XiaMiPlayer_Route","/XiaMiPlayer","XiaMiPlayer_Action",'action');
 		Typecho_Plugin::factory('admin/write-post.php')->bottom = array('XiaMiPlayer_Plugin', 'Insert');
 		Typecho_Plugin::factory('admin/write-page.php')->bottom = array('XiaMiPlayer_Plugin', 'Insert');
 		Typecho_Plugin::factory('Widget_Archive')->header = array('XiaMiPlayer_Plugin', 'header');
 		Typecho_Plugin::factory('Widget_Abstract_Contents')->contentEx = array('XiaMiPlayer_Plugin','ParseXiaMi');
 	}
 
+    /**
+     * 禁用插件方法,如果禁用失败,直接抛出异常
+     *
+     * @static
+     * @access public
+     * @return void
+     * @throws Typecho_Plugin_Exception
+     */
+    public static function deactivate(){
+        Helper::removeRoute("XiaMiPlayer_Route");
+    }
 
     /**
      * 插件的实现方法
@@ -44,8 +50,8 @@ class XiaMiPlayer_Plugin implements Typecho_Plugin_Interface
 	       	echo "<script type=\"text/javascript\" src=\"//lib.sinaapp.com/js/jquery/1.9.1/jquery-1.9.1.min.js\"></script>";
 	    }
     	?>
-		<link rel="stylesheet" type="text/css" href="http://xiamiplayer.songs.ali-sh.goodrain.net:10080/XiaMiPlayer.css" />
-        <script type="text/javascript" src="http://xiamiplayer.songs.ali-sh.goodrain.net:10080/jquery.jplayer.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="<?php $options->pluginUrl('XiaMiPlayer/jplayer/XiaMiPlayer.css'); ?>" />
+        <script type="text/javascript" src="<?php $options->pluginUrl('XiaMiPlayer/jplayer/jquery.jplayer.min.js'); ?>"></script>
         <?php
 
     ?>
@@ -63,7 +69,8 @@ class XiaMiPlayer_Plugin implements Typecho_Plugin_Interface
 		$options         = Helper::options();
 		$config 		 = $options->plugin('XiaMiPlayer');
         $box			 = Typecho_Common::url('XiaMiPlayer/jplayer/index.html', $options->pluginUrl);
-        $music 			 = self::music;
+        $music 			 = Typecho_Common::url('XiaMiPlayer',$options->index);
+        $ajax = $options->pluginUrl.'/XiaMiPlayer/ajax.php';
         /* 播放器样式 */
         switch($config->type) {
 	        case 'blue':
@@ -89,9 +96,9 @@ class XiaMiPlayer_Plugin implements Typecho_Plugin_Interface
 	        break;
         }
 		?>
-		<link rel="stylesheet" type="text/css" href="http://xiamiplayer.songs.ali-sh.goodrain.net:10080/XiaMiPlayer.css" />
+		<link rel="stylesheet" type="text/css" href="<?php $options->pluginUrl('XiaMiPlayer/jplayer/XiaMiPlayer.css'); ?>" />
         <link rel="stylesheet" type="text/css" href="<?php echo Typecho_Common::url('XiaMiPlayer/style.css' , $options->pluginUrl); ?>" />
-        <script type="text/javascript" src="http://xiamiplayer.songs.ali-sh.goodrain.net:10080/jquery.jplayer.min.js"></script>
+        <script type="text/javascript" src="<?php $options->pluginUrl('XiaMiPlayer/jplayer/jquery.jplayer.min.js'); ?>"></script>
 		<script type="text/javascript">
 		$(function() {
 			/* 判断是否为默认编辑器插入音乐按钮 */
@@ -243,9 +250,9 @@ class XiaMiPlayer_Plugin implements Typecho_Plugin_Interface
 			$('.next').html('下一页');
 			if(k) {
 				$('#xiami_result').html('正在载入请稍后...');
-				$.getJSON('http://xiamiplayer.songs.ali-sh.goodrain.net:10080/search/key/'+k+'/page/'+p+'?callback=?',function(data) {
+				$.getJSON('<?php echo $ajax; ?>?type=search&id='+k+'&page='+p,function(data) {
 					$('#xiami_result').html('');
-					$.each(data.results,
+					$.each(data.songs,
 					function(i, item) {
 						var name = decodeURIComponent(item.song_name).replace('+', ' '), artist = decodeURIComponent(item.artist_name).split('+').join(' ');
 						$('<a href=\"#\" onclick=\"show(\'' + item.song_id + '\',\'' + name.replace('\'', '\\\'').replace(/(\r)?\n/g, '') + '-' + artist.replace('\'', '\\\'').replace(/(\r)?\n/g, '') + '\');\" title=\"Ctrl + '+(i+1)+'\">' + (i+1) + '. ' + name + ' - ' + artist + '</a>').appendTo('#xiami_result');
@@ -369,6 +376,8 @@ class XiaMiPlayer_Plugin implements Typecho_Plugin_Interface
 		$content = empty($lastResult) ? $content : $lastResult;
         /* 播放器样式 */
         $options = Helper::options();
+        $url = Typecho_Common::url('XiaMiPlayer',$options->index);
+        $ajax = $options->pluginUrl.'/XiaMiPlayer/ajax.php';
 		$config = $options->plugin('XiaMiPlayer');
         switch($config->type) {
 	        case 'blue':
@@ -398,19 +407,17 @@ class XiaMiPlayer_Plugin implements Typecho_Plugin_Interface
         if($number) {foreach($match[0] as $key => $string) {
         	$type = $match[3][$key];
         	$id = $match[4][$key];
-        	$result = json_decode(file_get_contents("http:http://xiamiplayer.songs.ali-sh.goodrain.net:10080/apiv3.php?type=$type&id=$id"), true);
+        	$result = json_decode(file_get_contents($ajax.'?type='.$type.'&id='.$id), true);
         	if(in_array($type, array("album", "collect"))) {
 	        	if(empty($result['songs'])) continue;
 	        	$songs = array();
-	        	foreach($result['songs'] as $song) $songs[] = $song['id'];
-	        	$url = self::music;
+	        	foreach($result['songs'] as $song) $songs[] = $song['song_id'];
 	        	$url .= "?songs=".implode(',', $songs);
 	        	if($color) $url .= "&setting=$color";
 	        	$content = str_replace($string, '<script type="text/javascript" src="'.$url.'"></script>', $content);
         	} else {
-        		if(!$result['id']) continue;
-        		$url = self::music;
-        		$url .= "?songs=".$result['id'];
+        		if(!$result['song_id']) continue;
+        		$url .= "?songs=".$result['song_id'];
         		if($color) $url .= "&setting=$color";
         		$content = str_replace($string, '<script type="text/javascript" src="'.$url.'"></script>', $content);
         	}
@@ -421,19 +428,17 @@ class XiaMiPlayer_Plugin implements Typecho_Plugin_Interface
         if($number) {foreach($match[0] as $key => $string) {
         	$type = $match[2][$key];
         	$id = $match[3][$key];
-        	$result = json_decode(file_get_contents("http://xiamiplayer.songs.ali-sh.goodrain.net:10080/apiv3.php?type=$type&id=$id"), true);
+        	$result = json_decode(file_get_contents($ajax.'?type='.$type.'&id='.$id), true);
         	if(in_array($type, array("album", "collect"))) {
 	        	if(empty($result['songs'])) continue;
 	        	$songs = array();
-	        	foreach($result['songs'] as $song) $songs[] = $song['id'];
-	        	$url = self::music;
+	        	foreach($result['songs'] as $song) $songs[] = $song['song_id'];
 	        	$url .= "?songs=".implode(',', $songs);
 	        	if($color) $url .= "&setting=$color";
 	        	$content = str_replace($string, '<script type="text/javascript" src="'.$url.'"></script>', $content);
         	} else {
-        		if(!$result['id']) continue;
-        		$url = self::music;
-        		$url .= "?songs=".$result['id'];
+        		if(!$result['song_id']) continue;
+        		$url .= "?songs=".$result['song_id'];
         		if($color) $url .= "&setting=$color";
         		$content = str_replace($string, '<script type="text/javascript" src="'.$url.'"></script>', $content);
         	}
@@ -474,17 +479,5 @@ class XiaMiPlayer_Plugin implements Typecho_Plugin_Interface
      * @return void
      */
     public static function personalConfig(Typecho_Widget_Helper_Form $form){}
-
-    /**
-     * 禁用插件方法,如果禁用失败,直接抛出异常
-     *
-     * @static
-     * @access public
-     * @return void
-     * @throws Typecho_Plugin_Exception
-     */
-    public static function deactivate(){}
-
-
 
 }

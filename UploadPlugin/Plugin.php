@@ -23,7 +23,7 @@ class UploadPlugin_Plugin implements Typecho_Plugin_Interface
         if (!class_exists('ZipArchive')) {
             throw new Typecho_Plugin_Exception(_t('对不起, 您的服务器不支持 ZipArchive 类, 无法正常使用此插件'));
         }
-        if(!is_writable(__TYPECHO_PLUGIN_DIR__)){
+        if(!is_writable(__TYPECHO_ROOT_DIR__.__TYPECHO_PLUGIN_DIR__)){
             throw new Typecho_Plugin_Exception(_t('插件目录无写入权限, 无法正常使用此插件'));
         }
         if(!function_exists('file_put_contents') && !function_exists('fopen')){

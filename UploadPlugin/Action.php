@@ -113,7 +113,7 @@ class UploadPlugin_Action extends Typecho_Widget implements Widget_Interface_Do
                 if($part['extension'] !== "zip"){                    
                     $this->_file = "tmp".Typecho_Common::randString(6).".zip";
                 }
-                $ff = file_get_contents($filead);
+                $ff = @file_get_contents($filead);
                 if($ff){
                     file_put_contents($this->_file, $ff);
                     $up = False;
@@ -257,7 +257,8 @@ class UploadPlugin_Action extends Typecho_Widget implements Widget_Interface_Do
         $blen=strlen(pack("H*","504B0304")); //得到文件头标记字节数
         $tbin=substr($bin,0,intval($blen)); ///需要比较文件头长度
         
-        if(strtolower("504B0304")==strtolower(array_shift(unpack("H*",$tbin)))) 
+        $upack = unpack("H*",$tbin);
+        if(strtolower("504B0304")==strtolower(array_shift($upack))) 
         {
             return TRUE;
         }  else {
@@ -328,7 +329,7 @@ class UploadPlugin_Action extends Typecho_Widget implements Widget_Interface_Do
                 $isClass = true;
             }
             if ($isClass && is_array($token) && T_STRING == $token[0]){
-                $name=split('_',$token[1]);
+                $name=explode('_',$token[1]);
                 $info['name']=$name[0];
                 break;
             }

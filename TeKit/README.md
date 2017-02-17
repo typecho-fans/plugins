@@ -107,7 +107,10 @@
 > <ul class="widget-list">
 >     <?php $this->widget('TeKit_Comments')->CommentorComments('admin','test@test.com',365)->to($tekit); ?>
 >     <?php while($tekit->next()): ?>
->         <li><a href="<?php $tekit->permalink(); ?>"><?php $tekit->author(); ?></a>: <?php $tekit->excerpt(35, '...'); ?></li>
+>         <li>
+>         <a href="<?php $tekit->permalink(); ?>"><?php $tekit->author(); ?></a>:
+>         <?php $tekit->excerpt(35, '...'); ?>
+>         </li>
 >     <?php endwhile; ?>
 > </ul>
 > ```

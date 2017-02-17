@@ -1,6 +1,6 @@
 <?php
 /**
- * GoLinks Plugin
+ * Watermark Plugin
  *
  * @copyright  Copyright (c) 2013 DEFE (http://defe.me)
  * @license    GNU General Public License 2.0

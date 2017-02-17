@@ -1,6 +1,6 @@
 <?php
 /**
- * 虾米音乐播放器 Hermit for typecho xiami music player 复活版@<a href="http://www.yzmb.me" target_"_blank">羽中</a>
+ * 虾米音乐播放器 Hermit for typecho xiami music player (复活版<a href="http://www.yzmb.me" target="_blank">@羽中</a>)
  * 
  * @category player
  * @package Hermit 

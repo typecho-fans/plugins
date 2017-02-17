@@ -14,3 +14,5 @@
 
  1. 更名为 DbManager
  2. 增加数据表优化功能
+
+###### 更多详见论坛原帖：http://forum.typecho.org/viewtopic.php?f=6&t=4803

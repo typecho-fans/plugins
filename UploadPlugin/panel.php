@@ -1,5 +1,4 @@
 <?php
-include 'common.php';
 include 'header.php';
 include 'menu.php';
 ?>
@@ -10,14 +9,14 @@ include 'menu.php';
             <div class="col-mb-12 typecho-list">
                 <div class="clearfix">
                  <ul class="typecho-option-tabs right">
-                      <li>插件地址，仅支持zip压缩包：<input type="text" id="adrs" style="padding: 5px;width: 350px;" /></li>
+                      <li>插件/主题地址，仅支持zip压缩包：<input type="text" id="adrs" style="padding: 5px;width: 350px;" /></li>
                       <li><button type="submit" id="inst" class="btn-s"><?php _e('安装'); ?></button></li>
                 </ul>
                 
                 <ul class="typecho-option-tabs">
                     <li <?php if(!isset($request->p)){ ?>class="current"<?php }?>><a href="<?php $options->adminUrl('extending.php?panel=UploadPlugin%2Fpanel.php'); ?>"><?php _e('插件管理'); ?></a></li>
                     <li <?php if(1 == $request->p){ ?>class="current"<?php }?>><a href="<?php $options->adminUrl('extending.php?panel=UploadPlugin%2Fpanel.php&p=1'); ?>"><?php _e('模板管理'); ?></a></li>
-                    <li><a href='###'><span id="singleupload">上传插件</span></a></li>                
+                    <li><a href='###'><span id="singleupload">上传插件/主题</span></a></li>                
                  </ul>
                 </div>
                 
@@ -53,7 +52,7 @@ include 'menu.php';
                                 <td><?php $deactivatedPlugins->version(); ?></td>
                                 <td><?php echo empty($deactivatedPlugins->homepage) ? $deactivatedPlugins->author : '<a href="' . $deactivatedPlugins->homepage
                                 . '">' . $deactivatedPlugins->author . '</a>'; ?></td>
-                                <td><a href="<?php $options->index('/action/upload-plugin?del=' . $deactivatedPlugins->name); ?>" class="operate-delete"><?php _e('删除'); ?></a></td>
+                                <td><a lang="<?php _e('你确认要删除 %s 插件吗?', $deactivatedPlugins->name); ?>" href="<?php $options->index('/action/upload-plugin?del=' . $deactivatedPlugins->name); ?>" class="operate-delete"><?php _e('删除'); ?></a></td>
                             </tr>
                             <?php endwhile; ?>
                             <?php else: ?>
@@ -184,5 +183,22 @@ include 'menu.php';
 include 'copyright.php';
 include 'common-js.php';
 include 'upload-js.php';
+?>
+<script type="text/javascript">
+$(document).ready(function () {
+    $('.operate-delete').click(function () {
+        var t = $(this), href = t.attr('href'), tr = t.parents('tr');
+
+        if (confirm(t.attr('lang'))) {
+            tr.fadeOut(function () {
+                window.location.href = href;
+            });
+        }
+
+        return false;
+    });
+});
+</script>
+<?php
 include 'footer.php';
 ?>

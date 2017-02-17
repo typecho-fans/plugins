@@ -1,3 +1,7 @@
-## 插件说明 ##
+### @型评论回复提醒插件At v0.1.1
 
-####http://imnerd.org/At-plugin-for-typecho.html
+实现回复评论或手动输入@时自动链接评论，同时发送邮件提醒被@评论者。
+
+- 注意在系统菜单“设置”-“评论”中启用评论回复并允许`<a href="">`标签。
+
+###### 更多详见作者博客：http://imnerd.org/At-plugin-for-typecho.html

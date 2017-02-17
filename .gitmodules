@@ -6,4 +6,4 @@
 	url = https://github.com/binjoo/WeChatHelper
 [submodule "Access"]
 	path = Access
-	url = https://github.com/kokororin/typecho-plugin-Access.git
+	url = https://github.com/kokororin/typecho-plugin-Access
