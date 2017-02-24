@@ -28,7 +28,8 @@
 
 名称 | 简介 | 作者
 ---- | :----: | ----:
-[Access](https://github.com/kokororin/typecho-plugin-Access) | 来访记录统计插件 | [@南小鸟](https://github.com/kokororin)
+[Access](https://github.com/kokororin/typecho-plugin-Access) | 来访记录统计插件 | [@kokororin](https://github.com/kokororin)
+[Adminer](https://github.com/kokororin/typecho-plugin-adminer) | 数据库管理插件 | [@kokororin](https://github.com/kokororin)
 [AjaxComments](/AjaxComments) | 嵌套评论ajax提交插件 | [@羽飞](https://github.com/byends) [Willin Kan](http://kan.willin.org)
 [Announcement](/Announcement) | 弹出式公告栏插件 | [@skylzl](https://github.com/xiaogouxo)
 [AppStore](/AppStore) | Typecho插件商店插件 | [@车坤](https://github.com/chekun)
