@@ -99,4 +99,4 @@
 [WeChatHelper](https://github.com/binjoo/WeChatHelper) | 微信公众号平台插件 | [@冰剑](https://github.com/binjoo)
 [XiaMiPlayer](/XiaMiPlayer) | 虾米迷你型播放器插件 | [@公子](https://github.com/lizheming)
 [Zan](/Zan) | 文章点赞效果插件 | [@冰剑](https://github.com/binjoo)
-[YoduBGM](https://github.com/jrotty/YoduBGM) | [@Jrotty](http://qqdie.com/)
+[YoduBGM](https://github.com/jrotty/YoduBGM) | 简洁BGM播放器,需要主题支持pjax或者instantclick才能保证页面切换依旧播放 | [@Jrotty](http://qqdie.com/)
