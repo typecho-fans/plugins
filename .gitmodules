@@ -10,3 +10,12 @@
 [submodule "Adminer"]
 	path = Adminer
 	url = https://github.com/kokororin/typecho-plugin-adminer
+[submodule "HTMLCompress"]
+	path = HTMLCompress
+	url = https://github.com/kokororin/typecho-plugin-HTMLCompress
+[submodule "Parsedown"]
+	path = HTMLCompress
+	url = https://github.com/kokororin/typecho-plugin-Parsedown
+[submodule "BlockIP"]
+	path = BlockIP
+	url = https://github.com/kokororin/typecho-plugin-BlockIP
