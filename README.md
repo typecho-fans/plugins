@@ -58,6 +58,7 @@
 [GeeTest](/GeeTest) | GeeTest验证码插件 | [@啸傲居士](https://github.com/shuxiao9058)
 [GHbutton](/GHbutton) | Github功能按钮展示插件 | [@羽中](https://github.com/jzwalk)
 [GithubCard](/GithubCard) | Github项目/用户展示插件 | [@车坤](https://github.com/chekun)
+[GithubWidgetUser](/GithubWidgetUser) | Github用户展示插件 | [@hongweipeng](https://github.com/hongweipeng)
 [GoLinks](/GoLinks) | 外链改内链跳转插件 | [@阿飞](https://github.com/defeme)
 [GoogleCodePrettfy](/GoogleCodePrettify) | Google代码高亮插件 | [@公子](https://github.com/lizheming)
 [GravatarCache](/GravatarCache) :dart: | Gravatar头像缓存插件 | [@羽飞](https://github.com/byends)
