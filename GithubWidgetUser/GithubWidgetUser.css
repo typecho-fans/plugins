@@ -1,0 +1,144 @@
+.github-widget-user {
+	margin-top: 1.5em;
+	margin-bottom: 1.5em;
+}
+.github-widget-loading{
+	line-height:100px;
+	text-align:center;
+	font-size:24px;
+	color:#aaa;
+}
+.github-user-widget_body{
+	max-width:300px;
+	margin: auto;
+	overflow:hidden;
+	background: #fff;
+	box-shadow:1px 2px 16px rgba(0,0,0,.2)
+}
+.gitUW_avatar{
+	display: block;
+	overflow:hidden;
+}
+.gitUW_avatar img{
+	display: block;
+	width: 100%;
+	min-height: 100px;
+	background: #333;
+	-webkit-transition: 0.3s;
+	-moz-transition: 0.3s;
+	transition: 0.3s;
+}
+.gitUW_avatar:hover img{
+	-webkit-transform:scale(1.3);
+	-moz-transform:scale(1.3);
+	transform:scale(1.3);
+}
+.gitUW_name{
+	display: block;
+	padding: 10px 10px 20px;
+	border-bottom: 1px solid #eee;
+	-webkit-transition: 0.4s;
+	-moz-transition: 0.4s;
+	transition: 0.4s;
+}
+.gitUW_name strong{
+	display: block;
+	width: 100%;
+	overflow: hidden;
+	font-size: 26px;
+	color: #333;
+	line-height: 30px;
+	text-overflow: ellipsis;
+}
+.gitUW_name span{
+	display: block;
+	width: 100%;
+	font-size: 20px;
+	font-style: normal;
+	font-weight: 300;
+	line-height: 24px;
+	color: #666;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+.gitUW_name:hover{
+	background: #eee;
+}
+.gitUW_info{
+	padding: 10px 0 20px;
+}
+.gitUW_info p{
+	height:25px;
+	padding-left: 10px;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+.gitUW_info p span,.gitUW_info p a{
+	display:inline-block;
+	vertical-align:text-top;
+	height:25px;
+	line-height:25px;
+	font-size: 14px;
+}
+.gitUW_info p a{
+	color: #4183c4;
+	text-decoration: none;
+}
+.gitUW_info p a:hover{
+	text-decoration: underline;
+}
+.gitUW_info p span{
+	color: #333;
+}
+.gitUW_count{
+	height: 75px;
+	background: #333;
+}
+.gitUW_count a{
+	display:block;
+	float:left;
+	width: 33.33%;
+	padding: 15px 0;
+	text-align:center;
+	-webkit-transition: 0.4s;
+	-moz-transition: 0.4s;
+	transition: 0.4s;
+}
+.gitUW_count a strong{
+	display:block;
+	line-height:30px;
+	font-size: 28px;
+	font-weight: bold;
+	color:#4183c4
+}
+.gitUW_count a span{
+	display:block;
+	line-height:15px;
+	font-size: 12px;
+	color: #999;
+}
+.gitUW_count a:hover{
+	background: #444;
+}
+.gitUW_ico_company,.gitUW_ico_location,.gitUW_ico_email,.gitUW_ico_blog,.gitUW_ico_created_at{
+	display:inline-block;
+	vertical-align:text-top;
+	width:25px;
+	height:25px;
+	background-image:url(' + imgbase64 + ');
+}
+.gitUW_ico_company{
+	background-position:0 0;
+}
+.gitUW_ico_location{
+	background-position:0 -25px;
+}
+.gitUW_ico_email{
+	background-position:-25px 0;
+}
+.gitUW_ico_blog{
+	background-position:-25px -25px;
+}
+.gitUW_ico_created_at{
+	background-position:-50px 0;
+}
