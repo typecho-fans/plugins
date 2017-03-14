@@ -81,7 +81,13 @@ class Sinauth_Plugin implements Typecho_Plugin_Interface
      * @return void
      * @throws Typecho_Plugin_Exception
      */
-    public static function deactivate(){}
+    public static function deactivate(){
+    	Helper::removeRoute('sinauthAuthorize');
+	Helper::removeRoute('sinauthCallback');
+	Helper::removeAction('sinauthAuthorize');
+        
+        Helper::removePanel(1, 'Sinauth/panel.php');
+    }
     
     /**
      * 获取插件配置面板
