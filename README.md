@@ -45,6 +45,7 @@
 [CateFilter](/CateFilter) | 首页指定分类不显示插件 | [@阳光](https://github.com/rakiy)
 [Ckeditor4Typecho](/Ckeditor4Typecho) | 带上传功能的ckeditor插件 | [@zhulin3141](https://github.com/zhulin3141)
 [CodeMirror](/CodeMirror) | Typecho主题编辑器插件 | [@zhulin3141](https://github.com/zhulin3141)
+[CodeStyle](/CodeStyle) | 文章代码高亮显示 | [@hongweipeng](https://github.com/hongweipeng)
 [CommentToMail](https://github.com/byends/CommentToMail) | 评论邮件提醒插件 | [@羽飞](https://github.com/byends) [@阿飞](https://github.com/defeme)
 [ContentIndex](/ContentIndex) | 文章内容生成目录插件 | [@laobubu](https://github.com/laobubu)
 [Contribute](/Contribute) :dart: | 用户投稿审查管理插件 | [@ShingChi](https://github.com/shingchi)
