@@ -1,0 +1,60 @@
+@charset "UTF-8";/*! normalize.css v3.0.1 | MIT License | git.io/normalize */.fa,.glyphicon {
+    -moz-osx-font-smoothing: grayscale
+}
+pre {
+    border-radius: 3px;
+    border: medium;
+}
+.hljs {
+    display: block;
+    padding: .5em;
+    /*background: #fdf6e3;*/
+    color: #657b83;
+    
+    background-color:#f6f6f6; 
+}
+
+.fa,.fa-stack {
+    display: inline-block
+}
+
+.diff .hljs-header,.hljs-comment,.hljs-doctype,.hljs-javadoc,.hljs-pi,.hljs-template_comment,.lisp .hljs-string {
+    color: #93a1a1
+}
+
+.css .hljs-tag,.hljs-addition,.hljs-keyword,.hljs-request,.hljs-status,.hljs-winutils,.method,.nginx .hljs-title {
+    color: #859900
+}
+
+.hljs-command,.hljs-hexcolor,.hljs-link_url,.hljs-number,.hljs-phpdoc,.hljs-regexp,.hljs-rules .hljs-value,.hljs-string,.hljs-tag .hljs-value,.tex .hljs-formula {
+    color: #2aa198
+}
+
+.css .hljs-function,.hljs-built_in,.hljs-chunk,.hljs-decorator,.hljs-id,.hljs-identifier,.hljs-localvars,.hljs-title,.vhdl .hljs-literal {
+    color: #268bd2
+}
+
+.haskell .hljs-type,.hljs-attribute,.hljs-class .hljs-title,.hljs-constant,.hljs-link_reference,.hljs-parent,.hljs-variable,.lisp .hljs-body,.smalltalk .hljs-number {
+    color: #b58900
+}
+
+.clojure .hljs-title,.css .hljs-pseudo,.diff .hljs-change,.hljs-attr_selector,.hljs-cdata,.hljs-header,.hljs-pragma,.hljs-preprocessor,.hljs-preprocessor .hljs-keyword,.hljs-shebang,.hljs-special,.hljs-subst,.hljs-symbol,.hljs-symbol .hljs-string {
+    color: #cb4b16
+}
+
+.hljs-deletion,.hljs-important {
+    color: #dc322f
+}
+
+.hljs-link_label {
+    color: #6c71c4
+}
+
+.tex .hljs-formula {
+    background: #eee8d5
+}/*!
+ *  Font Awesome 4.3.0 by @davegandy - http://fontawesome.io - @fontawesome
+ *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
+ */@font-face {
+    font-family:FontAwesome;src:url(../../3rd/fontawesome/fonts/fontawesome-webfont.eot?v=4.3.0);src:url(../../3rd/fontawesome/fonts/fontawesome-webfont.eot?#iefix&v=4.3.0) format('embedded-opentype'),url(../../3rd/fontawesome/fonts/fontawesome-webfont.woff2?v=4.3.0) format('woff2'),url(../../3rd/fontawesome/fonts/fontawesome-webfont.woff?v=4.3.0) format('woff'),url(../../3rd/fontawesome/fonts/fontawesome-webfont.ttf?v=4.3.0) format('truetype'),url(../../3rd/fontawesome/fonts/fontawesome-webfont.svg?v=4.3.0#fontawesomeregular) format('svg');font-weight:400;font-style:normal
+}
