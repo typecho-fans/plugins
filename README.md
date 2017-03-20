@@ -4,7 +4,7 @@
 
 本项目中插件原则上均支持0.9+版本，欢迎提交问题建议至[issues](https://github.com/typecho-fans/plugins/issues)，欢迎更多作者加入！:penguin:交流群号：[**40412938**](http://shang.qq.com/wpa/qunwpa?idkey=a5a8afedf099e18ddf9b530db9217251e39001d52aace42888bf470d9b6cb86a)
 
-- **使用帮助**：右上角绿色按钮处选择git克隆或打包下载，或使用[应用商店](https://typecho.chekun.me)自动检索安装。
+- **使用帮助**：右上角绿色按钮处选git克隆或打包下载，也可用[AppStore](https://typecho.chekun.me)自动检索安装。
 
 ### 作者须知
 
@@ -16,13 +16,13 @@
 
 3. 插件根目录下应放置有**README**功用说明，以方便用户了解插件特性；
 
- >记得在下方的作品索引里也加上简短介绍和自己的github主页链接
+ >不要忘了在下方的作品索引中添加插件简介和你的github主页链接
 
 4. 推送作品应确保为原创或经作者同意能够在这里进行多人维护与更新。
 
  >插件目录内若无license则视作采用与Typecho相同的[GPL2](https://github.com/typecho/typecho/blob/master/LICENSE.txt)开源许可
 
-### 作品索引 (71)
+### 作品索引 (78)
 
 ###### :warning:：暂不可用，待更新。:dart:：安装或用途特殊，详见说明。
 
@@ -45,7 +45,7 @@
 [CateFilter](/CateFilter) | 首页指定分类不显示插件 | [@阳光](https://github.com/rakiy)
 [Ckeditor4Typecho](/Ckeditor4Typecho) | 带上传功能的ckeditor插件 | [@zhulin3141](https://github.com/zhulin3141)
 [CodeMirror](/CodeMirror) | Typecho主题编辑器插件 | [@zhulin3141](https://github.com/zhulin3141)
-[CodeStyle](/CodeStyle) | 文章代码高亮显示 | [@hongweipeng](https://github.com/hongweipeng)
+[CodeStyle](/CodeStyle) | highlight.js代码高亮插件 | [@hongweipeng](https://github.com/hongweipeng)
 [CommentToMail](https://github.com/byends/CommentToMail) | 评论邮件提醒插件 | [@羽飞](https://github.com/byends) [@阿飞](https://github.com/defeme)
 [ContentIndex](/ContentIndex) | 文章内容生成目录插件 | [@laobubu](https://github.com/laobubu)
 [Contribute](/Contribute) :dart: | 用户投稿审查管理插件 | [@ShingChi](https://github.com/shingchi)
@@ -55,7 +55,7 @@
 [Duoshuo](/Duoshuo) | 多说社会化评论同步插件 | [@阳光](https://github.com/rakiy)
 [Editor](/Editor) | 简明markdown编辑器插件 | [@公子](https://github.com/lizheming)
 [EditorMD](/EditorMD) | 豪华markdown编辑器插件 | [@DT27](https://github.com/DT27)
-[EmlogToTypecho](/EmlogToTypecho) | Emlog转换Typecho插件 | [@ShingChi](https://github.com/shingchi)
+[EmlogToTypecho](/EmlogToTypecho) | Emlog转Typecho插件 | [@ShingChi](https://github.com/shingchi)
 [GeeTest](/GeeTest) | GeeTest验证码插件 | [@啸傲居士](https://github.com/shuxiao9058)
 [GHbutton](/GHbutton) | Github功能按钮展示插件 | [@羽中](https://github.com/jzwalk)
 [GithubCard](/GithubCard) | Github项目/用户展示插件 | [@车坤](https://github.com/chekun)
@@ -65,8 +65,8 @@
 [GravatarCache](/GravatarCache) :dart: | Gravatar头像缓存插件 | [@羽飞](https://github.com/byends)
 [Hermit](/Hermit) | 虾米列表型音乐播放器插件 | [@牧风](https://github.com/iMuFeng)
 [HighSlide](/HighSlide) | 灯箱弹窗特效及页面相册插件 | [@羽中](https://github.com/jzwalk)
-[HTMLCompress](https://github.com/kokororin/typecho-plugin-HTMLCompress) | HTML代码压缩插件 | [@kokororin](https://github.com/kokororin)
 [Html2Text](/Html2Text) | Html代码转Markdown格式插件 | [@冰剑](https://github.com/binjoo)
+[HTMLCompress](https://github.com/kokororin/typecho-plugin-HTMLCompress) | HTML代码压缩插件 | [@kokororin](https://github.com/kokororin)
 [IQapTcha](/IQapTcha) | 评论滑动解锁验证插件 | [@羽飞](https://github.com/byends)
 [JSON](/JSON) | Typecho开放API插件 | [@公子](https://github.com/lizheming)
 [JWPlayer](/JWPlayer) | Html5+flash视频播放器插件 | [@羽中](https://github.com/jzwalk)
@@ -77,17 +77,17 @@
 [MostCache](/MostCache) | Mysql/SAE memcache缓存插件 | [@skylzl](https://github.com/xiaogouxo)
 [MyPlayer](/MyPlayer) | 影音站点外链转播放器插件 | [@perichr](http://github.com/perichr)
 [MyTagCloud](/MyTagCloud) | 定制标签云功能插件 | [@马燕龙](https://github.com/YanlongMa)
-[Parsedown](https://github.com/kokororin/typecho-plugin-Parsedown) | 替换自带的Markdown解析器 | [@kokororin](https://github.com/kokororin)
+[Parsedown](https://github.com/kokororin/typecho-plugin-Parsedown) | 替换markdown解析器插件 | [@kokororin](https://github.com/kokororin)
 [Passport](/Passport) | 密码找回功能插件 | [@ShingChi](https://github.com/shingchi)
 [Prism](/Prism) | 轻量级语法高亮插件 | [@冰剑](https://github.com/binjoo)
 [QiniuFile](/QiniuFile) :dart: | 七牛云储存支持插件 | [@冰剑](https://github.com/binjoo) [@abelyao](https://github.com/abelyao)
 [QNUpload](/QNUpload) | 七牛云附件上传插件 | [@阳光](https://github.com/rakiy)
-[Reposidget](/Reposidget) | Github repo内容展示插件 | [@西秦](https://github.com/xiqingongzi)
+[Reposidget](/Reposidget) | Github项目内容展示插件 | [@西秦](https://github.com/xiqingongzi)
 [RewriteRule](/RewriteRule) | 指定地址404重定向插件 | [@laobubu](https://github.com/laobubu)
 [RoutesHelper](/RoutesHelper) | Typecho路由助手插件 | [@兜兜](https://github.com/doudoutime)
-[SlimBox2](/SlimBox2) | 轻量级图片灯箱效果插件 | [@冰剑](https://github.com/binjoo)
 [Sinauth](/Sinauth) | 新浪OAuth2登陆插件 | [@Web3D](https://github.com/web3d)
 [SlantedExtend](/SlantedExtend) :dart: | [Slanted主题](https://github.com/DT27/Slanted)配套专用插件 | [@DT27](https://github.com/DT27)
+[SlimBox2](/SlimBox2) | 轻量级图片灯箱效果插件 | [@冰剑](https://github.com/binjoo)
 [Smilies](/Smilies) | 评论表情功能插件 | [@羽中](https://github.com/jzwalk) [Willin Kan](http://kan.willin.org)
 [Snowstorm](/Snowstorm) | (娱乐向)博客飘雪插件 | [@阳光](https://github.com/rakiy)
 [Subscriber](/Subscriber) | 文章仅对登录会员可见插件 | [@羽中](https://github.com/jzwalk)
@@ -99,10 +99,10 @@
 [Ueditor](/Ueditor) | 百度编辑器ueditor插件 | [@zhulin3141](https://github.com/zhulin3141)
 [Ugauka](/Ukagaka) | (娱乐向)二次元春菜插件 | [@Kunr](https://github.com/Rakume)
 [Update](/Update) | 自动升级开发版插件 | [@公子](https://github.com/lizheming)
-[UploadPlugin](/UploadPlugin) | 自动安装管理扩展插件 | [@阿飞](https://github.com/defeme)
+[UploadPlugin](/UploadPlugin) | 自动安装/管理扩展插件 | [@阿飞](https://github.com/defeme)
 [UserSign](/UserSign) :dart: | 用户个性签名插件 | [@H萌](https://github.com/hmoe)
 [Watermark](/Watermark) | 图片自动加水印插件 | [@阿飞](https://github.com/defeme)
 [WeChatHelper](https://github.com/binjoo/WeChatHelper) | 微信公众号平台插件 | [@冰剑](https://github.com/binjoo)
 [XiaMiPlayer](/XiaMiPlayer) | 虾米迷你型播放器插件 | [@公子](https://github.com/lizheming)
+[YoduBGM](/YoduBGM) | 极简播放器插件(支持异步加载) | [@jrotty](https://github.com/jrotty)
 [Zan](/Zan) | 文章点赞效果插件 | [@冰剑](https://github.com/binjoo)
-[YoduBGM](https://github.com/jrotty/YoduBGM) | 简洁BGM播放器,需主题支持pjax或instantclick | [@Jrotty](http://qqdie.com/)

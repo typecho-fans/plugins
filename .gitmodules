@@ -14,7 +14,7 @@
 	path = HTMLCompress
 	url = https://github.com/kokororin/typecho-plugin-HTMLCompress
 [submodule "Parsedown"]
-	path = HTMLCompress
+	path = Parsedown
 	url = https://github.com/kokororin/typecho-plugin-Parsedown
 [submodule "BlockIP"]
 	path = BlockIP
