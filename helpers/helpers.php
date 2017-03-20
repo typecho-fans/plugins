@@ -54,10 +54,15 @@ function delete_files($path, $del_dir = true, $htdocs = false, $_level = 0)
  */
 function http_get($url)
 {
+    $SSL = substr($url, 0, 8) == "https://" ? true : false;
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_URL, $url);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
     curl_setopt($ch, CURLOPT_HEADER, 0);
+    if ($SSL) {
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, FALSE);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, FALSE);
+    }
     curl_setopt($ch, CURLOPT_HTTPHEADER, array(
         'Referer: '.$_SERVER['SERVER_NAME']
     ));
