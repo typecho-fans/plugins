@@ -9,7 +9,7 @@
         </select>
     </td>
     <td class="as-require" ><?php echo $plugin->versions[0]->require; ?></td>
-    <td class="as-author"><?php echo $plugin->versions[0]->author; ?></td>
+    <td class="as-author"><a href="<?php echo $plugin->versions[0]->link; ?>" target="_blank"><?php echo $plugin->versions[0]->author; ?></a></td>
     <td class="as-operations">
         <?php if ($this->installale):  ?>
             <?php if ($plugin->existed): ?>
