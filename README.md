@@ -8,9 +8,9 @@
 
 ### 作者须知
 
-1. 推荐使用[**subtree**](http://aoxuis.me/post/2013-08-06-git-subtree)方法添加你的插件repo(可拉取更新)，或手动复制；
+1. 推荐用[**subtree**](http://aoxuis.me/post/2013-08-06-git-subtree)方法添加你的插件repo(可随时拉取更新)，或手动复制；
 
- >submodule方法能链接repo但也会给下载与更新维护带来一定麻烦
+ >submodule方法能链接至原repo但也会给下载与维护带来一定麻烦
 
 2. 暂无成员权限可先fork项目修改，然后提交pull request或issues申请；
 
@@ -18,7 +18,7 @@
 
  >不要忘了在下方的作品索引中添加插件简介和你的github主页链接
 
-4. 收录作品应确保为原创或经作者同意能够在这里进行多人更新维护的。
+4. 收录作品应确保为原创或经作者同意能够在这里进行多人维护更新的。
 
  >插件目录内若无license则视作采用与Typecho相同的[GPL2](https://github.com/typecho/typecho/blob/master/LICENSE.txt)开源许可
 
