@@ -79,7 +79,7 @@
 [MyTagCloud](/MyTagCloud) | 定制标签云功能插件 | [@马燕龙](https://github.com/YanlongMa)
 [Parsedown](https://github.com/kokororin/typecho-plugin-Parsedown) | 替换markdown解析器插件 | [@kokororin](https://github.com/kokororin)
 [Passport](/Passport) | 密码找回功能插件 | [@ShingChi](https://github.com/shingchi)
-[PlayAtWill](/PlayAtWill) | 多套风格的音乐播放器(移植自wordpress) | [@vfhky](https://github.com/vfhky)
+[PlayAtWill](/PlayAtWill) | 多套风格的音乐播放器(移植自wordpress)插件 | [@vfhky](https://github.com/vfhky)
 [Prism](/Prism) | 轻量级语法高亮插件 | [@冰剑](https://github.com/binjoo)
 [QiniuFile](/QiniuFile) :dart: | 七牛云储存支持插件 | [@冰剑](https://github.com/binjoo) [@abelyao](https://github.com/abelyao)
 [QNUpload](/QNUpload) | 七牛云附件上传插件 | [@阳光](https://github.com/rakiy)
