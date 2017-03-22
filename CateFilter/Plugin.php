@@ -4,12 +4,15 @@
  * 
  * @package CateFilter
  * @author Rakiy
- * @version 1.1.0
+ * @version 1.1.1
  * @link http://ysido.com/
  *
  * 历史版本
  *
- * version 1.1.0 -- 2016-11-25
+ * version 1.1.1 -- 2017-03-22
+ * 修复使用插件后首页文章链接变成分类链接的BUG
+ *
+ * version 1.1.0 2016.11.25 
  * 修复过滤分类时同时会过滤FEED的BUG
  *
  * version 1.0.0 -- 2013-12-22
@@ -64,18 +67,16 @@ class CateFilter_Plugin implements Typecho_Plugin_Interface
 
     }
 
-	public static function CateFilter($this, $select){
-        if('/feed' != strtolower(Typecho_Router::getPathInfo())){
-            $CateIds = Typecho_Widget::widget('Widget_Options')->plugin('CateFilter')->CateId;
-            if($CateIds){
-                $select = $select->join('table.relationships','table.relationships.cid = table.contents.cid','right')->join('table.metas','table.relationships.mid = table.metas.mid','right')->where('table.metas.type=?','category');
-                $CateIds = explode(',', $CateIds);
-                $CateIds = array_unique($CateIds);  //去除重复值
-                foreach ($CateIds as $k => $v) {
-                    $select = $select->where('table.relationships.mid != '.intval($v));//确保每个值都是数字
-                }          
-            }
-        }
+    public static function CateFilter($this, $select){
+        if('/feed' == strtolower(Typecho_Router::getPathInfo())) return $select;
+        $CateIds = Typecho_Widget::widget('Widget_Options')->plugin('CateFilter')->CateId;
+        if(!$CateIds) return $select;       //没有写入值，则直接返回
+        $select = $select->select('table.contents.cid', 'table.contents.title', 'table.contents.slug', 'table.contents.created', 'table.contents.authorId','table.contents.modified', 'table.contents.type', 'table.contents.status', 'table.contents.text', 'table.contents.commentsNum', 'table.contents.order','table.contents.template', 'table.contents.password', 'table.contents.allowComment', 'table.contents.allowPing', 'table.contents.allowFeed','table.contents.parent')->join('table.relationships','table.relationships.cid = table.contents.cid','right')->join('table.metas','table.relationships.mid = table.metas.mid','right')->where('table.metas.type=?','category');
+        $CateIds = explode(',', $CateIds);
+        $CateIds = array_unique($CateIds);  //去除重复值
+        foreach ($CateIds as $k => $v) {
+            $select = $select->where('table.relationships.mid != '.intval($v));//确保每个值都是数字
+        } 
         return $select;
     }
 }
