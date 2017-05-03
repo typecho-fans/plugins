@@ -90,7 +90,7 @@ class AppStore_Plugin implements Typecho_Plugin_Interface
             ['curl' => 'curl', 'file_get_contents' => 'file_get_contents'],
             'curl',
             _t('下载插件方法'),
-            '不能正常显示插件列表/下载插件的小伙伴可以设置为file_get_content方式'
+            '不能正常显示插件列表/下载插件的小伙伴可以设置为file_get_contents方式'
         );
         $form->addInput($http);
     }
