@@ -20,6 +20,13 @@ class AppStore_Action extends Typecho_Widget
     private $server = '';
 
     /**
+     * Http Request 方式
+     *
+     * @var string
+     */
+    private $http = '';
+
+    /**
      * 构造函数
      *
      * @param mixed $request
@@ -51,7 +58,9 @@ class AppStore_Action extends Typecho_Widget
         include('libs/exceptions.php');
 
         //从插件设置中读取应用商店服务器地址
-        $this->server = Typecho_Widget::widget('Widget_Options')->plugin('AppStore')->server;
+        $pluginOptions = Typecho_Widget::widget('Widget_Options')->plugin('AppStore');
+        $this->server = $pluginOptions->server;
+        $this->http = 'http_'.$pluginOptions->http;
 
         define('TYPEHO_ADMIN_PATH', __TYPECHO_ROOT_DIR__.__TYPECHO_ADMIN_DIR__.'/');
 
@@ -63,12 +72,11 @@ class AppStore_Action extends Typecho_Widget
      */
     public function market()
     {
+        $http = $this->http;
         //获取插件列表
-        $result = json_decode(http_get($this->server.'packages.json'));
-
-	
+        $result = json_decode($http($this->server.'packages.json'));
+        	
         if ($result) {
-	
        
 	    //导出已激活插件
             $activatedPlugins = Typecho_Plugin::export();
@@ -163,10 +171,12 @@ class AppStore_Action extends Typecho_Widget
              }
 
              //下载新插件zip包
-             $archive = http_get($this->server.'archive/'.$plugin.'/'.str_replace(' ', '%20', $version));
+             $zipUrl = $this->server.'plugins/'.$plugin.'/download/'.str_replace(' ', '%20', $version).'.zip';
+             $http = $this->http;
+             $archive = $http($zipUrl);
 
              if (! $archive) {
-                 throw new DownloadErrorException('下载插件包出错!');
+                 throw new DownloadErrorException('下载插件包出错!'.$zipUrl);
              }
 
              //保存文件

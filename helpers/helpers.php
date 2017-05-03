@@ -47,19 +47,31 @@ function delete_files($path, $del_dir = true, $htdocs = false, $_level = 0)
 }
 
 /**
- * Http Get Request
+ * Http Get Request using file_get_contents
  *
  * @param $url
  * @return string
  */
-function http_get($url)
+function http_file_get_contents($url)
 {
-    $SSL = substr($url, 0, 8) == "https://" ? true : false;
+    $out = file_get_contents($url);
+    return $out;
+}
+
+/**
+ * Http Get Request using curl
+ *
+ * @param $url
+ * @return string
+ */
+function http_curl($url)
+{
+    $ssl = substr($url, 0, 8) == "https://" ? true : false;
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_URL, $url);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
     curl_setopt($ch, CURLOPT_HEADER, 0);
-    if ($SSL) {
+    if ($ssl) {
         curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, FALSE);
         curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, FALSE);
     }

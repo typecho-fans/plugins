@@ -4,8 +4,8 @@
  *
  * @package AppStore
  * @author chekun
- * @version 1.4.2
- * @link https://echod.pubean.com
+ * @version 2.0.0
+ * @link https://typecho.chekun.me
  */
 class AppStore_Plugin implements Typecho_Plugin_Interface
 {
@@ -76,8 +76,23 @@ class AppStore_Plugin implements Typecho_Plugin_Interface
     public static function config(Typecho_Widget_Helper_Form $form)
     {
         /** 应用服务器地址 */
-        $name = new Typecho_Widget_Helper_Form_Element_Text('server', NULL, 'https://typecho.chekun.me/', _t('应用服务器地址'));
+        $name = new Typecho_Widget_Helper_Form_Element_Text(
+            'server', 
+            NULL, 
+            'https://typecho.chekun.me/', 
+            _t('应用服务器地址'),
+            '参与服务端开发的小伙伴可以通过设置此处调试，普通的小伙伴默认就好，😄'
+        );
         $form->addInput($name);
+        /** 下载插件方法 */
+        $http = new Typecho_Widget_Helper_Form_Element_Select(
+            'http',
+            ['curl' => 'curl', 'file_get_contents' => 'file_get_contents'],
+            'curl',
+            _t('下载插件方法'),
+            '不能正常显示插件列表/下载插件的小伙伴可以设置为file_get_content方式'
+        );
+        $form->addInput($http);
     }
 
     /**
