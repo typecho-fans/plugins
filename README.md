@@ -105,6 +105,7 @@
 [UserSign](/UserSign) :dart: | 用户个性签名插件 | [@H萌](https://github.com/hmoe)
 [Watermark](/Watermark) | 图片自动加水印插件 | [@阿飞](https://github.com/defeme)
 [WeChatHelper](https://github.com/binjoo/WeChatHelper) | 微信公众号平台插件 | [@冰剑](https://github.com/binjoo)
+[WeiboSync](https://github.com/vfhky/WeiboSync) | 新浪微博同步插件 | [@vfhky](https://github.com/vfhky)
 [XiaMiPlayer](/XiaMiPlayer) | 虾米迷你型播放器插件 | [@公子](https://github.com/lizheming)
 [YoduBGM](/YoduBGM) | 极简播放器插件(支持异步加载) | [@jrotty](https://github.com/jrotty)
 [Zan](/Zan) | 文章点赞效果插件 | [@冰剑](https://github.com/binjoo)
