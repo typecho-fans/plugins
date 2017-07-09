@@ -19,3 +19,6 @@
 [submodule "BlockIP"]
 	path = BlockIP
 	url = https://github.com/kokororin/typecho-plugin-BlockIP
+[submodule "AutoBaiduSubmit"]
+	path = AutoBaiduSubmit
+	url = https://github.com/jinfeijie/AutoBaiduSubmit

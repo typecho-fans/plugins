@@ -36,7 +36,7 @@
 [ArticleList](/ArticleList) :dart: | 随机文章列表插件(支持缓存) | [@阿飞](https://github.com/defeme)
 [At](/At) | @型评论回复提醒插件 | [@公子](https://github.com/lizheming)
 [AudioPlayer](/AudioPlayer) | Flash mp3播放器插件 | [@羽中](https://github.com/jzwalk)
-[AutoBaiduSubmit](/AutoBaiduSubmit) | 百度链接自动提交插件 | [@金斐杰](https://github.com/jinfeijie)
+[AutoBaiduSubmit](https://github.com/jinfeijie/AutoBaiduSubmit) | 百度链接自动提交插件 | [@金斐杰](https://github.com/jinfeijie)
 [AutoSlug](/AutoSlug) | 自动生成文章缩略名插件 | [@ShingChi](https://github.com/shingchi)
 [AutoTags](/AutoTags) | 自动生成文章标签插件 | [@DT27](https://github.com/DT27)
 [Avatars](/Avatars) | 读者墙头像排行插件(支持缓存) | [@羽中](https://github.com/jzwalk)
@@ -109,3 +109,5 @@
 [XiaMiPlayer](/XiaMiPlayer) | 虾米迷你型播放器插件 | [@公子](https://github.com/lizheming)
 [YoduBGM](/YoduBGM) | 极简播放器插件(支持异步加载) | [@jrotty](https://github.com/jrotty)
 [Zan](/Zan) | 文章点赞效果插件 | [@冰剑](https://github.com/binjoo)
+
+
