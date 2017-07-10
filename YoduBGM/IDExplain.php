@@ -2,7 +2,8 @@
 <html>
 <head>
     <meta charset="utf-8">
-	<title>网易云音乐id解析</title>
+	<title>网易云音乐id解析</title><meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"><meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1"> <meta name="theme-color" content="#FFF"> <meta name="full-screen" content="yes"><meta name="x5-fullscreen" content="true"><meta name="HandheldFriendly" content="true">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no,minimal-ui">
     <style>
         #title {
             padding: 2px;
@@ -15,10 +16,10 @@
             margin: 5px auto;
         }
         form {
-            max-width: 900px;
+                max-width: 80%;
             padding: 19px 29px 29px;
             margin: 15px auto 20px;
-            background-color: #fff;
+            background-color: rgba(239, 130, 130, 0.11);
             -webkit-border-radius: 10px;
             -moz-border-radius: 10px;
             border-radius: 10px;
@@ -26,23 +27,20 @@
             -moz-box-shadow: 0 1px 2px rgba(0,0,0,.05);
             box-shadow: 0 1px 2px rgba(0,0,0,.05);
         }
-        body {
-            background-color: #1b9af7;
+        body {      background: #FFF;
         }
         #input {
             width: 280px;
             height: 25px;
             font-size: 18px;
             line-height: 1.33;
-            background-color:#f5f5f5;
+               background-color: rgba(255, 255, 255, 0.48);
             border:0; 
             padding: 5px;
             outline:none;
 
         }
-        #inputform,#radiogroup{
-            width:450px;
-            margin: 0 auto;
+        #inputform,#radiogroup{text-align: center;
         }
         #submit {
             height: 30px;
@@ -51,8 +49,7 @@
             font-size: 16px;
             font-family: "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
             border-radius: 10px;
-            background-color: #1b9af7;
-            border-color: #4cb0f9;
+            background-color: rgba(255, 87, 172, 0.55);
             color: #FFF;
             border:0;
             padding: 5px 0px;
@@ -74,7 +71,6 @@
           margin: -0.15px 0.6px 0 0;
           vertical-align: text-bottom;
           border-radius: 50%;
-          background-color: #fff;
           border: 1px solid #d7d7d7;
         }
         .mgr:disabled {
@@ -104,17 +100,29 @@
         .mgr:checked:before {
           background-color: #337ab7;
         }
+
+textarea{
+  width:100%;
+  height:500px;
+  max-width:100%;
+  max-height:500px;
+}
     </style>
 </head>
-<body>
+<body><div style="    color: #000;
+    background-color: rgba(255, 255, 255, 0.33);
+    border-radius: 5px;
+    padding: 8px;
+    width: 80%;
+    margin: 0 auto;">
 <form method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>">
 <div id="title"><h1>网易云音乐id解析</h1></div>
 <div id="radiogroup">
 id类型:
-<input type="radio" name="type" class="mgr" value="song"  <?php if ($_POST['type']=="song" || $_POST['type'] == null) echo "checked";?>>单曲
+<input type="radio" name="type" class="mgr" value="collect"  <?php if ($_POST['type']=="collect" || $_POST['type'] == null) echo "checked";?>>歌单
 <input type="radio" name="type" class="mgr" value="album" <?php if ($_POST['type']=="album") echo "checked";?>>专辑
 <input type="radio" name="type" class="mgr" value="artist" <?php if ($_POST['type']=="artist") echo "checked";?>>艺人
-<input type="radio" name="type" class="mgr" value="collect" <?php if ($_POST['type']=="collect") echo "checked";?>>歌单
+<input type="radio" name="type" class="mgr" value="song" <?php if ($_POST['type']=="song") echo "checked";?>>单曲
 </div>
 <br>
 <div id="inputform">
@@ -133,6 +141,37 @@ id输入:&nbsp;<input type="text" id="input" placeholder="多个id用英文,分�
      * @param unknown $id 
      * @param unknown $type 获取的id的类型，song:歌曲,album:专辑,artist:艺人,collect:歌单
      */
+	function get_mp3_url($id,$name){
+        $url = "http://music.163.com/api/album/$id?id=$id";
+		$key = 'album';
+        if (!function_exists('curl_init')) return false;
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_HTTPHEADER, array( 'Cookie: appver=2.0.2' ));
+        curl_setopt($ch, CURLOPT_TIMEOUT, 15);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_BINARYTRANSFER, true);
+        curl_setopt($ch, CURLOPT_REFERER, 'http://music.163.com/;');
+        $cexecute = curl_exec($ch);
+        curl_close($ch);
+        if ( $cexecute ) {
+            $result = json_decode($cexecute, true);
+            if ( $result['code'] == 200 && $result[$key] ){
+				$data = $result[$key]['songs'];
+                //列表
+                $list = array();
+                foreach ( $data as $keys => $data ){
+					if ($data['name'] == $name)
+					{
+						return str_replace('http://m', '//p', $data['mp3Url']);
+					}
+                }
+            }
+        } else {
+            $return = array('status' =>  false, 'message' =>  '非法请求');
+        }
+        return $return;
+    }
     function get_netease_music($id, $type = 'song'){
         $return = false;
         switch ( $type ) {
@@ -170,12 +209,15 @@ id输入:&nbsp;<input type="text" id="input" placeholder="多个id用英文,分�
                 //列表
                 $list = array();
                 foreach ( $data as $keys => $data ){
-
+					if ($type == 'album' || $type == 'artist')
+					{$mp3Url = str_replace('http://m', '//p', $data['mp3Url']);$n=666;}
+					else
+					{$mp3Url = get_mp3_url($data['album']['id'],$data['name']);}
                     $list[$data['id']] = array(
                             'title' => $data['name'],
                             'artist' => $data['artists'][0]['name'],
-                            'location' => str_replace('http://m', '//p', $data['mp3Url']),
-                          
+                            'location' => $mp3Url,
+                      
                     );
                 }
                 //修复一次添加多个id的乱序问题
@@ -205,7 +247,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $resultList = explode(",", $input);
     $result="";
     foreach ($resultList as $key => $value) {
-         $musicList = get_netease_music($value,$type);
+        $musicList = get_netease_music($value,$type);
         foreach($musicList as $x=>$x_value) {
             $result .= "{";
             foreach ($x_value as $key => $value) {
@@ -223,11 +265,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $result .= "},<br>";
         }
     }
-    echo "<br><div style='color:#fff;word-wrap: break-word;word-break: normal; '>".$result."</div>";
+    echo "<br><div style='word-wrap: break-word;word-break: normal; '>".$result."</div>";
+    //echo "<textarea id='text'".$result."</textarea>";
 
 }
 ?>
-
+</div>
 
 </body>
 </html>
