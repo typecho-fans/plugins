@@ -64,6 +64,8 @@ span.bgmbuttom{
 #jindu {width:0%;
     height: 3px;
     background-color: #000;
+  position: inherit;
+    bottom: 0;
 }
 .bgmfm {
     float: left;    margin: 0 10px 0 5px;
