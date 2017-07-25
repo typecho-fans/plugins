@@ -1,9 +1,9 @@
 var ody=document.getElementById('ydmc');
 if (yaudio.paused) {var autopause=0;
-ody.className = 'iconfont icon-bofang';
+ody.className = 'icon-bofang';
 document.getElementById("ydfm").className = "";
 } else {var autopause=1;
-ody.className = 'iconfont icon-music';
+ody.className = 'icon-music';
 document.getElementById("ydfm").className = "Rotation";
 }
 

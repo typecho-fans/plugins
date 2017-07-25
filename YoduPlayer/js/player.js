@@ -19,11 +19,11 @@ function playbtu(){
 var oyd = document.getElementById('ydmc');
 if (yaudio.paused) {
             yaudio.play();
-           oyd.className = 'iconfont icon-music';
+           oyd.className = 'icon-music';
 document.getElementById("ydfm").className = "Rotation";
         } else {
             yaudio.pause();
-            oyd.className = 'iconfont icon-bofang';document.getElementById("ydfm").className = "";
+            oyd.className = 'icon-bofang';document.getElementById("ydfm").className = "";
         }
 }
 function next() {
@@ -39,7 +39,7 @@ if (a == musicArr.length - 1) {
         yaudio.art = sj.artist;
 		yaudio.fm=sj.cover;
         yaudio.play();var autopause=0;
-       oyd.className = 'iconfont icon-music';
+       oyd.className = 'iicon-music';
 document.getElementById("ydfm").className = "Rotation";
 document.getElementById('ydtitle').innerHTML = yaudio.ti+'&nbsp;-&nbsp;'+yaudio.art;
 document.getElementById("ydfm").src=yaudio.fm;
@@ -57,7 +57,7 @@ if (a == 0) {
         yaudio.art = sj.artist;
 		yaudio.fm=sj.cover;
         yaudio.play();var autopause=0;
-       oyd.className = 'iconfont icon-music';
+       oyd.className = 'icon-music';
 document.getElementById("ydfm").className = "Rotation";
 document.getElementById('ydtitle').innerHTML = yaudio.ti+'&nbsp;-&nbsp;'+yaudio.art;
 document.getElementById("ydfm").src=yaudio.fm;

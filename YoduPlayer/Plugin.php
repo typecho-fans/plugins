@@ -92,7 +92,7 @@ if(Typecho_Widget::widget('Widget_Options')->skin && 'old'==Typecho_Widget::widg
 		echo '
 <div id="bgmplayer" class="bgmplayer">
 <span class="bgmbuttom"  onClick="qiehuan();" >
-<i id="ydmusic" class="iconfont icon-music"></i>
+<i id="ydmusic" class="icon-music"></i>
 </span>
 <div id="bgmpanel">
 <div class="bgmfm"><img id="ydfm" src=""></div>
@@ -100,9 +100,9 @@ if(Typecho_Widget::widget('Widget_Options')->skin && 'old'==Typecho_Widget::widg
 </span></div>
 <div class="bgmtime"><span id="ytime">0:00</span></div>
 <div class="bgmbtn">
-<span onClick="previous();"><i class="iconfont icon-zuo"></i></span>
+<span onClick="previous();"><i class="icon-zuo"></i></span>
 <span onclick="playbtu();"><i id="ydmc"></i></span>
-<span onclick="next();"><i class="iconfont icon-you"></i></span>
+<span onclick="next();"><i class="icon-you"></i></span>
 </div>
 </div><div id="jindu"></div></div>
              ';
