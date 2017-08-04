@@ -8,8 +8,7 @@
   font-weight: normal;
   font-style: normal;
 }
-
-[class^="icon-"], [class*=" icon-"] {
+#bgmplayer [class^="icon-"], #bgmplayer [class*=" icon-"] {
   /* use !important to prevent issues with browser extensions that change fonts */
   font-family: 'ydico' !important;
   speak: none;
