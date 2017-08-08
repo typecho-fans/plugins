@@ -1,0 +1,648 @@
+.weibo_reward {
+  width: 100%;
+  margin-top:50px;
+  text-align: center;
+}
+
+
+.webo_reward_btn_p{
+  text-align: center;
+}
+
+.webo_reward_btn{
+  color: rgb(235,115,80);
+  background-image: url(../img/longwb_btn.png);
+  background-size: auto;
+  background-position-x:0px;
+  background-position-y:-99px;
+  width: 62px;
+  height: 62px;
+  display: inline-block;
+  border: 0px;
+}
+a.webo_reward_btn:hover{
+  color: rgb(235,115,80);
+  background-image: url(../img/longwb_btn.png);
+  background-size: auto;
+  background-position-x:0px;
+  background-position-y:-169px;
+  width: 62px;
+  height: 62px;
+  display: inline-block;
+}
+
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0
+}
+
+fieldset, img {
+    border: 0
+}
+
+address, caption, cite, code, dfn, em, i, th, var {
+    font-style: normal;
+    font-weight: 400
+}
+
+ol, ul {
+    list-style: none
+}
+
+caption, th {
+    text-align: left
+}
+
+q:after, q:before {
+    content: ''
+}
+
+a:focus {
+    outline-style: none
+}
+
+abbr, acronym {
+    border: 0;
+    font-variant: normal
+}
+
+sup {
+    vertical-align: text-top
+}
+
+sub {
+    vertical-align: text-bottom
+}
+
+input, select, textarea {
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    font-size: 100%
+}
+
+textarea {
+    resize: none
+}
+
+input::-ms-clear {
+    display: none
+}
+
+.feed_app_btn_a .fend_app_reward_persons li {
+    float: none;
+    margin: 0
+}
+
+.feed_app_btn_a .fend_app_reward_person .face_reward {
+    width: 30px;
+    height: 30px;
+    padding-left: 12px
+}
+
+.endzy-reward-layer {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 99998;
+    top: 0;
+    left: 0;
+    display: table;
+    text-align: center
+}
+
+.endzy-reward-layer .reward-bg {
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    background: rgba(0, 0, 0, .6);
+    filter: alpha(opacity=60)
+}
+
+.endzy-reward-layer .reward-box {
+    display: table-cell;
+    vertical-align: middle
+}
+
+.endzy-reward-layer .reward-content {
+    background: #fff;
+    width: 460px;
+    border-top: 2px solid #fa7d3c;
+    border-radius: 2px;
+    font-family: "微软雅黑";
+    margin: 0 auto
+}
+
+.endzy-reward-layer .reward-title {
+    font-size: 14px;
+    height: 46px;
+    line-height: 46px;
+    position: relative;
+    text-align: left;
+    text-indent: 16px;
+    font-weight: 700;
+    color: #333
+}
+
+.endzy-reward-layer .reward-close {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background: url(http://img.t.sinajs.cn/t6/appstyle/e/payReward/images/close.png) center no-repeat;
+    right: 16px;
+    top: 15px;
+    cursor: pointer
+}
+
+.reward_w .reward-user-head {
+    border-top: 1px solid #f2f2f5
+}
+
+{
+    border-top: 1px solid #f2f2f5
+}
+
+.endzy-reward-layer .reward-tip, .reward_w .reward-tip {
+    opacity: 0;
+    filter: alpha(opacity=0);
+    width: 204px;
+    height: 42px;
+    line-height: 30px;
+    text-align: center;
+    font-size: 12px;
+    margin: 6px auto 0 auto;
+    background: url(http://img.t.sinajs.cn/t6/appstyle/e/payReward/images/tip.jpg) center no-repeat
+}
+
+.endzy-reward-layer .reward-img-box, .reward_w .reward-img-box {
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+    border-radius: 80px;
+    border: 1px solid #ccc;
+    text-align: center
+}
+
+.endzy-reward-layer .reward-head-img, .reward_w .reward-head-img {
+    margin-top: 2px;
+    width: 76px;
+    height: 76px;
+    border-radius: 76px
+}
+
+.endzy-reward-layer .reward-user-name, .reward_w .reward-user-name {
+    margin: 10px;
+    font-size: 14px;
+    color: #333
+}
+
+.endzy-reward-layer .reward-in, .reward_w .reward-in {
+    position: relative;
+    width: 316px;
+    margin: 40px auto;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 18px;
+    font-weight: 700;
+    font-family: Arial;
+    box-shadow: 1px 1px 1px 1px #ececec inset;
+    vertical-align: middle
+}
+
+.endzy-reward-layer .reward-in .W_layer_pop, .reward_w .reward-in .W_layer_pop {
+    display: none;
+    font-size: 12px;
+    top: -40px;
+    left: 20px;
+    font-weight: 400
+}
+
+.endzy-reward-layer .icon-mon, .reward_w .icon-mon {
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    line-height: 32px
+}
+
+.endzy-reward-layer .reward-num, .reward_w .reward-num {
+    width: 224px;
+    background: 0 0;
+    outline: 0;
+    border: none
+}
+
+.endzy-reward-layer .reward-random, .reward_w .reward-random {
+    display: inline-block;
+    position: relative;
+    top: 6px;
+    width: 50px;
+    height: 26px;
+    cursor: pointer;
+    border-left: 1px solid #ccc;
+    line-height: 1;
+    background: url(http://img.t.sinajs.cn/t6/appstyle/e/payReward/images/random.png) center no-repeat
+}
+
+.endzy-reward-layer .reward-pay-bt, .reward_w .reward-pay-bt {
+    height: 54px;
+    background: #f2f2f5
+}
+
+.endzy-reward-layer .reward-pay-box, .reward_w .reward-pay-box {
+    display: inline-block;
+    position: relative;
+    width: 104px;
+    height: 34px;
+    line-height: 34px;
+    margin: 10px auto
+}
+
+.endzy-reward-layer .reward-pay, .reward_w .reward-pay {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: #ff8140;
+    text-align: center;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 14px
+}
+
+.endzy-reward-layer .reward-pay-war, .reward_w .reward-pay-war {
+    position: absolute;
+    height: 100%;
+    top: 0;
+    color: #979797;
+    font-size: 12px;
+    right: -120px
+}
+
+.endzy-reward-layer-feed {
+    text-align: center
+}
+
+.endzy-reward-layer-feed .reward-content {
+    background: #fff;
+    width: 460px;
+    border-radius: 2px;
+    font-family: "微软雅黑";
+    margin: 0 auto
+}
+
+.endzy-reward-layer-feed .reward-title {
+    font-size: 14px;
+    height: 46px;
+    line-height: 46px;
+    position: relative;
+    text-align: left;
+    text-indent: 16px;
+    font-weight: 700;
+    color: #333
+}
+
+
+.endzy-reward-layer-feed .reward-img-box {
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+    border-radius: 80px;
+    border: 1px solid #ccc;
+    text-align: center
+}
+
+.endzy-reward-layer-feed .reward-head-img {
+    margin-top: 2px;
+    width: 76px;
+    height: 76px;
+    border-radius: 76px
+}
+
+.endzy-reward-layer-feed .reward-user-name {
+    margin: 10px;
+    font-size: 14px;
+    color: #333
+}
+
+.endzy-reward-layer-feed .reward-in {
+    position: relative;
+    width: 316px;
+    margin: 40px auto;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 18px;
+    font-weight: 700;
+    font-family: Arial;
+    box-shadow: 1px 1px 1px 1px #ececec inset;
+    vertical-align: middle
+}
+
+.endzy-reward-layer-feed .reward-in .W_layer_pop {
+    display: none;
+    font-size: 12px;
+    top: -40px;
+    left: 20px;
+    font-weight: 400
+}
+
+.endzy-reward-layer-feed .icon-mon {
+    display: inline-block;
+    position: relative;
+    top: -2px;
+    width: 32px;
+    height: 32px;
+    line-height: 32px
+}
+
+.endzy-reward-layer-feed .reward-num {
+    width: 224px;
+    background: 0 0;
+    position: relative;
+    top: -2px;
+    height: 32px;
+    line-height: 28px;
+    outline: 0;
+    border: none;
+    font-size: 18px;
+    font-weight: 700
+}
+
+.endzy-reward-layer-feed .reward-random {
+    display: inline-block;
+    position: relative;
+    top: 6px;
+    width: 50px;
+    height: 26px;
+    cursor: pointer;
+    border-left: 1px solid #ccc;
+    line-height: 1;
+    background: url(http://img.t.sinajs.cn/t6/appstyle/e/payReward/images/random.png) center no-repeat
+}
+
+.endzy-reward-layer-feed .reward-pay-bt {
+    height: 54px;
+    background: #f2f2f5
+}
+
+.endzy-reward-layer-feed .reward-pay-box {
+    display: inline-block;
+    position: relative;
+    width: 104px;
+    height: 34px;
+    line-height: 34px;
+    margin: 10px auto
+}
+
+.endzy-reward-layer-feed .reward-pay {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: #ff8140;
+    text-align: center;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 14px;
+    text-decoration: none
+}
+
+.endzy-reward-layer-feed .reward-pay-war {
+    position: absolute;
+    height: 100%;
+    top: 0;
+    color: #979797;
+    font-size: 12px;
+    right: -120px
+}
+
+.fend_app_reward {
+    margin: 0 !important
+}
+
+.rewardcomponent.feed_app_btn_a {
+    margin: 0 0 20px;
+    text-align: center
+}
+
+.rewardcomponent.feed_app_btn_a .feed_app_reward_title {
+    padding-bottom: 16px;
+    color: #9d9d9d;
+    font-size: 14px
+}
+
+.rewardcomponent.fend_app_reward .fend_app_reward_btn {
+    line-height: 0;
+    margin: 0 !important
+}
+
+.feed_app_btn_a .btn .btn_b {
+    width: 62px;
+    height: 62px;
+    background-position: 0 -100px
+}
+
+.feed_app_btn_a .btn .btn_a, .feed_app_btn_a .btn .btn_b {
+    display: inline-block;
+    background: url(http://img.t.sinajs.cn/t6/style/images/common/feedapp/longwb_btn.png) no-repeat;
+    overflow: hidden;
+    text-indent: -999px
+}
+
+.feed_app_btn_a .fend_app_reward_persons_number {
+    background: url(http://img.t.sinajs.cn/t6/appstyle/e/payReward/images/reward_line.png) no-repeat center;
+    margin-top: 21px
+}
+
+.feed_app_btn_a .fend_app_reward_persons {
+    width: 527px;
+    margin: 15px auto;
+    overflow: hidden;
+    padding: 0
+}
+
+.feed_app_btn_a .fend_app_reward_persons_real {
+    text-align: center;
+    width: 542px;
+    line-height: 0;
+    margin: 0 0 0 -12px
+}
+
+.feed_app_btn_a .fend_app_reward_persons li {
+    float: none;
+    margin: 0
+}
+
+.feed_app_btn_a .fend_app_reward_person {
+    display: inline
+}
+
+.feed_app_btn_a li {
+    _display: inline;
+    float: left;
+    width: 50px;
+    height: 50px;
+    margin: 10px 0 0 11px
+}
+
+.feed_app_btn_a .btn .btn_b {
+    width: 62px;
+    height: 62px;
+    background-position: 0 -100px
+}
+
+.feed_app_btn_a .btn .btn_b:hover {
+    background-position: 0 -170px
+}
+
+.W_layer_pop .content {
+    position: relative;
+    background: #fff;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 20px 1px rgba(0, 0, 0, .2)
+}
+
+.feed_app_btn_a .layer_mini_info .main_txt {
+    line-height: 18px
+}
+
+.feed_app_btn_a .layer_mini_info {
+    padding: 6px 13px 6px 16px
+}
+
+.W_layer {
+    position: absolute;
+    z-index: 9999
+}
+
+
+.feed_app_btn_a .layer_mini_info .W_icon {
+    vertical-align: middle;
+    margin-right: 5px
+}
+
+.feed_app_btn_a .layer_mini_info .main_txt .ficon_close {
+    padding-left: 8px
+}
+
+.W_layer .S_ficon {
+    color: #696e78
+}
+
+.W_layer_pop .W_layer_arrow .W_arrow_bor_b {
+    bottom: -14px;
+    left: 20px;
+    line-height: 14px
+}
+
+.W_layer_pop .W_layer_arrow .W_arrow_bor {
+    position: absolute;
+    overflow: hidden;
+    display: block
+}
+
+.W_layer .W_arrow_bor_b .S_line3 {
+    border-color: #ccc transparent transparent transparent
+}
+
+.W_arrow_bor em, .rewardcomponent.feed_app_btn_a .W_arrow_bor i {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-width: 7px;
+    border-style: solid;
+    overflow: hidden;
+    font-size: 0;
+    line-height: 0;
+    vertical-align: top
+}
+
+.W_layer .W_arrow_bor_b .S_bg2_br {
+    border-color: #fff transparent transparent transparent
+}
+
+.W_arrow_bor_b em {
+    margin: -1px 0 0 -14px
+}
+
+.W_arrow_bor_b em, .W_arrow_bor_b i {
+    _border-style: solid dashed dashed dashed;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+    border-left-color: transparent
+}
+
+.W_arrow_bor em, .W_arrow_bor i {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-width: 7px;
+    border-style: solid;
+    overflow: hidden;
+    font-size: 0;
+    line-height: 0;
+    vertical-align: top
+}
+
+.endzy-reward-page {
+    text-align: center
+}
+
+.endzy-reward-page a {
+    text-decoration: none
+}
+
+.endzy-reward-page .reward-content {
+    border: none
+}
+
+.endzy-reward-page .reward-content {
+    background: #fff;
+    width: 460px;
+    border-radius: 2px;
+    font-family: "微软雅黑";
+    margin: 0 auto
+}
+
+#S_CSS_payReward_css_rewardModule {
+    height: 42px
+}
+
+#reward-plugin{
+    display:none;
+}
+
+
+.background{
+    position: fixed;
+    margin-top: -10px;
+    top:0px;
+    left:0px;
+    width: 100%;
+    height: 100%;
+    background : white;
+}
+div.reward-content-pagecenter{
+    position: fixed;
+    left: 30%;
+    top: 30%;
+    width: 40%;
+    text-align: center;
+    margin: 0 auto;
+}
+
+div#reward-plugin{
+    display: none;
+}
+
+.center{
+    margin: 0 auto;
+}
+
+a.reward-pay{
+    text-decoration:none;
+}
+h3.reward-title{
+    margin : 0;
+}
