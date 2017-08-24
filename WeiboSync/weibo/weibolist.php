@@ -29,7 +29,8 @@ $user_message = $c->show_user_by_id( $uid);//根据ID获取用户等基本信息
 	</form>
 <?php
 if( isset($_REQUEST['text']) ) {
-	$ret = $c->update( $_REQUEST['text'] );	//发送微博
+	// 注意至少要带上一个链接。
+	$ret = $c->share( $_REQUEST['text'] );	//发送微博
 	if ( isset($ret['error_code']) && $ret['error_code'] > 0 ) {
 		echo "<p>发送失败，错误：{$ret['error_code']}:{$ret['error']}</p>";
 	} else {
