@@ -6,12 +6,16 @@
  */
 
 /**
+ * If the class OAuthException has not been declared, extend the Exception class.
+ * This is to allow OAuth without the PECL OAuth library
+ * 
  * @ignore
  */
-class OAuthException extends Exception {
-	// pass
+if ( ! class_exists( 'OAuthException')) {
+	class OAuthException extends Exception {
+		// pass
+	}
 }
-
 
 /**
  * 新浪微博 OAuth 认证类(OAuth2)
@@ -62,13 +66,13 @@ class SaeTOAuthV2 {
 	 *
 	 * @ignore
 	 */
-	public $timeout = 10;
+	public $timeout = 30;
 	/**
 	 * Set connect timeout.
 	 *
 	 * @ignore
 	 */
-	public $connecttimeout = 20;
+	public $connecttimeout = 30;
 	/**
 	 * Verify SSL Cert.
 	 *
@@ -1061,12 +1065,14 @@ class SaeTClientV2
 	 * @param float $lat 纬度，发表当前微博所在的地理位置，有效范围 -90.0到+90.0, +表示北纬。可选。
 	 * @param float $long 经度。有效范围-180.0到+180.0, +表示东经。可选。
 	 * @param mixed $annotations 可选参数。元数据，主要是为了方便第三方应用记录一些适合于自己使用的信息。每条微博可以包含一个或者多个元数据。请以json字串的形式提交，字串长度不超过512个字符，或者数组方式，要求json_encode后字串长度不超过512个字符。具体内容可以自定。例如：'[{"type2":123}, {"a":"b", "c":"d"}]'或array(array("type2"=>123), array("a"=>"b", "c"=>"d"))。
+	 * @param int $visible    微博的可见性，0：所有人能看，1：仅自己可见，2：密友可见，3：指定分组可见，默认为0
 	 * @return array
 	 */
-	function update( $status, $lat = NULL, $long = NULL, $annotations = NULL )
+	function update( $status, $lat = NULL, $long = NULL, $annotations = NULL, $visible=0 )
 	{
 		$params = array();
 		$params['status'] = $status;
+		$params['visible'] = $visible;
 		if ($lat) {
 			$params['lat'] = floatval($lat);
 		}
@@ -1094,13 +1100,15 @@ class SaeTClientV2
 	 * @param string $pic_path 要发布的图片路径, 支持url。[只支持png/jpg/gif三种格式, 增加格式请修改get_image_mime方法]
 	 * @param float $lat 纬度，发表当前微博所在的地理位置，有效范围 -90.0到+90.0, +表示北纬。可选。
 	 * @param float $long 可选参数，经度。有效范围-180.0到+180.0, +表示东经。可选。
+	 * @param int $visible    微博的可见性，0：所有人能看，1：仅自己可见，2：密友可见，3：指定分组可见，默认为0
 	 * @return array
 	 */
-	function upload( $status, $pic_path, $lat = NULL, $long = NULL )
+	function upload( $status, $pic_path, $lat = NULL, $long = NULL, $visible=0 )
 	{
 		$params = array();
 		$params['status'] = $status;
 		$params['pic'] = '@'.$pic_path;
+		$params['visible'] = $visible;
 		if ($lat) {
 			$params['lat'] = floatval($lat);
 		}
@@ -1111,6 +1119,33 @@ class SaeTClientV2
 		return $this->oauth->post( 'statuses/upload', $params, true );
 	}
 
+	/**
+	 * 第三方分享一条链接到微博
+	 *
+	 * 目前上传图片大小限制为<5M。 
+	 * <br />对应API：{@link http://open.weibo.com/wiki/2/statuses/share}
+	 * 
+	 * @access public
+	 * @param string $status 用户分享到微博的文本内容，必须做URLencode，内容不超过140个汉字，文本中不能包含“#话题词#”，同时文本中必须包含至少一个第三方分享到微博的网页URL，且该URL只能是该第三方（调用方）绑定域下的URL链接，绑定域在“我的应用 － 应用信息 － 基本应用信息编辑 － 安全域名”里设置，必填。
+	 * @param string $pic 用户想要分享到微博的图片，仅支持JPEG、GIF、PNG图片，上传图片大小限制为<5M。上传图片时，POST方式提交请求，需要采用multipart/form-data编码方式，可选。
+	 * @param string $rip 开发者上报的操作用户真实IP，形如：211.156.0.1，可选。
+	 * @return array
+	 */
+	function share($status, $pic = false, $rip = false)
+	{
+		$params = array();
+		$params['status'] = $status;
+		$with_media = false;
+		if ($pic) {
+			$params['pic'] = '@'.$pic;
+			$with_media = true;
+		}
+		if ($rip) {
+			$params['rip'] = $rip;
+		}
+
+		return $this->oauth->post('statuses/share', $params, $with_media);
+	}
 
 	/**
 	 * 指定一个图片URL地址抓取后上传并同时发布一条新微博
@@ -1367,7 +1402,7 @@ class SaeTClientV2
 	/**
 	 * 删除当前用户的微博评论信息。
 	 *
-	 * 注意：只能删除自己发布的评论，发部微博的用户不可以删除其他人的评论。
+	 * 注意：只能删除自己发布的评论，发布微博的用户不可以删除其他人的评论。
 	 * <br />对应API：{@link http://open.weibo.com/wiki/2/statuses/comment_destroy statuses/comment_destroy}
 	 * 
 	 * @access public
@@ -2501,7 +2536,7 @@ class SaeTClientV2
 		$params = array();
 		$params['image'] = "@{$image_path}";
 
-		return $this->oauth->post('account/avatar/upload', $params);
+		return $this->oauth->post('account/avatar/upload', $params, true);
 	}
 
 	/**

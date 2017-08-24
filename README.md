@@ -27,3 +27,8 @@ Typecho新浪微博同步插件
 
 本版本详细说明：[Typecho同步新浪微博的插件（可提取文章图片作配图）](https://typecodes.com/mix/typechosynweibo.html 'Typecho同步新浪微博的插件（可提取文章图片作配图）')。
 
+##### 3.3 版本1.0.0 (2017.08.23)
+    1、同步新浪微博开放平台官方php sdk，修改调用接口。
+
+注意：新浪微博最新官方要求share接口至少要带上一个【安全域名】下的链接，也就是在`WeiboSync\README.md`文件中的2.3小节填写`微博内容`时，必须包含`{link}`参数。
+

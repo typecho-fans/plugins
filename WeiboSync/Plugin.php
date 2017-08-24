@@ -194,7 +194,7 @@ class WeiboSync_Plugin implements Typecho_Plugin_Interface
      * 调用新浪微博SDK的API，发送微博
      *
      * @access public
-     * @param $post		内容
+     * @param $post			内容(新浪微博最新官方要求share接口至少要带上一个【安全域名】下的链接。)
      * @param $img_url		图片地址
      * @return void
      */
@@ -203,9 +203,9 @@ class WeiboSync_Plugin implements Typecho_Plugin_Interface
     	$post_token = self::GetAuthInfo();
     	$sina_auth = $post_token['sina_auth'];
     	if( empty($img_url) )
-    		$sina_auth->update( $post );
+    		$sina_auth->share( $post );
     	else
-    		$sina_auth->upload( $post, $img_url );
+    		$sina_auth->share( $post, $img_url );
     }
 	
 	
