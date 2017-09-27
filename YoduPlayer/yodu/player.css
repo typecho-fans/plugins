@@ -26,7 +26,7 @@ span.bgmbuttom{
 #jindu {width:0%;
     height: 3px;
     background-color: #000;
-    position: inherit;
+position: absolute;
     bottom: 0;
 }
 .bgmfm {
