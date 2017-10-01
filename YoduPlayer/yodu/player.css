@@ -8,10 +8,12 @@
     transition: transform .5s ease;
 }
 .bgmplayer{
-transform: translateX(218px);
+transform: translateX(218px);    -webkit-transform: translateX(218px);
+    -ms-transform: translateX(218px);
 }
 .bgmon{
-transform: translateX(0px);
+transform: translateX(0px);    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
 }
 span.bgmbuttom{
     font-size: 12px;
