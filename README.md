@@ -34,7 +34,7 @@
 [Announcement](/Announcement) | 弹出式公告栏插件 | [@skylzl](https://github.com/xiaogouxo)
 [AppStore](/AppStore) | Typecho插件商店插件 | [@车坤](https://github.com/chekun)
 [ArticleList](/ArticleList) :dart: | 随机文章列表插件(支持缓存) | [@阿飞](https://github.com/defeme)
-[ArticleList](/ArticleTemplate) | 文章模板辅助插件 | [@逗妇乳](https://github.com/benzBrake)
+[ArticleTemplate](/ArticleTemplate) | 文章模板辅助插件 | [@逗妇乳](https://github.com/benzBrake)
 [At](/At) | @型评论回复提醒插件 | [@公子](https://github.com/lizheming)
 [AudioPlayer](/AudioPlayer) | Flash mp3播放器插件 | [@羽中](https://github.com/jzwalk)
 [AutoBaiduSubmit](https://github.com/jinfeijie/AutoBaiduSubmit) | 百度链接自动提交插件 | [@金斐杰](https://github.com/jinfeijie)
