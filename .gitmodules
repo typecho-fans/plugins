@@ -25,3 +25,6 @@
 [submodule "AMP"]
 	path = AMP
 	url = https://github.com/holmesian/Typecho-AMP.git
+[submodule "ArticleTemplate"]
+	path = ArticleTemplate
+	url = https://github.com/benzBrake/ArticleTemplate.git
