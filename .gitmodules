@@ -22,3 +22,6 @@
 [submodule "AutoBaiduSubmit"]
 	path = AutoBaiduSubmit
 	url = https://github.com/jinfeijie/AutoBaiduSubmit
+[submodule "AMP"]
+	path = AMP
+	url = ../../holmesian/Typecho-AMP.git
