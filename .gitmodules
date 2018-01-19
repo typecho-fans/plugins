@@ -28,3 +28,6 @@
 [submodule "ArticleTemplate"]
 	path = ArticleTemplate
 	url = https://github.com/benzBrake/ArticleTemplate.git
+[submodule "Restful"]
+	path = Restful
+	url = https://github.com/moefront/typecho-plugin-Restful
