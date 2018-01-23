@@ -85,7 +85,7 @@
 [QiniuFile](/QiniuFile) :dart: | 七牛云储存支持插件 | [@冰剑](https://github.com/binjoo) [@abelyao](https://github.com/abelyao)
 [QNUpload](/QNUpload) | 七牛云附件上传插件 | [@阳光](https://github.com/rakiy)
 [Reposidget](/Reposidget) | Github项目内容展示插件 | [@西秦](https://github.com/xiqingongzi)
-[Restful](/Restful) | Restful API插件 | [@MoeFront](https://github.com/moefront)
+[Restful](https://github.com/moefront/typecho-plugin-Restful) | Restful API插件 | [@MoeFront](https://github.com/moefront)
 [RewriteRule](/RewriteRule) | 指定地址404重定向插件 | [@laobubu](https://github.com/laobubu)
 [RoutesHelper](/RoutesHelper) | Typecho路由助手插件 | [@兜兜](https://github.com/doudoutime)
 [SCS](/SCS) | 新浪云存储(SCS)插件 | [@vfhky](https://github.com/vfhky)
