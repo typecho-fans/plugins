@@ -5,7 +5,7 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
  * 
  * @package EditorMD
  * @author DT27
- * @version 1.2.1
+ * @version 1.2.2
  * @link https://dt27.org
  */
 class EditorMD_Plugin implements Typecho_Plugin_Interface
@@ -51,15 +51,47 @@ class EditorMD_Plugin implements Typecho_Plugin_Interface
             array(
                 '1' => '是',
                 '0' => '否',
-            ),'1', _t('启用 Emoji 表情'), _t('启用后可在编辑器里插入 Emoji 表情符号，前台会加载13KB的js文件将表情符号转为表情图片(图片来自七牛云存储)'));
+            ),'1', _t('启用 Emoji 表情'), _t('启用后可在编辑器里插入 Emoji 表情符号，前台会加载13KB的js文件将表情符号转为表情图片(图片来自Staticfile CDN)'));
         $form->addInput($emoji);
 
         $isActive = new Typecho_Widget_Helper_Form_Element_Radio('isActive',
             array(
                 '1' => '是',
                 '0' => '否',
-            ),'0', _t('接管前台Markdown解析并启用ToC、TeX科学公式、流程图 Flowchart、时序图 Sequence Diagram 等扩展'), _t('启用后，插件将接管前台 Markdown 解析，使用与后台编辑器一致的 <a href="https://github.com/chjj/marked" target="_blank">marked.js</a> 解析器，前台需要加载的依赖文件大约366KB(不包括jQuery)'));
+            ),'1', _t('接管前台Markdown解析'), _t('启用后，插件将接管前台 Markdown 解析，使用与后台编辑器一致的 <a href="https://github.com/chjj/marked" target="_blank">marked.js</a> 解析器。'));
         $form->addInput($isActive);
+
+        $isToc = new Typecho_Widget_Helper_Form_Element_Radio('isToc',
+            array(
+                '1' => '是',
+                '0' => '否',
+            ),'1', _t('启用自动生成目录(下拉菜单) ToC/ToCM功能'), _t('Table of Contents (ToC)'));
+        $form->addInput($isToc);
+        $isTask = new Typecho_Widget_Helper_Form_Element_Radio('isTask',
+            array(
+                '1' => '是',
+                '0' => '否',
+            ),'1', _t('启用Github Flavored Markdown task lists'), _t(''));
+        $form->addInput($isTask);
+        $isTex = new Typecho_Widget_Helper_Form_Element_Radio('isTex',
+            array(
+                '1' => '是',
+                '0' => '否',
+            ),'1', _t('启用科学公式 TeX'), _t('TeX/LaTeX (Based on KaTeX)'));
+        $form->addInput($isTex);
+        $isFlow = new Typecho_Widget_Helper_Form_Element_Radio('isFlow',
+            array(
+                '1' => '是',
+                '0' => '否',
+            ),'0', _t('启用流程图'), _t('FlowChart example'));
+        $form->addInput($isFlow);
+        $isSeq = new Typecho_Widget_Helper_Form_Element_Radio('isSeq',
+            array(
+                '1' => '是',
+                '0' => '否',
+            ),'0', _t('启用时序/序列图'), _t('Sequence Diagram example'));
+        $form->addInput($isSeq);
+
     }
     
     /**
@@ -77,8 +109,8 @@ class EditorMD_Plugin implements Typecho_Plugin_Interface
     public static function Editor()
     {
         $options = Helper::options();
-        $cssUrl = $options->pluginUrl.'/EditorMD/css/editormd.css';
-        $jsUrl = $options->pluginUrl.'/EditorMD/js/editormd.js';
+        $cssUrl = $options->pluginUrl.'/EditorMD/css/editormd.min.css';
+        $jsUrl = $options->pluginUrl.'/EditorMD/js/editormd.min.js';
         $editormd = Typecho_Widget::widget('Widget_Options')->plugin('EditorMD');
         ?>
         <link rel="stylesheet" href="<?php echo $cssUrl; ?>" />
@@ -115,12 +147,12 @@ class EditorMD_Plugin implements Typecho_Plugin_Interface
                         toolbarAutoFixed: false,
                         htmlDecode: true,
                         emoji: <?php echo $editormd->emoji ? 'true' : 'false'; ?>,
-                        tex: <?php echo $editormd->isActive ? 'true' : 'false'; ?>,
-                        toc: <?php echo $editormd->isActive ? 'true' : 'false'; ?>,
-                        tocm: <?php echo $editormd->isActive ? 'true' : 'false'; ?>,    // Using [TOCM]
-                        taskList: <?php echo $editormd->isActive ? 'true' : 'false'; ?>,
-                        flowChart: <?php echo $editormd->isActive ? 'true' : 'false'; ?>,  // 默认不解析
-                        sequenceDiagram: <?php echo $editormd->isActive ? 'true' : 'false'; ?>,
+                        tex: <?php echo $editormd->isTex ? 'true' : 'false'; ?>,
+                        toc: <?php echo $editormd->isToc ? 'true' : 'false'; ?>,
+                        tocm: <?php echo $editormd->isToc ? 'true' : 'false'; ?>,    // Using [TOCM]
+                        taskList: <?php echo $editormd->isTask ? 'true' : 'false'; ?>,
+                        flowChart: <?php echo $editormd->isFlow ? 'true' : 'false'; ?>,  // 默认不解析
+                        sequenceDiagram: <?php echo $editormd->isSeq ? 'true' : 'false'; ?>,
                         toolbarIcons: function () {
                             return ["undo", "redo", "|", "bold", "del", "italic", "quote", "h1", "h2", "h3", "h4", "|", "list-ul", "list-ol", "hr", "|", "link", "reference-link", "image", "code", "preformatted-text", "code-block", "table", "datetime"<?php echo $editormd->emoji ? ', "emoji"' : ''; ?>, "html-entities", "more", "|", "goto-line", "watch", "preview", "fullscreen", "clear", "|", "help", "info", "|", "isMarkdown"]
                         },
@@ -266,9 +298,8 @@ class EditorMD_Plugin implements Typecho_Plugin_Interface
                                         }
                                     });
                                 }
-
                             }
-                            return false;
+
                         }
 
                     });
@@ -284,67 +315,52 @@ class EditorMD_Plugin implements Typecho_Plugin_Interface
     {
         $options = Helper::options();
         $pluginUrl = $options->pluginUrl.'/EditorMD';
-    $editormd = Typecho_Widget::widget('Widget_Options')->plugin('EditorMD');
-if($editormd->emoji){
+        $editormd = Typecho_Widget::widget('Widget_Options')->plugin('EditorMD');
+        if($editormd->emoji){
 ?>
 <link rel="stylesheet" href="<?php echo $pluginUrl; ?>/css/emojify.min.css" />
-<?php
-}
-if($editormd->emoji || ($editormd->isActive == 1 && $conent->isMarkdown)){
-?>
+<?php }if($editormd->emoji || ($editormd->isActive == 1 && $conent->isMarkdown)){ ?>
 <script type="text/javascript">
     window.jQuery || document.write(unescape('%3Cscript%20type%3D%22text/javascript%22%20src%3D%22<?php echo $pluginUrl; ?>/lib/jquery.min.js%22%3E%3C/script%3E'));
 </script>
-<?php
-}
-if($editormd->isActive == 1 && $conent->isMarkdown) {
-?>
+<?php }if($editormd->isActive == 1 && $conent->isMarkdown){ ?>
 <script src="<?php echo $pluginUrl; ?>/lib/marked.min.js"></script>
-<script src="<?php echo $pluginUrl; ?>/lib/prettify.min.js"></script>
+<script src="<?php echo $pluginUrl; ?>/js/editormd.min.js"></script>
+<?php if($editormd->isSeq == 1||$editormd->isFlow == 1){ ?>
 <script src="<?php echo $pluginUrl; ?>/lib/raphael.min.js"></script>
 <script src="<?php echo $pluginUrl; ?>/lib/underscore.min.js"></script>
-<script src="<?php echo $pluginUrl; ?>/lib/sequence-diagram.min.js"></script>
+<?php } if($editormd->isFlow == 1){ ?>
 <script src="<?php echo $pluginUrl; ?>/lib/flowchart.min.js"></script>
 <script src="<?php echo $pluginUrl; ?>/lib/jquery.flowchart.min.js"></script>
-<script src="<?php echo $pluginUrl; ?>/js/editormd.min.js"></script>
-<?php
-}
-if($editormd->emoji){
-?>
+<?php } if($editormd->isSeq == 1){ ?>
+<script src="<?php echo $pluginUrl; ?>/lib/sequence-diagram.min.js"></script>
+<?php }}if($editormd->emoji){ ?>
 <script src="<?php echo $pluginUrl; ?>/js/emojify.min.js"></script>
-<?php
-}
-if($editormd->emoji||($editormd->isActive == 1 && $conent->isMarkdown)){
-?>
+<?php }if($editormd->emoji||($editormd->isActive == 1 && $conent->isMarkdown)){?>
 <script type="text/javascript">
 $(function() {
-<?php
-if($editormd->isActive == 1 && $conent->isMarkdown) {
-?>
+<?php if($editormd->isActive == 1 && $conent->isMarkdown){ ?>
     var markdowns = document.getElementsByClassName("md_content");
     $(markdowns).each(function(){
         var markdown = $(this).children("#append-test").text();
         //$('#md_content_'+i).text('');
-        var testEditormdView;
-        testEditormdView = editormd.markdownToHTML($(this).attr("id"), {
+        var editormdView;
+        editormdView = editormd.markdownToHTML($(this).attr("id"), {
             markdown: markdown,//+ "\r\n" + $("#append-test").text(),
             toolbarAutoFixed : false,
             htmlDecode: true,
             emoji: <?php echo $editormd->emoji?'true':'false'; ?>,
-            tex: <?php echo $editormd->isActive?'true':'false'; ?>,
-            toc: <?php echo $editormd->isActive?'true':'false'; ?>,
-            tocm: <?php echo $editormd->isActive?'true':'false'; ?>,
-            taskList: <?php echo $editormd->isActive?'true':'false'; ?>,
-            flowChart: <?php echo $editormd->isActive?'true':'false'; ?>,
-            sequenceDiagram: <?php echo $editormd->isActive?'true':'false'; ?>,
+            tex: <?php echo $editormd->isTex?'true':'false'; ?>,
+            toc: <?php echo $editormd->isToc?'true':'false'; ?>,
+            tocm: <?php echo $editormd->isToc?'true':'false'; ?>,
+            taskList: <?php echo $editormd->isTask?'true':'false'; ?>,
+            flowChart: <?php echo $editormd->isFlow?'true':'false'; ?>,
+            sequenceDiagram: <?php echo $editormd->isSeq?'true':'false'; ?>,
         });
     });
-<?php
-}
-if($editormd->emoji){
-?>
+<?php }if($editormd->emoji){ ?>
     emojify.setConfig({
-        img_dir: 'https:' == document.location.protocol ? "https://staticfile.qnssl.com/emoji-cheat-sheet/1.0.0" : "http://cdn.staticfile.org/emoji-cheat-sheet/1.0.0",
+        img_dir: "//cdn.staticfile.org/emoji-cheat-sheet/1.0.0",
         blacklist: {
             'ids': [],
             'classes': ['no-emojify'],
@@ -356,9 +372,8 @@ if($editormd->emoji){
 });
 </script>
 <?php
+}
     }
-    }
-
     public static function content($text, $conent){
         self::$count++;
         $editormd = Typecho_Widget::widget('Widget_Options')->plugin('EditorMD');
