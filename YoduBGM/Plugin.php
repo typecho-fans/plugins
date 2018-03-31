@@ -28,8 +28,7 @@ $sxj = new Typecho_Widget_Helper_Form_Element_Radio(
         $form->addInput($sxj);
         $musicList = new Typecho_Widget_Helper_Form_Element_Textarea('musicList', NULL, 
 '{title:"明日への扉",artist:"I WiSH",mp3:"//p2.music.126.net/hOZJqgJ-So56BqylVfvxRg==/1239149604507799.mp3",},{title:"庭園にて。",artist:"acane_madder",mp3:"//p2.music.126.net/YIxOGdFuDxnwwpQaAp_uEw==/3249056860134895.mp3",},
-',_t('歌曲列表'), _t('格式: {title:"xxx", artist:"xxx", mp3:"http:xxxx"} ，每个歌曲之间用英文,隔开。请保证歌曲列表里至少有一首歌！<br><br><div style="background-color:#56A5CE;padding:5px 8px;max-width:250px;border-radius: 2px;"><a href="'.Helper::options()->pluginUrl.'/YoduBGM/IDExplain.php" target="_blank" style="font-size:14px;color:#fff;outline:none;text-decoration:none;">网易云音乐id解析(主机需支持curl扩展)</a>
-        	</div>请自行去网易云音乐网页版获取音乐id(具体在每个音乐项目的网址最后会有个id)。<b>将解析出的音乐链接复制到上面歌曲列表里(注意检查与现有歌曲是否用英文,隔开)</b>'));
+',_t('歌曲列表'), _t('格式: {title:"xxx", artist:"xxx", mp3:"http:xxxx"} ，每个歌曲之间用英文,隔开。请保证歌曲列表里至少有一首歌！'));
         $form->addInput($musicList);
     }
     
