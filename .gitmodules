@@ -31,3 +31,6 @@
 [submodule "Restful"]
 	path = Restful
 	url = https://github.com/moefront/typecho-plugin-Restful
+[submodule "Comment2Wechat"]
+	path = Comment2Wechat
+	url = https://github.com/YianAndCode/Comment2Wechat.git
