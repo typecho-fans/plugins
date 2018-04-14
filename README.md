@@ -112,4 +112,4 @@
 [YoduBGM](/YoduBGM) | 极简播放器插件(支持异步加载) | [@jrotty](https://github.com/jrotty)
 [Zan](/Zan) | 文章点赞效果插件 | [@冰剑](https://github.com/binjoo)
 [YoduPlayer](/YoduPlayer) | 支持异步加载的背景音乐播放器 | [@jrotty](https://github.com/jrotty)
-
+[AMP](/AMP) | 一键生成Google AMP/Baidu MIP页面的插件 | [@holmesian](https://github.com/holmesian)
