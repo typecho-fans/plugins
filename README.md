@@ -31,6 +31,7 @@
 [Access](https://github.com/kokororin/typecho-plugin-Access) | 来访记录统计插件 | [@kokororin](https://github.com/kokororin)
 [Adminer](https://github.com/kokororin/typecho-plugin-adminer) | 数据库管理插件 | [@kokororin](https://github.com/kokororin)
 [AjaxComments](/AjaxComments) | 嵌套评论ajax提交插件 | [@羽飞](https://github.com/byends) [Willin Kan](http://kan.willin.org)
+[AMP](/AMP) | 一键生成Google AMP/Baidu MIP页面的插件 | [@holmesian](https://github.com/holmesian)
 [Announcement](/Announcement) | 弹出式公告栏插件 | [@skylzl](https://github.com/xiaogouxo)
 [AppStore](/AppStore) | Typecho插件商店插件 | [@车坤](https://github.com/chekun)
 [ArticleList](/ArticleList) :dart: | 随机文章列表插件(支持缓存) | [@阿飞](https://github.com/defeme)
@@ -112,4 +113,3 @@
 [YoduBGM](/YoduBGM) | 极简播放器插件(支持异步加载) | [@jrotty](https://github.com/jrotty)
 [Zan](/Zan) | 文章点赞效果插件 | [@冰剑](https://github.com/binjoo)
 [YoduPlayer](/YoduPlayer) | 支持异步加载的背景音乐播放器 | [@jrotty](https://github.com/jrotty)
-[AMP](/AMP) | 一键生成Google AMP/Baidu MIP页面的插件 | [@holmesian](https://github.com/holmesian)
