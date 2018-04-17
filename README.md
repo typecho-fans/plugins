@@ -105,6 +105,7 @@
 [Ueditor](/Ueditor) | 百度编辑器ueditor插件 | [@zhulin3141](https://github.com/zhulin3141)
 [Ugauka](/Ukagaka) | (娱乐向)二次元春菜插件 | [@Kunr](https://github.com/Rakume)
 [Update](/Update) | 自动升级开发版插件 | [@公子](https://github.com/lizheming)
+[UpdateAssistant](/UpdateAssistant)  | 博客升级插件(可选developer或release版) | [@程小白](https://github.com/mrgeneralgoo) 
 [UploadPlugin](/UploadPlugin) | 自动安装/管理扩展插件 | [@阿飞](https://github.com/defeme)
 [UserSign](/UserSign) :dart: | 用户个性签名插件 | [@H萌](https://github.com/hmoe)
 [Watermark](/Watermark) | 图片自动加水印插件 | [@阿飞](https://github.com/defeme)
