@@ -46,6 +46,7 @@
 [BaeUpload](/BaeUpload) | BAE附件上传插件 | [@兜兜](https://github.com/doudoutime)
 [BlockIP](https://github.com/kokororin/typecho-plugin-BlockIP) | IP黑名单插件 | [@kokororin](https://github.com/kokororin)
 [CateFilter](/CateFilter) | 首页指定分类不显示插件 | [@阳光](https://github.com/rakiy)
+[ChangyanCallback](https://github.com/mrgeneralgoo/typecho-changyan-callback) | 畅言评论回推插件 | [@程小白](https://github.com/mrgeneralgoo) 
 [Ckeditor4Typecho](/Ckeditor4Typecho) | 带上传功能的ckeditor插件 | [@zhulin3141](https://github.com/zhulin3141)
 [CodeMirror](/CodeMirror) | Typecho主题编辑器插件 | [@zhulin3141](https://github.com/zhulin3141)
 [CodeStyle](/CodeStyle) | highlight.js代码高亮插件 | [@hongweipeng](https://github.com/hongweipeng)

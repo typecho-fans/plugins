@@ -40,3 +40,6 @@
 [submodule "MarkdownParse"]
 	path = MarkdownParse
 	url = https://github.com/mrgeneralgoo/typecho-markdown.git
+[submodule "ChangyanCallback"]
+	path = ChangyanCallback
+	url = https://github.com/mrgeneralgoo/typecho-changyan-callback.git
