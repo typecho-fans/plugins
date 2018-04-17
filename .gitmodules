@@ -37,3 +37,6 @@
 [submodule "UpdateAssistant"]
 	path = UpdateAssistant
 	url = https://github.com/mrgeneralgoo/typecho-update-assistant.git
+[submodule "MarkdownParse"]
+	path = MarkdownParse
+	url = https://github.com/mrgeneralgoo/typecho-markdown.git
