@@ -34,3 +34,6 @@
 [submodule "Comment2Wechat"]
 	path = Comment2Wechat
 	url = https://github.com/YianAndCode/Comment2Wechat.git
+[submodule "UpdateAssistant"]
+	path = UpdateAssistant
+	url = https://github.com/mrgeneralgoo/typecho-update-assistant.git
