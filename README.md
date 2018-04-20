@@ -82,6 +82,7 @@
 [MostCache](/MostCache) | Mysql/SAE memcache缓存插件 | [@skylzl](https://github.com/xiaogouxo)
 [MyPlayer](/MyPlayer) | 影音站点外链转播放器插件 | [@perichr](http://github.com/perichr)
 [MyTagCloud](/MyTagCloud) | 定制标签云功能插件 | [@马燕龙](https://github.com/YanlongMa)
+[OssForTypecho](https://github.com/CharmeRyl/typecho-plugin-ossfile) | 阿里云OSS上传插件 | [@CharmeRyl](https://github.com/CharmeRyl)
 [Parsedown](https://github.com/kokororin/typecho-plugin-Parsedown) | 替换markdown解析器插件 | [@kokororin](https://github.com/kokororin)
 [MarkdownParse](https://github.com/mrgeneralgoo/typecho-markdown) | 支持生成目录的Markdown解析插件 | [@程小白](https://github.com/mrgeneralgoo) 
 [Passport](/Passport) | 密码找回功能插件 | [@ShingChi](https://github.com/shingchi)

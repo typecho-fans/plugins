@@ -46,3 +46,6 @@
 [submodule "CosForTypecho"]
 	path = CosForTypecho
 	url = https://github.com/CharmeRyl/typecho-plugin-cosfile.git
+[submodule "OssForTypecho"]
+	path = OssForTypecho
+	url = https://github.com/CharmeRyl/typecho-plugin-ossfile.git
