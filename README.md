@@ -53,6 +53,7 @@
 [CommentToMail](https://github.com/byends/CommentToMail) | 评论邮件提醒插件 | [@羽飞](https://github.com/byends) [@阿飞](https://github.com/defeme)
 [ContentIndex](/ContentIndex) | 文章内容生成目录插件 | [@laobubu](https://github.com/laobubu)
 [Contribute](/Contribute) :dart: | 用户投稿审查管理插件 | [@ShingChi](https://github.com/shingchi)
+[CosForTypecho](https://github.com/CharmeRyl/typecho-plugin-cosfile) | 腾讯云COS上传插件 | [@CharmeRyl](https://github.com/CharmeRyl)
 [DbManager](/DbManager) | 数据库管理工具插件 | [@ShingChi](https://github.com/shingchi)
 [DevTool](/DevTool) | Typecho开发者工具插件 | [@zhulin3141](https://github.com/zhulin3141)
 [DownloadFile](/DownloadFile) | 附件保持原名下载插件 | [@DT27](https://github.com/DT27)

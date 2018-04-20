@@ -43,3 +43,6 @@
 [submodule "ChangyanCallback"]
 	path = ChangyanCallback
 	url = https://github.com/mrgeneralgoo/typecho-changyan-callback.git
+[submodule "CosForTypecho"]
+	path = CosForTypecho
+	url = https://github.com/CharmeRyl/typecho-plugin-cosfile.git
