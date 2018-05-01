@@ -267,7 +267,7 @@ class AMP_Action extends Typecho_Widget implements Widget_Interface_Do
         $tempTarget = explode('.', $target)[0];
         $article = $this->getArticleBySlug($tempTarget);
         if (isset($article['isblank'])) {
-            $article = $article = $this->getArticleByCid($tempTarget);
+            $article = $this->getArticleByCid($tempTarget);
         }
         return $article;
     }
@@ -366,8 +366,9 @@ class AMP_Action extends Typecho_Widget implements Widget_Interface_Do
     
     private function GetPostImg()
     {
+
         $text = $this->article['text'];
-        
+
         $pattern = '/\<img.*?src\=\"(.*?)\"[^>]*>/i';
         $patternMD = '/\!\[.*?\]\((http(s)?:\/\/.*?(jpg|png))/i';
         $patternMDfoot = '/\[.*?\]:\s*(http(s)?:\/\/.*?(jpg|png))/i';
@@ -379,8 +380,21 @@ class AMP_Action extends Typecho_Widget implements Widget_Interface_Do
             preg_match("/(?:\()(.*)(?:\))/i", $img[0], $result);
             $img_url = $img[1];
         } else {
-            $img_url = $this->defaultPIC;
+            //正文里没找到图片就去附件里找
+            $attsrc=Typecho_Widget::widget('Widget_Contents_Attachment_Related', 'parentId=' . $this->article['cid'])->stack;
+            $att='';
+            foreach ($attsrc as $attimg){
+                $att=$att.$attimg['text'];
+            }
+            if (preg_match($pattern, $att, $img)) {//附件里只需要匹配img标签的内容
+                preg_match("/(?:\()(.*)(?:\))/i", $img[0], $result);
+                $img_url = $img[1];
+            }else{//附件里再找不到就调LOGO了
+                $img_url = $this->defaultPIC;
+            }
         }
+
+
         try {
             list($width, $height, $type, $attr) = @getimagesize($img_url);
             $imgData=array(
