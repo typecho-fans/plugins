@@ -4,7 +4,7 @@
  * 
  * @package SlimBox2
  * @author 冰剑
- * @version 1.0.5
+ * @version 1.0.7
  * @link http://www.binjoo.net/
  */
 class SlimBox2_Plugin implements Typecho_Plugin_Interface
@@ -40,7 +40,7 @@ class SlimBox2_Plugin implements Typecho_Plugin_Interface
      * @return void
      */
     public static function config(Typecho_Widget_Helper_Form $form){
-        $selectImg = new Typecho_Widget_Helper_Form_Element_Text('selectImg',NULL,'.post-content a:has(img)','范围选择器', '根据你所使用的主题而修改，一般只需修改.entry_content部分即可。');
+        $selectImg = new Typecho_Widget_Helper_Form_Element_Text('selectImg',NULL,'.post-content img','范围选择器', '根据你所使用的主题而修改，一般只需修改.entry_content部分即可。');
         $form->addInput($selectImg);
 
         $overlayOpacity = new Typecho_Widget_Helper_Form_Element_Text('overlayOpacity',NULL,'0.75','遮罩层透明度', '默认为0.75，1 为不透明，0 为完全透明。');
@@ -50,10 +50,14 @@ class SlimBox2_Plugin implements Typecho_Plugin_Interface
         $overlayFadeDuration = new Typecho_Widget_Helper_Form_Element_Text('overlayFadeDuration',NULL,'400','遮罩层隐现速度', '单位为毫秒，默认为400，禁用动画效果为1。');
         $overlayFadeDuration->input->setAttribute('class', 'mini');
         $form->addInput($overlayFadeDuration->addRule('isInteger','请输入数字，推荐默认400毫秒。')->addRule('required', '请设置遮罩层隐现速度，推荐默认400毫秒。'));
+        
+        $resizeDuration = new Typecho_Widget_Helper_Form_Element_Text('resizeDuration',NULL,'250','灯箱大小变化速度', '单位为毫秒，默认为250，禁用动画效果为1。');
+        $resizeDuration->input->setAttribute('class', 'mini');
+        $form->addInput($resizeDuration->addRule('isInteger','请输入数字，推荐默认250毫秒。')->addRule('required', '请设置灯箱大小变化速度，推荐默认250毫秒。'));
 
-        $imageFadeDuration = new Typecho_Widget_Helper_Form_Element_Text('imageFadeDuration',NULL,'400','图片滑出速度', '单位为毫秒，默认为400，禁用动画效果为1。');
+        $imageFadeDuration = new Typecho_Widget_Helper_Form_Element_Text('imageFadeDuration',NULL,'300','图片滑出速度', '单位为毫秒，默认为300，禁用动画效果为1。');
         $imageFadeDuration->input->setAttribute('class', 'mini');
-        $form->addInput($imageFadeDuration->addRule('isInteger','请输入数字，推荐默认400毫秒。')->addRule('required', '请设置图片滑出速度，推荐默认400毫秒。'));
+        $form->addInput($imageFadeDuration->addRule('isInteger','请输入数字，推荐默认300毫秒。')->addRule('required', '请设置图片滑出速度，推荐默认300毫秒。'));
 
         $title = new Typecho_Widget_Helper_Form_Element_Radio('title',
             array('true' => '显示',
@@ -61,9 +65,9 @@ class SlimBox2_Plugin implements Typecho_Plugin_Interface
                   'true', '标题栏','隐藏后将不会显示标题、计数器、CLOSE关闭按钮。');
         $form->addInput($title);
 
-        $captionAnimationDuration = new Typecho_Widget_Helper_Form_Element_Text('captionAnimationDuration',NULL,'400','标题栏滑出速度', '单位为毫秒，默认为400，禁用动画效果为1，标题栏隐藏后此设置失去效果。');
+        $captionAnimationDuration = new Typecho_Widget_Helper_Form_Element_Text('captionAnimationDuration',NULL,'200','标题栏滑出速度', '单位为毫秒，默认为200，禁用动画效果为1，标题栏隐藏后此设置失去效果。');
         $captionAnimationDuration->input->setAttribute('class', 'mini');
-        $form->addInput($captionAnimationDuration->addRule('isInteger','请输入数字，推荐默认400毫秒。')->addRule('required', '请输入数字，推荐默认400毫秒。'));
+        $form->addInput($captionAnimationDuration->addRule('isInteger','请输入数字，推荐默认200毫秒。')->addRule('required', '请输入数字，推荐默认200毫秒。'));
 
         $loop = new Typecho_Widget_Helper_Form_Element_Radio('loop',
             array('true' => '是',
@@ -122,21 +126,20 @@ class SlimBox2_Plugin implements Typecho_Plugin_Interface
         $Settings = Helper::options()->plugin('SlimBox2');
         $SlimBox2_url = Helper::options()->pluginUrl .'/SlimBox2/';
         $links= '<script type="text/javascript" src="'.$SlimBox2_url.'js/slimbox2.js"></script>';
-        $links.= '<script type="text/javascript">';
+        $links.= '<script type="text/javascript" id="slimbox">';
         $links.= 'jQuery(function($) {
             $("'.$Settings->selectImg.'").slimbox({
                 overlayOpacity: '.$Settings->overlayOpacity.',
                 overlayFadeDuration: '.$Settings->overlayFadeDuration.',
+                resizeDuration: '.$Settings->resizeDuration.',
                 imageFadeDuration: '.$Settings->imageFadeDuration.',
                 captionAnimationDuration: '.$Settings->captionAnimationDuration.',
                 loop:'.$Settings->loop.',
-                counterText:"'.$Settings->counterText.'"
+                counterText:"'.$Settings->counterText.'",
+                showTitle: "'.$Settings->title.'"
             });
             });';
         $links.= '</script>';
-        if($Settings->title != "true"){
-            $links.= '<style>#lbBottomContainer{display:none;}</style>';
-        }
         echo $links;
     }
 }
