@@ -1,6 +1,6 @@
 ## 插件说明 ##
 
- - 版本: v1.0.5
+ - 版本: v1.0.7
  - 作者: [冰剑](https://github.com/binjoo)
  - 主页: <https://github.com/binjoo/SlimBox2-for-Typecho>
 
@@ -14,6 +14,18 @@
 
 ## 更新记录 ##
 
+#### v1.0.7
+修改: [@Ryan](https://github.com/ryanfwy)
+ - 修改选择器图片链接为 `img` 的 `src` 属性，无需再为图片嵌套链接；
+ - 修改灯箱自适应逻辑，更合理地缩放图片；
+ - 修改部分显示样式；
+ - 去掉对移动端不友好的 `hover` 样式；
+ - 还原标题栏（前面的版本无法输出标题和页码），并修改为单行显示；
+ - 灯箱展示时禁止滑动，屏幕旋转时关闭展示；
+ - 增加`灯箱大小变化速度`选项；
+ - 初始化 `script` 增加 `id="slimbox"` 属性，便于 `pjax` 初始化。
+   
+#### v1.0.6
  - jquery库从google改为staticfile.org，默认选择.post-content适应1.0主题。（[@羽中](https://github.com/jzwalk)）
 
 #### v1.0.5
