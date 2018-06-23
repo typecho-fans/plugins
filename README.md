@@ -2,13 +2,14 @@
 
 ![logo](https://raw.githubusercontent.com/typecho-fans/typecho-fans.github.io/master/soapgroup.png)
 
-本项目中插件原则上均支持0.9+版本，欢迎提交问题建议至[issues](https://github.com/typecho-fans/plugins/issues)，欢迎更多作者加入！:penguin:交流群号：[**40412938**](http://shang.qq.com/wpa/qunwpa?idkey=a5a8afedf099e18ddf9b530db9217251e39001d52aace42888bf470d9b6cb86a)
+本项目中插件原则上均支持0.9+版本，可提交问题或建议至[issues](https://github.com/typecho-fans/plugins/issues)，欢迎更多作者加入！:penguin:交流群号：[**40412938**](http://shang.qq.com/wpa/qunwpa?idkey=a5a8afedf099e18ddf9b530db9217251e39001d52aace42888bf470d9b6cb86a)
 
-- **使用帮助**：右上角绿色按钮处选git克隆或打包下载，也可用[AppStore](https://typecho.chekun.me)自动检索安装。
+- **项目作用**：聚合github作品，方便商店型调用，开放接力维护。
+- **使用帮助**：点击右上角绿色按钮处克隆git地址或选择打包下载。
 
 ### 作者须知
 
-1. 推荐用[**subtree**](http://aoxuis.me/post/2013-08-06-git-subtree)方法添加你的插件repo(可随时拉取更新)，或手动复制；
+1. 推荐用[**subtree**](https://aoxuis.me/bo-ke/2013-08-06-git-subtree)方法添加你的插件repo(可随时拉取更新)，或手动复制；
 
  >submodule方法能链接至原repo但也会给下载与维护带来一定麻烦
 
@@ -18,9 +19,9 @@
 
  >不要忘了在下方的作品索引中添加插件简介和你的github主页链接
 
-4. 收录作品应确保为原创或经作者同意能够在这里进行多人维护更新的。
+4. 收录作品应确保为原创或经作者同意可以在这里进行多人维护更新的。
 
- >插件目录内若无license则视作采用与Typecho相同的[GPL2](https://github.com/typecho/typecho/blob/master/LICENSE.txt)开源许可
+ >插件目录内若无license则视作采用与typecho相同的[GPL2](https://github.com/typecho/typecho/blob/master/LICENSE.txt)开源许可
 
 ### 作品索引 (78)
 
@@ -50,6 +51,7 @@
 [Ckeditor4Typecho](/Ckeditor4Typecho) | 带上传功能的ckeditor插件 | [@zhulin3141](https://github.com/zhulin3141)
 [CodeMirror](/CodeMirror) | Typecho主题编辑器插件 | [@zhulin3141](https://github.com/zhulin3141)
 [CodeStyle](/CodeStyle) | highlight.js代码高亮插件 | [@hongweipeng](https://github.com/hongweipeng)
+[Comment2Wechat](https://github.com/YianAndCode/Comment2Wechat) | 新评论微信通知插件 | [@Y!an](https://github.com/YianAndCode)
 [CommentToMail](https://github.com/byends/CommentToMail) | 评论邮件提醒插件 | [@羽飞](https://github.com/byends) [@阿飞](https://github.com/defeme)
 [ContentIndex](/ContentIndex) | 文章内容生成目录插件 | [@laobubu](https://github.com/laobubu)
 [Contribute](/Contribute) :dart: | 用户投稿审查管理插件 | [@ShingChi](https://github.com/shingchi)
@@ -117,5 +119,5 @@
 [WeiboSync](https://github.com/vfhky/WeiboSync) | 新浪微博同步插件 | [@vfhky](https://github.com/vfhky)
 [XiaMiPlayer](/XiaMiPlayer) | 虾米迷你型播放器插件 | [@公子](https://github.com/lizheming)
 [YoduBGM](/YoduBGM) | 极简播放器插件(支持异步加载) | [@jrotty](https://github.com/jrotty)
-[Zan](/Zan) | 文章点赞效果插件 | [@冰剑](https://github.com/binjoo)
 [YoduPlayer](/YoduPlayer) | 支持异步加载的背景音乐播放器 | [@jrotty](https://github.com/jrotty)
+[Zan](/Zan) | 文章点赞效果插件 | [@冰剑](https://github.com/binjoo)
