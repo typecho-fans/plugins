@@ -22,15 +22,12 @@
 [submodule "AutoBaiduSubmit"]
 	path = AutoBaiduSubmit
 	url = https://github.com/jinfeijie/AutoBaiduSubmit
-[submodule "AMP"]
-	path = AMP
-	url = https://github.com/holmesian/Typecho-AMP.git
 [submodule "ArticleTemplate"]
 	path = ArticleTemplate
 	url = https://github.com/benzBrake/ArticleTemplate.git
 [submodule "Restful"]
 	path = Restful
-	url = https://github.com/moefront/typecho-plugin-Restful
+	url = https://github.com/moefront/typecho-plugin-Restful.git
 [submodule "Comment2Wechat"]
 	path = Comment2Wechat
 	url = https://github.com/YianAndCode/Comment2Wechat.git
