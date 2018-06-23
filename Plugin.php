@@ -5,12 +5,22 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
  * 
  * @package Avatars
  * @author 羽中
- * @version 1.2.4
- * @dependence 14.10.10
+ * @version 1.2.5
+ * @dependence 14.5.26-*
  * @link http://www.yzmb.me/archives/net/avatars-for-typecho
  */
 class Avatars_Plugin implements Typecho_Plugin_Interface
 {
+	/**
+	* 默认美化提示样式
+	* 
+	* @access private
+	* @var string
+	*/
+	private static $decss = '#tooltip {position:absolute;z-index:20;max-width:200px;background-color:#101010;text-align:left;padding:0 8px;border-radius:6px;-moz-border-radius:6px;-webkit-border-radius:6px;}'.PHP_EOL.
+'#tooltip p {color:#FFF;font:12px "Microsoft YaHei",Tahoma,Arial,Sans-Serif;}'.PHP_EOL.
+'#tooltip p em {display:block;margin-top:1px;color:#70B9ED;font-style:normal;}';
+
 	/**
 	 * 激活插件方法,如果激活失败,直接抛出异常
 	 * 
@@ -22,6 +32,12 @@ class Avatars_Plugin implements Typecho_Plugin_Interface
 	{
 		Typecho_Plugin::factory('Widget_Abstract_Contents')->contentEx = array('Avatars_Plugin','walls');
 		Typecho_Plugin::factory('Widget_Abstract_Comments')->gravatar = array('Avatars_Plugin','avatars');
+
+		Typecho_Plugin::factory('Widget_Archive')->header = array('Avatars_Plugin','avcss');
+		Typecho_Plugin::factory('Widget_Archive')->footer = array('Avatars_Plugin','avjs');
+
+		//模版调用钩子
+		Typecho_Plugin::factory('Widget_Archive')->callAvatars = array('Avatars_Plugin', 'output');
 	}
 
 	/**
@@ -44,12 +60,27 @@ class Avatars_Plugin implements Typecho_Plugin_Interface
 	public static function config(Typecho_Widget_Helper_Form $form)
 	{
 		echo
-'<div style="color:#999;font-size:13px;word-break:break-all;"><p>'
-._t('在主题模版文件中的适当位置插入代码%s<br/>或编辑文章/页面写入%s即可显示读者墙(黑字标签与class名称可自定义)','<span style="color:#467B96;font-weight:bold;">&lt;?php Avatars_Plugin::output("<span style="color:#444;">li</span>","<span style="color:#444;">mostactive</span>"); ?&gt;</span>','<span style="color:#467B96;font-weight:bold;">[AVATARS|<span style="color:#444;">li</span>|<span style="color:#444;">mostactive</span>]</span>').
-'</p></div>';
+'<div style="color:#999;font-size:.92857em;word-break:break-all;"><p>'
+	._t('在主题模版文件中的适当位置插入代码%s或编辑页<br/>面写入%s即可显示读者墙(其中黑色字参数为标签与class名称, 可自定义)','<strong style="color:#467B96;">&lt;?php $this-&gt;avatars("<span style="color:#444;">li</span>","<span style="color:#444;">mostactive</span>"); ?&gt;</strong>','<strong style="color:#467B96;">[AVATARS|<span style="color:#444;">li</span>|<span style="color:#444;">mostactive</span>]</strong>').
+'</p></div>
+<script src="'.Helper::options()->adminUrl.'js/jquery.js"></script>
+<script>
+$(function(){
+	var ts = $("#tipstyle-0-7"),
+		tt = $("#tooltip-1"),
+		it = $("#typecho-option-item-tipstyle-6");
+	if (!ts.val()) {
+		ts.val(\''.str_replace(PHP_EOL,'\r',self::$decss).'\');
+	}
+	if (tt.is(":checked")) it.attr("style","display:block");
+	tt.click(function(){
+		it.toggle(100);
+	});
+});
+</script>';
 
 		$wsize = new Typecho_Widget_Helper_Form_Element_Text('wsize',
-		NULL,'32',_t('读者墙头像大小'),_t('读者墙上的头像尺寸(单位px无需填写)'));
+		NULL,'32',_t('读者墙头像大小'),_t('读者墙上的头像尺寸(单位px不用填写)'));
 		$wsize->input->setAttribute('class','w-10');
 		$wsize->addRule('required',_t('头像尺寸不能为空'));
 		$form->addInput($wsize->addRule('isInteger',_t('请填写整数数字')));
@@ -68,15 +99,28 @@ class Avatars_Plugin implements Typecho_Plugin_Interface
 		$since = new Typecho_Widget_Helper_Form_Element_Text('since',
 		NULL,'30',_t('读者墙收录时间'),_t('读者墙将展示该天数以内的评论排行'));
 		$since->input->setAttribute('class','w-10');
+		$since->addRule('required',_t('收录时间不能为空'));
 		$form->addInput($since->addRule('isInteger',_t('请填写整数数字')));
 
 		$altword = new Typecho_Widget_Helper_Form_Element_Text('altword',
 		NULL,'条评论',_t('读者墙提示文字'),_t('个性化读者墙头像的评论数提示文字'));
-		$altword->input->setAttribute('class','mini');
+		$altword->input->setAttribute('style','width:150px;');
 		$form->addInput($altword);
 
+		$tooltip = new Typecho_Widget_Helper_Form_Element_Checkbox('tooltip',
+		array(1=>_t('美化效果')),NULL,'');
+		$tooltip->label->setAttribute('style','position:absolute;color:#999;font-weight:normal;bottom:37px;left:190px;');
+		$tooltip->input->setAttribute('style','position:absolute;bottom:5px;right:74px;');
+		$tooltip->setAttribute('style','position:relative;');
+		$form->addInput($tooltip);
+
+		$tipstyle = new Typecho_Widget_Helper_Form_Element_Textarea('tipstyle',NULL,self::$decss,_t('自定义美化样式'),_t('可定制<strong style="color:#467B96;">#tooltip</strong>(浮层背景), <strong style="color:#467B96;">#tooltip p</strong>(提示文字), <strong style="color:#467B96;">#tooltip p em</strong>(读者链接)样式, 留空即恢复默认'));
+		$tipstyle->input->setAttribute('style','word-break:break-all;max-width:600px;height:100px;');
+		$tipstyle->setAttribute('style','display:none;');
+		$form->addInput($tipstyle);
+
 		$proxy = new Typecho_Widget_Helper_Form_Element_Radio('proxy',
-		array(''=>_t('否'),'https://cdn.v2ex.com/gravatar/'=>_t('v2ex镜像'),'moecdn'=>_t('MoeCDN镜像')),'',_t('用代理加速头像'),_t('国内直连gravatar服务器不流畅时可选'));
+		array(''=>_t('否'),'https://cdn.v2ex.com/gravatar/'=>_t('v2ex镜像'),'geekzu'=>_t('极客族镜像')),'',_t('用代理加速头像'),_t('国内直连gravatar服务器不流畅时可选'));
 		$form->addInput($proxy);
 
 		$cache = new Typecho_Widget_Helper_Form_Element_Checkbox('cache',
@@ -87,16 +131,18 @@ class Avatars_Plugin implements Typecho_Plugin_Interface
 		array(1=>_t('是')),NULL,_t('作用评论区头像'),_t('评论区头像也用上两项设置(加速/缓存)'));
 		$form->addInput($comment);
 
+		$security = Helper::security();
 		if (Typecho_Request::getInstance()->is('action=deletefiles')) {
+			$security->protect();
 			self::deletefiles();
 		}
 		//清空动作按钮
 		$deletefiles = new Typecho_Widget_Helper_Form_Element_Submit();
 		$deletefiles->value(_t('清空缓存'));
 		$deletefiles->setAttribute('style','position:relative');
-		$deletefiles->input->setAttribute('style','position:absolute;bottom:127.5px;left:110px;padding-bottom:1px');
+		$deletefiles->input->setAttribute('style','position:absolute;bottom:127.5px;left:110px;padding-bottom:1px;');
 		$deletefiles->input->setAttribute('class','btn btn-xs btn-warn');
-		$deletefiles->input->setAttribute('formaction',Helper::options()->adminUrl.'options-plugin.php?config=Avatars&action=deletefiles');
+		$deletefiles->input->setAttribute('formaction',$security->getAdminUrl('options-plugin.php?config=Avatars&action=deletefiles'));
 		$form->addItem($deletefiles);
 	}
 
@@ -108,6 +154,76 @@ class Avatars_Plugin implements Typecho_Plugin_Interface
 	 * @return void
 	 */
 	public static function personalConfig(Typecho_Widget_Helper_Form $form){}
+
+	/**
+	 * 输出头部样式
+	 * 
+	 * @access public
+	 * @return void
+	 */
+	public static function avcss()
+	{
+		$settings = Helper::options()->plugin('Avatars');
+		$tipstyle = $settings->tipstyle;
+		$css = '';
+
+		if ($settings->tooltip) {
+			$css = '
+<style type="text/css">
+'.($tipstyle ? $tipstyle : self::$decss).'
+</style>
+';
+		}
+		echo $css;
+	}
+
+	/**
+	 * 输出底部脚本
+	 * 
+	 * @access public
+	 * @return void
+	 */
+	public static function avjs()
+	{
+		$settings = Helper::options()->plugin('Avatars');
+		$js = '';
+
+		if ($settings->tooltip) {
+			$js = '
+<script type="text/javascript">
+window.jQuery || document.write(\'<script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"><\/script>\')</script>
+<script type="text/javascript">
+$(function(){
+	var st = function(){
+		$(\'.avatars a\').mouseover(function(e){
+			this.myTitle = this.title;
+			this.myHref = this.href;
+			this.myHref = this.myHref.length > 61 ? this.myHref.toString().substring(0,50) + \'...\': this.myHref;
+			this.title = \'\';
+			var t = \'<div id="tooltip"><p>\' + this.myTitle + \'<em>\' + decodeURI(this.myHref) + \'</em>\' + \'</p></div>\';
+			$(\'body\').append(t);
+			$(\'#tooltip\').css({
+				opacity: \'0.8\',
+				top: e.pageY + 10 + \'px\',
+				left: e.pageX + 5 + \'px\'
+			}).show(\'fast\')
+		}).mouseout(function(){
+			this.title = this.myTitle;
+			$(\'#tooltip\').remove()
+		}).mousemove(function(e){
+			$(\'#tooltip\').css({
+				top: e.pageY + 10 + \'px\',
+				left: e.pageX + 5 + \'px\'
+			})
+		})
+	};
+	st();
+});
+</script>
+';
+		}
+		echo $js;
+	}
 
 	/**
 	 * 读者墙标签解析
@@ -131,40 +247,44 @@ class Avatars_Plugin implements Typecho_Plugin_Interface
 	 * 标签参数回调
 	 * 
 	 * @access public
-	 * @param array $matche
+	 * @param array $match
 	 * @return string
 	 */
-	public static function callback($matche)
+	public static function callback($match)
 	{
 		$listtag = 'li';
 		$class = 'mostactive';
 
-		if ($matche['1']) {
-			if (preg_match('/\|([\w-]*)\|([\w-]*)/i',$matche['1'],$out)) {
+		if ($match['1']) {
+			if (preg_match('/\|([\w-]*)\|([\w-]*)/i',$match['1'],$out)) {
 				$listtag = trim($out['1']);
 				$class = trim($out['2']);
 			}
 		}
 
-		return self::output($listtag,$class,true);
+		return self::output(Typecho_Widget::widget('Widget_Archive'),array($listtag,$class,true));
 	}
 
 	/**
-	 * 读者墙实例输出
+	 * 输出读者墙实例
 	 * 
 	 * @access public
-	 * @param string $listtag 标签名称
-	 * @param string $class class名称
-	 * @param boolean $iscall 是否回调
-	 * @return void
+	 * @param array $params 实例参数
+	 * @return string
 	 */
-	public static function output($listtag='li',$class='mostactive',$iscall=false)
+	public static function output($widget,array $params)
 	{
 		$options = Helper::options();
 		$settings = $options->plugin('Avatars');
-		$listtag = $listtag ? $listtag : 'li';
-		$wurl = '';
-		$mostactive = '';
+		$tipstyle = $settings->tipstyle;
+
+		//处理实例参数
+		$listtag = 'li';
+		$listtag = isset($params['0']) && is_string($params['0']) ? $params['0'] : $listtag;
+		$classname = 'mostactive';
+		$classname = isset($params['1']) && is_string($params['1']) ? $params['1'] : $classname;
+		$iscall = false;
+		$iscall = !empty($params['2']) && is_bool($params['2']) ? $params['2'] : $iscall;
 
 		//获取评论计数
 		$db = Typecho_Db::get();
@@ -178,25 +298,32 @@ class Avatars_Plugin implements Typecho_Plugin_Interface
 			->order('cnt',Typecho_Db::SORT_DESC); //降序排列
 		$counts = $db->fetchAll($select);
 
+		$wurl = '';
+		$mostactive = '<div class="avatars">
+';
 		foreach ($counts as $count) {
 			//获取优化地址
-			$wurl = self::avurl($count['mail'],$settings->wsize,$options->commentsAvatarRating //同步评级设置
-				,$settings->wdefault,Typecho_Widget::widget('Widget_Archive')->request->isSecure() //获取安全请求
+			$wurl = self::avurl($count['mail'],$settings->wsize,$options->commentsAvatarRating //同步评级
+				,$settings->wdefault,Typecho_Widget::widget('Widget_Archive')->request->isSecure() //安全请求
 			);
 
 			$mostactive .= '
 		<'.$listtag;
-			$mostactive .= $class ? ' class="'.$class.'"' : '';
+			$mostactive .= ' class="'.$classname.'"';
 			$mostactive .= '><a href="';
-			$mostactive .= $count['url'] ? $count['url'] : '###'; //静默空白链接
+			//静默空白链接
+			$mostactive .= $count['url'] ? $count['url'] : '#';
 			$mostactive .= '"';
-			$mostactive .= $options->commentsUrlNofollow ? ' rel="external nofollow"' : ''; //同步nofollow设置
+			//同步nofollow设置
+			$mostactive .= $options->commentsUrlNofollow ? ' rel="external nofollow"' : '';
 			$mostactive .= ' title="'.$count['author'].' - '.$count['cnt'].$settings->altword.'">';
-			$mostactive .= $wurl ? '<img src="'.$wurl.'" alt="'.$count['author'].'" class="avatar" />' : _t('<span style="font-weight:bold;color:#467B96;">%s</span>','缓存出错!');
+			$mostactive .= $wurl ? '<img src="'.$wurl.'" alt="'.$count['author'].'" class="avatar"/>' : '<span style="font-weight:bold;color:#467B96;">'._t('缓存出错!').'</span>';
 			$mostactive .= '</a></'.$listtag.'>';
 		}
+		$mostactive .= '</div>
+';
 
-		//修正替换输出
+		//模版输出判断
 		if ($iscall) {
 			return $mostactive;
 		} else {
@@ -223,7 +350,7 @@ class Avatars_Plugin implements Typecho_Plugin_Interface
 
 		$proxy = $settings->proxy;
 		$server = $proxy ? 
-			($proxy=='moecdn' ? ($secure ? 'https://gravatar.moefont.com/avatar/' : 'http://gravatar.moefont.com/avatar/') : $proxy)
+			($proxy=='geekzu' ? ($secure ? 'https://sdn.geekzu.org/avatar/' : 'http://fdn.geekzu.org/avatar/') : $proxy)
 			 : ($secure ? 'https://secure.gravatar.com/avatar/' : 'http://'.rand(0,2).'.gravatar.com/avatar/');
 
 		$url = $server.$hash;
@@ -263,7 +390,7 @@ class Avatars_Plugin implements Typecho_Plugin_Interface
 	 * @access private
 	 * @return void
 	 */
-	private function deletefiles()
+	private static function deletefiles()
 	{
 		$path = glob(__TYPECHO_ROOT_DIR__.'/usr/plugins/Avatars/cache/*');
 		if ($path) {
@@ -285,15 +412,15 @@ class Avatars_Plugin implements Typecho_Plugin_Interface
 	 */
 	private static function makedir($path)
 	{
-		$path = preg_replace("/\\\+/", '/', $path);
-		$current = rtrim($path, '/');
+		$path = preg_replace("/\\\+/",'/',$path);
+		$current = rtrim($path,'/');
 		$last = $current;
 
-		while (!is_dir($current) && false !== strpos($path, '/')) {
+		while (!is_dir($current) && false!==strpos($path,'/')) {
 			$last = $current;
 			$current = dirname($current);
 		}
-		if ($last == $current) {
+		if ($last==$current) {
 			return true;
 		}
 		if (!@mkdir($last)) {
@@ -302,7 +429,7 @@ class Avatars_Plugin implements Typecho_Plugin_Interface
 
 		$stat = @stat($last);
 		$perms = $stat['mode'] & 0007777;
-		@chmod($last, $perms);
+		@chmod($last,$perms);
 
 		return self::makedir($path);
 	}
@@ -323,7 +450,7 @@ class Avatars_Plugin implements Typecho_Plugin_Interface
 		$url = Helper::options()->plugin('Avatars')->comment ? self::avurl($mail,$size,$rating,$default,$issecure)
 			 : Typecho_Common::gravatarUrl($mail,$size,$rating,$default,$issecure);
 
-		echo $url ? '<img class="avatar" src="'.$url.'" alt="'.$comments->author.'" />' : _t('<span style="font-weight:bold;color:#467B96;">%s</span>','缓存出错!');
+		echo $url ? '<img class="avatar" src="'.$url.'" alt="'.$comments->author.'"/>' : '<span style="font-weight:bold;color:#467B96;">'._t('缓存出错!').'</span>';
 	}
 
 }
