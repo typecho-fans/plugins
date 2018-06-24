@@ -21,7 +21,6 @@ class AMP_Action extends Typecho_Widget implements Widget_Interface_Do
         
     }
 
-
     
     public static function headlink()
     {
@@ -394,7 +393,6 @@ class AMP_Action extends Typecho_Widget implements Widget_Interface_Do
             }
         }
 
-
         try {
             list($width, $height, $type, $attr) = @getimagesize($img_url);
             $imgData=array(
@@ -524,7 +522,8 @@ class AMP_Action extends Typecho_Widget implements Widget_Interface_Do
         }
         return $text;
     }
-    
+
+
     private function getSlugRule()
     {
         $router = explode('/', Helper::options()->routingTable['post']['url']);
@@ -538,48 +537,58 @@ class AMP_Action extends Typecho_Widget implements Widget_Interface_Do
     //For page_cacher
 
     private function set($key, $cache){
-        $installDb = $this->db;
-        $time=(int)Helper::options()->plugin('AMP')->cacheTime;
-        $expire = $time*60*60;
-        if(is_array($cache)) $cache = json_encode($cache);
-        $table = $this->tablename;
-        $time = time();
+        if(Helper::options()->plugin('AMP')->cacheTime>0) {
+            $installDb = $this->db;
+            $time = (int)Helper::options()->plugin('AMP')->cacheTime;
+            $expire = $time * 60 * 60;
+            if (is_array($cache)) $cache = json_encode($cache);
+            $table = $this->tablename;
+            $time = time();
 
-        $cache = addslashes($cache);
-        $sql = "REPLACE INTO $table  (`hash`,`cache`,`dateline`,`expire`) VALUES ('$key','$cache','$time','$expire')";
-        $installDb->query($sql);
-
+            $cache = addslashes($cache);
+            $sql = "REPLACE INTO $table  (`hash`,`cache`,`dateline`,`expire`) VALUES ('$key','$cache','$time','$expire')";
+            $installDb->query($sql);
+        }else{
+            return null;
+        }
     }
 
     private function del($key){
-        $installDb = $this->db;
-        $tablename=$this->tablename;
-        if(is_array($key)){
-            foreach($key as $k=>$v){
-                $this->del($v);
+        if(Helper::options()->plugin('AMP')->cacheTime>0) {
+            $installDb = $this->db;
+            $tablename = $this->tablename;
+            if (is_array($key)) {
+                foreach ($key as $k => $v) {
+                    $this->del($v);
+                }
+            } else {
+                if ($key == '*') {
+                    $installDb->query("DELETE FROM $tablename WHERE 1=1 ");
+                } else {
+                    $delete = $installDb->delete($tablename)->where('hash = ?', $key)->limit(1);
+                    $installDb->query($delete);
+                }
             }
         }else{
-            if($key=='*'){
-                $installDb->query("DELETE FROM $tablename WHERE 1=1 ");
-            }else{
-                $delete = $installDb->delete($tablename)->where('hash = ?', $key)->limit(1);
-                $installDb->query($delete);
-            }
+            return null;
         }
     }
 
     private function get($key){
-		$installDb = $this->db;
-        $tablename=$this->tablename;
+        if(Helper::options()->plugin('AMP')->cacheTime>0) {
+            $installDb = $this->db;
+            $tablename = $this->tablename;
 
-        $condition=$installDb->select('cache','dateline','expire')->from($tablename)->where('hash = ?', $key);
-
-        $row = $installDb->fetchRow($condition);
-        if(!$row) return;
-        if(time()-$row['dateline']>$row['expire']) $this->del($key);
-        $cache =  $row['cache'];
-        $arr = json_decode($cache,true);
-        return is_array($arr)?$arr:$cache;
+            $condition = $installDb->select('cache', 'dateline', 'expire')->from($tablename)->where('hash = ?', $key);
+            $row = $installDb->fetchRow($condition);
+            if (!$row) return;
+            if (time() - $row['dateline'] > $row['expire']) $this->del($key);
+            $cache = $row['cache'];
+            $arr = json_decode($cache, true);
+            return is_array($arr) ? $arr : $cache;
+        }else{
+            return null;
+        }
     }
 
 
