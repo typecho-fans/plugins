@@ -1,0 +1,64 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title></title>
+        <meta charset="UTF-8" />
+        <style type="text/css">
+            html,body,div{
+                padding:0;
+                margin:0;
+                font-size:12px;
+            }
+            .player{
+                display:inline-block;
+                position: relative;
+                width:18em;
+                height:2em;
+                padding:0 .3em;
+                line-height:2em;
+                overflow: hidden;
+                background:whitesmoke;
+            }
+            .player>.progress{
+                display:inline-block;
+                background:silver;
+                position: absolute;
+                left:0;
+                top:0;
+                height:2em;
+            }
+            .player>.state{
+                position: absolute;
+                left:0.6em;
+                top:0.4em;
+                width:0;
+                height:0;
+                border: .6em solid transparent;
+                border-left: .9em solid black;
+                border-right:none;
+                cursor:pointer;
+            }
+            .player>.state.playing{
+                border:.3em solid black;
+                border-top:none;
+                border-bottom:none;
+                width:.3em;
+                height:1.2em;
+            }
+            .player>.title, .player>.lyric{
+                position: absolute;
+                left:0;
+                left:2em;
+                display:inline-block;
+                height:2em;
+                cursor:default;
+            }
+        </style>
+    </head>
+    <body>
+        <script src="http://lib.sinaapp.com/js/jquery/1.10.2/jquery-1.10.2.min.js"></script>
+        <script src="http://www.jplayer.org/latest/js/jquery.jplayer.min.js"></script>
+        <script src="../assets/js/player.js"></script>
+    </body>
+
+</html>
