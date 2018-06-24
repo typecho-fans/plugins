@@ -4,17 +4,19 @@
  *
  * @package AMP-MIP
  * @author Holmesian
- * @version 0.6.1
+ * @version 0.6.2
  * @link https://holmesian.org
  */
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 
 class AMP_Plugin implements Typecho_Plugin_Interface
 {
-    private static $version = '0.6.1';
+    private static $version = '0.6.2';
 
     public static function activate()
     {
+        $msg=self::install();
+
         //挂载发布文章接口
         Typecho_Plugin::factory('Widget_Contents_Post_Edit')->finishPublish = array('AMP_Action', 'sendRealtime');
         Typecho_Plugin::factory('Widget_Archive')->header = array('AMP_Action', 'headlink');
@@ -27,7 +29,7 @@ class AMP_Plugin implements Typecho_Plugin_Interface
         Helper::addRoute('mip_sitemap', '/mip_sitemap.xml', 'AMP_Action', 'mipsitemap');
         Helper::addRoute('clean_cache', '/clean_cache', 'AMP_Action', 'cleancache');
         Helper::addPanel(1, 'AMP/Links.php', 'AMP/MIP自动提交', '自动提交', 'administrator');
-        $msg=self::install();
+
         return $msg.'请进入设置填写接口调用地址';
     }
 
@@ -54,7 +56,7 @@ class AMP_Plugin implements Typecho_Plugin_Interface
     public static function config(Typecho_Widget_Helper_Form $form)
     {
 
-        $element = new Typecho_Widget_Helper_Form_Element_Text('cacheTime', null, '24', _t('缓存时间'), '单位：小时<br> v0.5.7起启用页面缓存，此项为缓存过期时间。如果需要重建缓存，请点击 <a href="' . Helper::options()->index . '/clean_cache">删除所有缓存</a>');
+        $element = new Typecho_Widget_Helper_Form_Element_Text('cacheTime', null, '0', _t('缓存时间'), '单位：小时（设置成0表示关闭）<br> 此项为缓存过期时间，建议设置成24。如果需要重建缓存，请点击 <a href="' . Helper::options()->index . '/clean_cache">删除所有缓存</a>');
         $form->addInput($element);
 
         $element = new Typecho_Widget_Helper_Form_Element_Text('baiduAPI', null, '', _t('MIP/AMP推送接口调用地址'), '请到http://ziyuan.baidu.com/mip/index获取接口调用地址。');
@@ -145,7 +147,11 @@ class AMP_Plugin implements Typecho_Plugin_Interface
     //Cache databse
     public static function DBsetup()
     {
+
         $installDb = Typecho_Db::get();
+        if(stristr($installDb->getAdapterName(),'mysql')== false){
+            return('缓存不支持sqlite.');
+        }
         $cacheTable =  $installDb->getPrefix() . 'PageCache';
         try {
             $installDb->query("DROP TABLE IF EXISTS " . $cacheTable);
