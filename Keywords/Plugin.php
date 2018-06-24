@@ -5,8 +5,8 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
  * 
  * @package Keywords
  * @author 羽中
- * @version 1.0.7
- * @dependence 14.10.10
+ * @version 1.0.8
+ * @dependence 13.12.12-*
  * @link http://www.yzmb.me/archives/net/keywords-for-typecho
  */
 class Keywords_Plugin implements Typecho_Plugin_Interface
@@ -43,19 +43,30 @@ class Keywords_Plugin implements Typecho_Plugin_Interface
 	 */
 	public static function config(Typecho_Widget_Helper_Form $form)
 	{
-		$keywords = new Typecho_Widget_Helper_Form_Element_Textarea('keywords',NULL,'',_t('关键词链接'),_t('以"关键词|(半角分隔号)链接"的形式填写, 每行一组<br/>例: google|http://www.google.com'));
-		$keywords->input->setAttribute('style','width:400px;height:150px');
+		$keywords = new Typecho_Widget_Helper_Form_Element_Textarea('keywords',NULL,'',_t('关键词链接'),_t('每行1组以"关键词<strong style="color:#467B96;">|</strong>(半角竖线)链接"形式填写, 可用第2个竖线追加参数: </br>
+		<strong style="color:#467B96;">n</strong>代表nofollow标记, <strong style="color:#467B96;">e</strong>代表external nofollow标记, <strong style="color:#467B96;">b</strong>代表本窗口打开. 例: <br/>google<strong>|</strong>http://www.google.com<strong>|</strong>n 即此链接带nofollow(默认新窗口打开)'));
+		$keywords->input->setAttribute('style','max-width:400px;height:150px;');
 		$form->addInput($keywords);
 
-		$tagslink = new Typecho_Widget_Helper_Form_Element_Checkbox('tagslink',array(1=>_t('自动替换')),NULL,_t('标签链接'),_t('将与本站标签相同的关键词自动替换为标签页链接'));
-		$form->addInput($tagslink);
+		$autolink = new Typecho_Widget_Helper_Form_Element_Checkbox('autolink',array('catslink'=>_t('分类名称'),'tagslink'=>_t('标签名称')),NULL,_t('自动内链'),_t('将与分类/标签名相同的词替换为分类/标签页链接'));
+		$form->addInput($autolink);
 
-		$limits = new Typecho_Widget_Helper_Form_Element_Text('limits',NULL,'1',_t('链接频次'),_t('文中有多个重复的关键词或标签时可限制链接次数'));
-		$limits->input->setAttribute('style','width:40px');
+		$nofollow = new Typecho_Widget_Helper_Form_Element_Checkbox('nofollow',
+		array(1=>_t('nofollow标记')),NULL,_t('内链设置'));
+		$form->addInput($nofollow);
+
+		$blank = new Typecho_Widget_Helper_Form_Element_Select('blank',
+		array(0=>_t('本窗口打开'),1=>_t('新窗口打开')),0,'');
+		$blank->input->setAttribute('style','position:absolute;bottom:11px;left:115px;');
+		$blank->setAttribute('style','position:relative;');
+		$form->addInput($blank);
+
+		$limits = new Typecho_Widget_Helper_Form_Element_Text('limits',NULL,'1',_t('链接频次'),_t('文中有多个重复关键词时可指定替换为链接的次数'));
+		$limits->input->setAttribute('style','width:40px;');
 		$limits->addRule('required',_t('链接次数不能为空'));
 		$form->addInput($limits->addRule('isInteger',_t('请填写整数数字')));
 
-		$pagelinks = new Typecho_Widget_Helper_Form_Element_Radio('pagelinks',array(1=>_t('是'),0=>_t('否')),1,_t('在页面使用'),_t('是否将以上的链接替换设置也作用于独立页面内容'));
+		$pagelinks = new Typecho_Widget_Helper_Form_Element_Radio('pagelinks',array(1=>_t('是'),0=>_t('否')),1,_t('页面使用'),_t('除文章外是否将替换链接效果作用于独立页面内容'));
 		$form->addInput($pagelinks);
 	}
 
@@ -83,15 +94,32 @@ class Keywords_Plugin implements Typecho_Plugin_Interface
 		if ($widget instanceof Widget_Archive && $keywords) {
 			$settings = Helper::options()->plugin('Keywords');
 
-			//关闭页面替换
+			//关闭页面内容替换
 			if ($widget->is('page') && !$settings->pagelinks) {
 				return $content;
 			}
+			foreach ($keywords as $i=>$row) {
+				$txt = trim($row['0']);
+				if ($txt) {
+					$link = trim($row['1']);
+					$set = trim($row['2']);
+					$rel = '';
+					$open = '_blank';
 
-			foreach($keywords as $i=>$row) {
-				if (false!==strpos($content,$row['0'])) {
-					$content = preg_replace('/(?!<[^>]*)'.$row['0'].'(?![^<]*(>|<\/[a|sc]))/s' //排除参数与链接
-					,'<a href="'.$row['1'].'" target="_blank" title="'.$row['0'].'">'.$row['0'].'</a>',$content,$settings->limits);
+					//处理标记与打开方式
+					 if ($set) {
+					 	 if (false!==stripos($set,'e')) {
+					 	 	 $rel = ' rel="external nofollow"';
+					 	 } elseif (false!==stripos($set,'n')) {
+					 	 	 $rel = ' rel="nofollow"';
+					 	 }
+					 	 $open = false!==stripos($set,'b') ? '_self' : $open;
+					 }
+
+					$content = false!==strpos($content,$txt)
+						//正则排除参数和链接
+						? preg_replace('/(?!<[^>]*)'.$txt.'(?![^<]*(>|<\/[a|sc]))/s'
+					,'<a href="'.$link.'"'.$rel. 'target="'.$open.'" title="'.$txt.'">'.$txt.'</a>',$content,$settings->limits) : $content;
 				}
 			}
 		}
@@ -108,29 +136,47 @@ class Keywords_Plugin implements Typecho_Plugin_Interface
 	private static function keywords()
 	{
 		$settings = Helper::options()->plugin('Keywords');
+		$autolink = $settings->autolink;
 		$kwarray = array();
 		$keyword = trim(Typecho_Common::stripTags($settings->keywords));
 
-		if ($keyword && strpos($keyword,'|')) {
+		if (strpos($keyword,'|')) {
 			//解析关键词数组
 			$kwsets = array_filter(preg_split("/(\r|\n|\r\n)/",$keyword));
 			foreach ($kwsets as $kwset) {
-				$kwarray[] = explode('|',trim($kwset));
+				$kwarray[] = explode('|',$kwset);
 			}
 		}
 
-		if ($settings->tagslink) {
+		if ($autolink) {
 			$db = Typecho_Db::get();
-			$tagselect = $db->select()->from('table.metas')->where('type = ?','tag');
-			$tagdata = $db->fetchAll($tagselect,array(Typecho_Widget::widget('Widget_Abstract_Metas'),'filter'));
+			$nofollow = $settings->nofollow ? 'n' : '';
+			$blank = $settings->blank ? '' : 'b';
 
-			//并入标签链接
-			if ($tagdata) {
-				$tags = array();
-				foreach ($tagdata as $tag) {
-					$tags[] = array($tag['name'],$tag['permalink']);
+			if (in_array('catslink',$autolink)) {
+				$catselect = $db->select()->from('table.metas')->where('type = ?','category');
+				$catdata = $db->fetchAll($catselect,array(Typecho_Widget::widget('Widget_Abstract_Metas'),'filter'));
+
+				//并入分类链接
+				$cats = array();
+				foreach ($catdata as $cat) {
+					$cats[] = array($cat['name'],$cat['permalink'],$nofollow.$blank);
 				}
-				$kwarray = array_merge($kwarray,$tags);
+				$kwarray = array_merge($kwarray,$cats);
+			}
+
+			if (in_array('tagslink',$autolink)) {
+				$tagselect = $db->select()->from('table.metas')->where('type = ?','tag');
+				$tagdata = $db->fetchAll($tagselect,array(Typecho_Widget::widget('Widget_Abstract_Metas'),'filter'));
+
+				//并入标签链接
+				if ($tagdata) {
+					$tags = array();
+					foreach ($tagdata as $tag) {
+						$tags[] = array($tag['name'],$tag['permalink'],$nofollow.$blank);
+					}
+					$kwarray = array_merge($kwarray,$tags);
+				}
 			}
 		}
 
@@ -149,7 +195,7 @@ class Keywords_Plugin implements Typecho_Plugin_Interface
 	 * @return integer
 	 */
 	private static function lsort($a,$b) {
-		return (strlen($a['0']) < strlen($b['0'])) ? 1 : -1;
+		return strlen($a['0'])<strlen($b['0']) ? 1 : -1;
 	}
 
 }
