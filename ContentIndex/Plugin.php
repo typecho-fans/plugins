@@ -92,7 +92,7 @@ class ContentIndex_Plugin implements Typecho_Plugin_Interface
 			$curlevel = 0;
 			foreach ($index as $i) {
 				if ($i["level"]>$curlevel) $index_out.="<ul>\n";
-				elseif ($i["level"]<$curlevel) $index_out.="</ul>\n";
+				elseif ($i["level"]<$curlevel) $index_out.=str_repeat("</ul>\n", $curlevel-$i["level"]);
 				$curlevel = $i["level"];
 				$index_out .= "<li>{$i['link']}</li>\n";
 			}
