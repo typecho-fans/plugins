@@ -55,14 +55,27 @@ class WaterMark{
       * @param $type
       * @return resource
       */
-     function getType($img, $type)
-     {
+     function getType($img, $type){
         switch($type){
             case 1:
                 $im = imagecreatefromgif($img);                
                 break;
             case 2:
+                $exif = exif_read_data($img, 'EXIF');
                 $im = imagecreatefromjpeg($img);
+                if($exif!=false){
+                    switch($exif['Orientation']) {
+                        case 8:
+                            $im = imagerotate($im,90,0);
+                            break;
+                        case 3:
+                            $im = imagerotate($im,180,0);
+                            break;
+                        case 6:
+                            $im = imagerotate($im,-90,0);
+                            break;
+                    }
+                }
                 break;
             case 3:
                 $im = imagecreatefrompng($img);

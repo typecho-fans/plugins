@@ -2,10 +2,9 @@
 /**
  * 上传、删除插件和模板
  *
- * @category system
  * @package Upload Plugin
  * @author DEFE
- * @version 1.1.2
+ * @version 1.1.3
  * @dependence 10.6.24-*
  * @link http://defe.me
  */
@@ -28,10 +27,10 @@ class UploadPlugin_Plugin implements Typecho_Plugin_Interface
         }
         if(!function_exists('file_put_contents') && !function_exists('fopen')){
             throw new Typecho_Plugin_Exception(_t('file_put_contents、fopen函数被禁用, 无法正常使用此插件'));
-            throw new Typecho_Plugin_Exception(_t('插件目录无写入权限, 无法正常使用此插件'));
         }
         Helper::addPanel(1, 'UploadPlugin/panel.php', _t('上传'), _t('在线插件管理'), 'administrator');
         Helper::addAction('upload-plugin', 'UploadPlugin_Action');
+        //return _t('请设置插件仓库的服务地址，以便能在线安装插件！');
     }
 
     /**
