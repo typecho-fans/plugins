@@ -15,7 +15,7 @@ Typecho滑动解锁插件IQapTcha
 
 ### 升级日志
 
- > 修正可用性：从作者博客更新js与css，挂载CDN版jquery1.8.3；默认选取第一个textarea；文档正常显示代码。（[@羽中](https://github.com/jzwalk)）
+ > 修正可用性：修正jquery-ui.js，textarea自动选取及文档代码。
 
 #### 1.1.0 at 2012-07-12
 - 增加博主可以不需要解锁的功能，可以自由设置
