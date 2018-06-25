@@ -5,8 +5,8 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
  * 
  * @package GHbutton
  * @author 羽中
- * @version 1.0.3
- * @dependence 14.10.10
+ * @version 1.0.4
+ * @dependence 10.8.15-*
  * @link http://www.yzmb.me/archives/net/github-btn-typecho
  */
 class GHbutton_Plugin implements Typecho_Plugin_Interface
@@ -22,6 +22,12 @@ class GHbutton_Plugin implements Typecho_Plugin_Interface
 	{
 		Typecho_Plugin::factory('Widget_Abstract_Contents')->contentEx = array('GHbutton_Plugin','btn_parse');
 		Typecho_Plugin::factory('Widget_Abstract_Contents')->excerptEx = array('GHbutton_Plugin','btn_parse');
+
+		Typecho_Plugin::factory('admin/write-post.php')->bottom = array('GHbutton_Plugin','gtbutton');
+		Typecho_Plugin::factory('admin/write-page.php')->bottom = array('GHbutton_Plugin','gtbutton');
+
+		/* 模版调用钩子 例: <?php $this->ghbutton('用户名/项目名'); ?> 第2个参数(可略)同gb标签内写法 */
+		Typecho_Plugin::factory('Widget_Archive')->callGhbutton = array('GHbutton_Plugin', 'output');
 	}
 
 	/**
@@ -44,9 +50,9 @@ class GHbutton_Plugin implements Typecho_Plugin_Interface
 	public static function config(Typecho_Widget_Helper_Form $form)
 	{
 		echo
-'<div style="color:#999;font-size:13px"><p>'
-._t('编辑文章或页面写入%s用户名%s项目名%s即可显示按钮状图标, 支持标签内指定各项参数<br/>例:','<span style="color:#467B96;font-weight:bold">&lt;gb&gt;</span><span style="color:#444;font-weight:bold">','<span style="color:#467B96">/</span>','</span><span style="color:#467B96;font-weight:bold">&lt;/gb&gt;</span>').
-' <span style="color:#467B96;font-weight:bold">&lt;gb user="<span style="color:#444">typecho-fans</span>"  type="<span style="color:#444">star</span>" count="<span style="color:#444">1</span>" size="<span style="color:#444">1</span>" width="<span style="color:#444">200</span>"&gt;</span><span style="color:#444;font-weight:bold">plugin</span><span style="color:#467B96;font-weight:bold">&lt;/gb&gt;</span>
+'<div style="color:#999;font-size:.92857em;"><p>'
+._t('编辑文章或页面写入%s用户名%s项目名%s即可显示按钮状图标, 支持标签内指定各项参数<br/>例:','<strong style="color:#467B96;">&lt;gb&gt;</strong><strong style="color:#444;">','<span style="color:#467B96">/</span>','</strong><strong style="color:#467B96;">&lt;/gb&gt;</strong>').
+' <strong style="color:#467B96;">&lt;gb user="<span style="color:#444">typecho-fans</span>"  type="<span style="color:#444">star</span>" count="<span style="color:#444">1</span>" size="<span style="color:#444">1</span>" width="<span style="color:#444">200</span>"&gt;</strong><strong style="color:#444;">plugin</strong><strong style="color:#467B96;">&lt;/gb&gt;</strong>
 </p></div>';
 		$btn_user = new Typecho_Widget_Helper_Form_Element_Text('btn_user',
 		NULL,'',_t('GitHub用户名称'),_t('缺省调用username, 可在标签内指定参数user="-"覆盖'));
@@ -59,7 +65,8 @@ class GHbutton_Plugin implements Typecho_Plugin_Interface
 
 		$btn_width = new Typecho_Widget_Helper_Form_Element_Text('btn_width',
 		NULL,'170',_t('iframe调用宽度'),_t('缺省宽度(单位px不用写), 标签内可用参数width="-"覆盖'));
-		$btn_width->input->setAttribute('style','width:47px');
+		$btn_width->input->setAttribute('style','width:47px;');
+		$btn_width->addRule('required',_t('调用宽度不能为空'));
 		$form->addInput($btn_width->addRule('isInteger','请填写整数数字'));
 
 		$btn_size = new Typecho_Widget_Helper_Form_Element_Checkbox('btn_size',
@@ -95,8 +102,17 @@ class GHbutton_Plugin implements Typecho_Plugin_Interface
 	{
 		$content = empty($lastResult) ? $content : $lastResult;
 
-		if ($widget instanceof Widget_Archive && false!==stripos($content,'</gb>')) {
-			$content = preg_replace_callback('/<(gb)([^>]*)>(.*?)<\/\\1>/si',array('GHbutton_Plugin',"parseCallback"),$content);
+		$version = explode('/',Helper::options()->version);
+		$sign = '</gb>';
+		$pattern = '/<(gb)(.*?)>(.*?)<\/\\1>/si';
+		//markdown fix
+		if ($version['1']=='17.10.30' && $widget->isMarkdown && !stripos($content,'</gb>')) {
+			$sign = '&lt;/gb&gt;';
+			$pattern = '/&lt;(gb)(.*?)&gt;(.*?)&lt;\/\\1&gt;/si';
+		}
+
+		if ($widget instanceof Widget_Archive && false!==stripos($content,$sign)) {
+			$content = preg_replace_callback($pattern,array('GHbutton_Plugin',"parseCallback"),$content);
 		}
 
 		return $content;
@@ -105,22 +121,46 @@ class GHbutton_Plugin implements Typecho_Plugin_Interface
 	/**
 	 * 参数回调解析
 	 * 
-	 * @param array $matche
+	 * @access public
+	 * @param array $match
 	 * @return string
 	 */
-	public static function parseCallback($matche)
+	public static function parseCallback($match)
 	{
 		$options = Helper::options();
 		$settings = $options->plugin('GHbutton');
-		$param = trim($matche['2']);
-		$btn_repo = trim($matche['3']);
+		$param = htmlspecialchars_decode(trim($match['2'])); //markdown fix
+		$btn_repo = trim($match['3']);
+
+		return self::output(Typecho_Widget::widget('Widget_Archive'),array($btn_repo,$param,true));
+	}
+
+	/**
+	 * 输出按钮实例
+	 * 
+	 * @access public
+	 * @param array $params 实例参数
+	 * @return string
+	 */
+	public static function output($widget,array $params)
+	{
+		$options = Helper::options();
+		$settings = $options->plugin('GHbutton');
+
+		//处理实例参数
+		$btn_repo = '';
+		$btn_repo = isset($params['0']) && is_string($params['0']) ? $params['0'] : $btn_repo;
+		$param = '';
+		$param = isset($params['1']) && is_string($params['1']) ? $params['1'] : $param;
+		$iscall = false;
+		$iscall = !empty($params['2']) && is_bool($params['2']) ? $params['2'] : $iscall;
 
 		//获取设置参数
 		$btn_user = $settings->btn_user;
 		if (strpos($btn_repo,'/')) {
 			$pair = explode('/',$btn_repo);
-			$btn_user = $pair['0'];
-			$btn_repo = $pair['1'];
+			$btn_user = trim($pair['0']);
+			$btn_repo = trim($pair['1']);
 		}
 		$btn_type = $settings->btn_type;
 		$btn_count = $settings->btn_count ? '&amp;count=true' : '';
@@ -152,9 +192,61 @@ class GHbutton_Plugin implements Typecho_Plugin_Interface
 			}
 		}
 
-		$replace = '<iframe src="'.$options->pluginUrl.$html.'?user='.$btn_user.'&amp;repo='.$btn_repo.'&amp;type='.($btn_type=='watch' ? $btn_type.'&amp;v=2' : $btn_type).$btn_count.$btn_size.'" width="'.$btn_width.'px" height="'.$btn_height.'px" frameborder="0" scrolling="0"></iframe>';
+		$replace = '<iframe src="'.$options->pluginUrl.$html.'?user='.$btn_user.'&amp;repo='.$btn_repo.'&amp;type='.($btn_type=='watch' ? $btn_type.'&amp;v=2' : $btn_type).$btn_count.$btn_size.'" width="'.$btn_width.'" height="'.$btn_height.'" frameborder="0" scrolling="no"></iframe>';
 
-		return $replace;
+		//模版输出判断
+		if ($iscall) {
+			return $replace;
+		} else {
+			echo $replace;
+		}
+	}
+
+	/**
+	 * 输出编辑器按钮
+	 * 
+	 * @access public
+	 * @return void
+	 */
+	public static function gtbutton()
+	{
+?>
+<script>
+$(function(){
+	var wmd = $('#wmd-image-button');
+	if (wmd.length>0) {
+		wmd.after(
+	'<li class="wmd-button" id="wmd-gb-button" style="padding-top:5px;" title="<?php _e("插入Github按钮"); ?>"><img src="<?php echo Helper::options()->pluginUrl; ?>/GHbutton/source/icon.svg"/></li>');
+	} else {
+		$('.url-slug').after('<button type="button" id="wmd-gb-button" class="btn btn-xs" style="margin-right:5px;"><?php _e("插入Github按钮"); ?></button>');
+	}
+	$('#wmd-gb-button').click(function(){
+		$('body').append('<div id="gbpanel">' +
+		'<div class="wmd-prompt-background" style="position:absolute;z-index:1000;opacity:0.5;top:0px;left:0px;width:100%;height:954px;"></div>' +
+		'<div class="wmd-prompt-dialog"><div><p><b><?php _e("插入Github按钮"); ?></b></p>' +
+			'<p><?php _e("请在下方的输入框内输入要插入的Github按钮信息"); ?></p></div>' +
+			'<form><input type="text"></input><button type="button" class="btn btn-s primary" id="ok"><?php _e("确定"); ?></button>' +
+			'<button type="button" class="btn btn-s" id="cancel"><?php _e("取消"); ?></button></form>' +
+		'</div></div>');
+		var gblog = $('.wmd-prompt-dialog input'),
+			textarea = $('#text');
+		gblog.val('<?php _e("用户名"); ?>/<?php _e("项目名"); ?>').select();
+		$('#cancel').click(function(){
+			$('#gbpanel').remove();
+			textarea.focus();
+		});
+		$('#ok').click(function(){
+			var gbinput = '<gb>' + gblog.val() + '</gb>',
+				sel = textarea.getSelection(),
+				offset = (sel ? sel.start : 0)+gbinput.length;
+			textarea.replaceSelection(gbinput);
+			textarea.setSelection(offset,offset);
+			$('#gbpanel').remove();
+		});
+	});
+});
+</script>
+<?php
 	}
 
 }
