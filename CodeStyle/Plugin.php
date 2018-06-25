@@ -4,7 +4,7 @@
  * 
  * @package CodeStyle 
  * @author hongweipeng
- * @version 0.7.1
+ * @version 0.8.0
  * @link https://www.hongweipeng.com
  */
 class CodeStyle_Plugin implements Typecho_Plugin_Interface {
@@ -43,6 +43,8 @@ class CodeStyle_Plugin implements Typecho_Plugin_Interface {
         $styles = array_combine($styles, $styles);
         $name = new Typecho_Widget_Helper_Form_Element_Select('code_style', $styles, 'segmentfault.css', _t('选择你的代码风格'));
         $form->addInput($name->addRule('enum', _t('必须选择配色样式'), $styles));
+        $showLineNumber = new Typecho_Widget_Helper_Form_Element_Checkbox('showln', array('showln' => _t('显示行号')), array('showln'), _t('是否在代码左侧显示行号'));
+        $form->addInput($showLineNumber);
 
         /*$jq_import = new Typecho_Widget_Helper_Form_Element_Radio('jq_import', array(
             0   =>  _t('不引入'),
@@ -79,6 +81,9 @@ class CodeStyle_Plugin implements Typecho_Plugin_Interface {
         $style = Helper::options()->plugin('CodeStyle')->code_style;
         $cssUrl = Helper::options()->pluginUrl . '/CodeStyle/markdown/styles/' . $style;
         echo '<link rel="stylesheet" type="text/css" href="' . $cssUrl . '" />';
+        if (Helper::options()->plugin('CodeStyle')->showln) {
+            echo '<link rel="stylesheet" type="text/css" href="' . Helper::options()->pluginUrl. '/CodeStyle/markdown/highlightjs-line.css" />';
+        }
     }
 
     /**
@@ -87,11 +92,22 @@ class CodeStyle_Plugin implements Typecho_Plugin_Interface {
      */
     public static function footer() {
         $jsUrl = Helper::options()->pluginUrl . '/CodeStyle/markdown/highlight.pack.js';
+        $lineUrl = Helper::options()->pluginUrl . '/CodeStyle/markdown/highlightjs-line-numbers.min.js';
+        $showIn = Helper::options()->plugin('CodeStyle')->showln;
         echo <<<HTML
             <script type="text/javascript" src="{$jsUrl}"></script>
             <script type="text/javascript">
                 hljs.initHighlightingOnLoad();
             </script>
 HTML;
+        if ($showIn) {
+            echo <<<HTML
+            <script type="text/javascript" src="{$lineUrl}"></script>
+            <script type="text/javascript">
+                hljs.initLineNumbersOnLoad();
+            </script>
+HTML;
+
+        }
     }
 }
