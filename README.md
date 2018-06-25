@@ -1,6 +1,6 @@
 ## 起步
 
-代码展示样式，将highlightjs制作为typecho插件形式。
+代码展示样式，将 [highlightjs][4] 制作为typecho插件形式。
 
 ## 使用方法
 
@@ -19,5 +19,12 @@ github开源地址：[https://github.com/hongweipeng/CodeStyle_for_typecho][1]
 或者通过 Emai: hongweichen8888@sina.com
 有任何问题也可评论留言
 
+## 感谢
+代码行显示支持:
+
+[https://github.com/wcoder/highlightjs-line-numbers.js][3]
+
 [1]: https://github.com/hongweipeng/MenuTree_for_typecho
 [2]: https://www.hongweipeng.com/
+[3]: https://github.com/wcoder/highlightjs-line-numbers.js
+[4]: https://highlightjs.org/
