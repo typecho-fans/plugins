@@ -1,3 +1,67 @@
+/* AudioPlayer plugin */
+#description {
+	color: #999;
+	font-size: .92857em;
+}
+
+#description strong {
+	color:#467B96;
+}
+
+#description span {
+	font-weight:bold;
+	color:#444;
+}
+
+#sample {
+	color: #444;
+	font-size: .92857em;
+	font-weight: bold;
+	padding: 5px 8px;
+	width: 210px;
+	background: #E9E9E6;
+}
+
+#sample span {
+	color: #467B96;
+}
+
+#ap_fieldselector {
+	height: 23px;
+}
+
+.predes {
+	color: #999;
+	font-size: .92857em;
+	display: block;
+	margin-top: 3px;
+}
+
+#typecho-option-item--0 {
+	position: relative;
+}
+#ap_resetcolor {
+	position: absolute;
+	top: 29px;
+	left: 132px;
+	height: 22px;
+}
+
+.text {
+	width: 50px! important;
+}
+
+.typecho-label span {
+	font-size: 8px;
+	color: #467B96;
+	background-color: #E9E9E6;
+}
+.typecho-label span em {
+	font-weight: normal;
+	color: #8A1F11;
+}
+
+/* Selector sets*/
 #ap_colorscheme {
 	position: relative;
 }
@@ -14,7 +78,7 @@
 	padding: 2px;
 	width: 75px;
 	height: 23px;
-	text-transform : uppercase
+	text-transform: uppercase
 }
 
 #ap_colorsample {
@@ -49,15 +113,6 @@
 	font-size: 13px;
 	cursor: pointer;
 	color: #467B96;
-}
-
-#ap_resetcolor {
-	position: absolute;
-	bottom: 49px;
-	left: 132px;
-	height: 22px;
-	padding-bottom: 2px;
-	margin-bottom: 1.5px;
 }
 
 #ap_themecolor {
