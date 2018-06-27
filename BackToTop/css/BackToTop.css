@@ -1,0 +1,13 @@
+#BackToTop {
+	bottom:0px;
+	right:0px;
+	position:fixed;
+	opacity:0.5;
+	transition:all .5s;
+	cursor:pointer;
+	transform:scale(.7,.7);
+	transform-origin:right bottom;
+}
+#BackToTop:hover {
+	opacity:1;
+}
