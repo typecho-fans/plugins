@@ -5,8 +5,8 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
  * 
  * @package AudioPlayer
  * @author 羽中
- * @version 1.2.5
- * @dependence 14.10.10-*
+ * @version 1.2.6
+ * @dependence 14.5.26-*
  * @link http://www.yzmb.me/archives/net/audio-player-for-typecho
  */
 class AudioPlayer_Plugin implements Typecho_Plugin_Interface
@@ -25,7 +25,7 @@ class AudioPlayer_Plugin implements Typecho_Plugin_Interface
 	* @access private
 	* @var array
 	*/
-	private static $Colors = array(
+	private static $colors = array(
 		'bg'=>'E5E5E5',
 		'leftbg'=>'CCCCCC',
 		'lefticon'=>'333333',
@@ -53,8 +53,17 @@ class AudioPlayer_Plugin implements Typecho_Plugin_Interface
 	public static function activate()
 	{
 		Typecho_Plugin::factory('Widget_Abstract_Contents')->contentEx = array('AudioPlayer_Plugin','playerparse');
-		Typecho_Plugin::factory('Widget_Abstract_Contents')->excerptEx = array('AudioPlayer_Plugin','playerparse');
 		Typecho_Plugin::factory('Widget_Abstract_Contents')->excerpt = array('AudioPlayer_Plugin','textparse');
+
+		Typecho_Plugin::factory('Widget_Archive')->header = array('AudioPlayer_Plugin','html5css');
+		Typecho_Plugin::factory('Widget_Archive')->footer = array('AudioPlayer_Plugin','html5js');
+
+		Typecho_Plugin::factory('admin/write-post.php')->bottom = array('AudioPlayer_Plugin','apbutton');
+		Typecho_Plugin::factory('admin/write-page.php')->bottom = array('AudioPlayer_Plugin','apbutton');
+
+		/* 模版调用钩子 例: <?php $this->audioplayer('http://test.mp3'); ?> 第2个参数(可略)为播放器参数数组 */
+		Typecho_Plugin::factory('Widget_Archive')->callAudioplayer = array('AudioPlayer_Plugin', 'getPlayer');
+		Typecho_Plugin::factory('Widget_Archive')->callMiniplayer = array('AudioPlayer_Plugin', 'html5player');
 	}
 
 	/**
@@ -77,80 +86,103 @@ class AudioPlayer_Plugin implements Typecho_Plugin_Interface
 	public static function config(Typecho_Widget_Helper_Form $form)
 	{
 		$options = Helper::options();
+		$security = Helper::security();
+
 		//格式化默认配色
-		$colors = self::$Colors;
+		$colors = self::$colors;
+		$colorset = array();
 		foreach ($colors as $key=>$color) {
-			$colors[$key] = '#'.$color;
+			$colorset[$key] = '#'.$color;
 		}
-		$colors = Json::encode($colors);
+		$colors = Json::encode($colorset);
+
+		if (isset($options->plugins['activated']['AudioPlayer'])) {
+			$settings = $options->plugin('AudioPlayer');
+			$colorset = Json::decode($settings->ap_colors,true);
+		}
 
 //输出面板效果
 ?>
-<div style="color:#999;font-size:13px;">
-<?php _e('编辑文章或页面写入%s文件地址%s即可显示音频播放器, 多个mp3文件连播可用%s号隔开, <br/>参数间用%s号隔开, 支持%s(自动播放)%s(循环播放)%s(曲名)%s(艺术家名)等. 示例','<span style="color:#467B96;font-weight:bold;">[mp3]</span><span style="color:#444;font-weight:bold;">','</span><span style="color:#467B96;font-weight:bold;">[/mp3]</span>','<span style="color:#467B96;font-weight:bold;">,</span>','<span style="color:#467B96;font-weight:bold;">|</span>','<span style="color:#444;font-weight:bold;">autostart</span>','<span style="color:#444;font-weight:bold;">loop</span>','<span style="color:#444;font-weight:bold;">titles</span>','<span style="color:#444;font-weight:bold;">artists</span>'); ?>
+<div id="description">
+<?php _e('编辑文章或页面写入%s文件地址%s即可显示音频播放器, 多个mp3文件连播可用%s号隔开, <br/>参数间用%s号隔开, 支持%s(自动播放)%s(循环播放)%s(曲名)%s(艺术家名)等. 示例','<strong>[mp3]<span>','</span>[/mp3]</strong>','<strong>,</strong>','<strong>|</strong>','<span>autostart</span>','<span>loop</span>','<span>titles</span>','<span>artists</span>'); ?>
 </div>
-<div style="color:#444;font-size:13px;font-weight:bold;padding:5px 8px;width:210px;background:#E9E9E6;">
-<span style="color:#467B96;">[mp3]</span>http://dfp.mp3<span style="color:#467B96;">,</span>http://m.mp3<span style="color:#467B96;">|</span><br/>
-<span style="color:#467B96;">titles=</span>东风破<span style="color:#467B96;">,</span>The Monster<span style="color:#467B96;">|</span><br/>
-<span style="color:#467B96;">artists=</span>周杰伦<span style="color:#467B96;">,</span>Eminem<span style="color:#467B96;">|</span><br/>
-<span style="color:#467B96;">autostart=</span>no<span style="color:#467B96;">|<br/>
-loop=</span>yes<span style="color:#467B96;">[/mp3]</span></div>
+<div id="sample">
+<span>[mp3]</span>http://a.mp3<span>,</span>http://b.mp3<span>|</span><br/>
+<span>titles=</span>aaa<span>,</span>bbb<span>|</span><br/>
+<span>artists=</span>aa<span>,</span>bb<span>|</span><br/>
+<span>autostart=</span>no<span>|<br/>
+loop=</span>yes<span>[/mp3]</span></div>
 
+<link href="<?php $options->pluginUrl('AudioPlayer/admin/audio-player-admin.css'); ?>" rel="stylesheet"/>
 <link href="<?php $options->pluginUrl('AudioPlayer/assets/cpicker/colorpicker.css'); ?>" rel="stylesheet"/>
-<link href="<?php $options->pluginUrl('AudioPlayer/assets/audio-player-admin.css'); ?>" rel="stylesheet"/>
+<link href="<?php $options->pluginUrl('AudioPlayer/assets/miniplayer.css'); ?>" rel="stylesheet"/>
+<style>
+.mbMiniPlayer.custom .playerTable{background-color:transparent;}
+.mbMiniPlayer.custom .playerTable span{color:<?php echo $colorset['lefticon']; ?>;background-color:<?php echo $colorset['leftbg']; ?>;text-shadow:none !important;}
+.mbMiniPlayer.custom .playerTable span.map_play{border-left:1px solid <?php echo $colorset['bg']; ?>;}
+.mbMiniPlayer.custom .playerTable span.map_volume{padding-left:6px !important;border-right:1px solid <?php echo $colorset['bg']; ?>;}
+.mbMiniPlayer.custom .playerTable span.map_volume.mute{color:<?php echo $colorset['skip']; ?>;}
+.mbMiniPlayer.custom .playerTable span.map_title{color:<?php echo $colorset['text']; ?>;}
+.mbMiniPlayer.custom .playerTable .jp-load-bar{background-color:<?php echo $colorset['track']; ?>;}
+.mbMiniPlayer.custom .playerTable .jp-play-bar{background-color:<?php echo $colorset['tracker']; ?>;}
+.mbMiniPlayer.custom .playerTable span.map_volumeLevel a{background-color:<?php echo $colorset['voltrack']; ?>;}
+.mbMiniPlayer.custom .playerTable span.map_volumeLevel a.sel{background-color:<?php echo $colorset['volslider']; ?>;}
+</style>
 <script src="<?php $options->adminUrl('js/jquery.js'); ?>"></script>
-<script>
-$(function() {
-	//冲突选项显隐
-	var e = $('#ap_encode-1'),
-		h = $('#typecho-option-item-ap_html5-10'),
-		hl = $('label',h), hi = $('input',h);
-	if (e.is(':checked')) disabled();
-	e.click(function() {
-		if ($(this).prop('checked')) {
-			disabled();
-		} else {
-			hl.removeAttr('style');
-			hi.removeAttr('disabled').prop('checked','true');
-		}
-	});
-	function disabled() {
-		hl.attr('style','color:#999;');
-		hi.removeAttr('checked').attr('disabled','true');
-	}
-	//定义配色数据
-	colorInput = $("#ap_colors"),
-	colorDatas = eval('('+colorInput.val()+')'),
-	colorDefault = eval('(<?php echo $colors; ?>)');
-});
-</script>
-<script src="<?php $options->pluginUrl('AudioPlayer/assets/cpicker/colorpicker.js'); ?>"></script>
-<script src="<?php $options->pluginUrl('AudioPlayer/assets/audio-player-admin.js'); ?>"></script>
 <script src="<?php $options->pluginUrl('AudioPlayer/assets/audio-player.js'); ?>"></script>
-<script >
-	AudioPlayer.setup("<?php $options->pluginUrl('AudioPlayer/assets/player.swf'); ?>",<?php echo self::getSets(); ?>);
+<script>
+//菜单项背景色
+$(function(){
+	$('option:eq(5),option:eq(6),option:eq(7),option:eq(8),option:eq(12),option:eq(13)').attr('style','background-color:#E9E9E6;color:#999;');
+});
+AudioPlayer.setup("<?php $options->pluginUrl('AudioPlayer/assets/player.swf'); ?>",<?php echo self::getSets(); ?>);
+AudioPlayer.embed("ap_demoplayer",{demomode:"yes"});
 </script>
+<script src="<?php $options->pluginUrl('AudioPlayer/admin/audio-player-admin.js'); ?>"></script>
+<script src="<?php $options->pluginUrl('AudioPlayer/assets/cpicker/colorpicker.js'); ?>"></script>
 
 <div id="ap_colorscheme">
 	<div id="ap_colorselector">
-		<input name="ap_colorvalue" type="text" id="ap_colorvalue" size="15" maxlength="7" />
+		<input name="ap_colorvalue" type="text" id="ap_colorvalue" size="15" maxlength="7"/>
 		<span id="ap_colorsample"></span>
 		<span id="ap_picker-btn"><?php _e('选色器'); ?></span>
-		<?php $themeColors = self::getThemeColors(); if ($themeColors) { ?>
+<?php
+$tcolors = self::getThemeColors();
+if ($tcolors) {
+?>
 		<span id="ap_themecolor-btn"><?php _e('来自主题'); ?></span>
 		<div id="ap_themecolor">
 			<span>yzmb.me</span>
 			<ul>
-			<?php foreach($themeColors as $themeColor) { ?>
-				<li style="background:#<?php echo $themeColor ?>;" title="#<?php echo $themeColor ?>">#<?php echo $themeColor ?></li>
-			<?php } ?>
+<?php
+	foreach ($tcolors as $tcolor) {
+ ?>
+				<li style="background:#<?php echo $tcolor ?>;" title="#<?php echo $tcolor ?>">#<?php echo $tcolor ?></li>
+<?php
+	}
+?>
 			</ul>
 		</div>
-		<?php } ?>
+<?php
+}
+?>
 	</div>
 </div>
 
 <?php
+		if (Typecho_Request::getInstance()->is('action=resetcolor') && isset($options->plugins['activated']['AudioPlayer'])) {
+			$security->protect();
+			Helper::configPlugin('AudioPlayer',array('ap_colors'=>$colors));
+			Typecho_Response::getInstance()->goBack();
+		}
+		//重置动作按钮
+		$resetcolor = new Typecho_Widget_Helper_Form_Element_Submit();
+		$resetcolor->value(_t('重置'));
+		$resetcolor->input->setAttribute('id','ap_resetcolor');
+		$resetcolor->input->setAttribute('class','btn btn-xs');
+		$resetcolor->input->setAttribute('formaction',$security->getAdminUrl('options-plugin.php?config=AudioPlayer&action=resetcolor'));
+		$form->addItem($resetcolor);
+
 		$ap_fieldselector = new Typecho_Widget_Helper_Form_Element_Select('ap_fieldselector',
 			array(
 				'bg'=>_t('背景'),
@@ -170,64 +202,43 @@ $(function() {
 				'skip'=>_t('切歌按钮')
 			),
 			'bg',_t('播放器配色'),'
-			<div id="ap_demoplayer">
-				Audio Player
-			</div>
-			<script>
-			AudioPlayer.embed("ap_demoplayer",{demomode:"yes"});
-			</script>');
+<div id="ap_demoplayer">
+	<div id="mp" isplaying="true" tabindex="1" class="mbMiniPlayer custom jp-state-playing"><div class="playerTable"><div style="user-select: none;" unselectable="on" class="muteBox"><span class="map_volume">Vm</span></div><div style="user-select: none; display: table-cell;" unselectable="on" class="volumeLevel"><span class="map_volumeLevel" style="width: 40px;"><a style="opacity: 0.4; height: 80%; width: 2px;" class="sel"></a><a style="opacity: 0.4; height: 80%; width: 2px;" class="sel"></a><a style="opacity: 0.4; height: 80%; width: 2px;" class="sel"></a><a style="opacity: 0.4; height: 80%; width: 2px;" class="sel"></a><a style="opacity: 0.4; height: 80%; width: 2px;" class="sel"></a><a style="opacity: 0.4; height: 80%; width: 2px;" class="sel"></a><a style="opacity: 0.4; height: 80%; width: 2px;" class="sel"></a><a style="opacity: 0.1; height: 80%; width: 2px;"></a><a style="opacity: 0.1; height: 80%; width: 2px;"></a><a style="opacity: 0.1; height: 80%; width: 2px;"></a><a style="opacity: 0.1; height: 80%; width: 2px;"></a><a style="opacity: 0.1; height: 80%; width: 2px;"></a></span></div><div style="user-select: none; display: table-cell;" unselectable="on" class="map_controlsBar"><div class="map_controls" style="display: block; height: 20px; width: 121px;"><span class="map_title">HTML5: Demo Mode</span><div class="jp-progress"><div class="jp-load-bar" id="loadBar_mp_mbmaplayer_1524372259773" style="width: 100%;"><div class="jp-play-bar" id="playBar_mp_mbmaplayer_1524372259773" style="width: 58.3111%; overflow: hidden;"></div></div></div></div></div><div style="user-select: none; display: table-cell;" unselectable="on" class="timeBox"><span class="map_time" style="width: 34px;" title="03:45">02:11</span></div><div style="user-select: none; display: table-cell;" unselectable="on" class="rewBox"><span class="map_rew" style="width: 20px;">R</span></div><div style="user-select: none;" unselectable="on"><span class="map_play" style="opacity: 1;">p</span></div></div></div>
+</div>
+<span class="predes">'._t('注意菜单内灰色项不适用于HTML5版播放器').'</span>');
 		$ap_fieldselector->input->setAttribute('id','ap_fieldselector');
-		$ap_fieldselector->input->setAttribute('style','height:23px');
 		$form->addInput($ap_fieldselector);
-
-		if (Typecho_Request::getInstance()->is('action=resetcolor') && isset($options->plugins['activated']['AudioPlayer'])) {
-			Helper::configPlugin('AudioPlayer',array('ap_colors'=>$colors));
-			Typecho_Response::getInstance()->goBack();
-		}
-		//重置动作按钮
-		$resetcolor = new Typecho_Widget_Helper_Form_Element_Submit();
-		$resetcolor->value(_t('重置'));
-		$resetcolor->setAttribute('style','position:relative');
-		$resetcolor->input->setAttribute('id','ap_resetcolor');
-		$resetcolor->input->setAttribute('class','btn btn-xs');
-		$resetcolor->input->setAttribute('formaction',Helper::security()->getAdminUrl('options-plugin.php?config=AudioPlayer&action=resetcolor'));
-		$form->addItem($resetcolor);
 
 		$ap_width = new Typecho_Widget_Helper_Form_Element_Text('ap_width',
 		NULL,'290',_t('播放器宽度'),_t('输入像素值(如200不用带px)或百分数(如80%)'));
-		$ap_width->input->setAttribute('style','width:50px');
-		$ap_width->addRule(array(new AudioPlayer_Plugin,'widthformat'),_t('请填写整数或百分数'));
 		$ap_width->addRule('required',_t('播放器宽度不能为空'));
+		$ap_width->addRule(array(new AudioPlayer_Plugin,'widthformat'),_t('请填写整数或百分数'));
 		$form->addInput($ap_width);
 
 		$ap_initialvolume = new Typecho_Widget_Helper_Form_Element_Text('ap_initialvolume',
 		NULL,'60',_t('初始音量大小'),_t('播放器启动时的音量起步值, 最大100, 默认60'));
-		$ap_initialvolume->input->setAttribute('style','width:50px');
-		$ap_initialvolume->addRule('isInteger',_t('请填写整数数字'));
 		$ap_initialvolume->addRule('required',_t('初始音量不能为空'));
-		$form->addInput($ap_initialvolume);
+		$form->addInput($ap_initialvolume->addRule('isInteger',_t('请填写整数数字')));
 
 		$ap_buffer = new Typecho_Widget_Helper_Form_Element_Text('ap_buffer',
-		NULL,'5',_t('缓冲等待时间'),_t('单位秒(不用填写), 视播放卡顿情况可适当提高'));
-		$ap_buffer->input->setAttribute('style','width:50px');
-		$ap_buffer->addRule('isInteger',_t('请填写整数数字'));
+		NULL,'5',_t('缓冲预读时间').' <span>HTML5<em>&#10008;</em></span>',_t('单位秒(不用填写), 若播放经常卡顿可适当提高'));
 		$ap_buffer->addRule('required',_t('缓冲时间不能为空'));
-		$form->addInput($ap_buffer);
+		$form->addInput($ap_buffer->addRule('isInteger',_t('请填写整数数字')));
 
 		$ap_animation = new Typecho_Widget_Helper_Form_Element_Checkbox('ap_animation',
 		array(1=>_t('省去点击操作让播放器直接处于展开状态')),NULL,_t('禁用动画效果'));
 		$form->addInput($ap_animation);
 
 		$ap_encode = new Typecho_Widget_Helper_Form_Element_Checkbox('ap_encode',
-		array(1=>_t('隐藏文件真实url(不支持HTML5缺省播放)')),NULL,_t('加密mp3地址'));
+		array(1=>_t('隐藏文件真实的url, 在源码中显示为乱码')),NULL,_t('加密mp3地址'));
 		$form->addInput($ap_encode);
 
 		$ap_behaviour = new Typecho_Widget_Helper_Form_Element_Checkbox('ap_behaviour',
-		array(1=>_t('将文内指向mp3的链接自动替换成播放器')),NULL,_t('代替mp3链接'));
+		array(1=>_t('将文中指向mp3的链接自动替换为播放器')),NULL,_t('替换mp3链接'));
 		$form->addInput($ap_behaviour);
 
 		$ap_remaining = new Typecho_Widget_Helper_Form_Element_Checkbox('ap_remaining',
-		array(1=>_t('显示音频的剩余倒计时而非已播放的时长')),NULL,_t('显示剩余时长'));
+		array(1=>_t('显示音频的剩余倒计时而非已播放的时长')),NULL,_t('显示剩余时长').' <span>HTML5<em>&#10008;</em></span>');
 		$form->addInput($ap_remaining);
 
 		$ap_noinfo = new Typecho_Widget_Helper_Form_Element_Checkbox('ap_noinfo',
@@ -235,7 +246,7 @@ $(function() {
 		$form->addInput($ap_noinfo);
 
 		$ap_html5 = new Typecho_Widget_Helper_Form_Element_Checkbox('ap_html5',
-		array(1=>_t('若浏览器不支持flash则显示HTML5播放器')),1,_t('使用缺省播放'));
+		array(1=>_t('若浏览器不支持flash显示HTML5版播放器')),1,_t('使用缺省播放'));
 		$form->addInput($ap_html5);
 
 		//配色保存隐藏域
@@ -256,6 +267,7 @@ $(function() {
 	/**
 	 * 内容标签替换
 	 * 
+	 * @access public
 	 * @param string $content
 	 * @return string
 	 */
@@ -264,15 +276,13 @@ $(function() {
 		$content = empty($lastResult) ? $content : $lastResult;
 
 		if ($widget instanceof Widget_Archive && !$widget->request->feed && false!==stripos($content,'[mp3]')) {
-			$pattern = '/\[(mp3)](.*?)\[\/\\1]/si';
 			$callback = array('AudioPlayer_Plugin','parseCallback');
-
 			//替换播放器标签
-			$content = preg_replace_callback($pattern,$callback,$content);
+			$content = preg_replace_callback('/\[(mp3)](.*?)\[\/\\1]/si',$callback,$content);
 
 			//替换mp3链接
 			if (Helper::options()->plugin('AudioPlayer')->ap_behaviour) {
-				$content = preg_replace_callback('/<a ([^=]+=[\'"][^"\']+[\'"] )*href=[\'"]([^\s]+\.mp3)[\'"]( [^=]+=[\'"][^"\']+[\'"])*>.*?<\/a>/si',$callback,$content);
+				$content = preg_replace_callback('/<a ([^=]+=[\'"][^mp_.*?]+[\'"] )*href=[\'"]([^\s]+\.mp3)[\'"]( [^=]+=[\'"][^"\']+[\'"])*>.*?<\/a>/si',$callback,$content);
 			}
 		}
 
@@ -299,13 +309,13 @@ $(function() {
 	/**
 	 * 参数回调解析
 	 * 
-	 * @param array $matche
+	 * @param array $match
 	 * @return string
 	 */
-	public static function parseCallback($matche)
+	public static function parseCallback($match)
 	{
 		//过滤html标签
-		$atts = explode('|',trim(Typecho_Common::stripTags($matche['2'])));
+		$atts = explode('|',trim(Typecho_Common::stripTags($match['2'])));
 		$files = array_shift($atts);
 
 		$pair = array();
@@ -315,48 +325,44 @@ $(function() {
 			$data[trim($pair['0'])] = trim($pair['1']);
 		}
 
-		return self::getPlayer($files,$data,true);
+		return self::getPlayer(Typecho_Widget::widget('Widget_Archive'),array($files,$data,true));
 	}
 
 	/**
 	 * 输出播放器实例
 	 * 
-	 * @param string $source 音频地址
-	 * @param array $playerOptions 参数设置
-	 * @param boolean $isCall 是否回调
-	 * @return void
+	 * @access public
+	 * @param array $params 实例参数
+	 * @return string
 	 */
-	public static function getPlayer($source,$playerOptions=array(),$isCall=false)
+	public static function getPlayer($widget,array $params)
 	{
 		$options = Helper::options();
 		$settings = $options->plugin('AudioPlayer');
 		$playerurl = $options->pluginUrl.'/AudioPlayer/assets/';
-		$playerElementID = "audioplayer_".++self::$playerID;
+		$playerid = "audioplayer_".++self::$playerID;
 
-		//url编码处理
+		//处理实例参数
+		$source = '';
+		$source = isset($params['0']) && is_string($params['0']) ? $params['0'] : $source;
+		$playerOptions = array();
+		$playerOptions = isset($params['1']) && is_array($params['1']) ? $params['1'] : $playerOptions;
+		$isCall = false;
+		$isCall = !empty($params['2']) && is_bool($params['2']) ? $params['2'] : $isCall;
+
 		$source = html_entity_decode($source);
-		if (function_exists('iconv')) {
-			$address = iconv('gbk','utf-8',$source);
-		}
-		$playerOptions['soundFile'] = $settings->ap_encode ? self::encodeSource($address) : $address;
-
-		$fallback = '<span style="padding:5px;border:1px solid #dddddd;background:#f8f8f8;">'._t('播放此段音频需要Adobe Flash Player, 请点击<a href="%s" title="下载Adobe Flash Player">下载最新版本</a>并确认浏览器已开启JavaScipt支持','https://get.adobe.com/flashplayer/').'</span>';
-		//不加密可html5
-		if ($settings->ap_html5 && !$settings->ap_encode) {
-			$fallback = '';
-			$sources = explode(',',$source);
-			foreach ($sources as $source) {
-				$fallback .= '<audio src="'.$source.'" controls preload="none"></audio>';
-			}
-		}
+		$playerOptions['soundFile'] = $settings->ap_encode ? self::encodeSource($source) : $source;
+		//缺省调用html5
+		$fallback = $settings->ap_html5 ? self::html5player($widget,array($source,$playerOptions,true))
+			: '<span style="padding:5px;border:1px solid #dddddd;background:#f8f8f8;">'._t('播放此段音频需要Adobe Flash Player, 请点击%s下载最新版本%s并确认浏览器已开启JavaScipt支持','<a href="https://get.adobe.com/flashplayer/" target="_blank">','</a>').'</span>';
 
 		//播放器实例代码
-		$playerCode = '<script type="text/javascript">//<![CDATA[
-	window.audioplayer_swfobject || document.write("<script type=\"text/javascript\" src=\"'.$playerurl.'audio-player.js\"><\/script>")//]]></script>';
+		$playerCode = '<script type="text/javascript">
+window.audioplayer_swfobject || document.write(\'<script type="text/javascript" src="'.$playerurl.'audio-player.js"><\/script>\')</script>'; //不重复加载
 		$playerCode .= '<script type="text/javascript">AudioPlayer.setup("'.$playerurl.'player.swf",'.self::getSets().');</script>';
-		$playerCode .= '<p class="audioplayer_container" id="'.$playerElementID.'">'.$fallback.'</p>';
+		$playerCode .= '<div class="audioplayer_container" id="'.$playerid.'">'.$fallback.'</div>';
 		$playerCode .= '<script type="text/javascript">';
-		$playerCode .= 'AudioPlayer.embed("'.$playerElementID.'",'.self::php2js($playerOptions).');';
+		$playerCode .= 'AudioPlayer.embed("'.$playerid.'",'.self::php2js($playerOptions).');';
 		$playerCode .= '</script>';
 
 		//模版输出判断
@@ -368,7 +374,167 @@ $(function() {
 	}
 
 	/**
-	 * 输出插件设置
+	 * 输出html5版实例
+	 * 
+	 * @access public
+	 * @param array $params 实例参数
+	 * @return string
+	 */
+	public static function html5player($widget,array $params)
+	{
+		$options = Helper::options();
+		$settings = $options->plugin('AudioPlayer');
+		$playerurl = $options->pluginUrl.'/AudioPlayer/assets/';
+		$playerid = "mp_".++self::$playerID;
+
+		//处理实例参数
+		$source = '';
+		$source = isset($params['0']) && is_string($params['0']) ? $params['0'] : $source;
+		$playerOptions = array();
+		$playerOptions = isset($params['1']) && is_array($params['1']) ? $params['1'] : $playerOptions;
+		$isCall = false;
+		$isCall = !empty($params['2']) && is_bool($params['2']) ? $params['2'] : $isCall;
+
+		//处理播放参数
+		$autostart = isset($playerOptions['autostart']) ? $playerOptions['autostart'] : '';
+		$loop = isset($playerOptions['loop']) ? $playerOptions['loop'] : '';
+		$title = isset($playerOptions['titles']) ? $playerOptions['titles'] : '';
+		$artist = isset($playerOptions['artists']) ? $playerOptions['artists'] : '';
+		$noinfo = $settings->ap_noinfo;
+		$param = '{autoplay:'.($autostart=='yes' ? 'true' : 'false').',loop:'.($loop=='yes' ? 'true' : 'false').($title || $noinfo ? ',id3:false' : '').'}';
+
+		$infos = self::infos($source,$title,$artist);
+		$sources = explode(',',$source);
+		$mp3 = trim($sources['0']);
+		$name = $noinfo ? '' : $infos['0'];
+		$mp3 = $settings->ap_encode ? self::encodeSource($mp3) : $mp3;
+		$html = '<a id="'.$playerid.'" class="mb_map '.$param.'" href="'.$mp3.'">'.$name.'</a>';
+
+		//输出列表模式
+		if (count($sources)>1) {
+			$html = '
+<div class="map_pl_container">'.$html.'
+<div class="pl_items_container">
+';
+			foreach ($sources as $i=>$source) {
+				$mp3 = trim($source);
+				$name = $infos[''.$i.''];
+				$mp3 = $settings->ap_encode ? self::encodeSource($mp3) : $mp3;
+				$html .= '<div class="pl_item'.($i==0 ? ' sel' : '').'" onclick="$(\'#'.$playerid.'\').mb_miniPlayer_changeFile({mp3:\''.$mp3.'\'},\''.$name.'\')" style="cursor:pointer;">'.$name.'</div>
+';
+			}
+			$html .= '</div></div>
+';
+		}
+
+		//模版输出判断
+		if ($isCall) {
+			return $html;
+		} else {
+			echo $html;
+		}
+	}
+
+	/**
+	 * 构造曲目信息
+	 * 
+	 * @param string $source 文件地址
+	 * @param string $title 曲目名称
+	 * @param string $artist 艺术家名
+	 * @return array
+	 */
+	private static function infos($source,$title,$artist)
+	{
+		$sources = explode(',',$source);
+		$titles = explode(',',$title);
+		$artists = explode(',',$artist);
+
+		$song = '';
+		$star = '';
+		$con = '';
+		$info = array();
+		foreach ($sources as $i=>$file) {
+			$song = empty($titles[''.$i.'']) ? preg_replace('/^.+[\\\\\\/]/','',$file) : trim($titles[''.$i.'']);
+			$star = isset($artists[''.$i.'']) ? trim($artists[''.$i.'']) : '';
+			$con = $star ? ' - ' : '';
+			$info[] = $song.$con.$star;
+		}
+
+		return $info;
+	}
+
+	/**
+	 * 输出头部样式
+	 * 
+	 * @access public
+	 * @return void
+	 */
+	public static function html5css()
+	{
+		$options = Helper::options();
+		$settings = $options->plugin('AudioPlayer');
+		$playerurl = $options->pluginUrl.'/AudioPlayer/assets/';
+		$width = $settings->ap_width;
+		$colorset = Json::decode($settings->ap_colors,true);
+		$css = '';
+
+		if ($settings->ap_html5) {
+			$css = '
+<link href="'.$playerurl.'miniplayer.css" rel="stylesheet" type="text/css"/>
+<style type="text/css">
+.mbMiniPlayer.custom .playerTable{background-color:transparent;}
+.mbMiniPlayer.custom .playerTable span{color:'.$colorset['lefticon'].';background-color:'.$colorset['leftbg'].';text-shadow:none !important;}
+.mbMiniPlayer.custom .playerTable span.map_play{border-left:1px solid '.$colorset['bg'].';}
+.mbMiniPlayer.custom .playerTable span.map_volume{padding-left:6px !important;border-right:1px solid '.$colorset['bg'].';}
+.mbMiniPlayer.custom .playerTable span.map_volume.mute{color:'.$colorset['skip'].';}
+.mbMiniPlayer.custom .playerTable span.map_title{color:'.$colorset['text'].';}
+.mbMiniPlayer.custom .playerTable .jp-load-bar{background-color:'.$colorset['track'].';}
+.mbMiniPlayer.custom .playerTable .jp-play-bar{background-color:'.$colorset['tracker'].';}
+.mbMiniPlayer.custom .playerTable span.map_volumeLevel a{background-color:'.$colorset['voltrack'].';}
+.mbMiniPlayer.custom .playerTable span.map_volumeLevel a.sel{background-color:'.$colorset['volslider'].';}
+.pl_items_container {width:'.(false!==strpos($width,'%') ? $width : $width.'px').' !important;}
+</style>
+';
+		}
+		echo $css;
+	}
+
+	/**
+	 * 输出底部脚本
+	 * 
+	 * @access public
+	 * @return void
+	 */
+	public static function html5js()
+	{
+		$options = Helper::options();
+		$settings = $options->plugin('AudioPlayer');
+		$playerurl = $options->pluginUrl.'/AudioPlayer/assets/';
+		$width = $settings->ap_width;
+		$js = '';
+
+		if ($settings->ap_html5) {
+			$js = '
+<script type="text/javascript">
+window.jQuery || document.write(\'<script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"><\/script>\')</script>
+<script type="text/javascript" src="'.$playerurl.'miniplayer.js"></script>
+<script type="text/javascript">
+$(function(){
+	$(\'a[id^="mp_"]\').mb_miniPlayer({
+		width:"'.(false!==strpos($width,'%') ? $width : $width+10).'",
+		animate:'.($settings->ap_animation ? 'false' : 'true').',
+		volume:'.$settings->ap_initialvolume*0.01.($settings->ap_encode ? ',
+		encode:true' : '').'
+	});
+});
+</script>
+';
+		}
+		echo $js;
+	}
+
+	/**
+	 * 输出flash版配置
 	 * 
 	 * @return string
 	 */
@@ -388,7 +554,7 @@ $(function() {
 			'transparentpagebg'=>true,
 			'rtl'=>false
 			);
-		$colors = self::$Colors;
+		$colors = self::$colors;
 
 		//读取插件设置
 		if (isset($options->plugins['activated']['AudioPlayer'])) {
@@ -407,7 +573,8 @@ $(function() {
 				$colors[$key] = substr($color,1);
 			}
 		}
-		return self::php2js(array_merge($ap_options,$colors));
+
+		return self::php2js($ap_options+$colors);
 	}
 
 	/**
@@ -470,7 +637,7 @@ $(function() {
 	/**
 	 * 解析主题配色
 	 * 
-	 * @return void
+	 * @return array
 	 */
 	private static function getThemeColors()
 	{
@@ -481,6 +648,53 @@ $(function() {
 			preg_match_all('/:[^:,;\{\}].*?#([abcdef1234567890]{3,6})/i',file_get_contents($cssfile),$matches);
 			return array_unique($matches['1']);
 		}
+	}
+
+	/**
+	 * 输出编辑器按钮
+	 * 
+	 * @access public
+	 * @return void
+	 */
+	public static function apbutton()
+	{
+?>
+<script>
+$(function(){
+	var wmd = $('#wmd-image-button');
+	if (wmd.length>0) {
+		wmd.after(
+	'<li class="wmd-button" id="wmd-ap-button" style="padding-top:5px;" title="<?php _e("插入MP3"); ?>"><img src="<?php echo Helper::options()->pluginUrl; ?>/AudioPlayer/admin/audio.svg"/></li>');
+	} else {
+		$('.url-slug').after('<button type="button" id="wmd-ap-button" class="btn btn-xs" style="margin-right:5px;"><?php _e("插入MP3"); ?></button>');
+	}
+	$('#wmd-ap-button').click(function(){
+		$('body').append('<div id="apanel">' +
+		'<div class="wmd-prompt-background" style="position:absolute;z-index:1000;opacity:0.5;top:0px;left:0px;width:100%;height:954px;"></div>' +
+		'<div class="wmd-prompt-dialog"><div><p><b><?php _e("插入MP3"); ?></b></p>' +
+			'<p><?php _e("请在下方的输入框内输入要插入的MP3地址"); ?></p></div>' +
+			'<form><input type="text"></input><button type="button" class="btn btn-s primary" id="ok"><?php _e("确定"); ?></button>' +
+			'<button type="button" class="btn btn-s" id="cancel"><?php _e("取消"); ?></button></form>' +
+		'</div></div>');
+		var aplog = $('.wmd-prompt-dialog input'),
+			textarea = $('#text');
+		aplog.val('http://').select();
+		$('#cancel').click(function(){
+			$('#apanel').remove();
+			textarea.focus();
+		});
+		$('#ok').click(function(){
+			var apinput = '[mp3]' + aplog.val() + '[/mp3]',
+				sel = textarea.getSelection(),
+				offset = (sel ? sel.start : 0)+apinput.length;
+			textarea.replaceSelection(apinput);
+			textarea.setSelection(offset,offset);
+			$('#apanel').remove();
+		});
+	});
+});
+</script>
+<?php
 	}
 
 	/**
