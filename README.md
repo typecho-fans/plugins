@@ -25,7 +25,7 @@
 
 ### 作品索引 (99)
 
-###### :warning:：暂不可用，待更新。:dart:：安装或用途特殊，详见说明。
+###### :warning:：已失效，暂不可用。:dart:：用法特殊，详见说明。
 
 名称 | 简介 | 作者
 ---- | :----: | ----:
@@ -39,7 +39,7 @@
 [ArticleList](/ArticleList) :dart: | 随机文章列表插件(支持缓存) | [@阿飞](https://github.com/defeme)
 [ArticleTemplate](/ArticleTemplate) | 文章类型设置插件 | [@逗妇乳](https://github.com/benzBrake)
 [At](/At) | @型评论回复+提醒插件 | [@公子](https://github.com/lizheming)
-[AudioPlayer](/AudioPlayer) | Mp3播放器插件(支持Html5替代方案) | [@羽中](https://github.com/jzwalk)
+[AudioPlayer](/AudioPlayer) | mp3播放器插件(Flash/Html5) | [@羽中](https://github.com/jzwalk)
 [AutoBaiduSubmit](https://github.com/jinfeijie/AutoBaiduSubmit) | 百度链接自动提交插件 | [@金斐杰](https://github.com/jinfeijie)
 [AutoLaTeX](/AutoLaTeX) | LaTeX公式自动渲染插件 | [@bLue](https://github.com/dreamerblue)
 [AutoSlug](/AutoSlug) | 文章缩略名自动生成插件 | [@ShingChi](https://github.com/shingchi)
@@ -81,7 +81,7 @@
 [JSON](/JSON) | Json格式数据输出插件 | [@公子](https://github.com/lizheming)
 [JWPlayer](/JWPlayer) | Html5视频播放器插件 | [@羽中](https://github.com/jzwalk)
 [Keywords](/Keywords) | 关键词自动链接插件 | [@羽中](https://github.com/jzwalk)
-[Like](/Like) | 文章点赞功能插件 | [@skylzl](https://github.com/xiaogouxo)
+[Like](/Like) | 美化版文章点赞插件 | [@skylzl](https://github.com/xiaogouxo)
 [LREditor](/LREditor) | Markdown左右预览插件 | [@公子](http://github.com/lizheming)
 [MarkdownParse](https://github.com/mrgeneralgoo/typecho-markdown) | 加强版Markdown解析插件 | [@程小白](https://github.com/mrgeneralgoo)
 [MenuTree](/MenuTree) | 悬浮式文章目录树插件 | [@hongweipeng](https://github.com/hongweipeng)
@@ -94,7 +94,7 @@
 [PlayAtWill](/PlayAtWill) | Flash播放器2合1插件 | [@vfhky](https://github.com/vfhky)
 [PostsCategoryChange](/PostsCategoryChange) | 文章批量更改分类插件 | [@Fuzqing](https://github.com/fuzqing)
 [Prism](/Prism) | Prism代码高亮插件 | [@冰剑](https://github.com/binjoo)
-[QiniuFile](/QiniuFile) :dart: | 七牛云储存插件(含旧版sdk) | [@冰剑](https://github.com/binjoo) [@abelyao](https://github.com/abelyao)
+[QiniuFile](/QiniuFile) | 七牛云储存插件(含旧版sdk) | [@冰剑](https://github.com/binjoo) [@abelyao](https://github.com/abelyao)
 [QNUpload](/QNUpload) | 七牛云储存插件 | [@阳光](https://github.com/rakiy)
 [Reposidget](/Reposidget) | Github项目内容展示插件 | [@西秦](https://github.com/xiqingongzi)
 [Restful](https://github.com/moefront/typecho-plugin-Restful) | Typecho开放API接口插件 | [@MoeFront](https://github.com/moefront)
@@ -105,7 +105,7 @@
 [Sinauth](/Sinauth) :dart: | 新浪用户注册登录插件 | [@Web3D](https://github.com/web3d)
 [SlantedExtend](/SlantedExtend) :dart: | [Slanted主题](https://github.com/typecho-fans/themes/blob/master/Slanted)专用插件 | [@DT27](https://github.com/DT27)
 [SlimBox2](/SlimBox2) | 轻量级图片灯箱弹窗插件 | [@Ryan](https://github.com/ryanfwy) [@冰剑](https://github.com/binjoo)
-[Smilies](/Smilies) | 评论图片表情插件 | [@羽中](https://github.com/jzwalk) [Willin Kan](http://kan.willin.org)
+[Smilies](/Smilies) | Typecho图片表情插件 | [@羽中](https://github.com/jzwalk) Willin Kan
 [Snowstorm](/Snowstorm) | (娱乐向)博客飘雪插件 | [@阳光](https://github.com/rakiy)
 [Sticky](/Sticky) | Typecho文章置顶插件 | [@逗妇乳](https://github.com/benzBrake) Willin Kan
 [Subscriber](/Subscriber) | 文章仅对注册会员可见插件 | [@羽中](https://github.com/jzwalk)
@@ -126,5 +126,5 @@
 [WeiboSync](https://github.com/vfhky/WeiboSync) | 新浪微博更新推送插件 | [@vfhky](https://github.com/vfhky)
 [XiaMiPlayer](/XiaMiPlayer) | 虾米音乐迷你型播放器插件 | [@公子](https://github.com/lizheming)
 [YoduBGM](/YoduBGM) | 背景音乐播放器插件(支持Pjax) | [@jrotty](https://github.com/jrotty)
-[YoduPlayer](/YoduPlayer) | 极简音乐播放器插件(支持Pjax) | [@jrotty](https://github.com/jrotty)
-[Zan](/Zan) | 文章点赞效果插件 | [@冰剑](https://github.com/binjoo)
+[YoduPlayer](/YoduPlayer) | 悬浮式音乐播放器插件(支持Pjax) | [@jrotty](https://github.com/jrotty)
+[Zan](/Zan) | 简洁版文章点赞插件 | [@冰剑](https://github.com/binjoo)
