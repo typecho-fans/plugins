@@ -4,9 +4,6 @@
 [submodule "Adminer"]
 	path = Adminer
 	url = https://github.com/kokororin/typecho-plugin-adminer
-[submodule "ArticleTemplate"]
-	path = ArticleTemplate
-	url = https://github.com/benzBrake/ArticleTemplate.git
 [submodule "AutoBaiduSubmit"]
 	path = AutoBaiduSubmit
 	url = https://github.com/jinfeijie/AutoBaiduSubmit
