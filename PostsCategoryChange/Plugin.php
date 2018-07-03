@@ -5,7 +5,7 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
  *
  * @package PostsCategoryChange
  * @author Fuzqing
- * @version 0.0.2
+ * @version 0.0.3
  * @link https://huangweitong.com
  */
 class PostsCategoryChange_Plugin implements Typecho_Plugin_Interface
@@ -14,7 +14,7 @@ class PostsCategoryChange_Plugin implements Typecho_Plugin_Interface
      * 插件版本号
      * @var string
      */
-    const _VERSION = '0.0.2';
+    const _VERSION = '0.0.3';
     /**
      * 激活插件方法,如果激活失败,直接抛出异常
      *
@@ -72,7 +72,7 @@ class PostsCategoryChange_Plugin implements Typecho_Plugin_Interface
         
         $filename = substr( $url , strrpos($url , '/')+1);
         
-        if (strpos("manage-posts.php", $filename) === false) {
+        if (empty($filename) || strpos("manage-posts.php", $filename) === false) {
             
             return;
         }
