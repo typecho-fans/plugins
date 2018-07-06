@@ -1,11 +1,11 @@
 <?php
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 /**
- * 批量更改文章分类、状态（显示|隐藏）
+ * 批量更改文章分类、状态（公开|隐藏|私密）
  *
  * @package PostsCategoryChange
  * @author Fuzqing
- * @version 0.0.3
+ * @version 0.0.4
  * @link https://huangweitong.com
  */
 class PostsCategoryChange_Plugin implements Typecho_Plugin_Interface
@@ -14,7 +14,7 @@ class PostsCategoryChange_Plugin implements Typecho_Plugin_Interface
      * 插件版本号
      * @var string
      */
-    const _VERSION = '0.0.3';
+    const _VERSION = '0.0.4';
     /**
      * 激活插件方法,如果激活失败,直接抛出异常
      *
@@ -67,13 +67,9 @@ class PostsCategoryChange_Plugin implements Typecho_Plugin_Interface
      */
     public static function render()
     {
-        
         $url = $_SERVER['REQUEST_URI'];
-        
         $filename = substr( $url , strrpos($url , '/')+1);
-        
         if (empty($filename) || strpos($filename,'manage-posts.php') === false) {
-            
             return;
         }
         
@@ -86,7 +82,7 @@ class PostsCategoryChange_Plugin implements Typecho_Plugin_Interface
         $category_list = $db->fetchAll($db->select()->from($prefix.'metas')->where('type = ?', 'category'));
         //批量更改文章分类接收的action地址
         $makeChange_url = Typecho_Common::url('/index.php/action/imanage-posts?do=change-category', $options->siteUrl);
-        //批量更改文章状态接收的action地址
+        //批量更改文章分类接收的action地址
         $changeStatus_url = Typecho_Common::url('/index.php/action/imanage-posts?do=change-status', $options->siteUrl);
 
         $category_html = '<select name="icategory" id="category" style="width: 100%">';
@@ -99,7 +95,14 @@ class PostsCategoryChange_Plugin implements Typecho_Plugin_Interface
 
         }
         $category_html .= '</select>';
-
+        
+        $status_html = '<select name="status" id="status" style="width: 100%">';
+        $status_html .= '<option value="0">请选择文章状态</option>';
+        $status_html .= '<option value="1">公开</option>';
+        $status_html .= '<option value="2">隐藏</option>';
+        $status_html .= '<option value="3">私密</option>';
+        $status_html .= '</select>';
+        
         $script = <<<SCRIPT
         <script src="//cdn.bootcss.com/layer/3.1.0/layer.js"></script>
         <script>
@@ -107,7 +110,7 @@ class PostsCategoryChange_Plugin implements Typecho_Plugin_Interface
             
             var html = '<li><a id="make-change" href="#">移动</a></li>';
             
-            html += '<li><a id="change-status" href="#">显示|隐藏</a></li>';
+            html += '<li><a id="change-status" href="#">公开|隐藏|私密</a></li>';
             
             $(".dropdown-menu").append(html);
             
@@ -172,6 +175,50 @@ class PostsCategoryChange_Plugin implements Typecho_Plugin_Interface
                     layer.msg('至少选择一篇文章', function(){});
                     return false;
                 } else {
+                    status = 0;
+                    layer.open({
+                        type: 1,
+                        title:'设置文章状态',
+                        closeBtn: 0,
+                        shadeClose: true,
+                        btn: ['确定', '取消'],
+                        content: '{$status_html}',
+                        yes:function(index, layero) {
+                            layer.close(index);
+                            if(status == undefined || status == 0) {
+                               layer.msg('请选择状态', function(){}); 
+                               return false;
+                            } else {
+                                params = params + '&status=' + status;
+                                var load_index = layer.load(2, {time: 10*1000});
+                                $.post("{$changeStatus_url}", params,function(data) {
+                                    layer.close(load_index);
+                                    if(data.code== -1) {
+                                        layer.msg(data.msg, function(){});
+                                    } else if(data.code == 1) {
+                                        layer.msg(data.msg, function(){
+                                            window.location.reload();
+                                        });
+                                    } else {
+                                        console.log(data);
+                                    }
+                                },"json");
+                            }
+                      },
+                      cancel: function(index, layero){ 
+                          
+                          status = 0;
+                          
+                          layer.close(index)
+                          
+                          return false; 
+                      } 
+                      
+                    });
+                    $("#status").change(function(){
+                       status = $("#status").val();
+                    });
+                    /**
                     var load_index = layer.load(2, {time: 10*1000});
                     $.post("{$changeStatus_url}", params,function(data) {
                         layer.close(load_index);
@@ -185,6 +232,7 @@ class PostsCategoryChange_Plugin implements Typecho_Plugin_Interface
                             console.log(data);
                         }
                     },"json");
+                    */
                 }
             });
             
