@@ -5,6 +5,7 @@ class PostsCategoryChange_Action extends Typecho_Widget implements Widget_Interf
 {
     private $db;
     private $prefix;
+    
     public function action()
     {
         $user = Typecho_Widget::widget('Widget_User');
@@ -19,7 +20,6 @@ class PostsCategoryChange_Action extends Typecho_Widget implements Widget_Interf
 
     public function makeChange()
     {
-        
         $cids = $this->request->filter('int')->getArray('cid');
         $mid = $this->request->filter('int')->get('mid');
         if(empty($cids)) {
@@ -70,10 +70,25 @@ class PostsCategoryChange_Action extends Typecho_Widget implements Widget_Interf
     public function changeStatus()
     {
         $cids = $this->request->filter('int')->getArray('cid');
+        $status = $this->request->filter('int')->get('status');
         if(empty($cids)) {
             echo json_encode(['code'=>-1,'msg'=>'大佬，至少选择一篇文章！']);
             return;
+        } else if(empty($status)) {
+            echo json_encode(['code'=>-1,'msg'=>'大佬，请选择一个文章状态！']);
+            return;
         } else {
+            $status_arr = [
+                    '1'=>'publish',
+                    '2'=>'hidden',
+                    '3'=>'private'
+            ];
+            if(!array_key_exists($status,$status_arr)) {
+                echo json_encode(['code'=>-1,'msg'=>'f**k,别特么瞎jb搞！']);
+                return ;
+            } else {
+                $status = $status_arr[$status];
+            }
             $cid = implode(',',$cids);
             $select = 'SELECT cid,status FROM '.$this->prefix.'contents where cid in('.$cid.') and type="post"';
             $res = $this->db->fetchAll($this->db->query($select));
@@ -83,11 +98,7 @@ class PostsCategoryChange_Action extends Typecho_Widget implements Widget_Interf
             } else {
                 $count = 0;
                 foreach ($res as $value) {
-                    if($value['status'] == 'publish') {
-                        $update = $this->db->update($this->prefix.'contents')->rows(array('status'=>'hidden'))->where('cid in ('.$value['cid'].')');                      
-                    } elseif($value['status'] == 'hidden') {
-                        $update = $this->db->update($this->prefix.'contents')->rows(array('status'=>'publish'))->where('cid in ('.$value['cid'].')');
-                    }
+                    $update = $this->db->update($this->prefix.'contents')->rows(array('status'=>$status))->where('cid in ('.$value['cid'].')');
                     @$this->db->query($update) && $count ++;
                 }
                 if($count>0) {
