@@ -1,6 +1,6 @@
 /**
 * @file: highslide.css 
-* @version: 4.1.13
+* @version: 5.0.0
 */
 .highslide-container div {
 	font-family: Verdana, Helvetica;
@@ -8,6 +8,7 @@
 }
 .highslide-container table {
 	background: none;
+	table-layout: auto;
 }
 .highslide {
 	outline: none;
