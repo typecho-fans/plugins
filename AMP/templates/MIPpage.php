@@ -18,7 +18,7 @@
                             "<?php print($MIPpage['imgData']['url']); ?>"
                             ],
                         "description": "<?php print($MIPpage['desc']);?>",
-                        "pubDate": "<?php print($MIPpage['date']->format('Y-m-d\TH:i:s')); ?>",
+                        "pubDate": "<?php print($MIPpage['date']); ?>",
                         "upDate": "<?php print($MIPpage['modified']); ?>",
                         "lrDate": "<?php print($MIPpage['modified']); ?>",
                         "isOrignal":1
@@ -43,7 +43,7 @@
 <div class="main">
     <div class="post-detail">
         <article class="post"><h1 class="title"><?php print($MIPpage['title']); ?></h1>
-            <div class="meta"><?php print($MIPpage['date']->format('Y-m-d H:i:s')); ?></div>
+            <div class="meta"><?php print($MIPpage['date']); ?></div>
             <div class="article-content">
                 <?php print($MIPpage['MIPtext']); ?>
                 <div class="tip">当前页面是本站的「<a href="https://www.mipengine.org/">Baidu MIP</a>」版。发表评论请点击：<a
@@ -53,7 +53,7 @@
 
     </div>
 </div>
-<div class="footer"><p>© 2018 <a data-type="mip" href="https://github.com/holmesian/Typecho-AMP">MIP for Typecho</a>
+<div class="footer"><p>© 2018 <a data-type="mip" href="https://github.com/holmesian/Typecho-AMP">MIP for Typecho</a> v<?php print($this->version); ?>
         , Designed by  <a href="https://holmesian.org/" target="_blank">Holmesian</a>.</p></div>
 <mip-fixed type="gototop">
     <mip-gototop></mip-gototop>

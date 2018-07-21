@@ -60,7 +60,7 @@
     <div><p class="info">当前页面是本站的「<a href="//www.ampproject.org/zh_cn/">Google AMP</a>」版。查看和发表评论请点击：<a
                     href="<?php print($this->baseurl); ?>">完整版 »</a></p></div>
 
-    <div class="footer"><p>© 2018 <a data-type="mip" href="https://github.com/holmesian/Typecho-AMP">MIP for Typecho</a>
+    <div class="footer"><p>© 2018 <a data-type="amp" href="https://github.com/holmesian/Typecho-AMP">AMP for Typecho</a> v<?php print($this->version); ?>
             , Designed by  <a href="https://holmesian.org/" target="_blank">Holmesian</a>.</p></div>
 </footer>
 </body>

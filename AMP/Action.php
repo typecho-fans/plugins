@@ -2,6 +2,8 @@
 
 class AMP_Action extends Typecho_Widget implements Widget_Interface_Do
 {
+    private $version = '0.6.4';
+
     public function action()
     {
 
@@ -18,23 +20,23 @@ class AMP_Action extends Typecho_Widget implements Widget_Interface_Do
         $this->baseurl = Helper::options()->index;
         $this->baseurl = str_replace("https://", "//", $this->baseurl);
         $this->baseurl = str_replace("http://", "//", $this->baseurl);
-        
+
     }
 
-    
+
     public static function headlink()
     {
         $widget = Typecho_Widget::widget('Widget_Archive');
 
         $ampurl = $mipurl = '';
-        
+
         if ($widget->is('index') and !isset($widget->request->page)) {
             if (Helper::options()->plugin('AMP')->ampIndex == 1) {
                 $fullURL = Typecho_Common::url("ampindex", Helper::options()->index);
                 $ampurl = "\n<link rel=\"amphtml\" href=\"{$fullURL}\">\n";
             }
         }
-        
+
         if ($widget->is('post')) {
             if(isset($widget->request->cid)){
                 $target=$widget->request->cid;
@@ -51,31 +53,31 @@ class AMP_Action extends Typecho_Widget implements Widget_Interface_Do
             }
         }
         $headurl = $ampurl . $mipurl;
-        
+
         echo $headurl;
     }
-    
-    
+
+
     public function ampsitemap()
     {
-        
+
         if (Helper::options()->plugin('AMP')->ampSiteMap == 0) {
             throw new Typecho_Widget_Exception('未开启ampSiteMap功能！');
         }
-        
+
         $this->MakeSiteMap('amp');
-        
+
     }
-    
+
     public function mipsitemap()
     {
-        
+
         if (Helper::options()->plugin('AMP')->mipSiteMap == 0) {
             throw new Typecho_Widget_Exception('未开启mipSiteMap功能！');
         }
-        
+
         $this->MakeSiteMap('mip');
-        
+
     }
 
     public function MIPpage()
@@ -104,13 +106,14 @@ class AMP_Action extends Typecho_Widget implements Widget_Interface_Do
                 'permalink'=>$this->article['permalink'],
                 'mipurl'=>$this->article['mipurl'],
                 'modified'=>date('Y-m-d\TH:i:s',$this->article['modified']),
-                'date'=>$this->article['date'],
+                'date'=>$this->article['date']->format('Y-m-d\TH:i:s'),
                 'isMarkdown'=>$this->article['isMarkdown'],
                 'imgData'=>$this->GetPostImg(),
                 'APPID'=>Helper::options()->plugin('AMP')->baiduAPPID,
-                'desc'=>mb_substr(str_replace("\r\n", "", strip_tags($this->article['text'])), 0, 150) . "...",
+                'desc'=>$this->cleanUp($this->article['text']),
                 'publisher'=>$this->publisher,
-                'MIPtext'=>$this->MIPInit($this->article['text'])
+                'MIPtext'=>$this->MIPInit($this->article['text']),
+                'version'=>$this->version
             );
             ob_start();
             require_once('templates/MIPpage.php');
@@ -119,7 +122,7 @@ class AMP_Action extends Typecho_Widget implements Widget_Interface_Do
         }
     }
 
-    
+
     public function AMPlist()
     {
         if (Helper::options()->plugin('AMP')->ampIndex == 0) {
@@ -145,7 +148,7 @@ class AMP_Action extends Typecho_Widget implements Widget_Interface_Do
             $article_data['article'][] = array(
                 'title' => $article['title'],
                 'url' => $article['permalink'],
-                'content' => $this->substr_format(strip_tags($article['text']), 200),
+                'content' => $this->substrFormat(strip_tags($article['text']), 200),
             );
         }
         $arr = array('items' => $article_data);
@@ -189,15 +192,16 @@ class AMP_Action extends Typecho_Widget implements Widget_Interface_Do
                 'permalink'=>$this->article['permalink'],
                 'mipurl'=>$this->article['mipurl'],
                 'modified'=>date('F j, Y',$this->article['modified']),
-                'date'=>$this->article['date'],
+                'date'=>$this->article['date']->format('F j, Y'),
                 'author'=>$this->article['author'],
                 'LOGO'=>$this->LOGO,
                 'isMarkdown'=>$this->article['isMarkdown'],
                 'imgData'=>$this->GetPostImg(),
                 'APPID'=>Helper::options()->plugin('AMP')->baiduAPPID,
-                'desc'=>mb_substr(str_replace("\r\n", "", strip_tags($this->article['text'])), 0, 150) . "...",
+                'desc'=>$this->cleanUp($this->article['text']),
                 'publisher'=>$this->publisher,
-                'AMPtext'=>$this->AMPInit($this->article['text'])
+                'AMPtext'=>$this->AMPInit($this->article['text']),
+                'version'=>$this->version
             );
             ob_start();
             require_once ('templates/AMPpage.php');
@@ -214,32 +218,32 @@ class AMP_Action extends Typecho_Widget implements Widget_Interface_Do
         $this->del('*');
         print('Clean all cache!');
     }
-    
+
     public function sendRealtime($contents, $class)
     {
         //获取系统配置
         $options = Helper::options();
-        
+
         //如果文章属性为隐藏或滞后发布
         if ('publish' != $contents['visibility'] || $contents['created'] > time()) {
             return;
         }
-    
+
         //如果没有开启自动提交功能
         if ($options->plugin('AMP')->mipAutoSubmit == 0) {
             return;
         }
-        
+
         //判断是否配置相关信息
         if (is_null($options->plugin('AMP')->baiduAPPID) or is_null($options->plugin('AMP')->baiduTOKEN)) {
             throw new Typecho_Plugin_Exception(_t('参数未正确配置'));
         }
         $appid = $options->plugin('AMP')->baiduAPPID;
         $token = $options->plugin('AMP')->baiduTOKEN;
-        $api = "http://data.zz.baidu.com/urls?appid={$appid}&token={$token}&type=realtime,original";
-        
+        $api = "http://data.zz.baidu.com/urls?appid={$appid}&token={$token}&type=realtime";
+
         $article = Typecho_Widget::widget('AMP_Action')->getArticleByCid($class->cid);
-        
+
         $urls = array($article['mipurl'],);
 
         $hash = array(//发布之前清除缓存
@@ -260,7 +264,7 @@ class AMP_Action extends Typecho_Widget implements Widget_Interface_Do
         }
 
     }
-    
+
     public function getArticle($target)
     {
         $tempTarget = explode('.', $target)[0];
@@ -270,7 +274,7 @@ class AMP_Action extends Typecho_Widget implements Widget_Interface_Do
         }
         return $article;
     }
-    
+
     private function getArticleBySlug($slug)
     {
         $select = $this->db->select()->from('table.contents')
@@ -278,7 +282,7 @@ class AMP_Action extends Typecho_Widget implements Widget_Interface_Do
         $article = $this->ArticleBase($select);
         return $article;
     }
-    
+
     private function getArticleByCid($cid)
     {
         $select = $this->db->select()->from('table.contents')
@@ -286,11 +290,11 @@ class AMP_Action extends Typecho_Widget implements Widget_Interface_Do
         $article = $this->ArticleBase($select);
         return $article;
     }
-    
+
     private function ArticleBase($select)
     {
         $article_src = $this->db->fetchRow($select);
-        
+
         if (count($article_src) > 0) {
             $article = Typecho_Widget::widget("Widget_Abstract_Contents")->push($article_src);
             $select = $this->db->select('table.users.screenName')
@@ -306,7 +310,7 @@ class AMP_Action extends Typecho_Widget implements Widget_Interface_Do
             $targetTemp = $this->getSlugRule();
             $target = str_replace('[slug]', $article['slug'], $targetTemp);
             $target = str_replace('[cid:digital]', $article['cid'], $target);
-            
+
             $article['mipurl'] = Typecho_Common::url("mip/{$target}", Helper::options()->index);;
             $article['ampurl'] = Typecho_Common::url("amp/{$target}", Helper::options()->index);;
         } else {
@@ -317,8 +321,8 @@ class AMP_Action extends Typecho_Widget implements Widget_Interface_Do
         }
         return $article;
     }
-    
-    
+
+
     public function MakeArticleList($linkType = 'amp', $page = 0, $pageSize = 0)
     {
         $db = Typecho_Db::get();
@@ -336,7 +340,7 @@ class AMP_Action extends Typecho_Widget implements Widget_Interface_Do
         $articles = $db->fetchAll($sql);
         $targetTemp = $this->getSlugRule();
         $articleList = array();
-        
+
         foreach ($articles AS $article) {
             $article['categories'] = $db->fetchAll($db->select()->from('table.metas')
                 ->join('table.relationships', 'table.relationships.mid = table.metas.mid')
@@ -349,7 +353,7 @@ class AMP_Action extends Typecho_Widget implements Widget_Interface_Do
             $article['year'] = $article['date']->year;
             $article['month'] = $article['date']->month;
             $article['day'] = $article['date']->day;
-            
+
             $target = str_replace('[slug]', $article['slug'], $targetTemp);
             $target = str_replace('[cid:digital]', $article['cid'], $target);
             if ($linkType == 'mip') {
@@ -361,8 +365,8 @@ class AMP_Action extends Typecho_Widget implements Widget_Interface_Do
         }
         return $articleList;
     }
-    
-    
+
+
     private function GetPostImg()
     {
 
@@ -413,7 +417,7 @@ class AMP_Action extends Typecho_Widget implements Widget_Interface_Do
             return $imgData;
         }
     }
-    
+
     private function MIPInit($text)
     {
         $text = $this->IMGsize($text);
@@ -426,7 +430,7 @@ class AMP_Action extends Typecho_Widget implements Widget_Interface_Do
         $text = str_replace('javascript:content_index_toggleToc()', '#', $text);
         return $text;
     }
-    
+
     private function AMPInit($text)
     {
         $text = $this->IMGsize($text);
@@ -451,7 +455,7 @@ class AMP_Action extends Typecho_Widget implements Widget_Interface_Do
         }
         return $text;
     }
-    
+
     private function IMGsize($html)
     {
         $html = preg_replace_callback(
@@ -479,7 +483,7 @@ class AMP_Action extends Typecho_Widget implements Widget_Interface_Do
         );
         return $html;
     }
-    
+
     private function MakeSiteMap($maptype = 'amp')
     {
         //changefreq -> always、hourly、daily、weekly、monthly、yearly、never
@@ -511,11 +515,11 @@ class AMP_Action extends Typecho_Widget implements Widget_Interface_Do
             }
             echo "</urlset>";
         }
-        
+
     }
-    
-    
-    private function substr_format($text, $length, $replace = '...', $encoding = 'UTF-8')
+
+
+    private function substrFormat($text, $length, $replace = '...', $encoding = 'UTF-8')
     {
         if ($text && mb_strlen($text, $encoding) > $length) {
             return mb_substr($text, 0, $length, $encoding) . $replace;
@@ -589,6 +593,13 @@ class AMP_Action extends Typecho_Widget implements Widget_Interface_Do
         }else{
             return null;
         }
+    }
+
+    private function cleanUp($desc){
+        $desc= str_replace(array("/r/n", "/r", "/n"), "", strip_tags($desc));
+        $desc = str_replace(PHP_EOL, '', $desc);
+        $desc=mb_substr($desc, 0, 150).'...';
+        return $desc;
     }
 
 
