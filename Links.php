@@ -123,7 +123,6 @@ if (isset($_GET['send'])) {
                         <select name="type" style="width:200px;text-align-last: center;">
                             <option value="amp">AMP</option>
                             <option value="mip">MIP</option>
-                            <option value="batch">熊掌号</option>
                         </select>
                         <button type="submit" class="btn btn-s"><?php _e('开始提交'); ?></button>
                     </div>
@@ -134,9 +133,9 @@ if (isset($_GET['send'])) {
                     <p>2.MIP(Mobile Instant Page -
                         移动网页加速器)，是一套应用于移动网页的开放性技术标准。通过提供MIP-HTML规范、MIP-JS运行环境以及MIP-Cache页面缓存系统，实现移动网页加速。选择该项为自动向百度提交页面地址。</p>
                     <p>
-                        3.熊掌号，是百度熊掌号是内容和服务提供者入驻百度生态的实名账号。通过历史内容接口，每天可提交最多500万条有价值的内容，所提交内容会进入百度搜索统一处理流程。请先设置好APPID和TOKEN后再进行提交。</p>
+                        3.熊掌号，目前百度已经取消提交接口，可以使用新文章的自动提交功能。</p>
                     <p></p>
-                    <p><b>如果因服务环境无法自动提交</b>，可打开<a target="_blank"
+                    <p><b>如果因服务器环境无法自动提交</b>，可打开<a target="_blank"
                                                   href="<?php print(Helper::options()->index . '/amp_sitemap.xml?txt=1'); ?>">AMP网址列表</a>、<a
                                 target="_blank"
                                 href="<?php print(Helper::options()->index . '/mip_sitemap.xml?txt=1'); ?>">MIP网址列表</a>，手动复制URL提交到百度站长后台。
