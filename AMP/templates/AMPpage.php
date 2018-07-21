@@ -16,7 +16,7 @@
           "@type": "Person",
           "name": "<?php print($AMPpage['author']); ?>"
         },
-        "datePublished": "<?php print($AMPpage['date']->format('F j, Y')); ?>",
+        "datePublished": "<?php print($AMPpage['date']); ?>",
         "dateModified": "<?php print($AMPpage['modified']); ?>",
         "image": {
           "@type": "ImageObject",
@@ -54,7 +54,7 @@
                 href="<?php print($AMPpage['permalink']); ?>">完整版 »</a></p>
     <?php if(!$AMPpage['isMarkdown']){print('<p class="notice">因本文不是用Markdown格式的编辑器书写的，转换的页面可能不符合AMP标准。</p>');} ?>
 </article>
-<footer><div class="footer"><p>© 2018 <a data-type="mip" href="https://github.com/holmesian/Typecho-AMP">MIP for Typecho</a>
+<footer><div class="footer"><p>© 2018 <a data-type="amp" href="https://github.com/holmesian/Typecho-AMP">AMP for Typecho</a> v<?php print($this->version); ?>
             , Designed by  <a href="https://holmesian.org/" target="_blank">Holmesian</a>.</p></div></footer>
 </body>
 </html>
