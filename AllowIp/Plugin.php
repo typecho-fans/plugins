@@ -74,25 +74,8 @@ class AllowIp_Plugin implements Typecho_Plugin_Interface
     public static function check()
     {
         static $realip = NULL;
-        //判断服务器是否允许$_SERVER
-        if(isset($_SERVER)) {
-            if(isset($_SERVER['HTTP_X_FORWARDED_FOR'])) {
-                $realip = $_SERVER['HTTP_X_FORWARDED_FOR'];
-            }elseif(isset($_SERVER['HTTP_CLIENT_IP'])) {
-                $realip = $_SERVER['HTTP_CLIENT_IP'];
-            }else {
-                $realip = $_SERVER['REMOTE_ADDR'];
-            }
-        }else{
-            //不允许就使用getenv获取
-            if(getenv("HTTP_X_FORWARDED_FOR")) {
-                $realip = getenv( "HTTP_X_FORWARDED_FOR");
-            }elseif(getenv("HTTP_CLIENT_IP")) {
-                $realip = getenv("HTTP_CLIENT_IP");
-            }else {
-                $realip = getenv("REMOTE_ADDR");
-            }
-        }
+        //判断服务器是否允许$_SERVER,不允许就使用getenv获取
+        $realip = isset($_SERVER) ? $_SERVER['REMOTE_ADDR'] : getenv("REMOTE_ADDR");
 
         if($realip !== NULL){
             $config = json_decode(json_encode(unserialize(Helper::options()->plugin('AllowIp'))));
