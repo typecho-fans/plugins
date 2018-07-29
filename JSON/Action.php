@@ -304,6 +304,7 @@ class JSON_Action extends Typecho_Widget implements Widget_Interface_Do {
 
         $this->export($result);
     }
+/** 实验型升级接口
     private function upgrade() {
         $generator = $this->widget("Widget_Options")->generator;
         $generator = explode(' ', $generator);
@@ -331,25 +332,26 @@ class JSON_Action extends Typecho_Widget implements Widget_Interface_Do {
         } else $this->export("You are now in the latest version($now)!");
     }
     private function update($url) {
-        // set_time_limit(0);
-        // $curl = curl_init($url);
-        // curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
-        // curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, false);
-        // curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-        // $result = curl_exec($curl);
-        // curl_close($curl);
+        set_time_limit(0);
+        $curl = curl_init($url);
+        curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
+        curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, false);
+        curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+        $result = curl_exec($curl);
+        curl_close($curl);
 
-        // $result = explode("https", $result);
-        // $result = explode("\"", $result[1]);
-        // $downloadUrl = "https".$result[0];
+        $result = explode("https", $result);
+        $result = explode("\"", $result[1]);
+        $downloadUrl = "https".$result[0];
 
-        // $curl = curl_init($downloadUrl);
-        // curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
-        // curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, false);
-        // curl_setopt($curl, CURLOPT_REFERER, "https://github.com");
-        // curl_exec($curl);
-        // curl_close($curl);
+        $curl = curl_init($downloadUrl);
+        curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
+        curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, false);
+        curl_setopt($curl, CURLOPT_REFERER, "https://github.com");
+        curl_exec($curl);
+        curl_close($curl);
     }
+ */
     public function export($data = array(), $status = 200) {
         $this->res->throwJson(array('status'=>$status, 'data'=>$data));
         exit();
