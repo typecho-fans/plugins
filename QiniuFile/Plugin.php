@@ -4,9 +4,9 @@
  * 
  * @package QiniuFile
  * @author abelyao
- * @version 1.3.1
+ * @version 1.3.2
  * @link http://www.abelyao.com/
- * @date 2017-02-16
+ * @date 2018-07-23
  */
 
 class QiniuFile_Plugin implements Typecho_Plugin_Interface {
@@ -53,35 +53,36 @@ class QiniuFile_Plugin implements Typecho_Plugin_Interface {
     public static function getConfig() {
         return Typecho_Widget::widget('Widget_Options')->plugin('QiniuFile');
     }
-    // 旧版SDK调用(php5.2可用)
+
+    /**旧版SDK调用(php5.2可用)
     public static function initSDK($accesskey, $sercetkey)
     {
         require_once 'sdk/io.php';
         require_once 'sdk/rs.php';
         Qiniu_SetKeys($accesskey, $sercetkey);
-    }
+    }*/
+
     // 新版SDK调用(php5.3-7.0可用)
     public static function initAuto($accesskey, $sercetkey) {
         require_once('autoload.php');
         return new Qiniu\Auth($accesskey, $sercetkey);
     }
-    // 删除文件
+
     public static function deleteFile($filepath) {
         // 获取插件配置
         $option = self::getConfig();
 
-        // 旧版SDK删除(php5.2可用)
-        // self::initSDK($option->accesskey, $option->sercetkey);
-        // $client = new Qiniu_MacHttpClient(null);
-        // return Qiniu_RS_Delete($client, $option->bucket, $filepath);
+        /**旧版SDK删除(php5.2可用)
+        self::initSDK($option->accesskey, $option->sercetkey);
+        $client = new Qiniu_MacHttpClient(null);
+        return Qiniu_RS_Delete($client, $option->bucket, $filepath);*/
 
-        // 新版SDK初始化(php5.3-7.0可用)
+        // 新版SDK删除(php5.3-7.0可用)
         $qiniu = self::initAuto($option->accesskey, $option->sercetkey);
-        // 新版删除
         $bucketMgr = new Qiniu\Storage\BucketManager($qiniu);
         return $bucketMgr->delete($option->bucket, $filepath);
     }
-    // 上传文件
+
     public static function uploadFile($file, $content = null) {
         // 获取上传文件
         if (empty($file['name'])) return false;
@@ -108,17 +109,16 @@ class QiniuFile_Plugin implements Typecho_Plugin_Interface {
         $filename = $file['tmp_name'];
         if (!isset($filename)) return false;
 
-        // 旧版SDK上传(php5.2可用)
-        // self::initSDK($option->accesskey, $option->sercetkey);
-        // $policy = new Qiniu_RS_PutPolicy($option->bucket);
-        // $token = $policy->Token(null);
-        // $extra = new Qiniu_PutExtra();
-        // $extra->Crc32 = 1;
-        // list($result, $error) = Qiniu_PutFile($token, $savename, $filename, $extra);$qiniu = self::qiniuset($settings->qiniuak,$settings->qiniusk);
+        /**旧版SDK上传(php5.2可用)
+        self::initSDK($option->accesskey, $option->sercetkey);
+        $policy = new Qiniu_RS_PutPolicy($option->bucket);
+        $token = $policy->Token(null);
+        $extra = new Qiniu_PutExtra();
+        $extra->Crc32 = 1;
+        list($result, $error) = Qiniu_PutFile($token, $savename, $filename, $extra);$qiniu = self::qiniuset($settings->qiniuak,$settings->qiniusk);*/
 
-        // 新版SDK初始化(php5.3-7.0可用)
+        // 新版SDK上传(php5.3-7.0可用)
         $token = self::initAuto($option->accesskey, $option->sercetkey)->uploadToken($option->bucket);
-        // 新版上传
         $uploadMgr = new Qiniu\Storage\UploadManager();
         list($result, $error) = $uploadMgr->putFile($token, $savename, $filename);
 
@@ -135,6 +135,7 @@ class QiniuFile_Plugin implements Typecho_Plugin_Interface {
         }
         else return false;
     }
+
     // 上传文件处理函数
     public static function uploadHandle($file) {
         return self::uploadFile($file);
