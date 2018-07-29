@@ -8,7 +8,11 @@ echo "Hello World!";
 </pre>
 非Markdown模式下可在code标签内添加class="lang-语言名"，如：
 ```
-<pre><code class="lang-php">echo "Hello World!";</pre></code>
+<pre>
+    <code class="lang-php">
+       echo "Hello World!";
+    </code>
+</pre>
 ```
 
 - v1.0.2(18-7-23)：（[@羽中](https://github.com/jzwalk)）
