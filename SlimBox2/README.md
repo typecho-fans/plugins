@@ -14,8 +14,7 @@
 
 ## 更新记录 ##
 
-#### v1.0.7
-修改: [@Ryan](https://github.com/ryanfwy)
+#### v1.0.7(18-5-24)（[@Ryan](https://github.com/ryanfwy)）
  - 修改选择器图片链接为 `img` 的 `src` 属性，无需再为图片嵌套链接；
  - 修改灯箱自适应逻辑，更合理地缩放图片；
  - 修改部分显示样式；
@@ -25,8 +24,8 @@
  - 增加`灯箱大小变化速度`选项；
  - 初始化 `script` 增加 `id="slimbox"` 属性，便于 `pjax` 初始化。
    
-#### v1.0.6
- - jquery库从google改为staticfile.org，默认选择.post-content适应1.0主题。（[@羽中](https://github.com/jzwalk)）
+#### v1.0.6(17-2-2)（[@羽中](https://github.com/jzwalk)）
+ - jquery库从google改为staticfile.org，默认选择.post-content适应1.0主题。
 
 #### v1.0.5
  - 使用[林木木的代码](http://immmmm.com/slimbox2-js-picture-box-adaptive.html)修复`图片灯箱自适应`功能；
