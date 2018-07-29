@@ -1,16 +1,21 @@
-### 轻量级代码高亮插件Prism v1.0.1
+### 轻量级代码高亮插件Prism v1.0.2
 
-可在markdown模式下用3个反引号+语言名格式高亮代码段落，支持八种样式。
-例如：
+可在Markdown模式下用3个反引号+**语言名**格式高亮代码段落，支持八种样式。例如：
 <pre>
 ```php
 echo "Hello World!";
 ```
 </pre>
+非Markdown模式下可在code标签内添加class="lang-语言名"，如：
+<pre>
+<pre><code class="lang-php">echo "Hello World!";</pre></code>
+</pre>
 
- > v1.0.1更新(17-1-24)：使用新版核心(1.6.0)，修正样式前景色问题。（[@羽中](https://github.com/jzwalk)）
+- v1.0.2(18-7-23)：（[@羽中](https://github.com/jzwalk)）
+使用1.15.0版核心，更新文档说明。
 
-:warning:无标签转义处理，暂不支持非markdown模式。
+- v1.0.1(17-1-24)：
+使用1.6.0版核心，修正样式前景色问题。
 
-默认可高亮markup(html/xml类)、css、javascript、php和其他clike(C语言类)
+默认支持语言名：markup(html/xml类)、css、javascript、php和其他clike(C语言类)
 ###### 更多语言高亮详见：http://prismjs.com/download.html
