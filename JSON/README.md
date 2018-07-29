@@ -18,6 +18,6 @@
 |tagCloud|sort<br/>ignoreZeroCount<br/>desc<br/>limit|count<br/>false<br/>true<br/>0|标签列表数据|
 |archive|format<br/>type<br/>limit|Y-m<br/>month<br/>0|归档列表数据|
 |info|user|0|配置信息数据|
-|count|-|-|已发表文章数量|
+|count|-|-|发表文章总数|
 
 ###### 示例可参考作者博客：https://imnerd.org/api/posts
