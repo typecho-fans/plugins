@@ -1,12 +1,12 @@
 <?php
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 /**
- * JSON API
+ * 支持使用“api/接口名”路径按参数获取json格式的博客数据
  * 
  * @package JSON
  * @author 公子
  * @version 0.1
- * @link http://zh.eming.li/#JSON-API
+ * @link https://imnerd.org
  */
 class JSON_Plugin implements Typecho_Plugin_Interface
 {
