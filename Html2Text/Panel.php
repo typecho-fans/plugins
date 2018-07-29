@@ -31,13 +31,13 @@ require_once dirname(__FILE__) . '/markdownify/markdownify.php';
                         </thead>
                         <tbody>
                         	<tr>
-                                <td>打开日志MD编辑器</td>
-                                <td>让升级0.9版前的日志都能够使用系统自带的markdown编辑器。</td>
+                                <td>批量添加MD解析标记</td>
+                                <td>强制系统对HTML格式日志进行Markdown解析。</td>
                                 <td><button id="act1" name="btnExe" type="submit" class="btn-s">开始执行</button></td>
                             </tr>
                         	<tr>
-                                <td>转换之前日志内容</td>
-                                <td>升级0.9版前所有日志内容都保存的是HTML代码，该功能可以把HTML代码转换成markdown格式。</td>
+                                <td>批量转换HTML格式内容</td>
+                                <td>该功能可以把未使用MD编辑器保存的HTML内容日志转换成Markdown格式。</td>
                                 <td><button id="act2" name="btnExe" type="submit" class="btn-s">开始执行</button></td>
                             </tr>
                          </tbody>

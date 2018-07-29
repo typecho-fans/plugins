@@ -1,6 +1,6 @@
 <?php
 /**
- * 让0.9之前的日志内容可用系统自带的Markdown编辑器编辑。
+ * 将HTML内容日志转换为Markdown语法格式。
  * 
  * @category system
  * @package Html2Text
