@@ -116,7 +116,7 @@ class Markdownify {
    *             defaults to true (HTML will be kept)
    * @return void
    */
-  function Markdownify($linksAfterEachParagraph = MDFY_LINKS_EACH_PARAGRAPH, $bodyWidth = MDFY_BODYWIDTH, $keepHTML = MDFY_KEEPHTML) {
+  function __construct($linksAfterEachParagraph = MDFY_LINKS_EACH_PARAGRAPH, $bodyWidth = MDFY_BODYWIDTH, $keepHTML = MDFY_KEEPHTML) {
     $this->linksAfterEachParagraph = $linksAfterEachParagraph;
     $this->keepHTML = $keepHTML;
 
