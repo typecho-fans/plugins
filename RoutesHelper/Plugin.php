@@ -8,7 +8,7 @@
  * @version 1.0.3
  * @dependence 13.12.12-*
  * @link https://github.com/doudoutime
- * @date 2014-1-4
+ * @date 2018-7-26
  */
 class RoutesHelper_Plugin implements Typecho_Plugin_Interface
 {
