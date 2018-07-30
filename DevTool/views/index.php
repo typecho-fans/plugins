@@ -17,10 +17,10 @@ include TYPEHO_ADMIN_PATH . 'menu.php';
             <div class="col-mb-12 col-tb-8 col-tb-offset-2">            
                 <ul class="typecho-option" id="typecho-option-item-title-0">
                     <li>
-                        <a href="<?php $options->adminUrl('dev-tool/options'); ?>">查看Option数据</a>
+                        <a href="<?php $options->index(__TYPECHO_ADMIN_DIR__ .'dev-tool/options'); ?>">查看Option数据</a>
                     </li>
                     <li>
-                        <a href="<?php $options->adminUrl('dev-tool/post'); ?>">生成文章</a>
+                        <a href="<?php $options->index(__TYPECHO_ADMIN_DIR__ .'dev-tool/post'); ?>">生成文章</a>
                     </li>
                 </ul>
             </div>
@@ -35,3 +35,8 @@ include TYPEHO_ADMIN_PATH . 'menu.php';
     include TYPEHO_ADMIN_PATH.'footer.php';
 ?>
 
+<script type="text/javascript">
+    $(function(){
+        $('a').attr('target', '_self');
+    });
+</script>

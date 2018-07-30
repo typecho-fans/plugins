@@ -24,15 +24,16 @@ class DevTool_Action extends Typecho_Widget {
 
     public function post(){
         $rssfile = array(
-            "http://news.ifeng.com/rss/index.xml",
-            "http://news.ifeng.com/mil/rss/index.xml",
-            "http://news.ifeng.com/history/rss/index.xml",
-            "http://news.ifeng.com/rss/mainland.xml",
-            "http://news.ifeng.com/rss/taiwan.xml",
-            "http://news.ifeng.com/rss/world.xml",
-            "http://news.ifeng.com/rss/society.xml",
-            "http://news.ifeng.com/rss/photo.xml",
-            "http://news.ifeng.com/sports/rss/index.xml"
+            "http://rss.news.sohu.com/rss/pfocus.xml",
+            "http://rss.news.sohu.com/rss/focus.xml",
+            "http://rss.news.sohu.com/rss/guonei.xml",
+            "http://rss.news.sohu.com/rss/guoji.xml",
+            "http://rss.news.sohu.com/rss/junshi.xml",
+            "http://rss.news.sohu.com/rss/sports.xml",
+            "http://rss.news.sohu.com/rss/business.xml",
+            "http://rss.news.sohu.com/rss/it.xml",
+            "http://rss.news.sohu.com/rss/learning.xml",
+            "http://rss.news.sohu.com/rss/yule.xml"
         );
 
         $rssfile = $rssfile[rand(0, count($rssfile) - 1)];
