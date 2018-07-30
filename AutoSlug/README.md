@@ -1,12 +1,14 @@
-### 自动生成文章缩略名插件AutoSlug v2.1.1
+## 插件说明 ##
 
-输入文章标题后在下方永久链接自动生成对应英文slug，支持百度、有道和谷歌翻译及拼音模式。
+输入文章标题后在下方永久链接处自动生成对应的英文slug，支持百度、有道和谷歌翻译及拼音模式。
 
-**版本: v2.1.0**
+ **版本: v2.1.1**
+ 
+ 升级时，请先禁用旧版本后，覆盖文件再启用。
+ 
+== 更新 2017-2-11 ==（[@羽中](https://github.com/jzwalk)）
 
-升级时，请先禁用旧版本后，覆盖文件再启用。
-
- > 2.1.1谷歌修复版(17-2-11)更新：使用[Google Translator API for free](https://github.com/statickidz/php-google-translate-free)改国内节点。（[@羽中](https://github.com/jzwalk)）
+ 1. 谷歌翻译使用[Google Translator API for free](https://github.com/statickidz/php-google-translate-free)改国内节点。
 
 == 更新 2014-12-10 ==
 

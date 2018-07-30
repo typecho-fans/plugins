@@ -3,7 +3,7 @@
 /**
  * GoogleTranslate.class.php
  *
- * Class to talk with Google Translator for free. 使用国内节点 @羽中(www.yzmb.me)
+ * Class to talk with Google Translator for free.
  *
  * @package PHP Google Translate Free;
  * @category Translation
