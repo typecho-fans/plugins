@@ -1,11 +1,11 @@
 <?php
 /**
- * 虾米音乐播放器：虾米音乐搜索+引用 (复活版<a href="http://www.yzmb.me" target="_blank">@羽中</a>)
+ * 虾米音乐播放器：虾米音乐搜索+引用
  *
  * @package XiaMiPlayer
  * @author 公子
- * @version 3.1.3
- * @link http://zh.eming.li/#typecho
+ * @version 3.1.4
+ * @link https://imnerd.org
  */
 class XiaMiPlayer_Plugin implements Typecho_Plugin_Interface
 {
@@ -273,10 +273,9 @@ class XiaMiPlayer_Plugin implements Typecho_Plugin_Interface
 				else
 					$('ul#playlist').append('<li data-id="'+id+'">'+name+'</li>');
 			} else {
-				rm();
-				var c = '<script type="text/javascript" src="<?php echo $music; ?>?songs='+id+'<?php if($color) echo "&setting=$color"; ?>"><\/script>';
-				$('#text').val($('#text').val() + c);
+				var c = '[xiami <?php echo $music; ?>?songs='+id+'<?php if($color) echo "&setting=$color"; ?>]';
 				editor(c);
+				rm();
 			}
 		}
 
@@ -289,14 +288,18 @@ class XiaMiPlayer_Plugin implements Typecho_Plugin_Interface
 				else
 					$('ul#playlist').append('<li data-url="'+link+'">'+name+'</li>');
 			} else {
-				var c = '<script type="text/javascript" src="<?php echo $music; ?>?songs='+link+'|'+name+'<?php if($color) echo "&setting=$color"; ?>"><\/script>';
-				$('#text').val($('#text').val()+c);
+				var c = '[xiami <?php echo $music; ?>?songs='+link+'|'+name+'<?php if($color) echo "&setting=$color"; ?>]';
 				editor(c);
 				rm();
 			}
 		}
 
 		function editor(c) {
+			var textarea = $('#text'),
+				sel = textarea.getSelection(),
+				offset = (sel ? sel.start : 0)+c.length;
+			textarea.replaceSelection(c);
+			textarea.setSelection(offset,offset);
 			if (window.frames.length > 0) {
 				if (fck = window.frames['text___Frame'])
 					var _c = fck.document.getElementsByTagName('iframe')[0].contentDocument.body;
@@ -402,45 +405,51 @@ class XiaMiPlayer_Plugin implements Typecho_Plugin_Interface
 	        	$color = '';
 	        break;
         }
-        /** Markdown 支持 **/
-        $number = preg_match_all("/<a rel=\"nofollow\" href=\"(http:\/\/(www.)?xiami\.com\/([a-z]+)\/([0-9]+).*?)\">\\1<\/a>/im", $content, $match);
+        /** 短代码替换 **/
+        $number = preg_match_all('/\[xiami (.*?)\]/si', $content, $match);
         if($number) {foreach($match[0] as $key => $string) {
-        	$type = $match[3][$key];
+                $content = str_replace($string, '<script type="text/javascript" src="'.strip_tags($match[1][$key]).'"></script>', $content);
+        }}
+
+        /** Markdown替换 **/
+        $number = preg_match_all("/<a href=\"(https:\/\/(www.)?xiami\.com\/([a-z]+)\/([a-zA-Z0-9]+))\">\\1<\/a>/im", $content, $match);
+        if($number) {foreach($match[0] as $key => $string) {
+        	$type = $match[3][$key]=='song' ? 'songs' : $match[3][$key];
         	$id = $match[4][$key];
         	$result = json_decode(file_get_contents($ajax.'?type='.$type.'&id='.$id), true);
         	if(in_array($type, array("album", "collect"))) {
 	        	if(empty($result['songs'])) continue;
 	        	$songs = array();
 	        	foreach($result['songs'] as $song) $songs[] = $song['song_id'];
-	        	$url .= "?songs=".implode(',', $songs);
-	        	if($color) $url .= "&setting=$color";
-	        	$content = str_replace($string, '<script type="text/javascript" src="'.$url.'"></script>', $content);
+	        	$lurl = $url."?songs=".implode(',', $songs);
+	        	if($color) $lurl .= "&setting=$color";
+	        	$content = str_replace($string, '<script type="text/javascript" src="'.$lurl.'"></script>', $content);
         	} else {
         		if(!$result['song_id']) continue;
-        		$url .= "?songs=".$result['song_id'];
-        		if($color) $url .= "&setting=$color";
-        		$content = str_replace($string, '<script type="text/javascript" src="'.$url.'"></script>', $content);
+        		$surl = $url."?songs=".$result['song_id'];
+        		if($color) $surl .= "&setting=$color";
+        		$content = str_replace($string, '<script type="text/javascript" src="'.$surl.'"></script>', $content);
         	}
         }}
 
-        /** 非Markdown 支持 **/
-        $number = preg_match_all("/http:\/\/(www.)?xiami\.com\/([a-z]+)\/([0-9]+)/im", $content, $match);
+        /** 非Markdown替换 **/
+        $number = preg_match_all("/https:\/\/(www.)?xiami\.com\/([a-z]+)\/([a-zA-Z0-9]+)/im", $content, $match);
         if($number) {foreach($match[0] as $key => $string) {
-        	$type = $match[2][$key];
+        	$type = $match[2][$key]=='song' ? 'songs' : $match[2][$key];
         	$id = $match[3][$key];
         	$result = json_decode(file_get_contents($ajax.'?type='.$type.'&id='.$id), true);
         	if(in_array($type, array("album", "collect"))) {
 	        	if(empty($result['songs'])) continue;
 	        	$songs = array();
 	        	foreach($result['songs'] as $song) $songs[] = $song['song_id'];
-	        	$url .= "?songs=".implode(',', $songs);
-	        	if($color) $url .= "&setting=$color";
-	        	$content = str_replace($string, '<script type="text/javascript" src="'.$url.'"></script>', $content);
+	        	$lurl = $url."?songs=".implode(',', $songs);
+	        	if($color) $lurl .= "&setting=$color";
+	        	$content = str_replace($string, '<script type="text/javascript" src="'.$lurl.'"></script>', $content);
         	} else {
         		if(!$result['song_id']) continue;
-        		$url .= "?songs=".$result['song_id'];
-        		if($color) $url .= "&setting=$color";
-        		$content = str_replace($string, '<script type="text/javascript" src="'.$url.'"></script>', $content);
+        		$surl = $url."?songs=".$result['song_id'];
+        		if($color) $surl .= "&setting=$color";
+        		$content = str_replace($string, '<script type="text/javascript" src="'.$surl.'"></script>', $content);
         	}
         }}
         return $content;
