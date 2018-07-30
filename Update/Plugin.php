@@ -1,11 +1,11 @@
 <?php
 /**
- * Typecho 后台自动升级
+ * Typecho后台一键升级开发版
  * 
  * @package Update 
  * @author 公子
- * @version 0.0.2
- * @link http://zh.eming.li#update
+ * @version 0.0.3
+ * @link https://imnerd.org
  */
 class Update_Plugin implements Typecho_Plugin_Interface
 {
@@ -55,19 +55,23 @@ class Update_Plugin implements Typecho_Plugin_Interface
     public static function personalConfig(Typecho_Widget_Helper_Form $form){}
 
     public static function show() {
-        $curl = curl_init(Helper::options()->index."/action/ajax?do=checkVersion");
-        curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
-        curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, false);
-        curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-        $version = json_decode(curl_exec($curl), true);
-        curl_close($curl);
+    	$json = __TYPECHO_ROOT_DIR__.__TYPECHO_PLUGIN_DIR__.'/Update/latest.version';
+    	if( !file_exists($json) || (time()-filemtime($json)) > 48 * 3600 ) {
+            $commonfile = file_get_contents('https://raw.githubusercontent.com/typecho/typecho/master/var/Typecho/Common.php');
+            preg_match('/const VERSION = \'\s*\K[\d\.]+?\/(\s*\K[\d\.]+?)\';/', $commonfile, $latest);
+            file_put_contents($json, $latest[1]);
+        }else{
+            $latest[1] = file_get_contents($json);
+        }
+        $version = explode('/', Helper::options()->version);
 
-        if(!$version['avaliable']) {
-            $url = Helper::options()->index."/update/zero";
+        if( $latest[1] > $version[1] ) {
+            $url = Helper::security()->getIndex('/update/zero');
+            echo '<a href="'.$url.'"><span class="message btn-warn">升级到开发版</span></a>';
             ?>
             <script>
             window.onload = function() {
-                document.querySelector(".update-check strong") && (document.querySelector(".update-check strong").innerHTML += '<a href="<?php echo $url; ?>" class="update message error" style="margin-left:15px;">升级到新版!</a>');
+                document.querySelector(".update-check strong") && (document.querySelector(".update-check strong").innerHTML += '<a href="<?php echo $url; ?>" class="update message error" style="margin-left:15px;">升级到开发版</a>');
             }
             </script>
             <style>
