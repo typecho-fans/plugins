@@ -55,7 +55,7 @@ class Like_Plugin implements Typecho_Plugin_Interface
         $likeClass = new Typecho_Widget_Helper_Form_Element_Text(
             'likeClass',NULL ,'post-like', 
             _t('点赞A标签的class'),
-            _t('点赞的自定义样式，默认为.post-like。可自定义CSS样式，无需加.<br><a href="www.phoneshuo.com/PHP/typecho-like-plugin.html">使用帮助与更新</a>')
+            _t('点赞的自定义样式，默认为.post-like。可自定义CSS样式，无需加.')
         );
         /** 是否加载jquery */
         $jquery = new Typecho_Widget_Helper_Form_Element_Radio(
