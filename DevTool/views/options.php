@@ -21,12 +21,12 @@ include TYPEHO_ADMIN_PATH . 'menu.php';
             <div class="col-mb-12 typecho-list">
                 <div class="typecho-list-operate clearfix">
                     <form method="get">
-                        <a target="_self" href="<?php $options->adminUrl('dev-tool/options'); ?>?keywords=plugin"><?php _e('插件相关'); ?></a>
-                        <a target="_self" href="<?php $options->adminUrl('dev-tool/options'); ?>?keywords=routingTable"><?php _e('路由'); ?></a>
-                        <a target="_self" href="<?php $options->adminUrl('dev-tool/options'); ?>?keywords=panel"><?php _e('Panel'); ?></a>
+                        <a target="_self" href="<?php $options->index(__TYPECHO_ADMIN_DIR__ .'dev-tool/options'); ?>?keywords=plugin"><?php _e('插件相关'); ?></a>
+                        <a target="_self" href="<?php $options->index(__TYPECHO_ADMIN_DIR__ .'dev-tool/options'); ?>?keywords=routingTable"><?php _e('路由'); ?></a>
+                        <a target="_self" href="<?php $options->index(__TYPECHO_ADMIN_DIR__ .'dev-tool/options'); ?>?keywords=panel"><?php _e('Panel'); ?></a>
                         <div class="search" role="search">
                             <?php if ('' != $request->keywords): ?>
-                            <a href="<?php $options->adminUrl('dev-tool/options'); ?>"><?php _e('&laquo; 取消筛选'); ?></a>
+                            <a href="<?php $options->index(__TYPECHO_ADMIN_DIR__ .'dev-tool/options'); ?>"><?php _e('&laquo; 取消筛选'); ?></a>
                             <?php endif; ?>
                             <input type="text" class="text-s" placeholder="<?php _e('请输入关键字'); ?>" value="<?php echo htmlspecialchars($request->keywords); ?>" name="keywords" />
                             <button type="submit" class="btn btn-s"><?php _e('筛选'); ?></button>
@@ -89,5 +89,6 @@ include TYPEHO_ADMIN_PATH . 'menu.php';
         $('.org-value').on('click', function(){
             $(this).hide().parent().find('.serialize').show();
         });
+        $('a').attr('target', '_self');
     });
 </script>
