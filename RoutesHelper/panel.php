@@ -1,6 +1,5 @@
-<?php if(!defined('__DIR__')) exit; ?>
+<?php if(!defined('__TYPECHO_ROOT_DIR__')) exit; ?>
 <?php
-include 'common.php';
 include 'header.php';
 include 'menu.php';
 ?>
@@ -22,7 +21,7 @@ $default = unserialize('a:25:{s:5:"index";a:3:{s:3:"url";s:1:"/";s:6:"widget";s:
                         <li>
                             <label class="typecho-label">路由还原</label>
                             <button type="submit" class="primary">恢复系统默认路由</button>
-                            <p class="description">恢复为程序安装时默认的路由，不影响由插件增加的路由。<br/>当前支持Typecho版本 0.9 (13.12.12) 版本</p>
+                            <p class="description">恢复为程序安装时默认的路由，不影响由插件增加的路由。<br/>当前支持Typecho版本 1.1 (17.10.30) 版本</p>
                         </li>
                     </ul>
                 </form>
