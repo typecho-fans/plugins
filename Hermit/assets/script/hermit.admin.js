@@ -3,7 +3,11 @@
 	b("#wmd-button-bar").before('<div id="gohermit-container"><button id="gohermit" title="\u6dfb\u52a0\u867e\u7c73\u97f3\u4e50"><img src="' + hermit_img_url + '" width="16" height="16" />\u6dfb\u52a0\u867e\u7c73\u97f3\u4e50</button></div>');
 	var list = ["songlist", "album", "collect"],
 		e = function(a) {
-			b("#text").val(b("#text").val() + a)
+			var textarea = $('#text'),
+				sel = textarea.getSelection(),
+				offset = (sel ? sel.start : 0)+a.length;
+			textarea.replaceSelection(a);
+			textarea.setSelection(offset,offset);
 		},
 		d = function() {
 			b("#gohermit").removeClass("selected");
@@ -34,7 +38,7 @@
 		case "songlist":
 			var a = b("#hermit-song").val(),
 				c = [],
-				f = /http:\/\/www.xiami.com\/song\/(\d+).*?/,
+				f = /https:\/\/www.xiami.com\/song\/([a-zA-Z0-9]+).*?/,
 				a = a.split(/\r?\n/g);
 
 			a = b.grep(a, function(a) {
@@ -46,12 +50,12 @@
 			break;
 		case "album":
 			var a = b("#hermit-album").val(),
-				g = /http:\/\/www.xiami.com\/album\/(\d+).*?/;				
+				g = /https:\/\/www.xiami.com\/album\/([a-zA-Z0-9]+)/;				
 			g.test(a) ? (a = a.match(g)[1], e('[hermit auto='+auto+' loop='+loop+' unexpand='+ue+' fullheight='+fh+']album#:' + a + '[/hermit]'), d()) : alert("请输入正确的虾米专辑地址")
 			break;
 		case "collect":
 			var a = b("#hermit-collect").val(),
-				g = /http:\/\/www.xiami.com\/collect\/(\d+).*?/;
+				g = /https:\/\/www.xiami.com\/collect\/([a-zA-Z0-9]+)/;
 			g.test(a) ? (a = a.match(g)[1], e('[hermit auto='+auto+' loop='+loop+' unexpand='+ue+' fullheight='+fh+']collect#:' + a + '[/hermit]'), d()) : alert("请输入正确的虾米精选集地址")
 			break;		 	
 		}

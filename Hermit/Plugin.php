@@ -1,12 +1,12 @@
 <?php
 /**
- * 虾米音乐播放器 Hermit for typecho xiami music player (复活版<a href="http://www.yzmb.me" target="_blank">@羽中</a>)
+ * 虾米音乐播放器 Hermit for typecho xiami music player
  * 
  * @category player
  * @package Hermit 
  * @author mufeng
  * @version 1.3.1
- * @update: 2017.1.27
+ * @update: 2018.7.25
  * @link http://mufeng.me/
  */
 class Hermit_Plugin implements Typecho_Plugin_Interface
