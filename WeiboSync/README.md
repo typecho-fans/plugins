@@ -13,7 +13,7 @@ Typecho新浪微博同步插件
 
 
 ## 2 安装方法
-详见`weibo`和`WeiboSync`这两个目录下的`README`文件。
+:warning:详见`weibo`和`WeiboSync`这两个目录下的`README`文件。
 
 
 ## 3 版本更新说明
