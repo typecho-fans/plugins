@@ -3,7 +3,7 @@ MyPlayer
 
 Typecho外链播放器转换插件
 
-
+ > :warning:jplayer调用失效，链接替换可用的还有优酷、音悦台和哔哩哔哩。
 
 ## 简介
 
