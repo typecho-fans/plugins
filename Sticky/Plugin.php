@@ -82,13 +82,12 @@ class Sticky_Plugin implements Typecho_Plugin_Interface
 
         $db = Typecho_Db::get();
         $paded = $archive->request->get('page', 1);
-        $sticky_html = $config->sticky_html ? $config->sticky_html : "<span style='color:red'>[置顶]</span>";
 
         foreach($sticky_cids as $cid) {
           if ($cid && $sticky_post = $db->fetchRow($archive->select()->where('cid = ?', $cid))) {
-              if ($paded == 1) {                               // 首? page.1 才?有置?文章
-                $sticky_post['title'] = $sticky_post['title'] . $sticky_html; // 置?的文章加入置???
-                $archive->push($sticky_post);                  // ?取置?的文章先?入
+              if ($paded == 1) {                               // 首頁 page.1 才會有置頂文章
+                $sticky_post['title'] = $sticky_post['title'] . $config->sticky_html;
+                $archive->push($sticky_post);                  // 選取置頂的文章先壓入
               }
               $select->where('table.contents.cid != ?', $cid); // 使文章不重覆
           }
@@ -104,13 +103,12 @@ class Sticky_Plugin implements Typecho_Plugin_Interface
 
         $db = Typecho_Db::get();
         $paded = $archive->request->get('page', 1);
-        $sticky_html = $config->sticky_html ? $config->sticky_html : "<span style='color:red'>[置顶]</span>";
 
         foreach($sticky_cids as $cid) {
           if ($cid && $sticky_post = $db->fetchRow($archive->select()->where('cid = ?', $cid))) {
-              if ($paded == 1) {                               // 首? page.1 才?有置?文章
-                $sticky_post['title'] = $sticky_post['title'] . $sticky_html; // 置?的文章加入置???
-                $archive->push($sticky_post);                  // ?取置?的文章先?入
+              if ($paded == 1) {                               // 首頁 page.1 才會有置頂文章
+                $sticky_post['title'] = $sticky_post['title'] . $config->sticky_html;
+                $archive->push($sticky_post);                  // 選取置頂的文章先壓入
               }
               $select->where('table.contents.cid != ?', $cid); // 使文章不重覆
           }
