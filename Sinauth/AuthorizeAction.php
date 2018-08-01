@@ -24,7 +24,7 @@ class Sinauth_AuthorizeAction extends Typecho_Widget implements Widget_Interface
     public function action(){
         //跳转
         if (!class_exists('SaeTOAuthV2')) {
-            require_once './saetv2.ex.class.php';
+            require_once 'saetv2.ex.class.php';
         }
         $saeto_client = new SaeTOAuthV2($this->config->client_id, $this->config->client_secret);
         $authorize_url = $saeto_client->getAuthorizeURL($this->config->callback_url, 'code');
@@ -43,7 +43,7 @@ class Sinauth_AuthorizeAction extends Typecho_Widget implements Widget_Interface
         
         //跳转
         if (!class_exists('SaeTOAuthV2')) {
-            require_once './saetv2.ex.class.php';
+            require_once 'saetv2.ex.class.php';
         }
         
         $saeto_client = new SaeTOAuthV2($this->config->client_id, $this->config->client_secret);
