@@ -9,7 +9,7 @@
 ## 使用帮助 ##
 
  1. 上传插件包
- 2. :dart:打开 `admin/login.php` 文件，做以下修改：
+ 2. :warning:打开 `admin/login.php` 文件，做以下修改：
 
  ```php
  // 找到这里
