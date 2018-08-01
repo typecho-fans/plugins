@@ -33,7 +33,7 @@ class ArticleTemplate_Plugin implements Typecho_Plugin_Interface {
 	public static function setTemplate($post) {
 		$db = Typecho_Db::get();
 		$row = $db->fetchRow($db->select('template')->from('table.contents')->where('cid = ?', $post->cid));
-		$template = $row['template'];
+		$template = isset($row['template']) ? $row['template'] : '';
 		$typeFields = Typecho_Widget::widget('Widget_Options')->plugin(str_replace("_Plugin","",__CLASS__))->typeFields;
 		$typeList = explode("\r\n",$typeFields);
 		if (!in_array("standard",$typeList)) { 
