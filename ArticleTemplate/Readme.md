@@ -1,6 +1,8 @@
 # ArticleTemplate
 Custom post type for Typecho
 
+ > 修正一处变量报错问题。
+
 ## Usage
 Download release and upload to /usr/plugins, be sure folder is `ArticleTemplate`
 
