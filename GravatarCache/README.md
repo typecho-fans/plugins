@@ -3,7 +3,7 @@ Gravatar 头像缓存插件 For Typecho
 支持curl方式下载Gravatar头像到本地，可指定目录和保存时间。
 
 ### 使用说明
-- 将GravatarCache.php文件直接上传至`/usr/plugins/`目录(:dart:不需要文件夹)；
+- 将GravatarCache.php文件直接上传至`/usr/plugins/`目录(:warning:不需要文件夹)；
 - 登陆后台，在“控制台”下拉菜单中进入“插件管理”
 - 启用插件即可
 
