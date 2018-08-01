@@ -37,6 +37,7 @@ class Sinauth_Plugin implements Typecho_Plugin_Interface
 	{           
                                 
 		$installDb = Typecho_Db::get();
+		$type = array_pop(explode('_',$installDb->getAdapterName()));
 		$prefix = $installDb->getPrefix();
         $oauthTable = $prefix. self::$tableName;
 		try {
@@ -58,7 +59,7 @@ class Sinauth_Plugin implements Typecho_Plugin_Interface
                     
 		} catch (Typecho_Db_Exception $e) {
 			$code = $e->getCode();
-			if(('Mysql' == $type && 1050 == $code)) {
+			if(('Mysql' == $type && (1050||'42S01') == $code)) {
 					$script = 'SELECT `moid` from `' . $oauthTable . '`';
 					$installDb->query($script, Typecho_Db::READ);
 					return '数据表已存在，插件启用成功';	
@@ -70,7 +71,7 @@ class Sinauth_Plugin implements Typecho_Plugin_Interface
     
     //在前台登陆页面增加oauth跳转图标
     public static function authorizeIcon() {
-        return '<a href="' . Typecho_Router::url('sinauthAuthorize', array('feed' => '/atom/comments/')) . '">新浪登陆</a>';
+        return '<a href="' . Helper::options()->index . '/sinauthAuthorize">新浪登陆</a>';
     }
     
     /**
