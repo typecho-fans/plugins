@@ -31,12 +31,6 @@
 [submodule "OssForTypecho"]
 	path = OssForTypecho
 	url = https://github.com/CharmeRyl/typecho-plugin-ossfile.git
-[submodule "Restful"]
-	path = Restful
-	url = https://github.com/moefront/typecho-plugin-Restful.git
 [submodule "UpdateAssistant"]
 	path = UpdateAssistant
 	url = https://github.com/mrgeneralgoo/typecho-update-assistant.git
-[submodule "WeCahtHelper"]
-	path = WeCahtHelper
-	url = https://github.com/binjoo/WeChatHelper
