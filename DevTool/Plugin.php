@@ -3,7 +3,6 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 /**
  * 开发者工具
  * 
- * @category system
  * @package DevTool 
  * @author zhulin3141
  * @version 1.0.0

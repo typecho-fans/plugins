@@ -2,7 +2,6 @@
 /**
  * MYSQL/SAE memcache缓存插件<br />使用Mysql或SAE的memcache缓存页面减少数据库查询次数
  * 
- * @category data
  * @package MostCache
  * @author skylzl
  * @version 1.0.0

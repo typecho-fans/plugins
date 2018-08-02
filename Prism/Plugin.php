@@ -2,7 +2,6 @@
 /**
  * Prism 是一个轻量级，可扩展的语法着色工具，符合 Web 标准。
  * 
- * @category content
  * @package Prism
  * @author 冰剑
  * @version 1.0.2

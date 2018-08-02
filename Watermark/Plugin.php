@@ -2,7 +2,6 @@
 /**
  * 生成图片水印
  * 
- * @category picture
  * @package Watermark
  * @author DEFE
  * @version 1.2.0

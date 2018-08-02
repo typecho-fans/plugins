@@ -5,8 +5,7 @@
  * 让你的博客飘起雪花来...
  * 
  * 1.0.1 2013-11-08  增加雪花随机色功能
- *
- * @category effect
+ * 
  * @package Snowstorm
  * @author 阳光
  * @version 1.0.1

@@ -3,7 +3,6 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 /**
  * 为博客添加Gravatar头像墙功能, 支持镜像加速与缓存
  * 
- * @category widget
  * @package Avatars
  * @author 羽中
  * @version 1.2.5

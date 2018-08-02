@@ -3,7 +3,6 @@
 /**
  * Typecho 点赞插件
  * 
- * @category widget
  * @package Like
  * @author skylzl
  * @version 1.0.1

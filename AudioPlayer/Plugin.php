@@ -3,7 +3,6 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 /**
  * 为博客添加flash mp3播放器Audio Player
  * 
- * @category player
  * @package AudioPlayer
  * @author 羽中
  * @version 1.2.6

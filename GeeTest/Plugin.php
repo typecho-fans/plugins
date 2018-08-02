@@ -1,8 +1,7 @@
 <?php
 /**
  * 极验验证
- *
- * @category comment
+ * 
  * @package GeeTest
  * @author 啸傲居士
  * @link http://jiya.io

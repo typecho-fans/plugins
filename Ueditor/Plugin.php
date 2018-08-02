@@ -2,7 +2,6 @@
 /**
  * 集成百度编辑器
  * 
- * @category editor
  * @package Ueditor
  * @author zhulin3141
  * @version 1.0.0
