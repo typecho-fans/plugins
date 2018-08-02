@@ -2,7 +2,6 @@
 /**
  * Google高亮代码 New!
  * 
- * @category content
  * @package Google Code Prettify
  * @author 公子
  * @version 2.0.0

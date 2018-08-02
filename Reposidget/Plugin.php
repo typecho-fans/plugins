@@ -2,7 +2,6 @@
 /**
  * 一款优美的Github Repo插件,你可以使用形如<strong>&lt;repo&gt;typecho/typecho&lt;/repo&gt;</strong>的代码来插入github的库。
  * 
- * @category widget
  * @package Reposidget：GitHub 项目挂件
  * @author 西秦公子
  * @version 1.0.0

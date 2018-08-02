@@ -2,7 +2,6 @@
 /**
  * 将HTML内容日志转换为Markdown语法格式。
  * 
- * @category system
  * @package Html2Text
  * @author 冰剑
  * @version 0.1.0

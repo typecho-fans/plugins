@@ -2,7 +2,6 @@
 /**
  * 在显示404之前使用规则重写
  * 
- * @category system
  * @package RewriteRule
  * @author laobubu
  * @version 1.0.0

@@ -2,7 +2,6 @@
 /**
  * 主题编辑器
  * 
- * @category editor
  * @package CodeMirror
  * @author zhulin3141
  * @version 1.0.0

@@ -2,8 +2,7 @@
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 /**
  * URL后添加 ?theme={主题目录} | 为空则删除cookie，恢复默认
- *
- * @category system
+ * 
  * @package ThemeDemo
  * @author doudou
  * @version 1.0.1

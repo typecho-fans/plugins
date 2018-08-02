@@ -1,8 +1,7 @@
 <?php
 /**
  * 数据备份
- *
- * @category data
+ * 
  * @package DbManager
  * @author ShingChi
  * @version 2.0.1

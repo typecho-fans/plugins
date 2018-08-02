@@ -3,7 +3,6 @@
 /**
  * Typecho 公告栏插件
  * 
- * @category widget
  * @package Announcement
  * @author skylzl
  * @version 1.0.0
