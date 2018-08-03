@@ -1,31 +1,32 @@
-## Typecho爱好者插件集群
+## Typecho爱好者插件集群（社区维护版目录）
 
 ![logo](https://raw.githubusercontent.com/typecho-fans/typecho-fans.github.io/master/soapgroup.png)
 
-本项目中插件原则上均支持1.x版本，可提交问题或建议至[issues](https://github.com/typecho-fans/plugins/issues)，欢迎更多作者加入！:penguin:交流群号：[**40412938**](http://shang.qq.com/wpa/qunwpa?idkey=a5a8afedf099e18ddf9b530db9217251e39001d52aace42888bf470d9b6cb86a)
+本项目中插件由社区成员共同维护，原则上均支持1.0+版本。用户可提交问题或建议至[issues](https://github.com/typecho-fans/plugins/issues)，作者加入请阅读下方须知。:penguin:交流群号：[**40412938**](http://shang.qq.com/wpa/qunwpa?idkey=a5a8afedf099e18ddf9b530db9217251e39001d52aace42888bf470d9b6cb86a)
 
-- **项目作用**：聚合github作品，方便商店型调用，开放接力维护。
-- **使用帮助**：点击右上角绿色按钮处克隆git地址或选择打包下载。
+- **使用帮助**：
+
+作者参与维护可点击右上角绿色按钮处克隆git地址或打包下载所有插件，一般用户使用下方索引表格中的Download链接下载所需插件zip包即可，或推荐安装**新版插件仓库[TeStore](/TeStore)**便捷地进行列表筛选、一键下载和自动安装卸载等操作。
 
 ### 作者须知
 
-1. 推荐用[**subtree**](https://aoxuis.me/bo-ke/2013-08-06-git-subtree)方法添加你的插件repo(可随时拉取更新)，或手动复制；
+1. 本项目内收录作品应为原创或经作者同意允许在这里进行**多人自由更新**的，如果只是想在插件仓库列表中显示则编辑[TESTORE.md](/TESTORE.md)添加插件信息即可。
 
- >submodule方法能链接至原repo但也会给下载与维护带来一定麻烦
+ > 该目录下插件将在TeStore列表中带有社区维护版标记以与原版相区别，建议作者提交有特色但不再维护的插件，可由其他成员视需求和能力做后续修正。
 
-2. 暂无成员权限可先fork项目修改，然后提交pull request或issues申请；
+2. 推荐用[**subtree**](https://aoxuis.me/bo-ke/2013-08-06-git-subtree)方法录入插件文件(可随时拉取或推送回原目录)，手动复制进来提交亦可，不再接受submodule的元链接方式(对普通用户有诸多不便)。
 
-3. 插件根目录下应放置有**README**功用说明，以方便用户了解插件特性；
+ > 如果作者在原目录回归更新，本目录下版本也未曾有人修改可继续拉取同步，但如果已出现社区修改版切勿再用原作盲目覆盖，请视情况保留或修改合并。
 
- >不要忘了在下方的作品索引中添加插件简介和你的Github主页链接
+3. 管理成员会在官方论坛等地邀请github插件作者加入并给予目录权限，其他想参与进来的童鞋可先fork项目修改，然后提交pull request或issues申请。
 
-4. 收录作品应确保为原创或经作者同意可以在这里进行多人维护更新的。
+4. 插件文件夹内应放有**README**文档方便用户阅读，单独打包文件请先上传至[releases](https://github.com/typecho-fans/plugins/releases)的首字母分类标签下，再将其下载链接添加到下方的表格信息中。
 
- >插件目录内若无license则视作采用与Typecho相同的[GPL2](https://github.com/typecho/typecho/blob/master/LICENSE.txt)开源许可
+ > 请准确编辑下方表格以使插件能被TeStore正常调用，其中下载链接文字用于附加图标：`Download`为社区版，`N/A`为不可用，`Special`为安装用法特殊。
 
 ### 作品索引 (84)
 
-###### 插件仓库将使用下表“中的名称”创建安装文件夹，“版本”提示升级，请务必确保文本准确，作者主页仅读取第一个通常是最后参与修改的作者链接，下载文字用于显示图标见上文说明。
+###### 插件仓库将使用下表中的“名称”创建安装文件夹，“版本”提示升级，请务必确保文本准确，作者主页仅使用第一个通常是最后参与修改的作者链接。
 
 名称 | 简介 | 版本 | 作者 | zip包
 ---- | :----: | :---: | ----: | :----:
