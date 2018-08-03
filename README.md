@@ -2,9 +2,11 @@
 
 ## Typecho爱好者插件集群（社区维护版目录）
 
-[![compatible](https://img.shields.io/badge/Typeco-%3E%3D1.0-%23467B96.svg?style=for-the-badge)](https://github.com/typecho/typecho)
+[![compatible](https://img.shields.io/badge/Typecho-%3E%3D1.0-red.svg?style=for-the-badge)](https://github.com/typecho/typecho)
+[![support](https://img.shields.io/badge/TeStore-Supported-yellow.svg?style=for-the-badge)](/TeStore)
+[![contributors](https://img.shields.io/github/contributors/typecho-fans/plugins.svg?style=for-the-badge)](/TeStore)
 
-本项目中插件由社区成员共同维护，原则上均支持1.0+版本。用户可提交问题或建议至[issues](https://github.com/typecho-fans/plugins/issues)，作者加入请阅读下方须知。:penguin:交流群号：[**40412938**](http://shang.qq.com/wpa/qunwpa?idkey=a5a8afedf099e18ddf9b530db9217251e39001d52aace42888bf470d9b6cb86a)
+ > 本项目中插件由社区成员共同维护，原则上均支持1.0+版本。用户可提交问题或建议至[issues](https://github.com/typecho-fans/plugins/issues)，作者加入请阅读下方须知。:penguin:交流群号：[**40412938**](http://shang.qq.com/wpa/qunwpa?idkey=a5a8afedf099e18ddf9b530db9217251e39001d52aace42888bf470d9b6cb86a)
 ------------------------------
 
 ### 使用帮助
@@ -25,7 +27,7 @@
 
 4. 插件目录内应有**README**文档便于用户阅读，zip包请先上传至[releases](https://github.com/typecho-fans/plugins/releases)分类标签下，再将链接添加到下方的表格信息里。
 
- > 下表的下载链接文字将用于对TeStore列表附加图标：`Download`即社区版，`N/A`为不可用，`Special`为安装用法特殊。
+ > 下表的“下载链接文字”将用于对TeStore列表附加图标：`Download`即社区版，`N/A`为不可用，`Special`为安装用法特殊。
 
 ### 作品索引 (84)
 
