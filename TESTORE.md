@@ -23,7 +23,7 @@
 
  > 修改前请务必Ctrl+F是否已有重复插件添加，虽然功能上允许同名，但如果没有版本或描述上的必要区别也可能被移除。
 
-3. zip包下载地址最好能确保稳定，或上传至本目录的[releases](https://github.com/typecho-fans/plugins/releases)外部插件标签下，然后将下载链接添加到下方的表格信息里。
+3. zip包下载地址最好能确保稳定，或先上传至本目录的[releases](https://github.com/typecho-fans/plugins/releases)分类标签下，然后再将下载链接添加到下方的表格信息里。
 
  > 下表中“下载链接文字”可用于附加图标：`下载`即非社区版，`不可用`显示为:no_entry:，`特殊`为:warning:意思是安装或启用方法特殊。
 
