@@ -3,19 +3,19 @@
 ## Typecho爱好者插件集群（社区维护版目录）
 
 [![compatible](https://img.shields.io/badge/Typecho-%3E%3D1.0-red.svg?style=for-the-badge)](https://github.com/typecho/typecho)
-[![support](https://img.shields.io/badge/TeStore-Supported-yellow.svg?style=for-the-badge)](/TeStore)
-[![contributors](https://img.shields.io/github/contributors/typecho-fans/plugins.svg?style=for-the-badge)](/TeStore)
+[![support](https://img.shields.io/badge/TeStore-Supported-yellow.svg?style=for-the-badge)](TeStore)
+[![contributors](https://img.shields.io/github/contributors/typecho-fans/plugins.svg?style=for-the-badge)](graphs/contributors)
 
- > 本项目中插件由社区成员共同维护，原则上均支持1.0+版本。用户可提交问题或建议至[issues](https://github.com/typecho-fans/plugins/issues)，作者加入请阅读下方须知。:penguin:交流群号：[**40412938**](http://shang.qq.com/wpa/qunwpa?idkey=a5a8afedf099e18ddf9b530db9217251e39001d52aace42888bf470d9b6cb86a)
+ > 本项目中插件由社区成员共同维护，原则上均支持1.0+版本。用户可提交问题或建议至[issues](plugins/issues)，作者加入请阅读下方须知。:penguin:交流群号：[**40412938**](http://shang.qq.com/wpa/qunwpa?idkey=a5a8afedf099e18ddf9b530db9217251e39001d52aace42888bf470d9b6cb86a)
 ------------------------------
 
 ### 使用帮助
 
-作者参与维护可点击右上角绿色按钮处克隆git地址或打包下载所有插件，一般用户使用下方索引表格中的Download链接下载所需插件zip包即可，或推荐安装**新版插件仓库**[**TeStore**](/TeStore)更便捷地进行列表筛选、一键下载和自动安装卸载等操作。
+作者参与维护可点击右上角绿色按钮处克隆git地址或打包下载所有插件，一般用户使用下方索引表格中的Download链接下载所需插件zip包即可，或推荐安装**新版插件仓库**[**TeStore**](TeStore)更便捷地进行列表筛选、一键下载和自动安装卸载等操作。
 
 ### 作者须知
 
-1. 本目录下作品应为经作者同意允许在这里进行**多人自由更新**的，如果只是想在插件仓库列表登记编辑[TESTORE.md](/TESTORE.md)即可。
+1. 本目录下作品应为经作者同意允许在这里进行**多人自由更新**的，如果只是想在插件仓库列表登记编辑[TESTORE.md](TESTORE.md)即可。
 
  > 本目录插件将在列表中带有社区版标记，建议作者提交有特色但不再维护的作品，由其他成员视需求和能力做后续修正。
 
@@ -25,9 +25,9 @@
 
 3. 管理会邀请github插件作者并给予目录权限，其他想参与的童鞋可先fork项目修改，然后提交pull request或issues申请。
 
-4. 插件目录内应有**README**文档便于用户阅读，zip包请先上传至[releases](https://github.com/typecho-fans/plugins/releases)分类标签下，再将链接添加到下方的表格信息里。
+4. 插件目录内应有**README**文档便于用户阅读，zip包请先上传至[releases](releases)分类标签下，再将链接添加到下方的表格信息里。
 
- > 下表的“下载链接文字”将用于对TeStore列表附加图标：`Download`即社区版，`N/A`为不可用，`Special`为安装用法特殊。
+ > 下表中“下载链接文字”可用于对TeStore列表附加图标：`Download`即社区版，`N/A`为不可用，`Special`为安装用法特殊。
 
 ### 作品索引 (84)
 
