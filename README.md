@@ -27,7 +27,7 @@
 
 4. 插件目录内应有**README**文档便于用户阅读，zip包请先上传至[releases](https://github.com/typecho-fans/plugins/releases)分类标签下，再将链接添加到下方的表格信息里。
 
- > 下表中“下载链接文字”可用于对TeStore列表附加图标：`Download`即社区版，`N/A`为不可用，`Special`为安装或用法特殊。
+ > 下表中“下载链接文字”可用于对TeStore列表附加图标：`Download`即社区版，`N/A`为不可用，`Special`为安装用法特殊。
 
 ### 作品索引 (84)
 
