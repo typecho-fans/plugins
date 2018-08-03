@@ -11,7 +11,7 @@
 
 ### 使用帮助
 
-本文件为**新版插件仓库**:gift:[**TeStore**](TeStore)获取列表信息专用，内容为Markdown格式文本，捕获解析部分为下方表格Html源码，在“设置”-“插件信息源”中填写地址 https://github.com/typecho-fans/plugins/blob/master/TESTORE.md 即可生效。
+本文件为**新版插件仓库**:gift:[**TeStore**](TeStore)获取插件列表信息专用，内容为Markdown格式文本，捕获解析部分为下方表格Html源码，在“设置”-“插件信息源”中填写地址 https://github.com/typecho-fans/plugins/blob/master/TESTORE.md 即可生效。
 
 ### 编辑说明
 
