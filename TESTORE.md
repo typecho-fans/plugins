@@ -11,7 +11,7 @@
 
 ### 使用帮助
 
-本文件为**新版插件仓库**:gift:[**TeStore**](TeStore)获取列表信息专用，内容为Markdown格式文本，捕获解析部分为下方表格，在“插件信息源”设置里填写地址https://github.com/typecho-fans/plugins/blob/master/TESTORE.md即可(勿使用Raw地址)。
+本文件为**新版插件仓库**:gift:[**TeStore**](TeStore)获取列表信息专用，内容为Markdown格式文本，捕获解析部分为下方表格，在“插件信息源”设置里填入地址 https://github.com/typecho-fans/plugins/blob/master/TESTORE.md 即可(注意勿使用Raw地址)。
 
 ### 编辑说明
 
@@ -27,7 +27,7 @@
 
  > 下表中“下载链接文字”可用于附加图标：`下载`即非社区版，`不可用`显示为:no_entry:，`特殊`为:warning:意思是安装或启用方法特殊。
 
-### 插件信息 (84)
+### 插件信息 (19)
 
 ###### 下表“名称”将用于创建安装文件夹，“版本”用于提示升级，请务必确保文本准确；作者主页仅使用首个署名链接。注意按字母排序，简介切勿过长。
 
