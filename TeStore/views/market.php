@@ -1,16 +1,144 @@
 <?php
+//异步加载插件数据
+if ($this->request->is('action=loadinfos')) {
+    $pluginInfo = $this->getPluginData();
+
+    if($pluginInfo) {
+        $installed = $this->getLocalPlugins();
+        $keywords = trim($this->request->get('keywords'));
+        $pluginRez = array();
+        //关键词筛选结果
+        foreach( $pluginInfo as $plugin){
+            $name = $plugin->pluginName;
+            if( !$keywords || false !== stripos($name, $keywords) || false !== stripos($plugin->desc, $keywords) ){
+                $pluginRez[] = $plugin;
+            }
+        }
+        //已安装插件提前
+        $pluginIns = array();
+        foreach( $pluginRez as $key => $plugin){
+            $name = $plugin->pluginName;
+            if( in_array($name, $installed) ){
+                $pluginIns[] = $plugin;
+                unset($pluginRez[$key]);
+            }
+        }
+        ksort($pluginIns);
+        $pluginRez = array_merge($pluginIns, $pluginRez);
+        //处理为分页数组
+        $pluginInfo = array_chunk($pluginRez, 20);
+        $page = $this->request->get('page');
+        $page = $page && isset($pluginInfo[$page-1]) ? $page - 1 : 0;
+        $keyquery = $keywords ? 'keywords=' . $keywords . '&' : '';
+        $nav = new Typecho_Widget_Helper_PageNavigator_Box(count($pluginRez), $page+1, 20, $marketUrl . '?' . $keyquery . 'page={page}');
+    }
+?>
+                <?php if( $pluginInfo ): ?>
+                <div class="typecho-list-operate clearfix">
+                    <form method="get">
+                        <div class="search" role="search">
+                            <?php if ( $keywords ): ?>
+                            <a href="<?php $options->adminUrl('extending.php?panel=TeStore%2Fmarket.php'); ?>"><?php _e('&laquo; 取消筛选'); ?></a>
+                            <?php endif; ?>
+                            <input type="text" class="text-s" placeholder="<?php _e('请输入关键字'); ?>" value="<?php echo htmlspecialchars($keywords); ?>" name="keywords" />
+                            <button type="submit" class="btn btn-s"><?php _e('筛选'); ?></button>
+                        </div>
+                    </form>
+                </div>
+                <?php endif; ?>
+
+                <div class="typecho-table-wrap">
+                    <table class="typecho-list-table">
+                        <colgroup>
+                            <col width="20%">
+                            <col width="36%">
+                            <col width="14%">
+                            <col width="20%">
+                            <col width="10%">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th><?php _e('名称 (文档链接)');?></th>
+                                <th><?php _e('简介');?></th>
+                                <th><?php _e('版本');?></th>
+                                <th><?php _e('作者 (主页)');?></th>
+                                <th><?php _e('操作');?></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php if( $pluginInfo ): ?>
+                            <?php foreach( $pluginInfo[$page] as $plugin): $name = trim(strip_tags($plugin->pluginName)); $plugin->pluginUrl; ?>
+                            <?php $source = $plugin->source; $url = $plugin->pluginUrl; $url = in_array($source, array('Download', 'N/A', 'Special')) ? 'https://github.com' . $url : $url; ?>
+                            <tr id="plugin-<?php echo $name; ?>" data-name="<?php echo $name;?>" class="plugin">
+                                <td><a href="<?php echo $url; ?>" <?php if ($url!=='#') echo 'target="_blank"'; ?>><?php echo $name; ?></a>
+                                <?php if($source=='Download'): ?>
+                                    <a href="http://typecho-fans.github.io" title="<?php _e('Typecho-Fans社区维护版'); ?>" target="_blank"><img style="margin-bottom:-1px;" src="<?php echo $pluginPath;?>/views/tf.png" alt="typecho-fans"/></a></td>
+                                <?php elseif($source=='N/A'): ?>
+                                    <img style="margin-bottom:-1px;" src="<?php echo $pluginPath;?>/views/na.png" title="<?php _e('已失效或不适用于当前版本'); ?>" alt="n/a"/>
+                                    <a href="http://typecho-fans.github.io" title="<?php _e('Typecho-Fans社区维护版'); ?>" target="_blank"><img style="margin-bottom:-1px;" src="<?php echo $pluginPath;?>/views/tf.png" alt="typecho-fans"/></a></td>
+                                <?php elseif($source=='不可用'): ?>
+                                    <img style="margin-bottom:-1px;" src="<?php echo $pluginPath;?>/views/na.png" title="<?php _e('已失效或不适用于当前版本'); ?>" alt="n/a"/>
+                                <?php elseif($source=='Special'): ?>
+                                    <img style="margin-bottom:-1px;" src="<?php echo $pluginPath;?>/views/sp.png" title="<?php _e('安装用法特殊请先阅读文档'); ?>" alt="special"/>
+                                    <a href="http://typecho-fans.github.io" title="<?php _e('Typecho-Fans社区维护版'); ?>" target="_blank"><img style="margin-bottom:-1px;" src="<?php echo $pluginPath;?>/views/tf.png" alt="typecho-fans"/></a></td>
+                                <?php elseif($source=='特殊'): ?>
+                                    <img style="margin-bottom:-1px;" src="<?php echo $pluginPath;?>/views/sp.png" title="<?php _e('安装用法特殊请先阅读文档'); ?>" alt="special"/>
+                                <?php endif; ?>
+                                <td><?php echo trim(strip_tags($plugin->desc)); ?></td>
+                                <td><?php $version = trim(strip_tags($plugin->version)); echo $version; ?>
+                                <?php $version = strpos($version, 'v')===0 ? substr($version, 1) : $version; $local = in_array($name, $installed); $infos = $local ? $this->getLocalInfos($name) : array(0, 0) ; $author = trim(strip_tags($plugin->author)); $authors = explode(', ', $author); ?>
+                                <?php if( $local && ($infos[0]==$author || in_array($infos[0], $authors)) && ($infos[1] < $version)): ?>
+                                    &#8672 <span class="error"><?php _e('有新版本！');?></span></td>
+                                <?php endif; ?>
+                                <?php $sites = explode(', ', trim($plugin->site)); ?>
+                                <td>
+                                <?php foreach( $authors as $key => $val): ?>
+                                <?php if( isset($sites[$key]) ): ?><a href="<?php echo $sites[$key]; ?>" target="_blank"><?php endif; ?><?php echo $val; ?><?php if( isset($sites[$key]) ): ?></a><?php endif; ?><?php if( $val!==end($authors) ): ?>, <?php endif; ?>
+                                <?php endforeach; ?>
+                                </td>
+                                <td>
+                                    <?php if( $local && $infos[0]==$author ): ?>
+                                        <span class="install" style="display: none;"><?php _e('安装');?></span>
+                                        <span class="uninstall"><?php _e('卸载');?></span>
+                                    <?php else: ?>                                        
+                                        <span class="install"><?php _e('安装');?></span>
+                                        <span class="uninstall" style="display: none;"><?php _e('卸载');?></span>
+                                    <?php endif; ?>                                 
+                                </td>
+                            </tr>
+                            <?php endforeach; ?>
+                            <?php else: ?>
+                                <tr>
+                                    <td colspan="5" style="text-align: center; font-weight: bold;">
+                                    <?php _e('没有找到任何插件，去试试%s修改设置%s吧！', '<a href="'.$options->adminUrl .'options-plugin.php?config=TeStore">', '</a>'); ?>
+                                    </td>
+                                </tr>
+                            <?php endif; ?>
+                        </tbody>
+                    </table>
+                </div>
+
+                <?php if( $pluginInfo ): ?>
+                <div class="typecho-list-operate clearfix">
+                    <div class="operate">
+                        <a class="profile-avatar success" href="https://github.com/typecho-fans/plugins/blob/master/TESTORE.md" target="_blank"><img style="margin-bottom:-1.5px;" src="<?php echo $pluginPath;?>/views/gh.svg"/> <?php _e('我要添加插件信息'); ?> <i class="i-exlink"></i></a>
+                    </div>
+                    <ul class="typecho-pager">
+                        <?php $nav->render('&laquo;', '&raquo;'); ?>
+                    </ul>
+                </div>
+                <?php endif; ?>
+<?php
+}else{
 include TYPEHO_ADMIN_PATH . 'common.php';
-$menu->title = _t('TE应用商店');
+$menu->title = _t('TE插件仓库');
 include TYPEHO_ADMIN_PATH . 'header.php';
 include TYPEHO_ADMIN_PATH . 'menu.php';
 ?>
 
 <style type="text/css">
 .uninstall{
-    color: red;
-}
-.installing{
-    color: blue;
+    color: #B94A48;
 }
 .install,.uninstall{
     cursor: pointer;
@@ -25,67 +153,7 @@ include TYPEHO_ADMIN_PATH . 'menu.php';
         </div>
         <div class="row typecho-page-main" role="form">
             <div class="col-mb-12 typecho-list">
-                <div class="typecho-list-operate clearfix">
-                    <form method="get">
-                        <div class="search" role="search">
-                            <?php if ('' != $request->keywords): ?>
-                            <a href="<?php $options->adminUrl('extending.php?panel=TeStore%2Fmarket.php'); ?>"><?php _e('&laquo; 取消筛选'); ?></a>
-                            <?php endif; ?>
-                            <input type="text" class="text-s" placeholder="<?php _e('请输入关键字'); ?>" value="<?php echo htmlspecialchars($request->keywords); ?>" name="keywords" />
-                            <button type="submit" class="btn btn-s"><?php _e('筛选'); ?></button>
-                        </div>
-                    </form>
-                </div>
 
-                <div class="typecho-table-wrap">
-                    <table class="typecho-list-table">
-                        <colgroup>
-                            <col width="25%">
-                            <col width="45%">
-                            <col width="8%">
-                            <col width="10%">
-                            <col width="">
-                        </colgroup>
-                        <thead>
-                            <tr>
-                                <th>名称</th>
-                                <th>描述</th>
-                                <th>版本</th>
-                                <th>作者</th>
-                                <th>操作</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php if( $pluginInfo ): ?>
-                            <?php foreach( $pluginInfo as $plugin): ?>
-                            <?php if( '' == trim($request->keywords) || false !== stripos($plugin->pluginName, $request->keywords) ): ?>
-                            <tr id="plugin-<?php echo strip_tags($plugin->pluginName); ?>" data-name="<?php echo $plugin->pluginName;?>" class="plugin">
-                                <td><a href="<?php echo $plugin->pluginUrl; ?>"><?php echo strip_tags($plugin->pluginName); ?></a></td>
-                                <td><?php echo strip_tags($plugin->desc); ?></td>
-                                <td><?php echo strip_tags($plugin->version); ?></td>
-                                <td><a href="<?php echo $plugin->site; ?>"><?php echo strip_tags($plugin->author); ?></a></td>
-                                <td>
-                                    <?php if( in_array($plugin->pluginName, $installPlugins) ): ?>
-                                        <span class="install" style="display: none;"><?php _e('安装');?></span>
-                                        <span class="uninstall" data-url="<?php $security->index('/action/plugins-edit?deactivate=' . $plugin->pluginName); ?>"><?php _e('卸载');?></span>
-                                    <?php else: ?>                                        
-                                        <span class="install"><?php _e('安装');?></span>
-                                        <span class="uninstall" style="display: none;" data-url="<?php $security->index('/action/plugins-edit?deactivate=' . $plugin->pluginName); ?>"><?php _e('卸载');?></span>
-                                    <?php endif; ?>                                 
-                                </td>
-                            </tr>
-                            <?php endif; ?>
-                            <?php endforeach; ?>
-                            <?php else: ?>
-                                <tr>
-                                    <td colspan="5" style="text-align: center; font-weight: bold;">
-                                    <?php echo _t('没有找到任何插件，去试试<a href="/admin/options-plugin.php?config=TeStore">修改设置</a>吧！'); ?>
-                                    </td>
-                                </tr>
-                            <?php endif; ?>
-                        </tbody>
-                    </table>
-                </div>
             </div>
         </div>
     </div>
@@ -100,63 +168,94 @@ include TYPEHO_ADMIN_PATH . 'menu.php';
 <script type="text/javascript" src="<?php echo $pluginPath; ?>/sticky/sticky.js"></script>
 <script type="text/javascript">
 $(function(){
-    var setting = {'img' : '<?php echo $pluginPath;?>/sticky/close.png'};
-
-    $('.plugin .install').on('click', function() {
-        var $this = $(this);
-        var sucStr = '安装' + $this.parents('.plugin').data('name') + '成功';
-        var errorStr = '<div style="color:red;">安装' + $this.parents('.plugin').data('name') + '失败</div>';
-        if (! confirm('<?php echo _t('确定安装该插件吗？'); ?>')) {
-            return false;
+    $('.typecho-pager a').removeAttr('target');
+    var body = $('.typecho-list'),
+        setting = {'img' : '<?php echo $pluginPath;?>/sticky/close.png'};
+    $.ajax({
+        type:'post',
+        url: '<?php echo $marketUrl . '?action=loadinfos&keywords=' . $this->request->get('keywords') . '&page=' . $this->request->get('page'); ?>',
+        beforeSend: function() {
+            body.html('<div class="typecho-table-wrap"><table class="typecho-list-table"><tbody><tr><td colspan="5" style="text-align: center; font-weight: bold;"><span class="loading"><?php _e('插件列表加载中... 首次读取或耗时较长，使用缓存后可大幅减少等待时间。'); ?></span></td></tr></tbody></table></div>');
+        },
+        error: function() {
+            body.html('<div class="typecho-table-wrap"><table class="typecho-list-table"><tbody><tr><td colspan="5" class="loading" style="text-align: center; font-weight: bold;"><?php _e('插件列表加载失败，请刷新页面重试。'); ?></td></tr></tbody></table></div>');
+        },
+        success: function(content) {
+            body.html(content);
+            clickInstall();
+            clickUninstall();
         }
+    });
 
-        $.ajax({
-            url: '<?php echo str_replace('/market', '/install', Typecho_Request::getInstance()->getRequestUrl()); ?>',
-            dataType: 'json',
-            data: {
-                plugin:  $this.parents('.plugin').data('name')
-            },
-            beforeSend: function() {
-                $.sticky('正在安装...', setting);
+    function clickInstall() {
+        var inst = $('.plugin .install');
+
+        inst.on('click', function() {
+            var $this = $(this),
+            name = $this.parents('.plugin').data('name'),
+            sucStr = '<span style="color:#467B96;"><?php _e('安装'); ?>' + name + '<?php _e('成功'); ?></span>',
+            errorStr = '<span class="warning"><?php _e('安装'); ?>' + name + '<?php _e('失败'); ?></span>';
+            if (! confirm('<?php _e('确定安装该插件吗？'); ?>')) {
+                return false;
             }
-        }).fail(function() {
-            $.sticky(errorStr, setting);
-        }).done(function(result) {
-            if (result.status) {
-                $this.hide().parent().find('.uninstall').show();
-                $.sticky(sucStr, setting);
-            } else {
-                $this.show().parent().find('.uninstall').hide();
-                if( result.error != '' ){
-                    $.sticky(errorStr + ',' + result.error, setting);
+
+            $.ajax({
+                url: '<?php $security->index(__TYPECHO_ADMIN_DIR__ . 'te-store/install'); ?>',
+                dataType: 'json',
+                data: {
+                    plugin:  name
+                },
+                beforeSend: function() {
+                    $.sticky('<?php _e('正在安装...'); ?>', {'img' : '<?php echo $pluginPath;?>/sticky/close.png', 'autoclose' : false});
+                    inst.css({'pointer-events' : 'none', 'color' : '#999'});
                 }
-            }
+            }).fail(function() {
+                $('.sticky').remove();
+                $.sticky(errorStr, setting);
+                inst.css({'pointer-events' : 'auto', 'color' : '#444'});
+            }).done(function(result) {
+                $('.sticky').remove();
+                inst.css({'pointer-events' : 'auto', 'color' : '#444'});
+                if (result.status) {
+                    $this.hide().parent().find('.uninstall').show();
+                    $.sticky(sucStr, setting);
+                } else {
+                    $this.show().parent().find('.uninstall').hide();
+                    if( result.error != '' ){
+                        $.sticky(errorStr + ',' + result.error, setting);
+                    }
+                }
+            });
         });
-    });
+    }
 
-    $('.plugin .uninstall').on('click', function(){
-        var $this = $(this);
-        var deactivateUrl = $this.data('url');
+    function clickUninstall() {
+        $('.plugin .uninstall').on('click', function(){
+            var $this = $(this),
+                name = $this.parents('.plugin').data('name');
+            if (! confirm('<?php _e('如果插件在启用中将自动禁用后卸载，是否继续？'); ?>')) {
+                return false;
+            }
 
-        $.ajax({
-            url: '<?php echo str_replace('/market', '/uninstall', Typecho_Request::getInstance()->getRequestUrl()); ?>',
-            dataType: 'json',
-            data: {
-                plugin:  $this.parents('.plugin').data('name')
-            }
-        }).done(function(result) {
-            if (result.status) {
-                $this.hide().parent().find('.install').show();
-                $.sticky('卸载成功...', setting);
-            }else {
-                $.ajax({
-                    url: deactivateUrl
-                }).done(function(){
-                    $this.click();
-                });                
-            }
+            $.ajax({
+                url: '<?php $security->index(__TYPECHO_ADMIN_DIR__ . 'te-store/uninstall'); ?>',
+                dataType: 'json',
+                data: {
+                    plugin: name
+                }
+            }).done(function(result) {
+                if (result.status) {
+                    $this.hide().parent().find('.install').show();
+                    $.sticky('<span style="color:#467B96;"><?php _e('卸载'); ?>' + name + '<?php _e('成功'); ?></span>', setting);
+                } else {
+                    $this.show().parent().find('.install').hide();
+                    $.sticky('<span class="warning"><?php _e('卸载'); ?>' + name + '<?php _e('失败'); ?></span>', setting);
+                }
+            });
+
         });
-
-    });
+    }
 });
 </script>
+<?php
+}
