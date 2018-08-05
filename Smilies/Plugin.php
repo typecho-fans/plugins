@@ -4,7 +4,7 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
  * 为博客添加图片表情功能 (初版:willin kan/正文功能:<a href="http://lt21.me">LT21</a>)
  * 
  * @package Smilies
- * @author 羽中
+ * @author 羽中, Willin Kan
  * @version 1.1.3
  * @dependence 14.5.26-*
  * @link http://www.yzmb.me/archives/net/smilies-for-typecho
