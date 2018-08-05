@@ -98,7 +98,7 @@
 [RewriteRule](RewriteRule) | 正则匹配链接批量重定向跳转插件 | 1.0.0 | [laobubu](https://github.com/laobubu) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/RewriteRule.zip)
 [RoutesHelper](RoutesHelper) | Typecho路由信息显示与修改插件 | 1.0.3 | [doudou](https://github.com/doudoutime) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/RoutesHelper.zip)
 [SCS](SCS) | 系统附件使用新浪云存储SCS插件 | 1.1.1 | [vfhky](https://github.com/vfhky) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/SCS.zip)
-[ShortLinks](ShortLinks) | 自动替换或指定内链跳转外链插件 | 1.0.7 | [Ryan](https://github.com/benzBrake) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/ShortLinks.zip)
+[ShortLinks](ShortLinks) | 自动替换或指定内链跳转外链插件 | 1.0.9 | [Ryan](https://github.com/benzBrake) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/ShortLinks.zip)
 [Sinauth](Sinauth) | 新浪用户授权注册帐号与登录插件 | 1.0.0 Beta | [jimmy chaw](https://github.com/web3d) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/Sinauth.zip)
 [SlantedExtend](SlantedExtend) | [Slanted主题](https://github.com/typecho-fans/themes/blob/master/Slanted)自定义字段专用插件 | 1.0.0 | [DT27](https://github.com/DT27) | [Special]()
 [SlimBox2](SlimBox2) | 轻量级jQuery图片灯箱弹窗插件 | 1.0.7 | [Ryan](https://github.com/ryanfwy), [冰剑](https://github.com/binjoo) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/SlantedExtend.zip)
