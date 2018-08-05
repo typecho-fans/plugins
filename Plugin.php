@@ -3,7 +3,7 @@
  * LoveKK 找回密码功能 for Typecho
  *
  * @package LoveKKForget
- * @author 康康
+ * @author 康粑粑
  * @version 1.0.0
  * @link https://www.lovekk.org
  */
