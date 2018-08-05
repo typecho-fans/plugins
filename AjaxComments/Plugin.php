@@ -4,7 +4,7 @@
  *
  * @package AjaxComments
  * @link http://www.byends.com
- * @author Byends Upgrade
+ * @author Byends, Willin Kan
  * @version 1.2.0
  * @oriAuthor willin(http://kan.willin.org/typecho/)
  *

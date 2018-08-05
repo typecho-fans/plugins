@@ -3,7 +3,7 @@
  * SlimBox2 精致小巧的灯箱效果，需jQuery的支持。
  * 
  * @package SlimBox2
- * @author 冰剑
+ * @author Ryan, 冰剑
  * @version 1.0.7
  * @link http://www.binjoo.net/
  */

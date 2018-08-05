@@ -3,7 +3,7 @@
  * 将 Typecho 的附件上传至七牛云存储中。
  * 
  * @package QiniuFile
- * @author abelyao
+ * @author 冰剑, abelyao
  * @version 1.3.2
  * @link http://www.abelyao.com/
  * @date 2018-07-23
