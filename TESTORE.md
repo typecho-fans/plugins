@@ -6,7 +6,7 @@
 [![support](https://img.shields.io/badge/TeStore-Supported-green.svg?style=for-the-badge)](TeStore)
 [![contributors](https://img.shields.io/github/contributors/typecho-fans/plugins.svg?style=for-the-badge)](https://github.com/typecho-fans/plugins/graphs/contributors)
 
- > 本文件内插件信息由社区成员自由添加，不保证各版本兼容性，但可以通过链接文字自行标记，参与方式请阅读下方说明。:penguin:交流群号：[**40412938**](http://shang.qq.com/wpa/qunwpa?idkey=a5a8afedf099e18ddf9b530db9217251e39001d52aace42888bf470d9b6cb86a)
+ > 本文件内插件信息由社区成员自由添加，不保证各版本兼容性，但可以通过链接文字进行标记，具体方式请阅读下方说明。:penguin:交流群号：[**40412938**](http://shang.qq.com/wpa/qunwpa?idkey=a5a8afedf099e18ddf9b530db9217251e39001d52aace42888bf470d9b6cb86a)
 ------------------------------
 
 ### 使用帮助
@@ -15,21 +15,24 @@
 
 ### 编辑说明
 
-1. 插件作者可接受管理邀请获得目录写权限，拉取项目后修改文件提交即可，更欢迎参与维护本目录下的其他社区版插件。
+1. 插件作者可接受管理邀请获得目录写权限，拉取项目后修改本文件提交即可，欢迎参与维护本目录下的其他社区版插件。
 
- > commit信息中注明每次修改要点即可，如果你有作品愿意交由其他成员接手也可放入本目录，具体详见[README.md](README.md)。
+ > commit信息中请注明每次修改要点，如果你有作品愿意交由其他成员接手也可放入本目录下，具体详见[README.md](README.md)。
 
-2. 其他童鞋可fork本项目修改TESTORE.md表格部分，然后提交pull request申请合并，或在[issues](https://github.com/typecho-fans/plugins/issues)贴出你的插件信息亦可。
+2. 其他童鞋可fork本项目修改TESTORE.md表格部分，然后提交pull request申请合并，或在[issues](https://github.com/typecho-fans/plugins/issues)里贴出你的插件信息亦可。
 
- > 修改前请务必Ctrl+F是否已有重复插件添加，虽然功能上允许同名，但如果没有版本或描述上的必要区别也可能被移除。
+ > 修改前请务必Ctrl+F是否已有重复插件添加，虽然功能上允许同名，但如果没有版本或描述上的必要区别将可能被移除。
 
 3. zip包下载地址最好能确保稳定，或先上传至本目录的[releases](https://github.com/typecho-fans/plugins/releases)分类标签下，然后再将下载链接添加到下方的表格信息里。
 
- > 下表中“下载链接文字”可用于附加图标：`下载`即非社区版，`不可用`显示为:no_entry:，`特殊`为:warning:意思是安装或启用方法特殊。
+ > 下表中的下载链接文字可用于附加图标：`下载`即非社区版，`不可用`显示为:no_entry:，`特殊`为:warning:意思是安装或启用方法特殊。
 
 ### 插件信息 (21)
 
-###### 下表“名称”将用于创建安装文件夹，“版本”用于提示升级，请务必确保文本准确；作者主页仅使用首个署名链接。注意按字母排序，简介切勿过长。
+###### 下表“名称”将用于创建安装文件夹，“版本”用于提示升级，请务必确保文本准确；注意按字母排序，自增上方括号中数字便于统计，简介不要过长。
+```
+由于通常README.md和本文件会被同时读取，如果前者中的社区版插件可用则不建议在此重复登记相应的原版插件，除非原版更新反超社区版且有较大的功能区别时。
+```
 
 名称 | 简介 | 版本 | 作者 | zip包
 ---- | :----: | :---: | ----: | :----:
