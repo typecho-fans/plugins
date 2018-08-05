@@ -27,11 +27,11 @@
 
  > 下表中的下载链接文字可用于附加图标：`下载`即非社区版，`不可用`显示为:no_entry:，`特殊`为:warning:意思是安装或启用方法特殊。
 
-### 插件信息 (21)
+### 插件信息 (19)
 
 ###### 下表“名称”将用于创建安装文件夹，“版本”用于提示升级，请务必确保文本准确；注意按字母排序，自增上方括号中数字便于统计，简介不要过长。
 ```
-由于通常README.md和本文件会被同时读取，如果前者中的社区版插件可用则不建议在此重复登记相应的原版插件，除非原版更新反超社区版且有较大的功能区别时。
+由于通常README.md和本文件会被同时读取，如果前者中的社区版插件可用则不建议在此重复登记其原版，除非原版更新反超社区版等情况。
 ```
 
 名称 | 简介 | 版本 | 作者 | zip包
@@ -47,8 +47,6 @@
 [Duoshuo](http://ysido.com/duoshuo.html) | 原多说平台社会化评论同步插件 | 1.1.2 | [阳光](https://github.com/rakiy) | [不可用](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/Duoshuo.zip)
 [Geetest](https://github.com/jinfeijie/Geetest) | 新版GeeTest智能评论验证码插件 | 1.0.3 | [金斐杰](https://github.com/jinfeijie) | [下载](https://github.com/jinfeijie/Geetest/archive/1.0.3.zip)
 [HTMLCompress](https://github.com/kokororin/typecho-plugin-HTMLCompress) | 前台Html代码去可读性压缩插件 | 1.3 | [Kotori](https://github.com/kokororin) | [下载](https://github.com/kokororin/typecho-plugin-HTMLCompress/archive/master.zip)
-[LoveKKComment](https://github.com/ylqjgm/LoveKKComment) | SendCloud评论邮件通知插件 for Typecho | 1.0.1 | [康粑粑](https://www.lovekk.org) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-H_to_L/LoveKKComment.zip)
-[LoveKKForget](https://github.com/ylqjgm/LoveKKForget) | LoveKK 找回密码功能 for Typecho | 1.0.0 | [康粑粑](https://www.lovekk.org) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-H_to_L/LoveKKForget.zip)
 [MarkdownParse](https://github.com/mrgeneralgoo/typecho-markdown) | Extra加强版Parsedown解析插件 | 1.0.1 | [程小白](https://github.com/mrgeneralgoo) | [下载](https://github.com/mrgeneralgoo/typecho-markdown/archive/master.zip)
 [OssForTypecho](https://github.com/CharmeRyl/typecho-plugin-ossfile) | 系统附件使用阿里云储存OSS插件 | 1.0 | [CharmeRyl](https://github.com/CharmeRyl) | [下载](https://github.com/CharmeRyl/typecho-plugin-ossfile/archive/master.zip)
 [Parsedown](https://github.com/kokororin/typecho-plugin-Parsedown) | MD解析器替换为Parsedown插件 | 1.0 | [Kotori](https://github.com/kokororin) | [下载](https://github.com/kokororin/typecho-plugin-Parsedown/archive/master.zip)
