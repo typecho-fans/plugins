@@ -1,25 +1,15 @@
 <?php
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 /**
- * 用来管理插件，可以下载，安装，卸载插件
+ * 通过读取html表格实现插件仓库的下载安装与卸载功能
  * 
- * @category system
- * @package TeStore 
- * @author zhulin3141
- * @version 1.0.0
- * @link http://zhulin31410.blog.163.com/
+ * @package TeStore
+ * @author 羽中, zhulin3141
+ * @version 1.1.0
+ * @link http://www.yzmb.me
  */
 class TeStore_Plugin implements Typecho_Plugin_Interface
 {
-
-    //默认应用数据来源URL
-    private static $defaultServer = 'http://teck.vipsinaapp.com/';
-
-    //临时目录
-    private static $tempPath = '/.tmp/';
-
-    //数据目录
-    private static $dataPath = '/data/';
 
     /**
      * 激活插件方法,如果激活失败,直接抛出异常
@@ -30,10 +20,10 @@ class TeStore_Plugin implements Typecho_Plugin_Interface
      */
     public static function activate()
     {
-        $tempDir = dirname(__FILE__) . self::$tempPath;
-        $dataDir = dirname(__FILE__) . self::$dataPath;
+        $tempDir = __TYPECHO_ROOT_DIR__ . __TYPECHO_PLUGIN_DIR__ . '/TeStore/.tmp';
+        $dataDir = __TYPECHO_ROOT_DIR__ . __TYPECHO_PLUGIN_DIR__ . '/TeStore/data';
 
-        if ( ! file_exists($tempDir) and ! @mkdir($tempDir) ) {
+        if ( ! is_dir($tempDir) and ! @mkdir($tempDir) ) {
             throw new Typecho_Plugin_Exception('无法创建临时目录.');
         }
 
@@ -42,7 +32,7 @@ class TeStore_Plugin implements Typecho_Plugin_Interface
         }
 
         if ( ! file_exists($dataDir) and ! @mkdir($dataDir) ) {
-            throw new Typecho_Plugin_Exception('无法创建数据目录.');
+            throw new Typecho_Plugin_Exception('无法创建缓存目录.');
         }
 
         if( ! self::testWrite($dataDir) ){
@@ -50,7 +40,7 @@ class TeStore_Plugin implements Typecho_Plugin_Interface
         }
 
         Typecho_Plugin::factory('admin/menu.php')->navBar = array('TeStore_Plugin', 'render');
-        Helper::addPanel(1, 'TeStore/market.php', 'TE应用商店', 'TE应用商店', 'administrator');
+        Helper::addPanel(1, 'TeStore/market.php', 'TE插件仓库', 'TE插件仓库', 'administrator');
         Helper::addRoute('te-store_market', __TYPECHO_ADMIN_DIR__ . 'te-store/market', 'TeStore_Action', 'market');
         Helper::addRoute('te-store_install', __TYPECHO_ADMIN_DIR__ . 'te-store/install', 'TeStore_Action', 'install');
         Helper::addRoute('te-store_uninstall', __TYPECHO_ADMIN_DIR__ . 'te-store/uninstall', 'TeStore_Action', 'uninstall');
@@ -80,34 +70,39 @@ class TeStore_Plugin implements Typecho_Plugin_Interface
      */
     public static function config(Typecho_Widget_Helper_Form $form)
     {
-        //应用服务器地址
-        $server = new Typecho_Widget_Helper_Form_Element_Text('server', NULL, self::$defaultServer, _t('应用服务器地址'));
-        $server->addRule('required',_t('应用服务器地址不能为空'));
-        $form->addInput($server);
+        //源文件地址
+        $source = new Typecho_Widget_Helper_Form_Element_TextArea('source', NULL, 'https://github.com/typecho-fans/plugins/blob/master/TESTORE.md' . PHP_EOL . 'https://github.com/typecho-fans/plugins/blob/master/README.md', _t('插件信息源'),
+        _t('应为可公开访问且包含准确表格内容的页面地址, 每行一个, 例: ') . '<br/>
+        <strong><a href="https://github.com/typecho-fans/plugins/blob/master/README.md">https://github.com/typecho-fans/plugins/blob/master/README.md</a> - <span class="warning">' . _t('Typecho-Fans插件集群索引(社区维护版目录)') . '</span><br/>
+        <a href="https://github.com/typecho-fans/plugins/blob/master/TESTORE.md">https://github.com/typecho-fans/plugins/blob/master/TESTORE.md</a> - <span class="warning">' . _t('Typecho-Fans外部插件登记表(TeStore专用)') . '</span></strong><br/>
+        ' . _t('以上Markdown格式文件可以在Github上方便地进行多人修改更新, 参与方式详见文件说明'));
+        $source->addRule('required',_t('源文件地址不能为空'));
+        $form->addInput($source);
 
         //缓存设置
         $cache = new Typecho_Widget_Helper_Form_Element_Select('cache_time',
             array(
                 '0'=>_t('不缓存'),
-                '0.5'=>_t('半小时'),
-                '1'=>_t('1小时'),
+                '6'=>_t('6小时'),
                 '12'=>_t('12小时'),
-                '24'=>_t('24小时'),
+                '24'=>_t('1天'),
+                '72'=>_t('3天'),
+                '168'=>_t('1周')
             ),
-            '1',
+            '24',
             _t('缓存时间'),
-            '应用数据的缓存时间'
+            _t('列表数据的缓存时间')
         );
         $form->addInput($cache);
 
         $showNavMenu = new Typecho_Widget_Helper_Form_Element_Radio(
             'showNavMenu' ,
             array(
-                'true' => '是',
-                'false' => '否',
+                'true' => _t('是'),
+                'false' => _t('否'),
             ),
             'true' ,
-            _t('是否显示菜单栏按钮')
+            _t('显示导航条按钮')
         );
         $form->addInput($showNavMenu);
     }
@@ -134,7 +129,7 @@ class TeStore_Plugin implements Typecho_Plugin_Interface
         if( $pluginOpts->showNavMenu == 'true' ){
             echo '<a href="';
             $options->adminUrl('extending.php?panel=TeStore%2Fmarket.php');
-            echo '">TE应用商店</a>';
+            echo '"><span class="message success"><i class="mime-script"></i>' . _t('TE插件仓库') . '</span></a>';
         }
     }
 
