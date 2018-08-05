@@ -3,7 +3,7 @@
  * 评论邮件提醒插件
  *
  * @package CommentToMail
- * @author Byends Upd.
+ * @author Byends, DEFE
  * @version 2.0.1
  * @link http://www.byends.com
  * @oriAuthor DEFE (http://defe.me)

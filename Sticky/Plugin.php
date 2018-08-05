@@ -4,7 +4,7 @@
  * 
  * Mod by <a href="http://doufu.ru">Ryan</a>
  * @package Sticky
- * @author willin
+ * @author Ryan, Willin Kan
  * @version 1.0.1
  * @update: 2017.07.32
  * @link http://kan.willin.org/typecho/
