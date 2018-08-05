@@ -3,7 +3,7 @@
  * SendCloud评论邮件通知插件 for Typecho
  *
  * @package LoveKKComment
- * @author  康康
+ * @author  康粑粑
  * @version 1.0.1
  * @link    https://www.lovekk.org
  */
