@@ -6,7 +6,7 @@ SendCloud评论邮件通知插件（LoveKKComment）是一款针对Typecho博客
 
 ## 安装方法
 
-> 1. 至[releases](https://github.com/ylqjgm/LoveKKComment/releases)中下载最新版本插件；
+> 1. 至[releases](https://github.com/typecho-fans/plugins/releases/tag/plugins-H_to_L)中下载最新版本插件；
 > 2. 将下载的压缩包进行解压并上传至`Typecho`插件目录中；
 > 3. 后台激活插件；
 > 4. 插件配置中将所有信息配置完成；
