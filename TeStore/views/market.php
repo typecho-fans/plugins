@@ -33,7 +33,7 @@ if ($this->request->is('action=loadinfos')) {
         $nav = new Typecho_Widget_Helper_PageNavigator_Box(count($pluginRez), $page+1, 20, $marketUrl . '?' . $keyquery . 'page={page}');
     }
 ?>
-                <?php if( $pluginInfo ): ?>
+                <?php if( $pluginInfo || $keywords ): ?>
                 <div class="typecho-list-operate clearfix">
                     <form method="get">
                         <div class="search" role="search">
@@ -107,10 +107,16 @@ if ($this->request->is('action=loadinfos')) {
                                 </td>
                             </tr>
                             <?php endforeach; ?>
+                            <?php elseif( $keywords ): ?>
+                                <tr>
+                                    <td colspan="5" style="text-align: center; font-weight: bold;">
+                                    <?php _e('没有找到符合要求的插件。'); ?>
+                                    </td>
+                                </tr>
                             <?php else: ?>
                                 <tr>
                                     <td colspan="5" style="text-align: center; font-weight: bold;">
-                                    <?php _e('没有找到任何插件，去试试%s修改设置%s吧！', '<a href="'.$options->adminUrl .'options-plugin.php?config=TeStore">', '</a>'); ?>
+                                    <?php _e('没有找到任何插件，请检查插件源%s设置%s是否正确。', '<a href="'.$options->adminUrl .'options-plugin.php?config=TeStore">', '</a>'); ?>
                                     </td>
                                 </tr>
                             <?php endif; ?>
