@@ -1,6 +1,6 @@
 <?php
 //异步加载插件数据
-if ($this->request->is('action=loadinfos')) {
+if( $this->request->is('action=loadinfos') ){
     $pluginInfo = $this->getPluginData();
 
     if($pluginInfo) {
@@ -37,7 +37,7 @@ if ($this->request->is('action=loadinfos')) {
                 <div class="typecho-list-operate clearfix">
                     <form method="get">
                         <div class="search" role="search">
-                            <?php if ( $keywords ): ?>
+                            <?php if( $keywords ): ?>
                             <a href="<?php $options->adminUrl('extending.php?panel=TeStore%2Fmarket.php'); ?>"><?php _e('&laquo; 取消筛选'); ?></a>
                             <?php endif; ?>
                             <input type="text" class="text-s" placeholder="<?php _e('请输入关键字'); ?>" value="<?php echo htmlspecialchars($keywords); ?>" name="keywords" />
@@ -70,7 +70,7 @@ if ($this->request->is('action=loadinfos')) {
                             <?php foreach( $pluginInfo[$page] as $plugin): $name = trim(strip_tags($plugin->pluginName)); $plugin->pluginUrl; ?>
                             <?php $source = $plugin->source; $url = $plugin->pluginUrl; $url = in_array($source, array('Download', 'N/A', 'Special')) ? 'https://github.com' . $url : $url; ?>
                             <tr id="plugin-<?php echo $name; ?>" data-name="<?php echo $name;?>" class="plugin">
-                                <td><a href="<?php echo $url; ?>" <?php if ($url!=='#') echo 'target="_blank"'; ?>><?php echo $name; ?></a>
+                                <td><a href="<?php echo $url; ?>" <?php if($url!=='#') echo 'target="_blank"'; ?>><?php echo $name; ?></a>
                                 <?php if($source=='Download'): ?>
                                     <a href="http://typecho-fans.github.io" title="<?php _e('Typecho-Fans社区维护版'); ?>" target="_blank"><img style="margin-bottom:-1px;" src="<?php echo $pluginPath;?>/views/tf.png" alt="typecho-fans"/></a></td>
                                 <?php elseif($source=='N/A'): ?>
@@ -227,8 +227,8 @@ $(function(){
                     $.sticky(sucStr, setting);
                 } else {
                     $this.show().parent().find('.uninstall').hide();
-                    if( result.error != '' ){
-                        $.sticky(errorStr + ',' + result.error, setting);
+                    if ( result.error != '' ) {
+                        $.sticky(errorStr + ': ' + result.error, setting);
                     }
                 }
             });
@@ -255,7 +255,8 @@ $(function(){
                     $.sticky('<span style="color:#467B96;"><?php _e('卸载'); ?>' + name + '<?php _e('成功'); ?></span>', setting);
                 } else {
                     $this.show().parent().find('.install').hide();
-                    $.sticky('<span class="warning"><?php _e('卸载'); ?>' + name + '<?php _e('失败'); ?></span>', setting);
+                    errorMsg = result.error != '' ? ': ' + result.error : '';
+                    $.sticky('<span class="warning"><?php _e('卸载'); ?>' + name + '<?php _e('失败'); ?></span>' + errorMsg, setting);
                 }
             });
 
