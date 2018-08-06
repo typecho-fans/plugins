@@ -133,8 +133,8 @@ class TeStore_Action extends Typecho_Widget {
                 $names = array();
                 foreach( $texts as $key => $val ){
                     $keys = array('pluginName', 'desc', 'version', 'author', 'source', 'pluginUrl', 'site', 'zipFile');
+                    $names[] = isset($val[0]) ? $val[0] : $val[1]; //fix for php 7.0+
                     $datas[] = (object)array_combine($keys, array_merge($val, $urls[$key]));
-                    $names[] = $val[0];
                 }
                 array_multisort($names, SORT_ASC, $datas);
 
