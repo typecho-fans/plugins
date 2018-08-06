@@ -71,7 +71,7 @@ class TeStore_Plugin implements Typecho_Plugin_Interface
     public static function config(Typecho_Widget_Helper_Form $form)
     {
         //源文件地址
-        $source = new Typecho_Widget_Helper_Form_Element_TextArea('source', NULL, 'https://github.com/typecho-fans/plugins/blob/master/TESTORE.md' . PHP_EOL . 'https://github.com/typecho-fans/plugins/blob/master/README.md', _t('插件信息源'),
+        $source = new Typecho_Widget_Helper_Form_Element_Textarea('source', NULL, 'https://github.com/typecho-fans/plugins/blob/master/TESTORE.md' . PHP_EOL . 'https://github.com/typecho-fans/plugins/blob/master/README.md', _t('插件信息源'),
         _t('应为可公开访问且包含准确表格内容的页面地址, 每行一个, 例: ') . '<br/>
         <strong><a href="https://github.com/typecho-fans/plugins/blob/master/README.md">https://github.com/typecho-fans/plugins/blob/master/README.md</a> - <span class="warning">' . _t('Typecho-Fans插件集群索引(社区维护版目录)') . '</span><br/>
         <a href="https://github.com/typecho-fans/plugins/blob/master/TESTORE.md">https://github.com/typecho-fans/plugins/blob/master/TESTORE.md</a> - <span class="warning">' . _t('Typecho-Fans外部插件登记表(TeStore专用)') . '</span></strong><br/>
