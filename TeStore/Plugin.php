@@ -1,11 +1,11 @@
 <?php
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 /**
- * 通过读取html表格实现插件仓库的下载安装与卸载功能
+ * 通过读取html表格实现插件仓库的下载、安装及卸载等功能
  * 
  * @package TeStore
  * @author 羽中, zhulin3141
- * @version 1.1.0
+ * @version 1.1.1
  * @link http://www.yzmb.me
  */
 class TeStore_Plugin implements Typecho_Plugin_Interface

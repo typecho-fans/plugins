@@ -87,19 +87,19 @@ class TeStore_Action extends Typecho_Widget {
     {
         $json = $this->cacheDir . 'list.json';
         //读取缓存文件
-        if ( $this->cacheTime && is_file($json) && (time() - filemtime($json)) <= $this->cacheTime * 3600 ) {
+        if( $this->cacheTime && is_file($json) && (time() - filemtime($json)) <= $this->cacheTime * 3600 ){
             $data = file_get_contents($this->cacheDir . 'list.json');
             $this->pluginInfo = json_decode($data);
         }else{
-            $html = '';
+            $html = '<?xml encoding="utf-8" ?>';
             foreach($this->source as $page){
                 $page = trim($page);
-                if ($page) {
+                if( $page ){
                     $html .= @file_get_contents($page);
                 }
             }
             //解析表格内容
-            if ($html) {
+            if( $html !== '<?xml encoding="utf-8" ?>' ){
                 $dom = new DOMDocument();
                 @$dom->loadHTML($html);
                 $tr = $dom->getElementsByTagName("tr");
@@ -116,7 +116,7 @@ class TeStore_Action extends Typecho_Widget {
                                 $a = $td->item($tdKey)->getElementsByTagName("a");
                                 $href = $a->item(0)->getAttribute("href");
                                 //处理多作者链接
-                                if ( $tdKey==3 ) {
+                                if( $tdKey==3 ){
                             	       $href = '';
                             	       foreach( $a as $a ){
                             	           $href .= ', ' . $a->getAttribute('href');
@@ -146,7 +146,7 @@ class TeStore_Action extends Typecho_Widget {
             //生成缓存文件
             if($this->cacheTime) {
                 $pluginInfo = json_encode($this->pluginInfo);
-                if (!is_dir($this->cacheDir)) @mkdir($this->cacheDir);
+                if( ! is_dir($this->cacheDir) ) @mkdir($this->cacheDir);
                 file_put_contents($this->cacheDir . 'list.json', $pluginInfo);
             }
         }
@@ -191,57 +191,67 @@ class TeStore_Action extends Typecho_Widget {
 
         $ret = array(
             'status' => false,
-            'error' => '',
+            'error' => ''
         );
 
-        if ($plugin) {
+        if($plugin){
             $pluginInfo = $this->getPluginData($plugin);
-            $tempdir = $this->pluginRoot . '/TeStore/.tmp';
-            $tempFile = $tempdir. '/' . $plugin . '.zip';
             $activated = $this->getActivePlugins();
 
             if( in_array($plugin, $activated) ){
                 $ret['error'] = _t('请先禁用该插件');
-            }elseif( false !== $pluginInfo ){
-                if (!is_dir($tempdir)) @mkdir($tempdir);
-                $zipFile = file_get_contents($pluginInfo->zipFile);
-                file_put_contents( $tempFile, $zipFile );
-
-                $unzip = new PclZip($tempFile);
-                if( ! $unzip->extract(PCLZIP_OPT_PATH, $tempdir)===0 ){
-                    $ret['error'] = $unzip->errorInfo(true);
-                } else {
-                    @unlink($tempFile);
-                    //遍历解压文件层级
-                    foreach( new RecursiveIteratorIterator(new RecursiveDirectoryIterator($tempdir)) as $filename ){
-                        if (!is_dir($filename)) {
-                            $scans[] = $filename;
-                        }
-                    }
-                    //处理单文件型插件
-                    if ( count($scans)==1 && !strpos($scans[0], 'Plugin.php') ) {
-                        rename($scans[0], $this->pluginRoot. '/' . basename($scans[0]));
-                        $ret['status'] = true;
-                    } else {
-                        //以Plugin.php确定目录
-                        foreach($scans as $scan){
-                            if(strpos($scan, 'Plugin.php')){
-                                $truedir = dirname($scan);
+            }elseif( $pluginInfo ){
+                $tempdir = $this->pluginRoot . '/TeStore/.tmp';
+                $tempFile = $tempdir. '/' . $plugin . '.zip';
+                if( ! is_dir($tempdir) ) @mkdir($tempdir);
+                $zipFile = @file_get_contents($pluginInfo->zipFile);
+                if( ! file_put_contents( $tempFile, $zipFile ) ){
+                    $ret['error'] = _t('下载zip包出错');
+                }else{
+                    $unzip = new PclZip($tempFile);
+                    if( ! $unzip->extract(PCLZIP_OPT_PATH, $tempdir)===0 ){
+                        $ret['error'] = $unzip->errorInfo(true);
+                    }else{
+                        @unlink($tempFile);
+                        //遍历解压文件层级
+                        foreach( new RecursiveIteratorIterator(new RecursiveDirectoryIterator($tempdir)) as $filename ){
+                            if( ! is_dir($filename) ){
+                                $scans[] = $filename;
                             }
                         }
-                        if (isset($truedir)) {
+                        //处理单文件型插件
+                        if( count($scans)==1 && !strpos($scans[0], 'Plugin.php') ){
+                            if( ! rename($scans[0], $this->pluginRoot. '/' . basename($scans[0])) ){
+                                $ret['error'] = _t('移动文件出错');
+                            }else{
+                                $ret['status'] = true;
+                            }
+                        }else{
+                            //以Plugin.php确定目录
                             foreach($scans as $scan){
-                                //按插件名创建目录
-                                $tar = str_replace(( strpos($scan, $truedir)===0 ? $truedir : $tempdir ), $this->pluginRoot. '/' . $plugin, $scan);
-                                $tar_dir = dirname($tar);
-                                if (!is_dir($tar_dir)) @mkdir($tar_dir, 0777, true);
-                                rename($scan, $tar);
+                                if(strpos($scan, 'Plugin.php')){
+                                    $truedir = dirname($scan);
+                                }
                             }
-                            $ret['status'] = true;
-                            @$this->delTree($tempdir, true);
+                            if( isset($truedir) ){
+                                foreach($scans as $scan){
+                                    //按插件名创建目录
+                                    $tar = str_replace(( strpos($scan, $truedir)===0 ? $truedir : $tempdir ), $this->pluginRoot. '/' . $plugin, $scan);
+                                    $tar_dir = dirname($tar);
+                                    if( ! is_dir($tar_dir) ) @mkdir($tar_dir, 0777, true);
+                                    if( ! rename($scan, $tar) ){
+                                        $error = error_get_last();
+                                        $ret['error'] = $error['message'];
+                                    }
+                                }
+                                $ret['status'] = true;
+                                @$this->delTree($tempdir, true);
+                            }
                         }
                     }
                 }
+            }else{
+                $ret['error'] = _t('没有找到插件信息');
             }
         }
 
@@ -260,7 +270,8 @@ class TeStore_Action extends Typecho_Widget {
         $plugin  = $this->request->get('plugin');
         $installed = $this->getLocalPlugins();
         $ret = array(
-            'status' => false
+            'status' => false,
+            'error' => ''
         );
 
         if( $plugin && in_array($plugin, $installed) ) {
@@ -269,8 +280,12 @@ class TeStore_Action extends Typecho_Widget {
             if( in_array($plugin, $activated) ){
                 Helper::removePlugin($plugin);
             }
-            @$this->delTree($this->pluginRoot. '/' . $plugin);
-            $ret['status'] = true;
+            if( ! $this->delTree($this->pluginRoot. '/' . $plugin) ){
+                $error = error_get_last();
+                $ret['error'] = $error['message'];
+            }else{
+                $ret['status'] = true;
+            }
         }
 
         echo json_encode($ret);
@@ -287,7 +302,7 @@ class TeStore_Action extends Typecho_Widget {
         foreach ($files as $file) { 
             (is_dir("$dir/$file") || $tmp) ? $this->delTree("$dir/$file") : unlink("$dir/$file"); 
         }
-        if ($tmp) return;
+        if($tmp) return;
         return rmdir($dir); 
     }
 }
