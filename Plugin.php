@@ -4,11 +4,13 @@
  *
  * @package LoveKKForget
  * @author 康粑粑
- * @version 1.0.0
+ * @version 1.0.1
  * @link https://www.lovekk.org
  */
 
 if ( !defined('__TYPECHO_ROOT_DIR__') ) exit;
+// 当前版本号
+define('VERSION', '1.0.1');
 
 class LoveKKForget_Plugin implements Typecho_Plugin_Interface {
 	/**
@@ -57,6 +59,69 @@ class LoveKKForget_Plugin implements Typecho_Plugin_Interface {
 	 * @throws Typecho_Plugin_Exception
 	 */
 	public static function config(Typecho_Widget_Helper_Form $form) {
+		?>
+        <style>.message {
+                padding: 10px;
+                background-color: #fff;
+                box-shadow: 2px 2px 5px #888;
+                font-size: 1pc;
+                line-height: 1.875rem
+            }
+
+            .message span {
+                display: block;
+                color: #1abc9c
+            }
+
+            .message span pre {
+                margin: 0;
+                padding: 0;
+                color: #ee5c42
+            }
+
+            .message li, .message p {
+                margin: 0;
+                padding: 0;
+                line-height: 1.5rem
+            }</style>
+        <div class="message">
+            <div id="update_txt">当前版本: <?php _e(VERSION); ?>, 正在检测版本更新...</div>
+            <span id="update_notice"></span>
+            <span id="update_body"></span>
+        </div>
+        <script src="//cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+        <script src="//cdn.bootcss.com/marked/0.3.12/marked.min.js"></script>
+        <script>
+            $(function () {
+                $.getJSON(
+                    'https://git.wskehao.com/api/v1/repos/ylqjgm/LoveKKForget/releases',
+                    function (data) {
+                        if (checkUpdater('<?php _e(VERSION);?>', data[0].tag_name)) {
+                            $('#update_notice').html('有新版本可用, <a href="' + data[0].zipball_url + '" target="_blank">点此下载 ' + data[0].tag_name + ' 版本</a>');
+                            $('#update_body').html('版本说明: ' + marked(data[0].body));
+                        } else {
+                            $('#update_txt').html('当前版本: <?php _e(VERSION);?>, 当前没有新版本');
+                        }
+                    }
+                );
+            });
+
+            // 版本比较
+            function checkUpdater(currVer, remoteVer) {
+                currVer = currVer || '0.0.0';
+                remoteVer = remoteVer || '0.0.0';
+                if (currVer == remoteVer) return false;
+                var currVerAry = currVer.split('.');
+                var remoteVerAry = remoteVer.split('.');
+                var len = Math.max(currVerAry.length, remoteVerAry.length);
+                for (var i = 0; i < len; i++) {
+                    if (~~remoteVerAry[i] > ~~currVerAry[i]) return true;
+                }
+
+                return false;
+            }
+        </script>
+        <?php
 		// API_USER
 		$api_user = new Typecho_Widget_Helper_Form_Element_Text('api_user', NULL, NULL, _t('SendCloud发信API USER'), _t('请填入在SendCloud生成的API_USER'));
 		$form->addInput($api_user);

@@ -6,7 +6,7 @@
 
 ## 使用帮助
 
- 1. 下载插件压缩包
+ 1. 打开[https://github.com/typecho-fans/plugins/releases/tag/plugins-H_to_L](https://github.com/typecho-fans/plugins/releases/tag/plugins-H_to_L)下载插件压缩包
  2. 解压并将插件文件夹命名为`LoveKKForget`
  3. 上传`LoveKKForget`文件夹至插件目录下
  4. 后台激活插件
@@ -58,3 +58,11 @@
 </div>
 </div>
 ```
+
+## 更新日志
+
+### 2018.8.8
+
+> 1. 修正版本检测地址
+> 2. 符合TeStore插件
+> 3. 仓库迁移
