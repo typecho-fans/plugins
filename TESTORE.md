@@ -47,6 +47,8 @@
 [Duoshuo](http://ysido.com/duoshuo.html) | 原多说平台社会化评论同步插件 | 1.1.2 | [Rakiy](https://github.com/rakiy) | [不可用](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/Duoshuo.zip)
 [Geetest](https://github.com/jinfeijie/Geetest) | 新版GeeTest智能评论验证码插件 | 1.0.3 | [mrjin](https://github.com/jinfeijie) | [下载](https://github.com/jinfeijie/Geetest/archive/1.0.3.zip)
 [HTMLCompress](https://github.com/kokororin/typecho-plugin-HTMLCompress) | 前台Html代码去可读性压缩插件 | 1.3 | [Kokororin](https://github.com/kokororin) | [下载](https://github.com/kokororin/typecho-plugin-HTMLCompress/archive/master.zip)
+[LoveKKComment](https://git.wskehao.com/ylqjgm/LoveKKComment) | SendCloud评论邮件通知插件 for Typecho | 1.0.1 | [康粑粑](https://www.lovekk.org) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-H_to_L/LoveKKComment.zip)
+[LoveKKForget](https://git.wskehao.com/ylqjgm/LoveKKForget) | LoveKK 找回密码功能 for Typecho | 1.0.0 | [康粑粑](https://www.lovekk.org) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-H_to_L/LoveKKForget.zip)
 [MarkdownParse](https://github.com/mrgeneralgoo/typecho-markdown) | Extra加强版Parsedown解析插件 | 1.0.1 | [mrgeneral](https://github.com/mrgeneralgoo) | [下载](https://github.com/mrgeneralgoo/typecho-markdown/archive/master.zip)
 [OssForTypecho](https://github.com/CharmeRyl/typecho-plugin-ossfile) | 系统附件使用阿里云储存OSS插件 | 1.0 | [Charmeryl](https://github.com/CharmeRyl) | [下载](https://github.com/CharmeRyl/typecho-plugin-ossfile/archive/master.zip)
 [Parsedown](https://github.com/kokororin/typecho-plugin-Parsedown) | MD解析器替换为Parsedown插件 | 1.0 | [Kokororin](https://github.com/kokororin) | [下载](https://github.com/kokororin/typecho-plugin-Parsedown/archive/master.zip)
