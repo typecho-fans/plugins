@@ -239,7 +239,6 @@ class TeStore_Action extends Typecho_Widget {
                                 }
                             }
                             $ret['status'] = true;
-                            @$this->delTree($tempdir, true);
                         //处理单文件型插件
                         }elseif( count($scans)<=2 ){
                             foreach($scans as $scan){
@@ -254,6 +253,7 @@ class TeStore_Action extends Typecho_Widget {
                         }else{
                             $ret['error'] = _t('没有找到插件文件');
                         }
+                        @$this->delTree($tempdir, true);
                     }
                 }
             }else{
@@ -312,10 +312,10 @@ class TeStore_Action extends Typecho_Widget {
      * @access private
      * @return boolean
      */
-    private function delTree($dir,$tmp=false) {
+    private function delTree($dir, $tmp=false) {
         $files = array_diff(scandir($dir), array('.','..'));
         foreach ($files as $file) { 
-            (is_dir("$dir/$file") || $tmp) ? $this->delTree("$dir/$file") : unlink("$dir/$file"); 
+            is_dir("$dir/$file") ? $this->delTree("$dir/$file") : unlink("$dir/$file"); 
         }
         if($tmp) return;
         return rmdir($dir); 
