@@ -117,10 +117,10 @@ class TeStore_Action extends Typecho_Widget {
                                 $href = $a->item(0)->getAttribute("href");
                                 //处理多作者链接
                                 if( $tdKey==3 ){
-                            	       $href = '';
-                            	       foreach( $a as $a ){
-                            	           $href .= ', ' . $a->getAttribute('href');
-                            		}
+                                    $href = '';
+                                    foreach( $a as $key => $val ){
+                                        $href .= ($key==0 ? '' : ', ') . $val->getAttribute('href');
+                                    }
                                 }
                                 $urls[] = $href;
                             }
@@ -219,34 +219,40 @@ class TeStore_Action extends Typecho_Widget {
                                 $scans[] = $filename;
                             }
                         }
-                        //处理单文件型插件
-                        if( count($scans)==1 && !strpos($scans[0], 'Plugin.php') ){
-                            if( ! rename($scans[0], $this->pluginRoot. '/' . basename($scans[0])) ){
-                                $ret['error'] = _t('移动文件出错');
-                            }else{
-                                $ret['status'] = true;
-                            }
-                        }else{
-                            //以Plugin.php确定目录
-                            foreach($scans as $scan){
-                                if(strpos($scan, 'Plugin.php')){
+                        //以Plugin.php确定目录
+                        foreach($scans as $scan){
+                                if( !strcasecmp(basename($scan), 'Plugin.php') ){
                                     $truedir = dirname($scan);
+                                    $parentdir = dirname($truedir);
+                                }
+                        }
+                        if( isset($truedir) ){
+                            foreach($scans as $scan){
+                                //按插件名创建目录
+                                $file_dir = $parentdir==$tempdir ? $tempdir : $parentdir;
+                                $tar = str_replace(( strpos($scan, $truedir)===0 ? $truedir : $file_dir ), $this->pluginRoot. '/' . $plugin, $scan);
+                                $tar_dir = dirname($tar);
+                                if( ! is_dir($tar_dir) ) @mkdir($tar_dir, 0777, true);
+                                if( ! rename($scan, $tar) ){
+                                    $error = error_get_last();
+                                    $ret['error'] = $error['message'];
                                 }
                             }
-                            if( isset($truedir) ){
-                                foreach($scans as $scan){
-                                    //按插件名创建目录
-                                    $tar = str_replace(( strpos($scan, $truedir)===0 ? $truedir : $tempdir ), $this->pluginRoot. '/' . $plugin, $scan);
-                                    $tar_dir = dirname($tar);
-                                    if( ! is_dir($tar_dir) ) @mkdir($tar_dir, 0777, true);
-                                    if( ! rename($scan, $tar) ){
-                                        $error = error_get_last();
-                                        $ret['error'] = $error['message'];
+                            $ret['status'] = true;
+                            @$this->delTree($tempdir, true);
+                        //处理单文件型插件
+                        }elseif( count($scans)<=2 ){
+                            foreach($scans as $scan){
+                                if( pathinfo($scan, PATHINFO_EXTENSION)=='php' ){
+                                    if( ! rename($scan, $this->pluginRoot. '/' . basename($scan)) ){
+                                        $ret['error'] = _t('移动文件出错');
+                                    }else{
+                                        $ret['status'] = true;
                                     }
                                 }
-                                $ret['status'] = true;
-                                @$this->delTree($tempdir, true);
                             }
+                        }else{
+                            $ret['error'] = _t('没有找到插件文件');
                         }
                     }
                 }
@@ -280,11 +286,20 @@ class TeStore_Action extends Typecho_Widget {
             if( in_array($plugin, $activated) ){
                 Helper::removePlugin($plugin);
             }
-            if( ! $this->delTree($this->pluginRoot. '/' . $plugin) ){
-                $error = error_get_last();
-                $ret['error'] = $error['message'];
+            $plugindir = $this->pluginRoot. '/' . $plugin;
+            if( is_dir($plugindir) ){
+                if( ! $this->delTree($this->pluginRoot. '/' . $plugin) ){
+                    $error = error_get_last();
+                    $ret['error'] = $error['message'];
+                }else{
+                    $ret['status'] = true;
+                }
             }else{
-                $ret['status'] = true;
+                if( ! unlink($plugindir . '.php') ){
+                    $ret['error'] = _t('删除插件文件出错');
+                }else{
+                    $ret['status'] = true;
+                }
             }
         }
 
