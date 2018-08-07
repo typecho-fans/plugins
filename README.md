@@ -29,7 +29,7 @@
 
  > 下表中的下载链接文字可用于对TeStore列表附加图标：`Download`即社区版，`N/A`为不可用，`Special`为安装用法特殊。
 
-### 作品索引 (86)
+### 作品索引 (87)
 
 ###### 插件仓库将使用下表“名称”创建安装文件夹，“版本”提示升级，请务必确保文本准确；注意排序与目录列表相同，自增上方插件数，简介不要过长。
 ```
@@ -90,6 +90,7 @@
 [MyPlayer](MyPlayer) | 万能播放器与视频站链接转换插件 | 1.1.3 | [perichr](http://github.com/perichr) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/MyPlayer.zip)
 [MyTagCloud](MyTagCloud) | Typecho自定义标签云输出插件 | 1.0.0 | [Ma Yanlong](https://github.com/YanlongMa) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/MyTagCloud.zip)
 [Passport](Passport) | 注册用户密码邮件找回功能插件 | 1.0.0 | [ShingChi](https://github.com/shingchi) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/Passport.zip)
+[PasteImage](PasteImage) | Typecho默认编辑器粘贴剪切板图片上传插件 | 1.0.0 | [qing](https://github.com/zgq354/PasteImage) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/PasteImage.zip)
 [PostsCategoryChange](PostsCategoryChange) | Typecho文章批量改分类/状态插件 | 0.0.4 | [Fuzqing](https://github.com/fuzqing) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/PostsCategoryChange.zip)
 [Prism](Prism) | Prism轻量代码高亮效果渲染插件 | 1.0.2 | [冰剑](https://github.com/binjoo) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/Prism.zip)
 [QNUpload](QNUpload) | 经典版(php5.2-5.6)七牛附件插件 | 1.3.1 | [rakiy](https://github.com/rakiy) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/QNUpload.zip)
