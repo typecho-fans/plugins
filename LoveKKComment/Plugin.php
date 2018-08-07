@@ -4,7 +4,7 @@
  *
  * @package LoveKKComment
  * @author  康粑粑
- * @version 1.0.1
+ * @version 1.0.2
  * @link    https://www.lovekk.org
  */
 
@@ -13,7 +13,7 @@ if ( !defined('__TYPECHO_ROOT_DIR__') )
 // API请求地址
 define('API', 'http://api.sendcloud.net/apiv2/');
 // 当前版本号
-define('VERSION', '1.0.1');
+define('VERSION', '1.0.2');
 
 class LoveKKComment_Plugin implements Typecho_Plugin_Interface
 {
@@ -102,11 +102,11 @@ class LoveKKComment_Plugin implements Typecho_Plugin_Interface
         <script>
             $(function () {
                 $.getJSON(
-                    'https://api.github.com/repos/ylqjgm/LoveKKComment/releases/latest',
+                    'https://git.wskehao.com/api/v1/repos/ylqjgm/LoveKKComment/releases',
                     function (data) {
-                        if (checkUpdater('<?php _e(VERSION);?>', data.tag_name)) {
-                            $('#update_notice').html('有新版本可用, <a href="' + data.zipball_url + '" target="_blank">点此下载 ' + data.tag_name + ' 版本</a>');
-                            $('#update_body').html('版本说明: ' + marked(data.body));
+                        if (checkUpdater('<?php _e(VERSION);?>', data[0].tag_name)) {
+                            $('#update_notice').html('有新版本可用, <a href="' + data[0].zipball_url + '" target="_blank">点此下载 ' + data[0].tag_name + ' 版本</a>');
+                            $('#update_body').html('版本说明: ' + marked(data[0].body));
                         } else {
                             $('#update_txt').html('当前版本: <?php _e(VERSION);?>, 当前没有新版本');
                         }
