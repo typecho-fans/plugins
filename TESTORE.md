@@ -1,5 +1,4 @@
 ---
-title: HTTP页面触发用(勿删除)
 ---
 
 <img src='https://raw.githubusercontent.com/typecho-fans/typecho-fans.github.io/master/soapgroup.png' align="right" />
