@@ -1,3 +1,7 @@
+---
+title: HTTP页面触发用(勿删除)
+---
+
 <img src='https://raw.githubusercontent.com/typecho-fans/typecho-fans.github.io/master/soapgroup.png' align="right" />
 
 ## Typecho爱好者插件集群（社区维护版目录）
@@ -29,7 +33,7 @@
 
  > 下表中的下载链接文字可用于对TeStore列表附加图标：`Download`即社区版，`N/A`为不可用，`Special`为安装用法特殊。
 
-### 作品索引 (87)
+### 作品索引 (89)
 
 ###### 插件仓库将使用下表“名称”创建安装文件夹，“版本”提示升级，请务必确保文本准确；注意排序与目录列表相同，自增上方插件数，简介不要过长。
 ```

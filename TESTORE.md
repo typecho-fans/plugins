@@ -1,3 +1,7 @@
+---
+title: HTTP页面触发用(勿删除)
+---
+
 <img src='https://raw.githubusercontent.com/typecho-fans/typecho-fans.github.io/master/soapgroup.png' align="right" />
 
 ## Typecho爱好者外部插件登记表（TeStore专用）
@@ -27,7 +31,7 @@
 
  > 下表中的下载链接文字可用于附加图标：`下载`即非社区版，`不可用`显示为:no_entry:，`特殊`为:warning:意思是安装或启用方法特殊。
 
-### 插件信息 (19)
+### 插件信息 (17)
 
 ###### 下表“名称”将用于创建安装文件夹，“版本”用于提示升级，请务必确保文本准确；注意按字母排序，自增上方括号中数字便于统计，简介不要过长。
 ```
