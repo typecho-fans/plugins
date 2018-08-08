@@ -4,10 +4,10 @@
  *
  * @package CosForTypecho
  * @author Charmeryl
- * @version 1.0
+ * @version 1.0.1
  * @link https://bigrats.net
  * @dependence 1.0-*
- * @date 2018-04-05
+ * @date 2018-08-08
  */
 
 class CosForTypecho_Plugin implements Typecho_Plugin_Interface {
@@ -205,7 +205,6 @@ class CosForTypecho_Plugin implements Typecho_Plugin_Interface {
         }
 
         /* 上传到COS */
-        //初始化COS
         $cosClient = self::CosInit();
         try {
             $cosClient->upload(
@@ -287,14 +286,14 @@ class CosForTypecho_Plugin implements Typecho_Plugin_Interface {
     }
 
     /**
-     * Upyun初始化
+     * COS初始化
      *
      * @access public
      * @return object
      */
     public static function CosInit() {
         $options = Typecho_Widget::widget('Widget_Options')->plugin('CosForTypecho');
-        require_once 'cos-autoloader.php';
+        require_once 'phar://'. __DIR__ .'/cos-sdk-v5.phar/vendor/autoload.php';;
         return new Qcloud\Cos\Client(array('region' => $options->region,
             'credentials'=> array(
                 'secretId' => $options->secid,

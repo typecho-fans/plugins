@@ -15,7 +15,8 @@ CosForTypecho是基于Typecho的一个支持文件附件上传、修改和删除
 
 ## 更新日志
 
-**2018-04-05：** 首次发布，支持Typecho 1.x版本
+- **2018-08-08：** 升级COS-PHP-SDK，使用phar包
+- **2018-04-05：** 首次发布，支持Typecho 1.x版本
 
 ## 开源许可
 	The MIT License (MIT)
