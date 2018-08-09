@@ -63,5 +63,23 @@
 <script src="https://mipcache.bdstatic.com/static/v1/mip-gototop/mip-gototop.js"></script>
 <script src="https://mipcache.bdstatic.com/static/v1/mip-fixed/mip-fixed.js"></script>
 <script src="https://mipcache.bdstatic.com/extensions/platform/v1/mip-cambrian/mip-cambrian.js"></script>
+<?php
+if(isset($MIPpage['mip_stats_token'])){
+    ?>
+<script src="https://c.mipcdn.com/static/v1/mip-stats-baidu/mip-stats-baidu.js"></script>
+<mip-stats-baidu>
+    <script type="application/json">
+        {
+            "token": "<?php print($MIPpage['mip_stats_token']); ?>",
+            "_setCustomVar": [1, "login", "1", 2],
+            "_setAutoPageview": [true]
+        }
+    </script>
+</mip-stats-baidu>
+    <?php
+}
+
+?>
+
 </body>
 </html>
