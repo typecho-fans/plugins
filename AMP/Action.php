@@ -110,6 +110,7 @@ class AMP_Action extends Typecho_Widget implements Widget_Interface_Do
                 'isMarkdown'=>$this->article['isMarkdown'],
                 'imgData'=>$this->GetPostImg(),
                 'APPID'=>Helper::options()->plugin('AMP')->baiduAPPID,
+                'mip_stats_token'=>Helper::options()->plugin('AMP')->mip_stats_token,
                 'desc'=>$this->cleanUp($this->article['text']),
                 'publisher'=>$this->publisher,
                 'MIPtext'=>$this->MIPInit($this->article['text']),
