@@ -2,7 +2,7 @@
 
 class AMP_Action extends Typecho_Widget implements Widget_Interface_Do
 {
-    private $version = '0.6.5';
+    private $version = '0.6.6';
 
     public function action()
     {
