@@ -1,132 +1,96 @@
+# AMP for Typecho
+ A typecho plugin for Google AMP/ Baidu MIP
+
+这是款一键生成符合Google AMP/Baidu MIP标准相关页面的插件，开启后可以进一步优化Google、Baidu的搜索结果。
+
+最初本插件的功能是[直接通过暴力修改模板][1]实现的，结果发现有不少TX需要这个功能，所以就整理了一下做成插件，方便有需要的TX使用，随着不断的改进变成了现在的样子。
+
 ---
+## 功能
+
+- 生成符合Google AMP/Baidu MIP标准的AMP/MIP页面，并与标准页面建立关联。
+
+- 生成AMP/MIP的SiteMap，及所有ULR的纯文本列表。
+
+- 生成AMP版的首页。
+ 
+- 后台批量提交URL到Baidu，可选手动或自动。
+
+- MIP页面完美支持百度熊掌号页面标准，新发表文章自动提交到熊掌号。
+
+- 新增开关：用户决定是否只允许Baidu和Google的爬虫访问MIP/AMP页面。
+
+- 新增插件版本判断。
+
+- 新增自定义MIP/AMP页面样式。
+
+- 新增缓存功能，缓存访问过的MIP/AMP页面，可显著提高性能。
+
+---
+## 安装
+
+建议PHP 5.6+
+
+将文件夹重命名为`AMP`，拷贝至`usr/plugins/`下，然后在后台->插件处安装。
+
+---
+## 升级方法
+
+**请先禁用插件后再升级**
+
+PS:非Markdown编辑器书写的文章由于存在诸多不可预见的情况，生成的AMP/MIP页面可能不能完全符合标准，如果有遇到请及时反馈。
+
+
+---
+## 使用说明
+
+- 在插件后台设置默认LOGO和图片，以及选择是否开启SiteMap、AMP首页、自动提交到熊掌号等功能（除自动提交到熊掌号外的功能都默认开启）。
+
+- 从[百度站长][2]获取接口调用地址、熊掌号APPID/TOKEN，填写到插件设置中（使用提交URL功能时需要）。
+
+- AMP/MIP的页面缓存默认为24小时，可在插件设置页面修改缓存时间。修改文章会自动更新页面缓存，重建缓存开关在插件设置页，设置缓存时间的下方。
+
+- AMP/MIP页面的模板已独立至templates目录中，有个性化需要的TX可以自己进一步调整：
+
+
+
+注：
+- 服务器未启用php-curl扩展时，后台批量提交URL到Baidu的功能不可用。
+- **非HTTPS站点**受 [amp-list 控件][3] 的src参数限制，AMP首页无法换页，建议关闭生成AMP首页功能。
+
 ---
 
-<img src='https://raw.githubusercontent.com/typecho-fans/typecho-fans.github.io/master/soapgroup.png' align="right" />
+启用Rewrite之后：
 
-## Typecho爱好者插件集群（社区维护版目录）
+AMP首页为 http(s)://xxx/ampindex/
 
-[![compatible](https://img.shields.io/badge/Typecho-%3E%3D1.0-red.svg?style=for-the-badge)](https://github.com/typecho/typecho)
-[![support](https://img.shields.io/badge/TeStore-Supported-green.svg?style=for-the-badge)](TeStore)
-[![issues](https://img.shields.io/github/issues-closed-raw/typecho-fans/plugins.svg?style=for-the-badge)](https://github.com/typecho-fans/plugins/issues?q=is%3Aissue+is%3Aclosed)
+AMP页面为 http(s)://xxx/amp/slug/
 
- > 本项目中插件由社区成员共同维护，原则上均支持1.0+版本。用户可提交问题或建议至[issues](https://github.com/typecho-fans/plugins/issues)，作者加入请阅读下方须知。:penguin:交流群号：[**40412938**](http://shang.qq.com/wpa/qunwpa?idkey=a5a8afedf099e18ddf9b530db9217251e39001d52aace42888bf470d9b6cb86a)
-------------------------------
+MIP页面为 http(s)://xxx/mip/slug/
 
-### 使用帮助
 
-作者参与维护可点击右上角绿色按钮处克隆git地址或打包下载所有插件，一般用户使用下方索引表格中的Download链接下载所需插件zip包即可，或推荐安装**新版插件仓库**:gift:[**TeStore**](TeStore)更便捷地进行列表筛选、一键下载和自动安装卸载等操作。
 
-### 作者须知
 
-1. 本目录下作品应为经作者同意允许在这里进行**多人自由更新**的，如果只是想在插件仓库列表登记编辑[TESTORE.md](TESTORE.md)即可。
+---
+## 效果预览
 
- > 集群插件在TeStore列表中带有社区版标记，作者可提交有特色但不再维护的作品，由其他成员视需求能力做后续修正。
+MIP内容页：
 
-2. 推荐用[**subtree**](https://aoxuis.me/bo-ke/2013-08-06-git-subtree)方法录入文件(可随时拉取原目录更新)，手动复制进来提交亦可，不再接受submodule链接文件夹方式。
+![MIP内容页](https://raw.githubusercontent.com/holmesian/Typecho-AMP/dev/screencapture-holmesian-org-mip-AMP-for-Typecho-2018-03-27-10_10_37.png)
 
- > 若原目录作者回归本目录下版本未有人修改可继续拉取同步，已有社区修改版则勿盲目覆盖，请视情况保留或修改合并。
 
-3. 管理会邀请github插件作者并给予目录权限，其他想参与的童鞋可先fork项目修改，然后提交pull request或issues申请。
+AMP内容页：
 
-4. 插件目录内应有**README**文档便于用户阅读，zip包请先上传至[releases](https://github.com/typecho-fans/plugins/releases)分类标签下，再将链接添加到下方的表格信息里。
+![AMP内容页](https://raw.githubusercontent.com/holmesian/Typecho-AMP/dev/screencapture-holmesian-org-amp-AMP-for-Typecho-2018-03-27-10_11_27.png)
 
- > 下表中的下载链接文字可用于对TeStore列表附加图标：`Download`即社区版，`N/A`为不可用，`Special`为安装用法特殊。
 
-### 作品索引 (89)
+AMP首页：
 
-###### 插件仓库将使用下表“名称”创建安装文件夹，“版本”提示升级，请务必确保文本准确；注意排序与目录列表相同，自增上方插件数，简介不要过长。
-```
-对于本地已安装的同名插件TeStore会根据作者判断是否为社区版，所以记得Plugin.php中的署名信息也要与下表保持一致(多人用,空格分隔)。
-```
+![AMP首页](https://raw.githubusercontent.com/holmesian/Typecho-AMP/dev/screencapture-holmesian-org-ampindex-2018-03-27-10_12_54.png)
 
-名称 | 简介 | 版本 | 作者 | zip包
----- | :----: | :---: | ----: | :----:
-[AMP](AMP) | 移动端AMP/MIP页面生成插件 | 0.6.5 | [Holmesian](https://github.com/holmesian) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/AMP.zip)
-[AjaxComments](AjaxComments) | 嵌套式评论Ajax异步提交插件 | 1.2.0 | [Byends](https://github.com/visamz), Willin Kan | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/AjaxComments.zip)
-[AllowIp](AllowIp) | Typecho后台访问IP白名单插件 | 1.0.1 | [Fuzqing](https://github.com/fuzqing) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/AllowIp.zip)
-[Announcement](Announcement) | 仿Emlog双款悬浮式公告栏插件 | 1.0.0 | [skylzl](https://github.com/xiaogouxo) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/Announcement.zip)
-[AppStore](AppStore) | Go脚本服务端搭配版应用商店插件 | 2.0.0 | [chekun](https://github.com/chekun) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/AppStore.zip)
-[ArticleList](ArticleList) | 热评/随机(支持缓存)文章列表插件 | 1.1.1 | [DEFE](https://github.com/defeme) | [Special](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/ArticleList.zip)
-[ArticleTemplate](ArticleTemplate) | Typecho文章类型字段设置插件 | 1.0.0 | [benzBrake](https://github.com/benzBrake) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/ArticleTemplate.zip)
-[At](At) | @链接式评论回复与邮件提醒插件 | 0.1.1 | [公子](https://github.com/lizheming) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/At.zip)
-[AudioPlayer](AudioPlayer) | 多彩mp3播放器插件(Flash/Html5) | 1.2.6 | [羽中](https://github.com/jzwalk) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/AudioPlayer.zip)
-[AutoLaTeX](AutoLaTeX) | LaTeX公式两种模式自动渲染插件 | 0.1.0 | [bLue](https://github.com/dreamerblue) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/AutoLaTeX.zip)
-[AutoSlug](AutoSlug) | 文章链接缩略名翻译自动生成插件 | 2.1.1 | [ShingChi](https://github.com/shingchi) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/AutoSlug.zip)
-[AutoTags](AutoTags) | 文章标签语义解析自动生成插件 | 1.0.0 | [DT27](https://github.com/DT27) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/AutoTags.zip)
-[Avatars](Avatars) | 读者墙评论头像排行插件(支持缓存) | 1.2.5 | [羽中](https://github.com/jzwalk) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/Avatars.zip)
-[BackToTop](BackToTop) | 二次元风格点击返回顶部按钮插件 | 1.0 | [夏目贵志](https://github.com/xiamuguizhi) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/BackToTop.zip)
-[CateFilter](CateFilter) | 首页过滤指定分类文章不显示插件 | 1.2.1 | [Rakiy](https://github.com/rakiy) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/CateFilter.zip)
-[Ckeditor4Typecho](Ckeditor4Typecho) | CKEditor4所见即所得编辑器插件 | 1.0.0 | [zhulin3141](https://github.com/zhulin3141) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/Ckeditor4Typecho.zip)
-[CodeMirror](CodeMirror) | 主题外观编辑器语法高亮显示插件 | 1.0.0 | [zhulin3141](https://github.com/zhulin3141) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/CodeMirror.zip)
-[CodeStyle](CodeStyle) | Highlight.js代码高亮效果渲染插件 | 0.8.0 | [hongweipeng](https://github.com/hongweipeng) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/CodeStyle.zip)
-[CommentToMail](CommentToMail) | 发布或回复评论邮件自动提醒插件 | 2.0.1 | [Byends](https://github.com/visamz), [DEFE](https://github.com/defeme) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/CommentToMail.zip)
-[ContentIndex](ContentIndex) | 嵌入式文章内容目录自动生成插件 | 1.0.0 | [laobubu](https://github.com/laobubu) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/ContentIndex.zip)
-[Contribute](Contribute) | 免注册用户投稿与审查发布插件 | 1.0.0 | [ShingChi](https://github.com/shingchi) | [Special](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/Contribute.zip)
-[CosForTypecho](CosForTypecho) | 腾讯云COS附件存储插件 | 1.0.1 | [Charmeryl](https://github.com/charmeryl) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/CosForTypecho.zip)
-[DbManager](DbManager) | Mysql数据库导入导出与优化插件 | 2.0.1 | [ShingChi](https://github.com/shingchi) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/DbManager.zip)
-[DevTool](DevTool) | 扩展开发常用数据查看与测试插件 | 1.0.0 | [zhulin3141](https://github.com/zhulin3141) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/DevTool.zip)
-[DownloadFile](DownloadFile) | 附件下载名与上传名保持一致插件 | 1.0.0 | [DT27](https://github.com/DT27) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/DownloadFile.zip)
-[DynamicLines](DynamicLines) | (娱乐向)动态蛛网式背景效果插件 | 1.0.0 | [长江](https://github.com/changjiangblog) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/DynamicLines.zip)
-[Editor](Editor) | 简明风格Markdown编辑器插件 | 1.0.2 | [公子](https://github.com/lizheming) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/Editor.zip)
-[EditorMD](EditorMD) | 豪华风格Markdown编辑器插件 | 1.3.0 | [DT27](https://github.com/DT27) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/EditorMD.zip)
-[EmlogToTypecho](EmlogToTypecho) | Emlog数据库导入Typecho插件 | 1.0.0 | [ShingChi](https://github.com/shingchi) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/EmlogToTypecho.zip)
-[GHbutton](GHbutton) | Github项目迷你功能按钮展示插件 | 1.0.4 | [羽中](https://github.com/jzwalk) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/GHbutton.zip)
-[GeeTest](GeeTest) | 评论GeeTest拖拽拼图验证码插件 | 1.0.1 | [啸傲居士](https://github.com/shuxiao9058) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/GeeTest.zip)
-[GithubCard](GithubCard) | Github项目/用户信息卡片展示插件 | 1.0.0 | [chekun](https://github.com/chekun) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/GithubCard.zip)
-[GithubWidgetUser](GithubWidgetUser) | Github用户个人名片展示插件 | 0.2.0 | [hongweipeng](https://github.com/hongweipeng) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/GithubWidgetUser.zip)
-[GoLinks](GoLinks) | 指定内链自动跳转至关联外链插件  | 0.3.0 | [DEFE](https://github.com/defeme) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/GoLinks.zip)
-[GoodLuck](GoodLuck) | “手气不错”链接显示随机文章插件 | 1.0.1 | [Ryan](https://github.com/benzBrake) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/GoodLuck.zip)
-[GoogleCodePrettfy](GoogleCodePrettify) | 谷歌Prettify代码高亮效果渲染插件 | 2.0.0 | [公子](https://github.com/lizheming) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/GoogleCodePrettify.zip)
-[GravatarCache](GravatarCache) | Gravatar头像本地自动缓存插件 | 2.0.2 | [Byends](https://github.com/visamz) | [Special](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/GravatarCache.zip)
-[Hermit](Hermit) | 虾米云音乐SM2列表型播放器插件 | 1.3.1 | [mufeng](https://github.com/iMuFeng) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-H_to_L/Hermit.zip)
-[HighSlide](HighSlide) | 多功能灯箱弹窗效果+页面相册插件 | 1.4.7 | [羽中](https://github.com/jzwalk) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-H_to_L/HighSlide.zip)
-[Html2Text](Html2Text) | Html代码转Markdown格式插件 | 0.1.0 | [冰剑](https://github.com/binjoo) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-H_to_L/Html2Text.zip)
-[IQapTcha](IQapTcha) | 评论滑动解锁验证+规则过滤插件 | 1.1.2 | [Byends](https://github.com/visamz) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-H_to_L/IQapTcha.zip)
-[JSON](JSON) | Json格式输出博客数据API插件 | 0.1 | [公子](https://github.com/lizheming) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-H_to_L/JSON.zip)
-[JWPlayer](JWPlayer) | Html5流媒体播放器Jwplayer插件 | 1.0.9 | [羽中](https://github.com/jzwalk) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-H_to_L/JWPlayer.zip)
-[Keywords](Keywords) | 文章指定关键词自动添加链接插件 | 1.0.8 | [羽中](https://github.com/jzwalk) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-H_to_L/Keywords.zip)
-[LREditor](LREditor) | Markdown编辑器左右预览插件 | 0.0.4 | [公子](http://github.com/lizheming) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-H_to_L/LREditor.zip)
-[Like](Like) | Typecho文章点赞与排行统计插件 | 1.0.1 | [skylzl](https://github.com/xiaogouxo) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-H_to_L/Like.zip)
-[LoveKKComment](LoveKKComment) | SendCloud评论邮件通知插件 for Typecho | 1.0.2 | [康粑粑](https://www.lovekk.org) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-H_to_L/LoveKKComment.zip)
-[LoveKKForget](LoveKKForget) | LoveKK 找回密码功能 for Typecho | 1.0.1 | [康粑粑](https://www.lovekk.org) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-H_to_L/LoveKKForget.zip)
-[MenuTree](MenuTree) | 悬浮式文章内容目录自动生成插件 | 0.6.1 | [hongweipeng](https://github.com/hongweipeng) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/MenuTree.zip)
-[MostCache](MostCache) | Mysql/SAE下Memcache缓存插件 | 1.0.0 | [skylzl](https://github.com/xiaogouxo) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/MostCache.zip)
-[MyPlayer](MyPlayer) | 万能播放器与视频站链接转换插件 | 1.1.3 | [perichr](http://github.com/perichr) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/MyPlayer.zip)
-[MyTagCloud](MyTagCloud) | Typecho自定义标签云输出插件 | 1.0.0 | [Ma Yanlong](https://github.com/YanlongMa) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/MyTagCloud.zip)
-[OssForTypecho](OssForTypecho) | 阿里云OSS附件存储插件 | 1.0.1 | [Charmeryl](https://github.com/charmeryl) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/OssForTypecho.zip)
-[Passport](Passport) | 注册用户密码邮件找回功能插件 | 1.0.0 | [ShingChi](https://github.com/shingchi) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/Passport.zip)
-[PasteImage](PasteImage) | Typecho默认编辑器粘贴剪切板图片上传插件 | 1.0.0 | [qing](https://github.com/zgq354/PasteImage) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/PasteImage.zip)
-[PostsCategoryChange](PostsCategoryChange) | Typecho文章批量改分类/状态插件 | 0.0.4 | [Fuzqing](https://github.com/fuzqing) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/PostsCategoryChange.zip)
-[Prism](Prism) | Prism轻量代码高亮效果渲染插件 | 1.0.2 | [冰剑](https://github.com/binjoo) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/Prism.zip)
-[QNUpload](QNUpload) | 经典版(php5.2-5.6)七牛附件插件 | 1.3.1 | [rakiy](https://github.com/rakiy) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/QNUpload.zip)
-[QiniuFile](QiniuFile) | 新七牛附件插件(自定路径+截图) | 1.3.2 | [冰剑](https://github.com/binjoo), [abelyao](https://github.com/abelyao) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/QiniuFile.zip)
-[Reposidget](Reposidget) | Github项目信息与内容展示插件 | 1.0.0 | [西秦公子](https://github.com/xiqingongzi) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/Reposidget.zip)
-[RewriteRule](RewriteRule) | 正则匹配链接批量重定向跳转插件 | 1.0.0 | [laobubu](https://github.com/laobubu) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/RewriteRule.zip)
-[RoutesHelper](RoutesHelper) | Typecho路由信息显示与修改插件 | 1.0.3 | [doudou](https://github.com/doudoutime) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/RoutesHelper.zip)
-[SCS](SCS) | 系统附件使用新浪云存储SCS插件 | 1.1.1 | [vfhky](https://github.com/vfhky) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/SCS.zip)
-[ShortLinks](ShortLinks) | 自动替换或指定内链跳转外链插件 | 1.0.9 | [Ryan](https://github.com/benzBrake) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/ShortLinks.zip)
-[Sinauth](Sinauth) | 新浪用户授权注册帐号与登录插件 | 1.0.0 Beta | [jimmy chaw](https://github.com/web3d) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/Sinauth.zip)
-[SlantedExtend](SlantedExtend) | [Slanted主题](https://github.com/typecho-fans/themes/blob/master/Slanted)自定义字段专用插件 | 1.0.0 | [DT27](https://github.com/DT27) | [Special]()
-[SlimBox2](SlimBox2) | 轻量级jQuery图片灯箱弹窗插件 | 1.0.7 | [Ryan](https://github.com/ryanfwy), [冰剑](https://github.com/binjoo) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/SlantedExtend.zip)
-[Smilies](Smilies) | Typecho自定义图片表情替换插件 | 1.1.3 | [羽中](https://github.com/jzwalk), Willin Kan | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/Smilies.zip)
-[Snowstorm](Snowstorm) | (娱乐向)博客飘雪动态背景效果插件 | 1.0.1 | [阳光](https://github.com/rakiy) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/Snowstorm.zip)
-[Sticky](Sticky) | Typecho文章首页/分类页置顶插件 | 1.0.1 | [Ryan](https://github.com/benzBrake), Willin Kan | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/Sticky.zip)
-[Subscriber](Subscriber) | 指定文章/内容对登录会员可见插件 | 1.0.0beta | [羽中](https://github.com/jzwalk) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/Subscriber.zip)
-[SyncPost](SyncPost) | 新浪/腾讯微博和豆瓣更新推送插件 | 1.0.0 | [冰剑](https://github.com/binjoo) | [N/A](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/SyncPost.zip)
-[TeKit](TeKit) | 常用侧边栏文章/评论数据输出插件 | 2.0.0 | [冰剑](https://github.com/binjoo) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/TeKit.zip)
-[TeStore](TeStore) | 新Github表格解析版插件仓库插件 | 1.0.0 | [羽中](https://github.com/jzwalk), [zhulin3141](https://github.com/zhulin3141) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/TeStore.zip)
-[ThemeDemo](ThemeDemo) | 根据链接参数直接预览主题外观插件 | 1.0.1 | [doudou](https://github.com/doudoutime) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/ThemeDemo.zip)
-[Typembed](Typembed) | 常见视频站链接自动转播放器插件 | 1.3.0 | [Fengzi](https://github.com/nothingisover) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/Typembed.zip)
-[Ueditor](Ueditor) | 百度贴吧可视化编辑器Ueditor插件 | 1.0.0 | [zhulin3141](https://github.com/zhulin3141) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/Ueditor.zip)
-[Ugauka](Ukagaka) | (娱乐向)二次元伪春菜萌物精灵插件 | 1.0.0 | [Kunr](https://github.com/Rakume) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/Ukagaka.zip)
-[Update](Update) | Typecho一键升级实时开发版插件 | 0.0.3 | [公子](https://github.com/lizheming) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/Update.zip)
-[UploadPlugin](UploadPlugin) | 上传zip包安装删除插件/主题插件 | 1.1.3 | [DEFE](https://github.com/defeme) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/UploadPlugin.zip)
-[UserSign](UserSign) | 用户个性签名文字设置与输出插件 | 0.0.1 | [hmoe](https://github.com/hmoe) | [Special](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/UserSign.zip)
-[Watermark](Watermark) | 文章内图片自动添加水印效果插件 | 1.2.0 | [DEFE](https://github.com/defeme) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/Watermark.zip)
-[WeChatHelper](WeChatHelper) | 微信公众号平台功能菜单集成插件 | 2.2.1 | [冰剑](https://github.com/binjoo) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/WeChatHelper.zip)
-[WeChatShare](WeChatShare) | 自定义文章微信/QQ分享链接插件 | 1.0.5 | [Fuzqing](https://github.com/fuzqing) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/WeChatShare.zip)
-[WeiboSync](WeiboSync) | 博客文章更新推送新浪微博插件 | 1.0.0 | [vfhky](https://github.com/vfhky) | [Special](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/WeiboSync.zip)
-[XiaMiPlayer](XiaMiPlayer) | 虾米音乐迷你型jPlayer播放器插件 | 3.1.4 | [公子](https://github.com/lizheming) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/XiaMiPlayer.zip)
-[YoduBGM](YoduBGM) | 微型背景音乐播放器插件(支持Pjax) | 1.5.0 | [Jrotty](https://github.com/jrotty) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/YoduBGM.zip)
-[YoduPlayer](YoduPlayer) | 悬浮式音乐播放器插件(支持Pjax) | 2.2.2 | [Jrotty](https://github.com/jrotty) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/YoduPlayer.zip)
-[Zan](Zan) | 自定义字段输出文章点赞次数插件 | 1.0.0 | [冰剑](https://github.com/binjoo) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/Zan.zip)
+
+
+
+  [1]: https://holmesian.org/typecho-upgrade-AMP
+  [2]: http://ziyuan.baidu.com/mip/index
+  [3]: https://www.ampproject.org/docs/reference/components/amp-list
