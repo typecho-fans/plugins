@@ -4,14 +4,14 @@
  *
  * @package AMP-MIP
  * @author Holmesian
- * @version 0.6.5
+ * @version 0.6.6
  * @link https://holmesian.org/AMP-for-Typecho
  */
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 
 class AMP_Plugin implements Typecho_Plugin_Interface
 {
-    private static $version = '0.6.5';
+    private static $version = '0.6.6';
 
     public static function activate()
     {
@@ -59,25 +59,25 @@ class AMP_Plugin implements Typecho_Plugin_Interface
         $element = new Typecho_Widget_Helper_Form_Element_Text('cacheTime', null, '0', _t('缓存时间'), '单位：小时（设置成0表示关闭）<br> 此项为缓存过期时间，建议设置成24。如果需要重建缓存，请点击 <a href="' . Helper::options()->index . '/clean_cache">删除所有缓存</a>');
         $form->addInput($element);
 
-        $element = new Typecho_Widget_Helper_Form_Element_Text('baiduAPI', null, '', _t('MIP/AMP推送接口调用地址'), '<a href="https://ziyuan.baidu.com/xzh/commit/method">点击 我的功能->资源提交 获取接口调用地址。</a>');
+        $element = new Typecho_Widget_Helper_Form_Element_Text('baiduAPI', null, '', _t('MIP/AMP推送接口调用地址'), '<a href="https://ziyuan.baidu.com/mip/index">打开页面后 点击 MIP -> 数据提交 -> 提交新数据 获取接口调用地址。</a>');
         $form->addInput($element);
 
-        $element = new Typecho_Widget_Helper_Form_Element_Text('baiduAPPID', null, '', _t('熊掌号识别ID'), '<a href="https://ziyuan.baidu.com/xzh/commit/method">点击 我的功能->资源提交 获取appid。</a>');
+        $element = new Typecho_Widget_Helper_Form_Element_Text('baiduAPPID', null, '', _t('熊掌号识别ID'), '<a href="https://ziyuan.baidu.com/xzh/commit/method">打开页面后 点击 我的功能->资源提交 根据接口调用地址 获取appid。</a>');
         $form->addInput($element);
 
-        $element = new Typecho_Widget_Helper_Form_Element_Text('baiduTOKEN', null, '', _t('熊掌号准入密钥'), '<a href="https://ziyuan.baidu.com/xzh/commit/method">点击 我的功能->资源提交 获取token。</a>');
+        $element = new Typecho_Widget_Helper_Form_Element_Text('baiduTOKEN', null, '', _t('熊掌号准入密钥'), '<a href="https://ziyuan.baidu.com/xzh/commit/method">打开页面后 点击 我的功能->资源提交 根据接口调用地址 获取token。</a>');
         $form->addInput($element);
 
         $element = new Typecho_Widget_Helper_Form_Element_Text('mip_stats_token', null, '', _t('百度统计token'), '<a href="https://www.mipengine.org/examples/mip-extensions/mip-stats-baidu.html">点击了解如何获取token。</a>');
         $form->addInput($element);
 
-        $element = new Typecho_Widget_Helper_Form_Element_Radio('ampSiteMap', array(0 => '不开启', 1 => '开启'), 1, _t('是否开启AMP的SiteMap'), 'ampSiteMap地址：' . Helper::options()->index . '/amp_sitemap.xml');
+        $element = new Typecho_Widget_Helper_Form_Element_Radio('ampSiteMap', array(0 => '不开启', 1 => '开启'), 1, _t('是否开启AMP的SiteMap'), 'ampSiteMap地址：<a href="'.Helper::options()->index .'/amp_sitemap.xml">' . Helper::options()->index . '/amp_sitemap.xml</a>');
         $form->addInput($element);
 
-        $element = new Typecho_Widget_Helper_Form_Element_Radio('mipSiteMap', array(0 => '不开启', 1 => '开启'), 1, _t('是否开启MIP的SiteMap'), 'mipSiteMap地址：' . Helper::options()->index . '/mip_sitemap.xml');
+        $element = new Typecho_Widget_Helper_Form_Element_Radio('mipSiteMap', array(0 => '不开启', 1 => '开启'), 1, _t('是否开启MIP的SiteMap'), 'mipSiteMap地址：<a href="'.Helper::options()->index .'/mip_sitemap.xml">'. Helper::options()->index . '/mip_sitemap.xml</a>');
         $form->addInput($element);
 
-        $element = new Typecho_Widget_Helper_Form_Element_Radio('ampIndex', array(0 => '不开启', 1 => '开启'), 1, _t('是否开启AMP版的首页'), 'ampIndex地址：' . Helper::options()->index . '/ampindex   <<受到amp-list控件限制，<b>非HTTPS站点</b>请勿开启AMP版的首页。');
+        $element = new Typecho_Widget_Helper_Form_Element_Radio('ampIndex', array(0 => '不开启', 1 => '开启'), 1, _t('是否开启AMP版的首页'), 'ampIndex地址：<a href="'.Helper::options()->index.'/ampindex">' . Helper::options()->index . '/ampindex</a>   (受amp-list控件限制，<b>非HTTPS站点</b>请勿开启AMP版的首页。)');
         $form->addInput($element);
 
         $element = new Typecho_Widget_Helper_Form_Element_Radio('mipAutoSubmit', array(0 => '不开启', 1 => '开启'), 0, _t('是否开启新文章自动提交到熊掌号'), '请填写熊掌号的APPID和TOKEN后再开启。');
@@ -86,10 +86,10 @@ class AMP_Plugin implements Typecho_Plugin_Interface
         $element = new Typecho_Widget_Helper_Form_Element_Radio('OnlyForSpiders', array(0 => '不开启', 1 => '开启'), 0, _t('是否只允许Baidu和Google的爬虫访问MIP/AMP页面'), '选择启用则需要修改UA才能访问MIP/AMP页面');
         $form->addInput($element);
 
-        $element = new Typecho_Widget_Helper_Form_Element_Text('defaultPIC', null, 'https://holmesian.org/usr/themes/Holmesian/images/holmesian.png', _t('默认图片地址'), '默认图片地址');
+        $element = new Typecho_Widget_Helper_Form_Element_Text('defaultPIC', null, 'https://holmesian.org/usr/themes/Holmesian/images/holmesian.png', _t('默认图片地址'), '如果文章中没有图片，则会在AMP/MIP页面参数中使用默认图片作为文章图片。');
         $form->addInput($element);
 
-        $element = new Typecho_Widget_Helper_Form_Element_Text('LOGO', null, 'https://holmesian.org/usr/themes/Holmesian/images/holmesian.png', _t('默认LOGO地址'), '根据AMP的限制，尺寸最大不超过60*60');
+        $element = new Typecho_Widget_Helper_Form_Element_Text('LOGO', null, 'https://holmesian.org/usr/themes/Holmesian/images/holmesian.png', _t('默认LOGO地址'), '根据AMP的限制，尺寸不超过60*60');
         $form->addInput($element);
 
         $element = new Typecho_Widget_Helper_Form_Element_Text('PostURL', null, Helper::options()->index , _t('替换自动提交的前缀地址'), '作用看<a href="https://holmesian.org/AMP-for-Typecho#comment-7404">这里</a>，没有需求就别改');
