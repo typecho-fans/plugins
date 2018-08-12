@@ -2,10 +2,10 @@
 //异步加载插件数据
 if( $this->request->is('action=loadinfos') ){
     $pluginInfo = $this->getPluginData();
+    $keywords = trim($this->request->get('keywords'));
 
     if($pluginInfo) {
         $installed = $this->getLocalPlugins();
-        $keywords = trim($this->request->get('keywords'));
         $pluginRez = array();
         //关键词筛选结果
         foreach( $pluginInfo as $plugin){
@@ -14,6 +14,7 @@ if( $this->request->is('action=loadinfos') ){
                 $pluginRez[] = $plugin;
             }
         }
+
         //已安装插件提前
         $pluginIns = array();
         foreach( $pluginRez as $key => $plugin){
@@ -25,6 +26,7 @@ if( $this->request->is('action=loadinfos') ){
         }
         ksort($pluginIns);
         $pluginRez = array_merge($pluginIns, $pluginRez);
+
         //处理为分页数组
         $pluginInfo = array_chunk($pluginRez, 20);
         $page = $this->request->get('page');
