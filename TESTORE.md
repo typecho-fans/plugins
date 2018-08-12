@@ -1,6 +1,3 @@
----
----
-
 <img src='https://raw.githubusercontent.com/typecho-fans/typecho-fans.github.io/master/soapgroup.png' align="right" />
 
 ## Typecho爱好者外部插件登记表（TeStore专用）
@@ -30,7 +27,7 @@
 
  > 下表中的下载链接文字可用于附加图标：`下载`即非社区版，`不可用`显示为:no_entry:，`特殊`为:warning:意思是安装或启用方法特殊。
 
-### 插件信息 (17)
+### 插件信息 (22)
 
 ###### 下表“名称”将用于创建安装文件夹，“版本”用于提示升级，请务必确保文本准确；注意按字母排序，自增上方括号中数字便于统计，简介不要过长。
 ```
@@ -43,10 +40,12 @@
 [Adminer](https://github.com/kokororin/typecho-plugin-adminer) | 后台集成Adminer数据库管理插件 | 1.0 | [kokororin](https://github.com/kokororin) | [下载](https://github.com/kokororin/typecho-plugin-adminer/archive/master.zip)
 [AutoBaiduSubmit](https://github.com/jinfeijie/AutoBaiduSubmit) | 访问页面自动提交百度链接插件 | 1.0.2 | [JinFeiJie](https://github.com/jinfeijie) | [下载](https://github.com/jinfeijie/AutoBaiduSubmit/archive/1.0.2.zip)
 [BaeUpload]() | 百度云应用引擎BAE附件上传插件 | 1.0.1 | [doudou](https://github.com/doudoutime) | [不可用](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/BaeUpload.zip)
+[BaiduSubmit](https://github.com/phpgao/BaiduSubmit) | 推送Sitemap文章链接到百度插件 | 0.5.2 | [老高](https://github.com/phpgao) | [下载](https://github.com/phpgao/BaiduSubmit/archive/master.zip)
 [BlockIP](https://github.com/kokororin/typecho-plugin-BlockIP) | Typecho访问前台IP黑名单插件 | 1.0 | [Kokororin](https://github.com/kokororin) | [下载](https://github.com/kokororin/typecho-plugin-BlockIP/archive/master.zip)
 [ChangyanCallback](https://github.com/mrgeneralgoo/typecho-changyan-callback) | 搜狐畅言社会化评论回推插件 | 1.0.0 | [mrgeneral](https://github.com/mrgeneralgoo) | [下载](https://github.com/mrgeneralgoo/typecho-changyan-callback/archive/master.zip)
 [Comment2Wechat](https://github.com/YianAndCode/Comment2Wechat) | 新评论回复微信自动通知插件 | 1.1.0 | [Y!an](https://github.com/YianAndCode) | [下载](https://github.com/YianAndCode/Comment2Wechat/archive/v1.1.zip)
 [Duoshuo](http://ysido.com/duoshuo.html) | 原多说平台社会化评论同步插件 | 1.1.2 | [Rakiy](https://github.com/rakiy) | [不可用](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/Duoshuo.zip)
+[ExternalTool](https://github.com/phpgao/ExternalTool) | 自动判断文章外链并添加标记插件 | 0.2 | [老高](https://github.com/phpgao) | [下载](https://github.com/phpgao/ExternalTool/archive/master.zip)
 [Geetest](https://github.com/jinfeijie/Geetest) | 新版GeeTest智能评论验证码插件 | 1.0.3 | [mrjin](https://github.com/jinfeijie) | [下载](https://github.com/jinfeijie/Geetest/archive/1.0.3.zip)
 [HTMLCompress](https://github.com/kokororin/typecho-plugin-HTMLCompress) | 前台Html代码去可读性压缩插件 | 1.3 | [Kokororin](https://github.com/kokororin) | [下载](https://github.com/kokororin/typecho-plugin-HTMLCompress/archive/master.zip)
 [MarkdownParse](https://github.com/mrgeneralgoo/typecho-markdown) | Extra加强版Parsedown解析插件 | 1.0.1 | [mrgeneral](https://github.com/mrgeneralgoo) | [下载](https://github.com/mrgeneralgoo/typecho-markdown/archive/master.zip)
@@ -54,5 +53,8 @@
 [PlayAtWill](https://github.com/vfhky/PlayAtWill) | 迷你型Flash音乐播放器2合1插件 | 1.0.0 | [vfhky](https://github.com/vfhky) | [下载](https://github.com/vfhky/PlayAtWill/archive/master.zip)
 [Remix](https://github.com/shingchi/Remix) | SoundManager2音乐播放器插件 | 2.1.0 | [ShingChi](https://github.com/shingchi) | [不可用](https://github.com/shingchi/Remix/archive/master.zip)
 [Restful](https://github.com/moefront/typecho-plugin-Restful) | Typecho开放输出与提交API插件 | 1.1.1 | [MoeFront Studio](https://github.com/moefront) | [下载](https://github.com/moefront/typecho-plugin-Restful/archive/master.zip)
+[TableOfContents](https://github.com/phpgao/TableOfContents) | 下拉式文章内容目录自动生成插件 | 0.3 | [老高](https://github.com/phpgao) | [下载](https://github.com/phpgao/TableOfContents/archive/v0.3.zip)
+[TpCache](https://github.com/phpgao/TpCache) | Memcache/Redis数据库缓存插件 | 0.7 | [老高](https://github.com/phpgao) | [下载](https://github.com/phpgao/TpCache/archive/v0.7.zip)
 [UpdateAssistant](https://github.com/mrgeneralgoo/typecho-update-assistant)  | Typecho自动升级(可选版本)插件 | 1.0.1 | [mrgeneral](https://github.com/mrgeneralgoo) | [下载](https://github.com/mrgeneralgoo/typecho-update-assistant/archive/master.zip)
 [WeiboSync](https://github.com/ShangJixin/Typecho-Plugin-WeiboSync) | Typecho更新推送新浪微博插件 | 1.0.1 | [尚寂新](https://github.com/ShangJixin) | [特殊](https://github.com/ShangJixin/Typecho-Plugin-WeiboSync/archive/master.zip)
+[Xiami]() | 虾米云音乐SM2列表型播放器插件 | 0.0.2 | [Mufeng](https://github.com/iMuFeng) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/Xiami.zip)
