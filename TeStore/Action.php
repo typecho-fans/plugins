@@ -92,7 +92,7 @@ class TeStore_Action extends Typecho_Widget {
             $this->pluginInfo = json_decode($data);
         }else{
             $html = '<?xml encoding="utf-8" ?>';
-            foreach($this->source as $page){
+            foreach( $this->source as $page ){
                 $page = trim($page);
                 if( $page ){
                     $html .= @file_get_contents($page);
@@ -106,9 +106,14 @@ class TeStore_Action extends Typecho_Widget {
                 $texts = array();
                 $urls = array();
                 foreach( $tr as $trKey => $text ){
-                    if($text->parentNode->tagName=='tbody') {
+                    if( $text->parentNode->tagName=='tbody' ){
                         //分割tr文本数据
-                        $texts[] = array_filter(preg_split("/(\r|\n|\r\n)/", $text->nodeValue));
+                        foreach( $text->childNodes as $td ){
+                            $tdVal = trim($td->nodeValue);
+                            if( $tdVal ){
+                                $texts[$trKey][] = $tdVal;
+                            }
+                        }
                         $td = $tr->item($trKey)->getElementsByTagName("td");
                         //获取td链接数据
                         foreach( $td as $tdKey => $val ){
@@ -127,6 +132,7 @@ class TeStore_Action extends Typecho_Widget {
                         }
                     }
                 }
+                $texts = array_values($texts);
                 $urls = array_chunk($urls , 3);
                 $datas = array();
                 //合并关联键名
