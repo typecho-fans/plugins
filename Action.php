@@ -251,9 +251,9 @@ class AMP_Action extends Typecho_Widget implements Widget_Interface_Do
 
 
 
-//        if($article['created'] !== $article['modified'] ){//修改时间 与 创建时间 不同 为修改文章
-//            return;//修改文章不发送
-//        }
+        if($article['created'] !== $article['modified'] ){//修改时间 与 创建时间 不同 为修改文章
+            return;//修改文章不发送
+        }
 
 
 //        $urls = array($article['mipurl'],);//改为仅提交一次
