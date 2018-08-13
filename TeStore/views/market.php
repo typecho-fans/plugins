@@ -70,7 +70,7 @@ if( $this->request->is('action=loadinfos') ){
                         <tbody>
                             <?php if( $pluginInfo ): ?>
                             <?php foreach( $pluginInfo[$page] as $plugin): $name = trim(strip_tags($plugin->pluginName)); $plugin->pluginUrl; ?>
-                            <?php $source = $plugin->source; $url = $plugin->pluginUrl; $url = in_array($source, array('Download', 'N/A', 'Special')) ? 'https://github.com' . $url : $url; ?>
+                            <?php $source = $plugin->source; $url = $plugin->pluginUrl; $url = in_array($source, array('Download', 'N/A', 'Special')) ? (strpos($url, 'typecho-fans') ? 'https://github.com' . $url : 'https://github.com/typecho-fans/plugins/blob/master/' . $url) : $url; ?>
                             <tr id="plugin-<?php echo $name; ?>" data-name="<?php echo $name;?>" class="plugin">
                                 <td><a href="<?php echo $url; ?>" <?php if($url!=='#') echo 'target="_blank"'; ?>><?php echo $name; ?></a>
                                 <?php if($source=='Download'): ?>

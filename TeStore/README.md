@@ -16,6 +16,7 @@
 
 - v1.0.0(14-11-13)：（[@zhulin3141](http://zhulin31410.blog.163.com/)）
 
-通过正则匹配读取新浪云服务端页面信息，建立ajax下载、安装和卸载等机制，列表支持缓存和名称筛选。
+通过正则匹配读取新浪云服务端页面，建立ajax下载、安装和卸载等机制，列表支持缓存和名称筛选。
 
 ###### 更多详见作者博客：http://www.yzmb.me/archives/net/testore-for-typecho
+###### 或可查看论坛原帖：http://forum.typecho.org/viewtopic.php?f=6&t=11097
