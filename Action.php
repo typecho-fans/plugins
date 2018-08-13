@@ -2,7 +2,7 @@
 
 class AMP_Action extends Typecho_Widget implements Widget_Interface_Do
 {
-    private $version = '0.6.6';
+    private $version = '0.6.7';
 
     public function action()
     {
@@ -220,10 +220,12 @@ class AMP_Action extends Typecho_Widget implements Widget_Interface_Do
         print('Clean all cache!');
     }
 
-    public function sendRealtime($contents, $class)
+    public static function sendRealtime($contents, $class)
     {
         //获取系统配置
         $options = Helper::options();
+
+
 
         //如果文章属性为隐藏或滞后发布
         if ('publish' != $contents['visibility'] || $contents['created'] > time()) {
@@ -235,33 +237,57 @@ class AMP_Action extends Typecho_Widget implements Widget_Interface_Do
             return;
         }
 
+
         //判断是否配置相关信息
         if (is_null($options->plugin('AMP')->baiduAPPID) or is_null($options->plugin('AMP')->baiduTOKEN)) {
-            throw new Typecho_Plugin_Exception(_t('参数未正确配置'));
+            throw new Typecho_Plugin_Exception(_t('参数未正确配置，自动提交失败'));
+        }else{
+            $appid = $options->plugin('AMP')->baiduAPPID;
+            $token = $options->plugin('AMP')->baiduTOKEN;
+            $api = "http://data.zz.baidu.com/urls?appid={$appid}&token={$token}&type=realtime";//构建实时提交的地址
         }
-        $appid = $options->plugin('AMP')->baiduAPPID;
-        $token = $options->plugin('AMP')->baiduTOKEN;
-        $api = "http://data.zz.baidu.com/urls?appid={$appid}&token={$token}&type=realtime";
 
-        $article = Typecho_Widget::widget('AMP_Action')->getArticleByCid($class->cid);
+        $article = Typecho_Widget::widget('AMP_Action')->getArticleByCid($class->cid);//根据cid获取文章内容
 
-        $urls = array($article['mipurl'],);
 
-        $hash = array(//发布之前清除缓存
+
+//        if($article['created'] !== $article['modified'] ){//修改时间 与 创建时间 不同 为修改文章
+//            return;//修改文章不发送
+//        }
+
+
+//        $urls = array($article['mipurl'],);//改为仅提交一次
+        $url=$article['mipurl'];
+
+
+        $hash = array(//发布之前清除对应的MIP/AMP缓存
             'mip' => str_replace(Helper::options()->index, "", $article['mipurl']),
             'amp' => str_replace(Helper::options()->index, "", $article['ampurl'])
         );
         Typecho_Widget::widget('AMP_Action')->del($hash);
 
-        //发送请求
+        //发送自动提交请求
         $http = Typecho_Http_Client::get();
-        $http->setData(implode("\n", $urls));
+//        $http->setData(implode("\n", $urls));//改为仅提交一次
+        $http->setData($url);
         $http->setHeader('Content-Type', 'text/plain');
 
+
+
         try {
-            $json = $http->send($api);
+
+            $result = $http->send($api);
+
+//            error_log($result);
+
+            $json = json_decode($result);
+
+            if(isset($json->error)){//提交出错时返回错误信息
+                throw new Typecho_Plugin_Exception(_t("错误代码：".$json->error."<br> 出错原因：".$json->message),$json->error);
+            }
+
         } catch (Exception $e) {
-            throw new Typecho_Plugin_Exception(_t('对不起, 您的主机不支持远程访问。<br>请关闭自动提交功能！<br><hr>出错信息：' . $e->getMessage()));
+            throw new Typecho_Plugin_Exception(_t('抱歉，自动提交失败。<br>请关闭自动提交功能！<br><hr>' . $e->getMessage()));
         }
 
     }
