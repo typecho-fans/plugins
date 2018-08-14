@@ -1,47 +1,61 @@
 ## 插件简介
 
-SendCloud评论邮件通知插件（LoveKKComment）是一款针对Typecho博客系统的评论邮件通知插件。
+LoveKKComment是一款Typecho邮件通知类插件，支持SMTP、Send Cloud、阿里云邮件推送三种邮件通知方式。
 
-插件通过后台配置后，可在用户回复评论时对被回复者进行邮件通知，摒弃传统stmp等邮件发送方式，使用SendCloud进行邮件通知。
+在评论审核通过、用户评论文章、用户评论被回复时对不同场景进行不同的邮件通知。
 
 ## 安装方法
 
 > 1. 至[releases](https://github.com/typecho-fans/plugins/releases/tag/plugins-H_to_L)中下载最新版本插件；
 > 2. 将下载的压缩包进行解压并上传至`Typecho`插件目录中；
 > 3. 后台激活插件；
-> 4. 插件配置中将所有信息配置完成；
-> 5. 再次返回插件配置中，点击刚出现的`一键创建通知模板`按钮创建通知模板。
+> 4. 根据自己的实际情况选择邮件发送接口方式；
+> 5. 根据所选的邮件发送接口，配置相应接口参数。
 
 ## 自定义模板说明
 
-若不想使用插件自带的通知模板，请自行登录`SendCloud`后台创建自己的模板。
+插件共有三个模板，保存在插件`theme`目录下，分别为：
 
-回复通知模板调用名称：**LoveKKComment_Reply_Template**
+> 1. approved.html：邮件审核通过通知模板。
+> 2. author.html：文章评论通知作者模板。
+> 3. reply.html：评论回复通知被回复者模板。
 
-评论审核模板调用名称：**LoveKKComment_Approved_Template**
+三个模板使用变量作为内容替换，您只需在自己的模板中增加相应的模板变量即可，模板变量列表如下：
 
-### `LoveKKComment_Reply_Template`模板变量
+### approved.html
 
-> 1. 博客网站名称：**%blogname%**
-> 2. 博客网站地址：**%blogurl%**
-> 3. 被回复者名称：**%author%**
-> 4. 评论文章名称：**%title%**
-> 5. 评论文章地址：**%permalink%**
-> 6. 被回复者评论：**%text%**
-> 7. 回复用户名称：**%author2%**
-> 8. 回复用户内容：**%text2%**
-> 9. 回复楼层地址：**%commenturl%**
+> 1. {blogUrl}：博客地址
+> 2. {blogName}：博客名称
+> 3. {author}：评论者名称
+> 4. {permalink}：文章链接
+> 5. {title}：文章标题
+> 6. {text}：评论内容
 
-### `LoveKKComment_Approved_Template`模板变量
+### author.html
 
-> 1. 博客网站名称：**%blogname%**
-> 2. 博客网站地址：**%blogurl%**
-> 3. 评论作者名称：**%author%**
-> 4. 评论文章地址：**%permalink%**
-> 5. 评论文章标题：**%title%**
-> 6. 评论内容文本：**%text%**
+author.html内变量与approved.html内变量一致。
+
+### reply.html
+
+> 1. {blogUrl}：博客地址
+> 2. {blogName}：博客名称
+> 3. {author}：被回复者名称
+> 4. {permalink}：文章链接
+> 5. {title}：文章标题
+> 6. {text}：被回复者评论内容
+> 7. {replyAuthor}：回复者名称
+> 8. {replyText}：回复内容
 
 ## 更新日志
+
+### 2018.8.14
+
+> 1. 增加SMTP邮件发送方式
+> 2. 增加阿里云邮件推送发送方式
+> 3. 更改SendCloud发送方式为普通发送，不再使用模板发送
+> 4. 邮件模板更改为本地HTML模板
+> 5. 自由选择邮件发送方式
+> 6. 去除Action.php文件
 
 ### 2018.8.8
 
