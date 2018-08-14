@@ -27,7 +27,7 @@
 
  > 下表中的下载链接文字可用于附加图标：`下载`即非社区版，`不可用`显示为:no_entry:，`特殊`为:warning:意思是安装或启用方法特殊。
 
-### 插件信息 (30)
+### 插件信息 (39)
 
 ###### 下表“名称”将用于创建安装文件夹，“版本”用于提示升级，请务必确保文本准确；注意按字母排序，自增上方括号中数字便于统计，简介不要过长。
 ```
@@ -47,16 +47,24 @@
 [ChangyanCallback](https://github.com/mrgeneralgoo/typecho-changyan-callback) | 搜狐畅言社会化评论回推插件 | 1.0.0 | [mrgeneral](https://github.com/mrgeneralgoo) | [下载](https://github.com/mrgeneralgoo/typecho-changyan-callback/archive/master.zip)
 [Comment2Wechat](https://github.com/YianAndCode/Comment2Wechat) | 新评论回复微信自动通知插件 | 1.1.0 | [Y!an](https://github.com/YianAndCode) | [下载](https://github.com/YianAndCode/Comment2Wechat/archive/v1.1.zip)
 [CompressHTML](https://github.com/qlwz/CompressHTML-For-Typecho) | Gzip/Html压缩/关键词替换插件 | 1.0.0.1 | [情留メ蚊子](https://github.com/qlwz) | [下载](https://github.com/qlwz/CompressHTML-For-Typecho/archive/v.1.0.0.1.zip)
+[cPlayer](https://github.com/journey-ad/cPlayer-Typecho-Plugin) | 网易云解析全能音乐播放器插件 | 1.2.11 | [journey.ad](https://github.com/journey-ad) | [下载](https://github.com/journey-ad/cPlayer-Typecho-Plugin/archive/V1.2.11.zip)
 [DPlayer](https://github.com/MoePlayer/DPlayer-Typecho) | 全能视频播放器插件(支持弹幕) | 1.0.0 | [Volio](https://github.com/volio) | [下载](https://github.com/MoePlayer/DPlayer-Typecho/archive/master.zip)
 [Duoshuo](http://ysido.com/duoshuo.html) | 原多说平台社会化评论同步插件 | 1.1.2 | [Rakiy](https://github.com/rakiy) | [不可用](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/Duoshuo.zip)
 [ExternalTool](https://github.com/phpgao/ExternalTool) | 自动判断文章外链并添加标记插件 | 0.2 | [老高](https://github.com/phpgao) | [下载](https://github.com/phpgao/ExternalTool/archive/master.zip)
 [Geetest](https://github.com/jinfeijie/Geetest) | 新版GeeTest智能评论验证码插件 | 1.0.3 | [mrjin](https://github.com/jinfeijie) | [下载](https://github.com/jinfeijie/Geetest/archive/1.0.3.zip)
+[HideText](https://github.com/journey-ad/HideText-Typecho-Plugin) | 预防转载添加不可见版权信息插件 | 0.1 | [journey.ad](https://github.com/journey-ad) | [下载](https://github.com/journey-ad/HideText-Typecho-Plugin/archive/master.zip)
 [HTMLCompress](https://github.com/kokororin/typecho-plugin-HTMLCompress) | 前台Html代码去可读性压缩插件 | 1.3 | [Kokororin](https://github.com/kokororin) | [下载](https://github.com/kokororin/typecho-plugin-HTMLCompress/archive/master.zip)
+[Huaji](https://github.com/journey-ad/Huaji-Typecho-Plugin) | (娱乐向)滑稽表情动态交互挂件插件 | 0.1 | [journey.ad](https://github.com/journey-ad) | [下载](https://github.com/journey-ad/Huaji-Typecho-Plugin/archive/master.zip)
+[HyperMD](https://github.com/journey-ad/HyperMD-Typecho-Plugin) | Markdown所见即所得编辑器插件 | 0.1 | [journey.ad](https://github.com/journey-ad) | [下载](https://github.com/journey-ad/HyperMD-Typecho-Plugin/archive/master.zip)
+[ImageBox](https://github.com/journey-ad/Image-Box-Typecho-Plugin) | 简易jQuery图片灯箱弹窗特效插件 | 0.1 | [journey.ad](https://github.com/journey-ad) | [下载](https://github.com/journey-ad/Image-Box-Typecho-Plugin/archive/master.zip)
 [Kefu](https://github.com/1628972070/typecho) | Typecho网站右侧浮动客服插件 | 1.0.0 | [双少](https://github.com/1628972070) | [下载](https://github.com/1628972070/typecho/archive/master.zip)
 [MailValidate](https://github.com/Archeb/MailValidate) | 注册用户通过邮件验证权限插件 | 1.0.0 | [Archeb](https://github.com/Archeb) | [下载](https://github.com/Archeb/MailValidate/archive/master.zip)
 [MarkdownParse](https://github.com/mrgeneralgoo/typecho-markdown) | Extra加强版Parsedown解析插件 | 1.0.1 | [mrgeneral](https://github.com/mrgeneralgoo) | [下载](https://github.com/mrgeneralgoo/typecho-markdown/archive/master.zip)
+[MDRuby](https://github.com/journey-ad/MDRuby-Typecho-Plugin) | Markdown解析Ruby注音标签插件 | 0.2 | [journey.ad](https://github.com/journey-ad) | [下载](https://github.com/journey-ad/MDRuby-Typecho-Plugin/archive/master.zip)
 [Parsedown](https://github.com/kokororin/typecho-plugin-Parsedown) | MD解析器替换为Parsedown插件 | 1.0 | [Kokororin](https://github.com/kokororin) | [下载](https://github.com/kokororin/typecho-plugin-Parsedown/archive/master.zip)
 [PlayAtWill](https://github.com/vfhky/PlayAtWill) | 迷你型Flash音乐播放器2合1插件 | 1.0.0 | [vfhky](https://github.com/vfhky) | [下载](https://github.com/vfhky/PlayAtWill/archive/master.zip)
+[Shields](https://github.com/journey-ad/Shields-Typecho-Plugin) | Github项目调用Shields.io按钮插件 | 1.0.0 | [journey.ad](https://github.com/journey-ad) | [下载](https://github.com/journey-ad/Shields-Typecho-Plugin/archive/master.zip)
+[Snow](https://github.com/journey-ad/cPlayer-Typecho-Plugin) | 原生Js多项定制页面下雪特效插件 | 1.0.0 | [journey.ad](https://github.com/journey-ad) | [下载](https://github.com/journey-ad/Snow-Typecho-Plugin/archive/master.zip)
 [Remix](https://github.com/shingchi/Remix) | SoundManager2音乐播放器插件 | 2.1.0 | [ShingChi](https://github.com/shingchi) | [不可用](https://github.com/shingchi/Remix/archive/master.zip)
 [Restful](https://github.com/moefront/typecho-plugin-Restful) | Typecho开放输出与提交API插件 | 1.1.1 | [MoeFront Studio](https://github.com/moefront) | [下载](https://github.com/moefront/typecho-plugin-Restful/archive/master.zip)
 [TableOfContents](https://github.com/phpgao/TableOfContents) | 下拉式文章内容目录自动生成插件 | 0.3 | [老高](https://github.com/phpgao) | [下载](https://github.com/phpgao/TableOfContents/archive/v0.3.zip)
@@ -64,5 +72,6 @@
 [TpCache](https://github.com/phpgao/TpCache) | Memcache/Redis数据库缓存插件 | 0.7 | [老高](https://github.com/phpgao) | [下载](https://github.com/phpgao/TpCache/archive/v0.7.zip)
 [UpdateAssistant](https://github.com/mrgeneralgoo/typecho-update-assistant)  | Typecho自动升级(可选版本)插件 | 1.0.1 | [mrgeneral](https://github.com/mrgeneralgoo) | [下载](https://github.com/mrgeneralgoo/typecho-update-assistant/archive/master.zip)
 [UpyunFile](https://github.com/codesee/UpyunFile)  | Typecho附件使用又拍云存储插件 | 0.8.0 | [codesee](https://github.com/codesee) | [下载](https://github.com/codesee/UpyunFile/archive/UpyunFile.zip)
+[wangEditor](https://github.com/journey-ad/wangEditor-Typecho-Plugin) | 所见即所得编辑器wangEditor插件 | 1.0.1 | [journey.ad](https://github.com/journey-ad) | [下载](https://github.com/journey-ad/wangEditor-Typecho-Plugin/archive/master.zip)
 [WeiboSync](https://github.com/ShangJixin/Typecho-Plugin-WeiboSync) | Typecho更新推送新浪微博插件 | 1.0.1 | [尚寂新](https://github.com/ShangJixin) | [特殊](https://github.com/ShangJixin/Typecho-Plugin-WeiboSync/archive/master.zip)
 [Xiami]() | 虾米云音乐独立页面播放器插件 | 0.0.2 | [Mufeng](https://github.com/iMuFeng) | [不可用](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/Xiami.zip)
