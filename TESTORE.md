@@ -27,7 +27,7 @@
 
  > 下表中的下载链接文字可用于附加图标：`下载`即非社区版，`不可用`显示为:no_entry:，`特殊`为:warning:意思是安装或启用方法特殊。
 
-### 插件信息 (29)
+### 插件信息 (30)
 
 ###### 下表“名称”将用于创建安装文件夹，“版本”用于提示升级，请务必确保文本准确；注意按字母排序，自增上方括号中数字便于统计，简介不要过长。
 ```
@@ -60,6 +60,7 @@
 [Remix](https://github.com/shingchi/Remix) | SoundManager2音乐播放器插件 | 2.1.0 | [ShingChi](https://github.com/shingchi) | [不可用](https://github.com/shingchi/Remix/archive/master.zip)
 [Restful](https://github.com/moefront/typecho-plugin-Restful) | Typecho开放输出与提交API插件 | 1.1.1 | [MoeFront Studio](https://github.com/moefront) | [下载](https://github.com/moefront/typecho-plugin-Restful/archive/master.zip)
 [TableOfContents](https://github.com/phpgao/TableOfContents) | 下拉式文章内容目录自动生成插件 | 0.3 | [老高](https://github.com/phpgao) | [下载](https://github.com/phpgao/TableOfContents/archive/v0.3.zip)
+[TopLamuLeimu](https://github.com/SycAlright/Typecho-Top-LamuLeimu) | 二次元拉姆雷姆返回顶部底部插件 | 1.0.2 | [Syc](https://github.com/SycAlright) | [下载](https://github.com/SycAlright/Typecho-Top-LamuLeimu/archive/master.zip)
 [TpCache](https://github.com/phpgao/TpCache) | Memcache/Redis数据库缓存插件 | 0.7 | [老高](https://github.com/phpgao) | [下载](https://github.com/phpgao/TpCache/archive/v0.7.zip)
 [UpdateAssistant](https://github.com/mrgeneralgoo/typecho-update-assistant)  | Typecho自动升级(可选版本)插件 | 1.0.1 | [mrgeneral](https://github.com/mrgeneralgoo) | [下载](https://github.com/mrgeneralgoo/typecho-update-assistant/archive/master.zip)
 [UpyunFile](https://github.com/codesee/UpyunFile)  | Typecho附件使用又拍云存储插件 | 0.8.0 | [codesee](https://github.com/codesee) | [下载](https://github.com/codesee/UpyunFile/archive/UpyunFile.zip)
