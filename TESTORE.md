@@ -27,7 +27,7 @@
 
  > 下表中的下载链接文字可用于附加图标：`下载`即非社区版，`不可用`显示为:no_entry:，`特殊`为:warning:意思是安装或启用方法特殊。
 
-### 插件信息 (45)
+### 插件信息 (46)
 
 ###### 下表“名称”将用于创建安装文件夹，“版本”用于提示升级，请务必确保文本准确；注意按字母排序，自增上方括号中数字便于统计，简介不要过长。
 ```
@@ -64,13 +64,14 @@
 [MDRuby](https://github.com/journey-ad/MDRuby-Typecho-Plugin) | Markdown解析Ruby注音标签插件 | 0.2 | [journey.ad](https://github.com/journey-ad) | [下载](https://github.com/journey-ad/MDRuby-Typecho-Plugin/archive/master.zip)
 [Parsedown](https://github.com/kokororin/typecho-plugin-Parsedown) | MD解析器替换为Parsedown插件 | 1.0 | [Kokororin](https://github.com/kokororin) | [下载](https://github.com/kokororin/typecho-plugin-Parsedown/archive/master.zip)
 [PlayAtWill](https://github.com/vfhky/PlayAtWill) | 迷你型Flash音乐播放器2合1插件 | 1.0.0 | [vfhky](https://github.com/vfhky) | [下载](https://github.com/vfhky/PlayAtWill/archive/master.zip)
+[Remix](https://github.com/shingchi/Remix) | SoundManager2音乐播放器插件 | 2.1.0 | [ShingChi](https://github.com/shingchi) | [不可用](https://github.com/shingchi/Remix/archive/master.zip)
+[Restful](https://github.com/moefront/typecho-plugin-Restful) | Typecho开放输出与提交API插件 | 1.1.1 | [MoeFront Studio](https://github.com/moefront) | [下载](https://github.com/moefront/typecho-plugin-Restful/archive/master.zip)
+[runPHPl](https://github.com/ChinaSiro/typecho_plugins_runPHP) | 自定义字段调用指定PHP文件插件 | 1.0.0 | [ChinaSiro](https://github.com/ChinaSiro) | [下载](https://github.com/ChinaSiro/typecho_plugins_runPHP/archive/master.zip)
 [Shields](https://github.com/journey-ad/Shields-Typecho-Plugin) | Github项目调用Shields.io按钮插件 | 1.0.0 | [journey.ad](https://github.com/journey-ad) | [下载](https://github.com/journey-ad/Shields-Typecho-Plugin/archive/master.zip)
 [SimpleCDN](https://github.com/mierhuo/Typecho-ViewsCounter)  | 文章内容按镜像规则预先替换插件 | 1.0.0 | [Huspy](https://github.com/mierhuo) | [下载](https://github.com/mierhuo/Typecho-SimpleCDN/archive/master.zip)
 [SiteRunningTime](https://github.com/zhusaidong/SiteRunningTime) | 网站底部显示系统运行时长插件 | 1.5.0 | [上官元恒](https://github.com/zhusaidong) | [下载](https://github.com/zhusaidong/SiteRunningTime/releases/download/1.5.0/SiteRunningTime.zip)
 [Snow](https://github.com/journey-ad/cPlayer-Typecho-Plugin) | 原生Js多项定制页面下雪特效插件 | 1.0.0 | [journey.ad](https://github.com/journey-ad) | [下载](https://github.com/journey-ad/Snow-Typecho-Plugin/archive/master.zip)
 [StreakRain](https://github.com/zhusaidong/SiteRunningTime) | (娱乐向)动态线条雨背景效果插件 | 1.1.0 | [上官元恒](https://github.com/zhusaidong) | [下载](https://github.com/zhusaidong/streak-rain-typecho-plugin/archive/master.zip)
-[Remix](https://github.com/shingchi/Remix) | SoundManager2音乐播放器插件 | 2.1.0 | [ShingChi](https://github.com/shingchi) | [不可用](https://github.com/shingchi/Remix/archive/master.zip)
-[Restful](https://github.com/moefront/typecho-plugin-Restful) | Typecho开放输出与提交API插件 | 1.1.1 | [MoeFront Studio](https://github.com/moefront) | [下载](https://github.com/moefront/typecho-plugin-Restful/archive/master.zip)
 [TableOfContents](https://github.com/phpgao/TableOfContents) | 下拉式文章内容目录自动生成插件 | 0.3 | [老高](https://github.com/phpgao) | [下载](https://github.com/phpgao/TableOfContents/archive/v0.3.zip)
 [TopLamuLeimu](https://github.com/SycAlright/Typecho-Top-LamuLeimu) | 二次元拉姆雷姆返回顶部底部插件 | 1.0.2 | [Syc](https://github.com/SycAlright) | [下载](https://github.com/SycAlright/Typecho-Top-LamuLeimu/archive/master.zip)
 [TpCache](https://github.com/phpgao/TpCache) | Memcache/Redis数据库缓存插件 | 0.7 | [老高](https://github.com/phpgao) | [下载](https://github.com/phpgao/TpCache/archive/v0.7.zip)
