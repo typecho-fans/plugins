@@ -27,7 +27,7 @@
 
  > 下表中的下载链接文字可用于附加图标：`下载`即非社区版，`不可用`显示为:no_entry:，`特殊`为:warning:意思是安装或启用方法特殊。
 
-### 插件信息 (70)
+### 插件信息 (71)
 
 ###### 下表“名称”将用于创建安装文件夹，“版本”用于提示升级，请务必确保文本准确；注意按字母排序，自增上方括号中数字便于统计，简介不要过长。
 ```
@@ -98,6 +98,7 @@
 [TpCache](https://github.com/phpgao/TpCache) | Memcache/Redis数据库缓存插件 | 0.7 | [老高](https://github.com/phpgao) | [下载](https://github.com/phpgao/TpCache/archive/v0.7.zip)
 [UpdateAssistant](https://github.com/mrgeneralgoo/typecho-update-assistant)  | Typecho自动升级(可选版本)插件 | 1.0.1 | [mrgeneral](https://github.com/mrgeneralgoo) | [下载](https://github.com/mrgeneralgoo/typecho-update-assistant/archive/master.zip)
 [UpyunFile](https://github.com/codesee/UpyunFile)  | Typecho附件使用又拍云存储插件 | 0.8.0 | [codesee](https://github.com/codesee) | [下载](https://github.com/codesee/UpyunFile/archive/UpyunFile.zip)
+[UserAgent](https://github.com/UniqueOnly/UserAgent)  | 访客浏览器/系统识别与输出插件 | 1.0.0 | [Unique](https://github.com/UniqueOnly) | [下载](https://github.com/UniqueOnly/UserAgent/archive/master.zip)
 [Viewers](https://github.com/tennsinn/Viewers)  | 两种样式显示读者墙头像排行插件 | 0.1.0 | [息E-敛](https://github.com/tennsinn) | [下载](https://github.com/tennsinn/Viewers/archive/master.zip)
 [ViewsCounter](https://github.com/mierhuo/Typecho-ViewsCounter)  | 统计文章浏览次数并显示排行插件 | 1.0.0 | [Huspy](https://github.com/mierhuo) | [下载](https://github.com/mierhuo/Typecho-ViewsCounter/archive/master.zip)
 [wangEditor](https://github.com/journey-ad/wangEditor-Typecho-Plugin) | 所见即所得编辑器wangEditor插件 | 1.0.1 | [journey.ad](https://github.com/journey-ad) | [下载](https://github.com/journey-ad/wangEditor-Typecho-Plugin/archive/master.zip)
