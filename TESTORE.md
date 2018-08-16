@@ -27,7 +27,7 @@
 
  > 下表中的下载链接文字可用于附加图标：`下载`即非社区版，`不可用`显示为:no_entry:，`特殊`为:warning:意思是安装或启用方法特殊。
 
-### 插件信息 (60)
+### 插件信息 (62)
 
 ###### 下表“名称”将用于创建安装文件夹，“版本”用于提示升级，请务必确保文本准确；注意按字母排序，自增上方括号中数字便于统计，简介不要过长。
 ```
@@ -50,6 +50,7 @@
 [ChangyanCallback](https://github.com/mrgeneralgoo/typecho-changyan-callback) | 搜狐畅言社会化评论回推插件 | 1.0.0 | [mrgeneral](https://github.com/mrgeneralgoo) | [下载](https://github.com/mrgeneralgoo/typecho-changyan-callback/archive/master.zip)
 [Comment2Telegram](https://github.com/MoeLoli/Comment2Telegram) | 评论操作推送Telegram通知插件 | 1.1.6 | [Momiji.Jin](https://github.com/MoeLoli) | [下载](https://github.com/MoeLoli/Comment2Telegram/archive/master.zip)
 [Comment2Wechat](https://github.com/YianAndCode/Comment2Wechat) | 新评论回复微信自动通知插件 | 1.1.0 | [Y!an](https://github.com/YianAndCode) | [下载](https://github.com/YianAndCode/Comment2Wechat/archive/v1.1.zip)
+[CommentMailPlus](https://github.com/oott123/CommentMailPlus) | MailGun版评论邮件提醒插件 | 0.0.1 | [oott123](https://github.com/oott123) | [下载](https://github.com/oott123/CommentMailPlus/archive/master.zip)
 [CommentToWechat](https://github.com/lscho/CommentToWechat_for_typecho) | Server酱版评论推送微信插件 | 0.1 | [lscho](https://github.com/lscho) | [下载](https://github.com/lscho/CommentToWechat_for_typecho/archive/master.zip)
 [CompressHTML](https://github.com/qlwz/CompressHTML-For-Typecho) | Gzip/Html压缩/关键词替换插件 | 1.0.0.1 | [情留メ蚊子](https://github.com/qlwz) | [下载](https://github.com/qlwz/CompressHTML-For-Typecho/archive/v.1.0.0.1.zip)
 [cPlayer](https://github.com/journey-ad/cPlayer-Typecho-Plugin) | 网易云解析全能音乐播放器插件 | 1.2.11 | [journey.ad](https://github.com/journey-ad) | [下载](https://github.com/journey-ad/cPlayer-Typecho-Plugin/archive/V1.2.11.zip)
@@ -80,6 +81,7 @@
 [SimpleCDN](https://github.com/mierhuo/Typecho-ViewsCounter)  | 文章内容按镜像规则预先替换插件 | 1.0.0 | [Huspy](https://github.com/mierhuo) | [下载](https://github.com/mierhuo/Typecho-SimpleCDN/archive/master.zip)
 [SiteRunningTime](https://github.com/zhusaidong/SiteRunningTime) | 网站底部显示系统运行时长插件 | 1.5.0 | [上官元恒](https://github.com/zhusaidong) | [下载](https://github.com/zhusaidong/SiteRunningTime/releases/download/1.5.0/SiteRunningTime.zip)
 [Snow](https://github.com/journey-ad/cPlayer-Typecho-Plugin) | 原生Js多项定制页面下雪特效插件 | 1.0.0 | [journey.ad](https://github.com/journey-ad) | [下载](https://github.com/journey-ad/Snow-Typecho-Plugin/archive/master.zip)
+[SpammersGoAway](https://github.com/oott123/SpammersGoAway) | 校验哈希值防止垃圾评论插件 | 0.0.1 | [oott123](https://github.com/oott123) | [下载](https://github.com/oott123/SpammersGoAway/archive/master.zip)
 [StreakRain](https://github.com/zhusaidong/SiteRunningTime) | (娱乐向)动态线条雨背景效果插件 | 1.1.0 | [上官元恒](https://github.com/zhusaidong) | [下载](https://github.com/zhusaidong/streak-rain-typecho-plugin/archive/master.zip)
 [TableOfContents](https://github.com/phpgao/TableOfContents) | 下拉式文章内容目录自动生成插件 | 0.3 | [老高](https://github.com/phpgao) | [下载](https://github.com/phpgao/TableOfContents/archive/v0.3.zip)
 [TeComment](https://github.com/jiangmuzi/TeComment) | 评论强化插件(工具栏/Ajax提交等) | 2.0.0 | [绛木子](https://github.com/jiangmuzi) | [下载](https://github.com/jiangmuzi/TeComment/archive/master.zip)
