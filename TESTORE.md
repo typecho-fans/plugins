@@ -27,7 +27,7 @@
 
  > 下表中的下载链接文字可用于附加图标：`下载`即非社区版，`不可用`显示为:no_entry:，`特殊`为:warning:意思是安装或启用方法特殊。
 
-### 插件信息 (71)
+### 插件信息 (72)
 
 ###### 下表“名称”将用于创建安装文件夹，“版本”用于提示升级，请务必确保文本准确；注意按字母排序，自增上方括号中数字便于统计，简介不要过长。
 ```
@@ -54,6 +54,7 @@
 [CommentToWechat](https://github.com/lscho/CommentToWechat_for_typecho) | Server酱版评论推送微信插件 | 0.1 | [lscho](https://github.com/lscho) | [下载](https://github.com/lscho/CommentToWechat_for_typecho/archive/master.zip)
 [CompressHTML](https://github.com/qlwz/CompressHTML-For-Typecho) | Gzip/Html压缩/关键词替换插件 | 1.0.0.1 | [情留メ蚊子](https://github.com/qlwz) | [下载](https://github.com/qlwz/CompressHTML-For-Typecho/archive/v.1.0.0.1.zip)
 [Collection](https://github.com/tennsinn/Collection)  | Typecho记录管理收藏条目插件 | 1.6.0 | [息E-敛](https://github.com/tennsinn) | [下载](https://github.com/tennsinn/Collection/archive/master.zip)
+[cosUploadV5](https://github.com/laraCai/cosUploadV5)  | 附件使用腾讯云存储V5版插件 | 3.0 | [菜菜子](https://github.com/laraCai) | [下载](https://github.com/laraCai/cosUploadV5/archive/master.zip)
 [cPlayer](https://github.com/journey-ad/cPlayer-Typecho-Plugin) | 网易云解析全能音乐播放器插件 | 1.2.11 | [journey.ad](https://github.com/journey-ad) | [下载](https://github.com/journey-ad/cPlayer-Typecho-Plugin/archive/V1.2.11.zip)
 [CustomCssAndJs](https://github.com/kyuuseiryuu/typecho-plugin-custom-css-js) | 加载自定义头部Css/尾部Js插件 | 1.0 | [KyuuSeiryuu](https://github.com/kyuuseiryuu) | [下载](https://github.com/kyuuseiryuu/typecho-plugin-custom-css-js/archive/master.zip)
 [DPlayer](https://github.com/MoePlayer/DPlayer-Typecho) | 全能视频播放器插件(支持弹幕) | 1.0.0 | [Volio](https://github.com/volio) | [下载](https://github.com/MoePlayer/DPlayer-Typecho/archive/master.zip)
