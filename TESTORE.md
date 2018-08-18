@@ -27,7 +27,7 @@
 
  > 下表中的下载链接文字可用于附加图标：`下载`即非社区版，`不可用`显示为:no_entry:，`特殊`为:warning:意思是安装或启用方法特殊。
 
-### 插件信息 (72)
+### 插件信息 (77)
 
 ###### 下表“名称”将用于创建安装文件夹，“版本”用于提示升级，请务必确保文本准确；注意按字母排序，自增上方括号中数字便于统计，简介不要过长。
 ```
@@ -94,17 +94,22 @@
 [TeThumbnail](https://github.com/jiangmuzi/TeThumbnail) | 为文章自动生成缩略图封面插件 | 1.0.0 | [绛木子](https://github.com/jiangmuzi) | [下载](https://github.com/jiangmuzi/TeThumbnail/archive/master.zip)
 [TeStat](https://github.com/jiangmuzi/TeStat) | 文章浏览/点赞/运行数据统计插件 | 1.1 | [绛木子](https://github.com/jiangmuzi) | [下载](https://github.com/jiangmuzi/TeStat/archive/master.zip)
 [Textends](https://github.com/jiangmuzi/Textends) | 常见模版效果输出用多功能插件 | 1.0.0 | [绛木子](https://github.com/jiangmuzi) | [下载](https://github.com/jiangmuzi/Textends/archive/master.zip)
+[TleMultiFunction](https://github.com/muzishanshi/TleMultiFunction-For-Typecho) | 注册/论坛/百度提交/短网址等插件 | 1.0.12 | [二呆](https://github.com/muzishanshi) | [下载](https://github.com/muzishanshi/TleMultiFunction-For-Typecho/archive/master.zip)
+[TleVoice](https://github.com/muzishanshi/TleVoiceForTypecho) | Typecho百度语音无障碍阅读插件 | 1.0.2 | [二呆](https://github.com/muzishanshi) | [下载](https://github.com/muzishanshi/TleVoiceForTypecho/archive/master.zip)
 [TinyPNG](https://github.com/99kyuu/TinyPNG_for_Typecho) | Tinypng.com云图片优化服务插件 | 0.01 | [玖玖kyuu](https://github.com/99kyuu) | [下载](https://github.com/99kyuu/TinyPNG_for_Typecho/archive/master.zip)
 [TopLamuLeimu](https://github.com/SycAlright/Typecho-Top-LamuLeimu) | 二次元拉姆雷姆返回顶部底部插件 | 1.0.2 | [Syc](https://github.com/SycAlright) | [下载](https://github.com/SycAlright/Typecho-Top-LamuLeimu/archive/master.zip)
 [TpCache](https://github.com/phpgao/TpCache) | Memcache/Redis数据库缓存插件 | 0.7 | [老高](https://github.com/phpgao) | [下载](https://github.com/phpgao/TpCache/archive/v0.7.zip)
 [UpdateAssistant](https://github.com/mrgeneralgoo/typecho-update-assistant)  | Typecho自动升级(可选版本)插件 | 1.0.1 | [mrgeneral](https://github.com/mrgeneralgoo) | [下载](https://github.com/mrgeneralgoo/typecho-update-assistant/archive/master.zip)
 [UpyunFile](https://github.com/codesee/UpyunFile)  | Typecho附件使用又拍云存储插件 | 0.8.0 | [codesee](https://github.com/codesee) | [下载](https://github.com/codesee/UpyunFile/archive/UpyunFile.zip)
 [UserAgent](https://github.com/UniqueOnly/UserAgent)  | 访客浏览器/系统识别与输出插件 | 1.0.0 | [Unique](https://github.com/UniqueOnly) | [下载](https://github.com/UniqueOnly/UserAgent/archive/master.zip)
+[UserRegByPhone](https://github.com/muzishanshi/UserRegByPhone) | 阿里云短信验证手机用户注册插件 | 1.0.1 | [二呆](https://github.com/muzishanshi) | [下载](https://github.com/muzishanshi/UserRegByPhone/archive/master.zip)
 [Viewers](https://github.com/tennsinn/Viewers)  | 两种样式显示读者墙头像排行插件 | 0.1.0 | [息E-敛](https://github.com/tennsinn) | [下载](https://github.com/tennsinn/Viewers/archive/master.zip)
 [ViewsCounter](https://github.com/mierhuo/Typecho-ViewsCounter)  | 统计文章浏览次数并显示排行插件 | 1.0.0 | [Huspy](https://github.com/mierhuo) | [下载](https://github.com/mierhuo/Typecho-ViewsCounter/archive/master.zip)
 [wangEditor](https://github.com/journey-ad/wangEditor-Typecho-Plugin) | 所见即所得编辑器wangEditor插件 | 1.0.1 | [journey.ad](https://github.com/journey-ad) | [下载](https://github.com/journey-ad/wangEditor-Typecho-Plugin/archive/master.zip)
 [waterMark](https://github.com/internelp/waterMark) | 图片自动添加Gif/Png格式水印插件 | 1.0.0 | [应用侠](https://github.com/internelp) | [下载](https://github.com/internelp/waterMark/archive/master.zip)
 [WebTotal](https://github.com/ss7247/Typecon__WebTotal) | 自增统计/输出网站浏览次数插件 | 1.0.0 | [astar](https://github.com/ss7247) | [下载](https://github.com/ss7247/Typecon__WebTotal/archive/master.zip)
+[WeiboFile](https://github.com/muzishanshi/WeiboFile) | 集成微博图床/优酷视频上传插件 | 1.0.6 | [二呆](https://github.com/muzishanshi) | [下载](https://github.com/muzishanshi/WeiboFile/archive/master.zip)
 [WeiboSync](https://github.com/ShangJixin/Typecho-Plugin-WeiboSync) | Typecho更新推送新浪微博插件 | 1.0.1 | [尚寂新](https://github.com/ShangJixin) | [特殊](https://github.com/ShangJixin/Typecho-Plugin-WeiboSync/archive/master.zip)
+[WeMedia](https://github.com/muzishanshi/WeMediaForTypecho) | Typecho积分商城付费阅读插件 | 1.0.2 | [二呆](https://github.com/muzishanshi) | [下载](https://github.com/muzishanshi/WeMediaForTypecho/archive/master.zip)
 [Xiami]() | 虾米云音乐独立页面播放器插件 | 0.0.2 | [Mufeng](https://github.com/iMuFeng) | [不可用](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/Xiami.zip)
 [Youtube](https://github.com/ayangyuan/Youtube-Typecho-Plugin) | 嵌入Youtube/Vimeo视频插件 | 1.0 | [Y.Y](https://github.com/ayangyuan) | [下载](https://github.com/ayangyuan/Youtube-Typecho-Plugin/archive/master.zip)
