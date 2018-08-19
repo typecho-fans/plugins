@@ -3,7 +3,7 @@
  * 文章评分
  *
  * @package PostRating
- * @author willin kan,wuwovr
+ * @author wuwovr, Willin Kan
  * @version 1.1.0
  * @update: 2016.12.10
  * @link http://wuwovr.com
