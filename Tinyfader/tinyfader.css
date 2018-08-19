@@ -1,0 +1,19 @@
+#slidebox{overflow:hidden; background:#000; margin:0;}
+#slidebox a, #slidebox a:hover{text-decoration:none; border:none;}
+#slidebox ul, #slidebox li{list-style:none; margin:0; padding:0;}
+
+#slides{float:left;}
+
+.sliderbutton_left, .sliderbutton_right{cursor:pointer; float:left; width:70px; height:70px; position:relative; z-index:999;}
+.sliderbutton_left:hover{background:url(images/left.png) no-repeat;}
+.sliderbutton_right:hover{background:url(images/right.png) no-repeat;}
+
+#typecho_intro{background:url(images/intro.jpg) no-repeat #a4b7bb;}
+.guide{width:227px; height:36px; display:block; background:url(images/tour-btn.gif) no-repeat; position:relative; left:20px; top:174px;}
+.guide_txt{width:300px; position:relative; left:257px; top:144px; font-size:14px; font-weight:bold; color:#fefefe;}
+
+#img_nav{float:right; background:#000;}
+#img_nav li{opacity:.5; *filter:alpha(opacity=50); float:left; cursor:pointer; width:100%; overflow:hidden; border:1px solid #222; color:#777; background:#000; font:15px/27px Arial;}
+#img_nav li:hover{opacity:1; *filter:alpha(opacity=100); background:#222; color:#ccc;}
+#img_nav li.slidecurrent{opacity:1; *filter:alpha(opacity=100); background:#555; color:#fff; border:1px solid #aaa;}
+#img_nav li img{vertical-align:middle; margin-right:16px;}
