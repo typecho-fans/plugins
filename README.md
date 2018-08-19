@@ -29,7 +29,7 @@
 
  > 下表中的下载链接文字可用于对TeStore列表附加图标：`Download`即社区版，`N/A`为不可用，`Special`为安装用法特殊。
 
-### 作品索引 (90)
+### 作品索引 (94)
 
 ###### 插件仓库将使用下表“名称”创建安装文件夹，“版本”提示升级，请务必确保文本准确；注意排序与目录列表相同，自增上方插件数，简介不要过长。
 ```
@@ -39,6 +39,7 @@
 名称 | 简介 | 版本 | 作者 | zip包
 ---- | :----: | :---: | ----: | :----:
 [AMP](AMP) | 移动端AMP/MIP页面生成插件 | 0.6.7 | [Holmesian](https://github.com/holmesian) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/AMP.zip)
+[AntiSpam](AntiSpam) | 垃圾评论机器人陷阱“小墙”插件 | 1.0.3 | Willin Kan | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/AntiSpam.zip)
 [AjaxComments](AjaxComments) | 嵌套式评论Ajax异步提交插件 | 1.2.0 | [Byends](https://github.com/visamz), Willin Kan | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/AjaxComments.zip)
 [AllowIp](AllowIp) | Typecho后台访问IP白名单插件 | 1.0.1 | [Fuzqing](https://github.com/fuzqing) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/AllowIp.zip)
 [Announcement](Announcement) | 仿Emlog双款悬浮式公告栏插件 | 1.0.0 | [skylzl](https://github.com/xiaogouxo) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/Announcement.zip)
@@ -94,6 +95,7 @@
 [Passport](Passport) | 注册用户密码邮件找回功能插件 | 1.0.0 | [ShingChi](https://github.com/shingchi) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/Passport.zip)
 [PasteImage](PasteImage) | 默认编辑器粘贴剪切板图片上传插件 | 1.0.0 | [qing](https://github.com/zgq354/PasteImage) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/PasteImage.zip)
 [PostsCategoryChange](PostsCategoryChange) | Typecho文章批量改分类/状态插件 | 0.0.4 | [Fuzqing](https://github.com/fuzqing) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/PostsCategoryChange.zip)
+[PostRating](PostRating) | Typecho文章评分管理系统插件 | 1.1.0 | [wuwovr](https://github.com/hitop), Willin Kan | [Download]()
 [Prism](Prism) | Prism轻量代码高亮效果渲染插件 | 1.0.2 | [冰剑](https://github.com/binjoo) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/Prism.zip)
 [QNUpload](QNUpload) | 经典版(php5.2-5.6)七牛附件插件 | 1.3.1 | [rakiy](https://github.com/rakiy) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/QNUpload.zip)
 [QiniuFile](QiniuFile) | 新七牛附件插件(自定路径+截图) | 1.3.2 | [冰剑](https://github.com/binjoo), [abelyao](https://github.com/abelyao) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/QiniuFile.zip)
@@ -114,12 +116,14 @@
 [TeKit](TeKit) | 常用侧边栏文章/评论数据输出插件 | 2.0.0 | [冰剑](https://github.com/binjoo) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/TeKit.zip)
 [TeStore](TeStore) | 新Github表格解析版插件仓库插件 | 1.0.0 | [羽中](https://github.com/jzwalk), [zhulin3141](https://github.com/zhulin3141) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/TeStore.zip)
 [ThemeDemo](ThemeDemo) | 根据链接参数直接预览主题外观插件 | 1.0.1 | [doudou](https://github.com/doudoutime) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/ThemeDemo.zip)
+[Tinyfader](Tinyfader) | Typecho简易首页图片轮播插件 | 1.0.0 | Willin Kan | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/Tinyfader.zip)
 [Typembed](Typembed) | 常见视频站链接自动转播放器插件 | 1.3.0 | [Fengzi](https://github.com/nothingisover) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/Typembed.zip)
 [Ueditor](Ueditor) | 百度贴吧可视化编辑器Ueditor插件 | 1.0.0 | [zhulin3141](https://github.com/zhulin3141) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/Ueditor.zip)
 [Ugauka](Ukagaka) | (娱乐向)二次元伪春菜萌物精灵插件 | 1.0.0 | [Kunr](https://github.com/Rakume) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/Ukagaka.zip)
 [Update](Update) | Typecho一键升级实时开发版插件 | 0.0.3 | [公子](https://github.com/lizheming) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/Update.zip)
 [UploadPlugin](UploadPlugin) | 上传zip包安装删除插件/主题插件 | 1.1.3 | [DEFE](https://github.com/defeme) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/UploadPlugin.zip)
 [UserSign](UserSign) | 用户个性签名文字设置与输出插件 | 0.0.1 | [hmoe](https://github.com/hmoe) | [Special](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/UserSign.zip)
+[Views](Views) | Typecho文章浏览次数排行插件 | 1.0.1 | Willin Kan | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/Views.zip)
 [Watermark](Watermark) | 文章内图片自动添加水印效果插件 | 1.2.0 | [DEFE](https://github.com/defeme) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/Watermark.zip)
 [WeChatHelper](WeChatHelper) | 微信公众号平台功能菜单集成插件 | 2.2.1 | [冰剑](https://github.com/binjoo) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/WeChatHelper.zip)
 [WeChatShare](WeChatShare) | 自定义文章微信/QQ分享链接插件 | 1.0.5 | [Fuzqing](https://github.com/fuzqing) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/WeChatShare.zip)
