@@ -48,6 +48,11 @@ author.html内变量与approved.html内变量一致。
 
 ## 更新日志
 
+### 2018.8.19
+
+> 1. 新增Debug模式
+> 2. 修复PHPMailer发信时的小错误
+
 ### 2018.8.14
 
 > 1. 增加SMTP邮件发送方式

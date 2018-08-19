@@ -1,10 +1,10 @@
 <?php
 /**
- * SendCloud评论邮件通知插件 for Typecho
+ * Typecho 评论SMTP、SendCloud、阿里云邮件通知插件
  *
  * @package LoveKKComment
  * @author  康粑粑
- * @version 1.0.3
+ * @version 1.0.4
  * @link    https://www.lovekk.org
  */
 
@@ -12,7 +12,7 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 // 时间区域
 date_default_timezone_set('Asia/Shanghai');
 // 当前版本号
-define('VERSION', '1.0.3');
+define('VERSION', '1.0.4');
 
 class LoveKKComment_Plugin implements Typecho_Plugin_Interface
 {
@@ -117,6 +117,9 @@ class LoveKKComment_Plugin implements Typecho_Plugin_Interface
         // 区块标题
         $public_section->html('<h2>公共信息配置</h2>');
         $form->addItem($public_section);
+        // Debug
+        $public_debug = new Typecho_Widget_Helper_Form_Element_Checkbox('public_debug', array('enable' => _t('启用Debug')), array('enable'), _t('是否启用Debug模式'), _t('启用后将在插件目录下生成一个debug.txt文件，若出现错误请将此文件发送作者解决'));
+        $form->addInput($public_debug);
         // 接口选择
         $public_interface = new Typecho_Widget_Helper_Form_Element_Radio('public_interface', array('smtp' => _t('SMTP'), 'sendcloud' => _t('Send Cloud'), 'aliyun' => _t('阿里云推送')), NULL, _t('发信接口'));
         // 添加验证器并加入表单
@@ -449,9 +452,10 @@ class LoveKKComment_Plugin implements Typecho_Plugin_Interface
      * @static
      * @access private
      *
-     * @param $param
+     * @param array $param 请求参数
      *
      * @return mixed
+     * @throws Typecho_Plugin_Exception
      */
     static private function sendCloud($param)
     {
@@ -471,6 +475,19 @@ class LoveKKComment_Plugin implements Typecho_Plugin_Interface
         $result = curl_exec($ch);
         // 关闭请求
         curl_close($ch);
+        // 获取插件配置
+        $plugin = Helper::options()->plugin('LoveKKComment');
+        // 如果开启了Debug
+        if (in_array('enable', $plugin->public_debug)) {
+            // 记录时间
+            $log = '[Send Cloud] ' . date('Y-m-d H:i:s') . ': ' . PHP_EOL;
+            // 记录返回值
+            $log .= serialize($result) . PHP_EOL;
+            // 输出分隔
+            $log .= '-------------------------------------------' . PHP_EOL . PHP_EOL . PHP_EOL;
+            // 写入文件
+            file_put_contents(__DIR__ . '/debug.txt', $log, FILE_APPEND);
+        }
         // 返回结果
         return $result;
     }
@@ -484,6 +501,7 @@ class LoveKKComment_Plugin implements Typecho_Plugin_Interface
      * @param $param
      *
      * @return mixed
+     * @throws Typecho_Plugin_Exception
      */
     static private function aliyun($param)
     {
@@ -525,6 +543,19 @@ class LoveKKComment_Plugin implements Typecho_Plugin_Interface
         $result = curl_exec($ch);
         // 关闭请求
         curl_close($ch);
+        // 获取插件配置
+        $plugin = Helper::options()->plugin('LoveKKComment');
+        // 如果开启了Debug
+        if (in_array('enable', $plugin->public_debug)) {
+            // 记录时间
+            $log = '[Aliyun] ' . date('Y-m-d H:i:s') . ': ' . PHP_EOL;
+            // 记录返回值
+            $log .= serialize($result) . PHP_EOL;
+            // 输出分隔
+            $log .= '-------------------------------------------' . PHP_EOL . PHP_EOL . PHP_EOL;
+            // 写入文件
+            file_put_contents(__DIR__ . '/debug.txt', $log, FILE_APPEND);
+        }
         // 返回结果
         return $result;
     }
@@ -535,9 +566,10 @@ class LoveKKComment_Plugin implements Typecho_Plugin_Interface
      * @static
      * @access private
      *
-     * @param array $param 请求参数
+     * @param $param
      *
      * @return bool
+     * @throws Typecho_Plugin_Exception
      * @throws \PHPMailer\PHPMailer\Exception
      */
     static private function smtp($param)
@@ -549,6 +581,10 @@ class LoveKKComment_Plugin implements Typecho_Plugin_Interface
         // 载入SMTP
         if (!class_exists('PHPMailer\PHPMailer\SMTP')) {
             require dirname(__FILE__) . '/lib/SMTP.php';
+        }
+        // 载入Exception
+        if (!class_exists('PHPMaile\PHPMailer\Exception')) {
+            require dirname(__FILE__) . '/lib/Exception.php';
         }
         // 初始化PHPMailer
         $mail = new PHPMailer\PHPMailer\PHPMailer(FALSE);
@@ -582,12 +618,28 @@ class LoveKKComment_Plugin implements Typecho_Plugin_Interface
         $mail->addAddress($param['to']);
         // HTML格式
         $mail->isHTML(TRUE);
+        $mail->SMTPDebug = 4;
         // 邮件标题
         $mail->Subject = $param['subject'];
         // 邮件内容
         $mail->msgHTML($param['html']);
+        // 获取插件配置
+        $plugin = Helper::options()->plugin('LoveKKComment');
         // 发送邮件
-        return $mail->send();
+        $result = $mail->send();
+        // 如果开启了Debug
+        if (in_array('enable', $plugin->public_debug)) {
+            // 记录时间
+            $log = '[SMTP] ' . date('Y-m-d H:i:s') . ': ' . PHP_EOL;
+            // 记录返回值及PHPMailer错误
+            $log .= serialize($result) . '; PHPMailer error: ' . $mail->ErrorInfo . PHP_EOL;
+            // 输出分隔
+            $log .= '-------------------------------------------' . PHP_EOL . PHP_EOL . PHP_EOL;
+            // 写入文件
+            file_put_contents(__DIR__ . '/debug.txt', $log, FILE_APPEND);
+        }
+        // 结果
+        return $result;
     }
 
     /**
