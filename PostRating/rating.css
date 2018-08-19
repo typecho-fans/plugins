@@ -1,0 +1,29 @@
+.postrating, .r_clear {
+	text-align: center;
+	clear:both;
+	margin-top:10px;
+}
+.postrating div {
+    display: inline-block;
+    vertical-align: top;
+}
+.r_label, .need_login, .r_bg {float:left;}
+.r_score, .r_img, .no_rating, .r_info {position:relative;}
+.r_label, .need_login {
+	font-size:15px;
+	font-weight:bold;
+	margin:0;
+}
+.r_score {
+	top: 3px;
+	overflow:hidden;
+	margin:0 5px;
+}
+.r_img img {
+	margin:0;
+	display: inline-block;
+}
+.r_info b {
+	font-size:15px;
+	color:#f55
+}
