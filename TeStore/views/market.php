@@ -95,7 +95,7 @@ if( $this->request->is('action=loadinfos') ){
                                 <?php $sites = explode(', ', trim($plugin->site)); ?>
                                 <td>
                                 <?php foreach( $authors as $key => $val): ?>
-                                <?php if( isset($sites[$key]) ): ?><a href="<?php echo $sites[$key]; ?>" target="_blank"><?php endif; ?><?php echo $val; ?><?php if( isset($sites[$key]) ): ?></a><?php endif; ?><?php if( $val!==end($authors) ): ?>, <?php endif; ?>
+                                <?php if( !empty($sites[$key]) ): ?><a href="<?php echo $sites[$key]; ?>" target="_blank"><?php endif; ?><?php echo $val; ?><?php if( isset($sites[$key]) ): ?></a><?php endif; ?><?php if( $val!==end($authors) ): ?>, <?php endif; ?>
                                 <?php endforeach; ?>
                                 </td>
                                 <td>
@@ -105,7 +105,7 @@ if( $this->request->is('action=loadinfos') ){
                                     <?php else: ?>                                        
                                         <span class="install"><?php _e('安装');?></span>
                                         <span class="uninstall" style="display: none;"><?php _e('卸载');?></span>
-                                    <?php endif; ?>                                 
+                                    <?php endif; ?>
                                 </td>
                             </tr>
                             <?php endforeach; ?>
