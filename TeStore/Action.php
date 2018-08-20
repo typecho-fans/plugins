@@ -11,6 +11,9 @@ class TeStore_Action extends Typecho_Widget {
     //缓存时间(h)
     private $cacheTime;
 
+    //使用Curl
+    private $useCurl;
+
     private $cacheDir;
 
     private $pluginRoot;
@@ -26,6 +29,7 @@ class TeStore_Action extends Typecho_Widget {
         $this->source = array_filter(preg_split("/(\r|\n|\r\n)/", strip_tags($pluginOpts->source)));
         $this->security = Helper::security();
         $this->cacheTime = $pluginOpts->cache_time;
+        $this->useCurl = $pluginOpts->curl;
         $this->pluginRoot = __TYPECHO_ROOT_DIR__ . __TYPECHO_PLUGIN_DIR__;
         $this->cacheDir = $this->pluginRoot . '/TeStore/data/';
 
@@ -88,19 +92,20 @@ class TeStore_Action extends Typecho_Widget {
         $json = $this->cacheDir . 'list.json';
         //读取缓存文件
         if( $this->cacheTime && is_file($json) && (time() - filemtime($json)) <= $this->cacheTime * 3600 ){
-            $data = file_get_contents($this->cacheDir . 'list.json');
+            $data = file_get_contents($json);
             $this->pluginInfo = json_decode($data);
         }else{
-            $html = '<?xml encoding="utf-8" ?>';
+            $html = '';
             foreach( $this->source as $page ){
                 $page = trim($page);
                 if( $page ){
-                    $html .= @file_get_contents($page);
+                    $html .= $this->useCurl ? $this->curlGet($page) : @file_get_contents($page);
                 }
             }
             //解析表格内容
-            if( $html !== '<?xml encoding="utf-8" ?>' ){
-                $dom = new DOMDocument();
+            if( $html !== '' ){
+                $dom = new DOMDocument('1.0', 'UTF-8');
+                $html = function_exists('mb_convert_encoding') ? mb_convert_encoding($html, 'HTML-ENTITIES', 'UTF-8') : $html;
                 @$dom->loadHTML($html);
                 $tr = $dom->getElementsByTagName("tr");
                 $texts = array();
@@ -119,7 +124,7 @@ class TeStore_Action extends Typecho_Widget {
                         foreach( $td as $tdKey => $val ){
                             if( $tdKey!==1 && $tdKey!==2 ) {
                                 $a = $td->item($tdKey)->getElementsByTagName("a");
-                                $href = $a->item(0)->getAttribute("href");
+                                $href = $a->item(0) ? $a->item(0)->getAttribute("href") : '';
                                 //处理多作者链接
                                 if( $tdKey==3 ){
                                     $href = '';
@@ -139,7 +144,7 @@ class TeStore_Action extends Typecho_Widget {
                 $names = array();
                 foreach( $texts as $key => $val ){
                     $keys = array('pluginName', 'desc', 'version', 'author', 'source', 'pluginUrl', 'site', 'zipFile');
-                    $names[] = isset($val[0]) ? $val[0] : $val[1]; //fix for php 7.0+
+                    $names[] = isset($val[0]) ? $val[0] : $val[1]; //fix for PHP 7.0+
                     $datas[] = (object)array_combine($keys, array_merge($val, $urls[$key]));
                 }
                 array_multisort($names, SORT_ASC, $datas);
@@ -210,7 +215,7 @@ class TeStore_Action extends Typecho_Widget {
                 $tempdir = $this->pluginRoot . '/TeStore/.tmp';
                 $tempFile = $tempdir. '/' . $plugin . '.zip';
                 if( ! is_dir($tempdir) ) @mkdir($tempdir);
-                $zipFile = @file_get_contents($pluginInfo->zipFile);
+                $zipFile = $this->useCurl ? $this->curlGet($pluginInfo->zipFile) : @file_get_contents($pluginInfo->zipFile);
                 if( ! file_put_contents( $tempFile, $zipFile ) ){
                     $ret['error'] = _t('下载zip包出错');
                 }else{
@@ -321,9 +326,30 @@ class TeStore_Action extends Typecho_Widget {
     private function delTree($dir, $tmp=false) {
         $files = array_diff(scandir($dir), array('.','..'));
         foreach ($files as $file) { 
-            is_dir("$dir/$file") ? $this->delTree("$dir/$file") : unlink("$dir/$file"); 
+            is_dir("$dir/$file") ? $this->delTree("$dir/$file") : unlink("$dir/$file");
         }
         if($tmp) return;
-        return rmdir($dir); 
+        return rmdir($dir);
     }
+
+    /**
+     * 使用Curl方法下载
+     *
+     * @access private
+     * @return string
+     */
+    private function curlGet($url) {
+        $curl = curl_init();
+        curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($curl, CURLOPT_HEADER, 0);
+        curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, 1);
+        curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, 2);
+        curl_setopt($curl, CURLOPT_CAINFO,'usr/plugins/TeStore/cacert.pem');
+        curl_setopt($curl, CURLOPT_URL, $url);
+        $result = curl_exec($curl);
+        curl_close($curl);
+
+        return $result;
+    }
+
 }

@@ -95,6 +95,17 @@ class TeStore_Plugin implements Typecho_Plugin_Interface
         );
         $form->addInput($cache);
 
+        $curl = new Typecho_Widget_Helper_Form_Element_Checkbox(
+            'curl',
+            array(
+                1 => '是'
+            ),
+            0,
+            _t('使用curl下载'),
+            '默认file_get_contents方式无效时可尝试'
+        );
+        $form->addInput($curl);
+
         $showNavMenu = new Typecho_Widget_Helper_Form_Element_Radio(
             'showNavMenu' ,
             array(
@@ -105,6 +116,19 @@ class TeStore_Plugin implements Typecho_Plugin_Interface
             _t('显示导航条按钮')
         );
         $form->addInput($showNavMenu);
+    }
+    
+    /**
+     * 检查curl支持
+     *
+     * @param array $settings
+     * @return string
+     */
+    public static function configCheck(array $settings)
+    {
+        if ( $settings['curl'] && !extension_loaded('curl') ) {
+            return _t('主机没有安装curl扩展');
+        }
     }
     
     /**
