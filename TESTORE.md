@@ -27,7 +27,7 @@
 
  > 下表中的下载链接文字可用于附加图标：`下载`即非社区版，`不可用`显示为:no_entry:，`特殊`为:warning:意思是安装或启用方法特殊。
 
-### 插件信息 (84)
+### 插件信息 (90)
 
 ###### 下表“名称”将用于创建安装文件夹，“版本”用于提示升级，请务必确保文本准确；注意按字母排序，自增上方括号中数字便于统计，简介不要过长。
 ```
@@ -41,22 +41,27 @@
 [AjaxComment](https://github.com/qlwz/AjaxComment-For-Typecho) | 原生Js评论Ajax异步提交插件 | 1.0.0.2 | [情留メ蚊子](https://github.com/qlwz) | [下载](https://github.com/qlwz/AjaxComment-For-Typecho/archive/master.zip)
 [Album](https://github.com/plsYou/Album) | Typecho模版型相册系统插件 | 1.2 | [我本奈何](https://github.com/plsYou) | [下载](https://github.com/plsYou/Album/archive/master.zip)
 [ArticleImg](https://github.com/istobran/Typecho-Plugin-ArticleImg) | 自建字段提取文章封面图插件 | 1.0.0 | [BangZ](https://github.com/istobran) | [下载](https://github.com/istobran/Typecho-Plugin-ArticleImg/archive/master.zip)
-[Meting](https://github.com/MoePlayer/APlayer-Typecho) | 五大云音乐平台解析播放器插件 | 2.1.2 | [METO](https://github.com/metowolf) | [下载](https://github.com/MoePlayer/APlayer-Typecho/archive/v2.1.2.zip)
+[Akismet](https://github.com/typecho/plugins/tree/master/Akismet) | 反垃圾评论服务Akismet插件 | 1.1.4 | [qining](https://github.com/joyqi) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/Akismet.zip)
+[AliUpload](https://github.com/typecho/plugins/tree/master/AliUpload) | 经典版阿里云储存上传插件 | 1.0.0 Beta | [loftor](https://github.com/loftor-git) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/AliUpload.zip)
 [AutoBaiduSubmit](https://github.com/jinfeijie/AutoBaiduSubmit) | 访问页面自动提交百度链接插件 | 1.0.2 | [JinFeiJie](https://github.com/jinfeijie) | [下载](https://github.com/jinfeijie/AutoBaiduSubmit/archive/1.0.2.zip)
+[B3logForHacPai](https://github.com/typecho/plugins/tree/master/B3logForHacPai) | 黑客派社区API实时同步推送插件 | 1.0.0 | [DT27](https://github.com/DT27) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/B3logForHacPai.zip)
 [BaeUpload]() | 百度云应用引擎BAE附件上传插件 | 1.0.1 | [doudou](https://github.com/doudoutime) | [不可用](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/BaeUpload.zip)
 [BaiduSubmit](https://github.com/phpgao/BaiduSubmit) | 推送Sitemap文章链接到百度插件 | 0.5.2 | [老高](https://github.com/phpgao) | [下载](https://github.com/phpgao/BaiduSubmit/archive/master.zip)
+[BlockComment](https://github.com/typecho/plugins/tree/master/BlockComment) | Typecho评论来路IP黑名单插件 | 0.0.1 | [明城](https://github.com/feelinglucky) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/BlockComment.zip)
 [BlockIP](https://github.com/kokororin/typecho-plugin-BlockIP) | Typecho访问前台IP黑名单插件 | 1.0 | [Kokororin](https://github.com/kokororin) | [下载](https://github.com/kokororin/typecho-plugin-BlockIP/archive/master.zip)
 [Calendar](https://github.com/istobran/typecho-calender-plugin) | Typecho侧边栏显示日历插件 | 1.0.0 | [BangZ](https://github.com/istobran) | [下载](https://github.com/istobran/typecho-calender-plugin/archive/master.zip)
 [ChangyanCallback](https://github.com/mrgeneralgoo/typecho-changyan-callback) | 搜狐畅言社会化评论回推插件 | 1.0.0 | [mrgeneral](https://github.com/mrgeneralgoo) | [下载](https://github.com/mrgeneralgoo/typecho-changyan-callback/archive/master.zip)
 [CodeHighlighter](https://github.com/Copterfly/CodeHighlighter-for-Typecho) | Prism代码高亮插件(支持工具条) | 1.0.0 | [Copterfly](https://github.com/Copterfly) | [下载](https://github.com/Copterfly/CodeHighlighter-for-Typecho/archive/master.zip)
+[Collection](https://github.com/tennsinn/Collection)  | Typecho记录管理收藏条目插件 | 1.6.0 | [息E-敛](https://github.com/tennsinn) | [下载](https://github.com/tennsinn/Collection/archive/master.zip)
 [Comment2Telegram](https://github.com/MoeLoli/Comment2Telegram) | 评论操作推送Telegram通知插件 | 1.1.6 | [Momiji.Jin](https://github.com/MoeLoli) | [下载](https://github.com/MoeLoli/Comment2Telegram/archive/master.zip)
 [Comment2Wechat](https://github.com/YianAndCode/Comment2Wechat) | 新评论回复微信自动通知插件 | 1.1.0 | [Y!an](https://github.com/YianAndCode) | [下载](https://github.com/YianAndCode/Comment2Wechat/archive/v1.1.zip)
 [CommentMailPlus](https://github.com/oott123/CommentMailPlus) | MailGun版评论邮件提醒插件 | 0.0.1 | [oott123](https://github.com/oott123) | [下载](https://github.com/oott123/CommentMailPlus/archive/master.zip)
 [CommentToWechat](https://github.com/lscho/CommentToWechat_for_typecho) | Server酱版评论推送微信插件 | 0.1 | [lscho](https://github.com/lscho) | [下载](https://github.com/lscho/CommentToWechat_for_typecho/archive/master.zip)
 [CompressHTML](https://github.com/qlwz/CompressHTML-For-Typecho) | Gzip/Html压缩/关键词替换插件 | 1.0.0.1 | [情留メ蚊子](https://github.com/qlwz) | [下载](https://github.com/qlwz/CompressHTML-For-Typecho/archive/v.1.0.0.1.zip)
-[Collection](https://github.com/tennsinn/Collection)  | Typecho记录管理收藏条目插件 | 1.6.0 | [息E-敛](https://github.com/tennsinn) | [下载](https://github.com/tennsinn/Collection/archive/master.zip)
+[ConnectToTwitter](https://github.com/typecho/plugins/tree/master/ConnectToTwitter) | 同步推送评论信息到twitter插件 | 1.0.0 Beta | [blankyao](https://github.com/blankyao) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/ConnectToTwitter.zip)
 [cosUploadV5](https://github.com/laraCai/cosUploadV5)  | 附件使用腾讯云存储V5版插件 | 3.0 | [菜菜子](https://github.com/laraCai) | [下载](https://github.com/laraCai/cosUploadV5/archive/master.zip)
 [cPlayer](https://github.com/journey-ad/cPlayer-Typecho-Plugin) | 网易云解析全能音乐播放器插件 | 1.2.11 | [journey.ad](https://github.com/journey-ad) | [下载](https://github.com/journey-ad/cPlayer-Typecho-Plugin/archive/V1.2.11.zip)
+[Creole](https://github.com/typecho/plugins/tree/master/Creole) | Wiki风格Creole语法解析器插件 | 0.2 | [明城](https://github.com/feelinglucky) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/Creole.zip)
 [CustomCssAndJs](https://github.com/kyuuseiryuu/typecho-plugin-custom-css-js) | 加载自定义头部Css/尾部Js插件 | 1.0 | [KyuuSeiryuu](https://github.com/kyuuseiryuu) | [下载](https://github.com/kyuuseiryuu/typecho-plugin-custom-css-js/archive/master.zip)
 [DPlayer](https://github.com/MoePlayer/DPlayer-Typecho) | 全能视频播放器插件(支持弹幕) | 1.0.0 | [Volio](https://github.com/volio) | [下载](https://github.com/MoePlayer/DPlayer-Typecho/archive/master.zip)
 [Duoshuo](http://ysido.com/duoshuo.html) | 原多说平台社会化评论同步插件 | 1.1.2 | [Rakiy](https://github.com/rakiy) | [不可用](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/Duoshuo.zip)
@@ -75,6 +80,7 @@
 [MailValidate](https://github.com/Archeb/MailValidate) | 注册用户通过邮件验证权限插件 | 1.0.0 | [Archeb](https://github.com/Archeb) | [下载](https://github.com/Archeb/MailValidate/archive/master.zip)
 [MarkdownParse](https://github.com/mrgeneralgoo/typecho-markdown) | Extra加强版Parsedown解析插件 | 1.0.1 | [mrgeneral](https://github.com/mrgeneralgoo) | [下载](https://github.com/mrgeneralgoo/typecho-markdown/archive/master.zip)
 [MDRuby](https://github.com/journey-ad/MDRuby-Typecho-Plugin) | Markdown解析Ruby注音标签插件 | 0.2 | [journey.ad](https://github.com/journey-ad) | [下载](https://github.com/journey-ad/MDRuby-Typecho-Plugin/archive/master.zip)
+[Meting](https://github.com/MoePlayer/APlayer-Typecho) | 五大云音乐平台解析播放器插件 | 2.1.2 | [METO](https://github.com/metowolf) | [下载](https://github.com/MoePlayer/APlayer-Typecho/archive/v2.1.2.zip)
 [Notes](https://github.com/ghostboyzone/typecho-notes-plugin) | 自建管理Markdown便签系统插件 | 0.0.1 | [GhostBoyZone](https://github.com/ghostboyzone) | [下载](https://github.com/ghostboyzone/typecho-notes-plugin/archive/master.zip)
 [Parsedown](https://github.com/kokororin/typecho-plugin-Parsedown) | MD解析器替换为Parsedown插件 | 1.0 | [Kokororin](https://github.com/kokororin) | [下载](https://github.com/kokororin/typecho-plugin-Parsedown/archive/master.zip)
 [Pio](https://github.com/Dreamer-Paul/Pio) | (娱乐向)Live2D二次元看板娘插件 | 1.3 | [Dreamer-Paul](https://github.com/Dreamer-Paul) | [下载](https://github.com/Dreamer-Paul/Pio/archive/master.zip)
