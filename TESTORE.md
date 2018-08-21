@@ -27,7 +27,7 @@
 
  > 下表中的下载链接文字可用于附加图标：`下载`即非社区版，`不可用`显示为:no_entry:，`特殊`为:warning:意思是安装或启用方法特殊。
 
-### 插件信息 (95)
+### 插件信息 (98)
 
 ###### 下表“名称”将用于创建安装文件夹，“版本”用于提示升级，请务必确保文本准确；注意按字母排序，自增上方括号中数字便于统计，简介不要过长。
 ```
@@ -82,6 +82,8 @@
 [KaTeX4Typecho](https://github.com/vc12345679/KaTeX4Typecho) |  基于CDN的KaTeX公式渲染插件 | 0.0.1 | [vc12345679](https://github.com/vc12345679) | [下载](https://github.com/vc12345679/KaTeX4Typecho/archive/master.zip)
 [Kefu](https://github.com/1628972070/typecho) | Typecho网站右侧浮动客服插件 | 1.0.0 | [双少](https://github.com/1628972070) | [下载](https://github.com/1628972070/typecho/archive/master.zip)
 [KindEditor](https://github.com/hizhengfu/KindEditor) | 所见即所得富文本编辑器插件 | 4.0.1 | [hizhengfu](https://github.com/hizhengfu) | [下载](https://github.com/hizhengfu/KindEditor/archive/master.zip)
+[LaTex](https://github.com/typecho/plugins/tree/master/LaTex) | Markdown版LaTex公式解析插件 | 1.1.0 | [mutoo](https://github.com/mutoo) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-H_to_L/LaTex.zip)
+[MagikeToTypecho](https://github.com/typecho/plugins/tree/master/MagikeToTypecho) | Magike数据库导入Typecho插件 | 1.0.0 | [qining](https://github.com/joyqi) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/MagikeToTypecho.zip)
 [MailValidate](https://github.com/Archeb/MailValidate) | 注册用户通过邮件验证权限插件 | 1.0.0 | [Archeb](https://github.com/Archeb) | [下载](https://github.com/Archeb/MailValidate/archive/master.zip)
 [MarkdownParse](https://github.com/mrgeneralgoo/typecho-markdown) | Extra加强版Parsedown解析插件 | 1.0.1 | [mrgeneral](https://github.com/mrgeneralgoo) | [下载](https://github.com/mrgeneralgoo/typecho-markdown/archive/master.zip)
 [MDRuby](https://github.com/journey-ad/MDRuby-Typecho-Plugin) | Markdown解析Ruby注音标签插件 | 0.2 | [journey.ad](https://github.com/journey-ad) | [下载](https://github.com/journey-ad/MDRuby-Typecho-Plugin/archive/master.zip)
@@ -92,6 +94,7 @@
 [PlayAtWill](https://github.com/vfhky/PlayAtWill) | 迷你型Flash音乐播放器2合1插件 | 1.0.0 | [vfhky](https://github.com/vfhky) | [下载](https://github.com/vfhky/PlayAtWill/archive/master.zip)
 [platformSelect](https://github.com/internelp/platformSelect) | 自定义字段设置文章所属平台插件 | 1.0.0 | [枫叶](https://github.com/internelp) | [下载](https://github.com/internelp/platformSelect/archive/master.zip)
 [Poptrox](https://github.com/99kyuu/Poptrox_for_Typecho) | jQuery全能灯箱弹窗Poptrox插件 | 0.01 | [玖玖kyuu](https://github.com/99kyuu) | [下载](https://github.com/99kyuu/Poptrox_for_Typecho/archive/master.zip)
+[PostToQzone](https://github.com/typecho/plugins/tree/master/PostToQzone) | QQ邮箱同步发布文章到Qzone插件 | 1.0 beta | [blankyao](https://github.com/blankyao) | [不可用](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/PostToQzone.zip)
 [PostToSinaToutiao](https://github.com/jiyeme/PostToSinaToutiao) | 同步发布文章到新浪微博头条插件 | 1.0.3 | [祭夜](https://github.com/jiyeme) | [下载](https://github.com/jiyeme/PostToSinaToutiao/archive/master.zip)
 [QiniuFile](https://github.com/lscho/QiniuFile_For_Typecho) | Typecho附件使用七牛云存储插件 | 0.1 | [lscho](https://github.com/lscho) | [下载](https://github.com/lscho/QiniuFile_For_Typecho/archive/master.zip)
 [QPlayer](https://github.com/Jrohy/QPlayer-Typecho-Plugin) | 页面底部悬浮式音乐播放器插件 | 1.3.4.2 | [Jrohy](https://github.com/Jrohy) | [下载](https://github.com/Jrohy/QPlayer-Typecho-Plugin/archive/master.zip)
