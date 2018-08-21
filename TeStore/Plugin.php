@@ -5,7 +5,7 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
  * 
  * @package TeStore
  * @author 羽中, zhulin3141
- * @version 1.1.1
+ * @version 1.1.2
  * @link http://www.yzmb.me
  */
 class TeStore_Plugin implements Typecho_Plugin_Interface
