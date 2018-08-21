@@ -85,7 +85,7 @@
 [Keywords](Keywords) | 文章指定关键词自动添加链接插件 | 1.0.8 | [羽中](https://github.com/jzwalk) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-H_to_L/Keywords.zip)
 [LREditor](LREditor) | Markdown编辑器左右预览插件 | 0.0.4 | [公子](http://github.com/lizheming) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-H_to_L/LREditor.zip)
 [Like](Like) | Typecho文章点赞与排行统计插件 | 1.0.1 | [skylzl](https://github.com/xiaogouxo) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-H_to_L/Like.zip)
-[LoveKKComment](LoveKKComment) | Typecho 评论SMTP、SendCloud、阿里云邮件通知插件 | 1.0.4 | [康粑粑](https://www.lovekk.org) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-H_to_L/LoveKKComment.zip)
+[LoveKKComment](LoveKKComment) | SendCloud/阿里云评论邮件通知插件 | 1.0.4 | [康粑粑](https://www.lovekk.org) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-H_to_L/LoveKKComment.zip)
 [LoveKKForget](LoveKKForget) | SendCloud用户密码邮件找回插件 | 1.0.1 | [康粑粑](https://www.lovekk.org) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-H_to_L/LoveKKForget.zip)
 [MenuTree](MenuTree) | 悬浮式文章内容目录自动生成插件 | 0.6.1 | [hongweipeng](https://github.com/hongweipeng) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/MenuTree.zip)
 [MostCache](MostCache) | Mysql/SAE下Memcache缓存插件 | 1.0.0 | [skylzl](https://github.com/xiaogouxo) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/MostCache.zip)
