@@ -202,7 +202,7 @@ class AMP_Action extends Typecho_Widget implements Widget_Interface_Do
             );
             //MIP页面的结果化数据必须有图片
             if(!is_array($AMPpage['imgData'])){
-                $AMPpage['imgData']=self::getSizeArr($AMPpage['LOGO']);//如果找不到图片就用LOGO
+                $AMPpage['imgData']=self::getSizeArr($AMPpage['LOGO'],'200','200');//如果找不到图片就用LOGO
             }
             ob_start();
             require_once ('templates/AMPpage.php');
@@ -432,7 +432,7 @@ class AMP_Action extends Typecho_Widget implements Widget_Interface_Do
         }
     }
 
-    private static function getSizeArr($img_url){
+    private static function getSizeArr($img_url,$width='700',$height='400'){
         try {//尝试获取图片尺寸
             list($width, $height, $type, $attr) = @getimagesize($img_url);
             $imgData = array(
@@ -442,8 +442,6 @@ class AMP_Action extends Typecho_Widget implements Widget_Interface_Do
             );
             return $imgData;
         } catch (Exception $e) {//出问题 或 获取不到则使用默认尺寸
-            $width = '700';
-            $height = '400';
             $imgData = array(
                 'url' => $img_url,
                 'width' => $width,
