@@ -4,14 +4,14 @@
  *
  * @package AMP-MIP
  * @author Holmesian
- * @version 0.6.7
+ * @version 0.6.9
  * @link https://holmesian.org/AMP-for-Typecho
  */
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 
 class AMP_Plugin implements Typecho_Plugin_Interface
 {
-    private static $version = '0.6.7';
+    public static $version = '0.6.9';
 
     public static function activate()
     {
@@ -84,9 +84,6 @@ class AMP_Plugin implements Typecho_Plugin_Interface
         $form->addInput($element);
 
         $element = new Typecho_Widget_Helper_Form_Element_Radio('OnlyForSpiders', array(0 => '不开启', 1 => '开启'), 0, _t('是否只允许Baidu和Google的爬虫访问MIP/AMP页面'), '选择启用则需要修改UA才能访问MIP/AMP页面');
-        $form->addInput($element);
-
-        $element = new Typecho_Widget_Helper_Form_Element_Text('defaultPIC', null, 'https://holmesian.org/usr/themes/Holmesian/images/holmesian.png', _t('默认图片地址'), '如果文章中没有图片，则会在AMP/MIP页面参数中使用默认图片作为文章图片。');
         $form->addInput($element);
 
         $element = new Typecho_Widget_Helper_Form_Element_Text('LOGO', null, 'https://holmesian.org/usr/themes/Holmesian/images/holmesian.png', _t('默认LOGO地址'), '根据AMP的限制，尺寸不超过60*60');
