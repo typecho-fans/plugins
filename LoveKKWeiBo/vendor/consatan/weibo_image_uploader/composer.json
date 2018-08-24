@@ -1,0 +1,37 @@
+{
+    "name": "consatan/weibo_image_uploader",
+    "description": "Weibo image uploader.",
+    "keywords": ["sina", "weibo", "image", "photo", "picture", "upload", "uploader"],
+    "homepage": "https://chopin.im/weibo_puploader",
+    "type": "library",
+    "license": "BSD-3-Clause",
+    "authors": [
+        {
+            "name": "Chopin Ngo",
+            "email": "consatan@gmail.com",
+            "homepage": "https://chopin.im"
+          }
+    ],
+    "require": {
+        "php": ">=5.5.9",
+        "ext-json": "*",
+        "ext-openssl": "*",
+        "guzzlehttp/guzzle": "^6.2",
+        "symfony/cache": "^3.2"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^5.7",
+        "mockery/mockery": "^0.9.7"
+    },
+    "autoload": {
+        "psr-4": {
+            "Consatan\\Weibo\\ImageUploader\\": "src/"
+        },
+        "files": ["src/functions_include.php"]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Consatan\\Weibo\\ImageUploader\\Tests\\": "tests/"
+        }
+    }
+}

@@ -1,0 +1,5 @@
+{
+    "require": {
+        "consatan/weibo_image_uploader": "^0.5.3"
+    }
+}
