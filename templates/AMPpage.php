@@ -43,7 +43,7 @@
 </head>
 <body>
 <header class="header">
-    <div class="header-title"><h1><a href="<?php echo(Typecho_Common::url("ampindex/", $this->baseurl)); ?>"><?php echo($this->publisher);?></a></h1></div>
+    <div class="header-title"><h1><a href="<?php echo(Typecho_Common::url("ampindex/", $this->baseurl)); ?>"><?php echo($AMPpage['publisher']);?></a></h1></div>
 </header>
 
 <article class="post"><h1 class="title"><?php echo($AMPpage['title']); ?></h1>
