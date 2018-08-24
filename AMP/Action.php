@@ -251,12 +251,11 @@ class AMP_Action extends Typecho_Widget implements Widget_Interface_Do
 
 
 
-        if($article['created'] !== $article['modified'] ){//修改时间 与 创建时间 不同 为修改文章
-            return;//修改文章不发送
+        if((int)$article['created']+86400 < (int)$article['modified'] ){//之前判断忽略了自动保存草稿的问题
+            return;//草稿在一天之内的文章推送，否则不推送。
         }
 
 
-//        $urls = array($article['mipurl'],);//改为仅提交一次
         $url=$article['mipurl'];
 
 
