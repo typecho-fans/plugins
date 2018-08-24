@@ -4,14 +4,14 @@
  *
  * @package AMP-MIP
  * @author Holmesian
- * @version 0.6.9
+ * @version 0.7.0
  * @link https://holmesian.org/AMP-for-Typecho
  */
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 
 class AMP_Plugin implements Typecho_Plugin_Interface
 {
-    public static $version = '0.6.9';
+    public static $version = '0.7.0';
 
     public static function activate()
     {
@@ -28,9 +28,9 @@ class AMP_Plugin implements Typecho_Plugin_Interface
         Helper::addRoute('amp_sitemap', '/amp_sitemap.xml', 'AMP_Action', 'ampsitemap');
         Helper::addRoute('mip_sitemap', '/mip_sitemap.xml', 'AMP_Action', 'mipsitemap');
         Helper::addRoute('clean_cache', '/clean_cache', 'AMP_Action', 'cleancache');
-        Helper::addPanel(1, 'AMP/Links.php', 'AMP/MIP自动提交', '自动提交', 'administrator');
+        Helper::addPanel(1, 'AMP/Links.php', '推送AMP/MIP到百度', '提交到百度', 'administrator');
 
-        return $msg.'请进入设置填写接口调用地址';
+        return $msg.'请进入设置填写接口调用地址！';
     }
 
     public static function deactivate()
@@ -59,7 +59,7 @@ class AMP_Plugin implements Typecho_Plugin_Interface
         $element = new Typecho_Widget_Helper_Form_Element_Text('cacheTime', null, '0', _t('缓存时间'), '单位：小时（设置成0表示关闭）<br> 此项为缓存过期时间，建议设置成24。如果需要重建缓存，请点击 <a href="' . Helper::options()->index . '/clean_cache">删除所有缓存</a>');
         $form->addInput($element);
 
-        $element = new Typecho_Widget_Helper_Form_Element_Text('baiduAPI', null, '', _t('MIP/AMP推送接口调用地址'), '<a href="https://ziyuan.baidu.com/mip/index">打开页面后 点击 MIP -> 数据提交 -> 提交新数据 获取接口调用地址。</a>');
+        $element = new Typecho_Widget_Helper_Form_Element_Text('baiduAPI', null, '', _t('MIP/AMP推送接口调用地址'), '<a href="https://ziyuan.baidu.com/mip/index">打开页面后 点击 MIP -> 数据提交 -> 提交新数据 获取接口调用地址。</a>（填写AMP或MIP的任意一个的提交地址即可）');
         $form->addInput($element);
 
         $element = new Typecho_Widget_Helper_Form_Element_Text('baiduAPPID', null, '', _t('熊掌号识别ID'), '<a href="https://ziyuan.baidu.com/xzh/commit/method">打开页面后 点击 我的功能->资源提交 根据接口调用地址 获取appid。</a>');
@@ -150,7 +150,7 @@ class AMP_Plugin implements Typecho_Plugin_Interface
 
         $installDb = Typecho_Db::get();
         if(stristr($installDb->getAdapterName(),'mysql')== false){
-            return('缓存不支持sqlite.');
+            return('缓存暂不支持Mysql以外的数据库.');
         }
         $cacheTable =  $installDb->getPrefix() . 'PageCache';
         try {
