@@ -14,6 +14,16 @@
 > 4. 尝试上传图片，并使用`chrome`、`firefox`等浏览器，按下`F12`，查看网络传输情况。
 > 5. 若成功上传并返回图片地址则成功，否则请查看返回的信息是什么。
 
+## 问题反馈
+
+请访问作者博客进行反馈：[https://www.lovekk.org/278.html](https://www.lovekk.org/278.html)
+
+## 更新日志
+
+**2018.8.25**
+
+> 1. 修复除图片外其余文件无法上传的问题。
+
 ## 参考资料
 
 > 1. [https://github.com/muzishanshi/WeiboFile](https://github.com/muzishanshi/WeiboFile)
