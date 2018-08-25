@@ -29,7 +29,7 @@
 
  > 下表中的下载链接文字可用于对TeStore列表附加图标：`Download`即社区版，`N/A`为不可用，`Special`为安装用法特殊。
 
-### 作品索引 (94)
+### 作品索引 (95)
 
 ###### 插件仓库将使用下表“名称”创建安装文件夹，“版本”提示升级，请务必确保文本准确；注意排序与目录列表相同，自增上方插件数，简介不要过长。
 ```
@@ -88,6 +88,7 @@
 [LoveKKComment](LoveKKComment) | Typecho评论邮件通知插件 | 1.0.4 | [康粑粑](https://www.lovekk.org) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-H_to_L/LoveKKComment.zip)
 [LoveKKForget](LoveKKForget) | SendCloud用户密码邮件找回插件 | 1.0.1 | [康粑粑](https://www.lovekk.org) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-H_to_L/LoveKKForget.zip)
 [LoveKKWeiBo](LoveKKWeiBo) | 将新浪微博作为附件图床 for Typecho | 1.0.1 | [康粑粑](https://www.lovekk.org) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-H_to_L/LoveKKWeiBo.zip)
+[MarkdownParse](MarkdownParse) | 支持目录的高性能Markdown插件 | 1.1.0 | [程小白](https://www.chengxiaobai.cn/) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/MarkdownParse.zip) 
 [MenuTree](MenuTree) | 悬浮式文章内容目录自动生成插件 | 0.6.1 | [hongweipeng](https://github.com/hongweipeng) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/MenuTree.zip)
 [MostCache](MostCache) | Mysql/SAE下Memcache缓存插件 | 1.0.0 | [skylzl](https://github.com/xiaogouxo) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/MostCache.zip)
 [MyPlayer](MyPlayer) | 万能播放器与视频站链接转换插件 | 1.1.3 | [perichr](http://github.com/perichr) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/MyPlayer.zip)
