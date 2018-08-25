@@ -29,7 +29,7 @@
 
  > 下表中的下载链接文字可用于对TeStore列表附加图标：`Download`即社区版，`N/A`为不可用，`Special`为安装用法特殊。
 
-### 作品索引 (95)
+### 作品索引 (96)
 
 ###### 插件仓库将使用下表“名称”创建安装文件夹，“版本”提示升级，请务必确保文本准确；注意排序与目录列表相同，自增上方插件数，简介不要过长。
 ```
@@ -122,6 +122,7 @@
 [Typembed](Typembed) | 常见视频站链接自动转播放器插件 | 1.3.0 | [Fengzi](https://github.com/nothingisover) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/Typembed.zip)
 [Ueditor](Ueditor) | 百度贴吧可视化编辑器Ueditor插件 | 1.0.0 | [zhulin3141](https://github.com/zhulin3141) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/Ueditor.zip)
 [Ugauka](Ukagaka) | (娱乐向)二次元伪春菜萌物精灵插件 | 1.0.0 | [Kunr](https://github.com/Rakume) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/Ukagaka.zip)
+[UpdateAssistant](UpdateAssistant) | Typecho一键升级/切换到最新稳定或开发版插件 | 1.0.1 | [程小白](https://www.chengxiaobai.cn/) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/UpdateAssistant.zip)
 [Update](Update) | Typecho一键升级实时开发版插件 | 0.0.3 | [公子](https://github.com/lizheming) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/Update.zip)
 [UploadPlugin](UploadPlugin) | 上传zip包安装删除插件/主题插件 | 1.1.3 | [DEFE](https://github.com/defeme) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/UploadPlugin.zip)
 [UserSign](UserSign) | 用户个性签名文字设置与输出插件 | 0.0.1 | [hmoe](https://github.com/hmoe) | [Special](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/UserSign.zip)
