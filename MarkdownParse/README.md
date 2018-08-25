@@ -7,7 +7,8 @@ It uses [Parsedown](https://github.com/erusev/parsedown) and [ParsedownExtension
 ## Installation
 
 1. [Download the plugin](https://github.com/mrgeneralgoo/typecho-markdown/archive/master.zip)
-2. Enable this plugin
+2. Rename the folder name "MarkdownParse"
+3. Enable this plugin
 
 ### Reporting issues
 
@@ -24,7 +25,8 @@ https://www.chengxiaobai.cn/php/markdown-parser-library.html
 ## 安装
 
 1. [下载这个插件](https://github.com/mrgeneralgoo/typecho-markdown/archive/master.zip)
-2. 添加到你的项目中并启用它
+2. 修改文件夹的名字为"MarkdownParse"
+3. 添加到你的项目中并启用它
 
 ### 报告问题
 
