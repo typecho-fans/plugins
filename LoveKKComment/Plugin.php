@@ -631,10 +631,7 @@ class LoveKKComment_Plugin implements Typecho_Plugin_Interface
         if (in_array('enable', $plugin->public_debug)) {
             // 记录时间
             $log = '[SMTP] ' . date('Y-m-d H:i:s') . ': ' . PHP_EOL;
-<<<<<<< HEAD
             $log .= 'data: ' . serialize($param) . PHP_EOL . PHP_EOL;
-=======
->>>>>>> d2dc9ed7d2d85e99dc3f005a7cdfa23dae6c467c
             // 记录返回值及PHPMailer错误
             $log .= serialize($result) . '; PHPMailer error: ' . $mail->ErrorInfo . PHP_EOL;
             // 输出分隔
