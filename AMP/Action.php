@@ -628,9 +628,9 @@ class AMP_Action extends Typecho_Widget implements Widget_Interface_Do
     }
 
     private static function cleanUp($desc){
-        $desc= str_replace(array("/r/n", "/r", "/n"), "", strip_tags($desc));
-        $desc = str_replace(PHP_EOL, '', $desc);
-        $desc=mb_substr($desc, 0, 150).'...';
+        $desc= str_replace(array("\r\n", "\r", "\n"), "", strip_tags($desc));//获取纯内容后去除换行
+        $desc=mb_substr($desc, 0, 150).'...';//截取前150个字符
+        $desc= str_replace('"', '\"', $desc);//转义传递给json的 "
         return $desc;
     }
 
