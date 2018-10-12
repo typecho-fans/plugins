@@ -23,32 +23,33 @@ class AMP_Action extends Typecho_Widget implements Widget_Interface_Do
     public static function headlink()
     {
         $widget = Typecho_Widget::widget('Widget_Archive');
+        $headurl='';//初始化输出内容
 
-        $ampurl = $mipurl = '';
-
-        if ($widget->is('index') and !isset($widget->request->page)) {
+        if ($widget->is('index') and !isset($widget->request->page)) {//输出AMP首页
             if (Helper::options()->plugin('AMP')->ampIndex == 1) {
                 $fullURL = Typecho_Common::url("ampindex", Helper::options()->index);
-                $ampurl = "\n<link rel=\"amphtml\" href=\"{$fullURL}\">\n";
+                $headurl = "\n<link rel=\"amphtml\" href=\"{$fullURL}\">\n";
             }
         }
 
-        if ($widget->is('post')) {
+        if ($widget->is('post')) {//文章页
+            $targetTemp=Typecho_Widget::widget('AMP_Action')->getSlugRule();//静态函数调用动态函数
             if(isset($widget->request->cid)){
-                $target=$widget->request->cid;
+                $cid=$widget->request->cid;
+                $target = str_replace('[cid:digital]',$cid , $targetTemp);
             }
             if(isset($widget->request->slug)){
-                $target=$widget->request->slug;
+                $slug=$widget->request->slug;
+                $target = str_replace('[slug]', $slug, $targetTemp);
             }
 
-            if(isset($target)){
-                $fullURL = Typecho_Common::url("amp/{$target}", Helper::options()->index);
-                $ampurl = "\n<link rel=\"amphtml\" href=\"{$fullURL}\">\n";
-                $fullURL = Typecho_Common::url("mip/{$target}", Helper::options()->index);
-                $mipurl = "<link rel=\"miphtml\" href=\"{$fullURL}\">\n";
+            if(isset($target)){//输出文章页对应的AMP/MIP页面
+                $ampurl = Typecho_Common::url("amp/{$target}", Helper::options()->index);
+                $mipurl = Typecho_Common::url("mip/{$target}", Helper::options()->index);
+                $headurl = "\n<link rel=\"amphtml\" href=\"{$ampurl}\">\n";
+                $headurl .= "<link rel=\"miphtml\" href=\"{$mipurl}\">\n";
             }
         }
-        $headurl = $ampurl . $mipurl;
 
         echo $headurl;
     }
@@ -92,7 +93,6 @@ class AMP_Action extends Typecho_Widget implements Widget_Interface_Do
                 header("Location: {$this->article['permalink']}");
             }
         }
-
 
         if(!is_null($context)){//有缓存的情况直接输出
             print($context);
@@ -163,7 +163,6 @@ class AMP_Action extends Typecho_Widget implements Widget_Interface_Do
 
     public function AMPpage()
     {
-
         $requestHash = $this->request->getPathinfo();
         $context=$this->get($requestHash); //查找是否已经缓存
 
@@ -225,8 +224,6 @@ class AMP_Action extends Typecho_Widget implements Widget_Interface_Do
         //获取系统配置
         $options = Helper::options();
 
-
-
         //如果文章属性为隐藏或滞后发布
         if ('publish' != $contents['visibility'] || $contents['created'] > time()) {
             return;
@@ -236,7 +233,6 @@ class AMP_Action extends Typecho_Widget implements Widget_Interface_Do
         if ($options->plugin('AMP')->mipAutoSubmit == 0) {
             return;
         }
-
 
         //判断是否配置相关信息
         if (is_null($options->plugin('AMP')->baiduAPPID) or is_null($options->plugin('AMP')->baiduTOKEN)) {
@@ -248,7 +244,6 @@ class AMP_Action extends Typecho_Widget implements Widget_Interface_Do
         }
 
         $article = Typecho_Widget::widget('AMP_Action')->getArticleByCid($class->cid);//根据cid获取文章内容
-
 
 
         if((int)$article['created']+86400 < (int)$article['modified'] ){//之前判断忽略了自动保存草稿的问题
@@ -334,11 +329,12 @@ class AMP_Action extends Typecho_Widget implements Widget_Interface_Do
                 $article['text'] = Typecho_Widget::widget("Widget_Abstract_Contents")->autoP($article['text']);
             }
             $targetTemp = $this->getSlugRule();
+
             $target = str_replace('[slug]', $article['slug'], $targetTemp);
             $target = str_replace('[cid:digital]', $article['cid'], $target);
 
-            $article['mipurl'] = Typecho_Common::url("mip/{$target}", Helper::options()->index);;
-            $article['ampurl'] = Typecho_Common::url("amp/{$target}", Helper::options()->index);;
+            $article['mipurl'] = Typecho_Common::url("mip/{$target}", Helper::options()->index);
+            $article['ampurl'] = Typecho_Common::url("amp/{$target}", Helper::options()->index);
         } else {
             $article = array(
                 'isMarkdown' => false,
@@ -352,10 +348,11 @@ class AMP_Action extends Typecho_Widget implements Widget_Interface_Do
     public function MakeArticleList($linkType = 'amp', $page = 0, $pageSize = 0)
     {
         $db = Typecho_Db::get();
+        $thismoment=time();//Fix sqlite不支持生成时间戳
         $sql = $db->select()->from('table.contents')
             ->where('table.contents.status = ?', 'publish')
             ->where('table.contents.type = ?', 'post')
-            ->where('table.contents.created <= unix_timestamp(now())', 'post') //Fix 避免未达到时间的文章提前曝光
+            ->where("table.contents.created <= {$thismoment}", 'post') //Fix 避免未达到时间的文章提前曝光
             ->where('table.contents.password IS NULL') //Fix 避免加密文章泄露
             ->order('table.contents.created', Typecho_Db::SORT_DESC);
         if ($page > 0 and $pageSize > 0) {
@@ -374,14 +371,21 @@ class AMP_Action extends Typecho_Widget implements Widget_Interface_Do
                 ->where('table.metas.type = ?', 'category')
                 ->order('table.metas.order', Typecho_Db::SORT_ASC));
             $article['category'] = urlencode(current(Typecho_Common::arrayFlatten($article['categories'], 'slug')));
+
+
+
             $article['slug'] = urlencode($article['slug']);
             $article['date'] = new Typecho_Date($article['created']);
             $article['year'] = $article['date']->year;
             $article['month'] = $article['date']->month;
             $article['day'] = $article['date']->day;
 
+
+
+
             $target = str_replace('[slug]', $article['slug'], $targetTemp);
             $target = str_replace('[cid:digital]', $article['cid'], $target);
+
             if ($linkType == 'mip') {
                 $article['permalink'] = Typecho_Common::url("mip/{$target}", Helper::options()->index);
             } else {
@@ -567,6 +571,13 @@ class AMP_Action extends Typecho_Widget implements Widget_Interface_Do
         if (empty($slugtemp)) {
             $slugtemp = $router[count($router) - 2];
         }
+        //清理自定义格式
+        $slugtemp=str_replace(array( '[category]', '[directory:split:0]',
+            '[year:digital:4]', '[month:digital:2]', '[day:digital:2]', '[mid:digital]','-','_'),'',$slugtemp);
+//        $slugtemp=str_replace(array('[cid:digital]', '[slug]', '[category]', '[directory:split:0]',
+//                    '[year:digital:4]', '[month:digital:2]', '[day:digital:2]', '[mid:digital]'),
+//            array('{cid}', '{slug}', '{category}', '{directory}', '{year}', '{month}', '{day}', '{mid}'),
+//            $slugtemp);//反向编码自定义的路径
         return $slugtemp;
     }
 
