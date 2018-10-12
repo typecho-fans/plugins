@@ -4,14 +4,14 @@
  *
  * @package AMP-MIP
  * @author Holmesian
- * @version 0.7.3
+ * @version 0.7.4
  * @link https://holmesian.org/AMP-for-Typecho
  */
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 
 class AMP_Plugin implements Typecho_Plugin_Interface
 {
-    public static $version = '0.7.3';
+    public static $version = '0.7.4';
 
     public static function activate()
     {
@@ -25,8 +25,8 @@ class AMP_Plugin implements Typecho_Plugin_Interface
         Helper::addRoute('amp_map', '/amp/[target]', 'AMP_Action', 'AMPpage');
         Helper::addRoute('amp_list', '/amp/list/[list_id]', 'AMP_Action', 'AMPlist');
         Helper::addRoute('mip_map', '/mip/[target]', 'AMP_Action', 'MIPpage');
-        Helper::addRoute('amp_sitemap', '/amp_sitemap.xml', 'AMP_Action', 'ampsitemap');
-        Helper::addRoute('mip_sitemap', '/mip_sitemap.xml', 'AMP_Action', 'mipsitemap');
+        Helper::addRoute('amp_sitemap', '/amp_sitemap.xml', 'AMP_Action', 'AMPsitemap');
+        Helper::addRoute('mip_sitemap', '/mip_sitemap.xml', 'AMP_Action', 'MIPsitemap');
         Helper::addRoute('clean_cache', '/clean_cache', 'AMP_Action', 'cleancache');
         Helper::addPanel(1, 'AMP/Links.php', '推送AMP/MIP到百度', '提交到百度', 'administrator');
 
@@ -71,10 +71,10 @@ class AMP_Plugin implements Typecho_Plugin_Interface
         $element = new Typecho_Widget_Helper_Form_Element_Text('mip_stats_token', null, '', _t('百度统计token'), '<a href="https://www.mipengine.org/examples/mip-extensions/mip-stats-baidu.html">点击了解如何获取token。</a>');
         $form->addInput($element);
 
-        $element = new Typecho_Widget_Helper_Form_Element_Radio('ampSiteMap', array(0 => '不开启', 1 => '开启'), 1, _t('是否开启AMP的SiteMap'), 'ampSiteMap地址：<a href="'.Helper::options()->index .'/amp_sitemap.xml">' . Helper::options()->index . '/amp_sitemap.xml</a>');
+        $element = new Typecho_Widget_Helper_Form_Element_Radio('AMPsitemap', array(0 => '不开启', 1 => '开启'), 1, _t('是否开启AMP的SiteMap'), 'AMPsitemap地址：<a href="'.Helper::options()->index .'/amp_sitemap.xml">' . Helper::options()->index . '/amp_sitemap.xml</a>');
         $form->addInput($element);
 
-        $element = new Typecho_Widget_Helper_Form_Element_Radio('mipSiteMap', array(0 => '不开启', 1 => '开启'), 1, _t('是否开启MIP的SiteMap'), 'mipSiteMap地址：<a href="'.Helper::options()->index .'/mip_sitemap.xml">'. Helper::options()->index . '/mip_sitemap.xml</a>');
+        $element = new Typecho_Widget_Helper_Form_Element_Radio('MIPsitemap', array(0 => '不开启', 1 => '开启'), 1, _t('是否开启MIP的SiteMap'), 'MIPsitemap地址：<a href="'.Helper::options()->index .'/mip_sitemap.xml">'. Helper::options()->index . '/mip_sitemap.xml</a>');
         $form->addInput($element);
 
         $element = new Typecho_Widget_Helper_Form_Element_Radio('ampIndex', array(0 => '不开启', 1 => '开启'), 1, _t('是否开启AMP版的首页'), 'ampIndex地址：<a href="'.Helper::options()->index.'/ampindex">' . Helper::options()->index . '/ampindex</a>   (受amp-list控件限制，<b>非HTTPS站点</b>请勿开启AMP版的首页。)');
@@ -164,7 +164,7 @@ class AMP_Plugin implements Typecho_Plugin_Interface
                         ) DEFAULT CHARSET=utf8");
             return('缓存表创建成功！');
         } catch (Typecho_Db_Exception $e) {
-            throw new Typecho_Plugin_Exception('缓存表建立失败，错误代码：'. $e->getCode());
+            return('缓存表建立失败，错误代码：'. $e->getCode().'|'.$e->getMessage());
         }
     }
 

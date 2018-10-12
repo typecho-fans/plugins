@@ -20,6 +20,7 @@ class AMP_Action extends Typecho_Widget implements Widget_Interface_Do
     }
 
 
+    //添加头部信息
     public static function headlink()
     {
         $widget = Typecho_Widget::widget('Widget_Archive');
@@ -33,7 +34,7 @@ class AMP_Action extends Typecho_Widget implements Widget_Interface_Do
         }
 
         if ($widget->is('post')) {//文章页
-            $targetTemp=Typecho_Widget::widget('AMP_Action')->getSlugRule();//静态函数调用动态函数
+            $targetTemp=Typecho_Widget::widget('AMP_Action')->getUrlRule();//静态函数调用动态函数
             if(isset($widget->request->cid)){
                 $cid=$widget->request->cid;
                 $target = str_replace('[cid:digital]',$cid , $targetTemp);
@@ -55,22 +56,24 @@ class AMP_Action extends Typecho_Widget implements Widget_Interface_Do
     }
 
 
-    public function ampsitemap()
+    //输出AMPsitemap
+    public function AMPsitemap()
     {
 
-        if (Helper::options()->plugin('AMP')->ampSiteMap == 0) {
-            throw new Typecho_Widget_Exception('未开启ampSiteMap功能！');
+        if (Helper::options()->plugin('AMP')->AMPsitemap == 0) {
+            throw new Typecho_Widget_Exception('未开启AMPsitemap功能！');
         }
 
         $this->MakeSiteMap('amp');
 
     }
 
-    public function mipsitemap()
+    //输出MIPsitemap
+    public function MIPsitemap()
     {
 
-        if (Helper::options()->plugin('AMP')->mipSiteMap == 0) {
-            throw new Typecho_Widget_Exception('未开启mipSiteMap功能！');
+        if (Helper::options()->plugin('AMP')->MIPsitemap == 0) {
+            throw new Typecho_Widget_Exception('未开启MIPsitemap功能！');
         }
 
         $this->MakeSiteMap('mip');
@@ -289,8 +292,8 @@ class AMP_Action extends Typecho_Widget implements Widget_Interface_Do
     public function getArticle($target)
     {
         $tempTarget = explode('.', $target)[0];
-        $article = $this->getArticleBySlug($tempTarget);
-        if (isset($article['isblank'])) {
+        $article = $this->getArticleBySlug($tempTarget);//先尝试别名slug
+        if (isset($article['isblank'])) {//别名获取不到则认为是序号cid
             $article = $this->getArticleByCid($tempTarget);
         }
         return $article;
@@ -328,7 +331,7 @@ class AMP_Action extends Typecho_Widget implements Widget_Interface_Do
             }else{
                 $article['text'] = Typecho_Widget::widget("Widget_Abstract_Contents")->autoP($article['text']);
             }
-            $targetTemp = $this->getSlugRule();
+            $targetTemp = $this->getUrlRule();
 
             $target = str_replace('[slug]', $article['slug'], $targetTemp);
             $target = str_replace('[cid:digital]', $article['cid'], $target);
@@ -345,6 +348,7 @@ class AMP_Action extends Typecho_Widget implements Widget_Interface_Do
     }
 
 
+    //生成文章列表
     public function MakeArticleList($linkType = 'amp', $page = 0, $pageSize = 0)
     {
         $db = Typecho_Db::get();
@@ -361,8 +365,10 @@ class AMP_Action extends Typecho_Widget implements Widget_Interface_Do
             $sql = $sql->page($page, $pageSize);
         }
         $articles = $db->fetchAll($sql);
-        $targetTemp = $this->getSlugRule();
+
         $articleList = array();
+
+        $targetTemp = $this->getUrlRule();
 
         foreach ($articles AS $article) {
             $article['categories'] = $db->fetchAll($db->select()->from('table.metas')
@@ -373,14 +379,11 @@ class AMP_Action extends Typecho_Widget implements Widget_Interface_Do
             $article['category'] = urlencode(current(Typecho_Common::arrayFlatten($article['categories'], 'slug')));
 
 
-
             $article['slug'] = urlencode($article['slug']);
             $article['date'] = new Typecho_Date($article['created']);
             $article['year'] = $article['date']->year;
             $article['month'] = $article['date']->month;
             $article['day'] = $article['date']->day;
-
-
 
 
             $target = str_replace('[slug]', $article['slug'], $targetTemp);
@@ -397,6 +400,7 @@ class AMP_Action extends Typecho_Widget implements Widget_Interface_Do
     }
 
 
+    //获取文章内图片
     private function GetPostImg()
     {
 
@@ -435,6 +439,7 @@ class AMP_Action extends Typecho_Widget implements Widget_Interface_Do
         }
     }
 
+    //获取图片尺寸
     private static function getSizeArr($img_url,$width='700',$height='400'){
         try {//尝试获取图片尺寸
             list($width, $height, $type, $attr) = @getimagesize($img_url);
@@ -454,6 +459,8 @@ class AMP_Action extends Typecho_Widget implements Widget_Interface_Do
         }
     }
 
+
+    //初始化MIP信息
     private function MIPInit($text)
     {
         $text = $this->IMGsize($text);
@@ -467,6 +474,7 @@ class AMP_Action extends Typecho_Widget implements Widget_Interface_Do
         return $text;
     }
 
+    //初始化AMP信息
     private function AMPInit($text)
     {
         $text = $this->IMGsize($text);
@@ -480,18 +488,7 @@ class AMP_Action extends Typecho_Widget implements Widget_Interface_Do
         return $text;
     }
 
-    private function closeTags($text)
-    {
-        preg_match_all('/<img ([\s\S]*?)>/', $text, $mat);
-        $src=array_unique($mat[0]);
-        for ($i = 0; $i < count($src); $i++)
-        {
-            $plus =  $src[$i].'</img>';
-            $text = str_replace( $mat[0][$i],$plus, $text);
-        }
-        return $text;
-    }
-
+    //修正img标签的尺寸数据
     private function IMGsize($html)
     {
         $html = preg_replace_callback(
@@ -520,6 +517,21 @@ class AMP_Action extends Typecho_Widget implements Widget_Interface_Do
         return $html;
     }
 
+    //闭合img标签
+    private function closeTags($text)
+    {
+        preg_match_all('/<img ([\s\S]*?)>/', $text, $mat);
+        $src=array_unique($mat[0]);
+        for ($i = 0; $i < count($src); $i++)
+        {
+            $plus =  $src[$i].'</img>';
+            $text = str_replace( $mat[0][$i],$plus, $text);
+        }
+        return $text;
+    }
+
+
+    //生成SiteMap
     private function MakeSiteMap($maptype = 'amp')
     {
         //changefreq -> always、hourly、daily、weekly、monthly、yearly、never
@@ -555,6 +567,7 @@ class AMP_Action extends Typecho_Widget implements Widget_Interface_Do
     }
 
 
+    //截取功能函数
     private function substrFormat($text, $length, $replace = '...', $encoding = 'UTF-8')
     {
         if ($text && mb_strlen($text, $encoding) > $length) {
@@ -564,24 +577,47 @@ class AMP_Action extends Typecho_Widget implements Widget_Interface_Do
     }
 
 
-    private function getSlugRule()
+    //根据自定义文章路径生成amp/mip的地址规则
+    private function getUrlRule()
     {
+        //获取自定义文章路径的最后一层
         $router = explode('/', Helper::options()->routingTable['post']['url']);
         $slugtemp = $router[count($router) - 1];
         if (empty($slugtemp)) {
             $slugtemp = $router[count($router) - 2];
         }
+
         //清理自定义格式
-        $slugtemp=str_replace(array( '[category]', '[directory:split:0]',
-            '[year:digital:4]', '[month:digital:2]', '[day:digital:2]', '[mid:digital]','-','_'),'',$slugtemp);
-//        $slugtemp=str_replace(array('[cid:digital]', '[slug]', '[category]', '[directory:split:0]',
-//                    '[year:digital:4]', '[month:digital:2]', '[day:digital:2]', '[mid:digital]'),
-//            array('{cid}', '{slug}', '{category}', '{directory}', '{year}', '{month}', '{day}', '{mid}'),
-//            $slugtemp);//反向编码自定义的路径
+        $URLarr=explode('.',$slugtemp);
+        $target='';
+        foreach ($URLarr as $x){//寻找别名标记
+            if(strstr($x,'[slug]')){
+                $target='[slug]';
+            }
+        }
+        if ($target!=='[slug]'){//没找到别名标记则用文章序号
+           $target='[cid:digital]';
+        }
+
+        //根据后缀名情况拼接文章路径
+        if(count($URLarr)>1){
+            $slugtemp=$target.'.'.$URLarr[count($URLarr)-1];
+        }else{
+            $slugtemp=$target;
+        }
+
         return $slugtemp;
     }
 
-    //For page_cacher
+    //清理文章摘要内容
+    private static function cleanUp($desc){
+        $desc= str_replace(array("\r\n", "\r", "\n"), "", strip_tags($desc));//获取纯内容后去除换行
+        $desc=mb_substr($desc, 0, 150).'...';//截取前150个字符
+        $desc= str_replace('"', '\"', $desc);//转义传递给json的 "
+        return $desc;
+    }
+
+    //------------页面缓存功能函数start------------
 
     private function set($key, $cache){
         if(Helper::options()->plugin('AMP')->cacheTime>0) {
@@ -638,12 +674,8 @@ class AMP_Action extends Typecho_Widget implements Widget_Interface_Do
         }
     }
 
-    private static function cleanUp($desc){
-        $desc= str_replace(array("\r\n", "\r", "\n"), "", strip_tags($desc));//获取纯内容后去除换行
-        $desc=mb_substr($desc, 0, 150).'...';//截取前150个字符
-        $desc= str_replace('"', '\"', $desc);//转义传递给json的 "
-        return $desc;
-    }
+    //------------页面缓存功能函数end------------
+
 
 
 }

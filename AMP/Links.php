@@ -55,7 +55,6 @@ if (isset($_GET['send'])) {
         }
     }
 
-//    var_dump(isset($api));
     $urls = array();
     foreach ($articleList AS $article) {
         if(Helper::options()->plugin('AMP')->PostURL !== Helper::options()->index){
