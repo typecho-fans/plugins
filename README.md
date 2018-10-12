@@ -7,6 +7,8 @@
 
 如果在使用过程中遇到问题，还请反馈。
 
+点击下载[最新版][2]
+
 ---
 ## 功能
 
@@ -26,7 +28,9 @@
 
 - 新增自定义MIP/AMP页面样式。
 
-- 新增缓存功能，缓存访问过的MIP/AMP页面，可显著提高性能。
+- 新增缓存功能，缓存访问过的MIP/AMP页面，可显著提高性能（默认关闭）。
+
+- 自动解析自定义文章路径
 
 ---
 ## 安装
@@ -48,7 +52,7 @@ PS:非Markdown编辑器书写的文章由于存在诸多不可预见的情况，
 
 - 在插件后台设置默认LOGO和图片，以及选择是否开启SiteMap、AMP首页、自动提交到熊掌号等功能（除自动提交到熊掌号外的功能都默认开启）。
 
-- 从[百度站长][2]获取接口调用地址、熊掌号APPID/TOKEN，填写到插件设置中（使用提交URL功能时需要）。
+- 从[百度站长][3]获取接口调用地址、熊掌号APPID/TOKEN，填写到插件设置中（使用提交URL功能时需要）。
 
 - AMP/MIP的页面缓存默认为24小时，可在插件设置页面修改缓存时间。修改文章会自动更新页面缓存，重建缓存开关在插件设置页，设置缓存时间的下方。
 
@@ -58,7 +62,7 @@ PS:非Markdown编辑器书写的文章由于存在诸多不可预见的情况，
 
 注：
 - 服务器未启用php-curl扩展时，后台批量提交URL到Baidu的功能不可用。
-- **非HTTPS站点**受 [amp-list 控件][3] 的src参数限制，AMP首页无法换页，建议关闭生成AMP首页功能。
+- **非HTTPS站点**受 [amp-list 控件][4] 的src参数限制，AMP首页无法换页，建议关闭生成AMP首页功能。
 
 ---
 
@@ -91,8 +95,7 @@ AMP首页：
 ![AMP首页](https://raw.githubusercontent.com/holmesian/Typecho-AMP/dev/screencapture-holmesian-org-ampindex-2018-03-27-10_12_54.png)
 
 
-
-
   [1]: https://holmesian.org/typecho-upgrade-AMP
-  [2]: http://ziyuan.baidu.com/mip/index
-  [3]: https://www.ampproject.org/docs/reference/components/amp-list
+  [2]: https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/AMP.zip
+  [3]: http://ziyuan.baidu.com/mip/index
+  [4]: https://www.ampproject.org/docs/reference/components/amp-list
