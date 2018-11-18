@@ -29,7 +29,7 @@
 
  > 下表中的下载链接文字可用于对TeStore列表附加图标：`Download`即社区版，`N/A`为不可用，`Special`为安装用法特殊。
 
-### 作品索引 (97)
+### 作品索引 (98)
 
 ###### 插件仓库将使用下表“名称”创建安装文件夹，“版本”提示升级，请务必确保文本准确；注意排序与目录列表相同，自增上方插件数，简介不要过长。
 ```
@@ -54,7 +54,7 @@
 [Avatars](Avatars) | 读者墙评论头像排行插件(支持缓存) | 1.2.5 | [羽中](https://github.com/jzwalk) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/Avatars.zip)
 [BackToTop](BackToTop) | 二次元风格点击返回顶部按钮插件 | 1.0 | [夏目贵志](https://github.com/xiamuguizhi) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/BackToTop.zip)
 [CateFilter](CateFilter) | 首页过滤指定分类文章不显示插件 | 1.2.1 | [Rakiy](https://github.com/rakiy) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/CateFilter.zip)
-[ChangyanCallback](ChangyanCallback) | 畅言评论回推备份插件 | 1.0.0 | [程小白](https://www.chengxiaobai.cn/) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/ChangyanCallback.zip)
+[ChangyanCallback](ChangyanCallback) | 搜狐畅言社会化评论回推插件 | 1.0.0 | [mrgeneral](https://github.com/mrgeneralgoo) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/ChangyanCallback.zip)
 [Ckeditor4Typecho](Ckeditor4Typecho) | CKEditor4所见即所得编辑器插件 | 1.0.0 | [zhulin3141](https://github.com/zhulin3141) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/Ckeditor4Typecho.zip)
 [CodeMirror](CodeMirror) | 主题外观编辑器语法高亮显示插件 | 1.0.0 | [zhulin3141](https://github.com/zhulin3141) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/CodeMirror.zip)
 [CodeStyle](CodeStyle) | Highlight.js代码高亮效果渲染插件 | 0.8.0 | [hongweipeng](https://github.com/hongweipeng) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/CodeStyle.zip)
@@ -89,7 +89,7 @@
 [LoveKKComment](LoveKKComment) | Typecho评论邮件通知插件 | 1.0.4 | [康粑粑](https://www.lovekk.org) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-H_to_L/LoveKKComment.zip)
 [LoveKKForget](LoveKKForget) | SendCloud用户密码邮件找回插件 | 1.0.1 | [康粑粑](https://www.lovekk.org) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-H_to_L/LoveKKForget.zip)
 [LoveKKWeiBo](LoveKKWeiBo) | 将新浪微博作为附件图床 for Typecho | 1.0.1 | [康粑粑](https://www.lovekk.org) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-H_to_L/LoveKKWeiBo.zip)
-[MarkdownParse](MarkdownParse) | 支持目录的高性能Markdown插件 | 1.1.0 | [程小白](https://www.chengxiaobai.cn/) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/MarkdownParse.zip) 
+[MarkdownParse](MarkdownParse) | 支持目录加强版Parsedown解析插件 | 1.1.0 | [mrgeneral](https://github.com/mrgeneralgoo) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/MarkdownParse.zip) 
 [MenuTree](MenuTree) | 悬浮式文章内容目录自动生成插件 | 0.6.1 | [hongweipeng](https://github.com/hongweipeng) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/MenuTree.zip)
 [MostCache](MostCache) | Mysql/SAE下Memcache缓存插件 | 1.0.0 | [skylzl](https://github.com/xiaogouxo) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/MostCache.zip)
 [MyPlayer](MyPlayer) | 万能播放器与视频站链接转换插件 | 1.1.3 | [perichr](http://github.com/perichr) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/MyPlayer.zip)
@@ -123,8 +123,8 @@
 [Typembed](Typembed) | 常见视频站链接自动转播放器插件 | 1.3.0 | [Fengzi](https://github.com/nothingisover) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/Typembed.zip)
 [Ueditor](Ueditor) | 百度贴吧可视化编辑器Ueditor插件 | 1.0.0 | [zhulin3141](https://github.com/zhulin3141) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/Ueditor.zip)
 [Ugauka](Ukagaka) | (娱乐向)二次元伪春菜萌物精灵插件 | 1.0.0 | [Kunr](https://github.com/Rakume) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/Ukagaka.zip)
-[UpdateAssistant](UpdateAssistant) | 一键升级/切换到最新稳定或开发版插件 | 1.0.1 | [程小白](https://www.chengxiaobai.cn/) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/UpdateAssistant.zip)
 [Update](Update) | Typecho一键升级实时开发版插件 | 0.0.3 | [公子](https://github.com/lizheming) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/Update.zip)
+[UpdateAssistant](UpdateAssistant) | 一键升级/切换最新稳定或开发版插件 | 1.0.1 | [mrgeneral](https://github.com/mrgeneralgoo) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/UpdateAssistant.zip)
 [UploadPlugin](UploadPlugin) | 上传zip包安装删除插件/主题插件 | 1.1.3 | [DEFE](https://github.com/defeme) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/UploadPlugin.zip)
 [UserSign](UserSign) | 用户个性签名文字设置与输出插件 | 0.0.1 | [hmoe](https://github.com/hmoe) | [Special](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/UserSign.zip)
 [Views](Views) | Typecho文章浏览次数排行插件 | 1.0.1 | Willin Kan | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/Views.zip)
