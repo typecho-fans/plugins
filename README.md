@@ -17,7 +17,7 @@
 
 1. 本目录下作品应为经作者同意允许在这里进行**多人自由更新**的，如果只是想在插件仓库列表登记编辑[TESTORE.md](TESTORE.md)即可。
 
- > 集群插件在TeStore列表中带有社区版标记，作者可提交有特色但不再维护的作品，由其他成员视需求能力做后续修正。
+ > 集群内插件在TeStore列表中带社区版标记，作者可提交有特色但不再维护的作品，由其他成员视需求能力做后续修正。
 
 2. 推荐用[**subtree**](https://aoxuis.me/bo-ke/2013-08-06-git-subtree)方法录入文件(可随时拉取原目录更新)，手动复制进来提交亦可，不再接受submodule链接文件夹方式。
 
@@ -29,11 +29,11 @@
 
  > 下表中的下载链接文字可用于对TeStore列表附加图标：`Download`即社区版，`N/A`为不可用，`Special`为安装用法特殊。
 
-### 作品索引 (98)
+### 作品索引 (100)
 
 ###### 插件仓库将使用下表“名称”创建安装文件夹，“版本”提示升级，请务必确保文本准确；注意排序与目录列表相同，自增上方插件数，简介不要过长。
 ```
-对于本地已安装的同名插件TeStore会根据作者判断是否为社区版，所以记得Plugin.php中的署名信息也要与下表保持一致(多人用,空格分隔)。
+对于本地已安装的同名插件TeStore会根据作者判断是否为社区版，所以记得下表中作者署名要与Plugin.php内的保持一致(多人用,空格分隔)。
 ```
 
 名称 | 简介 | 版本 | 作者 | zip包
@@ -69,6 +69,7 @@
 [Editor](Editor) | 简明风格Markdown编辑器插件 | 1.0.2 | [公子](https://github.com/lizheming) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/Editor.zip)
 [EditorMD](EditorMD) | 豪华风格Markdown编辑器插件 | 1.3.0 | [DT27](https://github.com/DT27) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/EditorMD.zip)
 [EmlogToTypecho](EmlogToTypecho) | Emlog数据库导入Typecho插件 | 1.0.0 | [ShingChi](https://github.com/shingchi) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/EmlogToTypecho.zip)
+[GAuthenticator](GAuthenticator) | Google Authenticator验证登录插件 | 0.0.4 | [WeiCN](https://github.com/weicno) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/GAuthenticator.zip)
 [GHbutton](GHbutton) | Github项目迷你功能按钮展示插件 | 1.0.4 | [羽中](https://github.com/jzwalk) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/GHbutton.zip)
 [GeeTest](GeeTest) | 评论GeeTest拖拽拼图验证码插件 | 1.0.1 | [啸傲居士](https://github.com/shuxiao9058) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/GeeTest.zip)
 [GithubCard](GithubCard) | Github项目/用户信息卡片展示插件 | 1.0.0 | [chekun](https://github.com/chekun) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/GithubCard.zip)
@@ -77,7 +78,7 @@
 [GoodLuck](GoodLuck) | “手气不错”链接显示随机文章插件 | 1.0.1 | [Ryan](https://github.com/benzBrake) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/GoodLuck.zip)
 [GoogleCodePrettfy](GoogleCodePrettify) | 谷歌Prettify代码高亮效果渲染插件 | 2.0.0 | [公子](https://github.com/lizheming) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/GoogleCodePrettify.zip)
 [GravatarCache](GravatarCache) | Gravatar头像本地自动缓存插件 | 2.0.2 | [Byends](https://github.com/visamz) | [Special](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/GravatarCache.zip)
-[GoogleAnalytics](GoogleAnalytics) | Typecho 的 Google Analytics 加速器 | 1.0.0 | [WeiCN](https://github.com/weicno) | [Download](https://github.com/weicno/Typecho-GoogleAnalytics-Plugin/releases/download/1.0.0/GoogleAnalytics.zip)
+[GoogleAnalytics](GoogleAnalytics) | 异步加载Google Analytics统计插件 | 1.0.0 | [WeiCN](https://github.com/weicno) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/GoogleAnalytics_w.zip)
 [Hermit](Hermit) | 虾米云音乐SM2列表型播放器插件 | 1.3.1 | [mufeng](https://github.com/iMuFeng) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-H_to_L/Hermit.zip)
 [HighSlide](HighSlide) | 多功能灯箱弹窗效果+页面相册插件 | 1.4.7 | [羽中](https://github.com/jzwalk) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-H_to_L/HighSlide.zip)
 [Html2Text](Html2Text) | Html代码转Markdown格式插件 | 0.1.0 | [冰剑](https://github.com/binjoo) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-H_to_L/Html2Text.zip)
