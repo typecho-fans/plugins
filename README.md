@@ -77,6 +77,7 @@
 [GoodLuck](GoodLuck) | “手气不错”链接显示随机文章插件 | 1.0.1 | [Ryan](https://github.com/benzBrake) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/GoodLuck.zip)
 [GoogleCodePrettfy](GoogleCodePrettify) | 谷歌Prettify代码高亮效果渲染插件 | 2.0.0 | [公子](https://github.com/lizheming) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/GoogleCodePrettify.zip)
 [GravatarCache](GravatarCache) | Gravatar头像本地自动缓存插件 | 2.0.2 | [Byends](https://github.com/visamz) | [Special](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/GravatarCache.zip)
+[GoogleAnalytics](GoogleAnalytics) | Typecho 的 Google Analytics 加速器 | 1.0.0 | [WeiCN](https://github.com/weicno) | [Download](https://github.com/weicno/Typecho-GoogleAnalytics-Plugin/releases/download/1.0.0/GoogleAnalytics.zip)
 [Hermit](Hermit) | 虾米云音乐SM2列表型播放器插件 | 1.3.1 | [mufeng](https://github.com/iMuFeng) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-H_to_L/Hermit.zip)
 [HighSlide](HighSlide) | 多功能灯箱弹窗效果+页面相册插件 | 1.4.7 | [羽中](https://github.com/jzwalk) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-H_to_L/HighSlide.zip)
 [Html2Text](Html2Text) | Html代码转Markdown格式插件 | 0.1.0 | [冰剑](https://github.com/binjoo) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-H_to_L/Html2Text.zip)
