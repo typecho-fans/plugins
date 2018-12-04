@@ -5,7 +5,7 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
  * 
  * @package GAuthenticator
  * @author WeiCN
- * @version 0.0.4
+ * @version 0.0.5
  * @link https://cuojue.org/read/Typecho_Google_Authenticator_02.html
  */
 class GAuthenticator_Plugin implements Typecho_Plugin_Interface
@@ -47,8 +47,8 @@ class GAuthenticator_Plugin implements Typecho_Plugin_Interface
 	 */
 	public static function config(Typecho_Widget_Helper_Form $form)
 	{
-		$qrurl = 'http://qr.liantu.com/api.php?text='.urlencode('otpauth://totp/'.urlencode(Helper::options()->title.':'.Typecho_Widget::widget('Widget_User')->mail).'?secret='.Helper::options()->plugin(self::$pluginName)->SecretKey);//生成安全密钥的二维码网址
-		$element = new Typecho_Widget_Helper_Form_Element_Text('SecretKey', NULL, '', _t('SecretKey'), '安装的时候自动计算密钥,手动修改无效,如需要修改请卸载重新安装或者手动修改数据库<br><span style="font-weight: bold; color: #000; text-align: center; display: block;padding: 30px 0 30px 0;font-size: 24px;">请扫描下面的二维码绑定<br><img style="padding-top: 20px;" src="'.$qrurl.'"></span>');
+		$qrurl = 'http://qr.liantu.com/api.php?text='.urlencode('otpauth://totp/'.urlencode(Helper::options()->title.':'.Typecho_Widget::widget('Widget_User')->mail)).'?secret=';
+		$element = new Typecho_Widget_Helper_Form_Element_Text('SecretKey', NULL, '', _t('SecretKey'), '安装的时候自动计算密钥,手动修改无效,如需要修改请卸载重新安装或者手动修改数据库<br><span style="font-weight: bold; color: #000; text-align: center; display: block;padding: 30px 0 30px 0;font-size: 24px;">请扫描下面的二维码绑定<br><img style="padding-top: 20px;" id="qrcode"></span><script>window.onload =function(){$("#qrcode").attr("src","'.$qrurl.'"+$("input[name=\'SecretKey\']").val())}</script>');
 		$form->addInput($element);
 		$element = new Typecho_Widget_Helper_Form_Element_Text('SecretQRurl', NULL, '', _t('二维码的网址'), '本选项已过时，保留只是为了向下兼容。和上面图片的地址是相同的');
 		$form->addInput($element);
