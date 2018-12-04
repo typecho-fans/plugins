@@ -29,7 +29,7 @@
 
  > 下表中的下载链接文字可用于对TeStore列表附加图标：`Download`即社区版，`N/A`为不可用，`Special`为安装用法特殊。
 
-### 作品索引 (100)
+### 作品索引 (101)
 
 ###### 插件仓库将使用下表“名称”创建安装文件夹，“版本”提示升级，请务必确保文本准确；注意排序与目录列表相同，自增上方插件数，简介不要过长。
 ```
@@ -69,7 +69,7 @@
 [Editor](Editor) | 简明风格Markdown编辑器插件 | 1.0.2 | [公子](https://github.com/lizheming) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/Editor.zip)
 [EditorMD](EditorMD) | 豪华风格Markdown编辑器插件 | 1.3.0 | [DT27](https://github.com/DT27) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/EditorMD.zip)
 [EmlogToTypecho](EmlogToTypecho) | Emlog数据库导入Typecho插件 | 1.0.0 | [ShingChi](https://github.com/shingchi) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/EmlogToTypecho.zip)
-[GAuthenticator](GAuthenticator) | Google Authenticator验证登录插件 | 0.0.4 | [WeiCN](https://github.com/weicno) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/GAuthenticator.zip)
+[GAuthenticator](GAuthenticator) | Google Authenticator验证登录插件 | 0.0.5 | [WeiCN](https://github.com/weicno) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/GAuthenticator.zip)
 [GHbutton](GHbutton) | Github项目迷你功能按钮展示插件 | 1.0.4 | [羽中](https://github.com/jzwalk) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/GHbutton.zip)
 [GeeTest](GeeTest) | 评论GeeTest拖拽拼图验证码插件 | 1.0.1 | [啸傲居士](https://github.com/shuxiao9058) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/GeeTest.zip)
 [GithubCard](GithubCard) | Github项目/用户信息卡片展示插件 | 1.0.0 | [chekun](https://github.com/chekun) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/GithubCard.zip)
@@ -118,7 +118,7 @@
 [Sticky](Sticky) | Typecho文章首页/分类页置顶插件 | 1.0.1 | [Ryan](https://github.com/benzBrake), Willin Kan | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/Sticky.zip)
 [Subscriber](Subscriber) | 指定文章/内容对登录会员可见插件 | 1.0.0beta | [羽中](https://github.com/jzwalk) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/Subscriber.zip)
 [SyncPost](SyncPost) | 新浪/腾讯微博和豆瓣更新推送插件 | 1.0.0 | [冰剑](https://github.com/binjoo) | [N/A](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/SyncPost.zip)
-[Soso](Soso) | 本地搜索增强插件 | 1.0.0 | [泽泽](https://github.com/jrotty) | [Download](https://github.com/typecho-fans/plugins/releases/download/1.0.0/Soso.zip)
+[Soso](Soso) | Typecho本地搜索功能增强插件 | 1.0.0 | [泽泽社长](https://github.com/jrotty) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/Soso.zip)
 [TeKit](TeKit) | 常用侧边栏文章/评论数据输出插件 | 2.0.0 | [冰剑](https://github.com/binjoo) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/TeKit.zip)
 [TeStore](TeStore) | 新Github表格解析版插件仓库插件 | 1.1.2 | [羽中](https://github.com/jzwalk), [zhulin3141](https://github.com/zhulin3141) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/TeStore.zip)
 [ThemeDemo](ThemeDemo) | 根据链接参数直接预览主题外观插件 | 1.0.1 | [doudou](https://github.com/doudoutime) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/ThemeDemo.zip)
