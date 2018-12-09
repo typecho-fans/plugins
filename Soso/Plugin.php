@@ -4,7 +4,7 @@
  * 
  * @package Soso
  * @author 泽泽社长
- * @version 1.0.0
+ * @version 1.0.5
  * @link http://qqdie.com/
  */
 class Soso_Plugin implements Typecho_Plugin_Interface
@@ -25,7 +25,6 @@ class Soso_Plugin implements Typecho_Plugin_Interface
         Typecho_Plugin::factory('Widget_Archive')->callExcerpts = array('Soso_Plugin', 'excerpts');
         return _t('插件已激活，现在可以对插件进行设置！');
     }
-
     /**
      * 禁用插件方法,如果禁用失败,直接抛出异常
      * 
@@ -35,7 +34,6 @@ class Soso_Plugin implements Typecho_Plugin_Interface
      * @throws Typecho_Plugin_Exception
      */
     public static function deactivate(){}
-
     /**
      * 获取插件配置面板
      * 
@@ -46,8 +44,6 @@ class Soso_Plugin implements Typecho_Plugin_Interface
     public static function config(Typecho_Widget_Helper_Form $form){
        $Somo = new Typecho_Widget_Helper_Form_Element_Radio('Somo',array('1' => _t('常规模式'),'2' => _t('仅搜索标题')),'1',_t('搜索模式'),_t(""));
        $form->addInput($Somo); 
-
-
        $sid = new Typecho_Widget_Helper_Form_Element_Text('sid', NULL, NULL, _t('搜索结果不显示的分类'), _t('多个请用英文逗号隔开'));
         $form->addInput($sid);
       
@@ -67,7 +63,6 @@ class Soso_Plugin implements Typecho_Plugin_Interface
  
       
     }
-
     /**
      * 个人用户的配置面板
      * 
@@ -84,7 +79,6 @@ class Soso_Plugin implements Typecho_Plugin_Interface
      * @return void
      */
  
-
     /**
      * 插件实现方法
      * 
@@ -92,20 +86,17 @@ class Soso_Plugin implements Typecho_Plugin_Interface
      * @return void
      */
     public static function soso($keywords, $obj) {
-
   $Somo = Typecho_Widget::widget('Widget_Options')->plugin('Soso')->Somo;//获取设置参数
       
 $keywords=$obj->request->keywords;//尝试越过搜索词过滤，失败！【可通过修改var/Widget/Archive.php的源码,$keywords = $this->request->filter('url', 'search')->keywords;改为$keywords = $this->request->keywords;】
       
       
   $searchQuery = '%' . str_replace(' ', '%', $keywords) . '%';
-
   $po = $obj->select()->join('table.relationships','table.relationships.cid = table.contents.cid','right')->join('table.metas','table.relationships.mid = table.metas.mid','right')->where('table.metas.type=?','category')
            ->where("table.contents.password IS NULL OR table.contents.password = ''")
            ->where('table.contents.title LIKE ? OR table.contents.text LIKE ?', $searchQuery, $searchQuery)
            ->where('table.contents.type = ?', 'post'); 
 //常规搜索
-
       
  if($Somo==2){
  $po = $po->where('table.contents.title LIKE ?', $searchQuery);//只允许搜索文章标题
@@ -129,29 +120,36 @@ $keywords=$obj->request->keywords;//尝试越过搜索词过滤，失败！【�
       
       
 }
+    
 
 
-  
-public static function keywordsl($content, $obj) {
+public static function keywordsl($con, $obj,$text) {
+  $text = empty($text)?$con:$text;
   if (!empty(Typecho_Widget::widget('Widget_Options')->plugin('Soso')->tuozhan) && in_array('keyred',  Typecho_Widget::widget('Widget_Options')->plugin('Soso')->tuozhan)){
 $keywords=$obj->request->keywords;
-$content = str_ireplace($keywords,'<font color="red">'.$keywords.'</font>', $content);
+
+$text = preg_replace_callback('#(.*?)\[Meting\](.*?)\[\/Meting\](.*?)#', 
+                              function($s)use($keywords){
+return str_ireplace($keywords,'<font color="red">'.$keywords.'</font>', $s[1]).'[Meting]'.$s[2].'[/Meting]'.str_ireplace($keywords,'<font color="red">'.$keywords.'</font>', $s[3]);
+}    
+                              , $text);  
+
       }
-        return $content;
+        return $text;
       
       
 }
   
-public static function keywordst($title, $obj) {
+
+public static function keywordst($titl, $obj) {
   if (!empty(Typecho_Widget::widget('Widget_Options')->plugin('Soso')->tuozhan) && in_array('keyred',  Typecho_Widget::widget('Widget_Options')->plugin('Soso')->tuozhan)){
 $keywords = $obj->request->keywords;
-$title = str_ireplace($keywords,'<font color="red">'.$keywords.'</font>',$title);
+$titl = str_ireplace($keywords,'<font color="red">'.$keywords.'</font>',$titl);
   }
-        return $title; 
+        return $titl; 
 }  
   
   
-
   public static function excerpts($obj)
     {  
 $lenth = Typecho_Widget::widget('Widget_Options')->plugin('Soso')->lenth;//获取设置参数
@@ -162,5 +160,4 @@ $content = str_ireplace($keywords,'<font color="red">'.$keywords.'</font>', $con
     }
         echo $content;
     }
-
 }
