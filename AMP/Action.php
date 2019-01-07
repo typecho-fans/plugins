@@ -87,7 +87,7 @@ class AMP_Action extends Typecho_Widget implements Widget_Interface_Do
         $this->article = $this->getArticle($this->request->target);
 
         if (isset($this->article['isblank'])) {
-            throw new Typecho_Widget_Exception('不存在或已删除');
+            throw new Typecho_Widget_Exception("不存在或已删除。<a href='{$this->baseurl}'>返回首页</a>");
         }
         if (Helper::options()->plugin('AMP')->OnlyForSpiders == 1){//判断是否是对应的爬虫来访
             $userAgent = strtolower($_SERVER['HTTP_USER_AGENT']);
@@ -274,8 +274,6 @@ class AMP_Action extends Typecho_Widget implements Widget_Interface_Do
         try {
 
             $result = $http->send($api);
-
-//            error_log($result);
 
             $json = json_decode($result);
 
@@ -537,8 +535,14 @@ class AMP_Action extends Typecho_Widget implements Widget_Interface_Do
         //changefreq -> always、hourly、daily、weekly、monthly、yearly、never
         //priority -> 0.0优先级最低、1.0最高
         $root_url = Helper::options()->rootUrl;
+        if (isset($_GET['page'])){//Sitemap分页
+
+            $page=$_GET['page'];
+        }else{
+            $page=1;
+        }
         if (isset($_GET['txt'])) {//增加纯文本地址列表
-            $articles = $this->MakeArticleList($maptype);
+            $articles = $this->MakeArticleList($maptype,$page,5000);
             foreach ($articles AS $article) {
                 echo $article['permalink'] . "\n\r<br>";
             }
@@ -552,7 +556,7 @@ class AMP_Action extends Typecho_Widget implements Widget_Interface_Do
             echo "\t\t<changefreq>daily</changefreq>\n";
             echo "\t\t<priority>1</priority>\n";
             echo "\t</url>\n";
-            $articles = $this->MakeArticleList($maptype);
+            $articles = $this->MakeArticleList($maptype,$page,5000);
             foreach ($articles AS $article) {
                 echo "\t<url>\n";
                 echo "\t\t<loc>" . $article['permalink'] . "</loc>\n";

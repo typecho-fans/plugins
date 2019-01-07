@@ -9,12 +9,21 @@
 
 点击下载[最新版][2]
 
+
+如果本插件帮到了你，不妨给点赞赏鼓励一下作者 ^-^
+
+
+<img width="150" height="150" src="https://raw.githubusercontent.com/holmesian/Typecho-AMP/dev/alipay.jpg">
+<img width="150" height="150" src="https://raw.githubusercontent.com/holmesian/Typecho-AMP/dev/wechat.jpg">
+
+
+
 ---
 ## 功能
 
 - 生成符合Google AMP/Baidu MIP标准的AMP/MIP页面，并与标准页面建立关联。
 
-- 生成AMP/MIP的SiteMap，及所有ULR的纯文本列表。
+- 生成AMP/MIP的SiteMap，及所有ULR的纯文本列表(支持分页)。
 
 - 生成AMP版的首页。
  
