@@ -38,7 +38,7 @@
 
 名称 | 简介 | 版本 | 作者 | zip包
 ---- | :----: | :---: | ----: | :----:
-[AMP](AMP) | 移动端AMP/MIP页面生成插件 | 0.7.4 | [Holmesian](https://github.com/holmesian) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/AMP.zip)
+[AMP](AMP) | 移动端AMP/MIP页面生成插件 | 0.7.5 | [Holmesian](https://github.com/holmesian) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/AMP.zip)
 [AntiSpam](AntiSpam) | 垃圾评论机器人陷阱“小墙”插件 | 1.0.3 | Willin Kan | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/AntiSpam.zip)
 [AjaxComments](AjaxComments) | 嵌套式评论Ajax异步提交插件 | 1.2.0 | [Byends](https://github.com/visamz), Willin Kan | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/AjaxComments.zip)
 [AllowIp](AllowIp) | Typecho后台访问IP白名单插件 | 1.0.1 | [Fuzqing](https://github.com/fuzqing) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/AllowIp.zip)
