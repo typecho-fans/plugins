@@ -165,7 +165,7 @@ class LoveKKComment_Plugin implements Typecho_Plugin_Interface
      * @static
      * @access public
      *
-     * @param array $settings
+     * @param array $settings 配置数据
      *
      * @return string
      * @throws Typecho_Plugin_Exception
@@ -283,8 +283,9 @@ class LoveKKComment_Plugin implements Typecho_Plugin_Interface
      * @static
      * @access public
      *
-     * @param $comment
+     * @param mixed $comment 评论对象
      *
+     * @throws Typecho_Db_Exception
      * @throws Typecho_Plugin_Exception
      * @throws \PHPMailer\PHPMailer\Exception
      */
@@ -305,10 +306,11 @@ class LoveKKComment_Plugin implements Typecho_Plugin_Interface
      * @static
      * @access public
      *
-     * @param $comment
-     * @param $edit
-     * @param $status
+     * @param mixed  $comment 评论对象
+     * @param mixed  $edit    编辑对象
+     * @param string $status  评论状态
      *
+     * @throws Typecho_Db_Exception
      * @throws Typecho_Plugin_Exception
      * @throws \PHPMailer\PHPMailer\Exception
      */
@@ -332,8 +334,9 @@ class LoveKKComment_Plugin implements Typecho_Plugin_Interface
      * @static
      * @access public
      *
-     * @param $comment
+     * @param mixed $comment 评论对象
      *
+     * @throws Typecho_Db_Exception
      * @throws Typecho_Plugin_Exception
      * @throws \PHPMailer\PHPMailer\Exception
      */
@@ -349,17 +352,18 @@ class LoveKKComment_Plugin implements Typecho_Plugin_Interface
      * @static
      * @access public
      *
-     * @param      $commentId
-     * @param bool $isApproved
+     * @param int  $commentId  评论编号
+     * @param bool $isApproved 是否为审核操作
      *
      * @return bool|string
+     * @throws Typecho_Db_Exception
      * @throws Typecho_Plugin_Exception
      * @throws \PHPMailer\PHPMailer\Exception
      */
     static public function sendMail($commentId, $isApproved = FALSE)
     {
         // 重新获取评论数据
-        $comment = Helper::widgetById('comments', $commentId);
+        $comment = self::getWidget('Comments', 'coid', $commentId);
         // 收件人地址
         $address = $comment->mail;
         // 上级评论对象
@@ -367,7 +371,7 @@ class LoveKKComment_Plugin implements Typecho_Plugin_Interface
         // 不是帖子发表者
         if ( $comment->authorId != $comment->ownerId ) {
             // 获取作者信息
-            $author = Helper::widgetById('users', $comment->ownerId);
+            $author = self::getWidget('Users', 'uid', $comment->ownerId);
             // 收件地址
             $address = $author->mail;
             // 上级评论
@@ -377,7 +381,7 @@ class LoveKKComment_Plugin implements Typecho_Plugin_Interface
         // 评论回复
         if ( 0 < $comment->parent ) {
             // 获取上级对象
-            $parentComment = Helper::widgetById('comments', $comment->parent);
+            $parentComment = self::getWidget('Comments', 'coid', $comment->parent);
             // 是否获取到且用户ID不同或邮件地址不同
             if ( isset($parentComment->coid) && $comment->mail != $parentComment->mail ) {
                 // 收件地址
@@ -431,7 +435,7 @@ class LoveKKComment_Plugin implements Typecho_Plugin_Interface
                 // 读取模板
                 $html = file_get_contents(dirname(__FILE__) . '/theme/reply.html');
                 // 获取文章
-                $post = Helper::widgetById('contents', $parentComment->cid);
+                $post = self::getWidget('Contents', 'cid', $parentComment->cid);
                 // 替换模板
                 $data['html'] = str_replace(
                     array(
@@ -545,7 +549,7 @@ class LoveKKComment_Plugin implements Typecho_Plugin_Interface
      * @static
      * @access public
      *
-     * @param $data
+     * @param array $data 公共参数
      *
      * @return bool|string
      * @throws Typecho_Plugin_Exception
@@ -612,7 +616,7 @@ class LoveKKComment_Plugin implements Typecho_Plugin_Interface
      * @static
      * @access public
      *
-     * @param $param
+     * @param array $param 公共参数
      *
      * @return bool|string
      * @throws Typecho_Plugin_Exception
@@ -705,7 +709,7 @@ class LoveKKComment_Plugin implements Typecho_Plugin_Interface
      * @static
      * @access public
      *
-     * @param $param
+     * @param array $param 公共参数
      *
      * @return bool
      * @throws Typecho_Plugin_Exception
@@ -815,13 +819,40 @@ class LoveKKComment_Plugin implements Typecho_Plugin_Interface
     }
     
     /**
+     * 获取Widget对象
+     *
+     * @static
+     * @access private
+     *
+     * @param string $table 数据表名
+     * @param string $key   查询关键字
+     * @param mixed  $val   数据数据
+     *
+     * @return mixed
+     * @throws Typecho_Db_Exception
+     */
+    static private function getWidget($table, $key, $val)
+    {
+        // 类名称
+        $className = 'Widget_Abstract_' . $table;
+        // 初始化数据库
+        $db = Typecho_Db::get();
+        // 初始化类
+        $widget = new $className(Typecho_Request::getInstance(), Typecho_Widget_Helper_Empty::getInstance());
+        // 查询数据
+        $db->fetchRow($widget->select()->where($key . ' = ?', $val)->limit(1), array($widget, 'push'));
+        
+        return $widget;
+    }
+    
+    /**
      * 阿里云签名
      *
      * @static
      * @access private
      *
-     * @param $param
-     * @param $accesssecret
+     * @param array  $param        签名参数
+     * @param string $accesssecret 秘钥
      *
      * @return string
      */
@@ -854,7 +885,7 @@ class LoveKKComment_Plugin implements Typecho_Plugin_Interface
      * @static
      * @access private
      *
-     * @param $val
+     * @param string $val 要转换的编码
      *
      * @return string|string[]|null
      */
@@ -877,7 +908,7 @@ class LoveKKComment_Plugin implements Typecho_Plugin_Interface
      * @static
      * @access private
      *
-     * @param $param
+     * @param array $param 发送参数
      *
      * @return bool|string
      */

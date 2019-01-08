@@ -23,9 +23,9 @@ class LoveKKComment_Action extends Widget_Abstract_Users implements Widget_Inter
     /**
      * 构造函数
      *
-     * @param      $request
-     * @param      $response
-     * @param null $params
+     * @param mixed $request  请求对象
+     * @param mixed $response 输出对象
+     * @param null  $params   请求参数
      *
      * @throws Typecho_Plugin_Exception
      */
@@ -41,8 +41,8 @@ class LoveKKComment_Action extends Widget_Abstract_Users implements Widget_Inter
      *
      * @access private
      *
-     * @param string $act
-     * @param null   $form
+     * @param string $act  当前操作
+     * @param mixed  $form 表单对象
      */
     private function html($act = 'forget', $form = NULL)
     {
@@ -210,7 +210,7 @@ class LoveKKComment_Action extends Widget_Abstract_Users implements Widget_Inter
      *
      * @access private
      *
-     * @param int $uid
+     * @param int $uid 用户编号
      *
      * @return Typecho_Widget_Helper_Form
      */
