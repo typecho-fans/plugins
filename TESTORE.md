@@ -51,7 +51,7 @@
 [BlockComment](https://github.com/typecho/plugins/tree/master/BlockComment) | Typecho评论来路IP黑名单插件 | 0.0.1 | [明城](https://github.com/feelinglucky) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/BlockComment.zip)
 [BlockIP](https://github.com/kokororin/typecho-plugin-BlockIP) | Typecho访问前台IP黑名单插件 | 1.0 | [Kokororin](https://github.com/kokororin) | [下载](https://github.com/kokororin/typecho-plugin-BlockIP/archive/master.zip)
 [Calendar](https://github.com/istobran/typecho-calender-plugin) | Typecho侧边栏显示日历插件 | 1.0.0 | [BangZ](https://github.com/istobran) | [下载](https://github.com/istobran/typecho-calender-plugin/archive/master.zip)
-[Captcha](https://github.com/istobran/typecho-calender-plugin) | Typecho经典版评论验证码插件 | 1.0.0 | [qining & Kimi](https://github.com/KimiChen) | [下载](https://github.com/KimiChen/Typecho-Captcha/archive/master.zip)
+[Captcha](https://github.com/KimiChen/Typecho-Captcha) | Typecho经典版评论验证码插件 | 1.0.0 | [qining & Kimi](https://github.com/KimiChen) | [下载](https://github.com/KimiChen/Typecho-Captcha/archive/master.zip)
 [CodeHighlighter](https://github.com/Copterfly/CodeHighlighter-for-Typecho) | Prism代码高亮插件(支持工具条) | 1.0.0 | [Copterfly](https://github.com/Copterfly) | [下载](https://github.com/Copterfly/CodeHighlighter-for-Typecho/archive/master.zip)
 [Collection](https://github.com/tennsinn/Collection)  | Typecho记录管理收藏条目插件 | 1.6.0 | [息E-敛](https://github.com/tennsinn) | [下载](https://github.com/tennsinn/Collection/archive/master.zip)
 [Comment2Telegram](https://github.com/MoeLoli/Comment2Telegram) | 评论操作推送Telegram通知插件 | 1.1.6 | [Momiji.Jin](https://github.com/MoeLoli) | [下载](https://github.com/MoeLoli/Comment2Telegram/archive/master.zip)
