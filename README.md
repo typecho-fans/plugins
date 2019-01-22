@@ -138,3 +138,4 @@
 [YoduBGM](YoduBGM) | 微型背景音乐播放器插件(支持Pjax) | 1.5.0 | [Jrotty](https://github.com/jrotty) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/YoduBGM.zip)
 [YoduPlayer](YoduPlayer) | 悬浮式音乐播放器插件(支持Pjax) | 2.2.2 | [Jrotty](https://github.com/jrotty) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/YoduPlayer.zip)
 [Zan](Zan) | 自定义字段输出文章点赞次数插件 | 1.0.0 | [冰剑](https://github.com/binjoo) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/Zan.zip)
+[TopTop](TopTop) | typecho 博客的一款返回顶部插件 | 1.0.0 | [夜雨](https://github.com/ghosx) | [Download](https://github.com/ghosx/plugins/archive/releases.zip)
