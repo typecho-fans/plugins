@@ -122,6 +122,7 @@
 [TeStore](TeStore) | 新Github表格解析版插件仓库插件 | 1.1.2 | [羽中](https://github.com/jzwalk), [zhulin3141](https://github.com/zhulin3141) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/TeStore.zip)
 [ThemeDemo](ThemeDemo) | 根据链接参数直接预览主题外观插件 | 1.0.1 | [doudou](https://github.com/doudoutime) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/ThemeDemo.zip)
 [Tinyfader](Tinyfader) | Typecho简易首页图片轮播插件 | 1.0.0 | Willin Kan | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/Tinyfader.zip)
+[TopTop](TopTop) | 卡通吊绳风格点击返回顶部按钮插件 | 1.0.0 | [Heeeepin](https://github.com/ghosx) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/TopTop.zip)
 [Typembed](Typembed) | 常见视频站链接自动转播放器插件 | 1.3.0 | [Fengzi](https://github.com/nothingisover) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/Typembed.zip)
 [Ueditor](Ueditor) | 百度贴吧可视化编辑器Ueditor插件 | 1.0.0 | [zhulin3141](https://github.com/zhulin3141) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/Ueditor.zip)
 [Ugauka](Ukagaka) | (娱乐向)二次元伪春菜萌物精灵插件 | 1.0.0 | [Kunr](https://github.com/Rakume) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/Ukagaka.zip)
@@ -138,4 +139,3 @@
 [YoduBGM](YoduBGM) | 微型背景音乐播放器插件(支持Pjax) | 1.5.0 | [Jrotty](https://github.com/jrotty) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/YoduBGM.zip)
 [YoduPlayer](YoduPlayer) | 悬浮式音乐播放器插件(支持Pjax) | 2.2.2 | [Jrotty](https://github.com/jrotty) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/YoduPlayer.zip)
 [Zan](Zan) | 自定义字段输出文章点赞次数插件 | 1.0.0 | [冰剑](https://github.com/binjoo) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/Zan.zip)
-[TopTop](TopTop) | typecho 博客的一款返回顶部插件 | 1.0.0 | [夜雨](https://github.com/ghosx) | [Download](https://github.com/ghosx/plugins/archive/releases.zip)
