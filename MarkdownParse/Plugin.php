@@ -5,7 +5,7 @@
  *
  * @package MarkdownParse
  * @author  mrgeneral
- * @version 1.1.0
+ * @version 1.1.1
  * @link    https://www.chengxiaobai.cn/php/markdown-parser-library.html
  */
 
