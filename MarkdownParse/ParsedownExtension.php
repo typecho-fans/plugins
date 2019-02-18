@@ -4,10 +4,9 @@ require_once 'Parsedown.php';
 
 class ParsedownExtension extends Parsedown
 {
-    protected $isTocEnabled = false;
-
-    protected $rawTocList = [];
-
+    protected $isTocEnabled      = false;
+    protected $absoluteUrl       = '';
+    protected $rawTocList        = [];
     protected $findTocSyntaxRule = '#^<p> *\[TOC\]\s*</p>$#m';
 
     public function setTocEnabled($isTocEnable)
@@ -20,6 +19,13 @@ class ParsedownExtension extends Parsedown
     public function setTocSyntaxRule($findTocSyntaxRule)
     {
         $this->findTocSyntaxRule = $findTocSyntaxRule;
+
+        return $this;
+    }
+
+    public function setAbsoluteUrl($absoluteUrl)
+    {
+        $this->absoluteUrl = $absoluteUrl;
 
         return $this;
     }
@@ -41,8 +47,10 @@ class ParsedownExtension extends Parsedown
         $topHeadLevel       = min(array_column($this->rawTocList, 'level'));
 
         foreach ($this->rawTocList as $id => $tocItem) {
-            $tocMarkdownContent .= sprintf('%s- [%s](#%s)' . PHP_EOL, str_repeat('  ', $tocItem['level'] - $topHeadLevel), $this->line($tocItem['text']), $id);
+            $tocMarkdownContent .= sprintf('%s- [%s](%s#%s)' . PHP_EOL, str_repeat('  ', $tocItem['level'] - $topHeadLevel), $this->line($tocItem['text']), $this->absoluteUrl, $id);
         }
+
+        $this->rawTocList = [];
 
         return parent::text($tocMarkdownContent);
     }
