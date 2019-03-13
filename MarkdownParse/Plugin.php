@@ -5,8 +5,8 @@
  *
  * @package MarkdownParse
  * @author  mrgeneral
- * @version 1.1.1
- * @link    https://www.chengxiaobai.cn/php/markdown-parser-library.html
+ * @version 1.2.0
+ * @link    https://www.chengxiaobai.cn
  */
 
 require_once 'ParsedownExtension.php';
@@ -39,6 +39,7 @@ class MarkdownParse_Plugin implements Typecho_Plugin_Interface
         return ParsedownExtension::instance()
             ->setBreaksEnabled(true)
             ->setTocEnabled(true)
+            ->setIsOriginalBlockEnabled(true)
             ->text($text);
     }
 }

@@ -4,10 +4,12 @@ require_once 'Parsedown.php';
 
 class ParsedownExtension extends Parsedown
 {
-    protected $isTocEnabled      = false;
-    protected $absoluteUrl       = '';
-    protected $rawTocList        = [];
-    protected $findTocSyntaxRule = '#^<p> *\[TOC\]\s*</p>$#m';
+    protected $isTocEnabled           = false;
+    protected $rawTocList             = [];
+    protected $findTocSyntaxRule      = '#^<p>\s*\[TOC\]\s*</p>$#m';
+    protected $isOriginalBlockEnabled = false;
+    protected $originalBlockRuleList  = ['$' => '/\${1,2}[^`]*\${1,2}/m'];
+    protected $absoluteUrl            = '';
 
     public function setTocEnabled($isTocEnable)
     {
@@ -23,6 +25,20 @@ class ParsedownExtension extends Parsedown
         return $this;
     }
 
+    public function setIsOriginalBlockEnabled($isOriginalBlockEnabled)
+    {
+        $this->isOriginalBlockEnabled = $isOriginalBlockEnabled;
+
+        return $this;
+    }
+
+    public function addOriginalBlockRule($originalBlockRule)
+    {
+        $this->originalBlockRuleList = array_merge($this->originalBlockRuleList, $originalBlockRule);
+
+        return $this;
+    }
+
     public function setAbsoluteUrl($absoluteUrl)
     {
         $this->absoluteUrl = $absoluteUrl;
@@ -32,13 +48,27 @@ class ParsedownExtension extends Parsedown
 
     public function text($text)
     {
-        $content = parent::text($text);
+        return $this->handleAfter(parent::text($this->handleBefore($text)));
+    }
 
-        if (!$this->isTocEnabled || empty($this->rawTocList) || !preg_match($this->findTocSyntaxRule, $content)) {
-            return $content;
+    protected function handleBefore($text)
+    {
+        array_map(function ($originalBlockMark) {
+
+            $this->addInlineElements($originalBlockMark, ['Original']);
+
+        }, array_keys($this->originalBlockRuleList));
+
+        return $text;
+    }
+
+    protected function handleAfter($text)
+    {
+        if (!$this->isTocEnabled || empty($this->rawTocList) || !preg_match($this->findTocSyntaxRule, $text)) {
+            return $text;
         }
 
-        return preg_replace($this->findTocSyntaxRule, $this->buildToc(), $content);
+        return preg_replace($this->findTocSyntaxRule, $this->buildToc(), $text);
     }
 
     protected function buildToc()
@@ -53,6 +83,24 @@ class ParsedownExtension extends Parsedown
         $this->rawTocList = [];
 
         return parent::text($tocMarkdownContent);
+    }
+
+    public function addInlineElements($inlineMarker, $inlineHandleList)
+    {
+        if (strpos($this->inlineMarkerList, $inlineMarker) === false) {
+            $this->inlineMarkerList .= $inlineMarker;
+        }
+
+        $this->InlineTypes[$inlineMarker] = array_merge(isset($this->InlineTypes[$inlineMarker]) ? $this->InlineTypes[$inlineMarker] : [], is_array($inlineHandleList) ? $inlineHandleList : (array)$inlineHandleList);
+
+        return $this;
+    }
+
+    public function addBlockElements($blockMarker, $blockHandleList)
+    {
+        $this->BlockTypes[$blockMarker] = array_merge(isset($this->BlockTypes[$blockMarker]) ? $this->BlockTypes[$blockMarker] : [], is_array($blockHandleList) ? $blockHandleList : (array)$blockHandleList);
+
+        return $this;
     }
 
     protected function blockHeader($line)
@@ -71,5 +119,26 @@ class ParsedownExtension extends Parsedown
         ];
 
         return $block;
+    }
+
+    /**
+     * parsing for original block
+     *
+     * @see https://github.com/mrgeneralgoo/typecho-markdown/pull/7
+     *
+     * @param $excerpt
+     *
+     * @return array|null
+     */
+    protected function inlineOriginal($excerpt)
+    {
+
+        $originalBlockMark = substr($excerpt['text'], 0, 1);
+
+        if (!isset($this->originalBlockRuleList[$originalBlockMark]) || !preg_match($this->originalBlockRuleList[$originalBlockMark], $excerpt['text'], $originalBlock) || empty($originalBlock[0])) {
+            return null;
+        }
+
+        return $this->inlineText($originalBlock[0]);
     }
 }
