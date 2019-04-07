@@ -4,7 +4,7 @@
  * 
  * @package CateFilter
  * @author Rakiy
- * @version 1.2.1
+ * @version 1.2.2
  * @link http://ysido.com/
  */
 class CateFilter_Plugin implements Typecho_Plugin_Interface
@@ -75,7 +75,7 @@ class CateFilter_Plugin implements Typecho_Plugin_Interface
         $CateIds = explode(',', $CateIds);
         $CateIds = array_unique($CateIds);  //去除重复值
         foreach ($CateIds as $k => $v) {
-            $select = $select->where('table.relationships.mid != '.intval($v));//确保每个值都是数字
+            $select = $select->where('table.relationships.mid != '.intval($v))->group('cid');//确保每个值都是数字；排除重复文章
         } 
         return $select;
     }   
