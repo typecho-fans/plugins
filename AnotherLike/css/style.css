@@ -1,0 +1,42 @@
+/*
+    Created on : 2018-10-3
+    Author     : idealclover
+*/
+
+/* .fa-thumbs-up{margin-right: 5px;top: 2px;width: 16px;height: 16px;display: inline-block; background: url(thumb_up.png) no-repeat left center; } */
+
+.fave {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 1px solid #EA6F5A;
+    vertical-align:bottom;
+    background: url(./like_animation_steps.png) no-repeat;
+    background-position: left;
+    background-size: auto 100%;
+    display: inline-block;
+}
+
+.fave.active {
+    background-color: #EA6F5A;
+    background-position: right;
+    /* 主要在这一步 */
+    transition: background .6s steps(19);
+}
+
+.fave.done {
+    background-color: #EA6F5A;
+    background-position: right;
+}
+
+.likeCount{
+    display: inline;
+}
+
+.likeCount.single{
+    vertical-align:bottom;
+    padding-left: 3px;
+    /* font-family: 'Georgia', Times, Times New Roman, serif; */
+    font-size: 35px;
+    color: #999999
+}
