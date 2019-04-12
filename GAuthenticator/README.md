@@ -20,6 +20,10 @@
 ![验证界面截图.png](https://static.cuojue.org/usr/uploads/2018/11/86736268.png)
 
 ## 更新说明
+
+#### 0.0.6
+- [change] 使用 `jquery-qrcode` 插件在浏览器端生成二维码(不再使用外站的API来生成二维码,保证Key的安全性).
+
 #### 0.0.5
 - [fix] 修复启用插件500错误，改为使用jQuery获取SecretKey显示二维码
 
