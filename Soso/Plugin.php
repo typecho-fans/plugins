@@ -95,7 +95,7 @@ $keywords=$obj->request->keywords;//尝试越过搜索词过滤，失败！【�
   $po = $obj->select()->join('table.relationships','table.relationships.cid = table.contents.cid','right')->join('table.metas','table.relationships.mid = table.metas.mid','right')->where('table.metas.type=?','category')
            ->where("table.contents.password IS NULL OR table.contents.password = ''")
            ->where('table.contents.title LIKE ? OR table.contents.text LIKE ?', $searchQuery, $searchQuery)
-           ->where('table.contents.type = ?', 'post'); 
+           ->where('table.contents.type = ?', 'post')->group('cid'); 
 //常规搜索
       
  if($Somo==2){
