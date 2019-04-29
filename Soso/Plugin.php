@@ -4,7 +4,7 @@
  * 
  * @package Soso
  * @author 泽泽社长
- * @version 1.0.5
+ * @version 1.0.6
  * @link http://qqdie.com/
  */
 class Soso_Plugin implements Typecho_Plugin_Interface
