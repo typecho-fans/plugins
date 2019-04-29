@@ -117,7 +117,7 @@
 [Sticky](Sticky) | Typecho文章首页/分类页置顶插件 | 1.0.1 | [Ryan](https://github.com/benzBrake), Willin Kan | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/Sticky.zip)
 [Subscriber](Subscriber) | 指定文章/内容对登录会员可见插件 | 1.0.0beta | [羽中](https://github.com/jzwalk) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/Subscriber.zip)
 [SyncPost](SyncPost) | 新浪/腾讯微博和豆瓣更新推送插件 | 1.0.0 | [冰剑](https://github.com/binjoo) | [N/A](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/SyncPost.zip)
-[Soso](Soso) | Typecho本地搜索功能增强插件 | 1.0.0 | [泽泽社长](https://github.com/jrotty) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/Soso.zip)
+[Soso](Soso) | Typecho本地搜索功能增强插件 | 1.0.6 | [泽泽社长](https://github.com/jrotty) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/Soso.zip)
 [TeKit](TeKit) | 常用侧边栏文章/评论数据输出插件 | 2.0.0 | [冰剑](https://github.com/binjoo) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/TeKit.zip)
 [TeStore](TeStore) | 新Github表格解析版插件仓库插件 | 1.1.2 | [羽中](https://github.com/jzwalk), [zhulin3141](https://github.com/zhulin3141) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/TeStore.zip)
 [ThemeDemo](ThemeDemo) | 根据链接参数直接预览主题外观插件 | 1.0.1 | [doudou](https://github.com/doudoutime) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/ThemeDemo.zip)
