@@ -110,7 +110,7 @@
 [Shields](https://github.com/journey-ad/Shields-Typecho-Plugin) | Github项目调用Shields.io按钮插件 | 1.0.0 | [journey.ad](https://github.com/journey-ad) | [下载](https://github.com/journey-ad/Shields-Typecho-Plugin/archive/master.zip)
 [SimpleCDN](https://github.com/mierhuo/Typecho-SimpleCDN)  | 文章内容按镜像规则预先替换插件 | 1.0.0 | [Huspy](https://github.com/mierhuo) | [下载](https://github.com/mierhuo/Typecho-SimpleCDN/archive/master.zip)
 [SimpleCode](https://github.com/typecho/plugins/blob/master/SimpleCode.php)  | 使用PHP自带函数高亮代码插件 | 1.0.2 | [qining](https://github.com/joyqi) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/SimpleCode.zip)
-[SiteRunningTime](https://github.com/zhusaidong/SiteRunningTime) | 网站底部显示系统运行时长插件 | 1.5.0 | [上官元恒](https://github.com/zhusaidong) | [下载](https://github.com/zhusaidong/SiteRunningTime/releases/download/1.5.0/SiteRunningTime.zip)
+[SiteRunningTime](https://github.com/zhusaidong/SiteRunningTime) | 网站底部显示系统运行时长插件 | 1.5.1 | [上官元恒](https://github.com/zhusaidong) | [下载](https://github.com/zhusaidong/SiteRunningTime/archive/1.5.1.zip)
 [Snow](https://github.com/journey-ad/cPlayer-Typecho-Plugin) | 原生Js多项定制页面下雪特效插件 | 1.0.0 | [journey.ad](https://github.com/journey-ad) | [下载](https://github.com/journey-ad/Snow-Typecho-Plugin/archive/master.zip)
 [SpammersGoAway](https://github.com/oott123/SpammersGoAway) | 校验哈希值防止垃圾评论插件 | 0.0.1 | [oott123](https://github.com/oott123) | [下载](https://github.com/oott123/SpammersGoAway/archive/master.zip)
 [StreakRain](https://github.com/zhusaidong/SiteRunningTime) | (娱乐向)动态线条雨背景效果插件 | 1.1.0 | [上官元恒](https://github.com/zhusaidong) | [下载](https://github.com/zhusaidong/streak-rain-typecho-plugin/archive/master.zip)
