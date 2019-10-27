@@ -27,7 +27,7 @@
 
  > 下表中下载链接文字可用于附加图标：`下载`即非社区版，`不可用`显示为:no_entry:，`特殊`显示:warning:即安装或启用方法特殊。
 
-### 插件信息 (107)
+### 插件信息 (108)
 
 ###### 下表“名称”将用于创建安装文件夹，“版本”用于提示升级，请务必确保文本准确；注意按字母排序，自增上方括号中数字便于统计，简介不要过长。
 ```
@@ -64,6 +64,7 @@
 [cPlayer](https://github.com/journey-ad/cPlayer-Typecho-Plugin) | 网易云解析全能音乐播放器插件 | 1.2.11 | [journey.ad](https://github.com/journey-ad) | [下载](https://github.com/journey-ad/cPlayer-Typecho-Plugin/archive/V1.2.11.zip)
 [Creole](https://github.com/typecho/plugins/tree/master/Creole) | Wiki风格Creole语法解析器插件 | 0.2 | [明城](https://github.com/feelinglucky) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/Creole.zip)
 [CustomCssAndJs](https://github.com/kyuuseiryuu/typecho-plugin-custom-css-js) | 加载自定义头部Css/尾部Js插件 | 1.0 | [KyuuSeiryuu](https://github.com/kyuuseiryuu) | [下载](https://github.com/kyuuseiryuu/typecho-plugin-custom-css-js/archive/master.zip)
+[DarkReader](https://github.com/jackytsu/typecho-darkreader) | 为网站添加 darkreader.js，实现 [Dark Reader](https://darkreader.org/) 的相关功能 | 1.0.0 | [南宫小骏](https://jacky.live) | [下载](https://github.com/jackytsu/typecho-darkreader/releases/download/v1.0.0/DarkReader.zip)
 [DPlayer](https://github.com/MoePlayer/DPlayer-Typecho) | 全能视频播放器插件(支持弹幕) | 1.0.0 | [Volio](https://github.com/volio) | [下载](https://github.com/MoePlayer/DPlayer-Typecho/archive/master.zip)
 [Duoshuo](http://ysido.com/duoshuo.html) | 原多说平台社会化评论同步插件 | 1.1.2 | [Rakiy](https://github.com/rakiy) | [不可用](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/Duoshuo.zip)
 [ExternalTool](https://github.com/phpgao/ExternalTool) | 自动判断文章外链并添加标记插件 | 0.2 | [老高](https://github.com/phpgao) | [下载](https://github.com/phpgao/ExternalTool/archive/master.zip)
