@@ -65,7 +65,7 @@
 [DbManager](DbManager) | Mysql数据库导入导出与优化插件 | 2.0.1 | [ShingChi](https://github.com/shingchi) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/DbManager.zip)
 [DevTool](DevTool) | 扩展开发常用数据查看与测试插件 | 1.0.0 | [zhulin3141](https://github.com/zhulin3141) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/DevTool.zip)
 [DownloadFile](DownloadFile) | 附件下载名与上传名保持一致插件 | 1.0.0 | [DT27](https://github.com/DT27) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/DownloadFile.zip)
-[DynamicLines](DynamicLines) | (娱乐向)动态蛛网式背景效果插件 | 1.0.0 | [长江](https://github.com/changjiangblog) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/DynamicLines.zip)
+[DynamicLines](DynamicLines) | (娱乐向)动态蛛网式背景效果插件 | 1.0.0 | [1379](https://github.com/1379) | [Download](https://github.com/1379/DynamicLines-typecho-plugin/archive/master.zip)
 [Editor](Editor) | 简明风格Markdown编辑器插件 | 1.0.2 | [公子](https://github.com/lizheming) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/Editor.zip)
 [EditorMD](EditorMD) | 豪华风格Markdown编辑器插件 | 1.3.0 | [DT27](https://github.com/DT27) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/EditorMD.zip)
 [EmlogToTypecho](EmlogToTypecho) | Emlog数据库导入Typecho插件 | 1.0.0 | [ShingChi](https://github.com/shingchi) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/EmlogToTypecho.zip)
