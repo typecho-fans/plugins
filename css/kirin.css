@@ -102,9 +102,9 @@ Them modified by <a href="https://lolico.moe" target="_blank">JindaiKirin</a>
     transition:all .3s
 }
 @media screen and (min-width:768px) {
-    .topButton.panel.panel-default {
+    /* .topButton.panel.panel-default {
         display:none
-    }
+    } */
     #bg, .standpage {
         left:200px
     }
@@ -738,9 +738,6 @@ i.fontello-dedent.text{
   .github-badge .bg-purple {
     background-color: #ab34e9
   }
-
-/* 评论附带设备信息 */
-  .ua-icon{display:inline-block;width:1pc;height:1pc;background-size:cover;background-repeat:no-repeat;vertical-align:text-top}.icon-360{background-image:url(https://cdn.zrahh.com/usr/uploads/2019/03/360.png)}.icon-android{background-image:url(https://cdn.zrahh.com/usr/uploads/2019/03/android.png);height:19px}.icon-apple{background-image:url(https://cdn.zrahh.com/usr/uploads/2019/03/apple.png)}.icon-baidu{background-image:url(https://cdn.zrahh.com/usr/uploads/2019/03/baidu.png)}.icon-chrome{background-image:url(https://cdn.zrahh.com/usr/uploads/2019/03/chrome.png)}.icon-edge{background-image:url(https://cdn.zrahh.com/usr/uploads/2019/03/edge.png)}.icon-firefox{background-image:url(https://cdn.zrahh.com/usr/uploads/2019/03/firefox.png)}.icon-google{background-image:url(https://cdn.zrahh.com/usr/uploads/2019/03/google.png)}.icon-ie{background-image:url(https://cdn.zrahh.com/usr/uploads/2019/03/ie.png)}.icon-liebao{background-image:url(https://cdn.zrahh.com/usr/uploads/2019/03/liebao.png)}.icon-linux{background-image:url(https://cdn.zrahh.com/usr/uploads/2019/03/linux.png)}.icon-mac{background-image:url(https://cdn.zrahh.com/usr/uploads/2019/03/mac.png)}.icon-opera{background-image:url(https://cdn.zrahh.com/usr/uploads/2019/03/opera.png)}.icon-qq{background-image:url(https://cdn.zrahh.com/usr/uploads/2019/03/qq.png)}.icon-quark{background-image:url(https://cdn.zrahh.com/usr/uploads/2019/03/quark.png)}.icon-safari{background-image:url(https://cdn.zrahh.com/usr/uploads/2019/03/safari.png)}.icon-ubuntu{background-image:url(https://cdn.zrahh.com/usr/uploads/2019/03/ubuntu.png)}.icon-uc{background-image:url(https://cdn.zrahh.com/usr/uploads/2019/03/uc.png)}.icon-win1{background-image:url(https://cdn.zrahh.com/usr/uploads/2019/03/win1.png)}.icon-win2{background-image:url(https://cdn.zrahh.com/usr/uploads/2019/03/win2.png)}
 
 /*赞赏图标跳动*/
 .btn-pay {
