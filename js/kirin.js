@@ -32,7 +32,7 @@ $(document).ready(function () {
             300 > $(document).scrollTop() ? $("#kotori").addClass("hidekotori") : $("#kotori").removeClass(
                 "hidekotori")
         }, 300);
-        console.log("\n %c handsome modified %c by \u795e\u4ee3\u7eee\u51db lolico.moe \n",
+        console.log("\n %c handsome modified %c by \u795e\u4ee3\u7eee\u51db moe.best \n",
             "color:#444;background:#eee;padding:5px 0;", "color:#fff;background:#876;padding:5px 0;");
         console.log("%c ",
             "background:url(https://ws1.sinaimg.cn/large/71785a53ly1fxylsf6ke7j216z0o6q8j.jpg) no-repeat center;background-size:cover;padding-left:100%;padding-bottom:55%;overflow:hidden;border-radius:10px;margin:5px 0"
