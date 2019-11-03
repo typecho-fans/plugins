@@ -1,0 +1,768 @@
+@charset"utf8";
+
+/*噫你居然找到这里了……如果实在想要抄走本站的自定义css，希望您能在footer里加上
+Them modified by <a href="https://lolico.moe" target="_blank">JindaiKirin</a>
+字样，毕竟主题魔改成果来之不易，蟹蟹！
+声明：如果你用了我的CSS，请你认识到，你并没有向我支付任何报酬，因此出现任何问题我都没有义务去回答去解决*/
+
+/*Modifi-css for handsome 4.4.x*/
+
+/*all*/
+ .no-margin {
+    margin:0!important
+}
+/*scrollbar*/
+ *::-webkit-scrollbar {
+    width:8px!important;
+    height:8px!important
+}
+*::-webkit-scrollbar-thumb {
+    border-radius:4px;
+    background-color:#999!important
+}
+*::-webkit-scrollbar-track-piece {
+    background:#eee!important
+}
+*::-webkit-scrollbar-thumb:hover {
+    background-color:#777!important
+}
+*::-webkit-scrollbar-thumb:active {
+    background-color:#555!important
+}
+/*app&toc*/
+ #sidebar>section:not(#tag_toc) {
+    opacity:1
+}
+.ophide {
+    opacity:0!important
+}
+#toc {
+    max-height:calc(100vh - 120px)!important
+}
+/*header*/
+ .navbar-header {
+    box-shadow:-2px 2px 2px rgba(0, 0, 0, .05), 0px 1px 0 rgba(0, 0, 0, .05)
+}
+#header>.collapse {
+    box-shadow:2px 2px 2px rgba(0, 0, 0, .05), 0px 1px 0 rgba(0, 0, 0, .05)
+}
+/*main*/
+ .entry-content {
+    background-color:transparent
+}
+.panel-small .pos50t-meta {
+    padding-left:25px;
+    padding-right:25px
+}
+.b-light {
+    border-color: #bbb4
+}
+.tip:before {
+    margin-top:0!important
+}
+#post-panel>div.blog-post>.panel:not(.b-a), #post-panel>div.blog-post>.panel-small {
+    transition:all .2s;
+    box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.2)!important;
+}
+#post-panel>div.blog-post>.panel:not(.b-a):hover, #post-panel>div.blog-post>.panel-small:hover {
+    box-shadow: 1px 1px 5px 2px rgba(0, 0, 0, 0.3)!important;
+}
+.list-group-item {
+    background-color:rgba(255, 255, 255, .8)
+}
+.thumb-lg {
+    width:130px
+}
+#widget-tabs-4-comments .list-group-item, #tag_toc, #post-panel, #sidebar, #post-content {
+    background-color:transparent!important
+}
+#alllayout.app-aside-folded .tooltip {
+    display:none!important
+}
+#bg {
+    background-image:url(http://api.btstu.cn/sjbz/?lx=dongman);
+    background-size:cover;
+    background-position:right bottom;
+    background-repeat:no-repeat;
+    position:fixed;
+    z-index:-1;
+    top:50px;
+    left:0;
+    right:0;
+    bottom:0
+}
+.standpage {
+    width:100%;
+    height:calc(100% - 50px);
+    position:fixed;
+    top:50px;
+    left:0
+}
+.standpage, aside, aside * {
+    transition:all .3s
+}
+@media screen and (min-width:768px) {
+    .topButton.panel.panel-default {
+        display:none
+    }
+    #bg, .standpage {
+        left:200px
+    }
+    .standpage {
+        height:calc(100% - 101px);
+        width:calc(100% - 200px)
+    }
+    .app-aside-folded #bg, .app-aside-folded .standpage {
+        left:60px
+    }
+    .app-aside-folded .standpage {
+        width:calc(100% - 60px)
+    }
+}
+.wrapper-md>#comments, .wrapper-md>.blog-post, .wrapper-md>.breadcrumb, .m-t-lg.m-b-lg, .wrapper-md>.no_search_result {
+    max-width:800px;
+    margin-left:auto;
+    margin-right:auto
+}
+#post-panel>div.blog-post>.panel, #post-panel>div.blog-post>.panel-small, .wrapper-md>#comments, .wrapper-md>.breadcrumb {
+    background-color:rgba(255, 255, 255, .9)
+}
+.wrapper-md article, .wrapper-md>#comments {
+    border-radius:5px;
+    overflow:hidden
+}
+.bg-auto:before {
+    bottom:51px;
+    background-color: initial; /* 修复右侧边栏不透明 */
+}
+@media screen and (max-width:991px) {
+    #bg {
+        background-image:url(http://api.btstu.cn/sjbz/?lx=m_dongman);
+        background-position:center center
+    }
+    aside.col.no-border-xs {
+        border:0;
+        opacity:1!important;
+        background-color:rgba(255, 255, 255, .8)
+    }
+}
+@media screen and (min-width:992px) {
+    aside.col.w-md.b-l {
+        background-color:rgba(255, 255, 255, .9)
+    }
+    aside.col.w-md.b-l:hover {
+        background-color:#fff
+    }
+}
+header.wrapper-md {
+    background-color:rgba(246, 248, 248, .93)!important
+}
+.blog-post>.panel, .blog-post>.panel-small {
+    border:0;
+    border-radius:5px
+}
+.index-post-img {
+    border-top-left-radius:5px;
+    border-top-right-radius:5px;
+    overflow:hidden
+}
+.index-post-img-small {
+    overflow:hidden
+}
+.blog-post>.panel .index-post-img .item-thumb, .panel-small .index-post-img-small .item-thumb-small, .index-post-title a {
+    transition:all .2s
+}
+.blog-post>.panel:hover .index-post-img .item-thumb, .blog-post>.panel-small:hover .index-post-img-small .item-thumb-small {
+    transform:scale(1.05)
+}
+#footer>.wrapper {
+    background-color:rgba(237, 241, 242, .8)
+}
+.streamline {
+    margin-left:20px;
+    padding-right:10px
+}
+.streamline .comment-body {
+    position:relative
+}
+aside.col.w-md.no-border-xs {
+    transition:all .3s
+}
+.visible-xs-inline {
+    display:inline-block!important
+}
+@media screen and (min-width:768px) and (max-width:1140px) {
+    .visible-xs-inline {
+        display:none!important
+    }
+}
+.tocify-item {
+    background-color:rgba(255, 255, 255, .8)
+}
+.tocify-item.active {
+    color:#7266ba;
+    font-weight:700
+}
+/*kotori*/
+#kotori {
+    position:absolute;
+    left:-15px;
+    bottom:-15px;
+    max-height:110px;
+    transition:all .3s
+}
+#kotori:hover {
+    left:0;
+    bottom:0
+}
+#kotori.hidekotori {
+    left:-110px;
+    bottom:-110px
+}
+@media screen and (max-width:767px) {
+    #kotori {
+        display:none
+    }
+    .blog-post>.panel:hover .index-post-img .item-thumb {
+        transform:none!important
+    }
+}
+.index-post-title a:hover {
+    color:#2ebaae
+}
+.wrapper-md .comment-list .comment-parent, .wrapper-md .comment-list .comment-children {
+    border-top-width:1px;
+    border-top-style:solid;
+    border-top-color:#ddd;
+    padding-top:10px
+}
+.max-img {
+    max-height:400px
+}
+.navi-wrap .navi.clearfix>ul.nav {
+    padding-bottom:100px
+}
+.app-aside-folded.navi-wrap {
+    max-height:calc(100% - 50px)
+}
+.lg-backdrop {
+    background-color:rgba(0, 0, 0, .8)
+}
+.skPlayer-name {
+    font-family:"Source Sans Pro", "Hiragino Sans GB", "Microsoft Yahei", SimSun, Helvetica, Arial, Sans-serif
+}
+html.fancybox-enabled {
+    overflow-y:auto
+}
+.fancybox-bg {
+    background-color:rgba(0, 0, 0, .95)
+}
+.fancybox-arrow:after {
+    background-color:rgba(0, 0, 0, .8)
+}
+.share, .yellow, .red, .lblue, .green {
+    background-position-y: 50%
+}
+.timeline .tl-date {
+    color:#fff;
+    text-shadow: 0 0 4px #000
+}
+body.modal-open {
+    overflow-y: auto;
+    padding-right: 0 !important
+}
+.reply2view {
+    background-color:transparent;
+    border:solid 1px #bbb
+}
+#content {
+    transition:all .3s
+}
+.OwO .OwO-logo {
+    height:28px
+}
+#tag_toc.fixed #toc {
+    width:100%
+}
+.page-navigator .next a, .page-navigator .prev a {
+    height:31px
+}
+.page-navigator>li:last-child>a, .page-navigator>li:last-child>span {
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px
+}
+.item-thumb-small {
+    background-position:left
+}
+.panel .post-meta.wrapper-lg {
+    padding:20px
+}
+/*comments*/
+ #comments pre code {
+    display:inline
+}
+.wrapper-md>#comments {
+    border:solid 1px #fff;
+    padding:10px 30px 20px 30px
+}
+.hideContent {
+    background-color:transparent;
+    padding:0
+}
+/*img*/
+ img[mw400] {
+    max-width:400px!important;
+    width:100%
+}
+.mw400 {
+    max-width:400px
+}
+/*inner-post*/
+ .inner-image {
+    background-position:center
+}
+.inser-title {
+    color:#555!important
+}
+.inster-summary {
+    color:#58666e!important
+}
+.preview .post-inser {
+    background-color:rgba(255, 255, 255, .8);
+    transition:all .3s
+}
+.preview .post-inser:hover {
+    background-color:rgba(255, 255, 255, 1)
+}
+/*avatar*/
+ #aside-user span.avatar {
+    animation-timing-function:cubic-bezier(0, 0, .07, 1)!important;
+    border:0 solid
+}
+#alllayout:not(.app-aside-folded) #aside-user span.avatar:hover {
+    transform:rotate(360deg) scale(1.2);
+    border-width:5px;
+    animation:avatar .5s
+}
+@keyframes avatar {
+    from {
+        transform:rotate(0) scale(1);
+        border-width:0
+    }
+    to {
+        transform:rotate(360deg) scale(1.2);
+        border-width:5px
+    }
+}
+/*search*/
+ #searchform {
+    margin-right:-10px
+}
+/*gallery*/
+ .compensate-for-scrollbar, .compensate-for-scrollbar #header {
+    padding-right:8px
+}
+.compensate-for-scrollbar #bg {
+    transition-duration:0s;
+    margin-right:8px
+}
+/*experimental modify 2018-07-19*/
+ @media screen and (min-width:1200px) {
+    .panel-small .post-meta {
+        padding:13px 15px!important
+    }
+    .blog-post .post-meta.wrapper-lg {
+        padding-top:15px
+    }
+    .sticky {
+        position: absolute;
+        top:12px;
+        left:15px
+    }
+    .panel .item-thumb {
+        height:300px
+    }
+    #post-panel .blog-post {
+        position:relative;
+        display: -webkit-box; /* 老版本语法: Safari, iOS, Android browser, older WebKit browsers. */
+        display: -moz-box; /* 老版本语法: Firefox (buggy) */
+        display: -ms-flexbox; /* 混合版本语法: IE 10 */
+        display: -webkit-flex; /* 新版本语法: Chrome 21+ */
+        display: flex; /* 新版本语法: Opera 12.1, Firefox 22+ */
+        -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    }
+    #post-panel>div.blog-post>.panel {
+        overflow:hidden;
+        width: 100%;
+    }
+    #post-panel>div.blog-post>.panel .post-meta {
+        position:relative;
+        margin-top:-300px;
+        height:300px;
+        padding-top:133px!important;
+        padding-bottom:0!important;
+        background-color:rgba(0, 0, 0, .3);
+        color:#fff!important;
+        transition:all .3s
+    }
+    #post-panel>div.blog-post>.panel .post-meta, #post-panel>div.blog-post>.panel-small .post-meta {
+        border-radius:5px
+    }
+    #post-panel>div.blog-post>.panel .post-meta *, #post-panel>div.blog-post>.panel-small .post-meta * {
+        color:#fff!important
+    }
+    #post-panel>div.blog-post>.panel .post-meta>h2, #post-panel>div.blog-post>.panel-small .post-meta>h2 {
+        text-align:center;
+        text-shadow:0 0 3px #fff
+    }
+    #post-panel>div.blog-post>.panel .post-meta>p, #post-panel>div.blog-post>.panel .post-meta>div, #post-panel>div.blog-post>.panel-small .post-meta>p, #post-panel>div.blog-post>.panel-small .post-meta>div {
+        transition:all .3s;
+        transform:translateY(-10px);
+        opacity:0
+    }
+    #post-panel>div.blog-post>.panel .post-meta>.text-muted, #post-panel>div.blog-post>.panel-small .post-meta>.text-muted {
+        position:absolute;
+        bottom:20px
+    }
+    #post-panel>div.blog-post>.panel .post-meta>.line {
+        position:absolute;
+        bottom:40px;
+        width:740px
+    }
+    #post-panel>div.blog-post>.panel-small .post-meta>.line {
+        position:absolute;
+        bottom:40px;
+        width:350px
+    }
+    #post-panel>div.blog-post>.panel .post-meta>.summary {
+        position:absolute;
+        bottom:60px;
+        width:740px
+    }
+    #post-panel>div.blog-post>.panel-small .post-meta>.summary {
+        position:absolute;
+        bottom:60px;
+        width:350px
+    }
+    #post-panel>div.blog-post>.panel-small {
+        display:inline-block;
+        height:300px;
+        width:calc(50% - 10px);
+        margin-right:20px
+    }
+    #post-panel>div.blog-post>.panel-small:nth-child(2n) {
+        margin-right:0
+    }
+    #post-panel>div.blog-post>.panel-small .index-img-small, #post-panel>div.blog-post>.panel-small .index-img-small .item-thumb-small {
+        height:100%;
+        width:100%
+    }
+    #post-panel>div.blog-post>.panel-small .post-meta {
+        position:absolute;
+        height:300px;
+        width:calc(50% - 10px);
+        padding:133px 20px 0 20px!important;
+        background-color:rgba(0, 0, 0, .3);
+        color:#fff!important;
+        transition:all .3s
+    }
+    #post-panel>div.blog-post>.panel:hover .post-meta, #post-panel>div.blog-post>.panel-small:hover .post-meta {
+        background-color:rgba(0, 0, 0, .6)
+    }
+    #post-panel>div.blog-post>.panel:hover .post-meta>p, #post-panel>div.blog-post>.panel:hover .post-meta>div, #post-panel>div.blog-post>.panel-small:hover .post-meta>p, #post-panel>div.blog-post>.panel-small:hover .post-meta>div {
+        opacity:1;
+        transform:translateY(0)
+    }
+    #post-panel>div.blog-post>.panel:hover .post-meta, #post-panel>div.blog-post>.panel-small:hover .post-meta {
+        padding-top:80px!important
+    }
+    #post-panel .ahover {
+        display:block;
+        position:absolute;
+        top:0;
+        left:0;
+        right:0;
+        bottom:0
+    }
+    .blog-post>.panel:hover .index-post-img, .blog-post>.panel-small:hover .index-post-img-small {
+        filter:blur(3px)
+    }
+}
+header.bg-light.wrapper-md {
+    margin-top:30px;
+    background-color:transparent!important;
+    border:0;
+    text-align:center;
+    text-shadow:0 0 3px #000
+}
+header.wrapper-md * {
+    color:#fff
+}
+header.wrapper-md h1 {
+    font-size:32px
+}
+header.wrapper-md h1 {
+    font-weight:bold!important
+}
+.panel-small>.p-b-none {
+    padding-bottom:0!important
+}
+/*UA-Plugin*/
+ .comment-author>.fn+label {
+    padding-top:.37em;
+    padding-bottom:.37em;
+    margin-bottom:0
+}
+.ua-plugin {
+    opacity:0;
+    transition:all .3s;
+    background-color:#7266ba;
+    color:#fff;
+    padding-bottom:.2em;
+    margin-left:5px
+}
+div.comment-body:hover .ua-plugin {
+    opacity:1
+}
+.comment-author > * {
+    display:inline-block
+}
+@media screen and (max-width:600px) {
+    .ua-plugin {
+        display:none
+    }
+}
+@media screen and (max-width:365px) {
+    .comment-author>.fn+label {
+        display:none
+    }
+}
+.ua-os {
+    margin-left:-0.6em
+}
+/*i..forget*/
+ ul.nav-sub > li > a > i {
+    margin-right:15px
+}
+#myModal .modal-dialog {
+    max-width:calc(100% - 20px);
+    width:400px
+}
+#myModal .modal-content {
+    overflow:hidden
+}
+#myModal .modal-body, #myModal .modal-body img {
+    padding:0
+}
+/*links*/
+ .link-main {
+    padding:50px 0 50px 20px;
+    text-align:center
+}
+.link-main h3 {
+    margin-top:0
+}
+.link-main .item {
+    display:inline-block;
+    letter-spacing:0;
+    margin-right:20px;
+    margin-bottom:20px;
+    width:289px;
+    height:240px;
+    font-size:14px;
+    overflow:hidden;
+    border-radius:5px;
+    background:rgba(255, 255, 255, .95);
+    border:1px solid #e1e8ed;
+    transition:background .2s
+}
+.link-main .link-bg {
+    position:relative;
+    height:90px;
+    padding:0 1em;
+    background-color:#777
+}
+.link-main .link-bg .bg:before {
+    display:block;
+    content:"";
+    position:absolute;
+    left:0;
+    height:100%;
+    width:100%;
+    background:rgba(0, 0, 0, .5)
+}
+.link-main .link-bg .link-avatar {
+    position:absolute;
+    bottom:-50px;
+    border:4px solid #FFF;
+    border-radius:100%;
+    background-color:#fff;
+    box-shadow:0 0 5px rgba(0, 0, 0, 0.5)
+}
+.link-main .link-bg .link-avatar img {
+    border-radius:100%
+}
+.link-main .avatar {
+    display:block;
+    object-fit:cover
+}
+.link-main .bg, .link-main .link-bg {
+    background-repeat:no-repeat;
+    background-position:center;
+    background-size:cover;
+    display:block
+}
+.link-main .bg {
+    position:absolute;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    filter:blur(1.5px);
+    background-color:#fff
+}
+.link-main .meta {
+    padding:.9em 1em;
+    text-align:right
+}
+.link-main .info {
+    color:#525766;
+    padding:0 1em 1em
+}
+.link-main .info .name {
+    font-weight:600;
+    font-size:16px
+}
+@media screen and (max-width:330px) {
+    .link-main {
+        padding:50px 0 50px 0
+    }
+    .link-main .item {
+        margin-right:0
+    }
+}
+.link-main .item:hover {
+    background:rgba(255, 255, 255, 1)
+}
+.link-main .item:hover .bg {
+    filter:blur(0.1px)
+}
+/*contact*/
+ .readers-list a:hover {
+    left:0
+}
+.readers-list-a {
+    background-color:rgba(255, 255, 255, .5)!important;
+    transition:all .3s
+}
+.readers-list-a:hover {
+    background-color:rgba(255, 255, 255, .8)!important
+}
+/*collapse*/
+ .panel-heading.collapsed {
+    position:relative
+}
+.panel-body.collapse:not([aria-expanded=true]) {
+    display:block;
+    position:relative;
+    padding:0!important;
+    height:0!important;
+    z-index:-1000
+}
+.panel-body.collapse:not([aria-expanded=true]) * {
+    display:none
+}
+.panel-body.collapse:not([aria-expanded=true]) h1, .panel-body.collapse:not([aria-expanded=true]) h2, .panel-body.collapse:not([aria-expanded=true]) h3, .panel-body.collapse:not([aria-expanded=true]) h4, .panel-body.collapse:not([aria-expanded=true]) h5, .panel-body.collapse:not([aria-expanded=true]) h6 {
+    display:block;
+    top:0;
+    line-height:1px!important;
+    margin:0!important;
+    padding:0!important;
+    position:relative!important;
+    top:-50px
+}
+.panel-small>.post-meta {
+    padding-bottom: 0 !important;
+}
+/* 
+* 新增
+*/
+i.fontello-dedent.text{
+    color: #fff;
+}
+/*底部页脚*/
+.github-badge {
+    display: inline-block;
+    border-radius: 4px;
+    text-shadow: none;
+    font-size: 12px;
+    color: #fff;
+    line-height: 15px;
+    background-color: #abbac3;
+    margin-bottom: 5px
+  }
+  
+  .github-badge .badge-subject {
+    display: inline-block;
+    background-color: #4d4d4d;
+    padding: 4px 4px 4px 6px;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px
+  }
+  
+  .github-badge .badge-value {
+    display: inline-block;
+    padding: 4px 6px 4px 4px;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px
+  }
+  
+  .github-badge .bg-blue {
+    background-color: #007ec6
+  }
+  
+  .github-badge .bg-orange {
+    background-color: #ffa500
+  }
+  
+  .github-badge .bg-red {
+    background-color: #f00
+  }
+  
+  .github-badge .bg-green {
+    background-color: #3bca6e
+  }
+  
+  .github-badge .bg-purple {
+    background-color: #ab34e9
+  }
+
+/* 评论附带设备信息 */
+  .ua-icon{display:inline-block;width:1pc;height:1pc;background-size:cover;background-repeat:no-repeat;vertical-align:text-top}.icon-360{background-image:url(https://cdn.zrahh.com/usr/uploads/2019/03/360.png)}.icon-android{background-image:url(https://cdn.zrahh.com/usr/uploads/2019/03/android.png);height:19px}.icon-apple{background-image:url(https://cdn.zrahh.com/usr/uploads/2019/03/apple.png)}.icon-baidu{background-image:url(https://cdn.zrahh.com/usr/uploads/2019/03/baidu.png)}.icon-chrome{background-image:url(https://cdn.zrahh.com/usr/uploads/2019/03/chrome.png)}.icon-edge{background-image:url(https://cdn.zrahh.com/usr/uploads/2019/03/edge.png)}.icon-firefox{background-image:url(https://cdn.zrahh.com/usr/uploads/2019/03/firefox.png)}.icon-google{background-image:url(https://cdn.zrahh.com/usr/uploads/2019/03/google.png)}.icon-ie{background-image:url(https://cdn.zrahh.com/usr/uploads/2019/03/ie.png)}.icon-liebao{background-image:url(https://cdn.zrahh.com/usr/uploads/2019/03/liebao.png)}.icon-linux{background-image:url(https://cdn.zrahh.com/usr/uploads/2019/03/linux.png)}.icon-mac{background-image:url(https://cdn.zrahh.com/usr/uploads/2019/03/mac.png)}.icon-opera{background-image:url(https://cdn.zrahh.com/usr/uploads/2019/03/opera.png)}.icon-qq{background-image:url(https://cdn.zrahh.com/usr/uploads/2019/03/qq.png)}.icon-quark{background-image:url(https://cdn.zrahh.com/usr/uploads/2019/03/quark.png)}.icon-safari{background-image:url(https://cdn.zrahh.com/usr/uploads/2019/03/safari.png)}.icon-ubuntu{background-image:url(https://cdn.zrahh.com/usr/uploads/2019/03/ubuntu.png)}.icon-uc{background-image:url(https://cdn.zrahh.com/usr/uploads/2019/03/uc.png)}.icon-win1{background-image:url(https://cdn.zrahh.com/usr/uploads/2019/03/win1.png)}.icon-win2{background-image:url(https://cdn.zrahh.com/usr/uploads/2019/03/win2.png)}
+
+/*赞赏图标跳动*/
+.btn-pay {
+    animation: star 0.5s ease-in-out infinite alternate;
+}
+@keyframes star {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.1);
+    }
+}
+/*右侧列表导航栏图标颜色*/
+.glyphicon-fire {
+    color: #ff0000;
+}
+
+.nav-tabs-alt .glyphicon-comment {
+    color: #495dc3;
+}
+
+.glyphicon-transfer {
+    color: #0e5458;
+}
