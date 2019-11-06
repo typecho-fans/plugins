@@ -49,7 +49,7 @@ class KirinShiKi_Plugin implements Typecho_Plugin_Interface
         {
             echo "<style>.info{text-align:center; margin:20px 0;} .info > *{margin:0 0 15px} .buttons a{background:#467b96; color:#fff; border-radius:4px; padding: 8px 10px; display:inline-block;}.buttons a+a{margin-left:10px}</style>";
             echo "<div class='info'>";
-            echo "<h2>WowScroll动感元素插件 (" . $version . ")</h2>";
+            echo "<h2>神代綺凜式魔改主题插件 (" . $version . ")</h2>";
             echo "<p>By: <a href='https://github.com/Sanakey'>Sanakey</a></p>";
             echo "<p class='buttons'><a href='https://keymoe.com/archives/31/'>插件说明</a>
                 <a href='https://github.com/Sanakey/KirinShiKi'>查看更新</a></p>";
