@@ -91,6 +91,7 @@ function getHref() {
     var hrefArr = [];
     $('.post-meta .index-post-title>a').each(function () {
         hrefArr.push($(this).attr('href'));
+        $(this).find('span').addClass('sticky');
     });
     // console.log(hrefArr);
     return hrefArr;
