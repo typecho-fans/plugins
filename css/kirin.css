@@ -203,26 +203,8 @@ aside.col.w-md.no-border-xs {
     color:#7266ba;
     font-weight:700
 }
-/*kotori*/
-#kotori {
-    position:absolute;
-    left:-15px;
-    bottom:-15px;
-    max-height:110px;
-    transition:all .3s
-}
-#kotori:hover {
-    left:0;
-    bottom:0
-}
-#kotori.hidekotori {
-    left:-110px;
-    bottom:-110px
-}
+
 @media screen and (max-width:767px) {
-    #kotori {
-        display:none
-    }
     .blog-post>.panel:hover .index-post-img .item-thumb {
         transform:none!important
     }
