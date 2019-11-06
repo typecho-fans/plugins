@@ -5,7 +5,7 @@
  *
  * @package KirinShiKi
  * @author Sanakey
- * @version 1.0.0
+ * @version 1.1.0
  * @link https://keypoi.com
  */
 class KirinShiKi_Plugin implements Typecho_Plugin_Interface
@@ -45,19 +45,19 @@ class KirinShiKi_Plugin implements Typecho_Plugin_Interface
     {
 
         // 插件信息与更新检测
-        function kirin_update($version)
+        function check_update($version)
         {
-            echo "<style>.kirin-info{text-align:center; margin:1em 0;} .kirin-info > *{margin:0 0 1rem} .buttons a{background:#467b96; color:#fff; border-radius:4px; padding:.5em .75em; display:inline-block}</style>";
-            echo "<div class='kirin-info'>";
-            echo "<h2>神代綺凜式魔改主题插件 (" . $version . ")</h2>";
+            echo "<style>.info{text-align:center; margin:20px 0;} .info > *{margin:0 0 15px} .buttons a{background:#467b96; color:#fff; border-radius:4px; padding: 8px 10px; display:inline-block;}.buttons a+a{margin-left:10px}</style>";
+            echo "<div class='info'>";
+            echo "<h2>WowScroll动感元素插件 (" . $version . ")</h2>";
             echo "<p>By: <a href='https://github.com/Sanakey'>Sanakey</a></p>";
-            echo "<p class='buttons'><a href='https://keymoe.com/archives/31/'>项目说明</a>
-                  <a href='https://github.com/Sanakey/KirinShiKi/releases'>检查更新</a></p>";
-            echo "<p>更多说明请点击项目说明或<a href='https://github.com/Sanakey/KirinShiKi'>点击前往github查看</a>~</p>";
+            echo "<p class='buttons'><a href='https://keymoe.com/archives/31/'>插件说明</a>
+                <a href='https://github.com/Sanakey/KirinShiKi'>查看更新</a></p>";
+            echo "<p>更多说明请点击插件说明或<a href='https://github.com/Sanakey/KirinShiKi'>点击前往github查看</a>~</p>";
 
             echo "</div>";
         }
-        kirin_update("1.0");
+        check_update("1.1.0");
 
         // 自定义pc背景
         $pcBg = new Typecho_Widget_Helper_Form_Element_Text(
@@ -65,7 +65,7 @@ class KirinShiKi_Plugin implements Typecho_Plugin_Interface
             NULL,
             'http://api.btstu.cn/sjbz/?lx=dongman',
             _t('pc端背景图：'),
-            _t('pc端背景图，请输入图片的地址，为空时不设置背景图片。默认提供随机动漫背景图，<a href=“https://www.lxzzz.cn/337.html”>想要更多风格请点击</a>')
+            _t('pc端背景图，请输入图片的地址，为空时不设置背景图片。默认提供随机动漫背景图，<a href="https://www.lxzzz.cn/337.html">想要更多风格请点击</a>')
         );
         $form->addInput($pcBg);
 
@@ -75,9 +75,22 @@ class KirinShiKi_Plugin implements Typecho_Plugin_Interface
             NULL,
             'http://api.btstu.cn/sjbz/?lx=m_dongman',
             _t('手机端背景图：'),
-            _t('手机端背景图，请输入图片的地址，为空时不设置背景图片。默认提供随机动漫背景图，<a href=“https://www.lxzzz.cn/337.html”>想要更多风格请点击</a>')
+            _t('手机端背景图，请输入图片的地址，为空时不设置背景图片。默认提供随机动漫背景图，<a href="https://www.lxzzz.cn/337.html">想要更多风格请点击</a>')
         );
         $form->addInput($mpBg);
+
+        // 是否启用标题卖萌
+        $moeTitle = new Typecho_Widget_Helper_Form_Element_Radio(
+            'moeTitle',
+            array(
+                '0' => _t('否'),
+                '1' => _t('是'),
+            ),
+            '1',
+            _t('是否启用标题卖萌'),
+            _t('此选项控制浏览器标签是否启用卖萌标题。')
+        );
+        $form->addInput($moeTitle);
 
         // 是否启用了pjax
         $pjax = new Typecho_Widget_Helper_Form_Element_Radio(
@@ -115,6 +128,7 @@ class KirinShiKi_Plugin implements Typecho_Plugin_Interface
         $options = Helper::options();
         $pcBg = $options->plugin('KirinShiKi')->pcBg;
         $mpBg = $options->plugin('KirinShiKi')->mpBg;
+        $moeTitle = $options->plugin('KirinShiKi')->moeTitle;
         // 输出css文件
         $path = $options->pluginUrl . '/KirinShiKi/';
         echo '<link rel="stylesheet" type="text/css" href="' . $path . 'css/kirin.css" />';
@@ -123,12 +137,17 @@ class KirinShiKi_Plugin implements Typecho_Plugin_Interface
         echo "<script src='$src'></script>";
         //   echo '<script type="text/javascript" src="' . $src . '"></script>';
 
+        $code = 'setHref(getHref());colorfulTags();';
+        if ($moeTitle) {
+            $code = 'setHref(getHref());colorfulTags();moeTitle();';
+        }
+
         $pjax = $options->plugin('KirinShiKi')->pjax;
         $script = '<script>';
         if ($pjax) { //开启pjax
-            $script .= '$(document).on("ready pjax:end", ' . 'function() {needpjax()});';
+            $script .= '$(document).on("ready pjax:end", ' . 'function() { ' . $code . '});';
         } else {
-            $script .= '$(document).ready(function() {setHref(getHref());colorfulTags();});';
+            $script .= '$(document).ready(function() {' . $code . '});';
         }
         $script .= '</script>';
         // $script = '<script>$(document).on("ready pjax:end", ' . 'function() {needpjax()});</script>';
