@@ -30,8 +30,8 @@ if (isset($_GET['send'])) {
         $sendtype = 'mip';
         $type = 'batch';
         if (isset(Helper::options()->plugin('AMP')->baiduAPPID) and isset(Helper::options()->plugin('AMP')->baiduTOKEN)) {
-            $appid = Helper::options()->plugin('AMP')->baiduAPPID;
-            $token = Helper::options()->plugin('AMP')->baiduTOKEN;
+            $appid = trim(Helper::options()->plugin('AMP')->baiduAPPID);//过滤空格
+            $token = trim(Helper::options()->plugin('AMP')->baiduTOKEN);//过滤空格
             $api = "http://data.zz.baidu.com/urls?appid={$appid}&token={$token}&type=batch";
         } else {
             throw new Typecho_Widget_Exception('未设置熊掌号参数！');
@@ -49,7 +49,7 @@ if (isset($_GET['send'])) {
         if (empty(Helper::options()->plugin('AMP')->baiduAPI)) {
             throw new Typecho_Widget_Exception('未设置MIP/AMP推送接口调用地址!');
         } else {
-            $api = Helper::options()->plugin('AMP')->baiduAPI;
+            $api = trim(Helper::options()->plugin('AMP')->baiduAPI); //过滤空格
             $api = preg_replace("/&type=[a-z]+/", "&type={$sendtype}", $api);//替换接口中的类型
 
         }
@@ -69,6 +69,7 @@ if (isset($_GET['send'])) {
         $http->setData(implode("\n", $urls));
         $http->setHeader('Content-Type', 'text/plain');
         try {
+            $api = trim($api); //经过单步调试，发现api这个字符串前面多了一个空格，导致parse_url无法解析正确的`host`
             $result = $http->send($api);
         } catch (Exception $e) {
             throw new Typecho_Plugin_Exception(_t('对不起, 您的主机不支持远程访问。<br>请检查 curl 扩展、allow_url_fopen和防火墙设置！<br><hr>出错信息：'.$e->getMessage()));

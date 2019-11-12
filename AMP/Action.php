@@ -109,7 +109,7 @@ class AMP_Action extends Typecho_Widget implements Widget_Interface_Do
                 'isMarkdown'=>$this->article['isMarkdown'],
                 'imgData'=>$this->GetPostImg(),//MIP页面的结果化数据可以没有图片
                 'APPID'=>Helper::options()->plugin('AMP')->baiduAPPID,
-                'mip_stats_token'=>Helper::options()->plugin('AMP')->mip_stats_token,
+                'mip_stats_token'=> trim(Helper::options()->plugin('AMP')->mip_stats_token),
                 'desc'=>self::cleanUp($this->article['text']),
                 'publisher'=>Helper::options()->title,
                 'MIPtext'=>$this->MIPInit($this->article['text']),
@@ -202,9 +202,9 @@ class AMP_Action extends Typecho_Widget implements Widget_Interface_Do
                 'AMPtext'=>$this->AMPInit($this->article['text']),
                 'version'=>$this->version
             );
-            //MIP页面的结果化数据必须有图片
+            //AMP页面的结果化数据必须有图片
             if(!is_array($AMPpage['imgData'])){
-                $AMPpage['imgData']=self::getSizeArr($AMPpage['LOGO'],'200','200');//如果找不到图片就用LOGO
+                $AMPpage['imgData']=self::getSizeArr($AMPpage['LOGO'],'1200','1200');//如果找不到图片就用LOGO
             }
             ob_start();
             require_once ('templates/AMPpage.php');
@@ -241,8 +241,8 @@ class AMP_Action extends Typecho_Widget implements Widget_Interface_Do
         if (is_null($options->plugin('AMP')->baiduAPPID) or is_null($options->plugin('AMP')->baiduTOKEN)) {
             throw new Typecho_Plugin_Exception(_t('参数未正确配置，自动提交失败'));
         }else{
-            $appid = $options->plugin('AMP')->baiduAPPID;
-            $token = $options->plugin('AMP')->baiduTOKEN;
+            $appid = trim($options->plugin('AMP')->baiduAPPID);//过滤空格
+            $token = trim($options->plugin('AMP')->baiduTOKEN);//过滤空格
             $api = "http://data.zz.baidu.com/urls?appid={$appid}&token={$token}&type=realtime";//构建实时提交的地址
         }
 
@@ -503,15 +503,16 @@ class AMP_Action extends Typecho_Widget implements Widget_Interface_Do
                 }
                 list($width, $height, $type, $attr) = @getimagesize($url);
                 if (!isset($width)) {
-                    $width = '500';
+                    $width = '1200';
                 }
                 if (!isset($height)) {
-                    $height = '700';
+                    $height = '800';
                 }
                 return "<img width=\"{$width}\" height=\"{$height}\" src=\"{$m[1]}\"";
             },
             $html
         );
+
         return $html;
     }
 
