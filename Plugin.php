@@ -4,14 +4,14 @@
  *
  * @package AMP-MIP
  * @author Holmesian
- * @version 0.7.5
+ * @version 0.7.5.1
  * @link https://holmesian.org/AMP-for-Typecho
  */
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 
 class AMP_Plugin implements Typecho_Plugin_Interface
 {
-    public static $version = '0.7.5';
+    public static $version = '0.7.5.1';
 
     public static function activate()
     {
