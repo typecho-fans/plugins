@@ -57,7 +57,7 @@ class KirinShiKi_Plugin implements Typecho_Plugin_Interface
 
             echo "</div>";
         }
-        check_update("1.1.0");
+        check_update("1.1.1");
 
         // 自定义pc背景
         $pcBg = new Typecho_Widget_Helper_Form_Element_Text(
