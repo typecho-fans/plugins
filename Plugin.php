@@ -5,7 +5,7 @@
  *
  * @package KirinShiKi
  * @author Sanakey
- * @version 1.1.0
+ * @version 1.1.1
  * @link https://keymoe.com
  */
 class KirinShiKi_Plugin implements Typecho_Plugin_Interface
