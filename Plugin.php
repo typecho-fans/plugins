@@ -63,7 +63,7 @@ class KirinShiKi_Plugin implements Typecho_Plugin_Interface
         $pcBg = new Typecho_Widget_Helper_Form_Element_Text(
             'pcBg',
             NULL,
-            'http://api.btstu.cn/sjbz/?lx=dongman',
+            'https://api.btstu.cn/sjbz/?lx=dongman',
             _t('pc端背景图：'),
             _t('pc端背景图，请输入图片的地址，为空时不设置背景图片。默认提供随机动漫背景图，<a href="https://www.lxzzz.cn/337.html">想要更多风格请点击</a>')
         );
@@ -73,7 +73,7 @@ class KirinShiKi_Plugin implements Typecho_Plugin_Interface
         $mpBg = new Typecho_Widget_Helper_Form_Element_Text(
             'mpBg',
             NULL,
-            'http://api.btstu.cn/sjbz/?lx=m_dongman',
+            'https://api.btstu.cn/sjbz/?lx=m_dongman',
             _t('手机端背景图：'),
             _t('手机端背景图，请输入图片的地址，为空时不设置背景图片。默认提供随机动漫背景图，<a href="https://www.lxzzz.cn/337.html">想要更多风格请点击</a>')
         );
