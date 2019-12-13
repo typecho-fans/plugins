@@ -54,7 +54,7 @@
                 href="<?php echo($AMPpage['permalink']); ?>">完整版 »</a></p>
     <?php if(!$AMPpage['isMarkdown']){echo('<p class="notice">因本文不是用Markdown格式的编辑器书写的，转换的页面可能不符合AMP标准。</p>');} ?>
 </article>
-<footer><div class="footer"><p>© 2018 <a data-type="amp" href="https://github.com/holmesian/Typecho-AMP">AMP for Typecho</a> v<?php echo(AMP_Plugin::$version) ?>
+<footer><div class="footer"><p>&copy; <?php echo date('Y'); ?> <a data-type="amp" href="https://github.com/holmesian/Typecho-AMP">AMP for Typecho</a> v<?php echo(AMP_Plugin::$version) ?>
             , Designed by  <a href="https://holmesian.org/" target="_blank">Holmesian</a>.</p></div></footer>
 </body>
 </html>
