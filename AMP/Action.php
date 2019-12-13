@@ -469,6 +469,7 @@ class AMP_Action extends Typecho_Widget implements Widget_Interface_Do
         $text = str_replace('<!- toc end ->', '', $text);
         $text = str_replace('<style', '<style mip-custom" ', $text);
         $text = str_replace('javascript:content_index_toggleToc()', '#', $text);
+        $text = $this->stripHtmlTags(array('font','color','input','size'),$text,true) ;//清理指定HTML标签
         return $text;
     }
 
@@ -483,6 +484,7 @@ class AMP_Action extends Typecho_Widget implements Widget_Interface_Do
         $text = str_replace('<style', '<style amp-custom" ', $text);
         $text = str_replace('<!- toc end ->', '', $text);
         $text = str_replace('javascript:content_index_toggleToc()', '#', $text);
+        $text = $this->stripHtmlTags(array('font','color','input','size'),$text,true) ;//清理指定HTML标签
         return $text;
     }
 
@@ -572,7 +574,16 @@ class AMP_Action extends Typecho_Widget implements Widget_Interface_Do
     }
 
 
-    //截取功能函数
+
+    /**
+     * 截取功能函数
+     * @param string $text      截取的对象
+     * @param string $length    保留长度
+     * @param string $replace   替换结尾表示
+     * @param string $encoding  编码类型
+     * @return mixed
+     */
+
     private function substrFormat($text, $length, $replace = '...', $encoding = 'UTF-8')
     {
         if ($text && mb_strlen($text, $encoding) > $length) {
@@ -581,8 +592,36 @@ class AMP_Action extends Typecho_Widget implements Widget_Interface_Do
         return $text;
     }
 
+    /**
+     * 清理指定HTML标签函数
+     * @param array  $tags    删除的标签 array('font','color','input','size')
+     * @param string $str     html字符串
+     * @param bool   $type    是否保留标签的内容
+     * @return mixed
+     */
+    private function stripHtmlTags($tags, $str, $content=false)
+    {
+        $html = [];
+        if($content){
+            foreach ($tags as $tag) {
+                $html[] = "/(<(?:\/" .$tag. "|" .$tag. ")[^>]*>)/is";
+            }
+        }else{
+            foreach ($tags as $tag) {
+                $html[] = '/<' .$tag. '.*?>[\s|\S]*?<\/' .$tag. '>/is';
+                $html[] = '/<' .$tag. '.*?>/is';
+            }
+        }
+        $data = preg_replace($html, '', $str);
+        return $data;
+    }
 
-    //根据自定义文章路径生成amp/mip的地址规则
+
+
+    /**
+     * 根据自定义文章路径生成amp/mip的地址规则
+     * @return mixed
+     */
     private function getUrlRule()
     {
         //获取自定义文章路径的最后一层
@@ -614,7 +653,12 @@ class AMP_Action extends Typecho_Widget implements Widget_Interface_Do
         return $slugtemp;
     }
 
-    //清理文章摘要内容
+
+    /**
+     * 清理文章摘要内容
+     * @param array  $desc  文章内容
+     * @return mixed
+     */
     private static function cleanUp($desc){
         $desc= str_replace(array("\r\n", "\r", "\n"), "", strip_tags($desc));//获取纯内容后去除换行
         $desc=mb_substr($desc, 0, 150).'...';//截取前150个字符
@@ -630,12 +674,15 @@ class AMP_Action extends Typecho_Widget implements Widget_Interface_Do
             $time = (int)Helper::options()->plugin('AMP')->cacheTime;
             $expire = $time * 60 * 60;
             if (is_array($cache)) $cache = json_encode($cache);
-            $table = $this->tablename;
+//            $table = $this->tablename;
             $time = time();
 
-            $cache = addslashes($cache);
-            $sql = "REPLACE INTO $table  (`hash`,`cache`,`dateline`,`expire`) VALUES ('$key','$cache','$time','$expire')";
-            $installDb->query($sql);
+//            $cache = addslashes($cache);
+//            $sql = "REPLACE INTO $table  (`hash`,`cache`,`dateline`,`expire`) VALUES ('$key','$cache','$time','$expire')";
+//            $installDb->query($sql);
+
+            $installDb->query($installDb->insert($this->tablename)->rows(array("hash"=>$key,"cache"=>$cache,"dateline"=>$time,"expire"=>$expire)));//更换写入方法
+
         }else{
             return null;
         }
@@ -644,17 +691,15 @@ class AMP_Action extends Typecho_Widget implements Widget_Interface_Do
     private function del($key){
         if(Helper::options()->plugin('AMP')->cacheTime>0) {
             $installDb = $this->db;
-            $tablename = $this->tablename;
             if (is_array($key)) {
                 foreach ($key as $k => $v) {
                     $this->del($v);
                 }
             } else {
                 if ($key == '*') {
-                    $installDb->query("DELETE FROM $tablename WHERE 1=1 ");
+                    $installDb->query($installDb->delete($this->tablename)->where("1=1"));
                 } else {
-                    $delete = $installDb->delete($tablename)->where('hash = ?', $key)->limit(1);
-                    $installDb->query($delete);
+                    $installDb->query($installDb->delete($this->tablename)->where('hash = ?', $key)->limit(1));
                 }
             }
         }else{
@@ -665,9 +710,8 @@ class AMP_Action extends Typecho_Widget implements Widget_Interface_Do
     private function get($key){
         if(Helper::options()->plugin('AMP')->cacheTime>0) {
             $installDb = $this->db;
-            $tablename = $this->tablename;
 
-            $condition = $installDb->select('cache', 'dateline', 'expire')->from($tablename)->where('hash = ?', $key);
+            $condition = $installDb->select('cache', 'dateline', 'expire')->from($this->tablename)->where('hash = ?', $key);
             $row = $installDb->fetchRow($condition);
             if (!$row) return;
             if (time() - $row['dateline'] > $row['expire']) $this->del($key);
