@@ -85,6 +85,7 @@
 [Html2Text](Html2Text) | Html代码转Markdown格式插件 | 0.1.0 | [冰剑](https://github.com/binjoo) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-H_to_L/Html2Text.zip)
 [IQapTcha](IQapTcha) | 评论滑动解锁验证+规则过滤插件 | 1.1.2 | [Byends](https://github.com/visamz) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-H_to_L/IQapTcha.zip)
 [JSON](JSON) | Json格式输出博客数据API插件 | 0.1 | [公子](https://github.com/lizheming) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-H_to_L/JSON.zip)
+[JustFeed](https://github.com/eallion/JustFeed) | 在 Feed 尾部添加订阅信息的插件 | 0.1.2 | [jKey](http://typecho.jkey.lu/),[eallion](https://eallion.com) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-H_to_L/JustFeed.zip) 
 [JWPlayer](JWPlayer) | Html5流媒体播放器Jwplayer插件 | 1.0.9 | [羽中](https://github.com/jzwalk) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-H_to_L/JWPlayer.zip)
 [Keywords](Keywords) | 文章指定关键词自动添加链接插件 | 1.0.8 | [羽中](https://github.com/jzwalk) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-H_to_L/Keywords.zip)
 [LREditor](LREditor) | Markdown编辑器左右预览插件 | 0.0.4 | [公子](http://github.com/lizheming) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-H_to_L/LREditor.zip)
