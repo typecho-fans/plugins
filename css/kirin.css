@@ -323,17 +323,17 @@ body.modal-open {
 }
 #alllayout:not(.app-aside-folded) #aside-user span.avatar:hover {
     transform:rotate(360deg) scale(1.2);
-    border-width:5px;
+    /* border-width:5px; */
     animation:avatar .5s
 }
 @keyframes avatar {
     from {
         transform:rotate(0) scale(1);
-        border-width:0
+        /* border-width:0 */
     }
     to {
         transform:rotate(360deg) scale(1.2);
-        border-width:5px
+        /* border-width:5px */
     }
 }
 /*search*/
