@@ -2,7 +2,7 @@
 
 * 神代綺凜式魔改js
 * By: Sanakey
-* Last Update: 2019.11.06
+* Last Update: 2020.03.03
 
 神代綺凜式魔改js文件。
 
@@ -74,7 +74,7 @@ $(document).ready(function () {
         '        <span class="badge-subject">Modified</span><span class="badge-value bg-red">JindaiKirin</span>\n' +
         '    </a>\n' +
         '</div>' +
-        '&nbsp;|&nbsp; \n'
+        '&nbsp;&nbsp; \n'
     $('#footer span.pull-right').append(copyrightInfo);
 })
 
@@ -125,5 +125,33 @@ function moeTitle() {
             setTimeout(function () {
                 document.title = OriginTitile
             }, 2E3))
+    })
+}
+
+// 复制
+function copyTips(text) {
+    var timer = null;
+    var dialog = {
+        msg: function(msg,time){
+            var time =  time || 3000;
+            var dialogElement = $('#my-dialog-layer');
+            var dom = '<div id="my-dialog-layer" style="z-index: 99999; max-width: 360px; min-width:100px; background-color: rgba(0,0,0,.6); color: #fff;position: fixed; top: 50%; left: 50%; transform: translate(-50%,-50%); ">\n'+ 
+            '   <div class="layer-content" style="padding: 12px 25px; font-size:14px; text-align: center; line-height: 24px;overflow-x: hidden; overflow-y: auto;">'+ msg +'</div>\n' + 
+            '</div>'
+            if (dialogElement.length==0){
+                $('body').append(dom);
+                timer = setTimeout(function(){
+                    $('#my-dialog-layer').remove();
+                },time)
+            }
+            clearTimeout(timer);
+            timer = setTimeout(function(){
+                $('#my-dialog-layer').remove();
+            },time)
+            
+        }
+    }
+    document.addEventListener("copy", function () {
+        dialog.msg(text||'复制成功，如需转载请注明出处！', 3000);
     })
 }

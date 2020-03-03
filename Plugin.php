@@ -1,11 +1,11 @@
 <?php
 // if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 /**
- * 基于<a href="https://www.ihewro.com/archives/489/">handsome主题</a>的<a href="https://moe.best/">神代綺凜</a>式魔改主题
+ * 基于<a href="https://www.ihewro.com/archives/489/">handsome主题</a>的<a href="https://moe.best/">神代綺凜</a>式魔改主题 </br> 更新时间: <span style="color:red">2020-03-03</span>      
  *
  * @package KirinShiKi
  * @author Sanakey
- * @version 1.1.1
+ * @version 2.0.0
  * @link https://keymoe.com
  */
 class KirinShiKi_Plugin implements Typecho_Plugin_Interface
@@ -57,7 +57,7 @@ class KirinShiKi_Plugin implements Typecho_Plugin_Interface
 
             echo "</div>";
         }
-        check_update("1.1.1");
+        check_update("2.0.0");
 
         // 自定义pc背景
         $pcBg = new Typecho_Widget_Helper_Form_Element_Text(
@@ -91,6 +91,19 @@ class KirinShiKi_Plugin implements Typecho_Plugin_Interface
             _t('此选项控制浏览器标签是否启用卖萌标题。')
         );
         $form->addInput($moeTitle);
+
+        // 是否启用复制版权提醒
+        $copyTips = new Typecho_Widget_Helper_Form_Element_Radio(
+            'copyTips',
+            array(
+                '0' => _t('否'),
+                '1' => _t('是'),
+            ),
+            '1',
+            _t('是否启用复制版权提醒'),
+            _t('开启此选项时，用户在博客内复制时将会弹出版权提醒')
+        );
+        $form->addInput($copyTips);
 
         // 是否启用了pjax
         $pjax = new Typecho_Widget_Helper_Form_Element_Radio(
@@ -129,6 +142,7 @@ class KirinShiKi_Plugin implements Typecho_Plugin_Interface
         $pcBg = $options->plugin('KirinShiKi')->pcBg;
         $mpBg = $options->plugin('KirinShiKi')->mpBg;
         $moeTitle = $options->plugin('KirinShiKi')->moeTitle;
+        $copyTips = $options->plugin('KirinShiKi')->copyTips;
         // 输出css文件
         $path = $options->pluginUrl . '/KirinShiKi/';
         echo '<link rel="stylesheet" type="text/css" href="' . $path . 'css/kirin.css" />';
@@ -137,10 +151,7 @@ class KirinShiKi_Plugin implements Typecho_Plugin_Interface
         echo "<script src='$src'></script>";
         //   echo '<script type="text/javascript" src="' . $src . '"></script>';
 
-        $code = 'setHref(getHref());colorfulTags();';
-        if ($moeTitle) {
-            $code = 'setHref(getHref());colorfulTags();moeTitle();';
-        }
+        $code = 'setHref(getHref());colorfulTags();' . ($moeTitle?'moeTitle();':'') . ($copyTips?'copyTips();':'');
 
         $pjax = $options->plugin('KirinShiKi')->pjax;
         $script = '<script>';
