@@ -97,7 +97,7 @@
 [MostCache](MostCache) | Mysql/SAE下Memcache缓存插件 | 1.0.0 | [skylzl](https://github.com/xiaogouxo) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/MostCache.zip)
 [MyPlayer](MyPlayer) | 万能播放器与视频站链接转换插件 | 1.1.3 | [perichr](http://github.com/perichr) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/MyPlayer.zip)
 [MyTagCloud](MyTagCloud) | Typecho自定义标签云输出插件 | 1.0.0 | [Ma Yanlong](https://github.com/YanlongMa) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/MyTagCloud.zip)
-[Ncache](Ncache) | Typecho的fastcgi_cache缓存插件 | 1.0.0 | [WeiCN](https://cuojue.org/read/typecho-fastcgi_cache.html) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/Ncache.zip)
+[Ncache](Ncache) | Typecho的fastcgi_cache缓存插件 | 1.1.0 | [WeiCN](https://cuojue.org/read/typecho-fastcgi_cache.html) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/Ncache.zip)
 [OssForTypecho](OssForTypecho) | Typecho阿里云OSS附件存储插件 | 1.0.1 | [Charmeryl](https://github.com/charmeryl) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/OssForTypecho.zip)
 [Passport](Passport) | 注册用户密码邮件找回功能插件 | 1.0.0 | [ShingChi](https://github.com/shingchi) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/Passport.zip)
 [PasteImage](PasteImage) | 默认编辑器粘贴剪切板图片上传插件 | 1.0.0 | [qing](https://github.com/zgq354/PasteImage) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/PasteImage.zip)
