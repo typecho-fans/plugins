@@ -60,6 +60,7 @@
 [Comment2Telegram](https://github.com/MoeLoli/Comment2Telegram) | 评论操作推送Telegram通知插件 | 1.1.6 | [Momiji.Jin](https://github.com/MoeLoli) | [下载](https://github.com/MoeLoli/Comment2Telegram/archive/master.zip)
 [Comment2Wechat](https://github.com/YianAndCode/Comment2Wechat) | 新评论回复微信自动通知插件 | 1.1.0 | [Y!an](https://github.com/YianAndCode) | [下载](https://github.com/YianAndCode/Comment2Wechat/archive/v1.1.zip)
 [CommentMailPlus](https://github.com/oott123/CommentMailPlus) | MailGun版评论邮件提醒插件 | 0.0.1 | [oott123](https://github.com/oott123) | [下载](https://github.com/oott123/CommentMailPlus/archive/master.zip)
+[CommentToMail](https://github.com/uniartisan/CommentToMail) | 评论邮件提醒插件,可以通过网址监控运行 | 4.2.5 | [Uniartisan](https://github.com/uniartisan) | [下载](http://blog.uniartisan.com/app/CommentToMail.zip)
 [CommentToWechat](https://github.com/lscho/CommentToWechat_for_typecho) | Server酱版评论推送微信插件 | 0.1 | [lscho](https://github.com/lscho) | [下载](https://github.com/lscho/CommentToWechat_for_typecho/archive/master.zip)
 [CompressHTML](https://github.com/qlwz/CompressHTML-For-Typecho) | Gzip/Html压缩/关键词替换插件 | 1.0.0.1 | [情留メ蚊子](https://github.com/qlwz) | [下载](https://github.com/qlwz/CompressHTML-For-Typecho/archive/v.1.0.0.1.zip)
 [ConnectToTwitter](https://github.com/typecho/plugins/tree/master/ConnectToTwitter) | 同步推送评论信息到twitter插件 | 1.0.0 Beta | [blankyao](https://github.com/blankyao) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/ConnectToTwitter.zip)
