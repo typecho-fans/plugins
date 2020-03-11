@@ -53,6 +53,7 @@
 [AutoSlug](AutoSlug) | 文章链接缩略名翻译自动生成插件 | 2.1.1 | [ShingChi](https://github.com/shingchi) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/AutoSlug.zip)
 [AutoTags](AutoTags) | 文章标签语义解析自动生成插件 | 1.0.0 | [DT27](https://github.com/DT27) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/AutoTags.zip)
 [Avatars](Avatars) | 读者墙评论头像排行插件(支持缓存) | 1.2.5 | [羽中](https://github.com/jzwalk) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/Avatars.zip)
+[APlayerAtBottom](APlayerAtBottom) | 给博客底部添加悬浮播放器（支持网易云音乐歌单） | 1.0.4 | [小太](https://github.com/satosouta) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/APlayerAtBottom.zip)
 [BackToTop](BackToTop) | 二次元风格点击返回顶部按钮插件 | 1.0 | [夏目贵志](https://github.com/xiamuguizhi) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/BackToTop.zip)
 [CateFilter](CateFilter) | 首页过滤指定分类文章不显示插件 | 1.2.1 | [Rakiy](https://github.com/rakiy) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/CateFilter.zip)
 [ChangyanCallback](ChangyanCallback) | 搜狐畅言社会化评论回推插件 | 1.0.0 | [mrgeneral](https://github.com/mrgeneralgoo) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/ChangyanCallback.zip)
