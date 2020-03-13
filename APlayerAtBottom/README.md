@@ -12,7 +12,7 @@
 ## 注意，请不要删除downplayer.js！！！
 
 ## 特色
- - 支持直接解析网易云音乐歌单（[MetingJS](https://github.com/metowolf/MetingJS)）
+ - 支持直接解析网易云音乐歌单（[Ohmyga](https://api.ohmyga.cn/page/netease)）
  - 支持自定义播放器主题颜色（作为进度条和音量条的主题颜色）
  - 支持开启自动播放（仅部分浏览器支持）
  - 支持设定默认音量（播放器会记忆用户设置，用户手动设置音量后默认音量即失效）
@@ -29,10 +29,13 @@
  - [APlayer](https://github.com/MoePlayer/APlayer)（播放器JS）
  - [MetingJS](https://github.com/metowolf/MetingJS)（解析网易云音乐歌单歌曲）
 
+## API支持
+ - [Ohmyga](https://api.ohmyga.cn/page/netease)（O's API 网易云音乐解析）
+
 ## 相关
  - 演示站点：[我的博客](https://713.moe/)
  - 介绍文章：[APlayerAtBottom - 给博客加上底部播放器吧](https://713.moe/p/135)
 
 ---
 
-Copyright &copy; 2020 [小太](https://github.com/SatoSouta) & [MoePlayer](https://github.com/MoePlayer) & [MetoWolf](https://github.com/metowolf) All rights reserved.
+Copyright &copy; 2020 [小太](https://github.com/SatoSouta) & [MoePlayer](https://github.com/MoePlayer) & [Ohmyga](https://github.com/ohmyga233) All rights reserved.
