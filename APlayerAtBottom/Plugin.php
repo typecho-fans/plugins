@@ -1,10 +1,10 @@
 <?php 
 /**
- * 在网站底部插入APlayer吸底播放器<br/>开源项目：<a href="https://github.com/DIYgod/APlayer" target="_blank">APlayer</a> & <a href="https://github.com/metowolf/MetingJS" target="_blank">MetingJS</a>
+ * 在网站底部插入APlayer吸底播放器<br/>开源项目：<a href="https://github.com/DIYgod/APlayer" target="_blank">APlayer</a> | 歌单获取API：<a href="https://api.ohmyga.cn/page/netease" target="_blank">Ohmyga</a>
  * 
  * @package APlayerAtBottom
  * @author 小太
- * @version 1.0.4
+ * @version 1.0.5
  * @link https://713.moe/
  */
 class APlayerAtBottom_Plugin implements Typecho_Plugin_Interface
@@ -41,7 +41,7 @@ class APlayerAtBottom_Plugin implements Typecho_Plugin_Interface
      * @return void
      */
     public static function config(Typecho_Widget_Helper_Form $form){
-      	$version = '1.0.4'; //定义此插件版本
+      	$version = '1.0.5'; //定义此插件版本
       	$api_get = file_get_contents('https://api.713.moe/version/aab_gh.json'); //获取最新版本内容（GithubAPI部分地区无法访问就没用了）
       	$arr = json_decode($api_get, true); //json解析
       	$new_version = $arr['tag_name']; //获取版本号
@@ -136,7 +136,7 @@ class APlayerAtBottom_Plugin implements Typecho_Plugin_Interface
         	$order_out = 'random';
         }
       
-      	$apiget = file_get_contents("https://api.i-meto.com/meting/api?server=netease&type=playlist&id=".$id.""); //使用MetoAPI获取歌单内容
+      	$apiget = file_get_contents("https://api.ohmyga.cn/netease/?use=1&type=playlist&id=".$id.""); //使用MetoAPI获取歌单内容
       	//将歌单内容与设定写入APlayer参数
         $write = "const ap = new APlayer({
     				container: document.getElementById('downplayer'),
