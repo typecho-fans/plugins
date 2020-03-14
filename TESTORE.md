@@ -49,7 +49,7 @@
 [B3logForHacPai](https://github.com/typecho/plugins/tree/master/B3logForHacPai) | 黑客派社区API实时同步推送插件 | 1.0.0 | [DT27](https://github.com/DT27) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/B3logForHacPai.zip)
 [BaeUpload]() | 百度云应用引擎BAE附件上传插件 | 1.0.1 | [doudou](https://github.com/doudoutime) | [不可用](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/BaeUpload.zip)
 [BaiduSubmit](https://github.com/phpgao/BaiduSubmit) | 推送Sitemap文章链接到百度插件 | 0.5.2 | [老高](https://github.com/phpgao) | [下载](https://github.com/phpgao/BaiduSubmit/archive/master.zip)
-[BaiduTextCensor](https://github.com/sy-records/ty-baidu-textcensor) | 在 Typecho 中加入百度文本内容审核，过滤评论中的敏感内容 | 1.0.0 | [沈唁](https://qq52o.me) | [下载](https://github.com/sy-records/ty-baidu-textcensor/archive/master.zip)
+[BaiduTextCensor](https://github.com/sy-records/ty-baidu-textcensor) | 在 Typecho 中加入百度文本内容审核，过滤评论中的敏感内容 | 1.0.1 | [沈唁](https://qq52o.me) | [下载](https://github.com/sy-records/ty-baidu-textcensor/releases/latest)
 [BilibiliEcho](https://github.com/pluveto/BilibiliEcho) | Bilibili 动态同步到 Typecho 的插件。 | 1.0.0 | [pluvet](https://github.com/pluveto) | [下载](https://github.com/pluveto/BilibiliEcho/archive/master.zip)
 [BlockComment](https://github.com/typecho/plugins/tree/master/BlockComment) | Typecho评论来路IP黑名单插件 | 0.0.1 | [明城](https://github.com/feelinglucky) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/BlockComment.zip)
 [BlockIP](https://github.com/kokororin/typecho-plugin-BlockIP) | Typecho访问前台IP黑名单插件 | 1.0 | [Kokororin](https://github.com/kokororin) | [下载](https://github.com/kokororin/typecho-plugin-BlockIP/archive/master.zip)
