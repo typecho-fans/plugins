@@ -9,8 +9,6 @@
 
 ---
 
-## 注意，请不要删除downplayer.js！！！
-
 ## 特色
  - 支持直接解析网易云音乐歌单（[Ohmyga](https://api.ohmyga.cn/page/netease)）
  - 支持自定义播放器主题颜色（作为进度条和音量条的主题颜色）
