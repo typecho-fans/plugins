@@ -45,7 +45,7 @@
 [AliUpload](https://github.com/typecho/plugins/tree/master/AliUpload) | 经典版阿里云储存上传插件 | 1.0.0 Beta | [loftor](https://github.com/loftor-git) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/AliUpload.zip)
 [Avartar](https://github.com/typecho/plugins/blob/master/Avartar.php) | 自定义替换头像代理地址插件 | 1.0.0 Beta | [loftor](https://github.com/loftor-git) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/Avartar.zip)
 [AutoBaiduSubmit](https://github.com/jinfeijie/AutoBaiduSubmit) | 访问页面自动提交百度链接插件 | 1.0.2 | [JinFeiJie](https://github.com/jinfeijie) | [下载](https://github.com/jinfeijie/AutoBaiduSubmit/archive/1.0.2.zip)
-[APlayerAtBottom](https://github.com/satosouta/APlayerAtBottom) | 给博客底部添加悬浮播放器（支持网易云音乐歌单） | 1.0.5 | [小太](https://github.com/satosouta) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/APlayerAtBottom.zip)
+[APlayerAtBottom](https://github.com/satosouta/APlayerAtBottom) | 给博客底部添加悬浮播放器（支持网易云音乐歌单） | 1.0.6 | [小太](https://github.com/satosouta) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/APlayerAtBottom.zip)
 [B3logForHacPai](https://github.com/typecho/plugins/tree/master/B3logForHacPai) | 黑客派社区API实时同步推送插件 | 1.0.0 | [DT27](https://github.com/DT27) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/B3logForHacPai.zip)
 [BaeUpload]() | 百度云应用引擎BAE附件上传插件 | 1.0.1 | [doudou](https://github.com/doudoutime) | [不可用](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/BaeUpload.zip)
 [BaiduSubmit](https://github.com/phpgao/BaiduSubmit) | 推送Sitemap文章链接到百度插件 | 0.5.2 | [老高](https://github.com/phpgao) | [下载](https://github.com/phpgao/BaiduSubmit/archive/master.zip)
