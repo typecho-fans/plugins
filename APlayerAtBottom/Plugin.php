@@ -1,10 +1,11 @@
 <?php 
 /**
- * 在网站底部插入APlayer吸底播放器<br/>开源项目：<a href="https://github.com/DIYgod/APlayer" target="_blank">APlayer</a> | 歌单获取API：<a href="https://api.ohmyga.cn/page/netease" target="_blank">Ohmyga</a>
- * 
+ * 在网站底部插入APlayer吸底播放器<br/>
+ * 开源项目：<a href="https://github.com/DIYgod/APlayer" target="_blank">APlayer</a> | 歌单获取API：<a href="https://api.ohmyga.cn/page/netease" target="_blank">Ohmyga</a><br/>
+ * 保存完配置记得点 - > <a href="../usr/plugins/APlayerAtBottom/Update.php" target="_blank">点我更新歌单内容</a>
  * @package APlayerAtBottom
  * @author 小太
- * @version 1.0.5
+ * @version 1.0.6
  * @link https://713.moe/
  */
 class APlayerAtBottom_Plugin implements Typecho_Plugin_Interface
@@ -19,6 +20,10 @@ class APlayerAtBottom_Plugin implements Typecho_Plugin_Interface
     public static function activate(){
         Typecho_Plugin::factory('Widget_Archive')->footer = array('APlayerAtBottom_Plugin', 'footer');
         Typecho_Plugin::factory('Widget_Archive')->header = array('APlayerAtBottom_Plugin', 'header');
+      	$site = array();
+      	$site['siteurl'] = Helper::options()->siteUrl;
+      	$sitedata = json_encode($site);
+      	file_put_contents('./usr/plugins/APlayerAtBottom/siteurl.json',$sitedata);
     	return '启用成功ヾ(≧▽≦*)o，请设置您您的歌单ID~';
     }
     /**
@@ -41,7 +46,8 @@ class APlayerAtBottom_Plugin implements Typecho_Plugin_Interface
      * @return void
      */
     public static function config(Typecho_Widget_Helper_Form $form){
-      	$version = '1.0.5'; //定义此插件版本
+      	echo ('<style>.buttons a{background:#467b96; color:#fff; border-radius:4px; padding:.5em .75em; display:inline-block}</style>');
+      	$version = '1.0.6'; //定义此插件版本
       	$api_get = file_get_contents('https://api.713.moe/version/aab_gh.json'); //获取最新版本内容（GithubAPI部分地区无法访问就没用了）
       	$arr = json_decode($api_get, true); //json解析
       	$new_version = $arr['tag_name']; //获取版本号
@@ -63,13 +69,13 @@ class APlayerAtBottom_Plugin implements Typecho_Plugin_Interface
       	
       	//输出版本信息
         $public_section = new Typecho_Widget_Helper_Layout('div', array('class=' => 'typecho-page-title'));
-        $public_section->html('<h4>本插件目前版本：'.$version.' | 最新版本：'.$new_version_out.'（'.$version_tips.'）</h4><h4><font color="#e84118">请注意：保存配置后刷新浏览器缓存后方可更新播放器内容</font></h4>');
+        $public_section->html('<h4>本插件目前版本：'.$version.' | 最新版本：'.$new_version_out.'（'.$version_tips.'）</h4><h4><font color="#e84118">请注意：保存配置后一定要来点击一下下面的按钮（若歌单有新增歌曲也要来点一下哦~）一定要点！！</font></h4><p class="buttons"><a href="../usr/plugins/APlayerAtBottom/Update.php" target="_blank">点我更新歌单内容</a></p>');
         $form->addItem($public_section);
       	
       	//设置内容
       	$aplayer = new Typecho_Widget_Helper_Form_Element_Radio('aplayer', array ('0' => '有', '1' => '无'), '1','您是否有安装APlayer相关插件或CSS/JS', '这将会决定本插件是否输出设定CSS/JS');
     	$form->addInput($aplayer);
-    	$id = new Typecho_Widget_Helper_Form_Element_Text('id', null, '2105681544', _t('歌单id'), '这里填写你的 <b>网易云音乐</b> 歌单id（目前仅支持网易云音乐）<br/>PS：更换后请刷新浏览器缓存！');
+    	$id = new Typecho_Widget_Helper_Form_Element_Text('id', null, '4907097519', _t('歌单id'), '这里填写你的 <b>网易云音乐</b> 歌单id（目前仅支持网易云音乐）<br/>PS：更换后请刷新浏览器缓存！');
         $form->addInput($id);
       	$autoplay = new Typecho_Widget_Helper_Form_Element_Radio('autoplay', array ('0' => '启用', '1' => '禁用'), '1','自动播放', 'PS：部分主题或浏览器可能不支持此项。');
     	$form->addInput($autoplay);
@@ -135,22 +141,17 @@ class APlayerAtBottom_Plugin implements Typecho_Plugin_Interface
         }else{
         	$order_out = 'random';
         }
-      
-      	$apiget = file_get_contents("https://api.ohmyga.cn/netease/?use=1&type=playlist&id=".$id.""); //使用MetoAPI获取歌单内容
-      	//将歌单内容与设定写入APlayer参数
-        $write = "const ap = new APlayer({
-    				container: document.getElementById('downplayer'),
-                        lrcType: ".$lrc_out.",
-                        autoplay: ".$autoplay_out.",
-                        fixed: true,
-                        theme: '".$theme."',
-                        volume: ".$volume.",
-                        order: '".$order_out."',
-    					audio: ".$apiget."
-				  });";
-      	$myfile = fopen("./usr/plugins/APlayerAtBottom/downplayer.js", "w") or die("Unable to open file!"); //打开downplayer.js文件
-		fwrite($myfile, $write); //将APlayerJS参数设定写入downplayer.js
-		fclose($myfile); //写入完成
+		
+      	//设置写入缓存
+      	$data = array();
+      	$data['id'] = $id;
+		$data['lrc'] = $lrc_out;
+		$data['autoplay'] = $autoplay_out;
+      	$data['theme'] = $theme;
+      	$data['volume'] = $volume;
+      	$data['order'] = $order_out;
+      	$json_string = json_encode($data);
+      	file_put_contents('./usr/plugins/APlayerAtBottom/settings.json',$json_string);
     }
     public static function footer(){
       	//获取参数
