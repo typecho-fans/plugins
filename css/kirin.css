@@ -735,7 +735,7 @@ i.fontello-dedent.text{
     background-color: #ab34e9
   }
   /* handsome 6.0 分页问题 */
-  .page-navigator>li>a{
+  .page-navigator>li>a, .page-navigator>li>span{
     border: 1px solid #ddd;
   }
 /*赞赏图标跳动*/
@@ -776,6 +776,9 @@ i.fontello-dedent.text{
 }
 #categories-2 .list-group-item:nth-child(5) i{
     color: #ffd33f;
+}
+#categories-2 .list-group-item:nth-child(6) i{
+    color: #f17c67;
 }
 .badge.pull-right{
     background-color: #a5dee4;
