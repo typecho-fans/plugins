@@ -5,7 +5,7 @@
  * 
  * @package APlayerAtBottom
  * @author 小太
- * @version 1.0.7
+ * @version 1.0.8
  * @link https://713.moe/
  */
 class APlayerAtBottom_Plugin implements Typecho_Plugin_Interface
@@ -57,7 +57,9 @@ class APlayerAtBottom_Plugin implements Typecho_Plugin_Interface
 		deldir('./usr/plugins/APlayerAtBottom/cache'); //删除cache文件夹和其中全部内容
 		unlink('./usr/plugins/APlayerAtBottom/time.json'); //删除time.json文件
 		unlink('./usr/plugins/APlayerAtBottom/settings.json'); //删除settings.json文件
-		unlink('./usr/plugins/APlayerAtBottom/settings_old.json'); //删除settings.json文件
+		if(file_exists('./usr/plugins/APlayerAtBottom/settings_old.json') === true) {
+			unlink('./usr/plugins/APlayerAtBottom/settings_old.json'); //删除settings_old.json文件
+		}
     	return '禁用成功！插件已经停用啦（；´д｀）ゞ';
     }
 
@@ -70,7 +72,7 @@ class APlayerAtBottom_Plugin implements Typecho_Plugin_Interface
      */
     public static function config(Typecho_Widget_Helper_Form $form){
       	echo ('<style>.buttons a{background:#467b96; color:#fff; border-radius:4px; padding:.5em .75em; display:inline-block}</style>');
-      	$version = '1.0.7'; //定义此插件版本
+      	$version = '1.0.6'; //定义此插件版本
       	$api_get = file_get_contents('https://api.713.moe/version/aab.json'); //获取最新版本内容（GithubAPI部分地区无法访问就没用了）
       	$arr = json_decode($api_get, true); //json解析
       	$new_version = $arr['ver']; //获取版本号
@@ -79,7 +81,7 @@ class APlayerAtBottom_Plugin implements Typecho_Plugin_Interface
       	
       	//判断版本是否过时
       	if($version < $new_version) {
-        	$version_tips = '该插件有<font color="#e84118">新版本</font> => '.$new_title.' => <a href="https://github.com/SatoSouta/APlayerAtBottom/releases/tag/'.$new_version.'" target="_blank">立即下载</a>';
+        	$version_tips = '该插件有<font color="#e84118">新版本</font> => '.$new_title.' => <a href="'.Helper::options()->pluginUrl.'/APlayerAtBottom/Update.php?ver='.$version.'" target="_blank">点击进行增量更新</a>';
           	$new_version_out = '<font color="#e84118">'.$new_version.'</font>';
         }else{
           	if($version > $new_version){
