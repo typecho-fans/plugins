@@ -7,9 +7,9 @@ Gravatar 头像缓存插件 For Typecho
 - 登陆后台，在“控制台”下拉菜单中进入“插件管理”
 - 启用插件即可
 
-###升级日志
+### 升级日志
 
-####2.0.2 at 2012-04-07
+#### 2.0.2 at 2012-04-07
 - 修复初次激活插件，初次调用 getGravatarCache() 不会自动创建缓存文件夹的BUG
 - getGravatarCache() 增加第五个参数 $default
   - getGravatarCache($mail, $isSecure = false, $size = 32, $rating = 'G', $default = 'mm')
@@ -20,12 +20,12 @@ Gravatar 头像缓存插件 For Typecho
   - $default  ->  默认头像 地址，默认值 为 mm（此值对应 gravatar官方比较美观的默认头像）
 - 整理简化代码，提高可读性
 
-####1.2.1 at 2012-04-06
+#### 1.2.1 at 2012-04-06
 
 - 修复由于没有声明方法类型 为 静态类型 而导致插件初次使用时 出现错误警告的BUG （download 方法）
 - 删除一些无用的代码行
 
-####1.2.0  at 2011-04-14
+#### 1.2.0  at 2011-04-14
  
 - 修复程序逻辑BUG
 - 修复域名后面多出一个斜杠的BUG
