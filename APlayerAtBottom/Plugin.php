@@ -72,7 +72,7 @@ class APlayerAtBottom_Plugin implements Typecho_Plugin_Interface
      */
     public static function config(Typecho_Widget_Helper_Form $form){
       	echo ('<style>.buttons a{background:#467b96; color:#fff; border-radius:4px; padding:.5em .75em; display:inline-block}</style>');
-      	$version = '1.0.6'; //定义此插件版本
+      	$version = '1.0.8'; //定义此插件版本
       	$api_get = file_get_contents('https://api.713.moe/version/aab.json'); //获取最新版本内容（GithubAPI部分地区无法访问就没用了）
       	$arr = json_decode($api_get, true); //json解析
       	$new_version = $arr['ver']; //获取版本号
