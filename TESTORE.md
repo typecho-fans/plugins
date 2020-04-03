@@ -27,7 +27,7 @@
 
  > 下表中下载链接文字可用于附加图标：`下载`即非社区版，`不可用`显示为:no_entry:，`特殊`显示:warning:即安装或启用方法特殊。
 
-### 插件信息 (111)
+### 插件信息 (112)
 
 ###### 下表“名称”将用于创建安装文件夹，“版本”用于提示升级，请务必确保文本准确；注意按字母排序，自增上方括号中数字便于统计，简介不要过长。
 ```
@@ -96,6 +96,7 @@
 [MailValidate](https://github.com/Archeb/MailValidate) | 注册用户通过邮件验证权限插件 | 1.0.0 | [Archeb](https://github.com/Archeb) | [下载](https://github.com/Archeb/MailValidate/archive/master.zip)
 [MathJax](https://github.com/typecho/plugins/blob/master/MathJax.php) | 基于CDN的MathJax公式渲染插件 | 1.0.0 | [mutoo](https://github.com/mutoo) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/MathJax.zip)
 [MDRuby](https://github.com/journey-ad/MDRuby-Typecho-Plugin) | Markdown解析Ruby注音标签插件 | 0.2 | [journey.ad](https://github.com/journey-ad) | [下载](https://github.com/journey-ad/MDRuby-Typecho-Plugin/archive/master.zip)
+[MemorialDay](https://github.com/sy-records/MemorialDay/tree/typecho) | 「特殊节日使用」在国家公祭日、全国哀悼日时网站增加灰色滤镜。 | 1.0.0 | [沈唁](https://qq52o.me) | [下载](https://github.com/sy-records/MemorialDay/tree/typecho)
 [Meting](https://github.com/MoePlayer/APlayer-Typecho) | 五大云音乐平台解析播放器插件 | 2.1.2 | [METO](https://github.com/metowolf) | [下载](https://github.com/MoePlayer/APlayer-Typecho/archive/v2.1.2.zip)
 [Notes](https://github.com/ghostboyzone/typecho-notes-plugin) | 自建管理Markdown便签系统插件 | 0.0.1 | [GhostBoyZone](https://github.com/ghostboyzone) | [下载](https://github.com/ghostboyzone/typecho-notes-plugin/archive/master.zip)
 [PageToLinks](https://github.com/typecho/plugins/blob/master/PageToLinks.php) | 独立页面友情链接转换输出插件 | 1.0.0 | [qining](https://github.com/joyqi) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/PageToLinks.zip)
