@@ -1,11 +1,11 @@
 <?php 
 /**
  * 在网站底部插入APlayer吸底播放器<br/>
- * 开源项目：<a href="https://github.com/DIYgod/APlayer" target="_blank">APlayer</a> | 歌单获取API：<a href="https://api.ohmyga.cn/page/netease" target="_blank">Ohmyga</a>
+ * 开源项目：<a href="https://github.com/DIYgod/APlayer" target="_blank">APlayer</a>
  * 
  * @package APlayerAtBottom
  * @author 小太
- * @version 1.0.8
+ * @version 1.1.0
  * @link https://713.moe/
  */
 class APlayerAtBottom_Plugin implements Typecho_Plugin_Interface
@@ -20,6 +20,7 @@ class APlayerAtBottom_Plugin implements Typecho_Plugin_Interface
     public static function activate(){
         Typecho_Plugin::factory('Widget_Archive')->footer = array('APlayerAtBottom_Plugin', 'footer');
         Typecho_Plugin::factory('Widget_Archive')->header = array('APlayerAtBottom_Plugin', 'header');
+		Helper::addRoute('downplayer', '/downplayer.js' ,'APlayerAtBottom_Action' ,'action');
     	return '启用成功ヾ(≧▽≦*)o，请设置您您的歌单ID~';
     }
     /**
@@ -31,35 +32,8 @@ class APlayerAtBottom_Plugin implements Typecho_Plugin_Interface
      * @throws Typecho_Plugin_Exception
      */
     public static function deactivate(){
-		//删除文件夹全部内容操作
-		function deldir($dir) {
-		   //先删除目录下的文件：
-		   $dh=opendir($dir);
-		   while ($file=readdir($dh)) {
-		      if($file!="." && $file!="..") {
-		         $fullpath=$dir."/".$file;
-		         if(!is_dir($fullpath)) {
-		            unlink($fullpath);
-		         } else {
-		            deldir($fullpath);
-		         }
-		      }
-		   }
-		 
-		   closedir($dh);
-		   //删除当前文件夹：
-		   if(rmdir($dir)) {
-		      return true;
-		   } else {
-		      return false;
-		   }
-		}
-		deldir('./usr/plugins/APlayerAtBottom/cache'); //删除cache文件夹和其中全部内容
-		unlink('./usr/plugins/APlayerAtBottom/time.json'); //删除time.json文件
-		unlink('./usr/plugins/APlayerAtBottom/settings.json'); //删除settings.json文件
-		if(file_exists('./usr/plugins/APlayerAtBottom/settings_old.json') === true) {
-			unlink('./usr/plugins/APlayerAtBottom/settings_old.json'); //删除settings_old.json文件
-		}
+		unlink(__DIR__ .'/settings.json'); //删除settings.json
+		Helper::removeRoute("downplayer");
     	return '禁用成功！插件已经停用啦（；´д｀）ゞ';
     }
 
@@ -71,40 +45,49 @@ class APlayerAtBottom_Plugin implements Typecho_Plugin_Interface
      * @return void
      */
     public static function config(Typecho_Widget_Helper_Form $form){
+		//输出后台设置页面样式
       	echo ('<style>.buttons a{background:#467b96; color:#fff; border-radius:4px; padding:.5em .75em; display:inline-block}</style>');
-      	$version = '1.0.8'; //定义此插件版本
-      	$api_get = file_get_contents('https://api.713.moe/version/aab.json'); //获取最新版本内容（GithubAPI部分地区无法访问就没用了）
-      	$arr = json_decode($api_get, true); //json解析
-      	$new_version = $arr['ver']; //获取版本号
-      	$new_title = $arr['name']; //获取版本标题
-		$notice = $arr['notice']; //获取公告
+      	
+		//定义此插件版本
+		$version = '1.1.0'; 
+		
+		//GithubAPI内容获取UA设定
+		ini_set('user_agent','Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1; .NET CLR 2.0.50727; .NET CLR 3.0.04506.30; GreenBrowser)');
+		
+		//从GithubAPI拉取最新内容
+      	$arr = json_decode(@file_get_contents('https://api.github.com/repos/satosouta/APlayerAtBottom/releases/latest'), true);
+		
+		//定义最新版本号
+		if(empty($arr['tag_name'])){
+			$new_version = '获取失败！';
+		}else{
+			$new_version = $arr['tag_name'];
+		}
       	
       	//判断版本是否过时
-      	if($version < $new_version) {
-        	$version_tips = '该插件有<font color="#e84118">新版本</font> => '.$new_title.' => <a href="'.Helper::options()->pluginUrl.'/APlayerAtBottom/Update.php?ver='.$version.'" target="_blank">点击进行增量更新</a>';
+      	if($new_version === '获取失败！'){
+			$version_tips = '获取失败！请自行前往github获取更新！';
+			$new_version_out = '<font color="#e84118">获取失败！</font>';
+		}elseif($version < $new_version) {
+        	$version_tips = '该插件有<font color="#e84118">新版本</font> => <a href="'.$arr['assets'][0]['browser_download_url'].'" target="_blank">点击下载</a>';
+			$new_version_out = '<font color="#e84118">'.$new_version.'</font>';
+		}elseif($version > $new_version){
+            $version_tips = '你怎么回事，怎么还比最新版本高了？';
           	$new_version_out = '<font color="#e84118">'.$new_version.'</font>';
-        }else{
-          	if($version > $new_version){
-            	$version_tips = '你怎么回事，怎么还比最新版本高了？';
-          		$new_version_out = '<font color="#e84118">'.$new_version.'</font>';
-            }else{
-        		$version_tips = '您的插件为最新版本，无需更新！';
-          		$new_version_out = $new_version;
-            }
-        }
+        }elseif($version = $new_version){
+			$version_tips = '您的插件为最新版本，无需更新！';
+          	$new_version_out = $new_version;
+		}
       	
-      	//输出版本信息和公告
+      	//输出版本信息
         $public_section = new Typecho_Widget_Helper_Layout('div', array('class=' => 'typecho-page-title'));
-		$notice_section = new Typecho_Widget_Helper_Layout('div', array('class=' => 'typecho-page-title'));
         $public_section->html('<h4>本插件目前版本：'.$version.' | 最新版本：'.$new_version_out.'（'.$version_tips.'）</h4>');
-		$notice_section->html('<h4><font color="#e84118">'.$notice.'</font></h4>');
         $form->addItem($public_section);
-		$form->addItem($notice_section);
       	
       	//设置内容
-      	$aplayer = new Typecho_Widget_Helper_Form_Element_Radio('aplayer', array ('0' => '有', '1' => '无'), '1','您是否有安装APlayer相关插件或CSS/JS', '这将会决定本插件是否输出设定CSS/JS');
+      	$aplayer = new Typecho_Widget_Helper_Form_Element_Radio('aplayer', array ('0' => '本地', '1' => 'jsDelivr（推荐）', '2' => '我已经安装了APlayer的CSS&JS或者相关的插件'), '0','APlayer 静态资源加载', '防止APlayer版本不同导致问题，若您没有安装相关插件或者自行添加CSS/JS，您只需要选择前面两个选项中的一个即可');
     	$form->addInput($aplayer);
-    	$id = new Typecho_Widget_Helper_Form_Element_Text('id', null, '4907097519', _t('歌单id'), '这里填写你的 <b>网易云音乐</b> 歌单id（目前仅支持网易云音乐）<br/>PS：更换后请刷新浏览器缓存！');
+    	$id = new Typecho_Widget_Helper_Form_Element_Text('id', null, '4907097519', _t('歌单id'), '这里填写你的 <b>网易云音乐</b> 歌单id（目前仅支持网易云音乐）');
         $form->addInput($id);
       	$autoplay = new Typecho_Widget_Helper_Form_Element_Radio('autoplay', array ('0' => '启用', '1' => '禁用'), '1','自动播放', 'PS：部分主题或浏览器可能不支持此项。');
     	$form->addInput($autoplay);
@@ -118,6 +101,10 @@ class APlayerAtBottom_Plugin implements Typecho_Plugin_Interface
         $form->addInput($volume);
 		$cachetime = new Typecho_Widget_Helper_Form_Element_Text('cachetime', null, '86400', _t('缓存时间（秒）'), '这里填写自动缓存的时间，默认为24小时');
 		$form->addInput($cachetime);
+		$api = new Typecho_Widget_Helper_Form_Element_Radio('api', array ('0' => 'O\'s API', '1' => '自定义API'), '0','网易云音乐歌单解析', '您可以自行选择音乐歌单解析服务器');
+    	$form->addInput($api);
+		$iapi = new Typecho_Widget_Helper_Form_Element_Text('iapi', null, null, _t('自定义API'), '若您上一个设置选择了自定义API，请您按照下面的方式填写，若没有选择则可以空着<br/>示例：https://api.713.moe/netease?type=playlist&id=');
+        $form->addInput($iapi);
     }
 
     /**
@@ -147,11 +134,15 @@ class APlayerAtBottom_Plugin implements Typecho_Plugin_Interface
       	$lrc = Typecho_Widget::widget('Widget_Options') -> Plugin('APlayerAtBottom') -> lrc;
       	$order = Typecho_Widget::widget('Widget_Options') -> Plugin('APlayerAtBottom') -> order;
 		$cachetime = Typecho_Widget::widget('Widget_Options') -> Plugin('APlayerAtBottom') -> cachetime;
+		$api = Typecho_Widget::widget('Widget_Options') -> Plugin('APlayerAtBottom') -> api;
+		$iapi = Typecho_Widget::widget('Widget_Options') -> Plugin('APlayerAtBottom') -> iapi;
       	
-      	//判断是否有开启APlayer设置
-      	if($aplayer === '1') {
-        	echo '<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/aplayer@latest/dist/APlayer.min.css">'; //输出APlayerCSS
-        }else{}
+      	//静态文件设置
+      	if($aplayer === '0') {
+        	echo '<link rel="stylesheet" href="'.Helper::options()->pluginUrl.'/APlayerAtBottom/static/APlayer.min.css">';
+        }elseif($aplayer === '1'){
+			echo '<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/SatoSouta/APlayerAtBottom/static/APlayer.min.css">';
+		}elseif($aplayer === '2'){}
       	
       	//判断是否打开歌词
       	if($lrc === '0') {
@@ -174,54 +165,76 @@ class APlayerAtBottom_Plugin implements Typecho_Plugin_Interface
         	$order_out = 'random';
         }
 		
-		//设置更新方法
-		if (file_exists('./usr/plugins/APlayerAtBottom/settings.json') == false) {
-			$data = array();
-			$data['id'] = $id;
-			$data['lrc'] = $lrc_out;
-			$data['autoplay'] = $autoplay_out;
-			$data['theme'] = $theme;
-			$data['volume'] = $volume;
-			$data['order'] = $order_out;
-			$json_string = json_encode($data);
-			file_put_contents('./usr/plugins/APlayerAtBottom/settings.json',$json_string);
-		}else{
-			rename('./usr/plugins/APlayerAtBottom/settings.json','./usr/plugins/APlayerAtBottom/settings_old.json');
-			$data = array();
-			$data['id'] = $id;
-			$data['lrc'] = $lrc_out;
-			$data['autoplay'] = $autoplay_out;
-			$data['theme'] = $theme;
-			$data['volume'] = $volume;
-			$data['order'] = $order_out;
-			$json_string = json_encode($data);
-			file_put_contents('./usr/plugins/APlayerAtBottom/settings.json',$json_string);
+		//判断设置的API
+		if($api === '0'){
+			$api_out = 'https://api.ohmyga.cn/netease/?use=1&type=playlist&id=';
+		}elseif($api === '1'){
+			$api_out = $iapi;
 		}
 		
-		//检测缓存文件是否存在，不存在则创建缓存文件
-		if (file_exists('./usr/plugins/APlayerAtBottom/time.json') == false) {
-			$time = time();
-			fopen('./usr/plugins/APlayerAtBottom/time.json', "w");
-			mkdir('./usr/plugins/APlayerAtBottom/cache',0755,true);
-			file_put_contents('./usr/plugins/APlayerAtBottom/time.json',$time);
-			$apiget = file_get_contents('https://api.ohmyga.cn/netease/?use=1&type=playlist&id='.$id.'');
-			$jscontent = 'const ap = new APlayer({container: document.getElementById(\'downplayer\'),lrcType:'.$lrc_out.',autoplay:'.$autoplay_out.',fixed:true,theme:\''.$theme.'\',volume:'.$volume.',order:\''.$order_out.'\',audio:'.$apiget.'});';
-			fopen('./usr/plugins/APlayerAtBottom/cache/'.$time.'.js', "w");
-			file_put_contents('./usr/plugins/APlayerAtBottom/cache/'.$time.'.js',$jscontent);
+		//更新方法
+		if (file_exists(__DIR__ .'/settings.json') == false) {
+			$data = [
+				'last_update' => time(),
+				'settings' => [],
+				'data' => []
+			];
+			$data['settings'] = [
+				'id' => $id,
+				'lrc' => $lrc_out,
+				'autoplay' => $autoplay_out,
+				'theme' => $theme,
+				'volume' => $volume,
+				'order' => $order_out,
+				'api' => $api
+			];
+			$data['data'] = @file_get_contents($api_out.$id);
+			file_put_contents(__DIR__ .'/settings.json',json_encode($data));
 		}else{
-			$oldtime = file_get_contents('./usr/plugins/APlayerAtBottom/time.json');
-			$newset = file_get_contents('./usr/plugins/APlayerAtBottom/settings.json');
-			$oldset = file_get_contents('./usr/plugins/APlayerAtBottom/settings_old.json');
-			//检测缓存是否过期，若过期或设置更新则更新缓存
-			if(time() - $oldtime > $cachetime or $newset != $oldset){
-				$time = time();
-				unlink('./usr/plugins/APlayerAtBottom/cache/'.$oldtime.'.js');
-				$apiget = file_get_contents('https://api.ohmyga.cn/netease/?use=1&type=playlist&id='.$id.'');
-				$jscontent = 'const ap = new APlayer({container: document.getElementById(\'downplayer\'),lrcType:'.$lrc_out.',autoplay:'.$autoplay_out.',fixed:true,theme:\''.$theme.'\',volume:'.$volume.',order:\''.$order_out.'\',audio:'.$apiget.'});';
-				fopen('./usr/plugins/APlayerAtBottom/cache/'.$time.'.js', "w");
-				file_put_contents('./usr/plugins/APlayerAtBottom/cache/'.$time.'.js',$jscontent);
-				file_put_contents('./usr/plugins/APlayerAtBottom/time.json',$time);
-			}else{}
+			$decode = json_decode(file_get_contents(__DIR__ .'/settings.json'), true);
+			$oldapi = $decode['settings']['api'];
+			$olddata = $decode['data'];
+			//检测缓存是否过期
+			if ((time() - $data['last_update']) < $cachetime) {
+				$data = [
+					'last_update' => time(),
+					'settings' => [],
+					'data' => []
+				];
+				$data['settings'] = [
+					'id' => $id,
+					'lrc' => $lrc_out,
+					'autoplay' => $autoplay_out,
+					'theme' => $theme,
+					'volume' => $volume,
+					'order' => $order_out,
+					'api' => $api
+				];
+				$data['data'] = @file_get_contents($api_out.$id);
+				file_put_contents(__DIR__ .'/settings.json',json_encode($data));
+			}else{
+				//若缓存不过期则重新获取设置内容以防用户设置更新
+				$data = [
+					'last_update' => $decode['last_update'],
+					'settings' => [],
+					'data' => []
+				];
+				$data['settings'] = [
+					'id' => $id,
+					'lrc' => $lrc_out,
+					'autoplay' => $autoplay_out,
+					'theme' => $theme,
+					'volume' => $volume,
+					'order' => $order_out,
+					'api' => $api
+				];
+				if($api != $oldapi){
+					$data['data'] = @file_get_contents($api_out.$id);
+				}else{
+					$data['data'] = $olddata;
+				}
+				file_put_contents(__DIR__ .'/settings.json',json_encode($data));
+			}
 		}
     }
     public static function footer(){
@@ -229,16 +242,18 @@ class APlayerAtBottom_Plugin implements Typecho_Plugin_Interface
       	$config = Typecho_Widget::widget('Widget_Options')->plugin('APlayerAtBottom');
       	$aplayer = Typecho_Widget::widget('Widget_Options') -> Plugin('APlayerAtBottom') -> aplayer;
       	
-        echo '<div id="downplayer"></div>'; //构建播放器
+        //构建播放器
+		echo '<div id="downplayer"></div>';
       	
-      	//判断是否有开启APlayer设置
-      	if($aplayer === '1') {
-        	echo '<script src="//cdn.jsdelivr.net/npm/aplayer@latest/dist/APlayer.min.js"></script>'; //输出APlayerJS
-        }else{}
+      	//静态文件设置
+      	if($aplayer === '0'){
+			echo '<script src="'.Helper::options()->pluginUrl.'/APlayerAtBottom/static/APlayer.min.js"></script>';
+		}elseif($aplayer === '1') {
+        	echo '<script src="//cdn.jsdelivr.net/gh/SatoSouta/APlayerAtBottom/static/APlayer.min.js"></script>';
+        }elseif($aplayer === '2'){}
         
-		//获取缓存文件名并输出APlayer设定JS
-		$time = file_get_contents('./usr/plugins/APlayerAtBottom/time.json');
-		echo '<script src="/usr/plugins/APlayerAtBottom/cache/'.$time.'.js"></script>';
+		//输出配置js
+		echo '<script src="'.Helper::options()->siteUrl.'downplayer.js"></script>';
     }
 }
 ?>
