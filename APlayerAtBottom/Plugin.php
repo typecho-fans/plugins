@@ -253,7 +253,7 @@ class APlayerAtBottom_Plugin implements Typecho_Plugin_Interface
         }elseif($aplayer === '2'){}
         
 		//输出配置js
-		echo '<script src="'.Helper::options()->siteUrl.'downplayer.js"></script>';
+		echo '<script src="'.Helper::options()->pluginUrl.'/APlayerAtBottom/Downplayer.php"></script>';
     }
 }
 ?>
