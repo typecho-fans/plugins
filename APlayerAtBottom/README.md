@@ -10,12 +10,12 @@
 ---
 
 ## 特色
- - 支持直接解析网易云音乐歌单（[Ohmyga](https://api.ohmyga.cn/page/netease)）
+ - 支持直接解析网易云音乐歌单（默认提供：[O's API](https://api.ohmyga.cn/page/netease)）
  - 支持自定义播放器主题颜色（作为进度条和音量条的主题颜色）
  - 支持开启自动播放（仅部分浏览器支持）
  - 支持设定默认音量（播放器会记忆用户设置，用户手动设置音量后默认音量即失效）
- - 支持自动检测新版本插件并提供一键更新功能（Ver.1.0.8+）
  - 支持自动更新歌曲缓存，无需手动更新（Ver.1.0.7+）
+ - 支持修改网易云音乐获取API（Ver.1.1.0+）
 
 ## 使用
 1. 下载**最新的 [Release](https://github.com/SatoSouta/APlayerAtBottom/releases/latest)**
@@ -29,7 +29,7 @@
  - [MetingJS](https://github.com/metowolf/MetingJS)（解析网易云音乐歌单歌曲）
 
 ## API支持
- - [Ohmyga](https://api.ohmyga.cn/page/netease)（O's API 网易云音乐解析）
+ - [O's API](https://api.ohmyga.cn/page/netease)（O's API 网易云音乐解析）
 
 ## 相关
  - 演示站点：[我的博客](https://713.moe/)
@@ -37,4 +37,4 @@
 
 ---
 
-Copyright &copy; 2020 [小太](https://github.com/SatoSouta) & [MoePlayer](https://github.com/MoePlayer) & [Ohmyga](https://github.com/ohmyga233) All rights reserved.
+Copyright &copy; 2020 [小太](https://github.com/SatoSouta) All rights reserved.
