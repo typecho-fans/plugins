@@ -1,13 +1,17 @@
 <?php
+if (!defined('__TYPECHO_ROOT_DIR__')) exit(0);
 /**
  * 文章目录树
  * 
- * @package MenuTree 
+ * @package MenuTree
  * @author hongweipeng
- * @version 0.6.1
+ * @version 0.8.1
  * @link https://www.hongweipeng.com
  */
 class MenuTree_Plugin implements Typecho_Plugin_Interface {
+
+    public static $v = '0.8.1';
+    
     /**
      * 索引ID
      */
@@ -56,6 +60,11 @@ class MenuTree_Plugin implements Typecho_Plugin_Interface {
         ), 1, _t('是否引入jQuery'), _t('此插件需要jQuery，如已有选择不引入避免引入多余jQuery'));
         $form->addInput($jq_import->addRule('enum', _t('必须选择一个模式'), array(0, 1)));
 
+        $hidden_set = new Typecho_Widget_Helper_Form_Element_Radio('hidden_no_title', array(
+            0   =>  _t('否'),
+            1   =>  _t('是')
+        ), 0, _t('文章无标题时隐藏'), _t('文章中无h1、h2、h3...时隐藏'));
+        $form->addInput($hidden_set->addRule('enum', _t('必须选择一个模式'), array(0, 1)));
 
     }
 
@@ -152,6 +161,7 @@ class MenuTree_Plugin implements Typecho_Plugin_Interface {
         if( $include ) {
             $menuHtml = '<ul>' . $menuHtml . '</ul>';
         }
+        $menuHtml = str_replace("'", '&apos;', $menuHtml);
         return $menuHtml;
     }
 
@@ -189,7 +199,7 @@ class MenuTree_Plugin implements Typecho_Plugin_Interface {
         if (!self::is_content()) {
             return;
         }
-        $cssUrl = Helper::options()->pluginUrl . '/MenuTree/menutree.css';
+        $cssUrl = Helper::options()->pluginUrl . '/MenuTree/menutree.css?v=' . self::$v;
         echo '<link rel="stylesheet" type="text/css" href="' . $cssUrl . '" />';
     }
 
@@ -205,12 +215,19 @@ class MenuTree_Plugin implements Typecho_Plugin_Interface {
             echo '<script src="//cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>';
         }
 
-        $html = '<div class="in-page-preview-buttons in-page-preview-buttons-full-reader"><svg data-toggle="dropdown" class="dropdown-toggle icon-list" version="1.1" id="tree_nav" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="104.5 -245.5 51 51" style="enable-background:new 104.5 -245.5 50 50;" xml:space="preserve"><path d="M130.895-218.312c-0.922,0-1.842-0.317-2.59-0.951l-11.01-9.352c-1.684-1.43-1.889-3.955-0.459-5.638c1.43-1.684,3.953-1.89,5.639-0.459l8.42,7.152l8.42-7.152c1.686-1.43,4.211-1.225,5.639,0.459c1.43,1.684,1.225,4.208-0.459,5.638l-11.01,9.352C132.738-218.628,131.816-218.312,130.895-218.312z M133.486-206.289l11.008-9.352c1.684-1.43,1.889-3.955,0.459-5.638c-1.43-1.682-3.955-1.89-5.639-0.458l-8.418,7.152l-8.422-7.152c-1.686-1.431-4.209-1.225-5.639,0.459c-1.43,1.684-1.225,4.208,0.461,5.638l11.012,9.352c0.746,0.634,1.668,0.951,2.588,0.951C131.818-205.337,132.74-205.654,133.486-206.289z"/></svg><div class="dropdown-menu theme pull-right theme-white"id="toc-list"><h3>内容目录</h3><hr><div class="table-of-contents"><div class="toc"><ul><li>'. self::buildMenuHtml( self::$tree ) .'</div></div></div></li></ul></div>';
-        $js = Helper::options()->pluginUrl . '/MenuTree/dropdown.js';
+        if (empty(self::$tree) && Helper::options()->plugin('MenuTree')->hidden_no_title) {
+            return;
+        }
+
+        $html = '<div class="in-page-preview-buttons in-page-preview-buttons-full-reader"><svg data-toggle="dropdown" aria-expanded="false" class="dropdown-toggle icon-list" version="1.1" id="tree_nav" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="104.5 -245.5 51 51" style="enable-background:new 104.5 -245.5 50 50;" xml:space="preserve"><path d="M130.895-218.312c-0.922,0-1.842-0.317-2.59-0.951l-11.01-9.352c-1.684-1.43-1.889-3.955-0.459-5.638c1.43-1.684,3.953-1.89,5.639-0.459l8.42,7.152l8.42-7.152c1.686-1.43,4.211-1.225,5.639,0.459c1.43,1.684,1.225,4.208-0.459,5.638l-11.01,9.352C132.738-218.628,131.816-218.312,130.895-218.312z M133.486-206.289l11.008-9.352c1.684-1.43,1.889-3.955,0.459-5.638c-1.43-1.682-3.955-1.89-5.639-0.458l-8.418,7.152l-8.422-7.152c-1.686-1.431-4.209-1.225-5.639,0.459c-1.43,1.684-1.225,4.208,0.461,5.638l11.012,9.352c0.746,0.634,1.668,0.951,2.588,0.951C131.818-205.337,132.74-205.654,133.486-206.289z"/></svg><div class="dropdown-menu theme pull-right theme-white keep-open" id="toc-list"><h3>内容目录</h3><hr><div class="table-of-contents"><div class="toc"><ul><li>'. self::buildMenuHtml( self::$tree ) .'</div></div></div></li></ul></div>';
+        $js = Helper::options()->pluginUrl . '/MenuTree/dropdown.js?v=' . self::$v;
         echo <<<HTML
             <script src="{$js}"></script>
             <script type="text/javascript">
             jQuery('body').append('$html');
+            jQuery('.in-page-preview-buttons .dropdown-menu.keep-open').on('click', function (e) {
+              e.stopPropagation();
+            });
             </script>
 HTML;
         self::$id = 1;

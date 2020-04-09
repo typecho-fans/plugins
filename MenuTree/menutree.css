@@ -99,6 +99,9 @@
     background-color: #f9f9f5;
     /*background-color: rgba(0, 0, 0, 0.5);*/
     color: #2c3e50;
+    transform: none !important;
+    top: auto !important;
+    left: auto !important;
 }
 .pull-right {
     float: right;
