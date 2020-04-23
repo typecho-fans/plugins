@@ -737,7 +737,10 @@ i.fontello-dedent.text{
   /* handsome 6.0 分页问题 */
   .page-navigator>li>a, .page-navigator>li>span{
     border: 1px solid #ddd;
+    line-height: 1.42857143;
+    padding: 6px 12px;
   }
+
 /*赞赏图标跳动*/
 .btn-pay {
     animation: star 0.5s ease-in-out infinite alternate;
