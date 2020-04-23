@@ -2,7 +2,7 @@
 
 * 神代綺凜式魔改js
 * By: Sanakey
-* Last Update: 2020.03.03
+* Last Update: 2020.04.23
 
 神代綺凜式魔改js文件。
 
@@ -14,7 +14,8 @@ $(document).ready(function () {
     // 神代綺凜原js部分
     (function () {
         var b = !0;
-        window.setInterval(function () {
+        // window.setInterval(, 300);
+        function scrolling() {
             0 < $("body.compensate-for-scrollbar").length && b && (b = !1, $(
                     "body.compensate-for-scrollbar #bg").attr("style", "transition-duration:0s"),
                 setTimeout('$("#bg").attr("style","");cfsFlag=true', 2E3));
@@ -23,14 +24,22 @@ $(document).ready(function () {
             if (0 < a.length) {
                 var c = $(a[a.length - 1]);
                 a = $(window).scrollTop();
-                c = c.offset().top + c.height();
+                c = c.offset().top + Math.abs(c.height());
                 a -= c;
                 c = $("aside.col.w-md.no-border-xs");
                 0 < a ? c.css("opacity", "0") : c.css("opacity", "1")
             }
             300 > $(document).scrollTop() ? $("#kotori").addClass("hidekotori") : $("#kotori").removeClass(
                 "hidekotori")
-        }, 300);
+        }
+        var timer = null;
+        
+        $(document).scroll(function(){
+            clearTimeout(timer);
+            timer = setTimeout(function (){
+                scrolling();
+            },30)
+        });
         console.log("\n %c handsome modified %c by \u795e\u4ee3\u7eee\u51db moe.best \n",
             "color:#444;background:#eee;padding:5px 0;", "color:#fff;background:#876;padding:5px 0;");
         console.log("%c ",
