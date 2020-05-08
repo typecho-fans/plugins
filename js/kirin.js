@@ -2,7 +2,7 @@
 
 * 神代綺凜式魔改js
 * By: Sanakey
-* Last Update: 2020.04.23
+* Last Update: 2020.05.08
 
 神代綺凜式魔改js文件。
 
@@ -33,12 +33,12 @@ $(document).ready(function () {
                 "hidekotori")
         }
         var timer = null;
-        
-        $(document).scroll(function(){
+
+        $(document).scroll(function () {
             clearTimeout(timer);
-            timer = setTimeout(function (){
+            timer = setTimeout(function () {
                 scrolling();
-            },30)
+            }, 30)
         });
         console.log("\n %c handsome modified %c by \u795e\u4ee3\u7eee\u51db moe.best \n",
             "color:#444;background:#eee;padding:5px 0;", "color:#fff;background:#876;padding:5px 0;");
@@ -54,7 +54,7 @@ $(document).ready(function () {
                 } catch (e) {}
             }
         }, 300);
-        
+
     })();
 
 
@@ -75,16 +75,6 @@ $(document).ready(function () {
         '        </div>'
     $('#header .navbar-collapse').prepend(toggleStr);
 
-
-    // 页脚添加版权信息 '&nbsp;|&nbsp;Theme modified by <a href="https://moe.best" target="_blank">Jindai Kirin</a>&nbsp;|&nbsp;'
-    var copyrightInfo = '&nbsp;|&nbsp; \n' +
-        '<div class="github-badge">\n' +
-        '    <a href="https://moe.best/" target="_blank" title="handsome主题由JindaiKirin魔改">\n' +
-        '        <span class="badge-subject">Modified</span><span class="badge-value bg-red">JindaiKirin</span>\n' +
-        '    </a>\n' +
-        '</div>' +
-        '&nbsp;&nbsp; \n'
-    $('#footer span.pull-right').append(copyrightInfo);
 })
 
 
@@ -141,26 +131,46 @@ function moeTitle() {
 function copyTips(text) {
     var timer = null;
     var dialog = {
-        msg: function(msg,time){
-            var time =  time || 3000;
+        msg: function (msg, time) {
+            var time = time || 3000;
             var dialogElement = $('#my-dialog-layer');
-            var dom = '<div id="my-dialog-layer" style="z-index: 99999; max-width: 360px; min-width:100px; background-color: rgba(0,0,0,.6); color: #fff;position: fixed; top: 50%; left: 50%; transform: translate(-50%,-50%); ">\n'+ 
-            '   <div class="layer-content" style="padding: 12px 25px; font-size:14px; text-align: center; line-height: 24px;overflow-x: hidden; overflow-y: auto;">'+ msg +'</div>\n' + 
-            '</div>'
-            if (dialogElement.length==0){
+            var dom = '<div id="my-dialog-layer" style="z-index: 99999; max-width: 360px; min-width:100px; background-color: rgba(0,0,0,.6); color: #fff;position: fixed; top: 50%; left: 50%; transform: translate(-50%,-50%); ">\n' +
+                '   <div class="layer-content" style="padding: 12px 25px; font-size:14px; text-align: center; line-height: 24px;overflow-x: hidden; overflow-y: auto;">' + msg + '</div>\n' +
+                '</div>'
+            if (dialogElement.length == 0) {
                 $('body').append(dom);
-                timer = setTimeout(function(){
+                timer = setTimeout(function () {
                     $('#my-dialog-layer').remove();
-                },time)
+                }, time)
             }
             clearTimeout(timer);
-            timer = setTimeout(function(){
+            timer = setTimeout(function () {
                 $('#my-dialog-layer').remove();
-            },time)
-            
+            }, time)
+
         }
     }
     document.addEventListener("copy", function () {
-        dialog.msg(text||'复制成功，如需转载请注明出处！', 3000);
+        dialog.msg(text || '复制成功，如需转载请注明出处！', 3000);
     })
+}
+
+function setCopyright(type) {
+    // 页脚添加版权信息 '&nbsp;|&nbsp;Theme modified by <a href="https://moe.best" target="_blank">Jindai Kirin</a>&nbsp;|&nbsp;'
+
+    var badgeInfo = '&nbsp;|&nbsp; \n' +
+        '<div class="github-badge">\n' +
+        '    <a href="https://moe.best/" target="_blank" title="handsome主题由JindaiKirin魔改">\n' +
+        '        <span class="badge-subject">Modified</span><span class="badge-value bg-red">JindaiKirin</span>\n' +
+        '    </a>\n' +
+        '</div>' +
+        '&nbsp;&nbsp; \n';
+
+    var textInfo = '&nbsp;|&nbsp; \n' +
+        '    <a href="https://moe.best/" target="_blank" title="handsome主题由JindaiKirin魔改">\n' +
+        '        Modified&nbsp;&nbsp;JindaiKirin\n' +
+        '    </a>\n';
+    '&nbsp;&nbsp; \n';
+    // var copyrightInfo = type?textInfo:badgeInfo;
+    $('#footer span.pull-right').append(type ? textInfo : badgeInfo);
 }

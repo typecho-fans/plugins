@@ -1,11 +1,11 @@
 <?php
 // if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 /**
- * 基于<a href="https://www.ihewro.com/archives/489/">handsome主题</a>的<a href="https://moe.best/">神代綺凜</a>式魔改主题 </br> 更新时间: <span style="color:red">2020-03-03</span>      
+ * 基于<a href="https://www.ihewro.com/archives/489/">handsome主题</a>的<a href="https://moe.best/">神代綺凜</a>式魔改主题 </br> 更新时间: <span style="color:red">2020-05-08</span>      
  *
  * @package KirinShiKi
  * @author Sanakey
- * @version 2.0.0
+ * @version 2.2.0
  * @link https://keymoe.com
  */
 class KirinShiKi_Plugin implements Typecho_Plugin_Interface
@@ -57,7 +57,7 @@ class KirinShiKi_Plugin implements Typecho_Plugin_Interface
 
             echo "</div>";
         }
-        check_update("2.0.0");
+        check_update("2.2.0");
 
         // 自定义pc背景
         $pcBg = new Typecho_Widget_Helper_Form_Element_Text(
@@ -105,6 +105,18 @@ class KirinShiKi_Plugin implements Typecho_Plugin_Interface
         );
         $form->addInput($copyTips);
 
+        // 右下角版权样式
+        $copyrightType = new Typecho_Widget_Helper_Form_Element_Radio(
+            'copyrightType',
+            array(
+                '0' => _t('美化样式'),
+                '1' => _t('文本样式'),
+            ),
+            '0',
+            _t('右下角版权样式')
+        );
+        $form->addInput($copyrightType);
+
         // 是否启用了pjax
         $pjax = new Typecho_Widget_Helper_Form_Element_Radio(
             'pjax',
@@ -126,7 +138,8 @@ class KirinShiKi_Plugin implements Typecho_Plugin_Interface
      * @return void
      */
     public static function personalConfig(Typecho_Widget_Helper_Form $form)
-    { }
+    {
+    }
 
     /**
      * 页脚输出相关代码
@@ -143,6 +156,7 @@ class KirinShiKi_Plugin implements Typecho_Plugin_Interface
         $mpBg = $options->plugin('KirinShiKi')->mpBg;
         $moeTitle = $options->plugin('KirinShiKi')->moeTitle;
         $copyTips = $options->plugin('KirinShiKi')->copyTips;
+        $copyrightType = $options->plugin('KirinShiKi')->copyrightType;
         // 输出css文件
         $path = $options->pluginUrl . '/KirinShiKi/';
         echo '<link rel="stylesheet" type="text/css" href="' . $path . 'css/kirin.css" />';
@@ -151,7 +165,7 @@ class KirinShiKi_Plugin implements Typecho_Plugin_Interface
         echo "<script src='$src'></script>";
         //   echo '<script type="text/javascript" src="' . $src . '"></script>';
 
-        $code = 'setHref(getHref());colorfulTags();' . ($moeTitle?'moeTitle();':'') . ($copyTips?'copyTips();':'');
+        $code = 'setHref(getHref());colorfulTags();setCopyright(' . $copyrightType . ');' . ($moeTitle ? 'moeTitle();' : '') . ($copyTips ? 'copyTips();' : '');
 
         $pjax = $options->plugin('KirinShiKi')->pjax;
         $script = '<script>';
