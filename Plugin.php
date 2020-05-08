@@ -165,10 +165,10 @@ class KirinShiKi_Plugin implements Typecho_Plugin_Interface
         echo "<script src='$src'></script>";
         //   echo '<script type="text/javascript" src="' . $src . '"></script>';
 
-        $code = 'setHref(getHref());colorfulTags();setCopyright(' . $copyrightType . ');' . ($moeTitle ? 'moeTitle();' : '') . ($copyTips ? 'copyTips();' : '');
+        $code = 'setHref(getHref());colorfulTags();' . ($moeTitle ? 'moeTitle();' : '') . ($copyTips ? 'copyTips();' : '');
 
         $pjax = $options->plugin('KirinShiKi')->pjax;
-        $script = '<script>';
+        $script = '<script> setCopyright(' . $copyrightType . ');';
         if ($pjax) { //开启pjax
             $script .= '$(document).on("ready pjax:end", ' . 'function() { ' . $code . '});';
         } else {
