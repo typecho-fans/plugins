@@ -87,6 +87,7 @@
 [HyperMD](https://github.com/journey-ad/HyperMD-Typecho-Plugin) | Markdown所见即所得编辑器插件 | 0.1 | [journey.ad](https://github.com/journey-ad) | [下载](https://github.com/journey-ad/HyperMD-Typecho-Plugin/archive/master.zip)
 [ImageBox](https://github.com/journey-ad/Image-Box-Typecho-Plugin) | 简易jQuery图片灯箱弹窗特效插件 | 0.1 | [journey.ad](https://github.com/journey-ad) | [下载](https://github.com/journey-ad/Image-Box-Typecho-Plugin/archive/master.zip)
 [IShareEcho](https://github.com/pluveto/IShareEcho) | 为 Typecho 文章增加分享按钮和二维码的插件。 | 1.0.0 | [pluvet](https://github.com/pluveto) | [下载](https://github.com/pluveto/IShareEcho/archive/master.zip)
+[iThumb](https://github.com/benzBrake/iThumb) | 基于自定义字段用附件图片做文章缩略图插件 | 0.1.4 | [Ryan](https://github.com/benzBrake) | [下载](https://github.com/benzBrake/iThumb/archive/master.zip)
 [JustFeed](https://github.com/eallion/JustFeed) | 在 Feed 尾部添加订阅信息的插件 | 0.1.2 | [jKey](http://typecho.jkey.lu/) & [eallion](https://eallion.com) | [下载](https://github.com/eallion/JustFeed/archive/master.zip) 
 [KaTeX4Typecho](https://github.com/vc12345679/KaTeX4Typecho) |  基于CDN的KaTeX公式渲染插件 | 0.0.1 | [vc12345679](https://github.com/vc12345679) | [下载](https://github.com/vc12345679/KaTeX4Typecho/archive/master.zip)
 [Kefu](https://github.com/1628972070/typecho) | Typecho网站右侧浮动客服插件 | 1.0.0 | [双少](https://github.com/1628972070) | [下载](https://github.com/1628972070/typecho/archive/master.zip)
