@@ -1,39 +1,39 @@
 <img src='https://raw.githubusercontent.com/typecho-fans/typecho-fans.github.io/master/soapgroup.png' align="right" />
 
-## Typecho爱好者插件集群（社区维护版目录）
+## Typecho-Fans内部插件目录（社区维护版列表）
 
 [![compatible](https://img.shields.io/badge/Typecho-%3E%3D1.0-red.svg?style=for-the-badge)](https://github.com/typecho/typecho)
 [![support](https://img.shields.io/badge/TeStore-Supported-green.svg?style=for-the-badge)](TeStore)
 [![issues](https://img.shields.io/github/issues-closed-raw/typecho-fans/plugins.svg?style=for-the-badge)](https://github.com/typecho-fans/plugins/issues?q=is%3Aissue+is%3Aclosed)
 
- > 本项目中插件由社区成员共同维护，原则上均支持1.0+版本。用户可提交问题或建议至[issues](https://github.com/typecho-fans/plugins/issues)，作者加入请阅读下方须知。:penguin:交流群号：[**40412938**](http://shang.qq.com/wpa/qunwpa?idkey=a5a8afedf099e18ddf9b530db9217251e39001d52aace42888bf470d9b6cb86a)
+ > 本目录内插件由社区成员共同维护，原则上均支持1.0+版本。用户可提交问题或建议至[Issues](https://github.com/typecho-fans/plugins/issues)，作者加入请阅读下方须知。:penguin:交流群号：[**40412938**](http://shang.qq.com/wpa/qunwpa?idkey=a5a8afedf099e18ddf9b530db9217251e39001d52aace42888bf470d9b6cb86a)
 ------------------------------
 
 ### 使用帮助
 
-作者参与维护可点击右上角绿色按钮处克隆git地址或打包下载所有插件，一般用户使用下方索引表格中的Download链接下载所需插件zip包即可，或推荐安装**新版插件仓库**:gift:[**TeStore**](TeStore)更便捷地进行列表筛选、一键下载和自动安装卸载等操作。
+作者参与维护可点击右上角绿色按钮处克隆Git地址或Fork项目所有插件按需修改，一般用户使用下方索引表格中的Download链接下载所需插件即可，或推荐安装**新版插件仓库**:toolbox:[**TeStore**](TeStore)更便捷地进行列表筛选、一键下载及自动安装删除等操作。
 
 ### 作者须知
 
 1. 本目录下作品应为经作者同意允许在这里进行**多人自由更新**的，如果只是想在插件仓库列表登记编辑[TESTORE.md](TESTORE.md)即可。
 
- > 集群内插件在TeStore列表中带社区版标记，作者可提交有特色但不再维护的作品，由其他成员视需求能力做后续修正。
+ > 目录内插件在TeStore列表中带社区版标记，作者可提交有特色但不再维护的作品，由其他成员视需求能力做后续修正。
 
 2. 推荐用[**subtree**](https://aoxuis.me/bo-ke/2013-08-06-git-subtree)方法录入文件(可随时拉取原目录更新)，手动复制进来提交亦可，不再接受submodule链接文件夹方式。
 
  > 若原目录作者回归本目录下版本未有人修改可继续拉取同步，已有社区修改版则勿盲目覆盖，请视情况保留或修改合并。
 
-3. 管理会邀请github插件作者并给予目录权限，其他想参与的童鞋可先fork项目修改，然后提交pull request或issues申请。
+3. 管理不定期邀请GitHub插件作者给予目录权限，其他想参与的童鞋可先Fork修改后提交Pull Request，或在Issues申请。
 
-4. 插件目录内应有**README**文档便于用户阅读，zip包请先上传至[releases](https://github.com/typecho-fans/plugins/releases)分类标签下，再将链接添加到下方的表格信息里。
+4. 插件应自带**README**，zip包上传至[releases](https://github.com/typecho-fans/plugins/releases)或放置在ZIP_CDN目录中，将文件地址写入下方表格即可在TeStore里安装。
 
  > 下表中的下载链接文字可用于对TeStore列表附加图标：`Download`即社区版，`N/A`为不可用，`Special`为安装用法特殊。
 
 ### 作品索引 (101)
 
-###### 插件仓库将使用下表“名称”创建安装文件夹，“版本”提示升级，请务必确保文本准确；注意排序与目录列表相同，自增上方插件数，简介不要过长。
+###### TeStore将使用下表“名称”创建安装文件夹，“版本”提示升级，请务必确保文本准确；添加时注意按字母排序，自增作品索引总数，简介不要太长。
 ```
-对于本地已安装的同名插件TeStore会根据作者判断是否为社区版，所以记得下表中作者署名要与Plugin.php内的保持一致(多人用,空格分隔)。
+若用户已安装同名插件TeStore会根据作者判断是否为社区版，故谨记下表中作者署名要与Plugin.php内保持一致(多人用,号加空格分隔)。
 ```
 
 名称 | 简介 | 版本 | 作者 | zip包
