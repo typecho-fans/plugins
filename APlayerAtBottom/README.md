@@ -10,7 +10,7 @@
 ---
 
 ## 特色
- - 支持直接解析网易云音乐歌单（默认提供：[O's API](https://api.ohmyga.cn/page/netease)）
+ - 支持直接解析网易云音乐歌单（默认提供：[Shota's API](https://api.9jojo.cn/page/netease)）
  - 支持自定义播放器主题颜色（作为进度条和音量条的主题颜色）
  - 支持开启自动播放（仅部分浏览器支持）
  - 支持设定默认音量（播放器会记忆用户设置，用户手动设置音量后默认音量即失效）
@@ -18,11 +18,12 @@
  - 支持修改网易云音乐获取API（Ver.1.1.0+）
 
 ## 使用
-1. 下载**最新的 [Release](https://github.com/SatoSouta/APlayerAtBottom/releases/latest)**
-2. 解压后，**确认目录名为`APlayerAtBottom`（AP,A,B 大写）**
-3. 将文件夹放入 Typecho 根目录下的`usr/plugins/`
-4. 到后台启用插件
-5. 根据设置中提示来设定插件
+1. Star本项目
+2. 下载**最新的 [Release](https://github.com/SatoSouta/APlayerAtBottom/releases/latest)**
+3. 解压后，**确认目录名为`APlayerAtBottom`（AP,A,B 大写）**
+4. 将文件夹放入 Typecho 根目录下的`usr/plugins/`
+5. 到后台启用插件
+6. 根据设置中提示来设定插件
 
 ## 开源项目
  - [APlayer](https://github.com/MoePlayer/APlayer)（播放器JS）
@@ -30,9 +31,11 @@
 
 ## API支持
  - [O's API](https://api.ohmyga.cn/page/netease)（O's API 网易云音乐解析）
+ - [Shota's API](https://api.9jojo.cn/page/netease)（Shota's API 网易云音乐解析）
+ - [犬's API](https://api.fczbl.vip/163/)（犬's API 网易云音乐解析）
 
 ## 相关
- - 演示站点：[我的博客](https://713.moe/)
+ - 演示站点：[小太の游乐园](https://713.moe/)
  - 介绍文章：[APlayerAtBottom - 给博客加上底部播放器吧](https://713.moe/p/135)
 
 ---
