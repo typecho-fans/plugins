@@ -5,8 +5,8 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
  * 
  * @package EditorMD
  * @author DT27
- * @version 1.3.0
- * @link https://dt27.org
+ * @version 1.4.0
+ * @link https://dt27.org/php/editormd-for-typecho/
  */
 class EditorMD_Plugin implements Typecho_Plugin_Interface
 {
@@ -24,7 +24,7 @@ class EditorMD_Plugin implements Typecho_Plugin_Interface
         Typecho_Plugin::factory('admin/write-page.php')->richEditor = array('EditorMD_Plugin', 'Editor');
 
         Typecho_Plugin::factory('Widget_Abstract_Contents')->content = array('EditorMD_Plugin', 'content');
-        Typecho_Plugin::factory('Widget_Abstract_Contents')->excerpt = array('EditorMD_Plugin', 'content');
+        Typecho_Plugin::factory('Widget_Abstract_Contents')->excerpt = array('EditorMD_Plugin', 'excerpt');
         Typecho_Plugin::factory('Widget_Archive')->footer = array('EditorMD_Plugin','footerJS');
     }
     
@@ -340,23 +340,29 @@ class EditorMD_Plugin implements Typecho_Plugin_Interface
 <script type="text/javascript">
 $(function() {
 <?php if($editormd->isActive == 1 && $conent->isMarkdown){ ?>
-    var markdowns = document.getElementsByClassName("md_content");
-    $(markdowns).each(function(){
-        var markdown = $(this).children("#append-test").text();
-        //$('#md_content_'+i).text('');
-        var editormdView;
-        editormdView = editormd.markdownToHTML($(this).attr("id"), {
-            markdown: markdown,//+ "\r\n" + $("#append-test").text(),
-            toolbarAutoFixed : false,
-            htmlDecode: true,
-            emoji: <?php echo $editormd->emoji?'true':'false'; ?>,
-            tex: <?php echo $editormd->isTex?'true':'false'; ?>,
-            toc: <?php echo $editormd->isToc?'true':'false'; ?>,
-            tocm: <?php echo $editormd->isToc?'true':'false'; ?>,
-            taskList: <?php echo $editormd->isTask?'true':'false'; ?>,
-            flowChart: <?php echo $editormd->isFlow?'true':'false'; ?>,
-            sequenceDiagram: <?php echo $editormd->isSeq?'true':'false'; ?>,
+    var parseMarkdown = function () {
+        var markdowns = document.getElementsByClassName("md_content");
+        $(markdowns).each(function () {
+            var markdown = $(this).children("#append-test").text();
+            //$('#md_content_'+i).text('');
+            var editormdView;
+            editormdView = editormd.markdownToHTML($(this).attr("id"), {
+                markdown: markdown,//+ "\r\n" + $("#append-test").text(),
+                toolbarAutoFixed: false,
+                htmlDecode: true,
+                emoji: <?php echo $editormd->emoji ? 'true' : 'false'; ?>,
+                tex: <?php echo $editormd->isTex ? 'true' : 'false'; ?>,
+                toc: <?php echo $editormd->isToc ? 'true' : 'false'; ?>,
+                tocm: <?php echo $editormd->isToc ? 'true' : 'false'; ?>,
+                taskList: <?php echo $editormd->isTask ? 'true' : 'false'; ?>,
+                flowChart: <?php echo $editormd->isFlow ? 'true' : 'false'; ?>,
+                sequenceDiagram: <?php echo $editormd->isSeq ? 'true' : 'false'; ?>,
+            });
         });
+    };
+    parseMarkdown();
+    $(document).on('pjax:complete', function () {
+        parseMarkdown()
     });
 <?php }if($editormd->emoji){ ?>
     emojify.setConfig({
@@ -368,7 +374,24 @@ $(function() {
         },
     });
     emojify.run();
-<?php } ?>
+<?php }
+if(isset(Typecho_Widget::widget('Widget_Options')->plugins['activated']['APlayer'])){
+    ?>
+    var len = aPlayerOptions.length;
+    for(var ii=0;ii<len;ii++){
+        aPlayers[ii] = new APlayer({
+            element: document.getElementById('player' + aPlayerOptions[ii]['id']),
+            narrow: false,
+            autoplay: aPlayerOptions[ii]['autoplay'],
+            showlrc: aPlayerOptions[ii]['showlrc'],
+            music: aPlayerOptions[ii]['music'],
+            theme: aPlayerOptions[ii]['theme']
+        });
+        aPlayers[ii].init();
+    }
+    <?php
+}
+?>
 });
 </script>
 <?php
@@ -383,5 +406,11 @@ $(function() {
             return '<div id="md_content_'.self::$count.'" class="md_content" style="min-height: 50px;"><textarea id="append-test" style="display:none;">'.$text.'</textarea></div>';
         else
             return $text;
+    }
+    public static function excerpt($text, $conent){
+        self::$count++;
+        $text = $conent->isMarkdown ? $conent->markdown($text)
+            : $conent->autoP($text);
+        return $text;
     }
 }
