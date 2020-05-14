@@ -10,6 +10,7 @@ pre {
     padding: .5em;
     /*background: #fdf6e3;*/
     color: #657b83;
+    overflow-x: auto;
     
     background-color:#f6f6f6; 
 }
