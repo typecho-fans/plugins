@@ -6,7 +6,7 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
  * @package ArticleTemplate
  * @author benzBrake
  * @version 1.0.0
- * @link http://blog.iplayloli.com/typecho-plugin-articletemplate
+ * @link http://blog.iplayloli.com/typecho-plugin-articletemplate.html
  */
 class ArticleTemplate_Plugin implements Typecho_Plugin_Interface {
 	/**
