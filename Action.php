@@ -19,8 +19,13 @@ class AMP_Action extends Typecho_Widget implements Widget_Interface_Do
         $this->baseurl = str_replace("http://", "//", $this->baseurl);
     }
 
-
-    //添加头部信息
+    /**
+     * @throws Typecho_Exception
+     * @throws Typecho_Plugin_Exception
+     * author:Holmesian
+     * date: 2020/3/13 11:45
+     * 添加头部信息
+     */
     public static function headlink()
     {
         $widget = Typecho_Widget::widget('Widget_Archive');
@@ -56,7 +61,13 @@ class AMP_Action extends Typecho_Widget implements Widget_Interface_Do
     }
 
 
-    //输出AMPsitemap
+    /**
+     * @throws Typecho_Plugin_Exception
+     * @throws Typecho_Widget_Exception
+     * author:Holmesian
+     * date: 2020/3/13 11:45
+     * 生成 AMP sitemap
+     */
     public function AMPsitemap()
     {
 
@@ -68,7 +79,13 @@ class AMP_Action extends Typecho_Widget implements Widget_Interface_Do
 
     }
 
-    //输出MIPsitemap
+    /**
+     * @throws Typecho_Plugin_Exception
+     * @throws Typecho_Widget_Exception
+     * author:Holmesian
+     * date: 2020/3/13 11:45
+     * 生成 MIP sitemap
+     */
     public function MIPsitemap()
     {
 
@@ -80,6 +97,13 @@ class AMP_Action extends Typecho_Widget implements Widget_Interface_Do
 
     }
 
+    /**
+     * @throws Typecho_Plugin_Exception
+     * @throws Typecho_Widget_Exception
+     * author:Holmesian
+     * date: 2020/3/13 11:45
+     * 渲染MIP页面
+     */
     public function MIPpage()
     {
         $requestHash = $this->request->getPathinfo();
@@ -123,6 +147,13 @@ class AMP_Action extends Typecho_Widget implements Widget_Interface_Do
     }
 
 
+    /**
+     * @throws Typecho_Plugin_Exception
+     * @throws Typecho_Widget_Exception
+     * author:Holmesian
+     * date: 2020/3/13 11:44
+     * 返回AMP需要的JSON信息
+     */
     public function AMPlist()
     {
         if (Helper::options()->plugin('AMP')->ampIndex == 0) {
@@ -164,6 +195,13 @@ class AMP_Action extends Typecho_Widget implements Widget_Interface_Do
         require_once ('templates/AMPindex.php');
     }
 
+    /**
+     * @throws Typecho_Plugin_Exception
+     * @throws Typecho_Widget_Exception
+     * author:Holmesian
+     * date: 2020/3/13 11:44
+     * 渲染AMP页面
+     */
     public function AMPpage()
     {
         $requestHash = $this->request->getPathinfo();
@@ -213,6 +251,12 @@ class AMP_Action extends Typecho_Widget implements Widget_Interface_Do
         }
     }
 
+    /**
+     * @throws Typecho_Exception
+     * author:Holmesian
+     * date: 2020/3/13 11:44
+     * 清理缓存
+     */
     public function cleancache(){
         $user = Typecho_Widget::widget('Widget_User');
         if(!$user->pass('administrator')){
@@ -222,17 +266,26 @@ class AMP_Action extends Typecho_Widget implements Widget_Interface_Do
         print('Clean all cache!');
     }
 
+    /**
+     * @param $contents
+     * @param $class
+     * @throws Typecho_Exception
+     * @throws Typecho_Plugin_Exception
+     * author:Holmesian
+     * date: 2020/3/13 11:43
+     * 实时推送文章
+     */
     public static function sendRealtime($contents, $class)
     {
         //获取系统配置
         $options = Helper::options();
 
-        //如果文章属性为隐藏或滞后发布
-        if ('publish' != $contents['visibility'] || $contents['created'] > time()) {
+        //如果文章属性为 隐藏 或 定时发布 或 非首次发布(编辑) 发布则不推送
+        if ('publish' != $contents['visibility'] || $contents['created'] > time() || !is_null($contents['created'])) {
             return;
         }
 
-        //如果没有开启自动提交功能
+        //如果没有开启自动提交功能 则不推送
         if ($options->plugin('AMP')->mipAutoSubmit == 0) {
             return;
         }
@@ -265,10 +318,8 @@ class AMP_Action extends Typecho_Widget implements Widget_Interface_Do
 
         //发送自动提交请求
         $http = Typecho_Http_Client::get();
-//        $http->setData(implode("\n", $urls));//改为仅提交一次
         $http->setData($url);
         $http->setHeader('Content-Type', 'text/plain');
-
 
 
         try {
@@ -518,21 +569,34 @@ class AMP_Action extends Typecho_Widget implements Widget_Interface_Do
         return $html;
     }
 
-    //闭合img标签
+      /**
+     * @param $text
+     * @return string|string[]
+     * author:Holmesian
+     * date: 2020/3/13 11:39
+     * 闭合img标签  修复标签数组可能不存在的问题
+     */
     private function closeTags($text)
     {
         preg_match_all('/<img ([\s\S]*?)>/', $text, $mat);
         $src=array_unique($mat[0]);
         for ($i = 0; $i < count($src); $i++)
         {
-            $plus =  $src[$i].'</img>';
-            $text = str_replace( $mat[0][$i],$plus, $text);
+            if (isset($src[$i])){
+                $plus =  $src[$i].'</img>';
+                $text = str_replace( $mat[0][$i],$plus, $text);
+            }
         }
         return $text;
     }
 
 
-    //生成SiteMap
+    /**
+     * @param string $maptype
+     * author:Holmesian
+     * date: 2020/3/13 11:40
+     * 生成SiteMap
+     */
     private function MakeSiteMap($maptype = 'amp')
     {
         //changefreq -> always、hourly、daily、weekly、monthly、yearly、never
@@ -668,6 +732,14 @@ class AMP_Action extends Typecho_Widget implements Widget_Interface_Do
 
     //------------页面缓存功能函数start------------
 
+    /**
+     * @param $key
+     * @param $cache
+     * @return |null
+     * @throws Typecho_Plugin_Exception
+     * author:Holmesian
+     * date: 2020/3/13 11:40
+     */
     private function set($key, $cache){
         if(Helper::options()->plugin('AMP')->cacheTime>0) {
             $installDb = $this->db;
