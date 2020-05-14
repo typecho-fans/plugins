@@ -4,14 +4,14 @@
  *
  * @package AMP-MIP
  * @author Holmesian
- * @version 0.7.5.2
+ * @version 0.7.5.3
  * @link https://holmesian.org/AMP-for-Typecho
  */
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 
 class AMP_Plugin implements Typecho_Plugin_Interface
 {
-    public static $version = '0.7.5.2';
+    public static $version = '0.7.5.3';
 
     public static function activate()
     {
@@ -106,6 +106,13 @@ class AMP_Plugin implements Typecho_Plugin_Interface
         return $msg;
     }
 
+    /**
+     * @return string
+     * @throws Typecho_Db_Exception
+     * author:Holmesian
+     * date: 2020/3/13 11:48
+     * 清理数据库表
+     */
     public static function uninstall()
     {
 
@@ -120,6 +127,7 @@ class AMP_Plugin implements Typecho_Plugin_Interface
             return $msg;
         }
     }
+
 
     public static function call_me($type){//远程通知
 
@@ -144,7 +152,13 @@ class AMP_Plugin implements Typecho_Plugin_Interface
     }
 
 
-    //Cache databse
+    /**
+     * @return string
+     * @throws Typecho_Db_Exception
+     * author:Holmesian
+     * date: 2020/3/13 11:47
+     * 初始化数据库表
+     */
     public static function DBsetup()
     {
 
