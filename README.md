@@ -38,7 +38,7 @@
 
 名称 | 简介 | 版本 | 作者 | zip包
 ---- | :----: | :---: | ----: | :----:
-[AMP](AMP) | 移动端AMP/MIP页面生成插件 | 0.7.5 | [Holmesian](https://github.com/holmesian) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/AMP.zip)
+[AMP](AMP) | 移动端AMP/MIP页面生成插件 | 0.7.5.3 | [Holmesian](https://github.com/holmesian) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/AMP.zip)
 [APlayerAtBottom](APlayerAtBottom) | 博客吸底音乐播放器插件(支持网易云) | 1.1.0 | [小太](https://github.com/satosouta) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/APlayerAtBottom.zip)
 [AjaxComments](AjaxComments) | 嵌套式评论Ajax异步提交插件 | 1.2.0 | [Byends](https://github.com/visamz), Willin Kan | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/AjaxComments.zip)
 [AllowIp](AllowIp) | Typecho后台访问IP白名单插件 | 1.0.1 | [Fuzqing](https://github.com/fuzqing) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/AllowIp.zip)
@@ -55,7 +55,7 @@
 [AutoTags](AutoTags) | 文章标签语义解析自动生成插件 | 1.0.0 | [DT27](https://github.com/DT27) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/AutoTags.zip)
 [Avatars](Avatars) | 读者墙评论头像排行插件(支持缓存) | 1.2.5 | [羽中](https://github.com/jzwalk) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/Avatars.zip)
 [BackToTop](BackToTop) | 二次元风格点击返回顶部按钮插件 | 1.0 | [夏目贵志](https://github.com/xiamuguizhi) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/BackToTop.zip)
-[CateFilter](CateFilter) | 首页过滤指定分类文章不显示插件 | 1.2.1 | [Rakiy](https://github.com/rakiy) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/CateFilter.zip)
+[CateFilter](CateFilter) | 首页过滤指定分类文章不显示插件 | 1.2.2 | [Rakiy](https://github.com/rakiy) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/CateFilter.zip)
 [ChangyanCallback](ChangyanCallback) | 搜狐畅言社会化评论回推插件 | 1.0.0 | [mrgeneral](https://github.com/mrgeneralgoo) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/ChangyanCallback.zip)
 [Ckeditor4Typecho](Ckeditor4Typecho) | CKEditor4所见即所得编辑器插件 | 1.0.0 | [zhulin3141](https://github.com/zhulin3141) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/Ckeditor4Typecho.zip)
 [CodeMirror](CodeMirror) | 主题外观编辑器语法高亮显示插件 | 1.0.0 | [zhulin3141](https://github.com/zhulin3141) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/CodeMirror.zip)
@@ -63,7 +63,7 @@
 [CommentToMail](CommentToMail) | 发布或回复评论邮件自动提醒插件 | 2.0.1 | [Byends](https://github.com/visamz), [DEFE](https://github.com/defeme) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/CommentToMail.zip)
 [ContentIndex](ContentIndex) | 嵌入式文章内容目录自动生成插件 | 1.0.0 | [laobubu](https://github.com/laobubu) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/ContentIndex.zip)
 [Contribute](Contribute) | 免注册用户投稿与审查发布插件 | 1.0.0 | [ShingChi](https://github.com/shingchi) | [Special](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/Contribute.zip)
-[CosForTypecho](CosForTypecho) | Typecho腾讯云COS附件存储插件 | 1.0.1 | [Charmeryl](https://github.com/charmeryl) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/CosForTypecho.zip)
+[CosForTypecho](CosForTypecho) | Typecho腾讯云COS附件存储插件 | 1.0.1 | [Charmeryl](https://github.com/jqjiang819) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/CosForTypecho.zip)
 [DbManager](DbManager) | Mysql数据库导入导出与优化插件 | 2.0.1 | [ShingChi](https://github.com/shingchi) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/DbManager.zip)
 [DevTool](DevTool) | 扩展开发常用数据查看与测试插件 | 1.0.0 | [zhulin3141](https://github.com/zhulin3141) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/DevTool.zip)
 [DownloadFile](DownloadFile) | 附件下载名与上传名保持一致插件 | 1.0.0 | [DT27](https://github.com/DT27) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/DownloadFile.zip)
@@ -99,7 +99,7 @@
 [MyPlayer](MyPlayer) | 万能播放器与视频站链接转换插件 | 1.1.3 | [perichr](http://github.com/perichr) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/MyPlayer.zip)
 [MyTagCloud](MyTagCloud) | Typecho自定义标签云输出插件 | 1.0.0 | [Ma Yanlong](https://github.com/YanlongMa) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/MyTagCloud.zip)
 [Ncache](Ncache) | Typecho的fastcgi_cache缓存插件 | 1.1.0 | [WeiCN](https://cuojue.org/read/typecho-fastcgi_cache.html) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/Ncache.zip)
-[OssForTypecho](OssForTypecho) | Typecho阿里云OSS附件存储插件 | 1.0.1 | [Charmeryl](https://github.com/charmeryl) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/OssForTypecho.zip)
+[OssForTypecho](OssForTypecho) | Typecho阿里云OSS附件存储插件 | 1.0.1 | [Charmeryl](https://github.com/jqjiang819) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/OssForTypecho.zip)
 [Passport](Passport) | 注册用户密码邮件找回功能插件 | 1.0.0 | [ShingChi](https://github.com/shingchi) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/Passport.zip)
 [PasteImage](PasteImage) | 默认编辑器粘贴剪切板图片上传插件 | 1.0.0 | [qing](https://github.com/zgq354/PasteImage) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/PasteImage.zip)
 [PostsCategoryChange](PostsCategoryChange) | Typecho文章批量改分类/状态插件 | 0.0.4 | [Fuzqing](https://github.com/fuzqing) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/PostsCategoryChange.zip)
