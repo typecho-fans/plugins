@@ -1,3 +1,7 @@
+ > :no_entry:不可用：需要抓取和储存zip包的服务端配合，作者已关闭官网。  
+ > 原Go脚本服务端源码(已废弃)：https://github.com/chekun/typecho-app-store  
+ > 新Go脚本服务端源码(已停更)：https://github.com/chekun/echoed
+
 Typecho 应用商店 插件
 ========================
 
@@ -19,7 +23,7 @@ The missing plugins store for Typecho!
 git clone git@github.com:chekun/AppStore.git AppStore
 ```
 
-> 不管使用哪种方法，最终请将得到的文件夹命名为 *AppStore* 放到 *Typecho* 目录的 *usr/plugins* 目录下
+> 不管使用哪种方法，最终请将得到的文件夹命名为 *AppStore* 放到 *Typecho* 目录的 *usr/plugins* 目录下  
 > 进入插件面板，启用本插件即可
 
 ## 代码贡献者
