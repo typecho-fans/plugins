@@ -4,7 +4,7 @@
  * 
  * @package YoduBGM
  * @author Jrotty
- * @version 1.5.0
+ * @version 1.6.0
  * @link http://qqdie.com/archives/typecho-yodubgm.html
  */
 class YoduBGM_Plugin implements Typecho_Plugin_Interface
@@ -32,7 +32,7 @@ $sxj = new Typecho_Widget_Helper_Form_Element_Radio(
     background: #fff;
     padding: 10px;
     margin-top: -0.5em;
-">填写格式<p><b>直链方式：</b><br>填写{mp3:"http:xxxx"}多首每个歌曲之间用英文,隔开，单首歌曲的话末尾则不用加逗号。</p>
+">填写格式<p><b>直链方式：</b><br>填写歌曲链接地址即可，多首歌曲的话请在两首歌曲之间加换行，千万别多加回车换行。</p>
 <p><b>调用网易云：</b><br>书写网易云歌曲id即可，多首歌曲的话请在两首歌曲id之间加换行，单首歌曲直接写id就行，千万别多加回车换行</p>
 <p><b>注意：</b><br>这两种填写方式不能混合输入，要么只用直链方式，要么只用网易云方式</p>
 <p><b>感谢：</b>https://api.imjad.cn/cloudmusic.md</p>
@@ -56,11 +56,16 @@ if(Typecho_Widget::widget('Widget_Options')->Plugin('YoduBGM')->sxj=='0'){
        $musicList = "761323";
       }
       
-      if(strpos($musicList,'{mp3')===false){
+      if(strpos($musicList,'//')===false){
         $musicList = str_replace(PHP_EOL, '&br=128000&raw=ture"},{mp3:"//api.imjad.cn/cloudmusic/?type=song&id=', $musicList);  
   $musicList = '{mp3:"//api.imjad.cn/cloudmusic/?type=song&id='.$musicList.'&br=128000&raw=ture"}';
+   $musicList = str_replace(array("\r\n", "\r", "\n", " "), "", $musicList);    
+         }else{
+              $musicList = str_replace(PHP_EOL, '"},{mp3:"', $musicList);  
+  $musicList = '{mp3:"'.$musicList.'"}';
    $musicList = str_replace(array("\r\n", "\r", "\n", " "), "", $musicList);   
-         }
+      
+      }
 if(strpos($musicList,',')===false){
     
 		echo '
