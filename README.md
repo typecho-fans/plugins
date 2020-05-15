@@ -39,7 +39,7 @@
 名称 | 简介 | 版本 | 作者 | zip包
 ---- | :----: | :---: | ----: | :----:
 [AMP](AMP) | 移动端AMP/MIP页面生成插件 | 0.7.5.3 | [Holmesian](https://github.com/holmesian) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/AMP.zip)
-[APlayerAtBottom](APlayerAtBottom) | 博客吸底音乐播放器插件(支持网易云) | 1.1.0 | [小太](https://github.com/satosouta) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/APlayerAtBottom.zip)
+[APlayerAtBottom](APlayerAtBottom) | 网易云音乐博客吸底播放器插件 | 1.1.0 | [小太](https://github.com/satosouta) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/APlayerAtBottom.zip)
 [AjaxComments](AjaxComments) | 嵌套式评论Ajax异步提交插件 | 1.2.0 | [Byends](https://github.com/visamz), Willin Kan | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/AjaxComments.zip)
 [AllowIp](AllowIp) | Typecho后台访问IP白名单插件 | 1.0.1 | [Fuzqing](https://github.com/fuzqing) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/AllowIp.zip)
 [Announcement](Announcement) | 仿Emlog双款悬浮式公告栏插件 | 1.0.0 | [skylzl](https://github.com/xiaogouxo) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/Announcement.zip)
@@ -77,10 +77,10 @@
 [GithubCard](GithubCard) | Github项目/用户信息卡片展示插件 | 1.0.0 | [chekun](https://github.com/chekun) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/GithubCard.zip)
 [GithubWidgetUser](GithubWidgetUser) | Github用户个人名片展示插件 | 0.2.0 | [hongweipeng](https://github.com/hongweipeng) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/GithubWidgetUser.zip)
 [GoLinks](GoLinks) | 指定内链自动跳转至关联外链插件  | 0.3.0 | [DEFE](https://github.com/defeme) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/GoLinks.zip)
-[GoodLuck](GoodLuck) | “手气不错”链接显示随机文章插件 | 1.0.1 | [Ryan](https://github.com/benzBrake) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/GoodLuck.zip)
+[GoodLuck](GoodLuck) | “手气不错”链接显示随机文章插件 | 1.0.2 | [Ryan](https://github.com/benzBrake) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/GoodLuck.zip)
+[GoogleAnalytics](GoogleAnalytics) | 异步加载Google Analytics统计插件 | 1.0.0 | [WeiCN](https://github.com/naicfeng) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/GoogleAnalytics_WeiCN.zip)
 [GoogleCodePrettfy](GoogleCodePrettify) | 谷歌Prettify代码高亮效果渲染插件 | 2.0.0 | [公子](https://github.com/lizheming) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/GoogleCodePrettify.zip)
 [GravatarCache](GravatarCache) | Gravatar头像本地自动缓存插件 | 2.0.2 | [Byends](https://github.com/visamz) | [Special](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/GravatarCache.zip)
-[GoogleAnalytics](GoogleAnalytics) | 异步加载Google Analytics统计插件 | 1.0.0 | [WeiCN](https://github.com/weicno) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/GoogleAnalytics_w.zip)
 [Hermit](Hermit) | 虾米云音乐SM2列表型播放器插件 | 1.3.1 | [mufeng](https://github.com/iMuFeng) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-H_to_L/Hermit.zip)
 [HighSlide](HighSlide) | 多功能灯箱弹窗效果+页面相册插件 | 1.4.7 | [羽中](https://github.com/jzwalk) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-H_to_L/HighSlide.zip)
 [Html2Text](Html2Text) | Html代码转Markdown格式插件 | 0.1.0 | [冰剑](https://github.com/binjoo) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-H_to_L/Html2Text.zip)
