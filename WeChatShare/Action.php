@@ -15,74 +15,8 @@ class WeChatShare_Action extends Typecho_Widget implements Widget_Interface_Do
         $this->init();
         $this->on($this->request->is('do=insert'))->insertWxShare();
         $this->on($this->request->is('do=ajax-get'))->ajaxGetWxShare();
-        $this->on($this->request->is('do=update-plugin'))->updatePlugin();
     }
-	
-    /*
-    * 更新插件文件
-    */
-    public function updatePlugin()
-    {
-        if($this->user->group != 'administrator') {
-            throw new Typecho_Plugin_Exception(_t('f**k,别瞎jb搞'));
-        }
 
-        $url = trim($_POST['zipball_url']);
-        $ch = curl_init();
-        //设置User-Agent, Github文档要求
-        $header = ['User-Agent: WeChatShare'];
-        curl_setopt($ch, CURLOPT_HTTPHEADER, $header);
-        curl_setopt($ch, CURLOPT_URL, $url);
-        //如果成功只将结果返回，不自动输出任何内容。
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-        //若给定url自动跳转到新的url,有了下面参数可自动获取新url内容：302跳转
-        curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
-        //设置cURL允许执行的最长秒数。
-        curl_setopt($ch, CURLOPT_TIMEOUT, 20);
-        curl_setopt($ch, CURLOPT_REFERER, $url);
-        $response = curl_exec($ch);
-        //获取请求返回码，请求成功返回200
-        $code = curl_getinfo($ch,CURLINFO_HTTP_CODE);
-        curl_close($ch);
-        if($code != '200') {
-            _e('在线更新失败，请手工下载更新。<br/><a href="'.$url.'" target="_blank">下载地址</a>');
-	    exit;
-        }
-        $destination = __DIR__.'/wechatshare.zip';
-        $file = fopen($destination,"w+");
-        //写入文件
-        fputs($file,$response);
-        fclose($file);
-
-        $zip = new ZipArchive; 
-        if ($zip->open($destination)) {
-
-            $dir_name = __DIR__.'/'.$zip->getNameIndex(0);
-
-            $zip->extractTo(__DIR__.'/');
-
-            for($i = 1; $i < $zip->numFiles; $i++) {
-
-                rename(__DIR__.'/'.$zip->getNameIndex($i),__DIR__.'/'.basename($zip->getNameIndex($i)));
-            }
-            if(!rmdir($dir_name)) {
-
-                _e('删除文件夹失败，请手工删除。');
-		exit;
-            }
-            if(!unlink($destination)) {
-
-                _e('删除压缩包失败，请手工删除。');
-		exit;
-            }
-            _e('更新成功！');
-
-        } else {
-
-            _e('在线更新失败，请手工下载更新。<br/><a href="'.$url.'" target="_blank">下载地址</a>');
-        }
-        return;
-    }
     /*
     * 编辑或者新增文章的时候把微信分享的数据插入到wx_share表
     */
