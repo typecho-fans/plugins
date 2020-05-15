@@ -3,7 +3,7 @@
  * Just Feed
  * 
  * @package JustFeed
- * @author jKey
+ * @author eallion, jKey
  * @version 0.1.2
  * @link http://typecho.jkey.lu/
  * @fix the 'date' bug by https://eallion.com, update to 0.1.2 -20190412
