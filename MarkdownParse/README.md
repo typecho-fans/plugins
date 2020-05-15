@@ -2,7 +2,7 @@ Markdown Plugin for Typecho
 =========================
 
 This is a markdown parse plugin. 
-It uses [Parsedown](https://github.com/erusev/parsedown) and [ParsedownExtension](https://github.com/mrgeneralgoo/parsedown-extension) to replace Typecho's own markdown parse library,and supports `[TOC]` syntax to generate table of contents, supports `$` and `$$` syntax for [MathJax](https://www.mathjax.org) also.
+It uses [Parsedown](https://github.com/erusev/parsedown) to replace Typecho's own markdown parse library,and supports `[TOC]` syntax to generate table of contents, supports `$` and `$$` syntax for [MathJax](https://www.mathjax.org) also.
 
 ## Installation
 
@@ -20,7 +20,7 @@ https://www.chengxiaobai.cn/php/markdown-parser-library.html
 
 ------
 
-这是一个 Markdown 解析插件，用 [Parsedown](https://github.com/erusev/parsedown) 和 [ParsedownExtension](https://github.com/mrgeneralgoo/parsedown-extension) 替换 Typecho 自带的 Markdown 解析库，并额外支持 `[TOC]` 语法来生成目录，同时也支持 [MathJax](https://www.mathjax.org) 的`$` 和 `$$` 语法来渲染数学公式。
+这是一个 Markdown 解析插件，用 [Parsedown](https://github.com/erusev/parsedown) 替换 Typecho 自带的 Markdown 解析库，并额外支持 `[TOC]` 语法来生成目录，同时也支持 [MathJax](https://www.mathjax.org) 的`$` 和 `$$` 语法来渲染数学公式。
 
 ## 安装
 
