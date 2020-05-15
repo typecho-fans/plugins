@@ -5,7 +5,7 @@
  *
  * @package MarkdownParse
  * @author  mrgeneral
- * @version 1.2.0
+ * @version 1.2.3
  * @link    https://www.chengxiaobai.cn
  */
 
@@ -26,7 +26,8 @@ class MarkdownParse_Plugin implements Typecho_Plugin_Interface
 
     public static function config(Typecho_Widget_Helper_Form $form)
     {
-        // TODO: Implement config() method.
+        $elementToc = new Typecho_Widget_Helper_Form_Element_Radio('is_available_toc', [0 => _t('不解析'), 1 => _t('解析')], 1, _t('是否解析 [TOC] 语法'), _t('开会后支持 [TOC] 语法来生成目录'));
+        $form->addInput($elementToc);
     }
 
     public static function personalConfig(Typecho_Widget_Helper_Form $form)
@@ -38,8 +39,7 @@ class MarkdownParse_Plugin implements Typecho_Plugin_Interface
     {
         return ParsedownExtension::instance()
             ->setBreaksEnabled(true)
-            ->setTocEnabled(true)
-            ->setIsOriginalBlockEnabled(true)
+            ->setTocEnabled((bool)Helper::options()->plugin('MarkdownParse')->is_available_toc)
             ->text($text);
     }
 }
