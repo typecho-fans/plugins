@@ -1,0 +1,22 @@
+@media (max-width: 1000px) {
+    .back-to-top {
+        display: none !important;
+    }
+}
+
+.topButton {
+    display: none;
+}
+
+.back-to-top {
+    cursor: pointer;
+    position: fixed;
+    right: 80px;
+    top: -999px;
+    z-index: 2;
+    width: 70px;
+    height: 800px;
+    background: url(../images/2.png);
+    transition: all .5s ease-in-out;
+    opacity: 1;
+}
