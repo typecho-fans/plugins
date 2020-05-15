@@ -142,4 +142,5 @@
 [YoduBGM](YoduBGM) | 微型背景音乐播放器插件(支持Pjax) | 1.5.0 | [Jrotty](https://github.com/jrotty) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/YoduBGM.zip)
 [YoduPlayer](YoduPlayer) | 悬浮式音乐播放器插件(支持Pjax) | 2.2.2 | [Jrotty](https://github.com/jrotty) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/YoduPlayer.zip)
 [Zan](Zan) | 自定义字段输出文章点赞次数插件 | 1.0.0 | [冰剑](https://github.com/binjoo) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/Zan.zip)
-[reCAPTCHA](reCAPTCHA) | 谷歌reCAPTCHA点击验证码插件 | 0.0.2 | [啸傲居士](https://github.com/shuxiao9058) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/reCAPTCHA.zip)
+[reCAPTCHA](reCAPTCHA) | 谷歌reCAPTCHA点击验证码插件 | 0.0.1 | [啸傲居士](https://github.com/shuxiao9058) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/reCAPTCHA.zip)
+[reCAPTCHAv3](reCAPTCHAv3) | 基于[reCAPTCHA](reCAPTCHA)v3版验证码插件 | 0.0.2 | [D-Bood](https://github.com/D-Bood) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/reCAPTCHAv3.zip)
