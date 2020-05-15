@@ -29,7 +29,7 @@
 
  > 下表中的下载链接文字可用于对TeStore列表附加图标：`Download`即社区版，`N/A`为不可用，`Special`为安装用法特殊。
 
-### 作品索引 (101)
+### 作品索引 (107)
 
 ###### TeStore将使用下表“名称”创建安装文件夹，“版本”提示升级，请务必确保文本准确；添加时注意按字母排序，自增作品索引总数，简介不要太长。
 ```
@@ -130,17 +130,18 @@
 [Ueditor](Ueditor) | 百度贴吧可视化编辑器Ueditor插件 | 1.0.0 | [zhulin3141](https://github.com/zhulin3141) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/Ueditor.zip)
 [Ugauka](Ukagaka) | (娱乐向)二次元伪春菜萌物精灵插件 | 1.0.0 | [Kunr](https://github.com/Rakume) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/Ukagaka.zip)
 [Update](Update) | Typecho一键升级实时开发版插件 | 0.0.3 | [公子](https://github.com/lizheming) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/Update.zip)
-[UpdateAssistant](UpdateAssistant) | 一键升级/切换最新稳定或开发版插件 | 1.0.1 | [mrgeneral](https://github.com/mrgeneralgoo) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/UpdateAssistant.zip)
-[UploadPlugin](UploadPlugin) | 上传zip包安装删除插件/主题插件 | 1.1.3 | [DEFE](https://github.com/defeme) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/UploadPlugin.zip)
-[UserSign](UserSign) | 用户个性签名文字设置与输出插件 | 0.0.1 | [hmoe](https://github.com/hmoe) | [Special](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/UserSign.zip)
+[UpdateAssistant](UpdateAssistant) | 自动升级系统为正式/开发版插件 | 1.0.1 | [mrgeneral](https://github.com/mrgeneralgoo) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/UpdateAssistant.zip)
+[UploadPlugin](UploadPlugin) | 上传zip包自动安装插件/主题插件 | 1.1.3 | [DEFE](https://github.com/defeme) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/UploadPlugin.zip)
+[UserSign](UserSign) | 为博客用户添加个性签名设置插件 | 0.0.1 | [hmoe](https://github.com/hmoe) | [Special](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/UserSign.zip)
 [Views](Views) | Typecho文章浏览次数排行插件 | 1.0.1 | Willin Kan | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/Views.zip)
-[Watermark](Watermark) | 文章内图片自动添加水印效果插件 | 1.2.0 | [DEFE](https://github.com/defeme) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/Watermark.zip)
+[Watermark](Watermark) | 文章图片自动添加定制水印插件 | 1.2.0 | [DEFE](https://github.com/defeme) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/Watermark.zip)
 [WeChatHelper](WeChatHelper) | 微信公众号平台功能菜单集成插件 | 2.2.1 | [冰剑](https://github.com/binjoo) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/WeChatHelper.zip)
-[WeChatShare](WeChatShare) | 自定义文章微信/QQ分享链接插件 | 1.0.5 | [Fuzqing](https://github.com/fuzqing) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/WeChatShare.zip)
+[WeChatShare](WeChatShare) | 自定义文章微信/QQ分享链接插件 | 1.0.6 | [Fuzqing](https://github.com/fuzqing) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/WeChatShare.zip)
 [WeiboSync](WeiboSync) | 博客文章更新推送新浪微博插件 | 1.0.0 | [vfhky](https://github.com/vfhky) | [Special](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/WeiboSync.zip)
-[XiaMiPlayer](XiaMiPlayer) | 虾米音乐迷你型jPlayer播放器插件 | 3.1.4 | [公子](https://github.com/lizheming) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/XiaMiPlayer.zip)
-[YoduBGM](YoduBGM) | 微型背景音乐播放器插件(支持Pjax) | 1.5.0 | [Jrotty](https://github.com/jrotty) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/YoduBGM.zip)
+[XiaMiPlayer](XiaMiPlayer) | 虾米云音乐jPlayer极简播放器插件 | 3.1.4 | [公子](https://github.com/lizheming) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/XiaMiPlayer.zip)
+[YoduBGM](YoduBGM) | 迷你按钮型BGM音乐播放器插件 | 1.6.0 | [Jrotty](https://github.com/jrotty) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/YoduBGM.zip)
 [YoduPlayer](YoduPlayer) | 悬浮式音乐播放器插件(支持Pjax) | 2.2.2 | [Jrotty](https://github.com/jrotty) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/YoduPlayer.zip)
 [Zan](Zan) | 自定义字段输出文章点赞次数插件 | 1.0.0 | [冰剑](https://github.com/binjoo) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/Zan.zip)
+[alexarank]alexarank) | 在主题模板输出Alexa排名插件 | 1.0 | [Jrotty](https://github.com/jrotty) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/alexarank.zip)
 [reCAPTCHA](reCAPTCHA) | 谷歌reCAPTCHA点击验证码插件 | 0.0.1 | [啸傲居士](https://github.com/shuxiao9058) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/reCAPTCHA.zip)
 [reCAPTCHAv3](reCAPTCHAv3) | 基于[reCAPTCHA](reCAPTCHA)v3版验证码插件 | 0.0.2 | [D-Bood](https://github.com/D-Bood) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/reCAPTCHAv3.zip)
