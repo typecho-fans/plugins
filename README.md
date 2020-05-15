@@ -107,7 +107,6 @@
 [Prism](Prism) | Prism轻量代码高亮效果渲染插件 | 1.0.2 | [冰剑](https://github.com/binjoo) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/Prism.zip)
 [QNUpload](QNUpload) | 经典版(php5.2-5.6)七牛附件插件 | 1.3.1 | [rakiy](https://github.com/rakiy) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/QNUpload.zip)
 [QiniuFile](QiniuFile) | 新七牛附件插件(自定路径+截图) | 1.3.2 | [冰剑](https://github.com/binjoo), [abelyao](https://github.com/abelyao) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/QiniuFile.zip)
-[reCAPTCHA](reCAPTCHA) | 谷歌reCAPTCHA点击验证码插件 | 0.0.2 | [D-Bood](https://github.com/D-Bood), [啸傲居士](https://github.com/shuxiao9058) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/reCAPTCHA.zip)
 [Reposidget](Reposidget) | GitHub项目信息与内容展示插件 | 1.0.0 | [西秦公子](https://github.com/xiqingongzi) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/Reposidget.zip)
 [RewriteRule](RewriteRule) | 文章页面地址批量重定向跳转插件 | 1.0.0 | [laobubu](https://github.com/laobubu) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/RewriteRule.zip)
 [RoutesHelper](RoutesHelper) | Typecho路由信息显示与修改插件 | 1.0.3 | [doudou](https://github.com/doudoutime) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/RoutesHelper.zip)
@@ -143,3 +142,4 @@
 [YoduBGM](YoduBGM) | 微型背景音乐播放器插件(支持Pjax) | 1.5.0 | [Jrotty](https://github.com/jrotty) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/YoduBGM.zip)
 [YoduPlayer](YoduPlayer) | 悬浮式音乐播放器插件(支持Pjax) | 2.2.2 | [Jrotty](https://github.com/jrotty) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/YoduPlayer.zip)
 [Zan](Zan) | 自定义字段输出文章点赞次数插件 | 1.0.0 | [冰剑](https://github.com/binjoo) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/Zan.zip)
+[reCAPTCHA](reCAPTCHA) | 谷歌reCAPTCHA点击验证码插件 | 0.0.2 | [啸傲居士](https://github.com/shuxiao9058) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/reCAPTCHA.zip)
