@@ -1,4 +1,4 @@
-<img src='https://raw.githubusercontent.com/typecho-fans/typecho-fans.github.io/master/soapgroup.png' align="right" />
+<img src='https://cdn.jsdelivr.net/gh/typecho-fans/typecho-fans.github.io/soap-group.png' align="right" />
 
 ## Typecho-Fans外部插件登记表（TeStore专用）
 
