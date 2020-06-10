@@ -1,4 +1,4 @@
-<img src='https://cdn.jsdelivr.net/gh/typecho-fans/typecho-fans.github.io/soap-group.png' align="right" />
+<img src='https://typecho-fans.github.io/soap-group.png' align="right" />
 
 ## Typecho-Fans内部插件目录（社区维护版列表）
 
@@ -11,7 +11,7 @@
 
 ### 使用帮助
 
-作者参与维护可点击右上角绿色按钮处克隆Git地址或Fork项目所有插件按需修改，一般用户使用下方索引表格中的Download链接下载所需插件即可，或推荐安装**新版插件仓库**:toolbox:[**TeStore**](TeStore)更便捷地进行列表筛选、一键下载及自动安装删除等操作。
+作者参与维护可点击右上角绿色按钮处克隆Git地址或Fork项目所有插件按需修改，一般用户使用下方索引表格中的Download链接下载所需插件即可，或推荐安装**新版插件仓库**:card_file_box:[**TeStore**](TeStore)更便捷地进行列表筛选、一键下载及自动安装删除等操作。
 
 ### 作者须知
 
