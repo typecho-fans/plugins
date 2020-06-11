@@ -1,176 +1,166 @@
 <?php
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 /**
- * 通过读取html表格实现插件仓库的下载、安装及卸载等功能
+ * 读取Github上维护的专用表格实现插件仓库各项功能
  * 
  * @package TeStore
  * @author 羽中, zhulin3141
- * @version 1.1.2
- * @link http://www.yzmb.me
+ * @version 1.1.4
+ * @dependence 13.12.12-*
+ * @link https://www.yzmb.me/archives/net/testore-for-typecho
+ * @copyright Copyright (c) 2014-2020 Yuzhong Zheng (jzwalk)
+ * @license MIT
  */
 class TeStore_Plugin implements Typecho_Plugin_Interface
 {
+	/**
+	 * 激活插件方法,如果激活失败,直接抛出异常
+	 * 
+	 * @access public
+	 * @return void
+	 * @throws Typecho_Plugin_Exception
+	 */
+	public static function activate()
+	{
+		$tempDir = __TYPECHO_ROOT_DIR__.__TYPECHO_PLUGIN_DIR__.'/TeStore/.tmp';
+		$dataDir = __TYPECHO_ROOT_DIR__.__TYPECHO_PLUGIN_DIR__.'/TeStore/data';
 
-    /**
-     * 激活插件方法,如果激活失败,直接抛出异常
-     * 
-     * @access public
-     * @return void
-     * @throws Typecho_Plugin_Exception
-     */
-    public static function activate()
-    {
-        $tempDir = __TYPECHO_ROOT_DIR__ . __TYPECHO_PLUGIN_DIR__ . '/TeStore/.tmp';
-        $dataDir = __TYPECHO_ROOT_DIR__ . __TYPECHO_PLUGIN_DIR__ . '/TeStore/data';
+		if (!class_exists('ZipArchive')) {
+			return _t('主机未安装ZipArchive扩展, 无法安装插件');
+		}
 
-        if ( ! is_dir($tempDir) and ! @mkdir($tempDir) ) {
-            throw new Typecho_Plugin_Exception('无法创建临时目录.');
-        }
+		if (!is_dir($tempDir) && !@mkdir($tempDir)) {
+			throw new Typecho_Plugin_Exception('无法创建临时目录.');
+		}
 
-        if( ! self::testWrite($tempDir) ){
-            throw new Typecho_Plugin_Exception('.tmp目录没有写入的权限');
-        }
+		if(!self::testWrite($tempDir)){
+			throw new Typecho_Plugin_Exception('.tmp目录没有写入权限');
+		}
 
-        if ( ! file_exists($dataDir) and ! @mkdir($dataDir) ) {
-            throw new Typecho_Plugin_Exception('无法创建缓存目录.');
-        }
+		Typecho_Plugin::factory('admin/menu.php')->navBar = array('TeStore_Plugin','render');
+		Helper::addPanel(1,'TeStore/market.php',_t('TE插件仓库'),_t('TE插件仓库'),'administrator');
+		Helper::addRoute('te-store_market',__TYPECHO_ADMIN_DIR__.'te-store/market','TeStore_Action','market');
+		Helper::addRoute('te-store_install',__TYPECHO_ADMIN_DIR__.'te-store/install','TeStore_Action','install');
+		Helper::addRoute('te-store_uninstall',__TYPECHO_ADMIN_DIR__.'te-store/uninstall','TeStore_Action','uninstall');
+	}
 
-        if( ! self::testWrite($dataDir) ){
-            throw new Typecho_Plugin_Exception('data目录没有写入的权限');
-        }
+	/**
+	 * 禁用插件方法,如果禁用失败,直接抛出异常
+	 * 
+	 * @static
+	 * @access public
+	 * @return void
+	 * @throws Typecho_Plugin_Exception
+	 */
+	public static function deactivate()
+	{
+		Helper::removePanel(1,'TeStore/market.php');
+		Helper::removeRoute('te-store_market');
+		Helper::removeRoute('te-store_install');
+		Helper::removeRoute('te-store_uninstall');
+	}
 
-        Typecho_Plugin::factory('admin/menu.php')->navBar = array('TeStore_Plugin', 'render');
-        Helper::addPanel(1, 'TeStore/market.php', 'TE插件仓库', 'TE插件仓库', 'administrator');
-        Helper::addRoute('te-store_market', __TYPECHO_ADMIN_DIR__ . 'te-store/market', 'TeStore_Action', 'market');
-        Helper::addRoute('te-store_install', __TYPECHO_ADMIN_DIR__ . 'te-store/install', 'TeStore_Action', 'install');
-        Helper::addRoute('te-store_uninstall', __TYPECHO_ADMIN_DIR__ . 'te-store/uninstall', 'TeStore_Action', 'uninstall');
-    }
-    
-    /**
-     * 禁用插件方法,如果禁用失败,直接抛出异常
-     * 
-     * @static
-     * @access public
-     * @return void
-     * @throws Typecho_Plugin_Exception
-     */
-    public static function deactivate(){
-        Helper::removePanel(1, 'TeStore/market.php');
-        Helper::removeRoute('te-store_market');
-        Helper::removeRoute('te-store_install');
-        Helper::removeRoute('te-store_uninstall');
-    }
-    
-    /**
-     * 获取插件配置面板
-     * 
-     * @access public
-     * @param Typecho_Widget_Helper_Form $form 配置面板
-     * @return void
-     */
-    public static function config(Typecho_Widget_Helper_Form $form)
-    {
-        //源文件地址
-        $source = new Typecho_Widget_Helper_Form_Element_Textarea('source', NULL, 'https://github.com/typecho-fans/plugins/blob/master/TESTORE.md' . PHP_EOL . 'https://github.com/typecho-fans/plugins/blob/master/README.md', _t('插件信息源'),
-        _t('应为可公开访问且包含准确表格内容的页面地址, 每行一个, 例: ') . '<br/>
-        <strong><a href="https://github.com/typecho-fans/plugins/blob/master/README.md">https://github.com/typecho-fans/plugins/blob/master/README.md</a> - <span class="warning">' . _t('Typecho-Fans插件集群索引(社区维护版目录)') . '</span><br/>
-        <a href="https://github.com/typecho-fans/plugins/blob/master/TESTORE.md">https://github.com/typecho-fans/plugins/blob/master/TESTORE.md</a> - <span class="warning">' . _t('Typecho-Fans外部插件登记表(TeStore专用)') . '</span></strong><br/>
-        ' . _t('以上Markdown格式文件可以在Github上方便地进行多人修改更新, 参与方式详见文件说明'));
-        $source->addRule('required',_t('源文件地址不能为空'));
-        $form->addInput($source);
+	/**
+	 * 获取插件配置面板
+	 * 
+	 * @access public
+	 * @param Typecho_Widget_Helper_Form $form 配置面板
+	 * @return void
+	 */
+	public static function config(Typecho_Widget_Helper_Form $form)
+	{
+		$source = new Typecho_Widget_Helper_Form_Element_Textarea('source',
+		NULL,'https://github.com/typecho-fans/plugins/blob/master/TESTORE.md'.PHP_EOL.'https://github.com/typecho-fans/plugins/blob/master/README.md',_t('插件信息来源'),
+		_t('应为可公开访问且包含符合本插件规定表格内容的页面地址, 每行一个, 默认: ').'<br/>
+		<strong><a href="https://github.com/typecho-fans/plugins/blob/master/README.md">https://github.com/typecho-fans/plugins/blob/master/README.md</a> - <span class="warning">'._t('Typecho-Fans内部插件索引(社区维护版列表)').'</span><br/>
+		<a href="https://github.com/typecho-fans/plugins/blob/master/TESTORE.md">https://github.com/typecho-fans/plugins/blob/master/TESTORE.md</a> - <span class="warning">'._t('Typecho-Fans外部插件登记表(TeStore专用)').'</span></strong><br/>
+		'._t('以上Markdown语法文件在Github上由多人共同维护, 参与方式详见文件说明'));
+		$source->addRule('required',_t('文件地址不能为空'));
+		$form->addInput($source);
 
-        //缓存设置
-        $cache = new Typecho_Widget_Helper_Form_Element_Select('cache_time',
-            array(
-                '0'=>_t('不缓存'),
-                '6'=>_t('6小时'),
-                '12'=>_t('12小时'),
-                '24'=>_t('1天'),
-                '72'=>_t('3天'),
-                '168'=>_t('1周')
-            ),
-            '24',
-            _t('缓存时间'),
-            _t('列表数据的缓存时间')
-        );
-        $form->addInput($cache);
+		$cache = new Typecho_Widget_Helper_Form_Element_Select('cache_time',
+			array(
+				'0'=>_t('不缓存'),
+				'6'=>_t('6小时'),
+				'12'=>_t('12小时'),
+				'24'=>_t('1天'),
+				'72'=>_t('3天'),
+				'168'=>_t('1周')
+			),
+			'24',_t('数据缓存时限'),_t('设置本地缓存数据时间'));
+		$form->addInput($cache);
 
-        $curl = new Typecho_Widget_Helper_Form_Element_Checkbox(
-            'curl',
-            array(
-                1 => '是'
-            ),
-            0,
-            _t('使用curl下载'),
-            '默认file_get_contents方式无效时可尝试'
-        );
-        $form->addInput($curl);
+		$proxy = new Typecho_Widget_Helper_Form_Element_Radio('proxy',
+		array(''=>_t('否'),'cdn.jsdelivr.net/gh'=>_t('jsDelivr镜像'),'gitcdn.xyz/repo'=>_t('GitCDN镜像1'),'gitcdn.link/repo'=>_t('GitCDN镜像2')),'',_t('使用代理加速'),_t('GitHub连接不畅时可选'));
+		$form->addInput($proxy);
 
-        $showNavMenu = new Typecho_Widget_Helper_Form_Element_Radio(
-            'showNavMenu' ,
-            array(
-                'true' => _t('是'),
-                'false' => _t('否'),
-            ),
-            'true' ,
-            _t('显示导航条按钮')
-        );
-        $form->addInput($showNavMenu);
-    }
-    
-    /**
-     * 检查curl支持
-     *
-     * @param array $settings
-     * @return string
-     */
-    public static function configCheck(array $settings)
-    {
-        if ( $settings['curl'] && !extension_loaded('curl') ) {
-            return _t('主机没有安装curl扩展');
-        }
-    }
-    
-    /**
-     * 个人用户的配置面板
-     * 
-     * @access public
-     * @param Typecho_Widget_Helper_Form $form
-     * @return void
-     */
-    public static function personalConfig(Typecho_Widget_Helper_Form $form){}
+		$curl = new Typecho_Widget_Helper_Form_Element_Checkbox('curl',
+		array(1=>'是'),0,	_t('cURL方式下载'),_t('默认方式无效时可尝试'));
+		$form->addInput($curl);
 
-    /**
-     * 插件实现方法
-     * 
-     * @access public
-     * @return void
-     */
-    public static function render()
-    {
-        $options = Helper::options();
-        $pluginOpts = Typecho_Widget::widget('Widget_Options')->plugin('TeStore');
-        if( $pluginOpts->showNavMenu == 'true' ){
-            echo '<a href="';
-            $options->adminUrl('extending.php?panel=TeStore%2Fmarket.php');
-            echo '"><span class="message success"><i class="mime-script"></i>' . _t('TE插件仓库') . '</span></a>';
-        }
-    }
+		$showNavMenu = new Typecho_Widget_Helper_Form_Element_Radio('showNavMenu',
+		array(1=>_t('显示'),0=>_t('关闭')),1,_t('导航快捷按钮'));
+		$form->addInput($showNavMenu);
+	}
 
-    /**
-     * 判断目录是否可写
-     */
-    public static function testWrite($dir) {
-        $testFile = "_test.txt";
-        $fp = @fopen($dir . "/" . $testFile, "w");
-        if (!$fp) {
-            return false;
-        }
-        fclose($fp);
-        $rs = @unlink($dir . "/" . $testFile);
-        if ($rs) {
-            return true;
-        }
-        return false;
-    }
+	/**
+	 * 检查cURL支持
+	 * 
+	 * @param array $settings
+	 * @return string
+	 */
+	public static function configCheck(array $settings)
+	{
+		if (!class_exists('ZipArchive')) {
+			return _t('主机未安装ZipArchive扩展, 无法安装插件');
+		}
+		if ($settings['curl'] && !extension_loaded('curl')) {
+			return _t('主机未安装cURL扩展, 无法使用此方式下载');
+		}
+	}
+
+	/**
+	 * 个人用户的配置面板
+	 * 
+	 * @access public
+	 * @param Typecho_Widget_Helper_Form $form
+	 * @return void
+	 */
+	public static function personalConfig(Typecho_Widget_Helper_Form $form){}
+
+	/**
+	 * 输出导航按钮
+	 * 
+	 * @access public
+	 * @return void
+	 */
+	public static function render()
+	{
+		$options = Helper::options();
+		if ($options->plugin('TeStore')->showNavMenu && Typecho_Widget::widget('Widget_User')->pass('administrator',true)){
+			echo '<a href="'.$options->adminUrl.'extending.php?panel=TeStore%2Fmarket.php"><span class="message notice"><i class="mime-script"></i>'._t('TE插件仓库').'</span></a>';
+		}
+	}
+
+	/**
+	 * 判断目录可写
+	 * 
+	 * @access public
+	 * @return boolean
+	 */
+	public static function testWrite($dir)
+	{
+		$testFile = "_test.txt";
+		$fp = @fopen($dir."/".$testFile,"w");
+		if (!$fp) {
+			return false;
+		}
+		fclose($fp);
+		$rs = @unlink($dir."/".$testFile);
+		if ($rs) {
+			return true;
+		}
+		return false;
+	}
+
 }
