@@ -1,355 +1,501 @@
-<?php ! defined('__TYPECHO_ROOT_DIR__') and exit();
+<?php
+if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 
-include_once 'pclzip.lib.php';
+class TeStore_Action extends Typecho_Widget
+{
+	private $options;
+	private $settings;
+	private $security;
+	private $user;
+	private $useCurl;
+	private $pluginRoot;
 
-class TeStore_Action extends Typecho_Widget {
+	/**
+	 * 构造函数与初始化
+	 * 
+	 * @access public
+	 * @param Typecho_Request $request
+	 * @param Typecho_Response $response
+	 * @param mixed $params
+	 */
+	public function __construct($request,$response,$params=NULL)
+	{
+		parent::__construct($request,$response,$params);
 
-    private $options;
-    private $server;
-    private $security;
+		$this->options = $this->widget('Widget_Options');
+		$this->settings = $this->options->plugin('TeStore');
+		$this->security = $this->widget('Widget_Security');
+		$this->user = $this->widget('Widget_User');
+		$this->useCurl = $this->settings->curl;
+		$this->pluginRoot = __TYPECHO_ROOT_DIR__.__TYPECHO_PLUGIN_DIR__;
+	}
 
-    //缓存时间(h)
-    private $cacheTime;
+	/**
+	 * 获取已启用插件名称
+	 * 
+	 * @access private
+	 * @return array
+	 */
+	private function getActivePlugins()
+	{
+		$activatedPlugins = Typecho_Plugin::export();
+		return array_keys($activatedPlugins['activated']);
+	}
 
-    //使用Curl
-    private $useCurl;
+	/**
+	 * 获取已安装插件信息
+	 * 
+	 * @access private
+	 * @param string $name 插件名称
+	 * @return array
+	 */
+	private function getLocalInfos($name)
+	{
+		$infos = array();
+		$pluginDir = $this->pluginRoot.'/'.$name;
+		$pluginFile = is_dir($pluginDir) ? $pluginDir.'/Plugin.php' : $pluginDir.'.php';
+		if (is_file($pluginFile)) {
+			$parse = Typecho_Plugin::parseInfo($pluginFile);
+			$infos = array($parse['author'],$parse['version']);
+		}
+		return $infos;
+	}
 
-    private $cacheDir;
+	/**
+	 * 读取并整理插件信息
+	 * 
+	 * @access public
+	 * @return array
+	 */
+	public function getPluginData()
+	{
+		$pluginInfo = array();
+		$cacheDir = $this->pluginRoot.'/TeStore/data/';
+		$cacheFile = $cacheDir.'list.json';
+		$cacheTime = $this->settings->cache_time;
 
-    private $pluginRoot;
+		//读取缓存文件
+		if ($cacheTime && is_file($cacheFile) && (time()-filemtime($cacheFile))<=$cacheTime*3600) {
+			$data = file_get_contents($cacheFile);
+			$pluginInfo = Json::decode($data,true);
+		//读取表格地址
+		} else {
+			$html = '';
+			$isRaw = false;
+			$pages = array_filter(preg_split("/(\r|\n|\r\n)/",strip_tags($this->settings->source)));
+			foreach ($pages as $page) {
+				$page = trim($page);
+				if ($page) {
+					$proxy = $this->settings->proxy;
+					$isRaw = strpos($page,'raw.githubusercontent.com') || strpos($page,'raw/master');
+					//替换加速地址
+					if ($proxy || $isRaw) {
+						$page = str_replace(array('github.com','raw.githubusercontent.com'),$proxy,$page);
+						$page = $proxy=='cdn.jsdelivr.net/gh' ? str_replace(array('blob/','raw/','master/'),'',$page) : str_replace(array('blob/','raw/'),'',$page);
+					}
+					$html .= $this->useCurl ? $this->curlGet($page) : @file_get_contents($page,0,
+						stream_context_create(array('http'=>array('timeout'=>20)))); //设20秒超时
+					//转码MD格式
+					if ($proxy || $isRaw) {
+						$html = htmlspecialchars_decode(Markdown::convert($html)); //fix 17.10.30 Markdown
+					}
+				}
+			}
 
-    private $pluginInfo;
+			//解析表格内容
+			if ($html) {
+				$dom = new DOMDocument('1.0','UTF-8');
+				$html = function_exists('mb_convert_encoding') ? mb_convert_encoding($html,'HTML-ENTITIES','UTF-8') : $html;
+				@$dom->loadHTML($html);
+				$trs = $dom->getElementsByTagName("tr");
 
-    public function __construct($request, $response, $params = NULL)
-    {
-        parent::__construct($request, $response, $params);
+				$tdVal = '';
+				$texts = array();
+				$tds = array();
+				$a = (object)array();
+				$href = '';
+				$urls = array();
+				foreach ($trs as $trKey=>$trVal) {
+					if ($trVal->parentNode->tagName=='tbody') {
+						//获取tr文本信息
+						foreach ($trVal->childNodes as $td) {
+							$tdVal = $td->nodeValue;
+							if ($tdVal) {
+								$texts[$trKey][] = htmlspecialchars(trim(strip_tags($tdVal)));
+							}
+						}
+						$tds = $trs->item($trKey)->getElementsByTagName("td");
+						//获取td链接地址
+						foreach ($tds as $tdKey=>$tdVal) {
+							if ($tdKey!==1 && $tdKey!==2) {
+								$a = $tds->item($tdKey)->getElementsByTagName("a");
+								$href = $a->item(0) ? $a->item(0)->getAttribute("href") : '';
+								//处理多作者链接
+								if ($tdKey==3) {
+									$href = '';
+									foreach ($a as $key=>$val) {
+										$href .= ($key==0 ? '' : ',').$val->getAttribute('href');
+									}
+								}
+								$urls[] = htmlspecialchars($href);
+							}
+						}
+					}
+				}
+				$texts = array_values($texts);
+				$urls = array_chunk($urls,3);
 
-        $this->options = Helper::options();
-        $pluginOpts = $this->options->plugin('TeStore');
-        $this->source = array_filter(preg_split("/(\r|\n|\r\n)/", strip_tags($pluginOpts->source)));
-        $this->security = Helper::security();
-        $this->cacheTime = $pluginOpts->cache_time;
-        $this->useCurl = $pluginOpts->curl;
-        $this->pluginRoot = __TYPECHO_ROOT_DIR__ . __TYPECHO_PLUGIN_DIR__;
-        $this->cacheDir = $this->pluginRoot . '/TeStore/data/';
+				//合并关联键名
+				$keys = array('pluginName','desc','version','author','source','pluginUrl','site','zipFile');
+				$names = array();
+				$datas = array();
+				foreach ($texts as $key=>$val) {
+					$names[] = isset($val[0]) ? $val[0] : $val[1]; //fix for PHP 7.0+
+					$datas[] = array_combine($keys,array_merge($val,$urls[$key]));
+				}
+				//按插件名排序
+				array_multisort($names,SORT_ASC,$datas);
 
-        define('TYPEHO_ADMIN_PATH', __TYPECHO_ROOT_DIR__ . __TYPECHO_ADMIN_DIR__);
-    }
+				$pluginInfo = $datas;
+			}
 
-    /**
-     * 获取已启用插件名称
-     *
-     * @access private
-     * @return array
-     */
-    private function getActivePlugins()
-    {
-        $activatedPlugins = Typecho_Plugin::export();
-        return array_keys( $activatedPlugins['activated'] );
-    }
+			//生成缓存文件
+			if ($pluginInfo && $cacheTime) {
+				if (!is_dir($cacheDir)) {
+					$this->makedir($cacheDir);
+				}
+				file_put_contents($cacheFile,Json::encode($pluginInfo));
+			}
+		}
 
-    /**
-     * 获取已安装插件名称
-     *
-     * @access private
-     * @return array
-     */
-    private function getLocalPlugins()
-    {
-        $dirs = array();
-        $files = scandir($this->pluginRoot);
-        foreach($files as $file){
-            if( is_dir($this->pluginRoot . '/' . $file) && !in_array($file, array('.', '..')) || strpos($file, '.php') ){
-                $dirs[] = str_replace('.php', '', $file);
-            }
-        }
-        return $dirs;
-    }
+		return $pluginInfo;
+	}
 
-    /**
-     * 获取已安装插件信息
-     *
-     * @access private
-     * @return string
-     */
-    private function getLocalInfos($name)
-    {
-        $pluginDir = $this->pluginRoot . '/' . $name;
-        $plugin = is_dir($pluginDir) ? $pluginDir . '/Plugin.php' : $pluginDir . '.php';
-        $parseInfo = Typecho_Plugin::parseInfo($plugin);
-        return array( $parseInfo['author'], $parseInfo['version'] );
-    }
+	/**
+	 * 输出插件列表页面
+	 * 
+	 * @access private
+	 * @return void
+	 */
+	public function market()
+	{
+		//禁止非管理员访问
+		$this->user->pass('administrator');
 
-    /**
-     * 获取插件源数据
-     *
-     * @access private
-     * @param string $name
-     * @return array
-     */
-    public function getPluginData($name='')
-    {
-        $json = $this->cacheDir . 'list.json';
-        //读取缓存文件
-        if( $this->cacheTime && is_file($json) && (time() - filemtime($json)) <= $this->cacheTime * 3600 ){
-            $data = file_get_contents($json);
-            $this->pluginInfo = json_decode($data);
-        }else{
-            $html = '';
-            foreach( $this->source as $page ){
-                $page = trim($page);
-                if( $page ){
-                    $html .= $this->useCurl ? $this->curlGet($page) : @file_get_contents($page);
-                }
-            }
-            //解析表格内容
-            if( $html !== '' ){
-                $dom = new DOMDocument('1.0', 'UTF-8');
-                $html = function_exists('mb_convert_encoding') ? mb_convert_encoding($html, 'HTML-ENTITIES', 'UTF-8') : $html;
-                @$dom->loadHTML($html);
-                $tr = $dom->getElementsByTagName("tr");
-                $texts = array();
-                $urls = array();
-                foreach( $tr as $trKey => $text ){
-                    if( $text->parentNode->tagName=='tbody' ){
-                        //分割tr文本数据
-                        foreach( $text->childNodes as $td ){
-                            $tdVal = trim($td->nodeValue);
-                            if( $tdVal ){
-                                $texts[$trKey][] = $tdVal;
-                            }
-                        }
-                        $td = $tr->item($trKey)->getElementsByTagName("td");
-                        //获取td链接数据
-                        foreach( $td as $tdKey => $val ){
-                            if( $tdKey!==1 && $tdKey!==2 ) {
-                                $a = $td->item($tdKey)->getElementsByTagName("a");
-                                $href = $a->item(0) ? $a->item(0)->getAttribute("href") : '';
-                                //处理多作者链接
-                                if( $tdKey==3 ){
-                                    $href = '';
-                                    foreach( $a as $key => $val ){
-                                        $href .= ($key==0 ? '' : ', ') . $val->getAttribute('href');
-                                    }
-                                }
-                                $urls[] = $href;
-                            }
-                        }
-                    }
-                }
-                $texts = array_values($texts);
-                $urls = array_chunk($urls , 3);
-                $datas = array();
-                //合并关联键名
-                $names = array();
-                foreach( $texts as $key => $val ){
-                    $keys = array('pluginName', 'desc', 'version', 'author', 'source', 'pluginUrl', 'site', 'zipFile');
-                    $names[] = isset($val[0]) ? $val[0] : $val[1]; //fix for PHP 7.0+
-                    $datas[] = (object)array_combine($keys, array_merge($val, $urls[$key]));
-                }
-                array_multisort($names, SORT_ASC, $datas);
+		include_once 'views/market.php';
+	}
 
-                $this->pluginInfo = $datas;
-            }else{
-                $this->pluginInfo = NULL;
-            }
+	/**
+	 * 执行安装插件步骤
+	 * 
+	 * @access public
+	 * @return void
+	 */
+	public function install()
+	{
+		$this->security->protect();
+		//禁止非管理员访问
+		$this->user->pass('administrator');
 
-            //生成缓存文件
-            if($this->cacheTime) {
-                $pluginInfo = json_encode($this->pluginInfo);
-                if( ! is_dir($this->cacheDir) ) @mkdir($this->cacheDir);
-                file_put_contents($this->cacheDir . 'list.json', $pluginInfo);
-            }
-        }
+		$plugin = $this->request->plugin;
+		$author = $this->request->author;
+		$zip = $this->request->zip;
+		$result = array(
+			'status'=>false,
+			'error'=>_t('没有找到插件文件')
+		);
 
-        //获取单一插件数据
-        if( $name && $this->pluginInfo ) {
-            foreach ($this->pluginInfo as $plugin) {
-                if( $plugin->pluginName == $name )
-                return $plugin;
-            }
-        }
+		if ($zip) {
+			//检测是否已启用
+			$activated = $this->getActivePlugins();
+			if (!empty($activated) && in_array($plugin,$activated)) {
+				$result['error'] = _t('请先禁用此插件');
+			} else {
+				$tempDir = $this->pluginRoot.'/TeStore/.tmp';
+				$tempFile = $tempDir.'/'.$plugin.'.zip';
+				if (is_dir($tempDir)) {
+					@$this->delTree($tempDir,true); //清理临时目录
+				} else {
+					$this->makedir($tempDir); //创建临时目录
+				}
+				$proxy = $this->settings->proxy;
+				//替换为加速地址
+				if ($proxy || strpos($zip,'raw.githubusercontent.com')  || strpos($zip,'raw/master')) {
+					$cdn = $this->ZIP_CDN($plugin,$author);
+					$zip = $cdn ? $cdn : $zip;
+					$proxy = $proxy ? $proxy : 'cdn.jsdelivr.net/gh';
+					$zip = str_replace(array('github.com','raw.githubusercontent.com'),$proxy,$zip);
+					$zip = $proxy=='cdn.jsdelivr.net/gh' ? str_replace(array('blob/','raw/','master/'),'',$zip) : str_replace(array('blob/','raw/'),'',$zip);
+				}
+				//下载至临时目录
+				$zipFile = $this->useCurl ? $this->curlGet($zip) : @file_get_contents($zip,0,
+					stream_context_create(array('http'=>array('timeout'=>20)))); //设20秒超时
+				if (!$zipFile) {
+					$result['error'] = _t('下载压缩包出错');
+				} else {
+					if (strpos($zipFile,'404')===0 || strpos($zipFile,'Couldn\'t find')===0) {
+						$result['error'] = _t('未找到下载文件');
+						@unlink($tempFile);
+					} else {
+						file_put_contents($tempFile,$zipFile);
+						$phpZip = new ZipArchive();
+						$open = $phpZip->open($tempFile,ZipArchive::CHECKCONS);
+						if ($open!==true) {
+							$result['error'] = _t('压缩包校验错误');
+							@unlink($tempFile);
+						} else {
+							//解压至临时目录
+							if (!$phpZip->extractTo($tempDir)) {
+								$error = error_get_last();
+								$result['error'] = $error['message'];
+							} else {
+								$phpZip->close();
+								@unlink($tempFile); //删除已解压包
 
-        return $this->pluginInfo;
-    }
+								//遍历各文件层级
+								foreach (new RecursiveIteratorIterator(new RecursiveDirectoryIterator($tempDir)) as $fileName) {
+									if (!is_dir($fileName)) {
+										$tmpRoutes[] = $fileName;
+									}
+								}
 
-    /**
-     * 输出插件列表
-     *
-     * @access private
-     * @return void
-     */
-    public function market()
-    {
-        $options = $this->options;
-        $pluginPath = Typecho_Common::url('TeStore', $options->pluginUrl);
-        $security = $this->security;
-        $marketUrl = $options->index . __TYPECHO_ADMIN_DIR__ . 'te-store/market';
+								//定位Plugin.php
+								$trueDir = '';
+								$parentDir = '';
+								foreach ($tmpRoutes as $tmpRoute) {
+									if (!strcasecmp(basename($tmpRoute),'Plugin.php')) {
+										$trueDir = dirname($tmpRoute);
+										$parentDir = dirname($trueDir);
+									}
+								}
 
-        include_once 'views/market.php';
-    }
+								//处理目录型插件
+								if ($trueDir) {
+									$pluginDir = $this->pluginRoot.'/'.$plugin;
+									if (is_dir($pluginDir)) {
+										@$this->delTree($pluginDir,true); //清理旧版残留
+									}
+									foreach ($tmpRoutes as $tmpRoute) {
+										//按文件路径创建目录
+										$fileDir = $parentDir==$tempDir ? $tempDir : $parentDir;
+										$tarRoute = str_replace((strpos($tmpRoute,$trueDir)===0 ? $trueDir : $fileDir),
+											$pluginDir,$tmpRoute);
+										$tarDir = dirname($tarRoute);
+										if (!is_dir($tarDir)) {
+											$this->makedir($tarDir);
+										}
+										//移动文件到各层目录
+										if (!rename($tmpRoute,$tarRoute)) {
+											$error = error_get_last();
+											$result['error'] = $error['message'];
+										}
+									}
+									$result['status'] = true;
 
-    /**
-     * 执行安装插件
-     *
-     * @access private
-     * @return string
-     */
-    public function install()
-    {
-        $this->security->protect();
-        $plugin  = $this->request->get('plugin');
+								//处理单文件型插件
+								} elseif (count($tmpRoutes)<=2) {
+									foreach ($tmpRoutes as $tmpRoute) {
+										$name = basename($tmpRoute);
+										if ($name==$plugin.'.php') {
+											//移动文件到根目录
+											if (!rename($tmpRoute,$this->pluginRoot.'/'.$name)) {
+												$result['error'] = _t('移动文件出错');
+											} else {
+												$result['status'] = true;
+											}
+										}
+									}
+								}
 
-        $ret = array(
-            'status' => false,
-            'error' => ''
-        );
+								//清空临时目录
+								@$this->delTree($tempDir,true);
+							}
+						}
+					}
+				}
+			}
+		}
 
-        if($plugin){
-            $pluginInfo = $this->getPluginData($plugin);
-            $activated = $this->getActivePlugins();
+		//返回提示信息
+		if ($result['status']) {
+			$this->widget('Widget_Notice')->highlight('plugin-'.$plugin);
+			$this->widget('Widget_Notice')->set(_t('安装插件 %s 成功, 可以在下方启用',$plugin),'success');
+			$this->response->redirect($this->options->adminUrl.'plugins.php#plugin-'.end($activated));
+		} else {
+			$this->widget('Widget_Notice')->set(_t('安装插件 %s 失败: %s',$plugin,$result['error']),'error');
+			$this->response->goBack();
+		}
+	}
 
-            if( in_array($plugin, $activated) ){
-                $ret['error'] = _t('请先禁用该插件');
-            }elseif( $pluginInfo ){
-                $tempdir = $this->pluginRoot . '/TeStore/.tmp';
-                $tempFile = $tempdir. '/' . $plugin . '.zip';
-                if( ! is_dir($tempdir) ) @mkdir($tempdir);
-                $zipFile = $this->useCurl ? $this->curlGet($pluginInfo->zipFile) : @file_get_contents($pluginInfo->zipFile);
-                if( ! file_put_contents( $tempFile, $zipFile ) ){
-                    $ret['error'] = _t('下载zip包出错');
-                }else{
-                    $unzip = new PclZip($tempFile);
-                    if( ! $unzip->extract(PCLZIP_OPT_PATH, $tempdir)===0 ){
-                        $ret['error'] = $unzip->errorInfo(true);
-                    }else{
-                        @unlink($tempFile);
-                        //遍历解压文件层级
-                        foreach( new RecursiveIteratorIterator(new RecursiveDirectoryIterator($tempdir)) as $filename ){
-                            if( ! is_dir($filename) ){
-                                $scans[] = $filename;
-                            }
-                        }
-                        //以Plugin.php确定目录
-                        foreach($scans as $scan){
-                                if( !strcasecmp(basename($scan), 'Plugin.php') ){
-                                    $truedir = dirname($scan);
-                                    $parentdir = dirname($truedir);
-                                }
-                        }
-                        if( isset($truedir) ){
-                            foreach($scans as $scan){
-                                //按插件名创建目录
-                                $file_dir = $parentdir==$tempdir ? $tempdir : $parentdir;
-                                $tar = str_replace(( strpos($scan, $truedir)===0 ? $truedir : $file_dir ), $this->pluginRoot. '/' . $plugin, $scan);
-                                $tar_dir = dirname($tar);
-                                if( ! is_dir($tar_dir) ) @mkdir($tar_dir, 0777, true);
-                                if( ! rename($scan, $tar) ){
-                                    $error = error_get_last();
-                                    $ret['error'] = $error['message'];
-                                }
-                            }
-                            $ret['status'] = true;
-                        //处理单文件型插件
-                        }elseif( count($scans)<=2 ){
-                            foreach($scans as $scan){
-                                if( pathinfo($scan, PATHINFO_EXTENSION)=='php' ){
-                                    if( ! rename($scan, $this->pluginRoot. '/' . basename($scan)) ){
-                                        $ret['error'] = _t('移动文件出错');
-                                    }else{
-                                        $ret['status'] = true;
-                                    }
-                                }
-                            }
-                        }else{
-                            $ret['error'] = _t('没有找到插件文件');
-                        }
-                        @$this->delTree($tempdir, true);
-                    }
-                }
-            }else{
-                $ret['error'] = _t('没有找到插件信息');
-            }
-        }
+	/**
+	 * 执行卸载插件步骤
+	 * 
+	 * @access public
+	 * @return void
+	 */
+	public function uninstall()
+	{
+		$this->security->protect();
+		//禁止非管理员访问
+		$this->user->pass('administrator');
 
-        echo json_encode($ret);
-    }
+		$plugin  = $this->request->plugin;
+		$result = array(
+			'status'=>false,
+			'error'=>_t('移除文件出错')
+		);
 
-    /**
-     * 执行卸载插件
-     *
-     * @access private
-     * @return string
-     */
-    public function uninstall()
-    {
-        $this->security->protect();
-        $plugin  = $this->request->get('plugin');
-        $installed = $this->getLocalPlugins();
-        $ret = array(
-            'status' => false,
-            'error' => ''
-        );
+		if ($this->getLocalInfos($plugin)) {
+			$activated = $this->getActivePlugins();
+			//已启用则自动禁用
+			if (!empty($activated) && in_array($plugin,$activated)) {
+				Helper::removePlugin($plugin);
+			}
 
-        if( $plugin && in_array($plugin, $installed) ) {
-            $activated = $this->getActivePlugins();
-            //自动禁用处理
-            if( in_array($plugin, $activated) ){
-                Helper::removePlugin($plugin);
-            }
-            $plugindir = $this->pluginRoot. '/' . $plugin;
-            if( is_dir($plugindir) ){
-                if( ! $this->delTree($this->pluginRoot. '/' . $plugin) ){
-                    $error = error_get_last();
-                    $ret['error'] = $error['message'];
-                }else{
-                    $ret['status'] = true;
-                }
-            }else{
-                if( ! unlink($plugindir . '.php') ){
-                    $ret['error'] = _t('删除插件文件出错');
-                }else{
-                    $ret['status'] = true;
-                }
-            }
-        }
+			$pluginDir = $this->pluginRoot.'/'.$plugin;
+			//清空目录型插件
+			if (is_dir($pluginDir)) {
+				if (!@$this->delTree($pluginDir)) {
+					$error = error_get_last();
+					$result['error'] = $error['message'];
+				} else {
+					$result['status'] = true;
+				}
+			//删除单文件插件
+			} else {
+				@unlink($pluginDir.'.php');
+				$result['status'] = true;
+			}
+		}
 
-        echo json_encode($ret);
-    }
+		//返回提示信息
+		if ($result['status']) {
+			$this->widget('Widget_Notice')->set(_t('删除插件 %s 成功',$plugin),'success');
+		} else {
+			$this->widget('Widget_Notice')->set(_t('删除插件 %s 失败: %s',$plugin,$result['error']),'error');
+		}
+		$this->response->goBack();
+	}
 
-    /**
-     * 清空指定文件夹
-     *
-     * @access private
-     * @return boolean
-     */
-    private function delTree($dir, $tmp=false) {
-        $files = array_diff(scandir($dir), array('.','..'));
-        foreach ($files as $file) { 
-            is_dir("$dir/$file") ? $this->delTree("$dir/$file") : unlink("$dir/$file");
-        }
-        if($tmp) return;
-        return rmdir($dir);
-    }
+	/**
+	 * 检测可加速zip地址
+	 * 
+	 * @access public
+	 * @param string $name 插件名称
+	 * @param string $author 作者名称
+	 * @return string
+	 */
+	public function ZIP_CDN($name='',$author='')
+	{
+		$datas = array();
+		$cacheDir = $this->pluginRoot.'/TeStore/data/';
+		$cacheFile = $cacheDir.'zip_cdn.json';
+		$cacheTime = $this->settings->cache_time;
 
-    /**
-     * 使用Curl方法下载
-     *
-     * @access private
-     * @return string
-     */
-    private function curlGet($url) {
-        $curl = curl_init();
-        curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
-        curl_setopt($curl, CURLOPT_HEADER, 0);
-        curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, 1);
-        curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, 2);
-        curl_setopt($curl, CURLOPT_CAINFO,'usr/plugins/TeStore/cacert.pem');
-        curl_setopt($curl, CURLOPT_URL, $url);
-        $result = curl_exec($curl);
-        curl_close($curl);
+		//读取缓存文件
+		if ($cacheTime && is_file($cacheFile) && (time()-filemtime($cacheFile))<=$cacheTime*3600) {
+			$data = file_get_contents($cacheFile);
+			$datas = Json::decode($data,true);
+		//读取API数据
+		} else {
+			$api = 'https://api.github.com/repositories/14101953/contents/ZIP_CDN';
+			$data = $this->useCurl ? $this->curlGet($api) : @file_get_contents($api,0,
+				stream_context_create(array('http'=>array('header'=>array('User-Agent: PHP'),'timeout'=>20)))); //API要求header
+			if ($data) {
+				$datas = Json::decode($data,true);
+				//生成缓存文件
+				if ($cacheTime) {
+					if (!is_dir($cacheDir)) {
+						$this->makedir($cacheDir);
+					}
+					file_put_contents($cacheFile,$data);
+				}
+			}
+		}
 
-        return $result;
-    }
+		$zip = '';
+		if ($name && $author) {
+			foreach ($datas as $data) {
+				if ($data['name']==$name.'_'.$author.'.zip') { //带作者名优先
+					$zip = $data['download_url'];
+				} elseif ($data['name']==$name.'.zip') {
+					$zip = $data['download_url'];
+				}
+			}
+		}
+
+		return $zip;
+	}
+
+	/**
+	 * 递归创建本地目录
+	 * 
+	 * @access private
+	 * @param string $path 目录路径
+	 * @return boolean
+	 */
+	private function makedir($path)
+	{
+		$path = preg_replace("/\\\+/",'/',$path);
+		$current = rtrim($path,'/');
+		$last = $current;
+
+		while (!is_dir($current) && false!==strpos($path,'/')) {
+			$last = $current;
+			$current = dirname($current);
+		}
+		if ($last==$current) {
+			return true;
+		}
+		if (!@mkdir($last)) {
+			return false;
+		}
+
+		$stat = @stat($last);
+		$perms = $stat['mode'] & 0007777;
+		@chmod($last,$perms);
+
+		return $this->makedir($path);
+	}
+
+	/**
+	 * 清空目录内文件
+	 * 
+	 * @access private
+	 * @param string $folder 目录路径
+	 * @param boolean $keep 保留目录
+	 * @return boolean
+	 */
+	private function delTree($folder,$keep=false) {
+		$files = array_diff(scandir($folder),array('.','..'));
+		foreach ($files as $file) {
+			$path = $folder.'/'.$file;
+			is_dir($path) ? $this->delTree($path) : unlink($path);
+		}
+		return $keep ? true : rmdir($folder);
+	}
+
+	/**
+	 * 使用cURL方法下载
+	 * 
+	 * @access private
+	 * @return string
+	 */
+	private function curlGet($url) {
+		$curl = curl_init();
+
+		curl_setopt($curl,CURLOPT_RETURNTRANSFER,1);
+		curl_setopt($curl,CURLOPT_HEADER,0);
+		curl_setopt($curl,CURLOPT_SSL_VERIFYPEER,1);
+		curl_setopt($curl,CURLOPT_SSL_VERIFYHOST,2);
+		curl_setopt($curl,CURLOPT_CAINFO,'usr/plugins/TeStore/data/cacert.pem'); //证书识别库
+		curl_setopt($curl,CURLOPT_TIMEOUT,30); //设30秒超时
+		curl_setopt($curl,CURLOPT_URL,$url);
+
+		$result = curl_exec($curl);
+		curl_close($curl);
+
+		return $result;
+	}
 
 }
