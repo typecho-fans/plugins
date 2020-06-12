@@ -79,7 +79,7 @@
 [GoLinks](GoLinks) | 博客短链接跳转至外部链接插件  | 0.3.0 | [DEFE](https://github.com/defeme) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/GoLinks.zip)
 [GoodLuck](GoodLuck) | “手气不错”链接显示随机文章插件 | 1.0.2 | [Ryan](https://github.com/benzBrake) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/GoodLuck.zip)
 [GoogleAnalytics](GoogleAnalytics) | 异步加载Google Analytics统计插件 | 1.0.0 | [WeiCN](https://github.com/naicfeng) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/GoogleAnalytics_WeiCN.zip)
-[GoogleCodePrettfy](GoogleCodePrettify) | 谷歌Prettify代码高亮效果渲染插件 | 2.0.0 | [公子](https://github.com/lizheming) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/GoogleCodePrettify.zip)
+[GoogleCodePrettify](GoogleCodePrettify) | 谷歌Prettify代码高亮效果渲染插件 | 2.0.0 | [公子](https://github.com/lizheming) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/GoogleCodePrettify.zip)
 [GravatarCache](GravatarCache) | Gravatar头像本地自动缓存插件 | 2.0.2 | [Byends](https://github.com/visamz) | [Special](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/GravatarCache.zip)
 [Hermit](Hermit) | 虾米云音乐SM2列表型播放器插件 | 1.3.1 | [mufeng](https://github.com/iMuFeng) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-H_to_L/Hermit.zip)
 [HighSlide](HighSlide) | 多功能灯箱弹窗效果+页面相册插件 | 1.4.7 | [羽中](https://github.com/jzwalk) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-H_to_L/HighSlide.zip)
