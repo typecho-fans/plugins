@@ -27,11 +27,11 @@
 
  > 下表中的下载链接文字可用于附加图标：`下载`即非社区版，`不可用`显示为:no_entry:，`特殊`显示:warning:即安装或启用方法特殊。
 
-### 插件信息 (121)
+### 插件信息 (123)
 
-###### TeStore将使用下表“名称”创建安装文件夹，“版本”提示升级，请务必确保文本准确；添加时注意按字母排序，自增作品索引总数，简介不要太长。
+###### TeStore使用下表“名称”创建安装文件夹，“版本”提示升级，请务必确保文本准确；添加时注意按字母排序，自增上方括号内总数，简介不要太长。
 ```
-若用户已安装同名插件TeStore会根据作者判断是否为社区版，故谨记下表中作者署名要与Plugin.php内保持一致(多人用,号或&号分隔)。
+若用户已安装同名插件TeStore会根据作者名判断版本，请确保下表“作者”文本与Plugin.php内的署名保持一致(多人可用,号或&号分隔)。
 ```
 
 名称 | 简介 | 版本 | 作者 | zip包
@@ -74,8 +74,10 @@
 [Geetest](https://github.com/jinfeijie/Geetest) | 新版GeeTest智能评论验证码插件 | 1.0.3 | [mrjin](https://github.com/jinfeijie) | [下载](https://github.com/jinfeijie/Geetest/archive/1.0.3.zip)
 [Geetest](https://github.com/99kyuu/GeetestV3_for_Typecho) | GeeTestV3版点击登录验证码插件 | 1.0.0 | [玖玖kyuu](https://github.com/99kyuu) | [特殊](https://github.com/99kyuu/GeetestV3_for_Typecho/archive/master.zip)
 [GitHubGit](https://github.com/typecho/plugins/tree/master/GitHubGit) | GitHub静态博客Jekyll同步发布插件 | 0.0.1 | [weakish](https://github.com/weakish) | [特殊](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/GitHubGit.zip)
+[GitStatic](https://github.com/MliKiowa/GitStatic) | Typecho使用GitHub做附件图床插件 | 2.0.0 | [乔千](https://github.com/MliKiowa) | [下载](https://github.com/MliKiowa/GitStatic/archive/master.zip)
 [GoogleAnalytics](https://github.com/typecho/plugins/tree/master/GoogleAnalytics) | 页面底部插入谷歌统计代码插件 | 1.0.0 | [mutoo](https://github.com/mutoo) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/GoogleAnalytics.zip)
 [GoogleCodePrettify](https://github.com/typecho/plugins/tree/master/GoogleCodePrettify) | 经典版表格效果谷歌代码高亮插件 | 1.0.0 | [qining](https://github.com/joyqi) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/GoogleCodePrettify_qining.zip)
+[GravatarServer](https://github.com/kraity/typecho-gravatar) | Gravatar服务器插件(支持QQ头像) | 1.1.1 | [权那他](https://github.com/kraity) | [下载](https://github.com/kraity/typecho-gravatar/archive/master.zip)
 [HelloRedis](https://github.com/1349920358/HelloRedis) | Redis数据库缓存页面加速插件 | 1.1.0 | [Angboo](https://github.com/1349920358) | [下载](https://github.com/1349920358/HelloRedis/archive/master.zip)
 [HideText](https://github.com/journey-ad/HideText-Typecho-Plugin) | 防转载添加不可见版权信息插件 | 0.1 | [journey.ad](https://github.com/journey-ad) | [下载](https://github.com/journey-ad/HideText-Typecho-Plugin/archive/master.zip)
 [HPSitemap](https://github.com/invelop/Typecho-HPSitemap) | 百度Sitemap站点地图生成插件 | 2.9 | Roogle&雷鬼&[锋临](https://github.com/invelop) | [下载](https://github.com/invelop/Typecho-HPSitemap/archive/master.zip)

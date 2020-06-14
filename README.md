@@ -31,15 +31,15 @@
 
 ### 作品索引 (107)
 
-###### TeStore将使用下表“名称”创建安装文件夹，“版本”提示升级，请务必确保文本准确；添加时注意按字母排序，自增作品索引总数，简介不要太长。
+###### TeStore使用下表“名称”创建安装文件夹，“版本”提示升级，请务必确保文本准确；添加时注意按字母排序，自增上方括号内总数，简介不要太长。
 ```
-若用户已安装同名插件TeStore会根据作者判断是否为社区版，故谨记下表中作者署名要与Plugin.php内保持一致(多人用,号或&号分隔)。
+若用户已安装同名插件TeStore会根据作者名判断版本，请确保下表“作者”文本与Plugin.php内的署名保持一致(多人可用,号或&号分隔)。
 ```
 
 名称 | 简介 | 版本 | 作者 | zip包
 ---- | :----: | :---: | ----: | :----:
 [AMP](AMP) | 移动端AMP/MIP页面生成插件 | 0.7.5.3 | [Holmesian](https://github.com/holmesian) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/AMP.zip)
-[APlayerAtBottom](APlayerAtBottom) | 博客吸底播放器插件 | 1.1.1 | [小太](https://github.com/satosouta) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/APlayerAtBottom.zip)
+[APlayerAtBottom](APlayerAtBottom) | Typecho吸底式音乐播放器插件 | 1.1.1 | [小太](https://github.com/satosouta) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/APlayerAtBottom.zip)
 [AjaxComments](AjaxComments) | 嵌套式评论Ajax异步提交插件 | 1.2.0 | [Byends](https://github.com/visamz), Willin Kan | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/AjaxComments.zip)
 [AllowIp](AllowIp) | Typecho后台访问IP白名单插件 | 1.0.1 | [Fuzqing](https://github.com/fuzqing) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/AllowIp.zip)
 [Announcement](Announcement) | 仿Emlog双款悬浮式公告栏插件 | 1.0.0 | [skylzl](https://github.com/xiaogouxo) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/Announcement.zip)
