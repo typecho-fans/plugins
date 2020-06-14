@@ -17,19 +17,18 @@ if ($this->request->is('action=loadlist')) {
 		$pluginDatas = array();
 		//筛选关键词
 		foreach ($pluginData as $plugin) {
-			if (!$keywords || false!==stripos($plugin['pluginName'],$keywords) || false!==stripos($plugin['desc'],$keywords)) {
+			if (!$keywords || false!==stripos($plugin['pluginName'],$keywords) || false!==stripos($plugin['desc'],$keywords) || false!==stripos(htmlspecialchars_decode(strip_tags($plugin['authorHtml'])),$keywords)) {
 				$pluginDatas[] = $plugin;
 			}
 		}
 
 		$installed = $this->getLocalPlugins();
 		$infos = array();
-		$author = '';
 		$pluginIns = array();
 		//检测已安装
 		foreach ($pluginDatas as $key=>$plugin) {
 			if ($infos = $this->getLocalInfos($plugin['pluginName'])) {
-				if ($infos[0]==$plugin['author']) {
+				if ($infos[0]==htmlspecialchars_decode(strip_tags($plugin['authorHtml']))) {
 					$pluginIns[] = $plugin;
 					unset($pluginDatas[$key]);
 				}
@@ -91,54 +90,53 @@ if ($this->request->is('action=loadlist')) {
 						</thead>
 						<tbody>
 							<?php if ($pluginData) : 
-								$source = '';
+								$mark = '';
 								$tefans = false;
 								$url = '';
 								$version = '';
+								$authorHtml = '';
+								$author = '';
 								$authors = array();
 								$update = false;
 								$sites = array();
 								$uninstall = false;
 								foreach ($pluginData[$page] as $plugin) : 
 									$name = $plugin['pluginName'];
-									$source = $plugin['source'];
+									$mark = $plugin['mark'];
 									$url = $plugin['pluginUrl'];
 									//社区维护版标记
-									$tefans = in_array($source,array('Download','N/A','Special'));
+									$tefans = in_array($mark,array('Download','N/A','Special'));
 									$url = $url ? ($tefans ? (strpos($url,'typecho-fans') ? 'https://github.com'.$url : 'https://github.com/typecho-fans/plugins/blob/master/'.$url) : $url) : '#'; ?>
 							<tr id="plugin-<?php echo $name; ?>">
 								<td><a rel="external noopener" href="<?php echo $url; ?>" title="<?php _e('点击查看插件文档'); ?>"<?php if ($url!=='#') echo ' target="_blank"'; ?>><?php echo $name; ?></a>
 								<?php if ($tefans) : ?>
 									<a href="http://typecho-fans.github.io" title="<?php _e('Typecho-Fans社区维护版'); ?>" target="_blank"><img src="<?php $this->options->pluginUrl('TeStore/views/tf.svg'); ?>" alt="typecho-fans"/></a><?php endif;
-								if ($source=='N/A' || $source=='不可用') : ?>
+								if ($mark=='N/A' || $mark=='不可用') : ?>
 									<img src="<?php $this->options->pluginUrl('TeStore/views/na.svg'); ?>" title="<?php _e('已失效或不适用于当前版本'); ?>" alt="n/a"/>
-								<?php elseif ($source=='Special' || $source=='特殊') : ?>
+								<?php elseif ($mark=='Special' || $mark=='特殊') : ?>
 									<img src="<?php $this->options->pluginUrl('TeStore/views/sp.svg'); ?>" title="<?php _e('安装用法特殊请先阅读文档'); ?>" alt="special"/>
 								<?php endif; ?></td>
 								<td><?php echo $plugin['desc']; ?></td>
 								<td><?php $version = $plugin['version'];
 								echo $version;
-								$author = $plugin['author'];
+								$authorHtml = $plugin['authorHtml'];
+								$author = htmlspecialchars_decode(strip_tags($authorHtml));
 								$infos = $this->getLocalInfos($name);
 								//已安装判断升级
 								$update = $infos && $infos[1]<$version;
 								$version = stripos($version,'v')===0 ? substr($version,1) : $version;
-								if ($infos && $infos[0]==$author && $update) : ?>
+								if ($update && $infos[0]==$author) : ?>
 									&#8672 <span class="error"><?php _e('有新版本！'); ?></span></td>
 								<?php endif; ?>
 								<td>
-								<?php $sites = explode(',',$plugin['site']);
-								$authors = explode(', ',$author);
-								//兼容多作者链接
-								foreach ($authors as $key=>$val) : 
-									if (!empty($sites[$key])) : ?><a rel="external noopener" href="<?php echo $sites[$key]; ?>" title="<?php _e('点击访问作者主页'); ?>" target="_blank"><?php endif;
-									echo trim($val);
-									if (!empty($sites[$key])) : ?></a><?php endif;
-									if ($val!==end($authors)) : ?>, <?php endif;
-								endforeach; ?>
+								<?php echo $authorHtml; ?>
 								</td>
 								<td style="text-align:center;">
-								<?php $uninstall = $infos && $infos[0]==$author && !$update; ?>
+								<?php $uninstall = $infos && $infos[0]==$author && !$update;
+								$authors = preg_split('/(,|&)/',$author);
+								foreach ($authors as $key=>$val) : 
+									$authors[$key] = trim($val);
+								endforeach; ?>
 									<form id="operation" action="<?php echo $storeUrl.($uninstall ? 'uninstall' : 'install').'?plugin='.$name.($uninstall ? '' : '&author='.implode('_',$authors).'&zip='.$plugin['zipFile']); ?>" method="post" enctype="application/x-www-form-urlencoded">
 									<button type="submit" class="btn btn-xs <?php echo $uninstall ? 'btn-warn' : 'primary'; ?>" data-name="<?php echo $name; ?>"><?php $uninstall ? _e('删除') : ($update ? _e('升级') : _e('安装')); ?></button>
 									</form>

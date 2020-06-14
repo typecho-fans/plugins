@@ -5,7 +5,7 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
  * 
  * @package TeStore
  * @author 羽中, zhulin3141
- * @version 1.1.4
+ * @version 1.1.5
  * @dependence 13.12.12-*
  * @link https://www.yzmb.me/archives/net/testore-for-typecho
  * @copyright Copyright (c) 2014-2020 Yuzhong Zheng (jzwalk)
