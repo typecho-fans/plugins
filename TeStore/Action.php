@@ -56,7 +56,7 @@ class TeStore_Action extends Typecho_Widget
 		$pluginFile = is_dir($pluginDir) ? $pluginDir.'/Plugin.php' : $pluginDir.'.php';
 		if (is_file($pluginFile)) {
 			$parse = Typecho_Plugin::parseInfo($pluginFile);
-			$infos = array($parse['author'],$parse['version']);
+			$infos = array(strip_tags($parse['author']),strip_tags($parse['version'])); //兼容html混写
 		}
 		return $infos;
 	}
@@ -82,7 +82,7 @@ class TeStore_Action extends Typecho_Widget
 		} else {
 			$html = '';
 			$isRaw = false;
-			$pages = array_filter(preg_split("/(\r|\n|\r\n)/",strip_tags($this->settings->source)));
+			$pages = array_filter(preg_split('/(\r|\n|\r\n)/',strip_tags($this->settings->source)));
 			foreach ($pages as $page) {
 				$page = trim($page);
 				if ($page) {
@@ -104,10 +104,10 @@ class TeStore_Action extends Typecho_Widget
 
 			//解析表格内容
 			if ($html) {
-				$dom = new DOMDocument('1.0','UTF-8');
+				$dom = new DOMDocument('1.0','utf-8');
 				$html = function_exists('mb_convert_encoding') ? mb_convert_encoding($html,'HTML-ENTITIES','UTF-8') : $html;
 				@$dom->loadHTML($html);
-				$trs = $dom->getElementsByTagName("tr");
+				$trs = $dom->getElementsByTagName('tr');
 
 				$tdVal = '';
 				$texts = array();
@@ -117,27 +117,23 @@ class TeStore_Action extends Typecho_Widget
 				$urls = array();
 				foreach ($trs as $trKey=>$trVal) {
 					if ($trVal->parentNode->tagName=='tbody') {
-						//获取tr文本信息
-						foreach ($trVal->childNodes as $td) {
+						//获取td纯文本
+						foreach ($trVal->childNodes as $tdKey=>$td) {
 							$tdVal = $td->nodeValue;
 							if ($tdVal) {
-								$texts[$trKey][] = htmlspecialchars(trim(strip_tags($tdVal)));
+								$texts[$trKey][] = htmlspecialchars(trim($tdVal));
 							}
 						}
-						$tds = $trs->item($trKey)->getElementsByTagName("td");
-						//获取td链接地址
+						$tds = $trs->item($trKey)->getElementsByTagName('td');
+						//获取td元数据
 						foreach ($tds as $tdKey=>$tdVal) {
 							if ($tdKey!==1 && $tdKey!==2) {
-								$a = $tds->item($tdKey)->getElementsByTagName("a");
-								$href = $a->item(0) ? $a->item(0)->getAttribute("href") : '';
-								//处理多作者链接
+								$a = $tds->item($tdKey)->getElementsByTagName('a');
+								$href = $a->item(0) ? $a->item(0)->getAttribute('href') : '';
 								if ($tdKey==3) {
-									$href = '';
-									foreach ($a as $key=>$val) {
-										$href .= ($key==0 ? '' : ',').$val->getAttribute('href');
-									}
+									$href = str_replace(array('<td align="right">','</td>'),'',$dom->saveXML($tds->item($tdKey))); //全取作者栏html
 								}
-								$urls[] = htmlspecialchars($href);
+								$urls[] = trim($href);
 							}
 						}
 					}
@@ -146,12 +142,15 @@ class TeStore_Action extends Typecho_Widget
 				$urls = array_chunk($urls,3);
 
 				//合并关联键名
-				$keys = array('pluginName','desc','version','author','source','pluginUrl','site','zipFile');
+				$keys = array('pluginName','desc','version','mark','pluginUrl','authorHtml','zipFile');
 				$names = array();
+				$vals = array();
 				$datas = array();
 				foreach ($texts as $key=>$val) {
 					$names[] = isset($val[0]) ? $val[0] : $val[1]; //fix for PHP 7.0+
-					$datas[] = array_combine($keys,array_merge($val,$urls[$key]));
+					$vals = array_values(array_filter($val));
+					unset($vals[3]); //去除作者栏text
+					$datas[] = array_combine($keys,array_merge($vals,$urls[$key]));
 				}
 				//按插件名排序
 				array_multisort($names,SORT_ASC,$datas);
@@ -436,7 +435,7 @@ class TeStore_Action extends Typecho_Widget
 	 */
 	private function makedir($path)
 	{
-		$path = preg_replace("/\\\+/",'/',$path);
+		$path = preg_replace('/\\\+/','/',$path);
 		$current = rtrim($path,'/');
 		$last = $current;
 
