@@ -37,6 +37,7 @@
 名称 | 简介 | 版本 | 作者 | zip包
 ---- | :----: | :---: | ----: | :----:
 [Access](https://github.com/kokororin/typecho-plugin-Access) | Typecho查看访客记录统计插件 | 2.0.2 | [Kokororin](https://github.com/kokororin) | [下载](https://github.com/kokororin/typecho-plugin-Access/archive/master.zip)
+[AccessBmob](https://github.com/kraity/typecho-accessBmob) | Bmob后端云数据库版[Access](https://github.com/kokororin/typecho-plugin-Access)插件 | 1.2 | [权那他](https://github.com/kraity) | [下载](https://github.com/kraity/typecho-accessBmob/archive/master.zip)
 [ActiveSubmit](https://github.com/invelop/Typecho-ActiveSubmit) | 文章发布时主动推送百度插件 | 1.0 | [承影](https://github.com/invelop) | [下载](https://github.com/invelop/Typecho-ActiveSubmit/archive/master.zip)
 [Adminer](https://github.com/kokororin/typecho-plugin-adminer) | 后台集成Adminer数据库管理插件 | 1.0 | [kokororin](https://github.com/kokororin) | [下载](https://github.com/kokororin/typecho-plugin-adminer/archive/master.zip)
 [AjaxComment](https://github.com/qlwz/AjaxComment-For-Typecho) | 原生Js评论Ajax异步提交插件 | 1.0.0.2 | [情留メ蚊子](https://github.com/qlwz) | [下载](https://github.com/qlwz/AjaxComment-For-Typecho/archive/master.zip)
@@ -108,6 +109,7 @@
 [Poptrox](https://github.com/99kyuu/Poptrox_for_Typecho) | jQuery全能灯箱弹窗Poptrox插件 | 0.01 | [玖玖kyuu](https://github.com/99kyuu) | [下载](https://github.com/99kyuu/Poptrox_for_Typecho/archive/master.zip)
 [PostToQzone](https://github.com/typecho/plugins/tree/master/PostToQzone) | QQ邮箱同步发布文章到Qzone插件 | 1.0 beta | [blankyao](https://github.com/blankyao) | [不可用](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/PostToQzone.zip)
 [PostToSinaToutiao](https://github.com/jiyeme/PostToSinaToutiao) | 同步发布文章到新浪微博头条插件 | 1.0.6 | [祭夜](https://github.com/jiyeme) | [下载](https://github.com/jiyeme/PostToSinaToutiao/archive/master.zip)
+[Process](https://github.com/Closty/Process) | Typecho多主题页面加载进度条插件 | 2.1.3 | [瓶子](https://github.com/Closty) | [下载](https://github.com/Closty/Process/archive/master.zip)
 [QiniuFile](https://github.com/lscho/QiniuFile_For_Typecho) | 七牛云存储插件(可选本站同步备份) | 0.1 | [lscho](https://github.com/lscho) | [下载](https://github.com/lscho/QiniuFile_For_Typecho/archive/master.zip)
 [QPlayer](https://github.com/Jrohy/QPlayer-Typecho-Plugin) | 页面底部悬浮式音乐播放器插件 | 1.3.4.2 | [Jrohy](https://github.com/Jrohy) | [下载](https://github.com/Jrohy/QPlayer-Typecho-Plugin/archive/master.zip)
 [RandomDescription](https://github.com/phpgao/RandomDescription) | Typecho定时随机站点描述插件 | 1.0 | [老高@PHPer](https://github.com/phpgao) | [下载](https://github.com/phpgao/RandomDescription/archive/master.zip)
@@ -144,6 +146,7 @@
 [UserAgent](https://github.com/UniqueOnly/UserAgent) | 访客浏览器/系统识别与输出插件 | 1.0.0 | [Unique](https://github.com/UniqueOnly) | [下载](https://github.com/UniqueOnly/UserAgent/archive/master.zip)
 [Viewers](https://github.com/tennsinn/Viewers) | 两种模式显示读者墙头像排行插件 | 0.1.0 | [息E-敛](https://github.com/tennsinn) | [下载](https://github.com/tennsinn/Viewers/archive/master.zip)
 [ViewsCounter](https://github.com/Quarkay/Typecho-ViewsCounter) | 统计文章浏览次数并显示排行插件 | 1.0.0 | [Quarkay](https://github.com/Quarkay) | [下载](https://github.com/Quarkay/Typecho-ViewsCounter/archive/master.zip)
+[WeBlog](https://github.com/thinkmoon/WeBlog) | Typecho微信/QQ小程序版插件 | 0.1.9 | [醉月思](https://github.com/thinkmoon) | [特殊](https://github.com/thinkmoon/WeBlog/archive/master.zip)
 [WebTotal](https://github.com/ss7247/Typecon__WebTotal) | 自增统计/输出网站浏览次数插件 | 1.0.0 | [astar](https://github.com/ss7247) | [下载](https://github.com/ss7247/Typecon__WebTotal/archive/master.zip)
 [WechatFans](https://github.com/muzishanshi/WechatFans) | 文章通过微信公众号验证可读插件 | 1.0.3 | [二呆](https://github.com/muzishanshi) | [下载](https://github.com/muzishanshi/WechatFans/archive/master.zip)
 [WeiboFile](https://github.com/muzishanshi/WeiboFile) | 微博等多平台图床+视频上传插件 | 1.0.20 | [二呆](https://github.com/muzishanshi) | [下载](https://github.com/muzishanshi/WeiboFile/archive/master.zip)
