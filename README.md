@@ -33,7 +33,7 @@
 
 ###### TeStore将使用下表“名称”创建安装文件夹，“版本”提示升级，请务必确保文本准确；添加时注意按字母排序，自增作品索引总数，简介不要太长。
 ```
-若用户已安装同名插件TeStore会根据作者判断是否为社区版，故谨记下表中作者署名要与Plugin.php内保持一致(多人用,号加空格分隔)。
+若用户已安装同名插件TeStore会根据作者判断是否为社区版，故谨记下表中作者署名要与Plugin.php内保持一致(多人用,号或&号分隔)。
 ```
 
 名称 | 简介 | 版本 | 作者 | zip包
@@ -87,7 +87,7 @@
 [IQapTcha](IQapTcha) | 评论滑动解锁验证+规则过滤插件 | 1.1.2 | [Byends](https://github.com/visamz) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-H_to_L/IQapTcha.zip)
 [JSON](JSON) | Json格式输出博客数据API插件 | 0.1 | [公子](https://github.com/lizheming) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-H_to_L/JSON.zip)
 [JWPlayer](JWPlayer) | Html5流媒体播放器Jwplayer插件 | 1.0.9 | [羽中](https://github.com/jzwalk) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-H_to_L/JWPlayer.zip)
-[JustFeed](JustFeed) | 文章Feed尾部添加定制信息插件 | 0.1.2 | [eallion](https://eallion.com), jKey | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-H_to_L/JustFeed.zip)
+[JustFeed](JustFeed) | 文章Feed尾部添加定制信息插件 | 0.1.2 | [eallion](https://github.com/eallion), jKey | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-H_to_L/JustFeed.zip)
 [Keywords](Keywords) | 文章指定关键词自动添加链接插件 | 1.0.8 | [羽中](https://github.com/jzwalk) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-H_to_L/Keywords.zip)
 [LREditor](LREditor) | Markdown编辑器左右预览插件 | 0.0.4 | [公子](http://github.com/lizheming) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-H_to_L/LREditor.zip)
 [Like](Like) | Typecho文章点赞与排行统计插件 | 1.0.1 | [skylzl](https://github.com/xiaogouxo) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-H_to_L/Like.zip)
@@ -122,7 +122,7 @@
 [Subscriber](Subscriber) | 指定文章/内容对登录会员可见插件 | 1.0.0beta | [羽中](https://github.com/jzwalk) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/Subscriber.zip)
 [SyncPost](SyncPost) | 新浪/腾讯微博和豆瓣更新推送插件 | 1.0.0 | [冰剑](https://github.com/binjoo) | [N/A](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/SyncPost.zip)
 [TeKit](TeKit) | 常用侧边栏文章/评论数据输出插件 | 2.0.0 | [冰剑](https://github.com/binjoo) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/TeKit.zip)
-[TeStore](TeStore) | 新GitHub表格解析版插件仓库插件 | 1.1.4 | [羽中](https://github.com/jzwalk), [zhulin3141](https://github.com/zhulin3141) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/TeStore.zip)
+[TeStore](TeStore) | 新GitHub表格解析版插件仓库插件 | 1.1.5 | [羽中](https://github.com/jzwalk), [zhulin3141](https://github.com/zhulin3141) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/TeStore.zip)
 [ThemeDemo](ThemeDemo) | 用页面参数直接预览主题外观插件 | 1.0.1 | [doudou](https://github.com/doudoutime) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/ThemeDemo.zip)
 [Tinyfader](Tinyfader) | Typecho简易首页图片轮播插件 | 1.0.0 | Willin Kan | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/Tinyfader.zip)
 [TopTop](TopTop) | 卡通吊绳风格点击返回顶部按钮插件 | 1.0.0 | [Heeeepin](https://github.com/ghosx) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/TopTop.zip)

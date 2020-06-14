@@ -31,7 +31,7 @@
 
 ###### TeStore将使用下表“名称”创建安装文件夹，“版本”提示升级，请务必确保文本准确；添加时注意按字母排序，自增作品索引总数，简介不要太长。
 ```
-若用户已安装同名插件TeStore会根据作者判断是否为社区版，故谨记下表中作者署名要与Plugin.php内保持一致(多人用,号加空格分隔)。
+若用户已安装同名插件TeStore会根据作者判断是否为社区版，故谨记下表中作者署名要与Plugin.php内保持一致(多人用,号或&号分隔)。
 ```
 
 名称 | 简介 | 版本 | 作者 | zip包
@@ -53,7 +53,7 @@
 [BlockComment](https://github.com/typecho/plugins/tree/master/BlockComment) | Typecho评论来路IP黑名单插件 | 0.0.1 | [明城](https://github.com/mingcheng) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/BlockComment.zip)
 [BlockIP](https://github.com/kokororin/typecho-plugin-BlockIP) | Typecho访问前台IP黑名单插件 | 1.0 | [Kokororin](https://github.com/kokororin) | [下载](https://github.com/kokororin/typecho-plugin-BlockIP/archive/master.zip)
 [Calendar](https://github.com/istobran/typecho-calender-plugin) | Typecho侧边栏显示日历插件 | 1.0.0 | [BangZ](https://github.com/istobran) | [下载](https://github.com/istobran/typecho-calender-plugin/archive/master.zip)
-[Captcha](https://github.com/KimiChen/Typecho-Captcha) | Typecho经典版评论验证码插件 | 1.0.0 | [Kimi](https://github.com/KimiChen), [qining](https://github.com/joyqi) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/Captcha.zip)
+[Captcha](https://github.com/KimiChen/Typecho-Captcha) | Typecho经典版评论验证码插件 | 1.0.0 | [qining](https://github.com/joyqi) & [Kimi](https://github.com/KimiChen) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/Captcha.zip)
 [CdnHelper](https://github.com/phpgao/CdnHelper) | 替换图片地址为CDN前缀插件 | 0.1 | [老高](https://github.com/phpgao) | [下载](https://github.com/phpgao/CdnHelper/archive/master.zip)
 [CodeHighlighter](https://github.com/Copterfly/CodeHighlighter-for-Typecho) | Prism代码高亮插件(支持工具条) | 1.0.0 | [Copterfly](https://github.com/Copterfly) | [下载](https://github.com/Copterfly/CodeHighlighter-for-Typecho/archive/master.zip)
 [Collection](https://github.com/tennsinn/Typecho_Plugin--Collection) | Typecho记录管理收藏条目插件 | 1.6.0 | [息E-敛](https://github.com/tennsinn) | [下载](https://github.com/tennsinn/Typecho_Plugin--Collection/archive/master.zip)
@@ -78,7 +78,7 @@
 [GoogleCodePrettify](https://github.com/typecho/plugins/tree/master/GoogleCodePrettify) | 经典版表格效果谷歌代码高亮插件 | 1.0.0 | [qining](https://github.com/joyqi) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/GoogleCodePrettify_qining.zip)
 [HelloRedis](https://github.com/1349920358/HelloRedis) | Redis数据库缓存页面加速插件 | 1.1.0 | [Angboo](https://github.com/1349920358) | [下载](https://github.com/1349920358/HelloRedis/archive/master.zip)
 [HideText](https://github.com/journey-ad/HideText-Typecho-Plugin) | 防转载添加不可见版权信息插件 | 0.1 | [journey.ad](https://github.com/journey-ad) | [下载](https://github.com/journey-ad/HideText-Typecho-Plugin/archive/master.zip)
-[HPSitemap](https://github.com/invelop/Typecho-HPSitemap) | 百度Sitemap站点地图生成插件 | 2.9 | [Roogle&雷鬼&锋临](https://github.com/invelop) | [下载](https://github.com/invelop/Typecho-HPSitemap/archive/master.zip)
+[HPSitemap](https://github.com/invelop/Typecho-HPSitemap) | 百度Sitemap站点地图生成插件 | 2.9 | Roogle&雷鬼&[锋临](https://github.com/invelop) | [下载](https://github.com/invelop/Typecho-HPSitemap/archive/master.zip)
 [HTMLCompress](https://github.com/kokororin/typecho-plugin-HTMLCompress) | 前台Html代码去可读性压缩插件 | 1.3 | [Kokororin](https://github.com/kokororin) | [下载](https://github.com/kokororin/typecho-plugin-HTMLCompress/archive/master.zip)
 [Huaji](https://github.com/journey-ad/Huaji-Typecho-Plugin) | (娱乐向)滑稽表情动态交互挂件插件 | 0.1 | [journey.ad](https://github.com/journey-ad) | [下载](https://github.com/journey-ad/Huaji-Typecho-Plugin/archive/master.zip)
 [HyperMD](https://github.com/journey-ad/HyperMD-Typecho-Plugin) | Markdown所见即所得编辑器插件 | 0.1 | [journey.ad](https://github.com/journey-ad) | [下载](https://github.com/journey-ad/HyperMD-Typecho-Plugin/archive/master.zip)
