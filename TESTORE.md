@@ -27,7 +27,7 @@
 
  > 下表中的下载链接文字可用于附加图标：`下载`即非社区版，`不可用`显示为:no_entry:，`特殊`显示:warning:即安装或启用方法特殊。
 
-### 插件信息 (140)
+### 插件信息 (144)
 
 ###### TeStore使用下表“名称”创建安装文件夹，“版本”提示升级，请务必确保文本准确；添加时注意按字母排序，自增上方括号内总数，简介不要太长。
 ```
@@ -126,12 +126,14 @@
 [SimpleCode](https://github.com/typecho/plugins/blob/master/SimpleCode.php) | 使用PHP自带函数高亮代码插件 | 1.0.2 | [qining](https://github.com/joyqi) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/SimpleCode.zip)
 [SimpleCommentCaptcha](https://github.com/Quarkay/Typecho-SimpleCommentCaptcha) | 无感知运算数值防垃圾评论插件 | 1.0.0 | [Quarkay](https://github.com/Quarkay) | [下载](https://github.com/Quarkay/Typecho-SimpleCommentCaptcha/archive/master.zip)
 [SiteRunningTime](https://github.com/zhusaidong/SiteRunningTime) | 网站底部显示系统运行时长插件 | 1.5.1 | [上官元恒](https://github.com/zhusaidong) | [下载](https://github.com/zhusaidong/SiteRunningTime/archive/master.zip)
+[SlideShow](https://github.com/chinobing/Typecho-SlideShow) | 热门文章输出为轮播幻灯展示插件 | 1.0.0 | [薯仔头](https://github.com/chinobing) | [下载](https://github.com/chinobing/Typecho-SlideShow/archive/master.zip)
 [Snow](https://github.com/journey-ad/Snow-Typecho-Plugin) | 原生Js多项定制页面下雪特效插件 | 1.0.0 | [journey.ad](https://github.com/journey-ad) | [下载](https://github.com/journey-ad/Snow-Typecho-Plugin/archive/master.zip)
 [SpammersGoAway](https://github.com/oott123/SpammersGoAway) | 简易挑战码机制防垃圾评论插件 | 0.0.1 | [oott123](https://github.com/oott123) | [下载](https://github.com/oott123/SpammersGoAway/archive/master.zip)
 [StreakRain](https://github.com/zhusaidong/streak-rain-typecho-plugin) | (娱乐向)动态线条雨背景效果插件 | 1.1.0 | [上官元恒](https://github.com/zhusaidong) | [下载](https://github.com/zhusaidong/streak-rain-typecho-plugin/archive/master.zip)
 [TableOfContents](https://github.com/phpgao/TableOfContents) | 下拉式文章内容目录自动生成插件 | 0.3 | [老高](https://github.com/phpgao) | [下载](https://github.com/phpgao/TableOfContents/archive/master.zip)
 [TeComment](https://github.com/jiangmuzi/TeComment) | 评论增强插件(工具栏/Ajax提交等) | 2.0.0 | [绛木子](https://github.com/jiangmuzi) | [下载](https://github.com/jiangmuzi/TeComment/archive/master.zip)
 [TeConnect](https://github.com/jiangmuzi/TeConnect) | 使用QQ/微博账号注册登录插件 | 1.0 | [绛木子](https://github.com/jiangmuzi) | [特殊](https://github.com/jiangmuzi/TeConnect/archive/master.zip)
+[TeePay](https://github.com/mhcyong/TeePay) | 自媒体付费阅读插件(免费基础版) | 1.5.2 | [胖蒜网](https://github.com/mhcyong) | [下载](https://github.com/mhcyong/TeePay/archive/master.zip)
 [TeStat](https://github.com/jiangmuzi/TeStat) | 文章浏览/点赞/运行数据统计插件 | 1.1 | [绛木子](https://github.com/jiangmuzi) | [下载](https://github.com/jiangmuzi/TeStat/archive/master.zip)
 [TeThumbnail](https://github.com/jiangmuzi/TeThumbnail) | 文章模板输出自动生成缩略图插件 | 1.0.0 | [绛木子](https://github.com/jiangmuzi) | [下载](https://github.com/jiangmuzi/TeThumbnail/archive/master.zip)
 [Textends](https://github.com/jiangmuzi/Textends) | 常用模版输出效果多功能扩展插件 | 1.0.0 | [绛木子](https://github.com/jiangmuzi) | [下载](https://github.com/jiangmuzi/Textends/archive/master.zip)
@@ -171,6 +173,7 @@
 [gifstop](https://github.com/jrotty/typecho-gifstop) | 阻止Gif格式图片动画自动播放插件 | 1.0 | [Jrotty](https://github.com/jrotty) | [下载](https://github.com/jrotty/typecho-gifstop/archive/master.zip)
 [iThumb](https://github.com/benzBrake/iThumb) | 从附件图片中选取文章缩略图插件 | 0.1.4 | [Ryan](https://github.com/benzBrake) | [下载](https://github.com/benzBrake/iThumb/archive/master.zip)
 [kiana](https://github.com/jrotty/typecho-kiana) | (娱乐向)萌萌哒小萝莉卡通挂件插件 | 1.0 | [jrotty](https://github.com/jrotty) | [下载](https://github.com/jrotty/typecho-kiana/archive/master.zip)
+[nginxhelper](https://github.com/gzare/Typecho-NginxHelper) | Typecho自动清理Nginx缓存插件 | 0.1 Beta | [Zare](https://github.com/gzare) | [特殊](https://github.com/gzare/Typecho-NginxHelper/archive/master.zip)
 [notice](https://github.com/jrotty/typecho-for-notice) | 判断来路地址输出欢迎消息插件 | 0.3 | [jrotty](https://github.com/jrotty) | [下载](https://github.com/jrotty/typecho-for-notice/archive/master.zip)
 [platformSelect](https://github.com/internelp/platformSelect) | 自定义字段设置文章所属平台插件 | 1.0.0 | [枫叶](https://github.com/internelp) | [下载](https://github.com/internelp/platformSelect/archive/master.zip)
 [runPHP](https://github.com/ChinaSiro/typecho_plugins_runPHP) | 自定义字段调用指定PHP文件插件 | 1.0.0 | [ChinaSiro](https://github.com/ChinaSiro) | [下载](https://github.com/ChinaSiro/typecho_plugins_runPHP/archive/master.zip)
