@@ -3,7 +3,7 @@
  * 又拍云（UpYun）文件管理 Modified by <a href="https://blog.sspirits.top">SSpirits</a>
  *
  * @package UpyunFile
- * @author codesee
+ * @author SSpirits,Ryan,codesee
  * @version 1.0.4
  * @link https://blog.sspirits.top
  * @dependence 1.0-*
