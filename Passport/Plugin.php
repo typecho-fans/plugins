@@ -4,7 +4,7 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
  * 密码找回插件
  *
  * @package Passport
- * @author 小否先生
+ * @author 小否先生,ShingChi
  * @version 1.0.1
  * @link https://github.com/mhcyong
  * @dependence 14.5.26-*
