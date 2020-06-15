@@ -42,7 +42,7 @@
 [Adminer](https://github.com/kokororin/typecho-plugin-adminer) | 后台集成Adminer数据库管理插件 | 1.0 | [kokororin](https://github.com/kokororin) | [下载](https://github.com/kokororin/typecho-plugin-adminer/archive/master.zip)
 [AjaxComment](https://github.com/qlwz/AjaxComment-For-Typecho) | 原生Js评论Ajax异步提交插件 | 1.0.0.2 | [情留メ蚊子](https://github.com/qlwz) | [下载](https://github.com/qlwz/AjaxComment-For-Typecho/archive/master.zip)
 [Album](https://github.com/plsYou/Album) | Typecho模版型相册系统插件 | 1.2 | [我本奈何](https://github.com/plsYou) | [下载](https://github.com/plsYou/Album/archive/master.zip)
-[APlayerAtBottom](APlayerAtBottom) | Typecho吸底式音乐播放器插件 | 1.1.1 | [小太](https://github.com/satosouta) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/APlayerAtBottom.zip)
+[APlayerAtBottom](https://github.com/SatoSouta/APlayerAtBottom) | Typecho吸底式音乐播放器插件 | 1.1.1 | [小太](https://github.com/SatoSouta) | [下载](https://github.com/SatoSouta/APlayerAtBottom/archive/master.zip)
 [ArticleImg](https://github.com/istobran/Typecho-Plugin-ArticleImg) | 自建字段提取文章封面图插件 | 1.0.0 | [BangZ](https://github.com/istobran) | [下载](https://github.com/istobran/Typecho-Plugin-ArticleImg/archive/master.zip)
 [Akismet](https://github.com/typecho/plugins/tree/master/Akismet) | 反垃圾评论服务Akismet插件 | 1.1.4 | [qining](https://github.com/joyqi) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/Akismet.zip)
 [AliUpload](https://github.com/typecho/plugins/tree/master/AliUpload) | 经典版阿里云储存附件插件 | 1.0.0 Beta | [loftor](https://github.com/loftor-git) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/AliUpload.zip)
