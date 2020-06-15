@@ -7,7 +7,7 @@ Typecho 密码找回插件
 
 # 使用帮助
 1、上传插件包  
-2、打开 admin/login.php 文件，做以下修改：
+2、:warning:打开 admin/login.php 文件，做以下修改：
 ```
 // 找到这里
 <?php if($options->allowRegister): ?>
