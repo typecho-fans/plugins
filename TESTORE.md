@@ -27,7 +27,7 @@
 
  > 下表中的下载链接文字可用于附加图标：`下载`即非社区版，`不可用`显示为:no_entry:，`特殊`显示:warning:即安装或启用方法特殊。
 
-### 插件信息 (151)
+### 插件信息 (153)
 
 ###### TeStore使用下表“名称”创建安装文件夹，“版本”提示升级，请务必确保文本准确；添加时注意按字母排序，自增上方括号内总数，简介不要太长。
 ```
@@ -48,6 +48,7 @@
 [AliUpload](https://github.com/typecho/plugins/tree/master/AliUpload) | 经典版阿里云储存附件插件 | 1.0.0 Beta | [loftor](https://github.com/loftor-git) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/AliUpload.zip)
 [Avartar](https://github.com/typecho/plugins/blob/master/Avartar.php) | 自定义替换头像代理地址插件 | 1.0.0 Beta | [loftor](https://github.com/loftor-git) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/Avartar.zip)
 [AutoBaiduSubmit](https://github.com/jinfeijie/AutoBaiduSubmit) | 访问页面自动提交百度链接插件 | 1.0.2 | [JinFeiJie](https://github.com/jinfeijie) | [下载](https://github.com/jinfeijie/AutoBaiduSubmit/archive/1.0.2.zip)
+[AutoSaveImage](https://github.com/gxuzf/AutoSaveImage) | 自动下载替换文内远程图片插件 | 1.0.0 | dream | [下载](https://github.com/gxuzf/AutoSaveImage/archive/master.zip)
 [B3logForHacPai](https://github.com/DT27/B3logForHacPai) | 黑客派社区API实时同步推送插件 | 1.0.1 | [DT27](https://github.com/DT27) | [下载](https://github.com/DT27/B3logForHacPai/archive/master.zip)
 [BaiduSubmit](https://github.com/phpgao/BaiduSubmit) | 推送Sitemap文章链接至百度插件 | 0.5.2 | [老高](https://github.com/phpgao) | [下载](https://github.com/phpgao/BaiduSubmit/archive/master.zip)
 [BaiduTextCensor](https://github.com/sy-records/ty-baidu-textcensor) | 百度文本审核过滤敏感内容插件 | 1.0.1 | [沈唁](https://github.com/sy-records) | [下载](https://github.com/sy-records/ty-baidu-textcensor/archive/master.zip)
@@ -96,7 +97,6 @@
 [IShareEcho](https://github.com/pluveto/IShareEcho) | 在模板输出分享按钮及二维码插件 | 1.0.0 | [pluvet](https://github.com/pluveto) | [下载](https://github.com/pluveto/IShareEcho/archive/master.zip)
 [KaTeX4Typecho](https://github.com/vc12345679/KaTeX4Typecho) | 基于CDN的KaTeX公式渲染插件 | 0.0.1 | [vc12345679](https://github.com/vc12345679) | [下载](https://github.com/vc12345679/KaTeX4Typecho/archive/master.zip)
 [Kefu](https://github.com/1628972070/typecho) | Typecho网站右侧浮动客服插件 | 1.0.0 | [双少](https://github.com/1628972070) | [下载](https://github.com/1628972070/typecho/archive/master.zip)
-[kiana](https://github.com/jrotty/typecho-kiana) | 二次元萌萌哒小萝莉挂件插件 | 1.0 | [jrotty](https://github.com/jrotty) | [下载](https://github.com/jrotty/typecho-kiana/archive/master.zip)
 [KindEditor](https://github.com/hizhengfu/KindEditor) | 所见即所得富文本编辑器插件 | 4.0.1 | [hizhengfu](https://github.com/hizhengfu) | [下载](https://github.com/hizhengfu/KindEditor/archive/master.zip)
 [KodoForTypecho](https://github.com/sy-records/KodoForTypecho) | 七牛云KODO作附件存储空间插件 | 1.0.0 | [沈唁](https://github.com/sy-records) | [下载](https://github.com/sy-records/KodoForTypecho/archive/master.zip)
 [LaTex](https://github.com/typecho/plugins/tree/master/LaTex) | Markdown版LaTex公式解析插件 | 1.1.0 | [mutoo](https://github.com/mutoo) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-H_to_L/LaTex.zip)
@@ -110,6 +110,7 @@
 [MemorialDay](https://github.com/sy-records/MemorialDay) | 公祭哀悼日网站应用灰色滤镜插件 | 1.0.0 | [沈唁](https://github.com/sy-records) | [下载](https://github.com/sy-records/MemorialDay/archive/master.zip)
 [Messages](https://github.com/kraity/Messages) | [南博](https://nabo.krait.cn)App专用消息推送模块插件 | 1.0 | [权那他](https://github.com/kraity) | [下载](https://github.com/kraity/Messages/archive/master.zip)
 [Meting](https://github.com/MoePlayer/APlayer-Typecho) | 五大云音乐平台解析播放器插件 | 2.1.2 | [METO](https://github.com/metowolf) | [下载](https://github.com/MoePlayer/APlayer-Typecho/archive/master.zip)
+[MouseFloating](https://github.com/icy2003/typecho-MouseFloating) | 随机漂浮文字跟随鼠标特效插件 | 1.0.0 | [icy2003](https://github.com/icy2003/typecho-MouseFloating) | [下载](https://github.com/icy2003/typecho-MouseFloating/archive/master.zip)
 [Notes](https://github.com/ghostboyzone/typecho-notes-plugin) | Markdown编辑器版便签系统插件 | 0.0.1 | [GhostBoyZone](https://github.com/ghostboyzone) | [下载](https://github.com/ghostboyzone/typecho-notes-plugin/archive/master.zip)
 [PageToLinks](https://github.com/typecho/plugins/blob/master/PageToLinks.php) | 独立页面友情链接转侧边栏插件 | 1.0.0 | [qining](https://github.com/joyqi) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/PageToLinks.zip)
 [PandaBangumi](https://github.com/AlanDecode/PandaBangumi-Typecho-Plugin) | Bangumi番剧列表展示功能插件 | 2.3 | [熊猫小A](https://github.com/AlanDecode) | [下载](https://github.com/AlanDecode/PandaBangumi-Typecho-Plugin/archive/master.zip)
@@ -160,6 +161,7 @@
 [Tp2MD](https://github.com/AlanDecode/Typecho-Plugin-Tp2MD) | 文章数据导出Markdown文件插件 | 1.1 | [熊猫小A](https://github.com/AlanDecode) | [下载](https://github.com/AlanDecode/Typecho-Plugin-Tp2MD/archive/master.zip)
 [UploadGithubForTypecho](https://github.com/AyagawaSeirin/UploadGithubForTypecho) | 附件使用GitHub存储插件(jsDelivr加速) | 1.1.0 | [AyagawaSeirin](https://github.com/AyagawaSeirin) | [下载](https://github.com/AyagawaSeirin/UploadGithubForTypecho/archive/master.zip)
 [UserAgent](https://github.com/UniqueOnly/UserAgent) | 访客浏览器/系统识别与输出插件 | 1.0.0 | [Unique](https://github.com/UniqueOnly) | [下载](https://github.com/UniqueOnly/UserAgent/archive/master.zip)
+[VariousCaptcha](https://github.com/jan-bar/typecho/blob/master/VariousCaptcha) | Typecho多种样式图片验证码插件 | 0.0.1 | [你好啊007](https://github.com/jan-bar) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/VariousCaptcha.zip)
 [Viewers](https://github.com/tennsinn/Viewers) | 两种模式显示读者墙头像排行插件 | 0.1.0 | [息E-敛](https://github.com/tennsinn) | [下载](https://github.com/tennsinn/Viewers/archive/master.zip)
 [ViewsCounter](https://github.com/Quarkay/Typecho-ViewsCounter) | 统计文章浏览次数并显示排行插件 | 1.0.0 | [Quarkay](https://github.com/Quarkay) | [下载](https://github.com/Quarkay/Typecho-ViewsCounter/archive/master.zip)
 [WeBlog](https://github.com/thinkmoon/WeBlog) | Typecho微信/QQ小程序版插件 | 0.1.9 | [醉月思](https://github.com/thinkmoon) | [特殊](https://github.com/thinkmoon/WeBlog/archive/master.zip)
