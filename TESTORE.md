@@ -27,7 +27,7 @@
 
  > 下表中的下载链接文字可用于附加图标：`下载`即非社区版，`不可用`显示为:no_entry:，`特殊`显示:warning:即安装或启用方法特殊。
 
-### 插件信息 (158)
+### 插件信息 (165)
 
 ###### TeStore使用下表“名称”创建安装文件夹，“版本”提示升级，请务必确保文本准确；添加时注意按字母排序，自增上方括号内总数，简介不要太长。
 ```
@@ -52,6 +52,7 @@
 [AutoSaveImage](https://github.com/gxuzf/AutoSaveImage) | 自动下载替换文内远程图片插件 | 1.0.0 | dream | [下载](https://github.com/gxuzf/AutoSaveImage/archive/master.zip)
 [Avartar](https://github.com/typecho/plugins/blob/master/Avartar.php) | 自定义替换头像代理地址插件 | 1.0.0 Beta | [loftor](https://github.com/loftor-git) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/Avartar.zip)
 [B3logForHacPai](https://github.com/DT27/B3logForHacPai) | 黑客派社区API实时同步推送插件 | 1.0.1 | [DT27](https://github.com/DT27) | [下载](https://github.com/DT27/B3logForHacPai/archive/master.zip)
+[BaiduSlug](https://github.com/gischuck/BaiduSlug) | 百度翻译API自动生成slug名插件 | 1.0 | [Chuck](https://github.com/gischuck) | [下载](https://github.com/gischuck/BaiduSlug/archive/master.zip)
 [BaiduSubmit](https://github.com/phpgao/BaiduSubmit) | 推送Sitemap文章链接至百度插件 | 0.5.2 | [老高](https://github.com/phpgao) | [下载](https://github.com/phpgao/BaiduSubmit/archive/master.zip)
 [BaiduTextCensor](https://github.com/sy-records/ty-baidu-textcensor) | 百度文本审核过滤敏感内容插件 | 1.0.1 | [沈唁](https://github.com/sy-records) | [下载](https://github.com/sy-records/ty-baidu-textcensor/archive/master.zip)
 [BangumiList](https://github.com/ShadowySpirits/BangumiList) | 短代码输出Bangumi追番列表插件 | 1.0.0 | [SSpirits](https://github.com/ShadowySpirits) | [下载](https://github.com/ShadowySpirits/BangumiList/archive/master.zip)
@@ -101,6 +102,7 @@
 [HyperMD](https://github.com/journey-ad/HyperMD-Typecho-Plugin) | Markdown所见即所得编辑器插件 | 0.1 | [journey.ad](https://github.com/journey-ad) | [下载](https://github.com/journey-ad/HyperMD-Typecho-Plugin/archive/master.zip)
 [IShareEcho](https://github.com/pluveto/IShareEcho) | 在模板输出分享按钮及二维码插件 | 1.0.0 | [pluvet](https://github.com/pluveto) | [下载](https://github.com/pluveto/IShareEcho/archive/master.zip)
 [ImageBox](https://github.com/journey-ad/Image-Box-Typecho-Plugin) | 简易jQuery图片灯箱弹窗特效插件 | 0.1 | [journey.ad](https://github.com/journey-ad) | [下载](https://github.com/journey-ad/Image-Box-Typecho-Plugin/archive/master.zip)
+[InvitationCode](https://gitee.com/cx-a/TypechoInvitationCode) | Typecho自动生成注册邀请码插件 | 1.2.2 | [晨曦啊](https://gitee.com/cx-a) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-H_to_L/InvitationCode.zip)
 [KaTeX4Typecho](https://github.com/vc12345679/KaTeX4Typecho) | 基于CDN的KaTeX公式渲染插件 | 0.0.1 | [vc12345679](https://github.com/vc12345679) | [下载](https://github.com/vc12345679/KaTeX4Typecho/archive/master.zip)
 [Kefu](https://github.com/1628972070/typecho) | Typecho网站右侧浮动客服插件 | 1.0.0 | [双少](https://github.com/1628972070) | [下载](https://github.com/1628972070/typecho/archive/master.zip)
 [KindEditor](https://github.com/hizhengfu/KindEditor) | 所见即所得富文本编辑器插件 | 4.0.1 | [hizhengfu](https://github.com/hizhengfu) | [下载](https://github.com/hizhengfu/KindEditor/archive/master.zip)
@@ -142,6 +144,7 @@
 [SimpleCode](https://github.com/typecho/plugins/blob/master/SimpleCode.php) | 使用PHP自带函数高亮代码插件 | 1.0.2 | [qining](https://github.com/joyqi) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/SimpleCode.zip)
 [SimpleCommentCaptcha](https://github.com/Quarkay/Typecho-SimpleCommentCaptcha) | 无感知运算数值防垃圾评论插件 | 1.0.0 | [Quarkay](https://github.com/Quarkay) | [下载](https://github.com/Quarkay/Typecho-SimpleCommentCaptcha/archive/master.zip)
 [SiteRunningTime](https://github.com/zhusaidong/SiteRunningTime) | 网站底部显示系统运行时长插件 | 1.5.1 | [上官元恒](https://github.com/zhusaidong) | [下载](https://github.com/zhusaidong/SiteRunningTime/archive/master.zip)
+[SkyCaiji](http://forum.typecho.org/viewtopic.php?f=6&t=11954) | Typecho[蓝天采集器](http://www.skycaiji.com)一键部署插件 | 1.0.0 | [skycaiji](https://github.com/zorlan) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/SkyCaiji.zip)
 [SlideShow](https://github.com/chinobing/Typecho-SlideShow) | 热门文章输出为轮播幻灯展示插件 | 1.0.0 | [薯仔头](https://github.com/chinobing) | [下载](https://github.com/chinobing/Typecho-SlideShow/archive/master.zip)
 [Snow](https://github.com/journey-ad/Snow-Typecho-Plugin) | 原生Js多项定制页面下雪特效插件 | 1.0.0 | [journey.ad](https://github.com/journey-ad) | [下载](https://github.com/journey-ad/Snow-Typecho-Plugin/archive/master.zip)
 [SpammersGoAway](https://github.com/oott123/SpammersGoAway) | 简易挑战码机制防垃圾评论插件 | 0.0.1 | [oott123](https://github.com/oott123) | [下载](https://github.com/oott123/SpammersGoAway/archive/master.zip)
