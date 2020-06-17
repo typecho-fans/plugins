@@ -27,7 +27,7 @@
 
  > 下表中的下载链接文字可用于附加图标：`下载`即非社区版，`不可用`显示为:no_entry:，`特殊`显示:warning:即安装或启用方法特殊。
 
-### 插件信息 (175)
+### 插件信息 (179)
 
 ###### TeStore使用下表“名称”创建安装文件夹，“版本”提示升级，请务必确保文本准确；添加时注意按字母排序，自增上方括号内总数，简介不要太长。
 ```
@@ -53,6 +53,7 @@
 [AutoSaveImage](https://github.com/gxuzf/AutoSaveImage) | 自动下载替换文内远程图片插件 | 1.0.0 | dream | [下载](https://github.com/gxuzf/AutoSaveImage/archive/master.zip)
 [Avartar](https://github.com/typecho/plugins/blob/master/Avartar.php) | 自定义替换头像代理地址插件 | 1.0.0 Beta | [loftor](https://github.com/loftor-git) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/Avartar.zip)
 [B3logForHacPai](https://github.com/DT27/B3logForHacPai) | 黑客派社区API实时同步推送插件 | 1.0.1 | [DT27](https://github.com/DT27) | [下载](https://github.com/DT27/B3logForHacPai/archive/master.zip)
+[BaiduLinkSeo](https://github.com/gischuck/BaiduSlug) | Typecho百度站长工具SEO插件 | 1.0.1 | [dlmg](https://github.com/thisMG/SEO-) | [特殊](https://github.com/thisMG/SEO-/archive/master.zip)
 [BaiduSlug](https://github.com/gischuck/BaiduSlug) | 百度翻译API自动生成slug名插件 | 1.0 | [Chuck](https://github.com/gischuck) | [下载](https://github.com/gischuck/BaiduSlug/archive/master.zip)
 [BaiduSubmit](https://github.com/phpgao/BaiduSubmit) | 推送Sitemap文章链接至百度插件 | 0.5.2 | [老高](https://github.com/phpgao) | [下载](https://github.com/phpgao/BaiduSubmit/archive/master.zip)
 [BaiduTextCensor](https://github.com/sy-records/ty-baidu-textcensor) | 百度文本审核过滤敏感内容插件 | 1.0.1 | [沈唁](https://github.com/sy-records) | [下载](https://github.com/sy-records/ty-baidu-textcensor/archive/master.zip)
@@ -144,6 +145,7 @@
 [Rdog](https://github.com/jrotty/Rdog) | 注册机制优化/发文自动审核插件 | 1.3.0 | [泽泽](https://github.com/jrotty) | [下载](https://github.com/jrotty/Rdog/archive/master.zip)
 [Restful](https://github.com/moefront/typecho-plugin-Restful) | Typecho开放API插件(输出/提交) | 1.2.0 | [MoeFront Studio](https://github.com/moefront) | [下载](https://github.com/moefront/typecho-plugin-Restful/archive/master.zip)
 [Reward](https://github.com/kyuuseiryuu/typecho-plugin-reward) | 文章添加支付宝当面付按钮插件 | 1.0 | [KyuuSeiryuu](https://github.com/kyuuseiryuu) | [不可用](https://github.com/kyuuseiryuu/typecho-plugin-reward/archive/master.zip)
+[SEO](http://forum.typecho.org/viewtopic.php?f=6&t=11523) | 自定义字段替换文章SEO标签插件 | 0.0.1 | [Ning](http://printf.cn) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/SEO.zip)
 [SaHtmlCache](https://github.com/cnsamool/SaHtmlCache-For-Typecho) | Typecho生成Html静态缓存插件 | 1.0.0 | [Samool](https://github.com/cnsamool) | [特殊](https://github.com/cnsamool/SaHtmlCache-For-Typecho/archive/master.zip)
 [SaeUpload](https://github.com/KimiChen/Typecho-SaeUpload) | 新浪云引擎SAE上传附件专用插件 | 1.0.0 Beta | [Kimi](https://github.com/KimiChen) | [下载](https://github.com/KimiChen/Typecho-SaeUpload/archive/master.zip)
 [SecCode](https://521-wf.com/archives/36.html) | 多功能自定义绚丽验证码插件 | 1.2.1 | [WiFeng](https://github.com/WiFeng) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/SecCode.zip)
@@ -179,6 +181,7 @@
 [TleTools](https://github.com/muzishanshi/TleToolsForTypecho) | Typecho万用小工具应用市场插件 | 1.0.1 | [二呆](https://github.com/muzishanshi) | [下载](https://github.com/muzishanshi/TleToolsForTypecho/archive/master.zip)
 [TopLamuLeimu](https://github.com/SycAlright/Typecho-Top-LamuLeimu) | 二次元拉姆雷姆返回顶部底部插件 | 1.0.2 | [Syc](https://github.com/SycAlright) | [下载](https://github.com/SycAlright/Typecho-Top-LamuLeimu/archive/master.zip)
 [Tp2MD](https://github.com/AlanDecode/Typecho-Plugin-Tp2MD) | 文章数据导出Markdown文件插件 | 1.1 | [熊猫小A](https://github.com/AlanDecode) | [下载](https://github.com/AlanDecode/Typecho-Plugin-Tp2MD/archive/master.zip)
+[TrickyTitleBar](http://forum.typecho.org/viewtopic.php?f=6&t=10134) | 使浏览器标题栏切换显示文字插件 | 1.0.0 | [Cai](http://zwho.me) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/TrickyTitleBar.zip)
 [TpCache](https://github.com/phpgao/TpCache) | Memcache/Redis数据库缓存插件 | 0.7 | [老高](https://github.com/phpgao) | [下载](https://github.com/phpgao/TpCache/archive/master.zip)
 [UEditor](https://github.com/chanshengzhi/UEditor-for-Typecho) | 整合又拍/腾讯云储存UEditor插件 | 2018 | [陈盛智](https://github.com/chanshengzhi) | [特殊](https://github.com/chanshengzhi/UEditor-for-Typecho/archive/master.zip)
 [UploadGithubForTypecho](https://github.com/AyagawaSeirin/UploadGithubForTypecho) | 附件使用GitHub存储插件(jsDelivr加速) | 1.1.0 | [AyagawaSeirin](https://github.com/AyagawaSeirin) | [下载](https://github.com/AyagawaSeirin/UploadGithubForTypecho/archive/master.zip)
@@ -201,6 +204,7 @@
 [ZenCoding](https://github.com/typecho/plugins/tree/master/ZenCoding) | 快捷编辑Html/Css语法辅助插件 | 1.0.0 | [qining](https://github.com/joyqi) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/ZenCoding.zip)
 [cPlayer](https://github.com/journey-ad/cPlayer-Typecho-Plugin) | 网易云解析全能音乐播放器插件 | 1.2.13 | [journey.ad](https://github.com/journey-ad) | [下载](https://github.com/journey-ad/cPlayer-Typecho-Plugin/archive/master.zip)
 [cosUploadV5](https://github.com/dishcheng/cosUploadV5) | 附件使用腾讯云存储V5版插件 | 3.0 | [菜菜子](https://github.com/dishcheng) | [下载](https://github.com/dishcheng/cosUploadV5/archive/master.zip)
+[footeranimation](http://forum.typecho.org/viewtopic.php?f=6&t=11272) | 全站页脚添加透明动画图片插件 | 1.0 | jyzb02 | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/footeranimation.zip)
 [gifstop](https://github.com/jrotty/typecho-gifstop) | 阻止Gif格式图片动画自动播放插件 | 1.0 | [Jrotty](https://github.com/jrotty) | [下载](https://github.com/jrotty/typecho-gifstop/archive/master.zip)
 [iThumb](https://github.com/benzBrake/iThumb) | 从附件图片中选取文章缩略图插件 | 0.1.4 | [Ryan](https://github.com/benzBrake) | [下载](https://github.com/benzBrake/iThumb/archive/master.zip)
 [kiana](https://github.com/jrotty/typecho-kiana) | (娱乐向)萌萌哒小萝莉卡通挂件插件 | 1.0 | [jrotty](https://github.com/jrotty) | [下载](https://github.com/jrotty/typecho-kiana/archive/master.zip)
