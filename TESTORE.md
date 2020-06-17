@@ -27,7 +27,7 @@
 
  > 下表中的下载链接文字可用于附加图标：`下载`即非社区版，`不可用`显示为:no_entry:，`特殊`显示:warning:即安装或启用方法特殊。
 
-### 插件信息 (186)
+### 插件信息 (193)
 
 ###### TeStore使用下表“名称”创建安装文件夹，“版本”提示升级，请务必确保文本准确；添加时注意按字母排序，自增上方括号内总数，简介不要太长。
 ```
@@ -89,6 +89,7 @@
 [DigestShow](https://521-wf.com/archives/25.html) | 强制遮罩列表正文为摘要插件 | 1.1.0 | [WiFeng](https://github.com/WiFeng) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/DigestShow.zip)
 [DoubanBoard](https://github.com/AlanDecode/Typecho-Plugin-DoubanBoard) | 博客上展示豆瓣书单/影单插件 | 0.5 | [熊猫小A](https://github.com/AlanDecode) | [下载](https://github.com/AlanDecode/Typecho-Plugin-DoubanBoard/archive/master.zip)
 [Dynamics](https://github.com/kraity/Dynamics) | [南博](https://nabo.krait.cn)App专用动态说说模块插件 | 1.2 | [权那他](https://github.com/kraity) | [下载](https://github.com/kraity/Dynamics/archive/master.zip)
+[EditorLR](https://github.com/hongweipeng/EditorLR_for_typecho) | Markdown编辑器分屏预览插件 | 0.7.1 | [hongweipeng](https://github.com/hongweipeng) | [下载](https://github.com/hongweipeng/EditorLR_for_typecho/archive/master.zip)
 [ExSearch](https://github.com/AlanDecode/Typecho-Plugin-ExSearch) | Ajax动态显示实时搜索结果插件 | 0.1 | [熊猫小A](https://github.com/AlanDecode) | [下载](https://github.com/AlanDecode/Typecho-Plugin-ExSearch/archive/master.zip)
 [ExternalTool](https://github.com/phpgao/ExternalTool) | 自动判断文章外链添加标记插件 | 0.2 | [老高](https://github.com/phpgao) | [下载](https://github.com/phpgao/ExternalTool/archive/master.zip)
 [FlashMp3Player](https://github.com/typecho/plugins/tree/master/FlashMp3Player) | Flash音乐播放器Dewplayer插件 | 1.0.1 | [qining](https://github.com/joyqi) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/FlashMp3Player.zip)
@@ -120,6 +121,7 @@
 [LaTex](https://github.com/typecho/plugins/tree/master/LaTex) | Markdown版LaTex公式解析插件 | 1.1.0 | [mutoo](https://github.com/mutoo) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-H_to_L/LaTex.zip)
 [LivePhotoKit](https://github.com/MoeLoli/LivephotoKit-Typecho) | 文章插入Livephoto动图视频插件 | 1.1.0 | [Sora Jin](https://github.com/MoeLoli) | [下载](https://github.com/MoeLoli/LivephotoKit-Typecho/archive/master.zip)
 [LoginDesigner](https://github.com/jrotty/LoginDesigner) | Typecho注册/登录界面美化插件 | 1.3.0 | [泽泽社长](https://github.com/jrotty) | [下载](https://github.com/jrotty/LoginDesigner/archive/master.zip)
+[LoginLimit](https://github.com/hongweipeng/LoginLimit_for_Typecho) | Typecho限制登录次数防黑插件 | 0.9.0 | [hongweipeng](https://github.com/hongweipeng) | [特殊](https://github.com/hongweipeng/LoginLimit_for_Typecho/archive/master.zip)
 [MDRuby](https://github.com/journey-ad/MDRuby-Typecho-Plugin) | Markdown解析Ruby注音标签插件 | 0.2 | [journey.ad](https://github.com/journey-ad) | [下载](https://github.com/journey-ad/MDRuby-Typecho-Plugin/archive/master.zip)
 [MachineReviewsFiltering](http://forum.typecho.org/viewtopic.php?f=6&t=11303) | 隐藏验证过滤反垃圾评论机器人插件 | 0.1.0 | [晨曦啊](https://cx-a.com) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/MachineReviewsFiltering.zip)
 [MagikeToTypecho](https://github.com/typecho/plugins/tree/master/MagikeToTypecho) | Magike数据库导入Typecho插件 | 1.0.0 | [qining](https://github.com/joyqi) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/MagikeToTypecho.zip)
@@ -140,6 +142,7 @@
 [Pio](https://github.com/Dreamer-Paul/Pio) | (娱乐向)Live2D二次元看板娘插件 | 2.4 | [Dreamer-Paul](https://github.com/Dreamer-Paul) | [下载](https://github.com/Dreamer-Paul/Pio/archive/master.zip)
 [PlayAtWill](https://github.com/vfhky/PlayAtWill) | 迷你型Flash音乐播放器2合1插件 | 1.0.0 | [vfhky](https://github.com/vfhky) | [下载](https://github.com/vfhky/PlayAtWill/archive/master.zip)
 [Poptrox](https://github.com/99kyuu/Poptrox_for_Typecho) | jQuery全能灯箱弹窗Poptrox插件 | 0.01 | [玖玖kyuu](https://github.com/99kyuu) | [下载](https://github.com/99kyuu/Poptrox_for_Typecho/archive/master.zip)
+[PostSeries](https://github.com/hongweipeng/PostSeries) | Typecho系列专题文章管理插件 | 0.0.1 | [hongweipeng](https://github.com/hongweipeng) | [下载](https://github.com/hongweipeng/PostSeries/archive/master.zip)
 [PostToQzone](https://github.com/typecho/plugins/tree/master/PostToQzone) | QQ邮箱同步发布文章到Qzone插件 | 1.0 beta | [blankyao](https://github.com/blankyao) | [不可用](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/PostToQzone.zip)
 [PostToSinaToutiao](https://github.com/jiyeme/PostToSinaToutiao) | 同步发布文章到新浪微博头条插件 | 1.0.6 | [祭夜](https://github.com/jiyeme) | [下载](https://github.com/jiyeme/PostToSinaToutiao/archive/master.zip)
 [Prismjs](https://github.com/WiseClock/Prismjs) | Prism代码高亮插件(支持行号/语言) | 1.0.8 | [WiseClock](https://github.com/WiseClock) | [下载](https://github.com/WiseClock/Prismjs/archive/master.zip)
