@@ -27,7 +27,7 @@
 
  > 下表中的下载链接文字可用于附加图标：`下载`即非社区版，`不可用`显示为:no_entry:，`特殊`显示:warning:即安装或启用方法特殊。
 
-### 插件信息 (183)
+### 插件信息 (186)
 
 ###### TeStore使用下表“名称”创建安装文件夹，“版本”提示升级，请务必确保文本准确；添加时注意按字母排序，自增上方括号内总数，简介不要太长。
 ```
@@ -172,6 +172,9 @@
 [Textends](https://github.com/jiangmuzi/Textends) | 常用模版输出效果多功能扩展插件 | 1.0.0 | [绛木子](https://github.com/jiangmuzi) | [下载](https://github.com/jiangmuzi/Textends/archive/master.zip)
 [Textile2](https://github.com/typecho/plugins/tree/master/Textile2) | MT风格Textile2语法解析器插件 | 2.1.1 | Jim Riggs | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/Textile2.zip)
 [TimelyNotice](https://521-wf.com/archives/41.html) | SMTP邮件及时通知评论回复插件 | 2.0 | [WiFeng](https://github.com/WiFeng) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/TimelyNotice.zip)
+[TianAPIEnsentence](http://forum.typecho.org/viewtopic.php?f=6&t=11744) | [TianAPI](https://www.tianapi.com)输出英文经典名句插件 | 1.0.0 | [宇天行](https://www.huceo.com) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/TianAPIEnsentence.zip)
+[TianAPISayLove](http://forum.typecho.org/viewtopic.php?f=6&t=11743) | [TianAPI](https://www.tianapi.com)输出随机土味情话插件 | 1.0.0 | [宇天行](https://www.huceo.com) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/TianAPISayLove.zip)
+[TianAPIVerse](http://forum.typecho.org/viewtopic.php?f=6&t=11746) | [TianAPI](https://www.tianapi.com)输出随机优美诗句插件 | 1.0.0 | [宇天行](https://www.huceo.com) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/TianAPIVerse.zip)
 [TinyMCE](https://github.com/typecho/plugins/tree/master/TinyMCE) | 所见即所得编辑器TinyMCE插件 | 1.0.1 | [qining](https://github.com/joyqi) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/TinyMCE.zip)
 [TinyPNG](https://github.com/99kyuu/TinyPNG_for_Typecho) | Tinypng.com云图片优化服务插件 | 0.01 | [玖玖kyuu](https://github.com/99kyuu) | [下载](https://github.com/99kyuu/TinyPNG_for_Typecho/archive/master.zip)
 [Titleshow](https://github.com/jrotty/Titleshow) | 使Typecho加密文章显示标题插件 | 1.1.2 | [泽泽](https://github.com/jrotty) | [下载](https://github.com/jrotty/Titleshow/archive/master.zip)
