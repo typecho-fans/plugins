@@ -27,7 +27,7 @@
 
  > 下表中的下载链接文字可用于附加图标：`下载`即非社区版，`不可用`显示为:no_entry:，`特殊`显示:warning:即安装或启用方法特殊。
 
-### 插件信息 (201)
+### 插件信息 (205)
 
 ###### TeStore使用下表“名称”创建安装文件夹，“版本”提示升级，请务必确保文本准确；添加时注意按字母排序，自增上方括号内总数，简介不要太长。
 ```
@@ -173,6 +173,9 @@
 [SpammersGoAway](https://github.com/oott123/SpammersGoAway) | 简易挑战码机制防垃圾评论插件 | 0.0.1 | [oott123](https://github.com/oott123) | [下载](https://github.com/oott123/SpammersGoAway/archive/master.zip)
 [StreakRain](https://github.com/zhusaidong/streak-rain-typecho-plugin) | (娱乐向)动态线条雨背景效果插件 | 1.1.0 | [上官元恒](https://github.com/zhusaidong) | [下载](https://github.com/zhusaidong/streak-rain-typecho-plugin/archive/master.zip)
 [Svg3dTagCloud](https://gitee.com/hoexhe/Svg3dTagCloud) | Typecho动态3D标签云特效插件 | 1.0.0 | [Hoe](https://gitee.com/hoexhe) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/Svg3dTagCloud.zip)
+[Swipebox](https://github.com/wuxiaocong/Swipebox) | Swipebox图片灯箱轮播特效插件 | 1.0.0 | [吴尼玛](https://github.com/wuxiaocong) | [下载](https://github.com/wuxiaocong/Swipebox/archive/master.zip)
+[SyntaxHighlighter](https://github.com/tinpont/SyntaxHighlighter-For-Typecho) | 经典SyntaxHighlighter高亮插件 | 0.0.2 | [Tinpont](https://github.com/tinpont) | [下载](https://github.com/tinpont/SyntaxHighlighter-For-Typecho/archive/master.zip)
+[TEReplace](https://qqdie.com/archives/tereplace-plugin-typecho.html) | 替换指定内容/标题/字段值插件 | 1.3.0 | [泽泽](https://github.com/jrotty) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/TEReplace.zip)
 [TableOfContents](https://github.com/phpgao/TableOfContents) | 下拉式文章内容目录自动生成插件 | 0.3 | [老高](https://github.com/phpgao) | [下载](https://github.com/phpgao/TableOfContents/archive/master.zip)
 [TeComment](https://github.com/jiangmuzi/TeComment) | 评论增强插件(工具栏/Ajax提交等) | 2.0.0 | [绛木子](https://github.com/jiangmuzi) | [下载](https://github.com/jiangmuzi/TeComment/archive/master.zip)
 [TeConnect](https://github.com/jiangmuzi/TeConnect) | 使用QQ/微博账号注册登录插件 | 1.0 | [绛木子](https://github.com/jiangmuzi) | [特殊](https://github.com/jiangmuzi/TeConnect/archive/master.zip)
@@ -208,6 +211,7 @@
 [VariousCaptcha](https://github.com/jan-bar/typecho/blob/master/VariousCaptcha) | Typecho多种样式图片验证码插件 | 0.0.1 | [你好啊007](https://github.com/jan-bar) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/VariousCaptcha.zip)
 [Viewers](https://github.com/tennsinn/Viewers) | 两种模式显示读者墙头像排行插件 | 0.1.0 | [息E-敛](https://github.com/tennsinn) | [下载](https://github.com/tennsinn/Viewers/archive/master.zip)
 [ViewsCounter](https://github.com/Quarkay/Typecho-ViewsCounter) | 统计文章浏览次数并显示排行插件 | 1.0.0 | [Quarkay](https://github.com/Quarkay) | [下载](https://github.com/Quarkay/Typecho-ViewsCounter/archive/master.zip)
+[WTS](https://github.com/shiyeshu/WTS) | 仿ACFUN气泡通知首页公告插件 | 1.0.0 | [阿硕](https://github.com/shiyeshu) | [下载](https://github.com/shiyeshu/WTS/archive/master.zip)
 [WeBlog](https://github.com/thinkmoon/WeBlog) | Typecho微信/QQ小程序版插件 | 0.1.9 | [醉月思](https://github.com/thinkmoon) | [特殊](https://github.com/thinkmoon/WeBlog/archive/master.zip)
 [WeMedia](https://github.com/muzishanshi/WeMediaForTypecho) | Typecho积分商城付费阅读插件 | 1.0.16 | [二呆](https://github.com/muzishanshi) | [下载](https://github.com/muzishanshi/WeMediaForTypecho/archive/master.zip)
 [WeTypecho](https://github.com/MingliangLu/WeTypecho) | Typecho映射到微信小程序插件 | 0.1 | [成都第七帅](https://github.com/MingliangLu) | [特殊](https://github.com/MingliangLu/WeTypecho/archive/master.zip)
@@ -224,7 +228,7 @@
 [cPlayer](https://github.com/journey-ad/cPlayer-Typecho-Plugin) | 网易云解析全能音乐播放器插件 | 1.2.13 | [journey.ad](https://github.com/journey-ad) | [下载](https://github.com/journey-ad/cPlayer-Typecho-Plugin/archive/master.zip)
 [cosUploadV5](https://github.com/dishcheng/cosUploadV5) | 附件使用腾讯云存储V5版插件 | 3.0 | [菜菜子](https://github.com/dishcheng) | [下载](https://github.com/dishcheng/cosUploadV5/archive/master.zip)
 [footeranimation](http://forum.typecho.org/viewtopic.php?f=6&t=11272) | 全站页脚添加透明动画图片插件 | 1.0 | jyzb02 | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/footeranimation.zip)
-[fuckadblock](https://qqdie.com/archives/fuckadblock-typecho-plugin.html) | 站长用反广告过滤检测弹窗插件 | 3.2.1 | 泽泽社长 | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/fuckadblock.zip)
+[fuckadblock](https://qqdie.com/archives/fuckadblock-typecho-plugin.html) | 站长用反广告过滤检测弹窗插件 | 3.2.1 | [泽泽社长](https://github.com/jrotty) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/fuckadblock.zip)
 [gifstop](https://github.com/jrotty/typecho-gifstop) | 阻止Gif格式图片动画自动播放插件 | 1.0 | [Jrotty](https://github.com/jrotty) | [下载](https://github.com/jrotty/typecho-gifstop/archive/master.zip)
 [gotop](https://qqdie.com/archives/typecho-to-return-to-the-top-of-the-plug-in-i-first-ran-and-eggs.html) | 阻止Gif格式图片动画自动播放插件 | 1.0 | [jrotty](https://github.com/jrotty) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/gotop.zip)
 [iThumb](https://github.com/benzBrake/iThumb) | 从附件图片中选取文章缩略图插件 | 0.1.4 | [Ryan](https://github.com/benzBrake) | [下载](https://github.com/benzBrake/iThumb/archive/master.zip)
