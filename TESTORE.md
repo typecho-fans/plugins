@@ -27,7 +27,7 @@
 
  > 下表中的下载链接文字可用于附加图标：`下载`即非社区版，`不可用`显示为:no_entry:，`特殊`显示:warning:即安装或启用方法特殊。
 
-### 插件信息 (209)
+### 插件信息 (213)
 
 ###### TeStore使用下表“名称”创建安装文件夹，“版本”提示升级，请务必确保文本准确；添加时注意按字母排序，自增上方括号内总数，简介不要太长。
 ```
@@ -96,16 +96,19 @@
 [ExSearch](https://github.com/AlanDecode/Typecho-Plugin-ExSearch) | Ajax动态显示实时搜索结果插件 | 0.1 | [熊猫小A](https://github.com/AlanDecode) | [下载](https://github.com/AlanDecode/Typecho-Plugin-ExSearch/archive/master.zip)
 [ExternalTool](https://github.com/phpgao/ExternalTool) | 自动判断文章外链添加标记插件 | 0.2 | [老高](https://github.com/phpgao) | [下载](https://github.com/phpgao/ExternalTool/archive/master.zip)
 [FlashMp3Player](https://github.com/typecho/plugins/tree/master/FlashMp3Player) | Flash音乐播放器Dewplayer插件 | 1.0.1 | [qining](https://github.com/joyqi) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/FlashMp3Player.zip)
+[FlowChart](http://forum.typecho.org/viewtopic.php?f=6&t=10874) | Markdown语法flow转流程图插件 | 1.2.1 | [ZhangZijing(Venteto)](https://github.com/pluveto) | [下载](https://github.com/hujy23/FlowChart-typecho-plugin/archive/master.zip)
 [Geetest](https://github.com/99kyuu/GeetestV3_for_Typecho) | V3版GeeTest登录注册验证码插件 | 1.0.0 | [玖玖kyuu](https://github.com/99kyuu) | [特殊](https://github.com/99kyuu/GeetestV3_for_Typecho/archive/master.zip)
 [Geetest](https://github.com/jinfeijie/Geetest) | 新版GeeTest智能评论验证码插件 | 1.0.3 | [mrjin](https://github.com/jinfeijie) | [下载](https://github.com/jinfeijie/Geetest/archive/1.0.3.zip)
 [GetRealIP](https://github.com/PonyCool/typecho-plugins/blob/master/GetRealIP) | Typecho获取访问客户端真实IP插件 | 1.0.0 | [Pony](https://github.com/PonyCool) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/GetRealIP.zip)
 [GitHubGit](https://github.com/typecho/plugins/tree/master/GitHubGit) | GitHub静态博客Jekyll同步发布插件 | 0.0.1 | [weakish](https://github.com/weakish) | [特殊](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/GitHubGit.zip)
 [GitStatic](https://github.com/MliKiowa/GitStatic) | Typecho使用GitHub做附件图床插件 | 2.0.0 | [乔千](https://github.com/MliKiowa) | [下载](https://github.com/MliKiowa/GitStatic/archive/master.zip)
+[GitWidget](https://gitee.com/SimonH/typecho-gitwidget) | Github/Gitee码云仓库预览挂件插件 | 1.0.0 | [Simon.H](https://gitee.com/SimonH) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/GitWidget.zip)
 [GoogleAnalytics](https://github.com/typecho/plugins/tree/master/GoogleAnalytics) | 页面底部插入谷歌统计代码插件 | 1.0.0 | [mutoo](https://github.com/mutoo) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/GoogleAnalytics.zip)
 [GoogleCodePrettify](https://github.com/typecho/plugins/tree/master/GoogleCodePrettify) | 经典版表格效果谷歌代码高亮插件 | 1.0.0 | [qining](https://github.com/joyqi) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/GoogleCodePrettify_qining.zip)
 [GravatarServer](https://github.com/kraity/typecho-gravatar) | Gravatar服务器插件(支持QQ头像) | 1.1.1 | [权那他](https://github.com/kraity) | [下载](https://github.com/kraity/typecho-gravatar/archive/master.zip)
 [HPSitemap](https://github.com/invelop/Typecho-HPSitemap) | 百度Sitemap站点地图生成插件 | 2.9 | [Roogle](https://github.com/Moidea)&雷鬼&[锋临](https://github.com/invelop) | [下载](https://github.com/invelop/Typecho-HPSitemap/archive/master.zip)
 [HTMLCompress](https://github.com/kokororin/typecho-plugin-HTMLCompress) | 前台Html代码去可读性压缩插件 | 1.3 | [Kokororin](https://github.com/kokororin) | [下载](https://github.com/kokororin/typecho-plugin-HTMLCompress/archive/master.zip)
+[HelloChangYan](https://www.cxiansheng.cn/server/278) | Typecho搜狐畅言评论回推插件 | 1.1 | [命中水、](https://www.cxiansheng.cn)&[Angboo](https://github.com/1349920358) | [特殊](https://github.com/typecho-fans/plugins/releases/download/plugins-H_to_L/HelloChangYan.zip)
 [HelloRedis](https://github.com/1349920358/HelloRedis) | Redis数据库缓存页面加速插件 | 1.1.0 | [Angboo](https://github.com/1349920358) | [下载](https://github.com/1349920358/HelloRedis/archive/master.zip)
 [HideText](https://github.com/journey-ad/HideText-Typecho-Plugin) | 防转载添加不可见版权信息插件 | 0.1 | [journey.ad](https://github.com/journey-ad) | [下载](https://github.com/journey-ad/HideText-Typecho-Plugin/archive/master.zip)
 [Highlight](https://github.com/jrotty/Highlightjs-for-typecho) | 支持instantclick.js代码高亮插件 | 1.1.0 | [泽泽](https://github.com/jrotty) | [下载](https://github.com/jrotty/Highlightjs-for-typecho/archive/master.zip)
@@ -231,6 +234,7 @@
 [ZenCoding](https://github.com/typecho/plugins/tree/master/ZenCoding) | 快捷编辑Html/Css语法辅助插件 | 1.0.0 | [qining](https://github.com/joyqi) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/ZenCoding.zip)
 [cPlayer](https://github.com/journey-ad/cPlayer-Typecho-Plugin) | 网易云解析全能音乐播放器插件 | 1.2.13 | [journey.ad](https://github.com/journey-ad) | [下载](https://github.com/journey-ad/cPlayer-Typecho-Plugin/archive/master.zip)
 [cosUploadV5](https://github.com/dishcheng/cosUploadV5) | 附件使用腾讯云存储V5版插件 | 3.0 | [菜菜子](https://github.com/dishcheng) | [下载](https://github.com/dishcheng/cosUploadV5/archive/master.zip)
+[editorG](https://qqdie.com/archives/editor-G.html) | 默认Markdown编辑器优化插件 | 0.2 | [Jrotty](https://github.com/jrotty) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/editorG.zip)
 [footeranimation](http://forum.typecho.org/viewtopic.php?f=6&t=11272) | 全站页脚添加透明动画图片插件 | 1.0 | jyzb02 | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/footeranimation.zip)
 [fuckadblock](https://qqdie.com/archives/fuckadblock-typecho-plugin.html) | 站长用反广告过滤检测弹窗插件 | 3.2.1 | [泽泽社长](https://github.com/jrotty) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/fuckadblock.zip)
 [gifstop](https://github.com/jrotty/typecho-gifstop) | 阻止Gif格式图片动画自动播放插件 | 1.0 | [Jrotty](https://github.com/jrotty) | [下载](https://github.com/jrotty/typecho-gifstop/archive/master.zip)
