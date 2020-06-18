@@ -27,7 +27,7 @@
 
  > 下表中的下载链接文字可用于附加图标：`下载`即非社区版，`不可用`显示为:no_entry:，`特殊`显示:warning:即安装或启用方法特殊。
 
-### 插件信息 (217)
+### 插件信息 (221)
 
 ###### TeStore使用下表“名称”创建安装文件夹，“版本”提示升级，请务必确保文本准确；添加时注意按字母排序，自增上方括号内总数，简介不要太长。
 ```
@@ -75,6 +75,7 @@
 [CodeHighlighter](https://github.com/Copterfly/CodeHighlighter-for-Typecho) | Prism代码高亮插件(带复制按钮) | 1.0.0 | [Copterfly](https://github.com/Copterfly) | [下载](https://github.com/Copterfly/CodeHighlighter-for-Typecho/archive/master.zip)
 [Collection](https://github.com/tennsinn/Typecho_Plugin--Collection) | Typecho记录管理收藏条目插件 | 1.6.0 | [息E-敛](https://github.com/tennsinn) | [下载](https://github.com/tennsinn/Typecho_Plugin--Collection/archive/master.zip)
 [ColorfulTags](https://github.com/invelop/Typecho-ColorfulTags) | Typecho生成彩色3D标签云插件 | 1.6 | [锋临](https://github.com/invelop) | [下载](https://github.com/invelop/Typecho-ColorfulTags/archive/master.zip)
+[CommentApprove](https://github.com/ennnnny/typecho/tree/master/CommentApprove) | 按邮箱输出三类评论者身份插件 | 0.1.0 | [kuye](https://github.com/ennnnny) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/CommentApprove.zip)
 [Comment2Mail](https://gitee.com/hoexhe/typecho-Comment2Mail) | 评论回复邮件提醒插件(仅SMTP) | 1.3.0 | [Hoe](https://gitee.com/hoexhe) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/Comment2Mail_Hoe.zip)
 [Comment2Mail](https://github.com/ShadowySpirits/Comment2Mail) | 评论邮件通知插件(支持MailGun) | 1.1.0 | [SSpirits](https://github.com/ShadowySpirits) | [下载](https://github.com/ShadowySpirits/Comment2Mail/archive/master.zip)
 [Comment2Telegram](https://github.com/MoeLoli/Comment2Telegram) | 评论操作推送Telegram通知插件 | 1.3.2 | [Sora Jin](https://github.com/MoeLoli) | [下载](https://github.com/MoeLoli/Comment2Telegram/archive/master.zip)
@@ -93,6 +94,7 @@
 [DarkReader](https://github.com/jackytsu/typecho-darkreader) | [Dark Reader](https://darkreader.org)关灯浏览效果插件 | 1.0.0 | [南宫小骏](https://github.com/jackytsu) | [下载](https://github.com/jackytsu/typecho-darkreader/archive/master.zip)
 [DigestShow](https://521-wf.com/archives/25.html) | 强制遮罩列表正文为摘要插件 | 1.1.0 | [WiFeng](https://github.com/WiFeng) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/DigestShow.zip)
 [DoubanBoard](https://github.com/AlanDecode/Typecho-Plugin-DoubanBoard) | 博客上展示豆瓣书单/影单插件 | 0.5 | [熊猫小A](https://github.com/AlanDecode) | [下载](https://github.com/AlanDecode/Typecho-Plugin-DoubanBoard/archive/master.zip)
+[DoubanBooklist](https://github.com/FaithPatrick/DoubanBookList) | 豆瓣正在读/已读书单展示插件 | 1.0.0 | [Patrick95](https://github.com/FaithPatrick) | [下载](https://github.com/FaithPatrick/DoubanBookList/archive/master.zip)
 [Dynamics](https://github.com/kraity/Dynamics) | [南博](https://nabo.krait.cn)App专用动态说说模块插件 | 1.2 | [权那他](https://github.com/kraity) | [下载](https://github.com/kraity/Dynamics/archive/master.zip)
 [EditorLR](https://github.com/hongweipeng/EditorLR_for_typecho) | Markdown编辑器分屏预览插件 | 0.7.1 | [hongweipeng](https://github.com/hongweipeng) | [下载](https://github.com/hongweipeng/EditorLR_for_typecho/archive/master.zip)
 [ExSearch](https://github.com/AlanDecode/Typecho-Plugin-ExSearch) | Ajax动态显示实时搜索结果插件 | 0.1 | [熊猫小A](https://github.com/AlanDecode) | [下载](https://github.com/AlanDecode/Typecho-Plugin-ExSearch/archive/master.zip)
@@ -150,6 +152,7 @@
 [PageViews](https://github.com/PonyCool/typecho-plugins/blob/master/PageViews) | 统计文章内容页面总浏览量插件 | 1.0.1 | [Pony](https://github.com/PonyCool) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/PageViews.zip)
 [PandaBangumi](https://github.com/AlanDecode/PandaBangumi-Typecho-Plugin) | Bangumi番剧列表展示功能插件 | 2.3 | [熊猫小A](https://github.com/AlanDecode) | [下载](https://github.com/AlanDecode/PandaBangumi-Typecho-Plugin/archive/master.zip)
 [Parsedown](https://github.com/kokororin/typecho-plugin-Parsedown) | MD解析器替换为Parsedown插件 | 1.0 | [Kokororin](https://github.com/kokororin) | [下载](https://github.com/kokororin/typecho-plugin-Parsedown/archive/master.zip)
+[Ping](https://www.liudon.org/1235.html) | Ping指定服务地址通知更新插件 | 1.0.0 | [Liudon](https://www.liudon.org) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/Ping.zip)
 [Pio](https://github.com/Dreamer-Paul/Pio) | (娱乐向)Live2D二次元看板娘插件 | 2.4 | [Dreamer-Paul](https://github.com/Dreamer-Paul) | [下载](https://github.com/Dreamer-Paul/Pio/archive/master.zip)
 [PlayAtWill](https://github.com/vfhky/PlayAtWill) | 迷你型Flash音乐播放器2合1插件 | 1.0.0 | [vfhky](https://github.com/vfhky) | [下载](https://github.com/vfhky/PlayAtWill/archive/master.zip)
 [Poptrox](https://github.com/99kyuu/Poptrox_for_Typecho) | jQuery全能灯箱弹窗Poptrox插件 | 0.01 | [玖玖kyuu](https://github.com/99kyuu) | [下载](https://github.com/99kyuu/Poptrox_for_Typecho/archive/master.zip)
@@ -218,6 +221,7 @@
 [UEditor](https://github.com/chanshengzhi/UEditor-for-Typecho) | 整合又拍/腾讯云储存UEditor插件 | 2018 | [陈盛智](https://github.com/chanshengzhi) | [特殊](https://github.com/chanshengzhi/UEditor-for-Typecho/archive/master.zip)
 [UEditor](https://gitee.com/aveyuan/UEditor-for-Typecho) | 1.4.3.3版可视化编辑器UEditor插件 | 3.0 | [系统笔记](https://gitee.com/aveyuan) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/UEditor_.zip)
 [UploadGithubForTypecho](https://github.com/AyagawaSeirin/UploadGithubForTypecho) | GitHub存储附件插件(jsDelivr加速) | 1.1.0 | [AyagawaSeirin](https://github.com/AyagawaSeirin) | [下载](https://github.com/AyagawaSeirin/UploadGithubForTypecho/archive/master.zip)
+[UserAgent](https://github.com/ennnnny/typecho/tree/master/UserAgent) | 显示评论者系统/浏览器信息插件 | 0.1.0 | [kuye](https://github.com/ennnnny) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/UserAgent_kuye.zip)
 [UserAgent](https://github.com/UniqueOnly/UserAgent) | 访客浏览器/系统识别与输出插件 | 1.0.0 | [Unique](https://github.com/UniqueOnly) | [下载](https://github.com/UniqueOnly/UserAgent/archive/master.zip)
 [VariousCaptcha](https://github.com/jan-bar/typecho/blob/master/VariousCaptcha) | Typecho多种样式图片验证码插件 | 0.0.1 | [你好啊007](https://github.com/jan-bar) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/VariousCaptcha.zip)
 [Viewers](https://github.com/tennsinn/Viewers) | 两种模式显示读者墙头像排行插件 | 0.1.0 | [息E-敛](https://github.com/tennsinn) | [下载](https://github.com/tennsinn/Viewers/archive/master.zip)
