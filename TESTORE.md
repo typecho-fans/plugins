@@ -27,7 +27,7 @@
 
  > 下表中的下载链接文字可用于附加图标：`下载`即非社区版，`不可用`显示为:no_entry:，`特殊`显示:warning:即安装或启用方法特殊。
 
-### 插件信息 (205)
+### 插件信息 (209)
 
 ###### TeStore使用下表“名称”创建安装文件夹，“版本”提示升级，请务必确保文本准确；添加时注意按字母排序，自增上方括号内总数，简介不要太长。
 ```
@@ -39,10 +39,11 @@
 [APlayerAtBottom](https://github.com/SatoSouta/APlayerAtBottom) | Typecho吸底式音乐播放器插件 | 1.1.1 | [小太](https://github.com/SatoSouta) | [下载](https://github.com/SatoSouta/APlayerAtBottom/archive/master.zip)
 [Access](https://github.com/kokororin/typecho-plugin-Access) | Typecho查看访客记录统计插件 | 2.0.2 | [Kokororin](https://github.com/kokororin) | [下载](https://github.com/kokororin/typecho-plugin-Access/archive/master.zip)
 [AccessBmob](https://github.com/kraity/typecho-accessBmob) | Bmob后端云数据库版[Access](https://github.com/kokororin/typecho-plugin-Access)插件 | 1.2 | [权那他](https://github.com/kraity) | [下载](https://github.com/kraity/typecho-accessBmob/archive/master.zip)
+[Accessories](https://xiamp.net/archives/accessories-pro.html) | 免费版附件下载功能增强插件 | 1.0.3 | [Ryan](https://github.com/benzBrake) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/Accessories.zip)
 [ActiveSubmit](https://github.com/invelop/Typecho-ActiveSubmit) | 文章发布时主动推送百度插件 | 1.0 | [承影](https://github.com/invelop) | [下载](https://github.com/invelop/Typecho-ActiveSubmit/archive/master.zip)
 [ActivatePowerMode](https://gitee.com/hoexhe/ActivatePowerMode) | (娱乐向)疯狂打字机输入特效插件 | 1.0.0 | [Hoe](https://gitee.com/hoexhe) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/ActivatePowerMode.zip)
 [Adminer](https://github.com/kokororin/typecho-plugin-adminer) | 后台集成Adminer数据库管理插件 | 1.0 | [kokororin](https://github.com/kokororin) | [下载](https://github.com/kokororin/typecho-plugin-adminer/archive/master.zip)
-[AdminLogin](https://github.com/v03413/Typecho_Plugins/tree/master/AdminLogin) | 微信QQ号后台扫码登录插件 | 0.0.1 | [_莫名_](https://github.com/v03413) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/AdminLogin.zip)
+[AdminLogin](https://github.com/v03413/Typecho_Plugins/tree/master/AdminLogin) | 微信/QQ号后台扫码登录插件 | 0.0.1 | [&#95;莫名&#95;](https://github.com/v03413) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/AdminLogin.zip)
 [AjaxComment](https://github.com/qlwz/AjaxComment-For-Typecho) | 原生Js评论Ajax异步提交插件 | 1.0.0.2 | [情留メ蚊子](https://github.com/qlwz) | [下载](https://github.com/qlwz/AjaxComment-For-Typecho/archive/master.zip)
 [Akismet](https://github.com/typecho/plugins/tree/master/Akismet) | 反垃圾评论服务Akismet插件 | 1.1.4 | [qining](https://github.com/joyqi) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/Akismet.zip)
 [Album](https://github.com/THX-plus/Album) | Typecho模版型相册系统插件 | 1.2 | [我本奈何](https://github.com/THX-plus) | [下载](https://github.com/THX-plus/Album/archive/master.zip)
@@ -55,7 +56,7 @@
 [AutoSaveImage](https://github.com/gxuzf/AutoSaveImage) | 自动下载替换文内远程图片插件 | 1.0.0 | dream | [下载](https://github.com/gxuzf/AutoSaveImage/archive/master.zip)
 [Avartar](https://github.com/typecho/plugins/blob/master/Avartar.php) | 自定义替换头像代理地址插件 | 1.0.0 Beta | [loftor](https://github.com/loftor-git) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/Avartar.zip)
 [B3logForHacPai](https://github.com/DT27/B3logForHacPai) | 黑客派社区API实时同步推送插件 | 1.0.1 | [DT27](https://github.com/DT27) | [下载](https://github.com/DT27/B3logForHacPai/archive/master.zip)
-[BaiduLinkSeo](https://github.com/gischuck/BaiduSlug) | Typecho百度站长工具SEO插件 | 1.0.1 | [dlmg](https://github.com/thisMG/SEO-) | [特殊](https://github.com/thisMG/SEO-/archive/master.zip)
+[BaiduLinkSeo](https://github.com/thisMG/SEO-) | Typecho百度站长工具SEO插件 | 1.0.1 | [dlmg](https://github.com/thisMG) | [特殊](https://github.com/thisMG/SEO-/archive/master.zip)
 [BaiduSlug](https://github.com/gischuck/BaiduSlug) | 百度翻译API自动生成slug名插件 | 1.0 | [Chuck](https://github.com/gischuck) | [下载](https://github.com/gischuck/BaiduSlug/archive/master.zip)
 [BaiduSubmit](https://github.com/phpgao/BaiduSubmit) | 推送Sitemap文章链接至百度插件 | 0.5.2 | [老高](https://github.com/phpgao) | [下载](https://github.com/phpgao/BaiduSubmit/archive/master.zip)
 [BaiduTextCensor](https://github.com/sy-records/ty-baidu-textcensor) | 百度文本审核过滤敏感内容插件 | 1.0.1 | [沈唁](https://github.com/sy-records) | [下载](https://github.com/sy-records/ty-baidu-textcensor/archive/master.zip)
@@ -77,8 +78,10 @@
 [Comment2Telegram](https://github.com/MoeLoli/Comment2Telegram) | 评论操作推送Telegram通知插件 | 1.3.2 | [Sora Jin](https://github.com/MoeLoli) | [下载](https://github.com/MoeLoli/Comment2Telegram/archive/master.zip)
 [Comment2Wechat](https://github.com/YianAndCode/Comment2Wechat) | 新评论回复微信自动通知插件 | 1.1.0 | [Y!an](https://github.com/YianAndCode) | [下载](https://github.com/YianAndCode/Comment2Wechat/archive/master.zip)
 [CommentMailPlus](https://github.com/oott123/CommentMailPlus) | MailGun版评论邮件提醒插件 | 0.0.4 | [oott123](https://github.com/oott123) | [下载](https://github.com/oott123/CommentMailPlus/archive/master.zip)
+[CommentPush](https://github.com/gaobinzhan/CommentPush) | 评论推送微信/QQ/钉钉等插件 | 1.6.0 | [高彬展](https://github.com/gaobinzhan),[奥秘Sir](https://blog.say521.cn) | [下载](https://github.com/gaobinzhan/CommentPush/archive/master.zip)
 [CommentToMail](https://github.com/uniartisan/CommentToMail) | 网址监控版评论邮件提醒插件 | 4.2.5 | [Uniartisan](https://github.com/uniartisan) | [下载](http://blog.uniartisan.com/app/CommentToMail.zip)
 [CommentToWechat](https://github.com/lscho/CommentToWechat_for_typecho) | Server酱版评论推送微信插件 | 0.1 | [lscho](https://github.com/lscho) | [下载](https://github.com/lscho/CommentToWechat_for_typecho/archive/master.zip)
+[CommentsByQQ](http://www.pxwei.com/archives/54) | QQ机器人发送评论提醒插件 | 1.0.0 | [Pxwei](http://www.pxwei.com) | [不可用](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/CommentsByQQ.zip)
 [CompressHTML](https://github.com/qlwz/CompressHTML-For-Typecho) | Gzip/Html压缩/关键词替换插件 | 1.0.0.1 | [情留メ蚊子](https://github.com/qlwz) | [下载](https://github.com/qlwz/CompressHTML-For-Typecho/archive/master.zip)
 [ConnectToTwitter](https://github.com/typecho/plugins/tree/master/ConnectToTwitter) | 同步推送评论信息到twitter插件 | 1.0.0 Beta | [blankyao](https://github.com/blankyao) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/ConnectToTwitter.zip)
 [Copyright](https://github.com/Yves-X/Copyright-for-Typecho) | 用自定义字段附加版权信息插件 | 1.0.4 | [Yves X](https://github.com/Yves-X) | [下载](https://github.com/Yves-X/Copyright-for-Typecho/archive/master.zip)
@@ -136,7 +139,7 @@
 [MouseFloating](https://github.com/icy2003/typecho-MouseFloating) | 随机漂浮文字跟随鼠标特效插件 | 1.0.0 | [icy2003](https://github.com/icy2003) | [下载](https://github.com/icy2003/typecho-MouseFloating/archive/master.zip)
 [MyUpload](https://github.com/jlice/typecho-MyUpload) | 本地/[TinyPNG](https://tinypng.com)压缩图片上传插件 | 1.5.0 | [文剑木然](https://github.com/jlice) | [特殊](https://github.com/jlice/typecho-MyUpload/archive/master.zip)
 [Notes](https://github.com/ghostboyzone/typecho-notes-plugin) | Markdown编辑器版便签系统插件 | 0.0.1 | [GhostBoyZone](https://github.com/ghostboyzone) | [下载](https://github.com/ghostboyzone/typecho-notes-plugin/archive/master.zip)
-[OssImg](https://github.com/v03413/Typecho_Plugins/tree/master/OssImg) | 阿里云储存OSS作附件图床插件 | 1.0.0 | [_莫名_](https://github.com/v03413) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/OssImg.zip)
+[OssImg](https://github.com/v03413/Typecho_Plugins/tree/master/OssImg) | 阿里云储存OSS作附件图床插件 | 1.0.0 | [&#95;莫名&#95;](https://github.com/v03413) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/OssImg.zip)
 [PageToLinks](https://github.com/typecho/plugins/blob/master/PageToLinks.php) | 独立页面友情链接转侧边栏插件 | 1.0.0 | [qining](https://github.com/joyqi) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/PageToLinks.zip)
 [PageViews](https://github.com/PonyCool/typecho-plugins/blob/master/PageViews) | 统计文章内容页面总浏览量插件 | 1.0.1 | [Pony](https://github.com/PonyCool) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/PageViews.zip)
 [PandaBangumi](https://github.com/AlanDecode/PandaBangumi-Typecho-Plugin) | Bangumi番剧列表展示功能插件 | 2.3 | [熊猫小A](https://github.com/AlanDecode) | [下载](https://github.com/AlanDecode/PandaBangumi-Typecho-Plugin/archive/master.zip)
@@ -160,7 +163,8 @@
 [SaHtmlCache](https://github.com/cnsamool/SaHtmlCache-For-Typecho) | Typecho生成Html静态缓存插件 | 1.0.0 | [Samool](https://github.com/cnsamool) | [特殊](https://github.com/cnsamool/SaHtmlCache-For-Typecho/archive/master.zip)
 [SaeUpload](https://github.com/KimiChen/Typecho-SaeUpload) | 新浪云引擎SAE上传附件专用插件 | 1.0.0 Beta | [Kimi](https://github.com/KimiChen) | [下载](https://github.com/KimiChen/Typecho-SaeUpload/archive/master.zip)
 [SecCode](https://521-wf.com/archives/36.html) | 多功能自定义绚丽验证码插件 | 1.2.1 | [WiFeng](https://github.com/WiFeng) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/SecCode.zip)
-[Shields](https://github.com/journey-ad/Shields-Typecho-Plugin) | GitHub项目调用Shields.io按钮插件 | 1.0.0 | [journey.ad](https://github.com/journey-ad) | [下载](https://github.com/journey-ad/Shields-Typecho-Plugin/archive/master.zip)
+[SequenceDiagram](http://forum.typecho.org/viewtopic.php?f=6&t=10873) | Markdown语法seq转时序图插件 | 1.2.0 | [ZhangZijing(Venteto)](https://github.com/pluveto) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/SequenceDiagram.zip)
+[Shields](https://github.com/journey-ad/Shields-Typecho-Plugin) | GitHub仓库用Shields.io按钮插件 | 1.0.0 | [journey.ad](https://github.com/journey-ad) | [下载](https://github.com/journey-ad/Shields-Typecho-Plugin/archive/master.zip)
 [Shop](https://github.com/ilanlanya/typecho-plugin-shop) | Typecho非官方线上主题商店插件 | 1.0.0 | [LiCxi](https://github.com/ilanlanya) | [不可用](https://github.com/ilanlanya/typecho-plugin-shop/archive/master.zip)
 [SimpleCDN](https://github.com/Quarkay/Typecho-SimpleCDN) | 匹配文章内容替换为CDN链接插件 | 1.0.0 | [Quarkay](https://github.com/Quarkay) | [下载](https://github.com/Quarkay/Typecho-SimpleCDN/archive/master.zip)
 [SimpleCode](https://github.com/typecho/plugins/blob/master/SimpleCode.php) | 使用PHP自带函数高亮代码插件 | 1.0.2 | [qining](https://github.com/joyqi) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/SimpleCode.zip)
