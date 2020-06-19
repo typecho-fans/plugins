@@ -27,7 +27,7 @@
 
  > 下表中的下载链接文字可用于附加图标：`下载`即非社区版，`不可用`显示为:no_entry:，`特殊`显示:warning:即安装或启用方法特殊。
 
-### 插件信息 (230)
+### 插件信息 (234)
 
 ###### TeStore使用下表“名称”创建安装文件夹，“版本”提示升级，请务必确保文本准确；添加时注意按字母排序，自增上方括号内总数，简介不要太长。
 ```
@@ -58,6 +58,7 @@
 [AutoSaveImage](https://www.cxiansheng.cn/server/278) | 自动下载替换文内远程图片插件 | 1.0.0 | [dream](https://www.cxiansheng.cn) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/AutoSaveImage.zip)
 [Avartar](https://github.com/typecho/plugins/blob/master/Avartar.php) | 自定义替换头像代理地址插件 | 1.0.0 Beta | [loftor](https://github.com/loftor-git) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/Avartar.zip)
 [B3logForHacPai](https://github.com/DT27/B3logForHacPai) | 黑客派社区API实时同步推送插件 | 1.0.1 | [DT27](https://github.com/DT27) | [下载](https://github.com/DT27/B3logForHacPai/archive/master.zip)
+[BaiduAnti](https://blog.zgcwkj.cn/archives/113.html) | 百度跳转来源显示弹窗警告插件 | 1.0.0 | [zgcwkj](https://blog.zgcwkj.cn) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/BaiduAnti.zip)
 [BaiduLinkSeo](https://github.com/thisMG/SEO-) | Typecho百度站长工具SEO插件 | 1.0.1 | [dlmg](https://github.com/thisMG) | [特殊](https://github.com/thisMG/SEO-/archive/master.zip)
 [BaiduSlug](https://github.com/gischuck/BaiduSlug) | 百度翻译API自动生成slug名插件 | 1.0 | [Chuck](https://github.com/gischuck) | [下载](https://github.com/gischuck/BaiduSlug/archive/master.zip)
 [BaiduSubmit](https://github.com/phpgao/BaiduSubmit) | 推送Sitemap文章链接至百度插件 | 0.5.2 | [老高](https://github.com/phpgao) | [下载](https://github.com/phpgao/BaiduSubmit/archive/master.zip)
@@ -126,6 +127,7 @@
 [IShareEcho](https://github.com/pluveto/IShareEcho) | 在模板输出分享按钮及二维码插件 | 1.0.0 | [pluvet](https://github.com/pluveto) | [下载](https://github.com/pluveto/IShareEcho/archive/master.zip)
 [ImageBox](https://github.com/journey-ad/Image-Box-Typecho-Plugin) | 简易jQuery图片灯箱弹窗特效插件 | 0.1 | [journey.ad](https://github.com/journey-ad) | [下载](https://github.com/journey-ad/Image-Box-Typecho-Plugin/archive/master.zip)
 [InvitationCode](https://gitee.com/cx-a/TypechoInvitationCode) | Typecho自动生成注册邀请码插件 | 1.2.2 | [晨曦啊](https://gitee.com/cx-a) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-H_to_L/InvitationCode.zip)
+[JustArchives](https://plugins.typecho.me/plugins/just-archives.html) | 页面输出折叠式文章归档列表插件 | 0.2.2 | jKey | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-H_to_L/JustArchives.zip)
 [KaTeX4Typecho](https://github.com/vc12345679/KaTeX4Typecho) | 基于CDN的KaTeX公式渲染插件 | 0.0.1 | [vc12345679](https://github.com/vc12345679) | [下载](https://github.com/vc12345679/KaTeX4Typecho/archive/master.zip)
 [Kefu](https://github.com/1628972070/typecho) | Typecho网站右侧浮动客服插件 | 1.0.0 | [双少](https://github.com/1628972070) | [下载](https://github.com/1628972070/typecho/archive/master.zip)
 [KindEditor](https://github.com/hizhengfu/KindEditor) | 所见即所得富文本编辑器插件 | 4.0.1 | [hizhengfu](https://github.com/hizhengfu) | [下载](https://github.com/hizhengfu/KindEditor/archive/master.zip)
@@ -204,6 +206,7 @@
 [TeePay](https://github.com/mhcyong/TeePay) | 自媒体付费阅读插件(免费基础版) | 1.5.2 | [胖蒜网](https://github.com/mhcyong) | [下载](https://github.com/mhcyong/TeePay/archive/master.zip)
 [Textends](https://github.com/jiangmuzi/Textends) | 常用模版输出效果多功能扩展插件 | 1.0.0 | [绛木子](https://github.com/jiangmuzi) | [下载](https://github.com/jiangmuzi/Textends/archive/master.zip)
 [Textile2](https://github.com/typecho/plugins/tree/master/Textile2) | MT风格Textile2语法解析器插件 | 2.1.1 | Jim Riggs | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/Textile2.zip)
+[Thumbnail](https://mrasong.com/a/thumbnail-for-typecho) | Typecho多层判断文章缩略图插件 | 1.0.5 | [Mr.Asong](https://mrasong.com) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/Thumbnail.zip)
 [TimelyNotice](https://521-wf.com/archives/41.html) | SMTP邮件及时通知评论回复插件 | 2.0 | [WiFeng](https://github.com/WiFeng) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/TimelyNotice.zip)
 [TianAPIEnsentence](http://forum.typecho.org/viewtopic.php?f=6&t=11744) | [TianAPI](https://www.tianapi.com)输出英文经典名句插件 | 1.0.0 | [宇天行](https://www.huceo.com) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/TianAPIEnsentence.zip)
 [TianAPISayLove](http://forum.typecho.org/viewtopic.php?f=6&t=11743) | [TianAPI](https://www.tianapi.com)输出随机土味情话插件 | 1.0.0 | [宇天行](https://www.huceo.com) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/TianAPISayLove.zip)
@@ -234,6 +237,7 @@
 [ViewsCounter](https://github.com/Quarkay/Typecho-ViewsCounter) | 统计文章浏览次数并显示排行插件 | 1.0.0 | [Quarkay](https://github.com/Quarkay) | [下载](https://github.com/Quarkay/Typecho-ViewsCounter/archive/master.zip)
 [WTS](https://github.com/shiyeshu/WTS) | 仿ACFUN气泡通知首页公告插件 | 1.0.0 | [阿硕](https://github.com/shiyeshu) | [下载](https://github.com/shiyeshu/WTS/archive/master.zip)
 [WeBlog](https://github.com/thinkmoon/WeBlog) | Typecho微信/QQ小程序版插件 | 0.1.9 | [醉月思](https://github.com/thinkmoon) | [特殊](https://github.com/thinkmoon/WeBlog/archive/master.zip)
+[WeChatNotice](https://blog.zgcwkj.cn/archives/67.html) | 文章评论等推送微信公众号插件 | 1.0.0 | [zgcwkj](https://blog.zgcwkj.cn) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/WeChatNotice.zip)
 [WeMedia](https://github.com/muzishanshi/WeMediaForTypecho) | Typecho积分商城付费阅读插件 | 1.0.16 | [二呆](https://github.com/muzishanshi) | [下载](https://github.com/muzishanshi/WeMediaForTypecho/archive/master.zip)
 [WeTypecho](https://github.com/MingliangLu/WeTypecho) | Typecho映射到微信小程序插件 | 0.1 | [成都第七帅](https://github.com/MingliangLu) | [特殊](https://github.com/MingliangLu/WeTypecho/archive/master.zip)
 [WebTotal](https://github.com/ss7247/Typecon__WebTotal) | 自增统计/输出网站浏览次数插件 | 1.0.0 | [astar](https://github.com/ss7247) | [下载](https://github.com/ss7247/Typecon__WebTotal/archive/master.zip)
