@@ -27,7 +27,7 @@
 
  > 下表中的下载链接文字可用于附加图标：`下载`即非社区版，`不可用`显示为:no_entry:，`特殊`显示:warning:即安装或启用方法特殊。
 
-### 插件信息 (225)
+### 插件信息 (230)
 
 ###### TeStore使用下表“名称”创建安装文件夹，“版本”提示升级，请务必确保文本准确；添加时注意按字母排序，自增上方括号内总数，简介不要太长。
 ```
@@ -45,6 +45,7 @@
 [Adminer](https://github.com/kokororin/typecho-plugin-adminer) | 后台集成Adminer数据库管理插件 | 1.0 | [kokororin](https://github.com/kokororin) | [下载](https://github.com/kokororin/typecho-plugin-adminer/archive/master.zip)
 [AdminLogin](https://github.com/v03413/Typecho_Plugins/tree/master/AdminLogin) | 微信/QQ号后台扫码登录插件 | 0.0.1 | [&#95;莫名&#95;](https://github.com/v03413) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/AdminLogin.zip)
 [AjaxComment](https://github.com/qlwz/AjaxComment-For-Typecho) | 原生Js评论Ajax异步提交插件 | 1.0.0.2 | [情留メ蚊子](https://github.com/qlwz) | [下载](https://github.com/qlwz/AjaxComment-For-Typecho/archive/master.zip)
+[Akalin](https://github.com/huhaku/typecho_Akalin) | 指定常用登录地IP白名单插件 | 1.0.0 | [huhaku](https://github.com/huhaku) | [下载](https://github.com/huhaku/typecho_Akalin/archive/master.zip)
 [Akismet](https://github.com/typecho/plugins/tree/master/Akismet) | 反垃圾评论服务Akismet插件 | 1.1.4 | [qining](https://github.com/joyqi) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/Akismet.zip)
 [Album](https://github.com/THX-plus/Album) | Typecho模版型相册系统插件 | 1.2 | [我本奈何](https://github.com/THX-plus) | [下载](https://github.com/THX-plus/Album/archive/master.zip)
 [AliOssForTypecho](https://github.com/droomo/AliOssForTypecho) | 新OSS云储存插件(文件名一致) | 1.1.1 | [droomo.](https://github.com/droomo) | [下载](https://github.com/droomo/AliOssForTypecho/archive/master.zip)
@@ -73,6 +74,7 @@
 [CdnHelper](https://github.com/phpgao/CdnHelper) | 替换图片地址为CDN前缀插件 | 0.1 | [老高](https://github.com/phpgao) | [下载](https://github.com/phpgao/CdnHelper/archive/master.zip)
 [Clipboard2markdown](https://github.com/FaithPatrick/typecho-clipboard2markdown) | Markdown剪贴板内容格式化插件 | 1.0.0 | [大袋鼠](https://github.com/FaithPatrick) | [下载](https://github.com/FaithPatrick/typecho-clipboard2markdown/archive/master.zip)
 [ClsoFun](https://blog.clso.fun/posts/2019-05-02/typecho-plus-tutorial.html) | Typecho Plus多功能系统增强插件 | 0.5.3 | [二笔青年](https://blog.clso.fun) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/ClsoFun.zip)
+[CodeBox](https://plugins.typecho.me/plugins/code-box.html) | 美化版[GeSHi](http://qbnz.com/highlighter)库代码高亮插件 | 0.1.1 | jKey | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/CodeBox.zip)
 [CodeHighlighter](https://github.com/Copterfly/CodeHighlighter-for-Typecho) | Prism代码高亮插件(带复制按钮) | 1.0.0 | [Copterfly](https://github.com/Copterfly) | [下载](https://github.com/Copterfly/CodeHighlighter-for-Typecho/archive/master.zip)
 [Collection](https://github.com/tennsinn/Typecho_Plugin--Collection) | Typecho记录管理收藏条目插件 | 1.6.0 | [息E-敛](https://github.com/tennsinn) | [下载](https://github.com/tennsinn/Typecho_Plugin--Collection/archive/master.zip)
 [ColorfulTags](https://github.com/invelop/Typecho-ColorfulTags) | Typecho生成彩色3D标签云插件 | 1.6 | [锋临](https://github.com/invelop) | [下载](https://github.com/invelop/Typecho-ColorfulTags/archive/master.zip)
@@ -166,6 +168,7 @@
 [QPlayer](https://github.com/Jrohy/QPlayer-Typecho-Plugin) | 页面底部悬浮式音乐播放器插件 | 1.3.4.2 | [Jrohy](https://github.com/Jrohy) | [下载](https://github.com/Jrohy/QPlayer-Typecho-Plugin/archive/master.zip)
 [QRCode](https://github.com/aneasystone/typecho-qrcode) | 文章末尾自动生成网址二维码插件 | 1.0.0 | [aneasystone](https://github.com/aneasystone) | [下载](https://github.com/aneasystone/typecho-qrcode/archive/master.zip)
 [QiniuFile](https://github.com/lscho/QiniuFile_For_Typecho) | 七牛云存储插件(可选本站同步备份) | 0.1 | [lscho](https://github.com/lscho) | [下载](https://github.com/lscho/QiniuFile_For_Typecho/archive/master.zip)
+[RandomArticleList](https://defe.me/prg/234.html) | Typecho输出随机文章列表插件 | 2.0.1 | [df](https://github.com/defeme) | [特殊](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/RandomArticleList.zip)
 [RandomDescription](https://github.com/phpgao/RandomDescription) | Typecho定时随机站点描述插件 | 1.0 | [老高@PHPer](https://github.com/phpgao) | [下载](https://github.com/phpgao/RandomDescription/archive/master.zip)
 [Rdog](https://github.com/jrotty/Rdog) | 注册机制优化/发文自动审核插件 | 1.3.0 | [泽泽](https://github.com/jrotty) | [下载](https://github.com/jrotty/Rdog/archive/master.zip)
 [Restful](https://github.com/moefront/typecho-plugin-Restful) | Typecho开放API插件(输出/提交) | 1.2.0 | [MoeFront Studio](https://github.com/moefront) | [下载](https://github.com/moefront/typecho-plugin-Restful/archive/master.zip)
@@ -254,8 +257,10 @@
 [iThumb](https://github.com/benzBrake/iThumb) | 从附件图片中选取文章缩略图插件 | 0.1.4 | [Ryan](https://github.com/benzBrake) | [下载](https://github.com/benzBrake/iThumb/archive/master.zip)
 [kiana](https://github.com/jrotty/typecho-kiana) | (娱乐向)二次元琪亚娜卡通挂件插件 | 1.0 | [jrotty](https://github.com/jrotty) | [下载](https://github.com/jrotty/typecho-kiana/archive/master.zip)
 [nginxhelper](https://github.com/gzare/Typecho-NginxHelper) | Typecho自动清理Nginx缓存插件 | 0.1 Beta | [Zare](https://github.com/gzare) | [特殊](https://github.com/gzare/Typecho-NginxHelper/archive/master.zip)
-[notice](https://github.com/jrotty/typecho-for-notice) | 判断来路地址输出欢迎消息插件 | 0.3 | [jrotty](https://github.com/jrotty) | [下载](https://github.com/jrotty/typecho-for-notice/archive/master.zip)
+[notice](https://github.com/jrotty/typecho-for-notice) | 按来路地址输出欢迎消息通知插件 | 0.3 | [jrotty](https://github.com/jrotty) | [下载](https://github.com/jrotty/typecho-for-notice/archive/master.zip)
+[oneimg](https://github.com/haocity/oneimg-typecho) | 为页面添加可变背景图片效果插件 | 1.0 | [疯狂减肥带](https://github.com/haocity) | [下载](https://github.com/haocity/oneimg-typecho/archive/master.zip)
 [platformSelect](https://github.com/internelp/platformSelect) | 自定义字段设置文章所属平台插件 | 1.0.0 | [枫叶](https://github.com/internelp) | [下载](https://github.com/internelp/platformSelect/archive/master.zip)
+[seohtml](https://plugins.typecho.me/plugins/seohtml.html) | 修改系统category/tag路径值插件 | 1.0.1 | [小夜](https://www.ananyiyi.com) | [特殊](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/seohtml.zip)
 [runPHP](https://github.com/ChinaSiro/typecho_plugins_runPHP) | 自定义字段调用指定PHP文件插件 | 1.0.0 | [ChinaSiro](https://github.com/ChinaSiro) | [下载](https://github.com/ChinaSiro/typecho_plugins_runPHP/archive/master.zip)
 [tagshelper](https://qqdie.com/archives/tyepcho-tag-select-plugin.html) | 发布文章列出已用标签供点选插件 | 1.0 | [泽泽社长](https://github.com/jrotty) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/tagshelper.zip)
 [wangEditor](https://github.com/journey-ad/wangEditor-Typecho-Plugin) | 所见即所得编辑器wangEditor插件 | 1.0.1 | [journey.ad](https://github.com/journey-ad) | [下载](https://github.com/journey-ad/wangEditor-Typecho-Plugin/archive/master.zip)
