@@ -27,7 +27,7 @@
 
  > 下表中的下载链接文字可用于附加图标：`下载`即非社区版，`不可用`显示为:no_entry:，`特殊`显示:warning:即安装或启用方法特殊。
 
-### 插件信息 (234)
+### 插件信息 (246)
 
 ###### TeStore使用下表“名称”创建安装文件夹，“版本”提示升级，请务必确保文本准确；添加时注意按字母排序，自增上方括号内总数，简介不要太长。
 ```
@@ -129,9 +129,11 @@
 [Huaji](https://github.com/journey-ad/Huaji-Typecho-Plugin) | (娱乐向)滑稽表情动态交互挂件插件 | 0.1 | [journey.ad](https://github.com/journey-ad) | [下载](https://github.com/journey-ad/Huaji-Typecho-Plugin/archive/master.zip)
 [HuifengMembers](https://github.com/wedojava/HuifengMember) | Typecho自建会员信息数据表插件 | 0.1.1 | [回风](https://github.com/wedojava) | [下载](https://github.com/wedojava/HuifengMember/archive/master.zip)
 [HoerMouse](https://gitee.com/hoexhe/HoerMouse) | 喷墨/气泡/爱心炫彩鼠标特效插件 | 1.3.0 | [Hoe](https://gitee.com/hoexhe) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-H_to_L/HoerMouse.zip)
+[HPCache](https://mingdeju.com/archives/typecho-cache-download.html) | Typecho静态化页面文件缓存插件 | 1.0 | [雷鬼](https://www.typechodev.com) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-H_to_L/HPCache.zip)
 [HyperMD](https://github.com/journey-ad/HyperMD-Typecho-Plugin) | Markdown所见即所得编辑器插件 | 0.1 | [journey.ad](https://github.com/journey-ad) | [下载](https://github.com/journey-ad/HyperMD-Typecho-Plugin/archive/master.zip)
 [IShareEcho](https://github.com/pluveto/IShareEcho) | 在模板输出分享按钮及二维码插件 | 1.0.0 | [pluvet](https://github.com/pluveto) | [下载](https://github.com/pluveto/IShareEcho/archive/master.zip)
 [ImageBox](https://github.com/journey-ad/Image-Box-Typecho-Plugin) | 简易jQuery图片灯箱弹窗特效插件 | 0.1 | [journey.ad](https://github.com/journey-ad) | [下载](https://github.com/journey-ad/Image-Box-Typecho-Plugin/archive/master.zip)
+[Import](https://www.wamuban.com/plugin/2100.html) | 通用采集内容导入数据库接口插件 | 0.3 | fhy&[雷鬼](https://www.typechodev.com) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-H_to_L/Import.zip)
 [InvitationCode](https://gitee.com/cx-a/TypechoInvitationCode) | Typecho自动生成注册邀请码插件 | 1.2.2 | [晨曦啊](https://gitee.com/cx-a) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-H_to_L/InvitationCode.zip)
 [JustArchives](https://plugins.typecho.me/plugins/just-archives.html) | 页面输出折叠式文章归档列表插件 | 0.2.2 | jKey | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-H_to_L/JustArchives.zip)
 [KaTeX4Typecho](https://github.com/vc12345679/KaTeX4Typecho) | 基于CDN的KaTeX公式渲染插件 | 0.0.1 | [vc12345679](https://github.com/vc12345679) | [下载](https://github.com/vc12345679/KaTeX4Typecho/archive/master.zip)
@@ -189,6 +191,7 @@
 [SaeUpload](https://github.com/KimiChen/Typecho-SaeUpload) | 新浪云引擎SAE上传附件专用插件 | 1.0.0 Beta | [Kimi](https://github.com/KimiChen) | [下载](https://github.com/KimiChen/Typecho-SaeUpload/archive/master.zip)
 [SecCode](https://521-wf.com/archives/36.html) | 多功能自定义绚丽验证码插件 | 1.2.1 | [WiFeng](https://github.com/WiFeng) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/SecCode.zip)
 [SequenceDiagram](http://forum.typecho.org/viewtopic.php?f=6&t=10873) | Markdown语法seq转时序图插件 | 1.2.0 | [ZhangZijing(Venteto)](https://github.com/pluveto) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/SequenceDiagram.zip)
+[ShenJianShou](https://www.wamuban.com/plugin/2097.html) | 神箭手采集器官方版内容发布插件 | 4.2.4 | [神箭手云](http://www.shenjian.io) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/ShenJianShou.zip)
 [Shields](https://github.com/journey-ad/Shields-Typecho-Plugin) | GitHub仓库用Shields.io按钮插件 | 1.0.0 | [journey.ad](https://github.com/journey-ad) | [下载](https://github.com/journey-ad/Shields-Typecho-Plugin/archive/master.zip)
 [Shop](https://github.com/ilanlanya/typecho-plugin-shop) | Typecho非官方线上主题商店插件 | 1.0.0 | [LiCxi](https://github.com/ilanlanya) | [不可用](https://github.com/ilanlanya/typecho-plugin-shop/archive/master.zip)
 [SimpleCDN](https://github.com/Quarkay/Typecho-SimpleCDN) | 匹配文章内容替换为CDN链接插件 | 1.0.0 | [Quarkay](https://github.com/Quarkay) | [下载](https://github.com/Quarkay/Typecho-SimpleCDN/archive/master.zip)
@@ -200,6 +203,7 @@
 [SmartSpam](http://www.yovisun.com/archive/typecho-plugin-smartspam.html) | 过滤内容/网址拦截垃圾评论插件 | 2.6.0 | [YoviSun](http://www.yovisun.com) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/SmartSpam.zip)
 [Snow](https://github.com/journey-ad/Snow-Typecho-Plugin) | 原生Js多项定制页面下雪特效插件 | 1.0.0 | [journey.ad](https://github.com/journey-ad) | [下载](https://github.com/journey-ad/Snow-Typecho-Plugin/archive/master.zip)
 [SpammersGoAway](https://github.com/oott123/SpammersGoAway) | 简易挑战码机制防垃圾评论插件 | 0.0.1 | [oott123](https://github.com/oott123) | [下载](https://github.com/oott123/SpammersGoAway/archive/master.zip)
+[Spider](http://forum.typecho.org/viewtopic.php?f=6&t=11650) | Typecho网站文章批量采集插件 | 1.0.0 | Syan | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/Spider.zip)
 [StreakRain](https://github.com/zhusaidong/streak-rain-typecho-plugin) | (娱乐向)动态线条雨背景效果插件 | 1.1.0 | [上官元恒](https://github.com/zhusaidong) | [下载](https://github.com/zhusaidong/streak-rain-typecho-plugin/archive/master.zip)
 [Svg3dTagCloud](https://gitee.com/hoexhe/Svg3dTagCloud) | Typecho动态3D标签云特效插件 | 1.0.0 | [Hoe](https://gitee.com/hoexhe) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/Svg3dTagCloud.zip)
 [Swipebox](https://github.com/wuxiaocong/Swipebox) | Swipebox图片灯箱轮播特效插件 | 1.0.0 | [吴尼玛](https://github.com/wuxiaocong) | [下载](https://github.com/wuxiaocong/Swipebox/archive/master.zip)
