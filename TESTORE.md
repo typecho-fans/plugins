@@ -27,7 +27,7 @@
 
  > 下表中的下载链接文字可用于附加图标：`下载`即非社区版，`不可用`显示为:no_entry:，`特殊`显示:warning:即安装或启用方法特殊。
 
-### 插件信息 (255)
+### 插件信息 (259)
 
 ###### TeStore使用下表“名称”创建安装文件夹，“版本”提示升级，请务必确保文本准确；添加时注意按字母排序，自增上方括号内总数，简介不要太长。
 ```
@@ -100,6 +100,7 @@
 [Creole](https://github.com/typecho/plugins/tree/master/Creole) | Wiki风格Creole语法解析器插件 | 0.2 | [明城](https://github.com/mingcheng) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/Creole.zip)
 [CustomCssAndJs](https://github.com/kyuuseiryuu/typecho-plugin-custom-css-js) | 加载自定义头部Css/尾部Js插件 | 1.0 | [KyuuSeiryuu](https://github.com/kyuuseiryuu) | [下载](https://github.com/kyuuseiryuu/typecho-plugin-custom-css-js/archive/master.zip)
 [DPlayer](https://github.com/MoePlayer/DPlayer-Typecho) | 全能视频播放器插件(支持弹幕) | 1.1.0 | [Volio](https://github.com/volio) | [下载](https://github.com/MoePlayer/DPlayer-Typecho/archive/master.zip)
+[DrakNight](http://www.shuyudao.top/index.php/archives/727) | Typecho定时切换夜间模式插件 | 1.0.0 | [术与道](https://github.com/shuyudao) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/DrakNight.zip)
 [DarkReader](https://github.com/jackytsu/typecho-darkreader) | [Dark Reader](https://darkreader.org)关灯浏览效果插件 | 1.0.0 | [南宫小骏](https://github.com/jackytsu) | [下载](https://github.com/jackytsu/typecho-darkreader/archive/master.zip)
 [DigestShow](https://521-wf.com/archives/25.html) | 强制遮罩列表正文为摘要插件 | 1.1.0 | [WiFeng](https://github.com/WiFeng) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/DigestShow.zip)
 [DoubanBoard](https://github.com/AlanDecode/Typecho-Plugin-DoubanBoard) | 博客上展示豆瓣书单/影单插件 | 0.5 | [熊猫小A](https://github.com/AlanDecode) | [下载](https://github.com/AlanDecode/Typecho-Plugin-DoubanBoard/archive/master.zip)
@@ -162,6 +163,7 @@
 [MemorialDay](https://github.com/sy-records/MemorialDay) | 公祭哀悼日网站应用灰色滤镜插件 | 1.0.0 | [沈唁](https://github.com/sy-records) | [下载](https://github.com/sy-records/MemorialDay/archive/master.zip)
 [Messages](https://github.com/kraity/Messages) | [南博](https://nabo.krait.cn)App专用消息推送模块插件 | 1.0 | [权那他](https://github.com/kraity) | [下载](https://github.com/kraity/Messages/archive/master.zip)
 [Meting](https://github.com/MoePlayer/APlayer-Typecho) | 五大云音乐平台API播放器插件 | 2.1.2 | [METO](https://github.com/metowolf) | [下载](https://github.com/MoePlayer/APlayer-Typecho/archive/master.zip)
+[MoeTop](https://github.com/Sanakey/MoeTop) | 二次元萌萌哒返回顶部按钮插件 | 1.1.0 | [Sanakey](https://github.com/Sanakey) | [下载](https://github.com/Sanakey/MoeTop/archive/master.zip)
 [MouseFloating](https://github.com/icy2003/typecho-MouseFloating) | 随机漂浮文字跟随鼠标特效插件 | 1.0.0 | [icy2003](https://github.com/icy2003) | [下载](https://github.com/icy2003/typecho-MouseFloating/archive/master.zip)
 [MultiTheme](https://github.com/jqnote/Typecho-MultiTheme) | Typecho自定义多主题切换插件 | 1.0.0 | [HackRose](https://github.com/jqnote) | [下载](https://github.com/jqnote/Typecho-MultiTheme/archive/master.zip)
 [MyUpload](https://github.com/jlice/typecho-MyUpload) | 本地/[TinyPNG](https://tinypng.com)压缩图片上传插件 | 1.5.0 | [文剑木然](https://github.com/jlice) | [特殊](https://github.com/jlice/typecho-MyUpload/archive/master.zip)
@@ -176,6 +178,7 @@
 [Ping](https://www.liudon.org/1235.html) | Ping指定服务地址通知更新插件 | 1.0.0 | [Liudon](https://www.liudon.org) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/Ping.zip)
 [Pio](https://github.com/Dreamer-Paul/Pio) | (娱乐向)Live2D二次元看板娘插件 | 2.4 | [Dreamer-Paul](https://github.com/Dreamer-Paul) | [下载](https://github.com/Dreamer-Paul/Pio/archive/master.zip)
 [PlayAtWill](https://github.com/vfhky/PlayAtWill) | 迷你型Flash音乐播放器2合1插件 | 1.0.0 | [vfhky](https://github.com/vfhky) | [下载](https://github.com/vfhky/PlayAtWill/archive/master.zip)
+[PluginUpload](http://www.shuyudao.top/index.php/archives/728) | Typecho后台上传插件zip包插件 | 1.0.0 | [术与道](https://github.com/shuyudao) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/PluginUpload.zip)
 [Poptrox](https://github.com/99kyuu/Poptrox_for_Typecho) | jQuery全能灯箱弹窗Poptrox插件 | 0.01 | [玖玖kyuu](https://github.com/99kyuu) | [下载](https://github.com/99kyuu/Poptrox_for_Typecho/archive/master.zip)
 [PostSeries](https://github.com/hongweipeng/PostSeries) | Typecho系列专题文章管理插件 | 0.0.1 | [hongweipeng](https://github.com/hongweipeng) | [下载](https://github.com/hongweipeng/PostSeries/archive/master.zip)
 [PostToQzone](https://github.com/typecho/plugins/tree/master/PostToQzone) | QQ邮箱同步发布文章到Qzone插件 | 1.0 beta | [blankyao](https://github.com/blankyao) | [不可用](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/PostToQzone.zip)
@@ -268,6 +271,7 @@
 [WordCount](https://github.com/jrotty/WordCount) | Typecho文章字数实时计算器插件 | 1.6 | [Jrotty](https://github.com/jrotty) | [下载](https://github.com/jrotty/WordCount/archive/master.zip)
 [WordpressToTypecho](https://github.com/typecho/plugins/tree/master/WordpressToTypecho) | Wordpress数据库导入Typecho插件 | 1.0.3 Beta | [qining](https://github.com/joyqi) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/WordpressToTypecho.zip)
 [Words](https://github.com/tennsinn/Typecho-Plugins/tree/master/Words) | Typecho自建数据仿微博碎语插件 | 1.1.2 | [息E-敛](https://github.com/tennsinn) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/Words.zip)
+[WowScroll](https://github.com/Sanakey/WowScroll) | 页面元素载入时显示动画特效插件 | 1.1.1 | [Sanakey](https://github.com/Sanakey) | [下载](https://github.com/Sanakey/WowScroll/archive/master.zip)
 [XmlRpcAid](https://github.com/MliKiowa/XmlRpcAid-By-Nabo) | [南博](https://nabo.krait.cn)App专用更新XmlRpc插件 | 2.0.0 | [乔千](https://github.com/MliKiowa) | [下载](https://github.com/MliKiowa/XmlRpcAid-By-Nabo/archive/master.zip)
 [Youtube](https://github.com/ayangyuan/Youtube-Typecho-Plugin) | 嵌入Youtube/Vimeo视频插件 | 1.0 | [Y.Y](https://github.com/ayangyuan) | [下载](https://github.com/ayangyuan/Youtube-Typecho-Plugin/archive/master.zip)
 [ZenCoding](https://github.com/typecho/plugins/tree/master/ZenCoding) | 快捷编辑Html/Css语法辅助插件 | 1.0.0 | [qining](https://github.com/joyqi) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/ZenCoding.zip)
