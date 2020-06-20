@@ -27,7 +27,7 @@
 
  > 下表中的下载链接文字可用于附加图标：`下载`即非社区版，`不可用`显示为:no_entry:，`特殊`显示:warning:即安装或启用方法特殊。
 
-### 插件信息 (264)
+### 插件信息 (268)
 
 ###### TeStore使用下表“名称”创建安装文件夹，“版本”提示升级，请务必确保文本准确；添加时注意按字母排序，自增上方括号内总数，简介不要太长。
 ```
@@ -65,6 +65,7 @@
 [BaiduSubmit](https://github.com/phpgao/BaiduSubmit) | 推送Sitemap文章链接至百度插件 | 0.5.2 | [老高](https://github.com/phpgao) | [下载](https://github.com/phpgao/BaiduSubmit/archive/master.zip)
 [BaiduTextCensor](https://github.com/sy-records/ty-baidu-textcensor) | 百度文本审核过滤敏感内容插件 | 1.0.1 | [沈唁](https://github.com/sy-records) | [下载](https://github.com/sy-records/ty-baidu-textcensor/archive/master.zip)
 [BangumiList](https://github.com/ShadowySpirits/BangumiList) | 短代码输出Bangumi追番列表插件 | 1.0.0 | [SSpirits](https://github.com/ShadowySpirits) | [下载](https://github.com/ShadowySpirits/BangumiList/archive/master.zip)
+[Beblank](https://github.com/ghosx/Beblank) | Js替换页面链接为新窗口打开插件 | 1.0.0 | [Heeeepin](https://github.com/ghosx) | [下载](https://github.com/ghosx/Beblank/archive/master.zip)
 [BilibiliEcho](https://github.com/pluveto/BilibiliEcho) | Typecho同步输出Bilibili动态插件 | 1.0.0 | [pluvet](https://github.com/pluveto) | [下载](https://github.com/pluveto/BilibiliEcho/archive/master.zip)
 [BlockComment](https://github.com/typecho/plugins/tree/master/BlockComment) | Typecho评论来路IP黑名单插件 | 0.0.1 | [明城](https://github.com/mingcheng) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/BlockComment.zip)
 [BlockIP](https://github.com/kokororin/typecho-plugin-BlockIP) | Typecho访问前台IP黑名单插件 | 1.0 | [Kokororin](https://github.com/kokororin) | [下载](https://github.com/kokororin/typecho-plugin-BlockIP/archive/master.zip)
@@ -223,6 +224,7 @@
 [Svg3dTagCloud](https://gitee.com/hoexhe/Svg3dTagCloud) | Typecho动态3D标签云特效插件 | 1.0.0 | [Hoe](https://gitee.com/hoexhe) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/Svg3dTagCloud.zip)
 [Swipebox](https://github.com/wuxiaocong/Swipebox) | Swipebox图片灯箱轮播特效插件 | 1.0.0 | [吴尼玛](https://github.com/wuxiaocong) | [下载](https://github.com/wuxiaocong/Swipebox/archive/master.zip)
 [SyntaxHighlighter](https://github.com/tinpont/SyntaxHighlighter-For-Typecho) | 经典SyntaxHighlighter高亮插件 | 0.0.2 | [Tinpont](https://github.com/tinpont) | [下载](https://github.com/tinpont/SyntaxHighlighter-For-Typecho/archive/master.zip)
+[TEDUriReplace](https://www.typechodev.com/plugins/%E5%85%B6%E4%BB%96%E6%8F%92%E4%BB%B6/typecho-url-replace.html) | 非数据库批量替换文章内容插件 | 1.0 | [lgl](https://www.typechodev.com) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/TEDUriReplace.zip)
 [TEReplace](https://qqdie.com/archives/tereplace-plugin-typecho.html) | 替换指定内容/标题/字段值插件 | 1.3.0 | [泽泽](https://github.com/jrotty) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/TEReplace.zip)
 [TableOfContents](https://github.com/phpgao/TableOfContents) | 下拉式文章内容目录自动生成插件 | 0.3 | [老高](https://github.com/phpgao) | [下载](https://github.com/phpgao/TableOfContents/archive/master.zip)
 [TeComment](https://github.com/jiangmuzi/TeComment) | 评论增强插件(工具栏/Ajax提交等) | 2.0.0 | [绛木子](https://github.com/jiangmuzi) | [下载](https://github.com/jiangmuzi/TeComment/archive/master.zip)
@@ -260,6 +262,7 @@
 [UploadGithubForTypecho](https://github.com/AyagawaSeirin/UploadGithubForTypecho) | GitHub存储附件插件(jsDelivr加速) | 1.1.0 | [AyagawaSeirin](https://github.com/AyagawaSeirin) | [下载](https://github.com/AyagawaSeirin/UploadGithubForTypecho/archive/master.zip)
 [UserAgent](https://github.com/ennnnny/typecho/tree/master/UserAgent) | 显示评论者系统/浏览器信息插件 | 0.1.0 | [kuye](https://github.com/ennnnny) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/UserAgent_kuye.zip)
 [UserAgent](https://github.com/UniqueOnly/UserAgent) | 访客浏览器/系统识别与输出插件 | 1.0.0 | [Unique](https://github.com/UniqueOnly) | [下载](https://github.com/UniqueOnly/UserAgent/archive/master.zip)
+[VAPTCHA](https://github.com/frank-xjh/VAPTCHA) | [VAPTCHA](https://www.vaptcha.com/)手势验证码API接入插件 | 1.0.0 | [Frank](https://github.com/frank-xjh) | [下载](https://github.com/frank-xjh/VAPTCHA/archive/master.zip)
 [VariousCaptcha](https://github.com/jan-bar/typecho/blob/master/VariousCaptcha) | Typecho多种样式图片验证码插件 | 0.0.1 | [你好啊007](https://github.com/jan-bar) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/VariousCaptcha.zip)
 [Viewers](https://github.com/tennsinn/Viewers) | 两种模式显示读者墙头像排行插件 | 0.1.0 | [息E-敛](https://github.com/tennsinn) | [下载](https://github.com/tennsinn/Viewers/archive/master.zip)
 [ViewsCounter](https://github.com/Quarkay/Typecho-ViewsCounter) | 统计文章浏览次数并显示排行插件 | 1.0.0 | [Quarkay](https://github.com/Quarkay) | [下载](https://github.com/Quarkay/Typecho-ViewsCounter/archive/master.zip)
@@ -299,4 +302,5 @@
 [tagshelper](https://qqdie.com/archives/tyepcho-tag-select-plugin.html) | 发布文章列出已用标签供点选插件 | 1.0 | [泽泽社长](https://github.com/jrotty) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/tagshelper.zip)
 [wangEditor](https://github.com/journey-ad/wangEditor-Typecho-Plugin) | 所见即所得编辑器wangEditor插件 | 1.0.1 | [journey.ad](https://github.com/journey-ad) | [下载](https://github.com/journey-ad/wangEditor-Typecho-Plugin/archive/master.zip)
 [waterMark](https://github.com/internelp/waterMark) | 图片自动添加Gif/Png格式水印插件 | 1.0.1 | [应用侠](https://github.com/internelp) | [下载](https://github.com/internelp/waterMark/archive/master.zip)
-[ymplayer](https://github.com/kokororin/typecho-plugin-ymplayer) | 海报式Html5音乐播放器插件 | 0.7 | [kokororin](https://github.com/kokororin) | [特殊](https://github.com/kokororin/typecho-plugin-ymplayer/archive/master.zip)
+[ymplayer](https://github.com/kokororin/typecho-plugin-ymplayer) | 海报式Html5音乐播放器MUSE插件 | 0.7 | [kokororin](https://github.com/kokororin) | [特殊](https://github.com/kokororin/typecho-plugin-ymplayer/archive/master.zip)
+[zbgray](http://forum.typecho.org/viewtopic.php?f=6&t=11271) | Typecho简易版祭日用整站变灰插件 | 1.0.0 | jyzb02 | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/zbgray.zip)
