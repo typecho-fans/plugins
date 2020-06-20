@@ -27,7 +27,7 @@
 
  > 下表中的下载链接文字可用于附加图标：`下载`即非社区版，`不可用`显示为:no_entry:，`特殊`显示:warning:即安装或启用方法特殊。
 
-### 插件信息 (272)
+### 插件信息 (276)
 
 ###### TeStore使用下表“名称”创建安装文件夹，“版本”提示升级，请务必确保文本准确；添加时注意按字母排序，自增上方括号内总数，简介不要太长。
 ```
@@ -64,6 +64,7 @@
 [BaiduSlug](https://github.com/gischuck/BaiduSlug) | 百度翻译API自动生成slug名插件 | 1.0 | [Chuck](https://github.com/gischuck) | [下载](https://github.com/gischuck/BaiduSlug/archive/master.zip)
 [BaiduSubmit](https://github.com/phpgao/BaiduSubmit) | 推送Sitemap文章链接至百度插件 | 0.5.2 | [老高](https://github.com/phpgao) | [下载](https://github.com/phpgao/BaiduSubmit/archive/master.zip)
 [BaiduTextCensor](https://github.com/sy-records/ty-baidu-textcensor) | 百度文本审核过滤敏感内容插件 | 1.0.1 | [沈唁](https://github.com/sy-records) | [下载](https://github.com/sy-records/ty-baidu-textcensor/archive/master.zip)
+[BaiduTongji](https://github.com/liiklin/BaiduTongji) | 设置百度统计ID自动加载代码插件 | 1.0.0 | [linjun](https://github.com/liiklin) | [下载](https://github.com/liiklin/BaiduTongji/archive/master.zip)
 [BangumiList](https://github.com/ShadowySpirits/BangumiList) | 短代码输出Bangumi追番列表插件 | 1.0.0 | [SSpirits](https://github.com/ShadowySpirits) | [下载](https://github.com/ShadowySpirits/BangumiList/archive/master.zip)
 [Beblank](https://github.com/ghosx/Beblank) | Js替换页面链接为新窗口打开插件 | 1.0.0 | [Heeeepin](https://github.com/ghosx) | [下载](https://github.com/ghosx/Beblank/archive/master.zip)
 [BilibiliEcho](https://github.com/pluveto/BilibiliEcho) | Typecho同步输出Bilibili动态插件 | 1.0.0 | [pluvet](https://github.com/pluveto) | [下载](https://github.com/pluveto/BilibiliEcho/archive/master.zip)
@@ -162,6 +163,7 @@
 [MailValidate](https://github.com/Archeb/MailValidate) | 注册用户通过邮件验证权限插件 | 1.0.0 | [Archeb](https://github.com/Archeb) | [下载](https://github.com/Archeb/MailValidate/archive/master.zip)
 [Mailer](https://github.com/AlanDecode/Typecho-Plugin-Mailer) | 评论邮件通知插件(开发版专用) | 1.0.1 | [熊猫小A](https://github.com/AlanDecode) | [特殊](https://github.com/AlanDecode/Typecho-Plugin-Mailer/archive/master.zip)
 [Maintain](https://xiamp.net/archives/23.html) | Typecho全局维护插件(免费版) | 1.0.1 | [Ryan](https://github.com/benzBrake) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/Maintain.zip)
+[Markdown](https://jiongks.name/blog/plugin-markdown) | 极简Markdown解析+编辑器套装插件 | 1.1.1 | [勾三股四](https://jiongks.name) | [不可用](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/Markdown.zip)
 [MaterialPlayer](https://github.com/xxyangyoulin/typecho_plugin_material_player) | 可悬浮简洁风质感音乐播放器插件 | 1.0.0 | [xxyangyoulin](https://github.com/xxyangyoulin) | [下载](https://github.com/xxyangyoulin/typecho_plugin_material_player/archive/master.zip)
 [MathJax](https://github.com/typecho/plugins/blob/master/MathJax.php) | 基于CDN的MathJax公式渲染插件 | 1.0.0 | [mutoo](https://github.com/mutoo) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/MathJax.zip)
 [MbEditorFree](https://qqdie.com/archives/mbeditor-mbeditor-plugin.html) | 绚彩高亮模板编辑器插件(免费版) | 1.0.0 | [点我购买付费版](https://qqdie.com/archives/mbeditor-mbeditor-plugin.html) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/MbEditorFree.zip)
@@ -193,6 +195,7 @@
 [PostToSinaToutiao](https://github.com/jiyeme/PostToSinaToutiao) | 同步发布文章到新浪微博头条插件 | 1.0.6 | [祭夜](https://github.com/jiyeme) | [下载](https://github.com/jiyeme/PostToSinaToutiao/archive/master.zip)
 [PreTransformer](https://github.com/imwis/PreTransformer) | 指定标签内代码转为Html实体插件 | 2.2.1 | [Wis Chu](https://github.com/imwis) | [下载](https://github.com/imwis/PreTransformer/releases/download/2.2.1/PreTransformer_2.2.1.zip)
 [Prismjs](https://github.com/WiseClock/Prismjs) | Prism代码高亮插件(支持行号/语言) | 1.0.8 | [WiseClock](https://github.com/WiseClock) | [下载](https://github.com/WiseClock/Prismjs/archive/master.zip)
+[PrivateDiary](https://www.jethro.fun/index.php/archives/120) | 全站强制登录仅注册用户可见插件 | 1.0.0 | [Jethro](https://www.jethro.fun) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/PrivateDiary.zip)
 [Process](https://github.com/Closty/Process) | Typecho多主题页面加载进度条插件 | 2.1.3 | [瓶子](https://github.com/Closty) | [下载](https://github.com/Closty/Process/archive/master.zip)
 [QPlayer](https://github.com/Jrohy/QPlayer-Typecho-Plugin) | 页面底部悬浮式音乐播放器插件 | 1.3.4.2 | [Jrohy](https://github.com/Jrohy) | [下载](https://github.com/Jrohy/QPlayer-Typecho-Plugin/archive/master.zip)
 [QRCode](https://github.com/aneasystone/typecho-qrcode) | 文章末尾自动生成网址二维码插件 | 1.0.0 | [aneasystone](https://github.com/aneasystone) | [下载](https://github.com/aneasystone/typecho-qrcode/archive/master.zip)
@@ -225,6 +228,7 @@
 [SpammersGoAway](https://github.com/oott123/SpammersGoAway) | 简易挑战码机制防垃圾评论插件 | 0.0.1 | [oott123](https://github.com/oott123) | [下载](https://github.com/oott123/SpammersGoAway/archive/master.zip)
 [Spider](http://forum.typecho.org/viewtopic.php?f=6&t=11650) | Typecho网站文章批量采集插件 | 1.0.0 | Syan | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/Spider.zip)
 [StreakRain](https://github.com/zhusaidong/streak-rain-typecho-plugin) | (娱乐向)动态线条雨背景效果插件 | 1.1.0 | [上官元恒](https://github.com/zhusaidong) | [下载](https://github.com/zhusaidong/streak-rain-typecho-plugin/archive/master.zip)
+[StructureData](https://github.com/JokerQyou/StructureData) | (娱乐向)动态线条雨背景效果插件 | 0.3.1 | [Joker Qyou](https://github.com/JokerQyou) | [下载](https://github.com/JokerQyou/StructureData/archive/master.zip)
 [Svg3dTagCloud](https://gitee.com/hoexhe/Svg3dTagCloud) | Typecho动态3D标签云特效插件 | 1.0.0 | [Hoe](https://gitee.com/hoexhe) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/Svg3dTagCloud.zip)
 [Swipebox](https://github.com/wuxiaocong/Swipebox) | Swipebox图片灯箱轮播特效插件 | 1.0.0 | [吴尼玛](https://github.com/wuxiaocong) | [下载](https://github.com/wuxiaocong/Swipebox/archive/master.zip)
 [SyntaxHighlighter](https://github.com/tinpont/SyntaxHighlighter-For-Typecho) | 经典SyntaxHighlighter高亮插件 | 0.0.2 | [Tinpont](https://github.com/tinpont) | [下载](https://github.com/tinpont/SyntaxHighlighter-For-Typecho/archive/master.zip)
