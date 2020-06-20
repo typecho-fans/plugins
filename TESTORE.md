@@ -27,7 +27,7 @@
 
  > 下表中的下载链接文字可用于附加图标：`下载`即非社区版，`不可用`显示为:no_entry:，`特殊`显示:warning:即安装或启用方法特殊。
 
-### 插件信息 (259)
+### 插件信息 (264)
 
 ###### TeStore使用下表“名称”创建安装文件夹，“版本”提示升级，请务必确保文本准确；添加时注意按字母排序，自增上方括号内总数，简介不要太长。
 ```
@@ -69,7 +69,7 @@
 [BlockComment](https://github.com/typecho/plugins/tree/master/BlockComment) | Typecho评论来路IP黑名单插件 | 0.0.1 | [明城](https://github.com/mingcheng) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/BlockComment.zip)
 [BlockIP](https://github.com/kokororin/typecho-plugin-BlockIP) | Typecho访问前台IP黑名单插件 | 1.0 | [Kokororin](https://github.com/kokororin) | [下载](https://github.com/kokororin/typecho-plugin-BlockIP/archive/master.zip)
 [BookInfo](http://forum.typecho.org/viewtopic.php?f=6&t=11149) | 短代码输出豆瓣图书信息卡插件 | 1.0.0 | [Zephyr](http://notekit.cn) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/BookInfo.zip)
-[ByeTyp](https://github.com/sunxiyuan/ByeTyp) | Typecho导出至WordPress插件 | 1.4 | [sunxiyuan](https://github.com/sunxiyuan) | [下载](https://github.com/sunxiyuan/ByeTyp/archive/master.zip)
+[ByeTyp](https://github.com/sunxiyuan/ByeTyp) | 新版数据导出至WordPress插件 | 1.4 | [sunxiyuan](https://github.com/sunxiyuan) | [下载](https://github.com/sunxiyuan/ByeTyp/archive/master.zip)
 [Calendar](https://github.com/istobran/typecho-calender-plugin) | Typecho侧边栏显示日历插件 | 1.0.0 | [BangZ](https://github.com/istobran) | [下载](https://github.com/istobran/typecho-calender-plugin/archive/master.zip)
 [Captcha](https://github.com/KimiChen/Typecho-Captcha) | Typecho经典版评论验证码插件 | 1.0.0 | [qining](https://github.com/joyqi) & [Kimi](https://github.com/KimiChen) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/Captcha.zip)
 [CategoryNext](https://www.typechodev.com/plugins/%E7%83%AD%E9%97%A8%E6%8F%92%E4%BB%B6/category_next_prev.html) | 上下篇显示为同分类内文章插件 | 1.0.0 | [雷鬼](https://www.typechodev.com) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/CategoryNext.zip)
@@ -115,6 +115,7 @@
 [Fimg](https://plugins.typecho.me/plugins/fimg.html) | 输出文章多个附件图片地址插件 | 2011.10.24 | [M4](https://www.ananyiyi.com) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/Fimg.zip)
 [FlashMp3Player](https://github.com/typecho/plugins/tree/master/FlashMp3Player) | Flash音乐播放器Dewplayer插件 | 1.0.1 | [qining](https://github.com/joyqi) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/FlashMp3Player.zip)
 [FlowChart](http://forum.typecho.org/viewtopic.php?f=6&t=10874) | Markdown语法flow转流程图插件 | 1.2.1 | [ZhangZijing(Venteto)](https://github.com/pluveto) | [下载](https://github.com/hujy23/FlowChart-typecho-plugin/archive/master.zip)
+[GEETEST](https://gitee.com/loiou/GEETEST) | 极验证自定义设置评论验证码插件 | 1.0.0 | [LOIOU](https://gitee.com/loiou) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/GEETEST_LOIOU.zip)
 [Geetest](https://github.com/99kyuu/GeetestV3_for_Typecho) | V3版GeeTest登录注册验证码插件 | 1.0.0 | [玖玖kyuu](https://github.com/99kyuu) | [特殊](https://github.com/99kyuu/GeetestV3_for_Typecho/archive/master.zip)
 [Geetest](https://github.com/jinfeijie/Geetest) | 新版GeeTest智能评论验证码插件 | 1.0.3 | [mrjin](https://github.com/jinfeijie) | [下载](https://github.com/jinfeijie/Geetest/archive/1.0.3.zip)
 [GetRealIP](https://github.com/PonyCool/typecho-plugins/blob/master/GetRealIP) | Typecho获取访问客户端真实IP插件 | 1.0.0 | [Pony](https://github.com/PonyCool) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/GetRealIP.zip)
@@ -125,6 +126,7 @@
 [GoogleCodePrettify](https://github.com/typecho/plugins/tree/master/GoogleCodePrettify) | 经典版表格效果谷歌代码高亮插件 | 1.0.0 | [qining](https://github.com/joyqi) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/GoogleCodePrettify_qining.zip)
 [GravatarServer](https://github.com/kraity/typecho-gravatar) | Gravatar服务器插件(支持QQ头像) | 1.1.1 | [权那他](https://github.com/kraity) | [下载](https://github.com/kraity/typecho-gravatar/archive/master.zip)
 [GreyMemorialDay](https://github.com/baifan97/GreyMemorialDay) | 网站定时黑白插件(兼容安卓界面) | 1.1.0 | [WhiteFan](https://github.com/baifan97) | [下载](https://github.com/baifan97/GreyMemorialDay/archive/master.zip)
+[HPCache](https://mingdeju.com/archives/typecho-cache-download.html) | Typecho静态化页面文件缓存插件 | 1.0 | [雷鬼](https://www.typechodev.com) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-H_to_L/HPCache.zip)
 [HPSitemap](https://github.com/invelop/Typecho-HPSitemap) | 百度Sitemap站点地图生成插件 | 2.9 | [Roogle](https://github.com/Moidea)&[雷鬼](https://www.typechodev.com)&[锋临](https://github.com/invelop) | [下载](https://github.com/invelop/Typecho-HPSitemap/archive/master.zip)
 [HTMLCompress](https://github.com/kokororin/typecho-plugin-HTMLCompress) | 前台Html代码去可读性压缩插件 | 1.3 | [Kokororin](https://github.com/kokororin) | [下载](https://github.com/kokororin/typecho-plugin-HTMLCompress/archive/master.zip)
 [HelloChangYan](https://www.cxiansheng.cn/server/278) | Typecho搜狐畅言评论回推插件 | 1.1 | [命中水、](https://www.cxiansheng.cn)&[Angboo](https://github.com/1349920358) | [特殊](https://github.com/typecho-fans/plugins/releases/download/plugins-H_to_L/HelloChangYan.zip)
@@ -134,7 +136,6 @@
 [Huaji](https://github.com/journey-ad/Huaji-Typecho-Plugin) | (娱乐向)滑稽表情动态交互挂件插件 | 0.1 | [journey.ad](https://github.com/journey-ad) | [下载](https://github.com/journey-ad/Huaji-Typecho-Plugin/archive/master.zip)
 [HuifengMembers](https://github.com/wedojava/HuifengMember) | Typecho自建会员信息数据表插件 | 0.1.1 | [回风](https://github.com/wedojava) | [下载](https://github.com/wedojava/HuifengMember/archive/master.zip)
 [HoerMouse](https://gitee.com/hoexhe/HoerMouse) | 喷墨/气泡/爱心炫彩鼠标特效插件 | 1.3.0 | [Hoe](https://gitee.com/hoexhe) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-H_to_L/HoerMouse.zip)
-[HPCache](https://mingdeju.com/archives/typecho-cache-download.html) | Typecho静态化页面文件缓存插件 | 1.0 | [雷鬼](https://www.typechodev.com) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-H_to_L/HPCache.zip)
 [HyperMD](https://github.com/journey-ad/HyperMD-Typecho-Plugin) | Markdown所见即所得编辑器插件 | 0.1 | [journey.ad](https://github.com/journey-ad) | [下载](https://github.com/journey-ad/HyperMD-Typecho-Plugin/archive/master.zip)
 [IShareEcho](https://github.com/pluveto/IShareEcho) | 在模板输出分享按钮及二维码插件 | 1.0.0 | [pluvet](https://github.com/pluveto) | [下载](https://github.com/pluveto/IShareEcho/archive/master.zip)
 [ImageBox](https://github.com/journey-ad/Image-Box-Typecho-Plugin) | 简易jQuery图片灯箱弹窗特效插件 | 0.1 | [journey.ad](https://github.com/journey-ad) | [下载](https://github.com/journey-ad/Image-Box-Typecho-Plugin/archive/master.zip)
@@ -157,10 +158,12 @@
 [MailValidate](https://github.com/Archeb/MailValidate) | 注册用户通过邮件验证权限插件 | 1.0.0 | [Archeb](https://github.com/Archeb) | [下载](https://github.com/Archeb/MailValidate/archive/master.zip)
 [Mailer](https://github.com/AlanDecode/Typecho-Plugin-Mailer) | 评论邮件通知插件(开发版专用) | 1.0.1 | [熊猫小A](https://github.com/AlanDecode) | [特殊](https://github.com/AlanDecode/Typecho-Plugin-Mailer/archive/master.zip)
 [Maintain](https://xiamp.net/archives/23.html) | Typecho全局维护插件(免费版) | 1.0.1 | [Ryan](https://github.com/benzBrake) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/Maintain.zip)
+[MaterialPlayer](https://github.com/xxyangyoulin/typecho_plugin_material_player) | 可悬浮简洁风质感音乐播放器插件 | 1.0.0 | [xxyangyoulin](https://github.com/xxyangyoulin) | [下载](https://github.com/xxyangyoulin/typecho_plugin_material_player/archive/master.zip)
 [MathJax](https://github.com/typecho/plugins/blob/master/MathJax.php) | 基于CDN的MathJax公式渲染插件 | 1.0.0 | [mutoo](https://github.com/mutoo) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/MathJax.zip)
 [MbEditorFree](https://qqdie.com/archives/mbeditor-mbeditor-plugin.html) | 绚彩高亮模板编辑器插件(免费版) | 1.0.0 | [点我购买付费版](https://qqdie.com/archives/mbeditor-mbeditor-plugin.html) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/MbEditorFree.zip)
 [MetaPlus](https://github.com/mrasong/metaplus-for-typecho) | 为分类/标签页定制关联数据插件 | 1.0.0 | [mrasong](https://github.com/mrasong) | [下载](https://github.com/mrasong/metaplus-for-typecho/archive/master.zip)
 [MemorialDay](https://github.com/sy-records/MemorialDay) | 公祭哀悼日网站应用灰色滤镜插件 | 1.0.0 | [沈唁](https://github.com/sy-records) | [下载](https://github.com/sy-records/MemorialDay/archive/master.zip)
+[MenuTree](https://github.com/hongweipeng/MenuTree) | 悬浮式文章内容目录自动生成插件 | 0.8.1 | [hongweipeng](https://github.com/hongweipeng) | [下载](https://github.com/hongweipeng/MenuTree/archive/master.zip)
 [Messages](https://github.com/kraity/Messages) | [南博](https://nabo.krait.cn)App专用消息推送模块插件 | 1.0 | [权那他](https://github.com/kraity) | [下载](https://github.com/kraity/Messages/archive/master.zip)
 [Meting](https://github.com/MoePlayer/APlayer-Typecho) | 五大云音乐平台API播放器插件 | 2.1.2 | [METO](https://github.com/metowolf) | [下载](https://github.com/MoePlayer/APlayer-Typecho/archive/master.zip)
 [MoeTop](https://github.com/Sanakey/MoeTop) | 二次元萌萌哒返回顶部按钮插件 | 1.1.0 | [Sanakey](https://github.com/Sanakey) | [下载](https://github.com/Sanakey/MoeTop/archive/master.zip)
@@ -197,6 +200,7 @@
 [RobotsLogs](https://github.com/Vndroid/RobotsLogs) | 新搜索引擎爬虫机器人记录插件 | 2.0.3 | [Cain](https://github.com/Vndroid) | [下载](https://github.com/Vndroid/RobotsLogs/archive/master.zip)
 [RobotsPlusPlus](https://xiamp.net/archives/typecho-spider-visit-record-plugin-enhanced-enhanced-version-robotsplusplus.html) | Typecho记录搜索引擎蜘蛛抓取插件 | 2.0.3 | [Ryan](https://github.com/benzBrake), [YoviSun](http://www.yovisun.com), [Shion](https://github.com/Shion) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/RobotsPlusPlus.zip)
 [SEO](http://forum.typecho.org/viewtopic.php?f=6&t=11523) | 自定义字段替换文章SEO标签插件 | 0.0.1 | [Ning](http://printf.cn) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/SEO.zip)
+[SNAuth](https://github.com/newsn/typecho-plugin-github-oauth) | OAuth2验证Github账号登录插件 | 0.0.1 | [苏南](https://github.com/newsn) | [下载](https://github.com/newsn/typecho-plugin-github-oauth/archive/master.zip)
 [SaHtmlCache](https://github.com/cnsamool/SaHtmlCache- | Typecho生成Html静态缓存插件 | 1.0.0 | [Samool](https://github.com/cnsamool) | [特殊](https://github.com/cnsamool/SaHtmlCache-For-Typecho/archive/master.zip)
 [Sad](https://qqdie.com/archives/sad-typecho-plugin.html) | 清明纪念日前后台同时黑白化插件 | 4.4.4 | [泽泽社长](https://github.com/jrotty) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/Sad.zip)
 [SaeUpload](https://github.com/KimiChen/Typecho-SaeUpload) | 新浪云引擎SAE上传附件专用插件 | 1.0.0 Beta | [Kimi](https://github.com/KimiChen) | [下载](https://github.com/KimiChen/Typecho-SaeUpload/archive/master.zip)
@@ -248,6 +252,7 @@
 [Tp2MD](https://github.com/AlanDecode/Typecho-Plugin-Tp2MD) | 文章数据导出Markdown文件插件 | 1.1 | [熊猫小A](https://github.com/AlanDecode) | [下载](https://github.com/AlanDecode/Typecho-Plugin-Tp2MD/archive/master.zip)
 [TrickyTitleBar](http://forum.typecho.org/viewtopic.php?f=6&t=10134) | 使浏览器标题栏切换显示文字插件 | 1.0.0 | [Cai](http://zwho.me) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/TrickyTitleBar.zip)
 [TpCache](https://github.com/phpgao/TpCache) | Memcache/Redis数据库缓存插件 | 0.7 | [老高](https://github.com/phpgao) | [下载](https://github.com/phpgao/TpCache/archive/master.zip)
+[TypExport](https://github.com/panxianhai/TypExport) | Typecho数据导出WordPress插件 | 0.9.0 | [panxianhai](https://github.com/panxianhai) | [下载](https://github.com/panxianhai/TypExport/archive/master.zip)
 [TpHtmlCache](https://github.com/huhaku/typecho_TpHtmlCache) | Typecho文章页面静态化缓存插件 | 1.1.0 | [huhaku](https://github.com/huhaku) | [下载](https://github.com/huhaku/typecho_TpHtmlCache/archive/master.zip)
 [TypechoFusion](https://github.com/jrotty/Typecho-Fusionapp) | 定制[Fusion App](https://www.coolapk.com/apk/cn.coldsong.fusionapp)套用专属皮肤插件 | 1.1.1 | [Jrotty](https://github.com/jrotty) | [下载](https://github.com/jrotty/Typecho-Fusionapp/archive/master.zip)
 [UEditor](https://github.com/chanshengzhi/UEditor-for-Typecho) | 整合又拍/腾讯云储存UEditor插件 | 2018 | [陈盛智](https://github.com/chanshengzhi) | [特殊](https://github.com/chanshengzhi/UEditor-for-Typecho/archive/master.zip)
