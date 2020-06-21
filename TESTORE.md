@@ -27,7 +27,7 @@
 
  > 下表中的下载链接文字可用于附加图标：`下载`即非社区版，`不可用`显示为:no_entry:，`特殊`显示:warning:即安装或启用方法特殊。
 
-### 插件信息 (276)
+### 插件信息 (280)
 
 ###### TeStore使用下表“名称”创建安装文件夹，“版本”提示升级，请务必确保文本准确；添加时注意按字母排序，自增上方括号内总数，简介不要太长。
 ```
@@ -37,6 +37,7 @@
 名称 | 简介 | 版本 | 作者 | zip包
 ---- | :----: | :---: | ----: | :----:
 [APlayerAtBottom](https://github.com/SatoSouta/APlayerAtBottom) | Typecho吸底式音乐播放器插件 | 1.1.1 | [小太](https://github.com/SatoSouta) | [下载](https://github.com/SatoSouta/APlayerAtBottom/archive/master.zip)
+[Acc](https://github.com/qt06/typecho-plugin-accessibility) | Typecho无障碍化读屏修正插件 | 1.0.0 | [杨永全](https://github.com/qt06) | [下载](https://github.com/qt06/typecho-plugin-accessibility/archive/master.zip)
 [Access](https://github.com/kokororin/typecho-plugin-Access) | Typecho查看访客记录统计插件 | 2.0.2 | [Kokororin](https://github.com/kokororin) | [下载](https://github.com/kokororin/typecho-plugin-Access/archive/master.zip)
 [AccessBmob](https://github.com/kraity/typecho-accessBmob) | Bmob后端云数据库版[Access](https://github.com/kokororin/typecho-plugin-Access)插件 | 1.2 | [权那他](https://github.com/kraity) | [下载](https://github.com/kraity/typecho-accessBmob/archive/master.zip)
 [Accessories](https://xiamp.net/archives/accessories-pro.html) | 免费版附件下载功能增强插件 | 1.0.3 | [Ryan](https://github.com/benzBrake) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/Accessories.zip)
@@ -153,6 +154,7 @@
 [KindEditor](https://521-wf.com/archives/21.html) | 新KindEditor可视化编辑器插件 | 2.2 | [WiFeng](https://github.com/WiFeng) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-H_to_L/KindEditor_WiFeng.zip)
 [KodoForTypecho](https://github.com/sy-records/KodoForTypecho) | 七牛云KODO作附件存储空间插件 | 1.0.0 | [沈唁](https://github.com/sy-records) | [下载](https://github.com/sy-records/KodoForTypecho/archive/master.zip)
 [LaTex](https://github.com/typecho/plugins/tree/master/LaTex) | Markdown版LaTex公式解析插件 | 1.1.0 | [mutoo](https://github.com/mutoo) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-H_to_L/LaTex.zip)
+[Lightbox](https://plugins.typecho.me/plugins/lightbox.html) | 基于jQuery图片灯箱弹窗效果插件 | 2.5.1 | AC Yang | [不可用](https://github.com/typecho-fans/plugins/releases/download/plugins-H_to_L/Lightbox.zip)
 [Live2dHistoire](https://www.wikimoe.com/?post=97) | Live2D可陪聊伊斯&蕾姆挂件插件 | 1.1.3 | [广树](https://github.com/eeg1412) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-H_to_L/Live2dHistoire.zip)
 [LivePhotoKit](https://github.com/MoeLoli/LivephotoKit-Typecho) | 文章插入Livephoto动图视频插件 | 1.1.0 | [Sora Jin](https://github.com/MoeLoli) | [下载](https://github.com/MoeLoli/LivephotoKit-Typecho/archive/master.zip)
 [LoginDesigner](https://github.com/jrotty/LoginDesigner) | Typecho注册/登录界面美化插件 | 1.3.0 | [泽泽社长](https://github.com/jrotty) | [下载](https://github.com/jrotty/LoginDesigner/archive/master.zip)
@@ -189,6 +191,7 @@
 [Pio](https://github.com/Dreamer-Paul/Pio) | (娱乐向)Live2D二次元看板娘插件 | 2.4 | [Dreamer-Paul](https://github.com/Dreamer-Paul) | [下载](https://github.com/Dreamer-Paul/Pio/archive/master.zip)
 [PlayAtWill](https://github.com/vfhky/PlayAtWill) | 迷你型Flash音乐播放器2合1插件 | 1.0.0 | [vfhky](https://github.com/vfhky) | [下载](https://github.com/vfhky/PlayAtWill/archive/master.zip)
 [PluginUpload](http://www.shuyudao.top/index.php/archives/728) | Typecho后台上传插件zip包插件 | 1.0.0 | [术与道](https://github.com/shuyudao) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/PluginUpload.zip)
+[Plyr](https://github.com/qt06/typecho-plugin-plyr) | Typecho使用[Plyr](https://plyr.io)全能播放器插件 | 1.2.1 | [杨永全](https://github.com/qt06) | [下载](https://github.com/qt06/typecho-plugin-plyr/archive/master.zip)
 [Poptrox](https://github.com/99kyuu/Poptrox_for_Typecho) | jQuery全能灯箱弹窗Poptrox插件 | 0.01 | [玖玖kyuu](https://github.com/99kyuu) | [下载](https://github.com/99kyuu/Poptrox_for_Typecho/archive/master.zip)
 [PostSeries](https://github.com/hongweipeng/PostSeries) | Typecho系列专题文章管理插件 | 0.0.1 | [hongweipeng](https://github.com/hongweipeng) | [下载](https://github.com/hongweipeng/PostSeries/archive/master.zip)
 [PostToQzone](https://github.com/typecho/plugins/tree/master/PostToQzone) | QQ邮箱同步发布文章到Qzone插件 | 1.0 beta | [blankyao](https://github.com/blankyao) | [不可用](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/PostToQzone.zip)
@@ -225,6 +228,7 @@
 [SlideShow](https://github.com/chinobing/Typecho-SlideShow) | 热门文章输出为轮播幻灯展示插件 | 1.0.0 | [薯仔头](https://github.com/chinobing) | [下载](https://github.com/chinobing/Typecho-SlideShow/archive/master.zip)
 [SmartSpam](http://www.yovisun.com/archive/typecho-plugin-smartspam.html) | 过滤内容/网址拦截垃圾评论插件 | 2.6.0 | [YoviSun](http://www.yovisun.com) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/SmartSpam.zip)
 [Snow](https://github.com/journey-ad/Snow-Typecho-Plugin) | 原生Js多项定制页面下雪特效插件 | 1.0.0 | [journey.ad](https://github.com/journey-ad) | [下载](https://github.com/journey-ad/Snow-Typecho-Plugin/archive/master.zip)
+[Sound](https://github.com/qt06/typecho-plugin-sound) | Typecho自定义页面提示音效插件 | 1.0.0 | [杨永全](https://github.com/qt06) | [下载](https://github.com/qt06/typecho-plugin-sound/archive/master.zip)
 [SpammersGoAway](https://github.com/oott123/SpammersGoAway) | 简易挑战码机制防垃圾评论插件 | 0.0.1 | [oott123](https://github.com/oott123) | [下载](https://github.com/oott123/SpammersGoAway/archive/master.zip)
 [Spider](http://forum.typecho.org/viewtopic.php?f=6&t=11650) | Typecho网站文章批量采集插件 | 1.0.0 | Syan | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/Spider.zip)
 [StreakRain](https://github.com/zhusaidong/streak-rain-typecho-plugin) | (娱乐向)动态线条雨背景效果插件 | 1.1.0 | [上官元恒](https://github.com/zhusaidong) | [下载](https://github.com/zhusaidong/streak-rain-typecho-plugin/archive/master.zip)
