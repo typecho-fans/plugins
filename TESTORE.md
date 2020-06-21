@@ -36,7 +36,7 @@
 
 名称 | 简介 | 版本 | 作者 | zip包
 ---- | :----: | :---: | ----: | :----:
-[APlayerAtBottom](https://github.com/SatoSouta/APlayerAtBottom) | Typecho吸底式音乐播放器插件 | 1.1.1 | [小太](https://github.com/SatoSouta) | [下载](https://github.com/SatoSouta/APlayerAtBottom/archive/master.zip)
+[APlayerAtBottom](https://github.com/SatoSouta/Typecho-plugin-APlayerAtBottom) | Typecho吸底式音乐播放器插件 | 1.1.1 | [小太](https://github.com/SatoSouta) | [下载](https://github.com/SatoSouta/Typecho-plugin-APlayerAtBottom/archive/master.zip)
 [Acc](https://github.com/qt06/typecho-plugin-accessibility) | Typecho无障碍化读屏修正插件 | 1.0.0 | [杨永全](https://github.com/qt06) | [下载](https://github.com/qt06/typecho-plugin-accessibility/archive/master.zip)
 [Access](https://github.com/kokororin/typecho-plugin-Access) | Typecho查看访客记录统计插件 | 2.0.2 | [Kokororin](https://github.com/kokororin) | [下载](https://github.com/kokororin/typecho-plugin-Access/archive/master.zip)
 [AccessBmob](https://github.com/kraity/typecho-accessBmob) | Bmob后端云数据库版[Access](https://github.com/kokororin/typecho-plugin-Access)插件 | 1.2 | [权那他](https://github.com/kraity) | [下载](https://github.com/kraity/typecho-accessBmob/archive/master.zip)
