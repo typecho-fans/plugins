@@ -27,7 +27,7 @@
 
  > 下表中的下载链接文字可用于附加图标：`下载`即非社区版，`不可用`显示为:no_entry:，`特殊`显示:warning:即安装或启用方法特殊。
 
-### 插件信息 (304)
+### 插件信息 (308)
 
 ###### TeStore使用下表“名称”创建安装文件夹，“版本”提示升级，请务必确保文本准确；添加时注意按字母排序，自增上方括号内总数，简介不要太长。
 ```
@@ -54,7 +54,9 @@
 [AliceStyle](https://github.com/racns/AliceStyle) | 十三项主题常用美化套装插件 | 2.4.0 | [racns](https://github.com/racns) | [下载](https://github.com/racns/AliceStyle/archive/master.zip)
 [AllsitePasswd](http://leiyanhui.com/typecho_AllsitePasswd_Plugin) | Typecho自定义全站加密插件 | 1.0.0 | [小类](http://leiyanhui.com) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/AllsitePasswd.zip)
 [APlayer](https://github.com/zgq354/APlayer-Typecho-Plugin) | Html5音乐播放器APlayer插件 | 1.4.11 | [ZGQ](https://github.com/zgq354) | [下载](https://github.com/zgq354/APlayer-Typecho-Plugin/archive/master.zip)
+[ArkEditor](https://github.com/CrazyBoyM) | 沉浸写作Markdown编辑器插件 | 1.0.0 | [方舟互联](https://github.com/CrazyBoyM) | [下载](https://github.com/CrazyBoyM/ArkEditor/archive/master.zip)
 [ArticleImg](https://github.com/istobran/Typecho-Plugin-ArticleImg) | 自建字段提取文章封面图插件 | 1.0.0 | [BangZ](https://github.com/istobran) | [下载](https://github.com/istobran/Typecho-Plugin-ArticleImg/archive/master.zip)
+[ArticlePoster](https://github.com/MoLeft/ArticlePoster) | Typecho文章生成海报图片插件 | 1.0.7 | [MoLeft](https://github.com/MoLeft) | [下载](https://github.com/MoLeft/ArticlePoster/archive/master.zip)
 [AtAndInform](https://blog.ghostry.cn/program/zi-ji-xie-le-ge-cha-jian---ou-ye.html) | 文章@评论者发送邮件提醒插件 | 1.0.0 | [ghostry](https://blog.ghostry.cn) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/AtAndInform.zip)
 [AutoBaiduSubmit](https://github.com/jinfeijie/AutoBaiduSubmit) | 访问页面自动提交百度链接插件 | 1.0.2 | [JinFeiJie](https://github.com/jinfeijie) | [下载](https://github.com/jinfeijie/AutoBaiduSubmit/archive/1.0.2.zip)
 [AutoSaveImage](https://www.cxiansheng.cn/server/278) | 自动下载替换文内远程图片插件 | 1.0.0 | [dream](https://www.cxiansheng.cn) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/AutoSaveImage.zip)
@@ -92,6 +94,7 @@
 [Collection](https://github.com/tennsinn/Typecho_Plugin--Collection) | Typecho记录管理收藏条目插件 | 1.6.0 | [息E-敛](https://github.com/tennsinn) | [下载](https://github.com/tennsinn/Typecho_Plugin--Collection/archive/master.zip)
 [ColorfulTags](https://github.com/invelop/Typecho-ColorfulTags) | Typecho生成彩色3D标签云插件 | 1.6 | [锋临](https://github.com/invelop) | [下载](https://github.com/invelop/Typecho-ColorfulTags/archive/master.zip)
 [CommentApprove](https://github.com/ennnnny/typecho/tree/master/CommentApprove) | 按邮箱输出三类评论者身份插件 | 0.1.0 | [kuye](https://github.com/ennnnny) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/CommentApprove.zip)
+[CommentToDingtalk](https://github.com/MoLeft/CommentToDingtalk) | Typecho评论推送钉钉通知插件 | 1.0 | [MoLeft](https://github.com/MoLeft) | [下载](https://github.com/MoLeft/CommentToDingtalk/archive/master.zip)
 [Comment2IFTTT](https://github.com/Tsuk1ko/Comment2IFTTT) | 评论通知推送IFTTT扩展服务插件 | 1.0.0 | [神代綺凜](https://github.com/Tsuk1ko) | [下载](https://github.com/Tsuk1ko/Comment2IFTTT/archive/master.zip)
 [Comment2Mail](https://gitee.com/hoexhe/typecho-Comment2Mail) | 评论回复邮件提醒插件(仅SMTP) | 1.3.0 | [Hoe](https://gitee.com/hoexhe) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/Comment2Mail_Hoe.zip)
 [Comment2Mail](https://github.com/ShadowySpirits/Comment2Mail) | 评论邮件通知插件(支持MailGun) | 1.1.0 | [SSpirits](https://github.com/ShadowySpirits) | [下载](https://github.com/ShadowySpirits/Comment2Mail/archive/master.zip)
@@ -193,6 +196,7 @@
 [MoeTop](https://github.com/Sanakey/MoeTop) | 二次元萌萌哒返回顶部按钮插件 | 1.1.0 | [Sanakey](https://github.com/Sanakey) | [下载](https://github.com/Sanakey/MoeTop/archive/master.zip)
 [MouseFloating](https://github.com/icy2003/typecho-MouseFloating) | 随机漂浮文字跟随鼠标特效插件 | 1.0.0 | [icy2003](https://github.com/icy2003) | [下载](https://github.com/icy2003/typecho-MouseFloating/archive/master.zip)
 [MultiTheme](https://github.com/jqnote/Typecho-MultiTheme) | Typecho自定义多主题切换插件 | 1.0.0 | [HackRose](https://github.com/jqnote) | [下载](https://github.com/jqnote/Typecho-MultiTheme/archive/master.zip)
+[MyPosition](https://github.com/CrazyBoyM/MyPosition) | Typecho写作时地图API定位插件 | 3.5.9 | [南城猫](https://github.com/CrazyBoyM) | [下载](https://github.com/CrazyBoyM/MyPosition/archive/master.zip)
 [MyUpload](https://github.com/jlice/typecho-MyUpload) | 本地/[TinyPNG](https://tinypng.com)压缩图片上传插件 | 1.5.0 | [文剑木然](https://github.com/jlice) | [特殊](https://github.com/jlice/typecho-MyUpload/archive/master.zip)
 [Nos](https://github.com/163yun/nos-typecho-plugin) | Typecho网易云对象存储NOS插件 | 1.0.0 | [白宦成](https://github.com/bestony) | [下载](https://github.com/163yun/nos-typecho-plugin/archive/master.zip)
 [NotAllowIp](https://github.com/tangmaoguo/NotAllowIp-Typecho-Plugin) | Typecho后台设置IP黑名单插件 | 1.0.0 | [BlackStyle](https://github.com/tangmaoguo) | [下载](https://github.com/tangmaoguo/NotAllowIp-Typecho-Plugin/archive/master.zip)
