@@ -27,7 +27,7 @@
 
  > 下表中的下载链接文字可用于附加图标：`下载`即非社区版，`不可用`显示为:no_entry:，`特殊`显示:warning:即安装或启用方法特殊。
 
-### 插件信息 (292)
+### 插件信息 (300)
 
 ###### TeStore使用下表“名称”创建安装文件夹，“版本”提示升级，请务必确保文本准确；添加时注意按字母排序，自增上方括号内总数，简介不要太长。
 ```
@@ -69,6 +69,7 @@
 [BaiduTongji](https://github.com/liiklin/BaiduTongji) | 设置百度统计ID自动加载代码插件 | 1.0.0 | [linjun](https://github.com/liiklin) | [下载](https://github.com/liiklin/BaiduTongji/archive/master.zip)
 [BangumiList](https://github.com/ShadowySpirits/BangumiList) | 短代码输出Bangumi追番列表插件 | 1.0.0 | [SSpirits](https://github.com/ShadowySpirits) | [下载](https://github.com/ShadowySpirits/BangumiList/archive/master.zip)
 [Beblank](https://github.com/ghosx/Beblank) | Js替换页面链接为新窗口打开插件 | 1.0.0 | [Heeeepin](https://github.com/ghosx) | [下载](https://github.com/ghosx/Beblank/archive/master.zip)
+[BiliBangumi](https://gitee.com/stsiao/typecho_bangumi_bili) | 用Bilibili账户获取信息版追番插件 | 1.0.0.204 | [飞蚊话](https://gitee.com/stsiao), [广树](https://github.com/eeg1412) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/BiliBangumi.zip)
 [BilibiliEcho](https://github.com/pluveto/BilibiliEcho) | Typecho同步输出Bilibili动态插件 | 1.0.0 | [pluvet](https://github.com/pluveto) | [下载](https://github.com/pluveto/BilibiliEcho/archive/master.zip)
 [BlockComment](https://github.com/typecho/plugins/tree/master/BlockComment) | Typecho评论来路IP黑名单插件 | 0.0.1 | [明城](https://github.com/mingcheng) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/BlockComment.zip)
 [BlockIP](https://github.com/kokororin/typecho-plugin-BlockIP) | Typecho访问前台IP黑名单插件 | 1.0 | [Kokororin](https://github.com/kokororin) | [下载](https://github.com/kokororin/typecho-plugin-BlockIP/archive/master.zip)
@@ -81,6 +82,7 @@
 [Captcha](https://github.com/KimiChen/Typecho-Captcha) | Typecho经典版评论验证码插件 | 1.0.0 | [qining](https://github.com/joyqi) & [Kimi](https://github.com/KimiChen) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/Captcha.zip)
 [CategoryNext](https://www.typechodev.com/plugins/%E7%83%AD%E9%97%A8%E6%8F%92%E4%BB%B6/category_next_prev.html) | 上下篇显示为同分类内文章插件 | 1.0.0 | [雷鬼](https://www.typechodev.com) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/CategoryNext.zip)
 [CdnHelper](https://github.com/phpgao/CdnHelper) | 替换图片地址为CDN前缀插件 | 0.1 | [老高](https://github.com/phpgao) | [下载](https://github.com/phpgao/CdnHelper/archive/master.zip)
+[CkEditor](https://plugins.typecho.me/plugins/ckeditor-4-0-1-1.html) | 精简版CKEditor可视化编辑器插件 | 1.0.2 | jooies | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/CkEditor.zip)
 [Clipboard2markdown](https://github.com/FaithPatrick/typecho-clipboard2markdown) | Markdown剪贴板内容格式化插件 | 1.0.0 | [大袋鼠](https://github.com/FaithPatrick) | [下载](https://github.com/FaithPatrick/typecho-clipboard2markdown/archive/master.zip)
 [ClsoFun](https://blog.clso.fun/posts/2019-05-02/typecho-plus-tutorial.html) | Typecho Plus多功能系统增强插件 | 0.5.3 | [二笔青年](https://blog.clso.fun) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/ClsoFun.zip)
 [CodeBox](https://plugins.typecho.me/plugins/code-box.html) | 美化版[GeSHi](http://qbnz.com/highlighter)库代码高亮插件 | 0.1.1 | jKey | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/CodeBox.zip)
@@ -115,6 +117,7 @@
 [DoubanBoard](https://github.com/AlanDecode/Typecho-Plugin-DoubanBoard) | 博客上展示豆瓣书单/影单插件 | 0.5 | [熊猫小A](https://github.com/AlanDecode) | [下载](https://github.com/AlanDecode/Typecho-Plugin-DoubanBoard/archive/master.zip)
 [DoubanBooklist](https://github.com/FaithPatrick/DoubanBookList) | 豆瓣正在读/已读书单展示插件 | 1.0.0 | [Patrick95](https://github.com/FaithPatrick) | [下载](https://github.com/FaithPatrick/DoubanBookList/archive/master.zip)
 [Dynamics](https://github.com/kraity/Dynamics) | [南博](https://nabo.krait.cn)App专用动态说说模块插件 | 1.2 | [权那他](https://github.com/kraity) | [下载](https://github.com/kraity/Dynamics/archive/master.zip)
+[Editor](https://plugins.typecho.me/plugins/ckeditor-syntax-highlighter.html) | 代码高亮版CKEditor编辑器插件 | 1.0.1 | QFisH | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/Editor_QFisH.zip)
 [EditorLR](https://github.com/hongweipeng/EditorLR_for_typecho) | Markdown编辑器分屏预览插件 | 0.7.1 | [hongweipeng](https://github.com/hongweipeng) | [下载](https://github.com/hongweipeng/EditorLR_for_typecho/archive/master.zip)
 [EmojiHelper](https://qqdie.com/archives/emojihelper-typecho-plugins.html) | 修改数据库编码兼容Emoji插件 | 2.0 | [泽泽社长](https://github.com/jrotty) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/EmojiHelper.zip)
 [ExSearch](https://github.com/AlanDecode/Typecho-Plugin-ExSearch) | Ajax动态显示实时搜索结果插件 | 0.1 | [熊猫小A](https://github.com/AlanDecode) | [下载](https://github.com/AlanDecode/Typecho-Plugin-ExSearch/archive/master.zip)
@@ -324,6 +327,7 @@
 [notice](https://github.com/jrotty/typecho-for-notice) | 按来路地址输出欢迎消息通知插件 | 0.3 | [jrotty](https://github.com/jrotty) | [下载](https://github.com/jrotty/typecho-for-notice/archive/master.zip)
 [oneimg](https://github.com/haocity/oneimg-typecho) | 为页面添加可变背景图片效果插件 | 1.0 | [疯狂减肥带](https://github.com/haocity) | [下载](https://github.com/haocity/oneimg-typecho/archive/master.zip)
 [platformSelect](https://github.com/internelp/platformSelect) | 自定义字段设置文章所属平台插件 | 1.0.0 | [枫叶](https://github.com/internelp) | [下载](https://github.com/internelp/platformSelect/archive/master.zip)
+[qcspam](https://qaqwq.com/437.html) | 基于腾讯云内容检测评论过滤插件 | 1.0.0 | [Kuwaku](https://qaqwq.com) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/qcspam.zip)
 [runPHP](https://github.com/ChinaSiro/typecho_plugins_runPHP) | 自定义字段调用指定PHP文件插件 | 1.0.0 | [ChinaSiro](https://github.com/ChinaSiro) | [下载](https://github.com/ChinaSiro/typecho_plugins_runPHP/archive/master.zip)
 [seohtml](https://plugins.typecho.me/plugins/seohtml.html) | 修改系统category/tag路径值插件 | 1.0.1 | [小夜](https://www.ananyiyi.com) | [特殊](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/seohtml.zip)
 [stop](https://qqdie.com/archives/stop-plugin-typecho.html) | 游客访问后台地址跳转至404插件 | 1.2 | [张老师](https://github.com/jrotty) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/stop.zip)
