@@ -27,7 +27,7 @@
 
  > 下表中的下载链接文字可用于附加图标：`下载`即非社区版，`不可用`显示为:no_entry:，`特殊`显示:warning:即安装或启用方法特殊。
 
-### 插件信息 (300)
+### 插件信息 (304)
 
 ###### TeStore使用下表“名称”创建安装文件夹，“版本”提示升级，请务必确保文本准确；添加时注意按字母排序，自增上方括号内总数，简介不要太长。
 ```
@@ -86,6 +86,7 @@
 [Clipboard2markdown](https://github.com/FaithPatrick/typecho-clipboard2markdown) | Markdown剪贴板内容格式化插件 | 1.0.0 | [大袋鼠](https://github.com/FaithPatrick) | [下载](https://github.com/FaithPatrick/typecho-clipboard2markdown/archive/master.zip)
 [ClsoFun](https://blog.clso.fun/posts/2019-05-02/typecho-plus-tutorial.html) | Typecho Plus多功能系统增强插件 | 0.5.3 | [二笔青年](https://blog.clso.fun) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/ClsoFun.zip)
 [CodeBox](https://plugins.typecho.me/plugins/code-box.html) | 美化版[GeSHi](http://qbnz.com/highlighter)库代码高亮插件 | 0.1.1 | jKey | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/CodeBox.zip)
+[CodeCopy](https://github.com/Tuziang/CodeCopy) | 为文中代码片段附加复制按钮插件 | 1.0.0 | [兔子昂](https://github.com/Tuziang) | [下载](https://github.com/Tuziang/CodeCopy/archive/master.zip)
 [CodeHighlighter](https://github.com/Copterfly/CodeHighlighter-for-Typecho) | Prism代码高亮插件(带复制按钮) | 1.0.0 | [Copterfly](https://github.com/Copterfly) | [下载](https://github.com/Copterfly/CodeHighlighter-for-Typecho/archive/master.zip)
 [Collect](https://qqdie.com/archives/lanmao-typecho-caiji.html) | [影视一号模板](https://qqdie.com/archives/typecho-video-template.html)站点用动漫采集插件 | 1.0.0 | Moez | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/Collect.zip)
 [Collection](https://github.com/tennsinn/Typecho_Plugin--Collection) | Typecho记录管理收藏条目插件 | 1.6.0 | [息E-敛](https://github.com/tennsinn) | [下载](https://github.com/tennsinn/Typecho_Plugin--Collection/archive/master.zip)
@@ -130,6 +131,7 @@
 [FileCache](https://plugins.typecho.me/plugins/file-cache.html) | 经典版Typecho生成静态缓存插件 | 1.0.0 | Shion | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/FileCache.zip)
 [FlashMp3Player](https://github.com/typecho/plugins/tree/master/FlashMp3Player) | Flash音乐播放器Dewplayer插件 | 1.0.1 | [qining](https://github.com/joyqi) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/FlashMp3Player.zip)
 [FlowChart](http://forum.typecho.org/viewtopic.php?f=6&t=10874) | Markdown语法flow转流程图插件 | 1.2.1 | [ZhangZijing(Venteto)](https://github.com/pluveto) | [下载](https://github.com/hujy23/FlowChart-typecho-plugin/archive/master.zip)
+[Gallery](https://github.com/leohowl/gallery-typecho) | 页面内图片套用画廊相册效果插件 | 0.0.1 | [Leohowl](https://github.com/leohowl) | [下载](https://github.com/leohowl/gallery-typecho/archive/master.zip)
 [GEETEST](https://gitee.com/loiou/GEETEST) | 极验证自定义设置评论验证码插件 | 1.0.0 | [LOIOU](https://gitee.com/loiou) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/GEETEST_LOIOU.zip)
 [Geetest](https://github.com/99kyuu/GeetestV3_for_Typecho) | V3版GeeTest登录注册验证码插件 | 1.0.0 | [玖玖kyuu](https://github.com/99kyuu) | [特殊](https://github.com/99kyuu/GeetestV3_for_Typecho/archive/master.zip)
 [Geetest](https://github.com/jinfeijie/Geetest) | 新版GeeTest智能评论验证码插件 | 1.0.3 | [mrjin](https://github.com/jinfeijie) | [下载](https://github.com/jinfeijie/Geetest/archive/1.0.3.zip)
@@ -155,6 +157,7 @@
 [HoerMouse](https://gitee.com/hoexhe/HoerMouse) | 喷墨/气泡/爱心炫彩鼠标特效插件 | 1.3.0 | [Hoe](https://gitee.com/hoexhe) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-H_to_L/HoerMouse.zip)
 [HyperMD](https://github.com/journey-ad/HyperMD-Typecho-Plugin) | Markdown所见即所得编辑器插件 | 0.1 | [journey.ad](https://github.com/journey-ad) | [下载](https://github.com/journey-ad/HyperMD-Typecho-Plugin/archive/master.zip)
 [IShareEcho](https://github.com/pluveto/IShareEcho) | 在模板输出分享按钮及二维码插件 | 1.0.0 | [pluvet](https://github.com/pluveto) | [下载](https://github.com/pluveto/IShareEcho/archive/master.zip)
+[Ideal](https://github.com/guugg/typecho-plugins-ideal) | 基于[Handsome](https://www.ihewro.com/archives/489)主题美化增强插件 | 1.3.2 | [小宇宙](https://github.com/guugg) | [下载](https://github.com/guugg/typecho-plugins-ideal/archive/master.zip)
 [ImageBox](https://github.com/journey-ad/Image-Box-Typecho-Plugin) | 简易jQuery图片灯箱弹窗特效插件 | 0.1 | [journey.ad](https://github.com/journey-ad) | [下载](https://github.com/journey-ad/Image-Box-Typecho-Plugin/archive/master.zip)
 [Import](https://www.wamuban.com/plugin/2100.html) | 通用采集内容导入数据库接口插件 | 0.3 | fhy&[雷鬼](https://www.typechodev.com) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-H_to_L/Import.zip)
 [InvitationCode](https://gitee.com/cx-a/TypechoInvitationCode) | Typecho自动生成注册邀请码插件 | 1.2.2 | [晨曦啊](https://gitee.com/cx-a) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-H_to_L/InvitationCode.zip)
@@ -326,6 +329,7 @@
 [nginxhelper](https://github.com/gzare/Typecho-NginxHelper) | Typecho自动清理Nginx缓存插件 | 0.1 Beta | [Zare](https://github.com/gzare) | [特殊](https://github.com/gzare/Typecho-NginxHelper/archive/master.zip)
 [notice](https://github.com/jrotty/typecho-for-notice) | 按来路地址输出欢迎消息通知插件 | 0.3 | [jrotty](https://github.com/jrotty) | [下载](https://github.com/jrotty/typecho-for-notice/archive/master.zip)
 [oneimg](https://github.com/haocity/oneimg-typecho) | 为页面添加可变背景图片效果插件 | 1.0 | [疯狂减肥带](https://github.com/haocity) | [下载](https://github.com/haocity/oneimg-typecho/archive/master.zip)
+[paywall](https://www.mantouxia.com/632.html) | [知12](https://www.zhi12.cn)内容平台专用付费阅读插件 | 3.0.0 | [calmhe](https://www.zhi12.cn) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/paywall.zip)
 [platformSelect](https://github.com/internelp/platformSelect) | 自定义字段设置文章所属平台插件 | 1.0.0 | [枫叶](https://github.com/internelp) | [下载](https://github.com/internelp/platformSelect/archive/master.zip)
 [qcspam](https://qaqwq.com/437.html) | 基于腾讯云内容检测评论过滤插件 | 1.0.0 | [Kuwaku](https://qaqwq.com) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/qcspam.zip)
 [runPHP](https://github.com/ChinaSiro/typecho_plugins_runPHP) | 自定义字段调用指定PHP文件插件 | 1.0.0 | [ChinaSiro](https://github.com/ChinaSiro) | [下载](https://github.com/ChinaSiro/typecho_plugins_runPHP/archive/master.zip)
