@@ -27,7 +27,7 @@
 
  > 下表中的下载链接文字可用于附加图标：`下载`即非社区版，`不可用`显示为:no_entry:，`特殊`显示:warning:即安装或启用方法特殊。
 
-### 插件信息 (308)
+### 插件信息 (312)
 
 ###### TeStore使用下表“名称”创建安装文件夹，“版本”提示升级，请务必确保文本准确；添加时注意按字母排序，自增上方括号内总数，简介不要太长。
 ```
@@ -221,9 +221,12 @@
 [Prismjs](https://github.com/WiseClock/Prismjs) | Prism代码高亮插件(支持行号/语言) | 1.0.8 | [WiseClock](https://github.com/WiseClock) | [下载](https://github.com/WiseClock/Prismjs/archive/master.zip)
 [PrivateDiary](https://www.jethro.fun/index.php/archives/120) | 全站强制登录仅注册用户可见插件 | 1.0.0 | [Jethro](https://www.jethro.fun) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/PrivateDiary.zip)
 [Process](https://github.com/Closty/Process) | Typecho多主题页面加载进度条插件 | 2.1.3 | [瓶子](https://github.com/Closty) | [下载](https://github.com/Closty/Process/archive/master.zip)
+[PutToQiNiu](https://gitee.com/SeasLaugh/PutToQiNiu) | Typecho文件上传至七牛云存储插件 | 1.0 | [Seaslaugh](https://gitee.com/SeasLaugh) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/PutToQiNiu.zip)
 [QPlayer](https://github.com/Jrohy/QPlayer-Typecho-Plugin) | 页面底部悬浮式音乐播放器插件 | 1.3.4.2 | [Jrohy](https://github.com/Jrohy) | [下载](https://github.com/Jrohy/QPlayer-Typecho-Plugin/archive/master.zip)
 [QRCode](https://github.com/aneasystone/typecho-qrcode) | 文章末尾自动生成网址二维码插件 | 1.0.0 | [aneasystone](https://github.com/aneasystone) | [下载](https://github.com/aneasystone/typecho-qrcode/archive/master.zip)
 [QiniuFile](https://github.com/lscho/QiniuFile_For_Typecho) | 七牛云存储插件(可选本站同步备份) | 0.1 | [lscho](https://github.com/lscho) | [下载](https://github.com/lscho/QiniuFile_For_Typecho/archive/master.zip)
+[QiniuRCS](https://github.com/bsed/QiniuRCS) | Typecho附件使用七牛云存储插件 | 0.1 | [AtaLuZiK](https://github.com/bsed) | [下载](https://github.com/bsed/QiniuRCS/archive/master.zip)
+[QiniuPostUploader](https://github.com/trickyEdecay/qiniuupload-for-typecho) | 上传文件到七牛云插件(独立功能) | 0.1 | [trickyedecay](https://github.com/trickyEdecay) | [下载](https://github.com/trickyEdecay/qiniuupload-for-typecho/archive/master.zip)
 [RandomArticleList](https://defe.me/prg/234.html) | Typecho输出随机文章列表插件 | 2.0.1 | [df](https://github.com/defeme) | [特殊](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/RandomArticleList.zip)
 [RandomDescription](https://github.com/phpgao/RandomDescription) | Typecho定时随机站点描述插件 | 1.0 | [老高@PHPer](https://github.com/phpgao) | [下载](https://github.com/phpgao/RandomDescription/archive/master.zip)
 [Rdog](https://github.com/jrotty/Rdog) | 注册机制优化/发文自动审核插件 | 1.3.0 | [泽泽](https://github.com/jrotty) | [下载](https://github.com/jrotty/Rdog/archive/master.zip)
@@ -291,6 +294,7 @@
 [TrickyTitleBar](http://forum.typecho.org/viewtopic.php?f=6&t=10134) | 使浏览器标题栏切换显示文字插件 | 1.0.0 | [Cai](http://zwho.me) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/TrickyTitleBar.zip)
 [TpCache](https://github.com/phpgao/TpCache) | Memcache/Redis数据库缓存插件 | 0.7 | [老高](https://github.com/phpgao) | [下载](https://github.com/phpgao/TpCache/archive/master.zip)
 [TpHtmlCache](https://github.com/huhaku/typecho_TpHtmlCache) | Typecho文章页面静态化缓存插件 | 1.1.0 | [huhaku](https://github.com/huhaku) | [下载](https://github.com/huhaku/typecho_TpHtmlCache/archive/master.zip)
+[TusyUpload](https://gitee.com/mayoushang/typecho_tusyupload) | Typecho附件使用[图速运](https://oss.bilnn.com)储存插件 | 1.0.0 | [Myxf](https://gitee.com/mayoushang) | [下载](https://github.com/panxianhai/TypExport/archive/master.zip)
 [TypExport](https://github.com/panxianhai/TypExport) | Typecho数据导出WordPress插件 | 0.9.0 | [panxianhai](https://github.com/panxianhai) | [下载](https://github.com/panxianhai/TypExport/archive/master.zip)
 [TypechoFusion](https://github.com/jrotty/Typecho-Fusionapp) | 定制[Fusion App](https://www.coolapk.com/apk/cn.coldsong.fusionapp)套用专属皮肤插件 | 1.1.1 | [Jrotty](https://github.com/jrotty) | [下载](https://github.com/jrotty/Typecho-Fusionapp/archive/master.zip)
 [TypechoPing](https://www.clanfei.com/2012/08/1642.html) | Ping自动更新服务插件(支持SAE) | 1.1.0 | [蓝飞](https://github.com/Lanfei) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/TypechoPing.zip)
