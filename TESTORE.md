@@ -27,7 +27,7 @@
 
  > 下表中的下载链接文字可用于附加图标：`下载`即非社区版，`不可用`显示为:no_entry:，`特殊`显示:warning:即安装或启用方法特殊。
 
-### 插件信息 (312)
+### 插件信息 (310)
 
 ###### TeStore使用下表“名称”创建安装文件夹，“版本”提示升级，请务必确保文本准确；添加时注意按字母排序，自增上方括号内总数，简介不要太长。
 ```
@@ -190,7 +190,6 @@
 [MetaPlus](https://github.com/mrasong/metaplus-for-typecho) | 为分类/标签页定制关联数据插件 | 1.0.0 | [mrasong](https://github.com/mrasong) | [下载](https://github.com/mrasong/metaplus-for-typecho/archive/master.zip)
 [MemorialDay](https://github.com/sy-records/MemorialDay) | 公祭哀悼日网站应用灰色滤镜插件 | 1.0.0 | [沈唁](https://github.com/sy-records) | [下载](https://github.com/sy-records/MemorialDay/archive/master.zip)
 [MemoryUsage](https://plugins.typecho.me/plugins/memory-usage.html) | 后台显示/前台输出内存占用量插件 | 1.0.0 | [doudou](https://github.com/doudoutime) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/MemoryUsage.zip)
-[MenuTree](https://github.com/hongweipeng/MenuTree) | 悬浮式文章内容目录自动生成插件 | 0.8.1 | [hongweipeng](https://github.com/hongweipeng) | [下载](https://github.com/hongweipeng/MenuTree/archive/master.zip)
 [Messages](https://github.com/kraity/Messages) | [南博](https://nabo.krait.cn)App专用消息推送模块插件 | 1.0 | [权那他](https://github.com/kraity) | [下载](https://github.com/kraity/Messages/archive/master.zip)
 [Meting](https://github.com/MoePlayer/APlayer-Typecho) | 五大云音乐平台API播放器插件 | 2.1.2 | [METO](https://github.com/metowolf) | [下载](https://github.com/MoePlayer/APlayer-Typecho/archive/master.zip)
 [MoeTop](https://github.com/Sanakey/MoeTop) | 二次元萌萌哒返回顶部按钮插件 | 1.1.0 | [Sanakey](https://github.com/Sanakey) | [下载](https://github.com/Sanakey/MoeTop/archive/master.zip)
@@ -224,7 +223,6 @@
 [PutToQiNiu](https://gitee.com/SeasLaugh/PutToQiNiu) | Typecho文件上传至七牛云存储插件 | 1.0 | [Seaslaugh](https://gitee.com/SeasLaugh) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/PutToQiNiu.zip)
 [QPlayer](https://github.com/Jrohy/QPlayer-Typecho-Plugin) | 页面底部悬浮式音乐播放器插件 | 1.3.4.2 | [Jrohy](https://github.com/Jrohy) | [下载](https://github.com/Jrohy/QPlayer-Typecho-Plugin/archive/master.zip)
 [QRCode](https://github.com/aneasystone/typecho-qrcode) | 文章末尾自动生成网址二维码插件 | 1.0.0 | [aneasystone](https://github.com/aneasystone) | [下载](https://github.com/aneasystone/typecho-qrcode/archive/master.zip)
-[QiniuFile](https://github.com/lscho/QiniuFile_For_Typecho) | 七牛云存储插件(可选本站同步备份) | 0.1 | [lscho](https://github.com/lscho) | [下载](https://github.com/lscho/QiniuFile_For_Typecho/archive/master.zip)
 [QiniuRCS](https://github.com/bsed/QiniuRCS) | Typecho附件使用七牛云存储插件 | 0.1 | [AtaLuZiK](https://github.com/bsed) | [下载](https://github.com/bsed/QiniuRCS/archive/master.zip)
 [QiniuPostUploader](https://github.com/trickyEdecay/qiniuupload-for-typecho) | 上传文件到七牛云插件(独立功能) | 0.1 | [trickyedecay](https://github.com/trickyEdecay) | [下载](https://github.com/trickyEdecay/qiniuupload-for-typecho/archive/master.zip)
 [RandomArticleList](https://defe.me/prg/234.html) | Typecho输出随机文章列表插件 | 2.0.1 | [df](https://github.com/defeme) | [特殊](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/RandomArticleList.zip)
