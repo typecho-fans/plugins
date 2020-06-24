@@ -1,5 +1,5 @@
 <a href="https://github.com/typecho-fans/plugins">
-    <img src="https://typecho-fans.github.io/text-logo.svg" alt="TF Logo" title="Typecho-Fans" align="right" height="60" />
+    <img src="https://typecho-fans.github.io/text-logo.svg" alt="TF Logo" title="Typecho-Fans" align="right" height="100" />
 </a>
 
 QiniuFile v1.3.3 - 社区维护版
@@ -7,11 +7,11 @@ QiniuFile v1.3.3 - 社区维护版
 <h4 align="center">新附件使用七牛云储存插件，支持自定路径/本地备份/缩略图/图片样式等。</h4>
 
 <p align="center">
-  <a href="#about">使用说明</a> •
-  <a href="#installation">版本历史</a> •
-  <a href="#updating">贡献作者</a> •
-  <a href="#features">附注/链接</a> •
-  <a href="#binds">授权协议</a>
+  <a href="#使用说明">使用说明</a> •
+  <a href="#版本历史">版本历史</a> •
+  <a href="#贡献作者">贡献作者</a> •
+  <a href="#附注链接">附注/链接</a> •
+  <a href="#授权协议">授权协议</a>
 </p>
 
 ---
