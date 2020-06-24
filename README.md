@@ -1,12 +1,12 @@
 <img src='https://typecho-fans.github.io/soap-group.png' align="right" />
 
-## Typecho-Fans内部插件目录（社区维护版列表）
+## Typecho Fans 内部插件目录（社区维护版列表）
 
 [![compatible](https://img.shields.io/badge/Typecho-%3E%3D1.0-red.svg?style=for-the-badge)](https://github.com/typecho/typecho)
 [![support](https://img.shields.io/badge/TeStore-Supported-green.svg?style=for-the-badge)](TeStore)
 [![issues](https://img.shields.io/github/issues-closed-raw/typecho-fans/plugins.svg?style=for-the-badge)](https://github.com/typecho-fans/plugins/issues?q=is%3Aissue+is%3Aclosed)
 
- > 目录内插件源码由社区成员维护，原则上均支持1.0+版本。用户可提交[Issues](https://github.com/typecho-fans/plugins/issues)，作者加入请阅读下方须知。:penguin:交流群号：[**40412938**](http://shang.qq.com/wpa/qunwpa?idkey=a5a8afedf099e18ddf9b530db9217251e39001d52aace42888bf470d9b6cb86a)
+ > 目录内插件源码由社区成员共同维护，原则上均支持1.0+版本。用户可提交[Issues](https://github.com/typecho-fans/plugins/issues)，作者加入请阅读下方须知。:penguin:交流QQ群：[**40412938**](http://shang.qq.com/wpa/qunwpa?idkey=a5a8afedf099e18ddf9b530db9217251e39001d52aace42888bf470d9b6cb86a)
 ------------------------------
 
 ### 使用帮助
@@ -15,7 +15,7 @@
 
 ### 作者须知
 
-1. 本目录权限开放其下社区版插件可由所有成员修改，如果只想在插件仓库列表显示编辑[TESTORE.md](TESTORE.md)写入下载信息即可。
+1. 本目录下插件可由所有成员修改，如果只是想在插件仓库列表中显示编辑[TESTORE.md](TESTORE.md)写入下载链接等信息即可。
 
  > 目录内插件在TeStore列表带社区标记，作者可提交有特色但不再维护作品，由其他成员视需求能力做后续修正。
 
@@ -33,7 +33,7 @@
 
 ###### TeStore使用下表“名称”创建安装文件夹，“版本”提示升级，请确保文本准确；注意按字母排序添加，自增上方括号内总数，简介不要太长。
 ```
-若用户已安装同名插件TeStore会根据作者名判断版本，请确保下表“作者”文本与Plugin.php内的署名保持一致(多人可用,号或&号分隔)。
+若用户已安装同名插件TeStore会根据作者名判断版本，请确保下表“作者”文本与Plugin.php内署名保持一致(多人可用,号或&号分隔)。
 ```
 
 名称 | 简介 | 版本 | 作者 | zip包
