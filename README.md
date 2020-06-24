@@ -6,32 +6,32 @@
 [![support](https://img.shields.io/badge/TeStore-Supported-green.svg?style=for-the-badge)](TeStore)
 [![issues](https://img.shields.io/github/issues-closed-raw/typecho-fans/plugins.svg?style=for-the-badge)](https://github.com/typecho-fans/plugins/issues?q=is%3Aissue+is%3Aclosed)
 
- > 本目录内插件由社区成员共同维护，原则上均支持1.0+版本。用户可提交问题或建议至[Issues](https://github.com/typecho-fans/plugins/issues)，作者加入请阅读下方须知。:penguin:交流群号：[**40412938**](http://shang.qq.com/wpa/qunwpa?idkey=a5a8afedf099e18ddf9b530db9217251e39001d52aace42888bf470d9b6cb86a)
+ > 目录内插件源码由社区成员维护，原则上均支持1.0+版本。用户可提交[Issues](https://github.com/typecho-fans/plugins/issues)，作者加入请阅读下方须知。:penguin:交流群号：[**40412938**](http://shang.qq.com/wpa/qunwpa?idkey=a5a8afedf099e18ddf9b530db9217251e39001d52aace42888bf470d9b6cb86a)
 ------------------------------
 
 ### 使用帮助
 
-作者参与维护可点击右上角绿色按钮处克隆Git地址或Fork项目所有插件按需修改，一般用户使用下方索引表格中的Download链接下载所需插件即可，或推荐安装**新版插件仓库**:card_file_box:[**TeStore**](TeStore)更便捷地进行列表筛选、一键下载及自动安装删除等操作。
+作者可点击右上角绿色按钮处克隆Git地址或Fork项目所有内容修改提交，一般用户使用下方索引表格的Download链接下载所需插件即可，或推荐安装**新版插件仓库**:card_file_box:[**TeStore**](TeStore)更便捷地进行列表筛选、一键下载及自动安装删除等操作。
 
 ### 作者须知
 
-1. 本目录下作品应为经作者同意允许在这里进行**多人自由更新**的，如果只是想在插件仓库列表登记编辑[TESTORE.md](TESTORE.md)即可。
+1. 本目录权限开放其下社区版插件可由所有成员修改，如果只想在插件仓库列表显示编辑[TESTORE.md](TESTORE.md)写入下载信息即可。
 
- > 目录内插件在TeStore列表中带社区版标记，作者可提交有特色但不再维护的作品，由其他成员视需求能力做后续修正。
+ > 目录内插件在TeStore列表带社区标记，作者可提交有特色但不再维护作品，由其他成员视需求能力做后续修正。
 
-2. 推荐用[**subtree**](https://aoxuis.me/bo-ke/2013-08-06-git-subtree)方法录入文件(可随时拉取原目录更新)，手动复制进来提交亦可，不再接受submodule链接文件夹方式。
+2. 推荐用[**subtree**](https://aoxuis.me/bo-ke/2013-08-06-git-subtree)方法录入文件(可随时拉取原目录更新)，手动复制提交亦可，不再接受submodule链接文件夹方式。
 
- > 若原目录作者回归本目录下版本未有人修改可继续拉取同步，已有社区修改版则勿盲目覆盖，请视情况保留或修改合并。
+ > 若原目录作者回归本目录下版本未有修改可继续拉取同步，已有社区版勿盲目覆盖，请视情况保留或修改合并。
 
-3. 管理不定期邀请GitHub插件作者给予目录权限，其他想参与的童鞋可先Fork修改后提交Pull Request，或在Issues申请。
+3. 管理不定期邀请GitHub插件作者给予目录权限，其他想参与童鞋可Fork修改后提交Pull Request，或在Issues申请。
 
-4. 插件应自带**README**，zip包上传至[releases](https://github.com/typecho-fans/plugins/releases)或放置在ZIP_CDN目录中，将文件地址写入下方表格即可在TeStore里安装。
+4. 插件应自带**README**，zip包上传至[releases](https://github.com/typecho-fans/plugins/releases)或放置在ZIP_CDN目录中，文件地址写入下方表格即可在TeStore安装。
 
- > 下表中的下载链接文字可用于对TeStore列表附加图标：`Download`即社区版，`N/A`为不可用，`Special`为安装用法特殊。
+ > 下表中下载链接文字用于TeStore列表附加图标：`Download`即社区版，`N/A`为不可用，`Special`为安装用法特殊。
 
 ### 作品索引 (107)
 
-###### TeStore使用下表“名称”创建安装文件夹，“版本”提示升级，请务必确保文本准确；添加时注意按字母排序，自增上方括号内总数，简介不要太长。
+###### TeStore使用下表“名称”创建安装文件夹，“版本”提示升级，请确保文本准确；注意按字母排序添加，自增上方括号内总数，简介不要太长。
 ```
 若用户已安装同名插件TeStore会根据作者名判断版本，请确保下表“作者”文本与Plugin.php内的署名保持一致(多人可用,号或&号分隔)。
 ```
@@ -92,7 +92,7 @@
 [Like](Like) | Typecho文章点赞与排行统计插件 | 1.0.1 | [skylzl](https://github.com/xiaogouxo) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-H_to_L/Like.zip)
 [LoveKKComment](LoveKKComment) | 全能评论邮件通知+密码找回插件 | 1.0.5 | [康粑粑](https://github.com/ylqjgm) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-H_to_L/LoveKKComment.zip)
 [LoveKKWeiBo](LoveKKWeiBo) | 使用新浪微博作为附件图床插件 | 1.0.1 | [康粑粑](https://github.com/ylqjgm) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-H_to_L/LoveKKWeiBo.zip)
-[MarkdownParse](MarkdownParse) | Parsedown解析插件(支持MathJax+目录) | 1.2.3 | [mrgeneral](https://github.com/mrgeneralgoo) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/MarkdownParse.zip)
+[MarkdownParse](MarkdownParse) | Parsedown插件(MathJax+目录) | 1.2.3 | [mrgeneral](https://github.com/mrgeneralgoo) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/MarkdownParse.zip)
 [MenuTree](MenuTree) | 悬浮式文章内容目录自动生成插件 | 0.8.1 | [hongweipeng](https://github.com/hongweipeng) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/MenuTree.zip)
 [MostCache](MostCache) | Mysql/SAE下Memcache缓存插件 | 1.1.1 | [skylzl](https://github.com/xiaogouxo),[WeiCN](https://github.com/naicfeng) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/MostCache.zip)
 [MyPlayer](MyPlayer) | 万能播放器与视频站链接转换插件 | 1.1.3 | [perichr](http://github.com/perichr) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/MyPlayer.zip)
@@ -103,9 +103,9 @@
 [PasteImage](PasteImage) | 编辑器粘贴文件自动上传插件 | 1.0.0 | [qing](https://github.com/zgq354) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/PasteImage.zip)
 [PostsCategoryChange](PostsCategoryChange) | Typecho文章批量改分类/状态插件 | 0.0.4 | [Fuzqing](https://github.com/fuzqing) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/PostsCategoryChange.zip)
 [PostRating](PostRating) | Typecho文章评分管理系统插件 | 1.1.0 | [wuwovr](https://github.com/hitop), Willin Kan | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/PostRating.zip)
-[Prism](Prism) | Prism轻量代码高亮效果渲染插件 | 1.0.2 | [冰剑](https://github.com/binjoo) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/Prism.zip)
-[QNUpload](QNUpload) | 经典版(php5.2-5.6)七牛附件插件 | 1.3.1 | [rakiy](https://github.com/rakiy) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/QNUpload.zip)
-[QiniuFile](QiniuFile) | 新七牛附件插件(自定路径+截图) | 1.3.2 | [冰剑](https://github.com/binjoo), [abelyao](https://github.com/abelyao) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/QiniuFile.zip)
+[Prism](Prism) | 经典版Prism轻量级代码高亮插件 | 1.0.2 | [冰剑](https://github.com/binjoo) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/Prism.zip)
+[QNUpload](QNUpload) | 经典版(PHP5.2-5.6)七牛附件插件 | 1.3.1 | [rakiy](https://github.com/rakiy) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/QNUpload.zip)
+[QiniuFile](QiniuFile) | 新七牛附件插件(自定路径+截图等) | 1.3.3 | [gxuzf](https://github.com/gxuzf), [冰剑](https://github.com/binjoo), [abelyao](https://github.com/abelyao) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/QiniuFile.zip)
 [Reposidget](Reposidget) | GitHub项目信息与内容展示插件 | 1.0.0 | [西秦公子](https://github.com/xiqingongzi) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/Reposidget.zip)
 [RewriteRule](RewriteRule) | 文章页面地址批量重定向跳转插件 | 1.0.0 | [laobubu](https://github.com/laobubu) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/RewriteRule.zip)
 [RoutesHelper](RoutesHelper) | Typecho路由信息显示与修改插件 | 1.0.3 | [doudou](https://github.com/doudoutime) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/RoutesHelper.zip)
@@ -142,6 +142,6 @@
 [YoduBGM](YoduBGM) | 迷你按钮型BGM音乐播放器插件 | 1.6.0 | [Jrotty](https://github.com/jrotty) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/YoduBGM.zip)
 [YoduPlayer](YoduPlayer) | 悬浮式音乐播放器插件(支持Pjax) | 2.2.2 | [Jrotty](https://github.com/jrotty) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/YoduPlayer.zip)
 [Zan](Zan) | 自定义字段输出文章点赞次数插件 | 1.0.0 | [冰剑](https://github.com/binjoo) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/Zan.zip)
-[alexarank](alexarank) | 在主题模板输出Alexa排名插件 | 1.0 | [Jrotty](https://github.com/jrotty) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/alexarank.zip)
+[alexarank](alexarank) | 在主题模板中输出Alexa排名插件 | 1.0 | [Jrotty](https://github.com/jrotty) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/alexarank.zip)
 [reCAPTCHA](reCAPTCHA) | 谷歌reCAPTCHA点击验证码插件 | 0.0.1 | [啸傲居士](https://github.com/shuxiao9058) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/reCAPTCHA.zip)
 [reCAPTCHAv3](reCAPTCHAv3) | 基于[reCAPTCHA](reCAPTCHA)v3版验证码插件 | 0.0.2 | [D-Bood](https://github.com/D-Bood) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/reCAPTCHAv3.zip)
