@@ -3,7 +3,7 @@
  * 将 Typecho 的附件上传至七牛云存储中。【<a href="https://github.com/typecho-fans/plugins" target="_blank">TF</a>社区维护版】
  * 
  * @package QiniuFile
- * @author gxuzf, 冰剑, abelyao
+ * @author LiCxi, 冰剑, abelyao
  * @version 1.3.3
  * @link https://github.com/typecho-fans/plugins/tree/master/QiniuFile
  * @date 2020-06-24
