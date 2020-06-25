@@ -105,7 +105,7 @@
 [PostRating](PostRating) | Typecho文章评分管理系统插件 | 1.1.0 | [wuwovr](https://github.com/hitop), Willin Kan | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/PostRating.zip)
 [Prism](Prism) | 经典版Prism轻量级代码高亮插件 | 1.0.2 | [冰剑](https://github.com/binjoo) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/Prism.zip)
 [QNUpload](QNUpload) | 经典版(PHP5.2-5.6)七牛附件插件 | 1.3.1 | [rakiy](https://github.com/rakiy) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/QNUpload.zip)
-[QiniuFile](QiniuFile) | 新七牛附件插件(自定路径+截图等) | 1.3.3 | [gxuzf](https://github.com/gxuzf), [冰剑](https://github.com/binjoo), [abelyao](https://github.com/abelyao) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/QiniuFile.zip)
+[QiniuFile](QiniuFile) | 新七牛附件插件(自定路径+截图等) | 1.3.3 | [LiCxi](https://github.com/gxuzf), [冰剑](https://github.com/binjoo), [abelyao](https://github.com/abelyao) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/QiniuFile.zip)
 [Reposidget](Reposidget) | GitHub项目信息与内容展示插件 | 1.0.0 | [西秦公子](https://github.com/xiqingongzi) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/Reposidget.zip)
 [RewriteRule](RewriteRule) | 文章页面地址批量重定向跳转插件 | 1.0.0 | [laobubu](https://github.com/laobubu) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/RewriteRule.zip)
 [RoutesHelper](RoutesHelper) | Typecho路由信息显示与修改插件 | 1.0.3 | [doudou](https://github.com/doudoutime) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/RoutesHelper.zip)
