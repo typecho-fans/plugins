@@ -256,7 +256,7 @@
 [SpammersGoAway](https://github.com/oott123/SpammersGoAway) | 简易挑战码机制防垃圾评论插件 | 0.0.1 | [oott123](https://github.com/oott123) | [下载](https://github.com/oott123/SpammersGoAway/archive/master.zip)
 [Spider](http://forum.typecho.org/viewtopic.php?f=6&t=11650) | Typecho网站文章批量采集插件 | 1.0.0 | Syan | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/Spider.zip)
 [StreakRain](https://github.com/zhusaidong/streak-rain-typecho-plugin) | (娱乐向)动态线条雨背景效果插件 | 1.1.0 | [上官元恒](https://github.com/zhusaidong) | [下载](https://github.com/zhusaidong/streak-rain-typecho-plugin/archive/master.zip)
-[StructureData](https://github.com/JokerQyou/StructureData) | (娱乐向)动态线条雨背景效果插件 | 0.3.1 | [Joker Qyou](https://github.com/JokerQyou) | [下载](https://github.com/JokerQyou/StructureData/archive/master.zip)
+[StructureData](https://github.com/JokerQyou/StructureData) | [JSON-LD](https://en.wikipedia.org/wiki/JSON-LD)式文章结构化数据插件 | 0.3.1 | [Joker Qyou](https://github.com/JokerQyou) | [下载](https://github.com/JokerQyou/StructureData/archive/master.zip)
 [Svg3dTagCloud](https://gitee.com/hoexhe/Svg3dTagCloud) | Typecho动态3D标签云特效插件 | 1.0.0 | [Hoe](https://gitee.com/hoexhe) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/Svg3dTagCloud.zip)
 [Swipebox](https://github.com/wuxiaocong/Swipebox) | Swipebox图片灯箱轮播特效插件 | 1.0.0 | [吴尼玛](https://github.com/wuxiaocong) | [下载](https://github.com/wuxiaocong/Swipebox/archive/master.zip)
 [SyntaxHighlighter](https://github.com/tinpont/SyntaxHighlighter-For-Typecho) | 经典SyntaxHighlighter高亮插件 | 0.0.2 | [Tinpont](https://github.com/tinpont) | [下载](https://github.com/tinpont/SyntaxHighlighter-For-Typecho/archive/master.zip)
