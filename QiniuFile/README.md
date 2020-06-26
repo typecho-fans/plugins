@@ -43,7 +43,7 @@ QiniuFile v1.3.3 - 社区维护版
    * 使用**7.2.10版SDK**，合并2个衍生版本功能：
      * **本地备份文件**，同步上传/删除([@lscho](https://github.com/lscho))；
      * 附件url套用**图片处理样式**后缀([@gxuzf](https://github.com/gxuzf))。
-   * 增加**数据流上传**方式支持XMLRPC([@kraity](https://github.com/kraity))。
+   * 增加**数据流上传**方式支持XMLRPC([@kraity](https://github.com/kraity))；
    * 去除旧版SDK和相关代码注释(PHP5.2用户可使用[QNUpload](https://github.com/typecho-fans/plugins/tree/master/QNUpload)插件)。
  * v1.3.2 (18-7-23 [@jzwalk](https://github.com/jzwalk))
    * 使用7.2.6版SDK，修正重复引用和注释问题。

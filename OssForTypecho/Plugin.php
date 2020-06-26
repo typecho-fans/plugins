@@ -1,13 +1,12 @@
 <?php
 /**
- *  阿里云OSS上传插件（Typecho）
+ *  阿里云OSS上传插件（Typecho）【<a href="https://github.com/typecho-fans/plugins" target="_blank">TF</a>社区维护版】
  *
  * @package OssForTypecho
- * @author Charmeryl
- * @version 1.0.1
- * @link https://bigrats.net
- * @dependence 1.0-*
- * @date 2018-08-08
+ * @author AaronHoEng,权那他,Charmeryl
+ * @version 1.0.2
+ * @link https://github.com/typecho-fans/plugins/tree/master/OssForTypecho
+ * @dependence 14.10.10-*
  */
 
 class OssForTypecho_Plugin implements Typecho_Plugin_Interface {
@@ -52,8 +51,8 @@ class OssForTypecho_Plugin implements Typecho_Plugin_Interface {
     public static function config(Typecho_Widget_Helper_Form $form) {
         $desc = new Typecho_Widget_Helper_Form_Element_Text('desc', NULL, '', _t('插件使用说明：'),
             _t('<ol>
-                      <li>插件基于阿里云aliyun-oss-php-sdk开发，若发现插件不可用，请到本插件 <a target="_blank" href="https://github.com/CharmeRyl/typecho-plugin-ossfile">GitHub发布地址</a> 检查是否有更新，或者提交Issues。<br></li>
-                      <li>在阿里云 <a target="_blank" href="https://ak-console.aliyun.com/#/accesskey">AccessKey管理控制台</a> 页面里获取AccessKeyID与AccessKeySecret。<br></li>
+                      <li>插件基于阿里云aliyun-oss-php-sdk开发，若发现插件不可用，请到本插件 <a target="_blank" href="https://github.com/typecho-fans/plugins/tree/master/OssForTypecho">GitHub发布地址</a> 检查是否有更新，或者提交Issues。<br></li>
+                      <li>在阿里云 <a target="_blank" href="https://usercenter.console.aliyun.com/#/manage/ak">AccessKey管理控制台</a> 页面里获取AccessKeyID与AccessKeySecret。<br></li>
                       <li>插件不会验证配置的正确性，请自行确认配置信息正确，否则不能正常使用。<br></li>
                       <li>插件会替换所有之前上传的文件的链接，若启用插件前存在已上传的数据，请自行将其上传至OSS相同目录中以保证正常显示；同时，禁用插件也会导致链接恢复，也请自行将数据下载至相同目录中。<br></li>
                     </ol>'));
@@ -70,9 +69,9 @@ class OssForTypecho_Plugin implements Typecho_Plugin_Interface {
         $form->addInput($ackey->addRule('required', _t('AccessKey不能为空！')));
 
         $region = new Typecho_Widget_Helper_Form_Element_Select('region',
-            array('oss-cn-hangzhou' => '华东 1', 'oss-cn-shanghai' => '华东 2', 'oss-cn-qingdao' => '华北 1',
-                'oss-cn-beijing' => '华北 2', 'oss-cn-zhangjiakou' => '华北 3', 'oss-cn-huhehaote' => '华北 5',
-                'oss-cn-shenzhen' => '华南 1', 'oss-cn-hongkong' => '香港', 'oss-us-west-1' => '美国西部 1 （硅谷）',
+            array('oss-cn-hangzhou' => '华东 1 （杭州）', 'oss-cn-shanghai' => '华东 2 （上海）', 'oss-cn-qingdao' => '华北 1 （青岛）',
+                'oss-cn-beijing' => '华北 2 （北京）', 'oss-cn-zhangjiakou' => '华北 3 （张家口）', 'oss-cn-huhehaote' => '华北 5 （呼和浩特）',
+                'oss-cn-shenzhen' => '华南 1 （深圳）', 'oss-cn-hongkong' => '香港', 'oss-us-west-1' => '美国西部 1 （硅谷）',
                 'oss-us-east-1' => '美国东部 1 （弗吉尼亚）', 'oss-ap-southeast-1' => '亚太东南 1 （新加坡）',
                 'oss-ap-southeast-2' => '亚太东南 2 （悉尼）', 'oss-ap-southeast-3' => '亚太东南 3 （吉隆坡）',
                 'oss-ap-southeast-5' => '亚太东南 5 （雅加达）', 'oss-ap-northeast-1' => '亚太东北 1 （日本）',
@@ -96,6 +95,9 @@ class OssForTypecho_Plugin implements Typecho_Plugin_Interface {
             _t('Bucket自定义域名：'),
             _t('可使用自定义域名（留空则使用默认域名）<br>例如：http://oss.example.com（需加上前面的 http:// 或 https://）'));
         $form->addInput($domain);
+
+        $imgstyle = new Typecho_Widget_Helper_Form_Element_Text('imgstyle', null, '', _t('分隔符+图片处理样式名：'), _t('填写<a href="https://oss.console.aliyun.com/bucket" target="_blank">Bucket设置</a>数据处理-图片处理中建立的规则名称(前面加分隔符)如-test'));
+        $form->addInput($imgstyle);
 
         echo '<script>
           window.onload = function() 
@@ -149,9 +151,21 @@ class OssForTypecho_Plugin implements Typecho_Plugin_Interface {
         //初始化OSS
         $ossClient = self::OssInit();
         try {
-            $result = $ossClient->uploadFile($options->bucket, substr($path,1), $uploadfile);
+            if (isset($file['tmp_name'])) {
+                $result = $ossClient->uploadFile($options->bucket, substr($path, 1), $uploadfile);
+            } else {
+                $result = $ossClient->putObject($options->bucket, substr($path, 1), $uploadfile);
+            }
         } catch (Exception $e) {
             print_r($e);
+            return false;
+        }
+
+       //HeYabin Add, 添加文件读写权限设定
+       $acl = "public-read";
+       try {
+            $ossClient->putObjectAcl($options->bucket,substr($path,1), $acl); 
+        } catch (Exception $e) {
             return false;
         }
 
@@ -166,7 +180,7 @@ class OssForTypecho_Plugin implements Typecho_Plugin_Interface {
             'path' => $path,
             'size' => $file['size'],
             'type' => $ext,
-            'mime' => @Typecho_Common::mimeContentType($path)
+            'mime' => (isset($file['tmp_name']) ? Typecho_Common::mimeContentType($file['tmp_name']) : $file['mime'])
         );
     }
 
@@ -209,6 +223,14 @@ class OssForTypecho_Plugin implements Typecho_Plugin_Interface {
             return false;
         }
 
+       //HeYabin Add, 添加文件读写权限设定
+       $acl = "public-read";
+       try {
+            $ossClient->putObjectAcl($options->bucket,substr($path,1), $acl); 
+        } catch (Exception $e) {
+            return false;
+        }
+
         if (!isset($file['size'])){
             $fileInfo = $result['info'];
             $file['size'] = $fileInfo['size_upload'];
@@ -237,7 +259,7 @@ class OssForTypecho_Plugin implements Typecho_Plugin_Interface {
         //初始化COS
         $ossClient = self::OssInit();
         try {
-            $ossClient->deleteObject($options->bucket, $content['attachment']->path);
+            $ossClient->deleteObject($options->bucket, substr($content['attachment']->path,1));
         } catch (Exception $e) {
             return false;
         }
@@ -254,7 +276,7 @@ class OssForTypecho_Plugin implements Typecho_Plugin_Interface {
     public static function attachmentHandle(array $content) {
         //获取设置参数
         $options = Typecho_Widget::widget('Widget_Options')->plugin('OssForTypecho');
-        return Typecho_Common::url($content['attachment']->path, self::getDomain());
+        return Typecho_Common::url($content['attachment']->path, self::getDomain()).$options->imgstyle;
     }
 
     /**
@@ -279,8 +301,8 @@ class OssForTypecho_Plugin implements Typecho_Plugin_Interface {
      */
     public static function OssInit() {
         $options = Typecho_Widget::widget('Widget_Options')->plugin('OssForTypecho');
-        $endpoint = 'https://' . $options->region . $options->suffix;
-        require_once 'aliyun-oss-php-sdk-2.3.0.phar';
+        $endpoint = 'http://' . $options->region . $options->suffix;
+        require_once 'aliyun-oss-php-sdk-2.3.1.phar';
         return new OSS\OssClient($options->acid, $options->ackey, $endpoint);
     }
 
