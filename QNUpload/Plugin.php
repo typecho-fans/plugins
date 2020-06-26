@@ -1,11 +1,11 @@
 <?php
 /**
- * 七牛云附件上传 
+ * 七牛云附件上传 【<a href="https://github.com/typecho-fans/plugins" target="_blank">TF</a>社区维护版】
  * 
  * @package QNUpload
  * @author rakiy
  * @version 1.3.1
- * @link http://ysido.com
+ * @link https://del.pub/post/qnupload.html
  * @date 2016-12-09
  */
 
@@ -52,13 +52,13 @@ class QNUpload_Plugin implements Typecho_Plugin_Interface
         $ak = new Typecho_Widget_Helper_Form_Element_Text('ak', 
         NULL, '',
         _t('Access Key'),
-        _t('<a href="https://portal.qiniu.com/setting/key" target="_blank">获取Access Key</a>'));
+        _t('<a href="https://portal.qiniu.com/user/key" target="_blank">获取Access Key</a>'));
         $form->addInput($ak);
 
         $sk = new Typecho_Widget_Helper_Form_Element_Text('sk', 
         NULL, '',
         _t('Secure Key'),
-        _t('<a href="https://portal.qiniu.com/setting/key" target="_blank">获取Secure Key</a>'));
+        _t('<a href="https://portal.qiniu.com/user/key" target="_blank">获取Secure Key</a>'));
         $form->addInput($sk);
 
         $bucketName = new Typecho_Widget_Helper_Form_Element_Text('bucket',
