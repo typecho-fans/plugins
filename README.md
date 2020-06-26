@@ -98,7 +98,7 @@
 [MyPlayer](MyPlayer) | 万能播放器与视频站链接转换插件 | 1.1.3 | [perichr](http://github.com/perichr) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/MyPlayer.zip)
 [MyTagCloud](MyTagCloud) | Typecho定制标签云输出效果插件 | 1.0.0 | [Ma Yanlong](https://github.com/YanlongMa) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/MyTagCloud.zip)
 [Ncache](Ncache) | Nginx开启fastcgi_cache缓存插件 | 1.1 | [WeiCN](https://github.com/naicfeng) | [Special](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/Ncache.zip)
-[OssForTypecho](OssForTypecho) | 阿里云OSS插件(流式上传+样式) | 1.0.2 | [AaronHoEng](https://github.com/AaronHoEng),[权那他](https://github.com/kraity),[Charmeryl](https://github.com/jqjiang819) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/OssForTypecho.zip)
+[OssForTypecho](OssForTypecho) | 阿里云OSS插件(流式上传+样式) | 1.0.2 | [权那他](https://github.com/kraity), [Charmeryl](https://github.com/jqjiang819) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/OssForTypecho.zip)
 [Passport](Passport) | 注册用户密码用邮件找回功能插件 | 1.0.1 | [小否先生](https://github.com/mhcyong),[ShingChi](https://github.com/shingchi) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/Passport.zip)
 [PasteImage](PasteImage) | 编辑器粘贴图片自动上传附件插件 | 1.0.0 | [qing](https://github.com/zgq354) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/PasteImage.zip)
 [PostsCategoryChange](PostsCategoryChange) | Typecho文章批量改分类/状态插件 | 0.0.4 | [Fuzqing](https://github.com/fuzqing) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/PostsCategoryChange.zip)

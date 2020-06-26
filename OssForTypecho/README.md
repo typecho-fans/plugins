@@ -22,7 +22,7 @@ OssForTypecho v1.0.2 - 社区维护版
 <tr>
 <td>
 
-###### OssForTypecho是基于Typecho的附件功能对接阿里云储存空间插件。除基本的文件附件上传、修改和删除功能，还支持自定义域名和HTTPS，可在Typecho 1.x版本下运行。
+###### OssForTypecho是基于Typecho附件功能的阿里云储存插件。除基本的文件附件上传、修改和删除功能，还支持自定义域名和HTTPS，可在Typecho 1.x版本下运行。
 
 **使用方法**：
 ##### 1. 下载本插件，放在 `usr/plugins/` 目录中，确保文件夹名为 OssForTypecho；
@@ -52,11 +52,11 @@ OssForTypecho v1.0.2 - 社区维护版
 
 ## 贡献作者
 
-[![jzwalk](https://avatars1.githubusercontent.com/u/252331?v=3&s=100)](https://github.com/jzwalk) | [![dragonflylee](https://avatars1.githubusercontent.com/u/6219280?v=3&s=100)](https://github.com/dragonflylee) | [![kraity](https://avatars1.githubusercontent.com/u/29883656?v=3&s=100)](https://github.com/kraity) | [![AaronHoEng](https://avatars1.githubusercontent.com/u/29192241?v=3&s=100)](https://github.com/AaronHoEng) | [![jqjiang819](https://avatars1.githubusercontent.com/u/9775943?v=3&s=100)](https://github.com/jqjiang819)
+[![jzwalk](https://avatars1.githubusercontent.com/u/252331?v=3&s=100)](https://github.com/jzwalk) | [![dragonflylee](https://avatars1.githubusercontent.com/u/6219280?v=3&s=100)](https://github.com/dragonflylee) | [![kraity](https://avatars1.githubusercontent.com/u/29883656?v=3&s=100)](https://github.com/kraity) | [<img src="https://avatars1.githubusercontent.com/u/29192241?v=3" alt="AaronHoEng" height="100" />](https://github.com/AaronHoEng) | [![jqjiang819](https://avatars1.githubusercontent.com/u/9775943?v=3&s=100)](https://github.com/jqjiang819)
 :---:|:---:|:---:|:---:|:---:
 [jzwalk](https://github.com/jzwalk) (2020) | [dragonflylee](https://github.com/dragonflylee) (2019) | [kraity](https://github.com/kraity) (2019)| [AaronHoEng](https://github.com/AaronHoEng) (2019)| [jqjiang819](https://github.com/jqjiang819) (2018)
 
-*为避免作者栏显示过长，插件信息仅选取登记3个署名，如有异议可协商修改。
+*为避免作者栏显示过长，插件信息仅选取登记2个署名，如有异议可协商修改。
 
 ## 附注/链接
 

@@ -3,7 +3,7 @@
  *  阿里云OSS上传插件（Typecho）【<a href="https://github.com/typecho-fans/plugins" target="_blank">TF</a>社区维护版】
  *
  * @package OssForTypecho
- * @author AaronHoEng,权那他,Charmeryl
+ * @author 权那他, Charmeryl
  * @version 1.0.2
  * @link https://github.com/typecho-fans/plugins/tree/master/OssForTypecho
  * @dependence 14.10.10-*
