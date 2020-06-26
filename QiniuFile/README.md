@@ -1,5 +1,5 @@
-<a href="https://github.com/typecho-fans/plugins">
-    <img src="https://typecho-fans.github.io/text-logo.svg" alt="TF Logo" title="Typecho-Fans" align="right" height="100" />
+<a href="https://typecho-fans.github.io">
+    <img src="https://typecho-fans.github.io/text-logo.svg" alt="TF Logo" title="Typecho Fans开源作品社区" align="right" height="100" />
 </a>
 
 QiniuFile v1.3.3 - 社区维护版
@@ -47,12 +47,12 @@ QiniuFile v1.3.3 - 社区维护版
    * 去除旧版SDK和相关代码注释(PHP5.2用户可使用[QNUpload](https://github.com/typecho-fans/plugins/tree/master/QNUpload)插件)。
  * v1.3.2 (18-7-23 [@jzwalk](https://github.com/jzwalk))
    * 使用7.2.6版SDK，修正重复引用和注释问题。
- * v1.3.1(17-2-17 [@jzwalk](https://github.com/jzwalk))
-   * 随冰剑仓库作品引入TF目录，产生社区维护版；
+ * v1.3.1 (17-2-17 [@jzwalk](https://github.com/jzwalk))
+   * 随冰剑的GitHub仓库作品引入Typecho-Fans目录，产生社区维护版；
    * 使用7.1.3版SDK(PHP5.3-7.0可用)，保留旧版SDK代码及注释。
- * v1.3.0(14-5-9 [@binjoo](https://github.com/binjoo))
+ * v1.3.0 (14-5-9 [@binjoo](https://github.com/binjoo))
    * 使用七牛图片处理API支持六种常用缩略图规格自动生成。
- * v1.2.0(14-2-24 [@yb](https://github.com/yb))
+ * v1.2.0 (14-2-24 [@yb](https://github.com/yb))
    * 原作发布。
 
 ## 贡献作者
@@ -78,6 +78,6 @@ QiniuFile v1.3.3 - 社区维护版
 
 ## 授权协议
 
-TF目录下社区维护版作品如果没有明确声明，默认采用与Typecho相同的[GPLv2](https://github.com/typecho/typecho/blob/master/LICENSE.txt)开源协议。(要求提及出处，保持开源并注明修改。)
+TF目录下的社区维护版作品如果没有明确声明，默认采用与Typecho相同的[GPLv2](https://github.com/typecho/typecho/blob/master/LICENSE.txt)开源协议。(要求提及出处，保持开源并注明修改。)
 
 > QiniuFile原作未附协议声明，仅在文档中许可修改，原作者保留所有权利。 © [abelyao](https://github.com/yaobo)
