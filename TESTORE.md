@@ -27,7 +27,7 @@
 
  > 下表中的下载链接文字可用于附加图标：`下载`即非社区版，`不可用`显示为:no_entry:，`特殊`显示:warning:即安装或启用方法特殊。
 
-### 插件信息 (310)
+### 插件信息 (314)
 
 ###### TeStore使用下表“名称”创建安装文件夹，“版本”提示升级，请务必确保文本准确；添加时注意按字母排序，自增上方括号内总数，简介不要太长。
 ```
@@ -49,6 +49,7 @@
 [Akalin](https://github.com/huhaku/typecho_Akalin) | 指定常用登录地IP后台白名单插件 | 1.0.0 | [huhaku](https://github.com/huhaku) | [下载](https://github.com/huhaku/typecho_Akalin/archive/master.zip)
 [Akismet](https://github.com/typecho/plugins/tree/master/Akismet) | 经典反垃圾评论服务Akismet插件 | 1.1.4 | [qining](https://github.com/joyqi) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/Akismet.zip)
 [Album](https://github.com/THX-plus/Album) | Typecho模版页面相册系统插件 | 1.2 | [我本奈何](https://github.com/THX-plus) | [下载](https://github.com/THX-plus/Album/archive/master.zip)
+[AliOSS](https://github.com/chaclee/typecho-oss) | Typecho附件上传阿里云OSS插件 | 1.0.1 | [raintao](https://github.com/chaclee) | [下载](https://github.com/chaclee/typecho-oss/archive/master.zip)
 [AliOssForTypecho](https://github.com/droomo/AliOssForTypecho) | 新OSS储存插件(本地备份+样式) | 1.1.1 | [droomo.](https://github.com/droomo) | [下载](https://github.com/droomo/AliOssForTypecho/archive/master.zip)
 [AliUpload](https://github.com/typecho/plugins/tree/master/AliUpload) | 经典版阿里云储存OSS附件插件 | 1.0.0 Beta | [loftor](https://github.com/loftor-git) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/AliUpload.zip)
 [AliceStyle](https://github.com/racns/AliceStyle) | 主题外观常用美化效果套装插件 | 2.4.0 | [racns](https://github.com/racns) | [下载](https://github.com/racns/AliceStyle/archive/master.zip)
@@ -127,6 +128,7 @@
 [ExSearch](https://github.com/AlanDecode/Typecho-Plugin-ExSearch) | Ajax动态显示实时搜索结果插件 | 0.1 | [熊猫小A](https://github.com/AlanDecode) | [下载](https://github.com/AlanDecode/Typecho-Plugin-ExSearch/archive/master.zip)
 [ExternalTool](https://github.com/phpgao/ExternalTool) | 自动判断文章外链添加标记插件 | 0.2 | [老高](https://github.com/phpgao) | [下载](https://github.com/phpgao/ExternalTool/archive/master.zip)
 [ExtraVerification](https://github.com/imwis/ExtraVerification) | 谷歌F2A双重验证登录管理插件 | 1.1.0 | [Wis](https://github.com/imwis) | [特殊](https://github.com/imwis/ExtraVerification/releases/download/1.1.0/ExtraVerification_1.1.0.zip)
+[Famous](#) | Typecho模板输出名言200句插件 | 1.0.2 | [iwege](http://www.reistlin.com) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/Famous.zip)
 [FancyBox](https://github.com/trisolaris233/FancyBox) | Typecho简约图片灯箱弹窗插件 | 1.0.0 | [阳光加冰](https://github.com/trisolaris233) | [下载](https://github.com/trisolaris233/FancyBox/archive/master.zip)
 [FancyCaptcha](https://plugins.typecho.me/plugins/comments-fancy-captcha.html) | jQuery UI多选拖拽式验证码插件 | 1.0.0 | 小强 | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/FancyCaptcha.zip)
 [Fckeditor](https://plugins.typecho.me/plugins/fckeditor-for-typecho.html) | 支持代码高亮的可视化编辑器插件 | 1.0.0 | Shion | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/Fckeditor.zip)
@@ -173,6 +175,7 @@
 [KodoForTypecho](https://github.com/sy-records/KodoForTypecho) | 七牛云KODO作附件存储空间插件 | 1.0.0 | [沈唁](https://github.com/sy-records) | [下载](https://github.com/sy-records/KodoForTypecho/archive/master.zip)
 [LaTex](https://github.com/typecho/plugins/tree/master/LaTex) | Markdown版LaTex公式解析插件 | 1.1.0 | [mutoo](https://github.com/mutoo) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-H_to_L/LaTex.zip)
 [Lightbox](https://plugins.typecho.me/plugins/lightbox.html) | 基于jQuery图片灯箱弹窗效果插件 | 2.5.1 | AC Yang | [不可用](https://github.com/typecho-fans/plugins/releases/download/plugins-H_to_L/Lightbox.zip)
+[Live2D](https://github.com/dragonflylee/typecho-Live2D) | Live2D可定制尺寸看板娘挂件插件 | 1.0.0 | [fghrsh](https://github.com/dragonflylee) | [下载](https://github.com/dragonflylee/typecho-Live2D/archive/master.zip)
 [Live2dHistoire](https://www.wikimoe.com/?post=97) | Live2D可陪聊伊斯&蕾姆挂件插件 | 1.1.3 | [广树](https://github.com/eeg1412) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-H_to_L/Live2dHistoire.zip)
 [LivePhotoKit](https://github.com/MoeLoli/LivephotoKit-Typecho) | 文章插入Livephoto动图视频插件 | 1.1.0 | [Sora Jin](https://github.com/MoeLoli) | [下载](https://github.com/MoeLoli/LivephotoKit-Typecho/archive/master.zip)
 [LoginDesigner](https://github.com/jrotty/LoginDesigner) | Typecho注册/登录界面美化插件 | 1.3.0 | [泽泽社长](https://github.com/jrotty) | [下载](https://github.com/jrotty/LoginDesigner/archive/master.zip)
@@ -230,7 +233,8 @@
 [Rdog](https://github.com/jrotty/Rdog) | 注册机制优化/发文自动审核插件 | 1.3.0 | [泽泽](https://github.com/jrotty) | [下载](https://github.com/jrotty/Rdog/archive/master.zip)
 [Remix](https://github.com/fengyiyi/Remix) | [SoundManager2](https://github.com/scottschiller/SoundManager2)音乐播放器插件 | 2.1.0 | [ShingChi](https://github.com/ShingChi) | [不可用](https://github.com/fengyiyi/Remix/archive/master.zip)
 [Restful](https://github.com/moefront/typecho-plugin-Restful) | Typecho开放API插件(输出/提交) | 1.2.0 | [MoeFront Studio](https://github.com/moefront) | [下载](https://github.com/moefront/typecho-plugin-Restful/archive/master.zip)
-[Reward](https://github.com/kyuuseiryuu/typecho-plugin-reward) | 文章添加支付宝当面付按钮插件 | 1.0 | [KyuuSeiryuu](https://github.com/kyuuseiryuu) | [不可用](https://github.com/kyuuseiryuu/typecho-plugin-reward/archive/master.zip)
+[Reward](https://github.com/kyuuseiryuu/typecho-plugin-reward) | 文章内添加支付宝当面付按钮插件 | 1.0 | [KyuuSeiryuu](https://github.com/kyuuseiryuu) | [不可用](https://github.com/kyuuseiryuu/typecho-plugin-reward/archive/master.zip)
+[Rfilter](https://del.pub/post/Rfilter.html) | Typecho简易评论加法验证码插件 | 1.0.0 | [Rakiy](https://github.com/rakiy) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/Rfilter.zip)
 [RobotsLogs](https://github.com/Vndroid/RobotsLogs) | 新搜索引擎爬虫机器人记录插件 | 2.0.3 | [Cain](https://github.com/Vndroid) | [下载](https://github.com/Vndroid/RobotsLogs/archive/master.zip)
 [RobotsPlusPlus](https://xiamp.net/archives/typecho-spider-visit-record-plugin-enhanced-enhanced-version-robotsplusplus.html) | Typecho记录搜索引擎蜘蛛抓取插件 | 2.0.3 | [Ryan](https://github.com/benzBrake), [YoviSun](http://www.yovisun.com), Shion | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/RobotsPlusPlus.zip)
 [SEO](http://forum.typecho.org/viewtopic.php?f=6&t=11523) | 自定义字段替换文章SEO标签插件 | 0.0.1 | [Ning](http://printf.cn) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/SEO.zip)
