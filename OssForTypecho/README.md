@@ -48,13 +48,13 @@ OssForTypecho v1.0.2 - 社区维护版
  * v1.0.1 (18-08-08 [@jqjiang819](https://github.com/jqjiang819))
    * 升级OSS-PHP-SDK，使用phar包。
  * v1.0.0 (18-04-05 [@jqjiang819](https://github.com/jqjiang819))
-   * 首次发布，支持Typecho 1.x版本。
+   * 首次发布并上传至GitHub的Typecho-Fans目录，产生社区维护版。
 
 ## 贡献作者
 
 [![jzwalk](https://avatars1.githubusercontent.com/u/252331?v=3&s=100)](https://github.com/jzwalk) | [![dragonflylee](https://avatars1.githubusercontent.com/u/6219280?v=3&s=100)](https://github.com/dragonflylee) | [![kraity](https://avatars1.githubusercontent.com/u/29883656?v=3&s=100)](https://github.com/kraity) | [<img src="https://avatars1.githubusercontent.com/u/29192241?v=3" alt="AaronHoEng" height="100" />](https://github.com/AaronHoEng) | [![jqjiang819](https://avatars1.githubusercontent.com/u/9775943?v=3&s=100)](https://github.com/jqjiang819)
 :---:|:---:|:---:|:---:|:---:
-[jzwalk](https://github.com/jzwalk) (2020) | [dragonflylee](https://github.com/dragonflylee) (2019) | [kraity](https://github.com/kraity) (2019)| [AaronHoEng](https://github.com/AaronHoEng) (2019)| [jqjiang819](https://github.com/jqjiang819) (2018)
+[jzwalk](https://github.com/jzwalk) (2020) | [dragonflylee](https://github.com/dragonflylee) (2019) | [kraity](https://github.com/kraity) (2019) | [AaronHoEng](https://github.com/AaronHoEng) (2019) | [jqjiang819](https://github.com/jqjiang819) (2018)
 
 *为避免作者栏显示过长，插件信息仅选取登记2个署名，如有异议可协商修改。
 

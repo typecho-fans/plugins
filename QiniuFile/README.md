@@ -59,7 +59,7 @@ QiniuFile v1.3.3 - 社区维护版
 
 [![jzwalk](https://avatars1.githubusercontent.com/u/252331?v=3&s=100)](https://github.com/jzwalk) | [![gxuzf](https://avatars1.githubusercontent.com/u/61103266?v=3&s=100)](https://github.com/gxuzf) | [![kraity](https://avatars1.githubusercontent.com/u/29883656?v=3&s=100)](https://github.com/kraity) | [![lscho](https://avatars1.githubusercontent.com/u/11583677?v=3&s=100)](https://github.com/lscho) | [![JokerQyou](https://avatars1.githubusercontent.com/u/1465267?v=3&s=100)](https://github.com/JokerQyou) | [![binjoo](https://avatars1.githubusercontent.com/u/219092?v=3&s=100)](https://github.com/binjoo) |[![yb](https://avatars1.githubusercontent.com/u/25887822?v=3&s=100)](https://github.com/yb)
 :---:|:---:|:---:|:---:|:---:|:---:|:---:
-[jzwalk](https://github.com/jzwalk) (2020) | [gxuzf](https://github.com/gxuzf) (2020) | [kraity](https://github.com/kraity) (2019)| [lscho](https://github.com/lscho) (2017)| [JokerQyou](https://github.com/JokerQyou) (2016)| [binjoo](https://github.com/binjoo) (2014)| [yb](https://github.com/yb) (2014)
+[jzwalk](https://github.com/jzwalk) (2020) | [gxuzf](https://github.com/gxuzf) (2020) | [kraity](https://github.com/kraity) (2019) | [lscho](https://github.com/lscho) (2017) | [JokerQyou](https://github.com/JokerQyou) (2016) | [binjoo](https://github.com/binjoo) (2014) | [yb](https://github.com/yb) (2014)
 
 *为避免作者栏显示过长，插件信息仅选取登记3个署名，如有异议可协商修改。
 
