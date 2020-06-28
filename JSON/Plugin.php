@@ -1,12 +1,12 @@
 <?php
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 /**
- * 支持使用“api/接口名”路径按参数获取json格式的博客数据
+ * 使用api接口输出json博客数据 【<a href="https://github.com/typecho-fans/plugins" target="_blank">TF</a>社区维护版】
  * 
  * @package JSON
- * @author 公子
- * @version 0.1
- * @link https://imnerd.org
+ * @author 姬长信,SangSir,公子
+ * @version 1.1
+ * @link https://github.com/typecho-fans/plugins/tree/master/JSON
  */
 class JSON_Plugin implements Typecho_Plugin_Interface
 {

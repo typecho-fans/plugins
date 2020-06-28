@@ -1,10 +1,14 @@
-<?php 
+<?php
+if (!defined('__TYPECHO_ROOT_DIR__')) exit;
+
+// header('Access-Control-Allow-Origin: *');
+
 class JSON_Action extends Typecho_Widget implements Widget_Interface_Do {
    
     private $db;
     private $res;
 
-    const LACK_PARAMETER = "缺少参数";
+    const LACK_PARAMETER = "Not found";
     
     public function __construct($request, $response, $params = NULL) {
         parent::__construct($request, $response, $params);
@@ -19,7 +23,7 @@ class JSON_Action extends Typecho_Widget implements Widget_Interface_Do {
     }
     
     private function defaults() {
-        $this->export("Hello World!");
+        $this->export(null);
     }
     private function count() {
         $select =  $this->db->select("COUNT(*) AS counts")
@@ -31,21 +35,20 @@ class JSON_Action extends Typecho_Widget implements Widget_Interface_Do {
         return $this->export($res);
 
     }
-    //参数 pageSize, page, authorId, created, cid, category, commentsNumMax, commentsNumMin, allowComment
+    //文章参数 pageSize, page, authorId, created, cid, category, commentsNumMax, commentsNumMin, allowComment
     private function posts() {
-        $pageSize = (int) self::GET('pageSize', 5);
+        $pageSize = (int) self::GET('pageSize', 1000);
         $page = (int) self::GET('page', 1);
         $authorId = self::GET('authorId', 0);
         $offset = $pageSize * ( $page - 1 );
         
-        $select = $this->db->select('cid', 'title', 'created', 'type', 'slug', 'text')->from('table.contents')
+        $select = $this->db->select('cid', 'title', 'created', 'type', 'slug', 'text', 'authorId')->from('table.contents')
             ->where('type = ?', 'post')
             ->where('status = ?', 'publish')
             ->where('created < ?', time())
             ->order('table.contents.created', Typecho_Db::SORT_DESC)
             ->offset($offset)
             ->limit($pageSize);
-        $test = $this->db->fetchAll($select);
         // 根据cid偏移获取文章
         if(isset($_GET['cid'])) {
             $cid = self::GET('cid');
@@ -88,15 +91,17 @@ class JSON_Action extends Typecho_Widget implements Widget_Interface_Do {
         $result = array();
         foreach($posts as $post) {
             $post = $this->widget("Widget_Abstract_Contents")->push($post);
-			$post['tag'] = $this->db->fetchAll($this->db->select('name')->from('table.metas')
+            $post['author'] = $this->db->fetchAll($this->db->select('uid', 'name', 'mail', 'url', 'screenName')->from('table.users')->where('uid = ?', $post['authorId']));
+            $post['tag'] = $this->db->fetchAll($this->db->select('name')->from('table.metas')
 			->join('table.relationships', 'table.metas.mid = table.relationships.mid', Typecho_DB::LEFT_JOIN)
 			->where('table.relationships.cid = ?', $post['cid'])
 			->where('table.metas.type = ?', 'tag'));
+            $post['thumb'] = $this->db->fetchAll($this->db->select('str_value')->from('table.fields')->where('cid = ?', $post['cid']))?$this->db->fetchAll($this->db->select('str_value')->from('table.fields')->where('cid = ?', $post['cid'])):array(array("str_value"=>"https://ww4.sinaimg.cn/large/a15b4afegw1f8sqaz6y6bj20go06j0u2"));
             $result[] = $post;
         }
         $this->export($result);
     }
-    //参数 content
+    //页面参数 content
     private function pageList() {
         $content = self::GET('content', false);
 
@@ -116,12 +121,12 @@ class JSON_Action extends Typecho_Widget implements Widget_Interface_Do {
         }
         $this->export($pageList);
     }
-    //参数 cid, slug
+    //单篇参数 cid, slug
     private function single() {
         if(!isset($_GET['cid']) && !isset($_GET['slug']))
             $this->export(self::LACK_PARAMETER, 404);
 
-        $select = $this->db->select('cid', 'created', 'type', 'slug', 'text')->from('table.contents');
+        $select = $this->db->select('cid', 'title', 'created', 'type', 'slug', 'text')->from('table.contents');
         if(isset($_GET['cid'])) $select->where('cid = ?', $_GET['cid']);
         if(isset($_GET['slug'])) $select->where('slug = ?', $_GET['slug']);
         $post = $this->db->fetchRow($select);
@@ -135,7 +140,7 @@ class JSON_Action extends Typecho_Widget implements Widget_Interface_Do {
     private function page() {
         $this->single();
     }
-    //参数 authorId, cid
+    //相关文章参数 authorId, cid
     private function relatedPosts() {
         if(!isset($_GET['authorId']) && !isset($_GET['cid'])) {
             $this->export(self::LACK_PARAMETER, 404);
@@ -160,21 +165,22 @@ class JSON_Action extends Typecho_Widget implements Widget_Interface_Do {
         }
         $this->export($relatedPosts);
     }
-    //参数 pageSize
+    //最近文章参数 pageSize
     private function recentPost() {
         $pageSize = self::GET('pageSize', 10);
 
-        $this->widget("Widget_Contents_Post_Recent", "pageSize=$pageSize")->to($post);
+        $this->widget("Widget_Contents_Post_Recent", "pageSize={$pageSize}")->to($post);
         $recentPost = array();
         while($post->next()) {
             $recentPost[] = array(
+                "cid" => $post->cid,
                 "title" => $post->title,
                 "permalink" => $post->permalink
             );
         }
         $this->export($recentPost);
     }
-    //参数 pageSize, parentId, ignoreAuthor, showCommentOnly
+    //评论参数 pageSize, parentId, ignoreAuthor, showCommentOnly
     private function recentComments() {
         $pageSize = self::GET('pageSize', 10);
         $parentId = self::GET('parentId', 0);
@@ -204,7 +210,7 @@ class JSON_Action extends Typecho_Widget implements Widget_Interface_Do {
         }
         $this->export($recentComments);
     }
-    //参数 ignore, childMode
+    //分类参数 ignore, childMode
     private function categoryList() {
         $ignores = explode(',', self::GET('ignore'));
         $childMode = self::GET('childMode', false);
@@ -234,15 +240,14 @@ class JSON_Action extends Typecho_Widget implements Widget_Interface_Do {
         if($childMode) $categoryList = array_values($parent);
         $this->export($categoryList);
     }
-    //参数 sort, count, ignoreZeroCount, desc, limit
+    //标签参数 sort, ignoreZeroCount, desc, limit
     private function tagCloud() {
         $sort = self::GET('sort', 'count');
         $ignoreZeroCount = self::GET('ignoreZeroCount', false);
         $desc = self::GET('desc', true);
         $limit = self::GET('limit', 0);
-        
         $tagCloud = array();
-        $this->widget("Widget_Metas_Tag_Cloud", "sort=$sort&ignoreZeroCount=$ignoreZeroCount&desc=$desc&limit=$limit")->to($tags);
+        $this->widget("Widget_Metas_Tag_Cloud", "sort={$sort}&ignoreZeroCount={$ignoreZeroCount}&desc={$desc}&limit={$limit}")->to($tags);
         while($tags->next()) {
             $tagCloud[] = array(
                 "name" => $tags->name,
@@ -252,7 +257,7 @@ class JSON_Action extends Typecho_Widget implements Widget_Interface_Do {
         }
         $this->export($tagCloud);
     }
-    //参数 format, type, limit
+    //归档参数 format, type, limit
     private function archive() {
         $format = self::GET('format', 'Y-m');
         $type = self::GET('type', 'month');
@@ -273,7 +278,6 @@ class JSON_Action extends Typecho_Widget implements Widget_Interface_Do {
             if(isset($result[$date])) {
                 $result[$date]['count'] ++;
             } else {
-
                 $result[$date]['year'] = date('Y', $timeStamp);
                 $result[$date]['month'] = date('m', $timeStamp);
                 $result[$date]['day'] = date('d', $timeStamp);
@@ -289,7 +293,8 @@ class JSON_Action extends Typecho_Widget implements Widget_Interface_Do {
 
         $this->export($result);
     }
-    //参数 user
+/**
+    //用户参数 user
     private function info() {
         $user = self::GET('user', 0);
 
@@ -304,7 +309,7 @@ class JSON_Action extends Typecho_Widget implements Widget_Interface_Do {
 
         $this->export($result);
     }
-/** 实验型升级接口
+    //系统升级接口(未测试)
     private function upgrade() {
         $generator = $this->widget("Widget_Options")->generator;
         $generator = explode(' ', $generator);
@@ -351,7 +356,7 @@ class JSON_Action extends Typecho_Widget implements Widget_Interface_Do {
         curl_exec($curl);
         curl_close($curl);
     }
- */
+*/
     public function export($data = array(), $status = 200) {
         $this->res->throwJson(array('status'=>$status, 'data'=>$data));
         exit();
