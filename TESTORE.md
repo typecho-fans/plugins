@@ -27,7 +27,7 @@
 
  > 下表中的下载链接文字可用于附加图标：`下载`即非社区版，`不可用`显示为:no_entry:，`特殊`显示:warning:即安装或启用方法特殊。
 
-### 插件信息 (314)
+### 插件信息 (318)
 
 ###### TeStore使用下表“名称”创建安装文件夹，“版本”提示升级，请务必确保文本准确；添加时注意按字母排序，自增上方括号内总数，简介不要太长。
 ```
@@ -73,6 +73,7 @@
 [BangumiList](https://github.com/ShadowySpirits/BangumiList) | 短代码输出Bangumi追番列表插件 | 1.0.0 | [SSpirits](https://github.com/ShadowySpirits) | [下载](https://github.com/ShadowySpirits/BangumiList/archive/master.zip)
 [Beblank](https://github.com/ghosx/Beblank) | Js替换页面链接为新窗口打开插件 | 1.0.0 | [Heeeepin](https://github.com/ghosx) | [下载](https://github.com/ghosx/Beblank/archive/master.zip)
 [BiliBangumi](https://gitee.com/stsiao/typecho_bangumi_bili) | 用Bilibili账户获取信息版追番插件 | 1.0.0.204 | [飞蚊话](https://gitee.com/stsiao), [广树](https://github.com/eeg1412) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/BiliBangumi.zip)
+[Bilibili](https://gitee.com/nagato/typecho-plugins/tree/master/Bilibili) | 哔哩哔哩页面链接转播放器插件 | 1.4.0 beta | [绀野木棉季](https://gitee.com/nagato) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/Bilibili.zip)
 [BilibiliEcho](https://github.com/pluveto/BilibiliEcho) | Typecho同步输出Bilibili动态插件 | 1.0.0 | [pluvet](https://github.com/pluveto) | [下载](https://github.com/pluveto/BilibiliEcho/archive/master.zip)
 [BlockComment](https://github.com/typecho/plugins/tree/master/BlockComment) | Typecho评论来路IP黑名单插件 | 0.0.1 | [明城](https://github.com/mingcheng) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/BlockComment.zip)
 [BlockIP](https://github.com/kokororin/typecho-plugin-BlockIP) | Typecho访问前台IP黑名单插件 | 1.0 | [Kokororin](https://github.com/kokororin) | [下载](https://github.com/kokororin/typecho-plugin-BlockIP/archive/master.zip)
@@ -136,6 +137,7 @@
 [FileCache](https://plugins.typecho.me/plugins/file-cache.html) | 经典版Typecho生成静态缓存插件 | 1.0.0 | Shion | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/FileCache.zip)
 [FlashMp3Player](https://github.com/typecho/plugins/tree/master/FlashMp3Player) | Flash音乐播放器Dewplayer插件 | 1.0.1 | [qining](https://github.com/joyqi) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/FlashMp3Player.zip)
 [FlowChart](http://forum.typecho.org/viewtopic.php?f=6&t=10874) | Markdown语法flow转流程图插件 | 1.2.1 | [ZhangZijing(Venteto)](https://github.com/pluveto) | [下载](https://github.com/hujy23/FlowChart-typecho-plugin/archive/master.zip)
+[FtpUpload](https://imnerd.org/FtpUpload-Plugin-For-Typecho.html) | 编辑器附加上传文件到FTP按钮插件 | 1.0 | [怡红公子)](http://github.com/lizheming) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/FtpUpload.zip)
 [Gallery](https://github.com/leohowl/gallery-typecho) | 页面内图片套用画廊相册效果插件 | 0.0.1 | [Leohowl](https://github.com/leohowl) | [下载](https://github.com/leohowl/gallery-typecho/archive/master.zip)
 [GEETEST](https://gitee.com/loiou/GEETEST) | 极验证自定义设置评论验证码插件 | 1.0.0 | [LOIOU](https://gitee.com/loiou) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/GEETEST_LOIOU.zip)
 [Geetest](https://github.com/99kyuu/GeetestV3_for_Typecho) | V3版GeeTest登录注册验证码插件 | 1.0.0 | [玖玖kyuu](https://github.com/99kyuu) | [特殊](https://github.com/99kyuu/GeetestV3_for_Typecho/archive/master.zip)
@@ -148,6 +150,7 @@
 [GoogleAnalytics](https://github.com/typecho/plugins/tree/master/GoogleAnalytics) | 页面底部插入谷歌统计代码插件 | 1.0.0 | [mutoo](https://github.com/mutoo) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/GoogleAnalytics.zip)
 [GoogleCodePrettify](https://github.com/typecho/plugins/tree/master/GoogleCodePrettify) | 经典版表格效果谷歌代码高亮插件 | 1.0.0 | [qining](https://github.com/joyqi) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/GoogleCodePrettify_qining.zip)
 [GravatarServer](https://github.com/kraity/typecho-gravatar) | Gravatar服务器插件(支持QQ头像) | 1.1.1 | [权那他](https://github.com/kraity) | [下载](https://github.com/kraity/typecho-gravatar/archive/master.zip)
+[GravatarShow](https://github.com/szj1006/GravatarShow) | 简易替换Gravatar地址为https插件 | 1.0.0 | [SangSir](https://github.com/szj1006) | [下载](https://github.com/szj1006/GravatarShow/archive/master.zip)
 [GreyMemorialDay](https://github.com/baifan97/GreyMemorialDay) | 网站定时黑白插件(兼容安卓界面) | 1.1.0 | [WhiteFan](https://github.com/baifan97) | [下载](https://github.com/baifan97/GreyMemorialDay/archive/master.zip)
 [HPCache](https://mingdeju.com/archives/typecho-cache-download.html) | Typecho静态化页面文件缓存插件 | 1.0 | [雷鬼](https://www.typechodev.com) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-H_to_L/HPCache.zip)
 [HPSitemap](https://github.com/invelop/Typecho-HPSitemap) | 百度Sitemap站点地图生成插件 | 2.9 | [Roogle](https://github.com/Moidea)&[雷鬼](https://www.typechodev.com)&[锋临](https://github.com/invelop) | [下载](https://github.com/invelop/Typecho-HPSitemap/archive/master.zip)
@@ -303,6 +306,7 @@
 [TypechoXcache](https://github.com/kum1ko/TypechoXcache) | 基于[XCache](https://github.com/lighttpd/xcache)扩展的内存缓存插件 | 1.0.2 | [Misaka](https://github.com/kum1ko) | [下载](https://github.com/kum1ko/TypechoXcache/archive/master.zip)
 [UEditor](https://github.com/chanshengzhi/UEditor-for-Typecho) | 整合又拍/腾讯云储存UEditor插件 | 2018 | [陈盛智](https://github.com/chanshengzhi) | [特殊](https://github.com/chanshengzhi/UEditor-for-Typecho/archive/master.zip)
 [UEditor](https://gitee.com/aveyuan/UEditor-for-Typecho) | 1.4.3.3版可视化编辑器UEditor插件 | 3.0 | [系统笔记](https://gitee.com/aveyuan) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/UEditor_.zip)
+[UniTypecho](https://github.com/idealclover/UniTypecho) | 新Typecho微信/QQ小程序搭建插件 | 1.0.0 | [idealclover](https://github.com/idealclover) | [下载](https://github.com/idealclover/UniTypecho/archive/master.zip)
 [UploadGithubForTypecho](https://github.com/AyagawaSeirin/UploadGithubForTypecho) | GitHub存储附件插件(jsDelivr加速) | 1.1.0 | [AyagawaSeirin](https://github.com/AyagawaSeirin) | [下载](https://github.com/AyagawaSeirin/UploadGithubForTypecho/archive/master.zip)
 [UserAgent](https://github.com/ennnnny/typecho/tree/master/UserAgent) | 显示评论者系统/浏览器信息插件 | 0.1.0 | [kuye](https://github.com/ennnnny) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/UserAgent_kuye.zip)
 [UserAgent](https://github.com/UniqueOnly/UserAgent) | 访客浏览器/系统识别与输出插件 | 1.0.0 | [Unique](https://github.com/UniqueOnly) | [下载](https://github.com/UniqueOnly/UserAgent/archive/master.zip)
@@ -314,7 +318,7 @@
 [WeBlog](https://github.com/thinkmoon/WeBlog) | Typecho微信/QQ小程序版插件 | 0.1.9 | [醉月思](https://github.com/thinkmoon) | [特殊](https://github.com/thinkmoon/WeBlog/archive/master.zip)
 [WeChatNotice](https://blog.zgcwkj.cn/archives/67.html) | 文章评论等推送微信公众号插件 | 1.0.0 | [zgcwkj](https://blog.zgcwkj.cn) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/WeChatNotice.zip)
 [WeMedia](https://github.com/muzishanshi/WeMediaForTypecho) | Typecho积分商城付费阅读插件 | 1.0.16 | [二呆](https://github.com/muzishanshi) | [下载](https://github.com/muzishanshi/WeMediaForTypecho/archive/master.zip)
-[WeTypecho](https://github.com/MingliangLu/WeTypecho) | Typecho映射到微信小程序插件 | 0.1 | [成都第七帅](https://github.com/MingliangLu) | [特殊](https://github.com/MingliangLu/WeTypecho/archive/master.zip)
+[WeTypecho](https://github.com/MingliangLu/WeTypecho) | Typecho微信小程序版搭建插件 | 0.1 | [成都第七帅](https://github.com/MingliangLu) | [特殊](https://github.com/MingliangLu/WeTypecho/archive/master.zip)
 [WebTotal](https://github.com/ss7247/Typecon__WebTotal) | 自增统计/输出网站浏览次数插件 | 1.0.0 | [astar](https://github.com/ss7247) | [下载](https://github.com/ss7247/Typecon__WebTotal/archive/master.zip)
 [WechatFans](https://github.com/muzishanshi/WechatFans) | 文章通过微信公众号验证可读插件 | 1.0.3 | [二呆](https://github.com/muzishanshi) | [下载](https://github.com/muzishanshi/WechatFans/archive/master.zip)
 [WeiboFile](https://github.com/muzishanshi/WeiboFile) | 微博等多平台图床+视频上传插件 | 1.0.20 | [二呆](https://github.com/muzishanshi) | [下载](https://github.com/muzishanshi/WeiboFile/archive/master.zip)
