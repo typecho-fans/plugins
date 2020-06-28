@@ -29,8 +29,8 @@ JSON v1.1 - 社区维护版
 ##### 2. 激活插件，试试访问 http://[example].com/api/[action] 吧！
 
 **注意**：
-* 以上地址中的[action]请替换下表列出的接口名，其后可再接?[参数名]=[值]。
-* 未开启地址重写功能的博客需要在域名后接/index.php再/api/[action]同上。
+* ##### 以上地址中的[action]请替换下表列出的接口名，其后可再接?[参数名]=[值]。
+* ##### 未开启地址重写功能的博客需要在域名后接/index.php再/api/[action]同上。
 
 |接口名|可用参数|默认值|说明|
 |---|:---:|:---:|---|
@@ -49,7 +49,7 @@ JSON v1.1 - 社区维护版
 |count|-|-|博客文章总数|
 |upgrade|-|-|系统检测升级<br/>(安全考虑已注释)|
 
-演示地址：[https://sangsir.com/api/posts](https://sangsir.com/api/posts)
+##### 演示地址：[https://sangsir.com/api/posts](https://sangsir.com/api/posts)
 
 </td>
 </tr>

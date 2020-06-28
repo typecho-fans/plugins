@@ -30,8 +30,8 @@ CommentFilter v1.2.1 - 社区维护版
 ##### 3. 保存设置，即可自动监管全站新发评论。
 
 **注意**：
-* 已通过session增加评论内容临时变量，可在模板输出让评论者看到自己的未审核评论。
-* 此插件历史悠久，如果被spammer针对发现效果不佳可尝试另一款插件[SmartSpam](http://www.yovisun.com/archive/typecho-plugin-smartspam.html)。
+* ##### 已通过session增加评论内容临时变量，可在模板输出让评论者看到自己的未审核评论。
+* ##### 此插件历史悠久，如果被spammer针对发现效果不佳可尝试另一款插件[SmartSpam](http://www.yovisun.com/archive/typecho-plugin-smartspam.html)。
 
 </td>
 </tr>
