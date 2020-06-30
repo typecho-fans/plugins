@@ -27,7 +27,7 @@
 
  > 下表中的下载链接文字可用于附加图标：`下载`即非社区版，`不可用`显示为:no_entry:，`特殊`显示:warning:即安装或启用方法特殊。
 
-### 插件信息 (318)
+### 插件信息 (322)
 
 ###### TeStore使用下表“名称”创建安装文件夹，“版本”提示升级，请务必确保文本准确；添加时注意按字母排序，自增上方括号内总数，简介不要太长。
 ```
@@ -135,6 +135,7 @@
 [Fckeditor](https://plugins.typecho.me/plugins/fckeditor-for-typecho.html) | 支持代码高亮的可视化编辑器插件 | 1.0.0 | Shion | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/Fckeditor.zip)
 [Fimg](https://plugins.typecho.me/plugins/fimg.html) | 输出文章下多个附件图片地址插件 | 2011.10.24 | [M4](https://www.ananyiyi.com) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/Fimg.zip)
 [FileCache](https://plugins.typecho.me/plugins/file-cache.html) | 经典版Typecho生成静态缓存插件 | 1.0.0 | Shion | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/FileCache.zip)
+[Filter](https://github.com/he0119/typecho-filter) | Typecho列表不显示加密文章插件 | 0.1.1 | [uy&#95;sun](https://github.com/he0119) | [下载](https://github.com/he0119/typecho-filter/archive/master.zip)
 [FlashMp3Player](https://github.com/typecho/plugins/tree/master/FlashMp3Player) | Flash音乐播放器Dewplayer插件 | 1.0.1 | [qining](https://github.com/joyqi) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/FlashMp3Player.zip)
 [FlowChart](http://forum.typecho.org/viewtopic.php?f=6&t=10874) | Markdown语法flow转流程图插件 | 1.2.1 | [ZhangZijing(Venteto)](https://github.com/pluveto) | [下载](https://github.com/hujy23/FlowChart-typecho-plugin/archive/master.zip)
 [FtpUpload](https://imnerd.org/FtpUpload-Plugin-For-Typecho.html) | 编辑器附加上传文件到FTP按钮插件 | 1.0 | [怡红公子)](http://github.com/lizheming) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/FtpUpload.zip)
@@ -158,7 +159,8 @@
 [HelloChangYan](https://www.cxiansheng.cn/server/278) | Typecho搜狐畅言评论回推插件 | 1.1 | [命中水、](https://www.cxiansheng.cn)&[Angboo](https://github.com/1349920358) | [特殊](https://github.com/typecho-fans/plugins/releases/download/plugins-H_to_L/HelloChangYan.zip)
 [HelloRedis](https://github.com/1349920358/HelloRedis) | Redis数据库用页面缓存加速插件 | 1.1.0 | [Angboo](https://github.com/1349920358) | [下载](https://github.com/1349920358/HelloRedis/archive/master.zip)
 [HideText](https://github.com/journey-ad/HideText-Typecho-Plugin) | 防转载添加不可见版权信息插件 | 0.1 | [journey.ad](https://github.com/journey-ad) | [下载](https://github.com/journey-ad/HideText-Typecho-Plugin/archive/master.zip)
-[Highlight](https://github.com/jrotty/Highlightjs-for-typecho) | 兼容instantclick.js版代码高亮插件 | 1.1.0 | [泽泽](https://github.com/jrotty) | [下载](https://github.com/jrotty/Highlightjs-for-typecho/archive/master.zip)
+[Highlight](https://github.com/jrotty/Highlightjs-for-typecho) | HighlightJs代码高亮插件(行号) | 1.1.0 | [泽泽](https://github.com/jrotty) | [下载](https://github.com/jrotty/Highlightjs-for-typecho/archive/master.zip)
+[HighlightJs](https://github.com/zhantong/Typecho-Code-Highlight-Plugins/blob/master/HighlightJs) | HighlightJs代码高亮插件(Ajax) | 0.0.2 | [Penguin](https://github.com/zhantong) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-H_to_L/HighlightJs_Penguin.zip)
 [HightlightTag](https://plugins.typecho.me/plugins/hight-light-tag.html) | 查找文章内标签自动添加链接插件 | 1.0.0 | [HJin.me](https://huangj.in) | [不可用](https://github.com/typecho-fans/plugins/releases/download/plugins-H_to_L/HightlightTag.zip)
 [Huaji](https://github.com/journey-ad/Huaji-Typecho-Plugin) | (娱乐向)滑稽表情动态交互挂件插件 | 0.1 | [journey.ad](https://github.com/journey-ad) | [下载](https://github.com/journey-ad/Huaji-Typecho-Plugin/archive/master.zip)
 [HuifengMembers](https://github.com/wedojava/HuifengMember) | Typecho自建会员信息数据表插件 | 0.1.1 | [回风](https://github.com/wedojava) | [下载](https://github.com/wedojava/HuifengMember/archive/master.zip)
@@ -179,6 +181,7 @@
 [LaTex](https://github.com/typecho/plugins/tree/master/LaTex) | Markdown版LaTex公式解析插件 | 1.1.0 | [mutoo](https://github.com/mutoo) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-H_to_L/LaTex.zip)
 [Lightbox](https://plugins.typecho.me/plugins/lightbox.html) | 基于jQuery图片灯箱弹窗效果插件 | 2.5.1 | AC Yang | [不可用](https://github.com/typecho-fans/plugins/releases/download/plugins-H_to_L/Lightbox.zip)
 [Live2D](https://github.com/dragonflylee/typecho-Live2D) | Live2D可定制尺寸看板娘挂件插件 | 1.0.0 | [fghrsh](https://github.com/dragonflylee) | [下载](https://github.com/dragonflylee/typecho-Live2D/archive/master.zip)
+[Live2d](https://gitee.com/kumaomao/live2d_typecho) | Live2D看板娘插件(可换模型材质) | 1.0.0 | [kumaomao](https://gitee.com/kumaomao) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-H_to_L/Live2d_kumaomao.zip)
 [Live2dHistoire](https://www.wikimoe.com/?post=97) | Live2D可陪聊伊斯&蕾姆挂件插件 | 1.1.3 | [广树](https://github.com/eeg1412) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-H_to_L/Live2dHistoire.zip)
 [LivePhotoKit](https://github.com/MoeLoli/LivephotoKit-Typecho) | 文章插入Livephoto动图视频插件 | 1.1.0 | [Sora Jin](https://github.com/MoeLoli) | [下载](https://github.com/MoeLoli/LivephotoKit-Typecho/archive/master.zip)
 [LoginDesigner](https://github.com/jrotty/LoginDesigner) | Typecho注册/登录界面美化插件 | 1.3.0 | [泽泽社长](https://github.com/jrotty) | [下载](https://github.com/jrotty/LoginDesigner/archive/master.zip)
@@ -223,6 +226,7 @@
 [PostToQzone](https://github.com/typecho/plugins/tree/master/PostToQzone) | QQ邮箱同步发布文章到Qzone插件 | 1.0 beta | [blankyao](https://github.com/blankyao) | [不可用](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/PostToQzone.zip)
 [PostToSinaToutiao](https://github.com/jiyeme/PostToSinaToutiao) | 同步发布文章到新浪微博头条插件 | 1.0.6 | [祭夜](https://github.com/jiyeme) | [下载](https://github.com/jiyeme/PostToSinaToutiao/archive/master.zip)
 [PreTransformer](https://github.com/imwis/PreTransformer) | 指定标签内代码转为Html实体插件 | 2.2.1 | [Wis Chu](https://github.com/imwis) | [下载](https://github.com/imwis/PreTransformer/releases/download/2.2.1/PreTransformer_2.2.1.zip)
+[PrismJs](https://github.com/zhantong/Typecho-Code-Highlight-Plugins/tree/master/PrismJs) | Prism代码高亮插件(支持Ajax渲染) | 0.0.2 | [Penguin](https://github.com/zhantong) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/PrismJs_Penguin.zip)
 [Prismjs](https://github.com/WiseClock/Prismjs) | Prism代码高亮插件(支持行号/语言) | 1.0.8 | [WiseClock](https://github.com/WiseClock) | [下载](https://github.com/WiseClock/Prismjs/archive/master.zip)
 [PrivateDiary](https://www.jethro.fun/index.php/archives/120) | 全站强制登录仅注册用户可见插件 | 1.0.0 | [Jethro](https://www.jethro.fun) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/PrivateDiary.zip)
 [Process](https://github.com/Closty/Process) | Typecho多主题页面加载进度条插件 | 2.1.3 | [瓶子](https://github.com/Closty) | [下载](https://github.com/Closty/Process/archive/master.zip)
