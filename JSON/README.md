@@ -28,7 +28,7 @@ JSON v1.1 - 社区维护版
 ##### 1. 下载本插件，放在 `usr/plugins/` 目录中，确保文件夹名为 JSON；
 ##### 2. 激活插件，试试访问 http://[example].com/api/[action] 吧！
 
-**注意**：
+**注意事项**：
 * ##### 以上地址中的[action]请替换下表列出的接口名，其后可再接?[参数名]=[值]。
 * ##### 未开启地址重写功能的博客需要在域名后接/index.php再/api/[action]同上。
 
@@ -92,6 +92,6 @@ JSON v1.1 - 社区维护版
 
 ## 授权协议
 
-TF目录下的社区维护版作品如果没有明确声明，默认采用与Typecho相同的[GPLv2](https://github.com/typecho/typecho/blob/master/LICENSE.txt)开源协议。(要求提及出处，保持开源并注明修改。)
+沿用小程序版声明的[AGPL](https://github.com/insoxin/typecho-json-miniprogram/blob/master/LICENSE)开源协议。(要求提及出处，保持开源并注明修改。)
 
 > JSON原作未附协议声明，原作者保留所有权利。 © [公子](https://github.com/lizheming)
