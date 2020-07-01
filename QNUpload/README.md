@@ -65,7 +65,7 @@ QNUpload v1.3.1 - 社区维护版
 
 [@兜兜](https://github.com/doudoutime)，[@刘世杰](http://t.qq.com/youtubefans)，[@雨伤](http://t.qq.com/yushanggj)，@超人欧巴。
 
-本社区版暂未产生更新分支，与原作v1.3.1版代码基本一致。
+本社区版暂未产生更新分支，与[原版](https://github.com/typecho-fans/plugins/tree/master/QNUpload)代码基本一致。
 
 ## 授权协议
 
