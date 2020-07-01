@@ -1,0 +1,72 @@
+body{
+    font-family: roboto,sans-serif;
+    text-align: center;
+    background-image: url(../img/mohu.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+}
+body::before {
+    content: '';
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    will-change: transform;
+    z-index: -1;
+    background-image: url(../img/mohu.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    -moz-filter: blur(10px) brightness(.88);
+    -webkit-filter: blur(10px) brightness(.88);
+    -o-filter: blur(10px) brightness(.88);
+    -ms-filter: blur(10px) brightness(.88);
+    filter: blur(10px) brightness(.88);
+}
+.typecho-login {
+    background: rgba(255, 255, 255, 0.68);
+    display: block;
+    padding: 10px 20px;
+    border-radius: 15px;
+    margin-top: 20vh;
+  -moz-box-shadow: 0 0 10px #ffffff;
+    box-shadow: 0 0 10px #ffffff;
+}
+.primary {border-radius: 15px;
+background-color: rgba(255, 86, 87, .7);/*按钮颜色重写*/
+    }
+.primary:hover {
+background-color: rgba(255, 86, 87);/*按钮hover颜色重写*/
+}
+.typecho-login .more-link {
+    margin-top: 0;
+    color: rgba(255, 86, 87);
+}
+.typecho-login h1 {
+    margin: 10px 0 0;
+}
+.i-logo, .i-logo-s {
+width: 228px;
+height: 36px;
+opacity: 0.7;
+background:url(../logo/typecho-logo-dark.png) no-repeat;
+}
+a {
+    color: rgba(255, 86, 87, .7);
+}
+a:hover {
+    color: rgba(255, 86, 87);
+    text-decoration: none;
+}
+input[type=text], input[type=password], input[type=email], textarea {
+  border-radius: 15px;}

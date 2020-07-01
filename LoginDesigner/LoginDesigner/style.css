@@ -1,0 +1,100 @@
+.col-tb-offset-2 {
+    margin-left: 0;
+}
+@media (min-width: 768px) {
+.col-tb-8 {
+    width: auto;
+}
+  }
+.typecho-option label.typecho-label {
+    color: #000;
+    font-size: 24px;
+} 
+.typecho-option .description {
+    color: #5091e5;
+}
+.typecho-option select,.typecho-option-submit .primary{
+    width: 100%;
+}
+.typecho-option-submit .primary {
+    background-color: #000;
+}
+#yangshi img {
+    cursor: pointer;vertical-align: top;
+    width: 200px;    height: 125px;border-bottom: 1px solid #f3f3f0;
+}
+.kuai {
+    border-radius: 5px;
+    border: 5px solid #e0e0e0;
+}
+#yangshi input[type="radio"], #yangshi input[type="checkbox"] {
+    margin-right: 0; 
+    visibility: hidden;
+    float: left;
+    width: 0;
+}
+#yangshi input[type='radio']:checked~label .kuai{
+    border: 5px solid #00c09e;
+}
+#yangshi input[type='radio']:checked~label::before {
+    content: "\9009\4e2d";
+    display: block;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    left: 0;
+    bottom: 30px;
+    right: 0;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    background: 
+#00c09e;
+border-radius: 50px;
+color:
+    #fff;
+    text-align: center;
+    font-size: 16px;
+    z-index: 10;
+    transition: 0.3s linear;
+    -o-transition: 0.3s linear;
+    -ms-transition: 0.3s linear;
+    -moz-transition: 0.3s linear;
+    -webkit-transition: 0.3s linear;
+    -o-user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    cursor: pointer;
+}
+#yangshi li span label{
+position: relative;
+display: block;
+  }
+#yangshi span {
+    margin-right: 0px;max-width: 100%;
+    display: inline-block;    margin-bottom: 10px;
+}
+#yangshi li{
+  text-align: center;
+  }
+.tags:before {
+    position: absolute;
+    top: 5px;
+    font-size: 12px;
+    z-index: 1;
+    padding-right: 10px;
+    font-weight: bold;
+    color: #fff;
+    height: 0px;
+    line-height: 0px;
+    border: rgba(238, 0, 220, 0.68) 10px solid;
+    border-right-color: transparent;
+    content: "\52a8\6001";
+}
+.zz {
+    background: #fff;
+}
+.dalao{
+    background: #FFF;
+    padding: 10px;
+}

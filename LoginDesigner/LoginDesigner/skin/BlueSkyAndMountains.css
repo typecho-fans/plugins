@@ -1,0 +1,53 @@
+body {
+    font-family: roboto,sans-serif;
+    text-align: center;
+    background-image: url(../img/BlueSkyAndMountains.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+}
+.typecho-login {
+    background: rgba(255, 255, 255, 0.38);
+    display: block;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-top: 20vh;
+  -moz-box-shadow: 0 0 10px rgba(255, 255, 255, 0.38);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.38);
+}
+.primary {color: #ffffff;
+    background-color: #5da7d1;/*按钮颜色重写*/
+    }
+.primary:hover {
+background-color: #397aa8;/*按钮hover颜色重写*/
+}
+.typecho-login a{
+    color: #4185ac;
+}
+.typecho-login a:hover{
+    color: #5da7d1;
+}
+.typecho-login .more-link {
+    margin-top: 0;
+    color: #4185ac;
+}
+.typecho-login h1 {
+    margin: 10px 0 0;
+}
+input[type=text], input[type=password], input[type=email], textarea{
+    background: rgba(255, 255, 255, 0.38);border-color: transparent;outline: none;
+}
+.i-logo, .i-logo-s {
+width: 228px;
+height: 36px;
+opacity: 1;
+background:url(../logo/typecho-logo-dark.png) no-repeat;
+}
+.i-logo:hover, .i-logo-s:hover {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+    opacity: 1;
+}
