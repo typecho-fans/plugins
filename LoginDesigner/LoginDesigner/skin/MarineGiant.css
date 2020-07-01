@@ -1,0 +1,63 @@
+body {
+    font-family: roboto,sans-serif;
+    text-align: center;
+    background-image: url(../img/MarineGiant.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+}
+.typecho-login input::-webkit-input-placeholder { /* WebKit browsers */ 
+color: #e07dac; 
+} 
+.typecho-login input:-moz-placeholder { /* Mozilla Firefox 4 to 18 */ 
+color: #e07dac; 
+} 
+.typecho-login input::-moz-placeholder { /* Mozilla Firefox 19+ */ 
+color: #e07dac; 
+} 
+.typecho-login input:-ms-input-placeholder { /* Internet Explorer 10+ */ 
+color: #e07dac; 
+} 
+.typecho-login {
+    background: rgba(68, 11, 56, 0.38);
+    color: #fff;
+    display: block;
+    padding: 15px 25px;
+    margin-top: 20vh;
+}
+.typecho-login a{
+color: #fff;
+}
+.primary {color: #ffffff;
+    background-color: #c95876;/*按钮颜色重写*/
+    }
+.primary:hover {
+    background-color: #a03d5c;/*按钮hover颜色重写*/
+}
+.typecho-login .more-link {
+    margin-top: 0;
+    color: #ffffff;
+}
+.typecho-login h1 {
+    margin: 10px 0 0;
+}
+input[type=text], input[type=password], input[type=email], textarea{
+    background: rgba(66, 13, 61, 0.69);
+    color: #fff;
+    border-color: transparent;
+    outline: none;
+}
+.i-logo, .i-logo-s {
+width: 228px;
+height: 36px;
+opacity: 1;
+background:url(../logo/typecho-logo.png) no-repeat;
+}
+.i-logo:hover, .i-logo-s:hover {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+    opacity: 1;
+}

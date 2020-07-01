@@ -1,0 +1,40 @@
+body {
+    font-family: roboto,sans-serif;
+    text-align: center;
+    background-image: url(../img/suya.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+}
+.typecho-login {
+    background: rgba(255, 255, 255, 0.68);
+    display: block;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-top: 20vh;
+  -moz-box-shadow: 0 0 10px #ffffff;
+    box-shadow: 0 0 10px #ffffff;
+}
+.primary {
+background-color: #a1bee0;/*按钮颜色重写*/
+    }
+.primary:hover {
+background-color: #6b91c0;/*按钮hover颜色重写*/
+}
+.typecho-login .more-link {
+    margin-top: 0;
+    color: #bbb;
+}
+.typecho-login h1 {
+    margin: 10px 0 0;
+}
+.i-logo, .i-logo-s {
+width: 228px;
+height: 36px;
+opacity: 0.7;
+background:url(../logo/typecho-logo-dark.png) no-repeat;
+}

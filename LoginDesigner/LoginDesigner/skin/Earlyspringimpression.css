@@ -1,0 +1,45 @@
+body {
+    font-family: roboto,sans-serif;
+    text-align: center;
+    background-image: url(../img/Earlyspringimpression.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+}
+.typecho-login {
+    color: #fff;
+}
+.typecho-login .more-link a {
+    color: #fff;
+}
+.primary {color: #daf2f4;
+    background-color: #39e6c2;/*按钮颜色重写*/
+    }
+.primary:hover {
+background-color: #22cca8;
+    color: #ffffff;/*按钮hover颜色重写*/
+}
+.typecho-login .more-link {
+    margin-top: 0;
+    color: #fff;
+}
+.typecho-login h1 {
+    margin: 10px 0 0;
+}
+input[type=text], input[type=password], input[type=email], textarea{
+    background: rgba(255, 255, 255, 0.38);border-color: transparent;outline: none;
+}
+.i-logo, .i-logo-s {
+width: 228px;
+height: 36px;
+opacity: 1;
+background:url(../logo/typecho-logo.png) no-repeat;
+}
+.i-logo:hover, .i-logo-s:hover {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+    opacity: 1;
+}
