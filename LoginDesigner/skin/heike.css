@@ -1,0 +1,42 @@
+body {
+    background: #111;
+}
+#canvas {background: #111;
+    z-index: -1;top:0;
+    position: absolute;
+    display: block;
+    margin: 0 auto;
+}
+.typecho-login {
+    background: rgba(0, 0, 0, 0.7);
+    display: block;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-top: 20vh;
+    color: #fff;
+}
+input[type=text], input[type=password], input[type=email], textarea {
+    background: transparent;/*输入框透明*/
+    color: #fff;
+    }
+.primary {
+    background-color: #3a3a3a;/*按钮颜色重写*/
+    }
+.primary:hover {
+    background-color: #2f2f2f;/*按钮hover颜色重写*/
+}
+.typecho-login .more-link {
+    margin-top: 0;
+}
+a {
+ color: #00c14d;/*默认超链接颜色*/
+}
+.typecho-login h1 {
+    margin: 10px 0 0;
+}
+.i-logo, .i-logo-s {
+width: 228px;
+height: 36px;
+opacity: 0.7;
+background:url(../logo/typecho-logo.png) no-repeat;
+}
