@@ -27,7 +27,7 @@
 
  > 下表中的下载链接文字可用于附加图标：`下载`即非社区版，`不可用`显示为:no_entry:，`特殊`显示:warning:即安装或启用方法特殊。
 
-### 插件信息 (322)
+### 插件信息 (320)
 
 ###### TeStore使用下表“名称”创建安装文件夹，“版本”提示升级，请务必确保文本准确；添加时注意按字母排序，自增上方括号内总数，简介不要太长。
 ```
@@ -184,7 +184,6 @@
 [Live2d](https://gitee.com/kumaomao/live2d_typecho) | Live2D看板娘插件(可换模型材质) | 1.0.0 | [kumaomao](https://gitee.com/kumaomao) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-H_to_L/Live2d_kumaomao.zip)
 [Live2dHistoire](https://www.wikimoe.com/?post=97) | Live2D可陪聊伊斯&蕾姆挂件插件 | 1.1.3 | [广树](https://github.com/eeg1412) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-H_to_L/Live2dHistoire.zip)
 [LivePhotoKit](https://github.com/MoeLoli/LivephotoKit-Typecho) | 文章插入Livephoto动图视频插件 | 1.1.0 | [Sora Jin](https://github.com/MoeLoli) | [下载](https://github.com/MoeLoli/LivephotoKit-Typecho/archive/master.zip)
-[LoginDesigner](https://github.com/jrotty/LoginDesigner) | Typecho注册/登录界面美化插件 | 1.3.0 | [泽泽社长](https://github.com/jrotty) | [下载](https://github.com/jrotty/LoginDesigner/archive/master.zip)
 [LoginLimit](https://github.com/hongweipeng/LoginLimit_for_Typecho) | Typecho限制登录次数防黑插件 | 0.9.0 | [hongweipeng](https://github.com/hongweipeng) | [特殊](https://github.com/hongweipeng/LoginLimit_for_Typecho/archive/master.zip)
 [MDRuby](https://github.com/journey-ad/MDRuby-Typecho-Plugin) | Markdown解析Ruby注音标签插件 | 0.2 | [journey.ad](https://github.com/journey-ad) | [下载](https://github.com/journey-ad/MDRuby-Typecho-Plugin/archive/master.zip)
 [MachineReviewsFiltering](http://forum.typecho.org/viewtopic.php?f=6&t=11303) | 隐藏验证过滤反垃圾评论机器人插件 | 0.1.0 | [晨曦啊](https://cx-a.com) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/MachineReviewsFiltering.zip)
@@ -237,7 +236,6 @@
 [QiniuPostUploader](https://github.com/trickyEdecay/qiniuupload-for-typecho) | 上传文件到七牛云插件(独立功能) | 0.1 | [trickyedecay](https://github.com/trickyEdecay) | [下载](https://github.com/trickyEdecay/qiniuupload-for-typecho/archive/master.zip)
 [RandomArticleList](https://defe.me/prg/234.html) | Typecho输出随机文章列表插件 | 2.0.1 | [df](https://github.com/defeme) | [特殊](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/RandomArticleList.zip)
 [RandomDescription](https://github.com/phpgao/RandomDescription) | Typecho定时随机站点描述插件 | 1.0 | [老高@PHPer](https://github.com/phpgao) | [下载](https://github.com/phpgao/RandomDescription/archive/master.zip)
-[Rdog](https://github.com/jrotty/Rdog) | 注册机制优化/发文自动审核插件 | 1.3.0 | [泽泽](https://github.com/jrotty) | [下载](https://github.com/jrotty/Rdog/archive/master.zip)
 [Remix](https://github.com/fengyiyi/Remix) | [SoundManager2](https://github.com/scottschiller/SoundManager2)音乐播放器插件 | 2.1.0 | [ShingChi](https://github.com/ShingChi) | [不可用](https://github.com/fengyiyi/Remix/archive/master.zip)
 [Restful](https://github.com/moefront/typecho-plugin-Restful) | Typecho开放API插件(输出/提交) | 1.2.0 | [MoeFront Studio](https://github.com/moefront) | [下载](https://github.com/moefront/typecho-plugin-Restful/archive/master.zip)
 [Reward](https://github.com/kyuuseiryuu/typecho-plugin-reward) | 文章内添加支付宝当面付按钮插件 | 1.0 | [KyuuSeiryuu](https://github.com/kyuuseiryuu) | [不可用](https://github.com/kyuuseiryuu/typecho-plugin-reward/archive/master.zip)

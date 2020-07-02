@@ -3,14 +3,14 @@
  * Google Sitemap 生成器 【<a href="https://github.com/typecho-fans/plugins" target="_blank">TF</a>社区维护版】
  * 
  * @package Sitemap
- * @author 迷你日志,八云酱,Hanny
+ * @author 迷你日志, Hanny
  * @version 1.0.4
  * @dependence 9.9.2-*
  * @link https://github.com/typecho-fans/plugins/blob/master/Sitemap
  *
  * version 1.0.4 at 2020-07-02 by Typecho Fans (合并多人修改)
- * 页面改xml后缀，加入美化样式，简化时间戳 by Suming/八云酱
  * 调整优先级比例，增加分类页面及首页链接 by 迷你日志/羽中
+ * 页面改xml后缀，加入美化样式，简化时间戳 by Suming/八云酱
  *
  * version 1.0.3 at 2017-03-28 by 禾令奇
  * 修改增加标签链接，修改页面权重分级

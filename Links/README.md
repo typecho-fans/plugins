@@ -69,7 +69,7 @@ Links v1.2.3 - 社区维护版
 
  * v1.2.3 (20-6-30 [@jzwalk](https://github.com/jzwalk))
    * 在[@Mejituu](https://github.com/Mejituu)维护版基础上修复优化，合并1个微调版改动：
-     * 友链添加rel=noopener标签加强安全性([@he0119](https://github.com/he0119/typecho-links))；
+     * 友链添加rel=noopener标签加强安全性([@he0119](https://github.com/he0119/typecho-links))。
    * Action使用加盐地址，文本字段入库过滤XSS加强安全性([@jzwalk](https://github.com/jzwalk))；
    * 修复自动获取邮箱头像Api失效问题，增加图片尺寸参数支持([@jzwalk](https://github.com/jzwalk))；
    * 增加原生设置选项，方便修改源码规则和默认图片尺寸等([@jzwalk](https://github.com/jzwalk))。
@@ -116,7 +116,7 @@ Links v1.2.3 - 社区维护版
 :---:|:---:|:---:|:---:|:---:
 [jzwalk](https://github.com/jzwalk) (2020) | [he0119](https://github.com/he0119) (2020) | [Mejituu](https://github.com/Mejituu) (2020) | [jrotty](https://github.com/jrotty) (2019) | [Hanny](http://www.imhan.com) (2009)
 
-*为避免作者栏显示过长，插件信息仅选取登记3个署名，如有异议可协商修改。
+*为避免作者栏显示过长，插件信息仅选取登记2个署名，如有异议可协商修改。
 
 ## 附注/链接
 
