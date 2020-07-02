@@ -3,12 +3,12 @@
  * 友情链接插件 【<a href="https://github.com/typecho-fans/plugins" target="_blank">TF</a>社区维护版】
  * 
  * @package Links
- * @author 懵仙兔兔,jrotty,Hanny
+ * @author 懵仙兔兔, Hanny
  * @version 1.2.3
  * @dependence 14.10.10-*
  * @link https://github.com/typecho-fans/plugins/tree/master/Links
  *
- * version 1.2.3 at 2020-06-30 by 羽中 (TF合并优化版)
+ * version 1.2.3 at 2020-06-30 by Typecho Fans (合并多人修改)
  * 友链添加noopener外链属性
  * Action使用加盐地址
  * 文本字段入库过滤XSS

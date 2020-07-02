@@ -57,7 +57,7 @@ Sitemap v1.0.4 - 社区维护版
 :---:|:---:|:---:|:---:|:---:|:---:
 [jzwalk](https://github.com/jzwalk) (2020) | [kavico](https://minirizhi.com) (2020) | [raymond9zhou](https://github.com/raymond9zhou) (2019) | [bayunjiang](https://github.com/bayunjiang) (2017) | [Suming](https://inwao.com) (2016) | [Hanny](http://www.imhan.com) (2010)
 
-*为避免作者栏显示过长，插件信息仅选取登记3个署名，如有异议可协商修改。
+*为避免作者栏显示过长，插件信息仅选取登记2个署名，如有异议可协商修改。
 
 ## 附注/链接
 

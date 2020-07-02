@@ -29,7 +29,7 @@
 
  > 下表中下载链接文字用于TeStore列表附加图标：`Download`即社区版，`N/A`为不可用，`Special`为安装用法特殊。
 
-### 作品索引 (111)
+### 作品索引 (112)
 
 ###### TeStore使用下表“名称”创建安装文件夹，“版本”提示升级，请确保文本准确；注意按字母排序添加，自增上方括号内总数，简介不要太长。
 ```
@@ -91,7 +91,7 @@
 [Keywords](Keywords) | 文章指定关键词自动添加链接插件 | 1.0.8 | [羽中](https://github.com/jzwalk) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-H_to_L/Keywords.zip)
 [LREditor](LREditor) | Markdown编辑器左右预览插件 | 0.0.4 | [公子](http://github.com/lizheming) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-H_to_L/LREditor.zip)
 [Like](Like) | Typecho文章点赞与排行统计插件 | 1.0.1 | [skylzl](https://github.com/xiaogouxo) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-H_to_L/Like.zip)
-[Links](Links) | Typecho全功能友情链接管理插件 | 1.2.3 | [懵仙兔兔](https://github.com/Mejituu),[jrotty](https://github.com/jrotty),[Hanny](http://www.imhan.com) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-H_to_L/Links.zip)
+[Links](Links) | Typecho全功能友情链接管理插件 | 1.2.3 | [懵仙兔兔](https://github.com/Mejituu), [Hanny](http://www.imhan.com) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-H_to_L/Links.zip)
 [LoginDesigner](LoginDesigner) | Typecho注册/登录界面美化插件 | 1.3.0 | [泽泽社长](https://github.com/jrotty) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-H_to_L/LoginDesigner.zip)
 [LoveKKComment](LoveKKComment) | 全能评论邮件通知+密码找回插件 | 1.0.5 | [康粑粑](https://github.com/ylqjgm) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-H_to_L/LoveKKComment.zip)
 [LoveKKWeiBo](LoveKKWeiBo) | 使用新浪微博作为附件图床插件 | 1.0.1 | [康粑粑](https://github.com/ylqjgm) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-H_to_L/LoveKKWeiBo.zip)
@@ -111,12 +111,12 @@
 [QiniuFile](QiniuFile) | 新七牛附件插件(自定路径+截图等) | 1.3.3 | [LiCxi](https://github.com/gxuzf), [冰剑](https://github.com/binjoo), [abelyao](https://github.com/abelyao) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/QiniuFile.zip)
 [Reposidget](Reposidget) | GitHub项目信息与内容展示插件 | 1.0.0 | [西秦公子](https://github.com/xiqingongzi) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/Reposidget.zip)
 [RewriteRule](RewriteRule) | 文章页面地址批量重定向跳转插件 | 1.0.0 | [laobubu](https://github.com/laobubu) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/RewriteRule.zip)
-[Rdog](Rdog) | 注册机制优化/发文自动审核插件 | 1.3.0 | [泽泽](https://github.com/jrotty) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/Rdog.zip)
+[Rdog](Rdog) | 注册机制优化/发文自动审核插件 | 1.4.0 | [泽泽](https://github.com/jrotty) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/Rdog.zip)
 [RoutesHelper](RoutesHelper) | Typecho路由信息显示与修改插件 | 1.0.3 | [doudou](https://github.com/doudoutime) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/RoutesHelper.zip)
 [SCS](SCS) | 系统附件使用新浪云存储SCS插件 | 1.1.1 | [vfhky](https://github.com/vfhky) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/SCS.zip)
 [ShortLinks](ShortLinks) | 基于[GoLinks](GoLinks)更强大的短链接插件 | 1.1.0 b1 | [Ryan](https://github.com/benzBrake) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/ShortLinks.zip)
 [Sinauth](Sinauth) | 新浪用户授权注册帐号与登录插件 | 1.0.0 Beta | [jimmy chaw](https://github.com/web3d) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/Sinauth.zip)
-[Sitemap](Sitemap) | 动态生成Xml标准网站地图页插件 | 1.0.4 | [迷你日志](https://minirizhi.com),[八云酱](https://github.com/bayunjiang),[Hanny](http://www.imhan.com) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/Sinauth.zip)
+[Sitemap](Sitemap) | 动态生成Xml标准网站地图页插件 | 1.0.4 | [迷你日志](https://minirizhi.com), [Hanny](http://www.imhan.com) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/Sitemap.zip)
 [SlantedExtend](SlantedExtend) | [Slanted主题](https://github.com/typecho-fans/themes/blob/master/Slanted)自定义字段专用插件 | 1.0.0 | [DT27](https://github.com/DT27) | [Special](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/SlantedExtend.zip)
 [SlimBox2](SlimBox2) | 轻量级jQuery图片灯箱弹窗插件 | 1.0.7 | [Ryan](https://github.com/ryanfwy), [冰剑](https://github.com/binjoo) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/SlimBox2.zip)
 [Smilies](Smilies) | Typecho自定义图片表情替换插件 | 1.1.3 | [羽中](https://github.com/jzwalk), Willin Kan | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/Smilies.zip)
