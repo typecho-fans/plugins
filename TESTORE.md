@@ -27,7 +27,7 @@
 
  > 下表中的下载链接文字可用于附加图标：`下载`即非社区版，`不可用`显示为:no_entry:，`特殊`显示:warning:即安装或启用方法特殊。
 
-### 插件信息 (320)
+### 插件信息 (324)
 
 ###### TeStore使用下表“名称”创建安装文件夹，“版本”提示升级，请务必确保文本准确；添加时注意按字母排序，自增上方括号内总数，简介不要太长。
 ```
@@ -256,6 +256,10 @@
 [SimpleCDN](https://github.com/Quarkay/Typecho-SimpleCDN) | 匹配文章内容替换为CDN链接插件 | 1.0.0 | [Quarkay](https://github.com/Quarkay) | [下载](https://github.com/Quarkay/Typecho-SimpleCDN/archive/master.zip)
 [SimpleCode](https://github.com/typecho/plugins/blob/master/SimpleCode.php) | 使用PHP自带函数高亮代码插件 | 1.0.2 | [qining](https://github.com/joyqi) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/SimpleCode.zip)
 [SimpleCommentCaptcha](https://github.com/Quarkay/Typecho-SimpleCommentCaptcha) | 无感知运算数值防垃圾评论插件 | 1.0.0 | [Quarkay](https://github.com/Quarkay) | [下载](https://github.com/Quarkay/Typecho-SimpleCommentCaptcha/archive/master.zip)
+[SiteMap](https://github.com/NickVico/sitemap-for-typecho) | 自动生成Html版站点地图页插件 | 1.0.0 | [nickvico](https://github.com/NickVico) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/SiteMap_nickvico.zip)
+[SiteMap](http://forum.typecho.org/viewtopic.php?f=6&t=9115) | 指定路径手动生成站点地图插件 | 1.0.0 | 王And木 | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/SiteMap_.And.zip)
+[Sitemap](https://plugins.typecho.me/plugins/sitemap-cache.html) | 缓存版站点地图插件(带面板设置) | 1.0.0 | caixw | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/Sitemap_caixw.zip)
+[Sitemap](https://defe.me/prg/Sitemap-For-SAE.html) | 缓存版站点地图插件(云引擎专用) | 1.0.0 | [DEFE](https://github.com/defeme), caixw | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/Sitemap_DEFE_caixw.zip)
 [SiteRunningTime](https://github.com/zhusaidong/SiteRunningTime) | 网站底部显示系统运行时长插件 | 1.5.1 | [上官元恒](https://github.com/zhusaidong) | [下载](https://github.com/zhusaidong/SiteRunningTime/archive/master.zip)
 [SkyCaiji](http://forum.typecho.org/viewtopic.php?f=6&t=11954) | Typecho[蓝天采集器](http://www.skycaiji.com)一键部署插件 | 1.0.0 | [skycaiji](https://github.com/zorlan) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/SkyCaiji.zip)
 [SlideShow](https://github.com/chinobing/Typecho-SlideShow) | 热门文章输出为轮播幻灯展示插件 | 1.0.0 | [薯仔头](https://github.com/chinobing) | [下载](https://github.com/chinobing/Typecho-SlideShow/archive/master.zip)
