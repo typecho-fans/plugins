@@ -4,7 +4,7 @@
 
 Attachment v1.0.2 - 社区维护版
 ======================
-<h4 align="center">—— 附件下载链接美化及跳转计数插件，计数功能需搭配[Stat](https://github.com/typecho-fans/plugins/tree/master/Stat)。</h4>
+<h4 align="center">—— 附件下载链接美化及跳转计数插件，计数功能需搭配Stat插件。</h4>
 
 <p align="center">
   <a href="#使用说明">使用说明</a> •
@@ -50,7 +50,7 @@ Attachment v1.0.2 - 社区维护版
 ## 贡献作者
 
 [![jzwalk](https://avatars1.githubusercontent.com/u/252331?v=3&s=100)](https://github.com/jzwalk) | [![Hanny](https://secure.gravatar.com/avatar/?d=mp&s=100)](http://www.imhan.com)
-:---:|:---:|:---:
+:---:|:---:
 [jzwalk](https://github.com/jzwalk) (2020) | [Hanny](http://www.imhan.com) (2009)
 
 ## 附注/链接
