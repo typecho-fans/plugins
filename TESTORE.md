@@ -27,7 +27,7 @@
 
  > 下表中的下载链接文字可用于附加图标：`下载`即非社区版，`不可用`显示为:no_entry:，`特殊`显示:warning:即安装或启用方法特殊。
 
-### 插件信息 (341)
+### 插件信息 (345)
 
 ###### TeStore使用下表“名称”创建安装文件夹，“版本”提示升级，请务必确保文本准确；添加时注意按字母排序，自增上方括号内总数，简介不要太长。
 ```
@@ -126,6 +126,7 @@
 [DrakNight](https://qqdie.com/archives/draknight-typecho-plugin.html) | Typecho定时自启动夜间模式插件 | 1.0.0 | [术与道](https://github.com/shuyudao) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/DrakNight.zip)
 [Dynamics](https://github.com/kraity/Dynamics) | [南博](https://nabo.krait.cn)App用发布动态说说模块插件 | 1.2 | [权那他](https://github.com/kraity) | [下载](https://github.com/kraity/Dynamics/archive/master.zip)
 [Editor](https://plugins.typecho.me/plugins/ckeditor-syntax-highlighter.html) | 整合代码高亮CKEditor编辑器插件 | 1.0.1 | QFisH | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/Editor_QFisH.zip)
+[EditorAdv](https://github.com/leafvmaple/typecho-plugin-EditorAdv) | 系统MD编辑器整合代码高亮插件 | 0.2 | [Leafvmaple](https://github.com/leafvmaple) | [下载](https://github.com/leafvmaple/typecho-plugin-EditorAdv/archive/master.zip)
 [EditorLR](https://github.com/hongweipeng/EditorLR_for_typecho) | Markdown编辑器分屏式预览插件 | 0.7.1 | [hongweipeng](https://github.com/hongweipeng) | [下载](https://github.com/hongweipeng/EditorLR_for_typecho/archive/master.zip)
 [Email](https://gitee.com/freej2015/typecho-email) | 邮件发送用户登录或评论提醒插件 | 1.0.0 | [yaecho](https://gitee.com/freej2015) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/Email.zip)
 [EmojiHelper](https://qqdie.com/archives/emojihelper-typecho-plugins.html) | 改数据库编码兼容Emoji表情插件 | 2.0 | [泽泽社长](https://github.com/jrotty) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/EmojiHelper.zip)
@@ -149,6 +150,7 @@
 [Geetest](https://github.com/jinfeijie/Geetest) | 极验证V3版评论用图形验证码插件 | 1.0.3 | [mrjin](https://github.com/jinfeijie) | [下载](https://github.com/jinfeijie/Geetest/archive/1.0.3.zip)
 [GetIPIntel](https://github.com/xddxdd/typecho-getipintel) | 禁止使用代理用户评论反欺诈插件 | 1.0.0 | [Lan Tian](https://github.com/xddxdd) | [下载](https://github.com/xddxdd/typecho-getipintel/archive/master.zip)
 [GetRealIP](https://github.com/PonyCool/typecho-plugins/blob/master/GetRealIP) | Typecho获取访客真实IP地址插件 | 1.0.0 | [Pony](https://github.com/PonyCool) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/GetRealIP.zip)
+[GithubGist](https://github.com/fengqi/typecho-gitst-proxy) | 将文内[Gist](https://gist.github.com)替换为代理加速地址插件 | 0.0.1 | [Simple Code](https://github.com/fengqi) | [特殊](https://github.com/fengqi/typecho-gitst-proxy/archive/master.zip)
 [GitHubGit](https://github.com/typecho/plugins/tree/master/GitHubGit) | GitHub静态博客Jekyll同步发布插件 | 0.0.1 | [weakish](https://github.com/weakish) | [特殊](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/GitHubGit.zip)
 [GitStatic](https://github.com/MliKiowa/GitStatic) | Typecho用GitHub做附件图床插件 | 2.0.0 | [乔千](https://github.com/MliKiowa) | [下载](https://github.com/MliKiowa/GitStatic/archive/master.zip)
 [GitWidget](https://gitee.com/SimonH/typecho-gitwidget) | Github或Gitee仓库预览挂件插件 | 1.0.0 | [Simon.H](https://gitee.com/SimonH) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/GitWidget.zip)
@@ -228,6 +230,7 @@
 [PluginStorage](https://defe.me/prg/250.html) | Xml数据版Typecho插件仓库插件 | 1.0.1 | [df](https://github.com/defeme) | [不可用](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/PluginStorage.zip)
 [PluginUpload](https://qqdie.com/archives/pluginupload-typecho-plugin.html) | Typecho上传插件zip包自解压插件 | 1.0.0 | [术与道](https://github.com/shuyudao) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/PluginUpload.zip)
 [Plyr](https://github.com/qt06/typecho-plugin-plyr) | Typecho用[Plyr](https://plyr.io)音视频播放器插件 | 1.2.1 | [杨永全](https://github.com/qt06) | [下载](https://github.com/qt06/typecho-plugin-plyr/archive/master.zip)
+[Pocket](https://github.com/fengqi/typecho-pocket) | Typecho集成[Pocket](https://getpocket.com)收藏服务页插件 | 0.0.1 | [fengqi](https://github.com/fengqi) | [特殊](https://github.com/fengqi/typecho-pocket/archive/master.zip)
 [Poptrox](https://github.com/99kyuu/Poptrox_for_Typecho) | jQuery版全能灯箱弹窗Poptrox插件 | 0.01 | [玖玖kyuu](https://github.com/99kyuu) | [下载](https://github.com/99kyuu/Poptrox_for_Typecho/archive/master.zip)
 [PostFormat](https://github.com/fengyiyi/PostFormat) | Typecho用九种文章类型字段插件 | 1.0.0 | [mufeng](https://github.com/iMuFeng) | [不可用](https://github.com/fengyiyi/PostFormat/archive/master.zip)
 [PostSeries](https://github.com/hongweipeng/PostSeries) | Typecho建立与管理专题文章插件 | 0.0.1 | [hongweipeng](https://github.com/hongweipeng) | [下载](https://github.com/hongweipeng/PostSeries/archive/master.zip)
@@ -258,6 +261,7 @@
 [Sad](https://qqdie.com/archives/sad-typecho-plugin.html) | 清明纪念日前后台同时黑白化插件 | 4.4.4 | [泽泽社长](https://github.com/jrotty) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/Sad.zip)
 [SaeUpload](https://github.com/KimiChen/Typecho-SaeUpload) | 新浪云引擎SAE上传附件专用插件 | 1.0.0 Beta | [Kimi](https://github.com/KimiChen) | [下载](https://github.com/KimiChen/Typecho-SaeUpload/archive/master.zip)
 [SecCode](https://521-wf.com/archives/36.html) | 功能全面支持定制绚丽验证码插件 | 1.2.1 | [WiFeng](https://github.com/WiFeng) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/SecCode.zip)
+[SetCategoryPwd](https://github.com/coder-wu/typecho-pwd-plugin) | Typecho批量加密分类下文章插件 | 1.0.0 beta | [coderwu](https://github.com/coder-wu) | [下载](https://github.com/coder-wu/typecho-pwd-plugin/archive/master.zip)
 [SequenceDiagram](http://forum.typecho.org/viewtopic.php?f=6&t=10873) | Markdown语法seq转时序图插件 | 1.2.0 | [ZhangZijing(Venteto)](https://github.com/pluveto) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/SequenceDiagram.zip)
 [ServerInformation](https://networkos.club/archives/typecho_ServerInformation.html) | Typecho服务器信息图表查看插件 | 1.0.0 | [不明](https://networkos.club) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/ServerInformation.zip)
 [ShenJianShou](https://www.wamuban.com/plugin/2097.html) | 神箭手采集器官方版内容发布插件 | 4.2.4 | [神箭手云](http://www.shenjian.io) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/ShenJianShou.zip)
