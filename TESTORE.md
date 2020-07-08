@@ -27,7 +27,7 @@
 
  > 下表中的下载链接文字可用于附加图标：`下载`即非社区版，`不可用`显示为:no_entry:，`特殊`显示:warning:即安装或启用方法特殊。
 
-### 插件信息 (344)
+### 插件信息 (341)
 
 ###### TeStore使用下表“名称”创建安装文件夹，“版本”提示升级，请务必确保文本准确；添加时注意按字母排序，自增上方括号内总数，简介不要太长。
 ```
@@ -106,7 +106,6 @@
 [CommentGun](https://github.com/xddxdd/typecho-commentgun) | 简化版MailGun评论邮件提醒插件 | 1.0.0 | [Lan Tian](https://github.com/xddxdd) | [下载](https://github.com/xddxdd/typecho-commentgun/archive/master.zip)
 [CommentMailPlus](https://github.com/oott123/CommentMailPlus) | MailGun评论提醒插件(cURL连接) | 0.0.4 | [oott123](https://github.com/oott123) | [下载](https://github.com/oott123/CommentMailPlus/archive/master.zip)
 [CommentReminder](https://github.com/imwis/CommentReminder) | Google APIs版评论邮件提醒插件 | 1.0.0 | [Wis Chu](https://github.com/imwis) | [下载](https://github.com/imwis/CommentReminder/archive/master.zip)
-[CommentPush](https://github.com/gaobinzhan/CommentPush) | 全能评论推送(微信/QQ/钉钉/邮箱)插件 | 1.6.1 | [gaobinzhan](https://github.com/gaobinzhan),[奥秘Sir](https://blog.say521.cn) | [下载](https://github.com/gaobinzhan/CommentPush/archive/v1.6.1.zip)
 [CommentToDingtalk](https://github.com/MoLeft/CommentToDingtalk) | Typecho评论通知推送至钉钉插件 | 1.0 | [MoLeft](https://github.com/MoLeft) | [下载](https://github.com/MoLeft/CommentToDingtalk/archive/master.zip)
 [CommentToMail](https://github.com/uniartisan/CommentToMail) | 网址监控触发版评论邮件提醒插件 | 4.2.5 | [Uniartisan](https://github.com/uniartisan) | [下载](http://blog.uniartisan.com/app/CommentToMail.zip)
 [CommentToWechat](https://github.com/lscho/CommentToWechat_for_typecho) | [Server酱](http://sc.ftqq.com)公众号评论微信通知插件 | 0.1 | [lscho](https://github.com/lscho) | [下载](https://github.com/lscho/CommentToWechat_for_typecho/archive/master.zip)
@@ -291,7 +290,6 @@
 [SyntaxHighlighter](https://github.com/tinpont/SyntaxHighlighter-For-Typecho) | [SyntaxHighlighter](https://github.com/syntaxhighlighter/syntaxhighlighter)高亮插件([MD](https://baike.baidu.com/item/markdown/3245829)版) | 0.0.2 | [Tinpont](https://github.com/tinpont) | [下载](https://github.com/tinpont/SyntaxHighlighter-For-Typecho/archive/master.zip)
 [SyntaxHighlighter](https://plugins.typecho.me/maupassant/plugins/syntax-highlighter.html) | [SyntaxHighlighter](https://github.com/syntaxhighlighter/syntaxhighlighter)高亮插件(pre标签) | 0.0.5 | Tolbkni Kao | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/SyntaxHighlighter.zip)
 [TEDUriReplace](https://www.typechodev.com/plugins/%E5%85%B6%E4%BB%96%E6%8F%92%E4%BB%B6/typecho-url-replace.html) | 非数据库式批量替换文章内容插件 | 1.0 | [lgl](https://www.typechodev.com) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/TEDUriReplace.zip)
-[TEReplace](https://qqdie.com/archives/tereplace-plugin-typecho.html) | SQL替换指定内容/标题/字段插件 | 1.3.0 | [泽泽](https://github.com/jrotty) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/TEReplace.zip)
 [TableOfContents](https://github.com/phpgao/TableOfContents) | 下拉式文章内容目录自动生成插件 | 0.3 | [老高](https://github.com/phpgao) | [下载](https://github.com/phpgao/TableOfContents/archive/master.zip)
 [TeComment](https://github.com/jiangmuzi/TeComment) | 评论增强插件(工具栏/Ajax提交等) | 2.0.0 | [绛木子](https://github.com/jiangmuzi) | [下载](https://github.com/jiangmuzi/TeComment/archive/master.zip)
 [TeConnect](https://github.com/jiangmuzi/TeConnect) | 用户用QQ/微博账号注册登录插件 | 1.0 | [绛木子](https://github.com/jiangmuzi) | [特殊](https://github.com/jiangmuzi/TeConnect/archive/master.zip)
@@ -309,7 +307,6 @@
 [TianAPIVerse](http://forum.typecho.org/viewtopic.php?f=6&t=11746) | 用[TianAPI](https://www.tianapi.com)输出随机优美诗句插件 | 1.0.0 | [宇天行](https://www.huceo.com) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/TianAPIVerse.zip)
 [TinyMCE](https://github.com/typecho/plugins/tree/master/TinyMCE) | 所见即所得编辑器TinyMCE插件 | 1.0.1 | [qining](https://github.com/joyqi) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/TinyMCE.zip)
 [TinyPNG](https://github.com/99kyuu/TinyPNG_for_Typecho) | Tinypng.com云图片优化服务插件 | 0.01 | [玖玖kyuu](https://github.com/99kyuu) | [下载](https://github.com/99kyuu/TinyPNG_for_Typecho/archive/master.zip)
-[Titleshow](https://github.com/jrotty/Titleshow) | 使Typecho加密文章显示标题插件 | 1.1.2 | [泽泽](https://github.com/jrotty) | [下载](https://github.com/jrotty/Titleshow/archive/master.zip)
 [TleBarrager](https://github.com/muzishanshi/TleBarrager) | Typecho发布评论仿弹幕效果插件 | 1.0.3 | [二呆](https://github.com/muzishanshi) | [下载](https://github.com/muzishanshi/TleBarrager/archive/master.zip)
 [TleChat](https://github.com/muzishanshi/TleChatForTypecho) | Typecho集成用户聊天室功能插件 | 1.0.6 | [二呆](https://github.com/muzishanshi) | [下载](https://github.com/muzishanshi/TleChatForTypecho/archive/master.zip)
 [TleCollect](https://github.com/muzishanshi/TleCollectForTypecho) | [QueryList](http://www.querylist.cc)版网站源码采集工具插件 | 1.0.1 | [二呆](https://github.com/muzishanshi) | [下载](https://github.com/muzishanshi/TleCollectForTypecho/archive/master.zip)
