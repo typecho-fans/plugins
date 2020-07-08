@@ -106,7 +106,7 @@
 [CommentGun](https://github.com/xddxdd/typecho-commentgun) | 简化版MailGun评论邮件提醒插件 | 1.0.0 | [Lan Tian](https://github.com/xddxdd) | [下载](https://github.com/xddxdd/typecho-commentgun/archive/master.zip)
 [CommentMailPlus](https://github.com/oott123/CommentMailPlus) | MailGun评论提醒插件(cURL连接) | 0.0.4 | [oott123](https://github.com/oott123) | [下载](https://github.com/oott123/CommentMailPlus/archive/master.zip)
 [CommentReminder](https://github.com/imwis/CommentReminder) | Google APIs版评论邮件提醒插件 | 1.0.0 | [Wis Chu](https://github.com/imwis) | [下载](https://github.com/imwis/CommentReminder/archive/master.zip)
-[CommentPush](https://github.com/gaobinzhan/CommentPush) | 全能评论推送(微信/QQ/钉钉)插件 | 1.6.0 | [高彬展](https://github.com/gaobinzhan),[奥秘Sir](https://blog.say521.cn) | [下载](https://github.com/gaobinzhan/CommentPush/archive/master.zip)
+[CommentPush](https://github.com/gaobinzhan/CommentPush) | 全能评论推送(微信/QQ/钉钉/邮箱)插件 | 1.6.1 | [gaobinzhan](https://github.com/gaobinzhan),[奥秘Sir](https://blog.say521.cn) | [下载](https://github.com/gaobinzhan/CommentPush/archive/v1.6.1.zip)
 [CommentToDingtalk](https://github.com/MoLeft/CommentToDingtalk) | Typecho评论通知推送至钉钉插件 | 1.0 | [MoLeft](https://github.com/MoLeft) | [下载](https://github.com/MoLeft/CommentToDingtalk/archive/master.zip)
 [CommentToMail](https://github.com/uniartisan/CommentToMail) | 网址监控触发版评论邮件提醒插件 | 4.2.5 | [Uniartisan](https://github.com/uniartisan) | [下载](http://blog.uniartisan.com/app/CommentToMail.zip)
 [CommentToWechat](https://github.com/lscho/CommentToWechat_for_typecho) | [Server酱](http://sc.ftqq.com)公众号评论微信通知插件 | 0.1 | [lscho](https://github.com/lscho) | [下载](https://github.com/lscho/CommentToWechat_for_typecho/archive/master.zip)
