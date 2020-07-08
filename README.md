@@ -29,7 +29,7 @@
 
  > 下表中下载链接文字用于TeStore列表附加图标：`Download`即社区版，`N/A`为不可用，`Special`为安装用法特殊。
 
-### 作品索引 (112)
+### 作品索引 (113)
 
 ###### TeStore使用下表“名称”创建安装文件夹，“版本”提示升级，请确保文本准确；注意按字母排序添加，自增上方括号内总数，简介不要太长。
 ```
@@ -60,6 +60,7 @@
 [CodeMirror](CodeMirror) | 主题外观编辑器语法高亮显示插件 | 1.0.0 | [zhulin3141](https://github.com/zhulin3141) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/CodeMirror.zip)
 [CodeStyle](CodeStyle) | Highlight.js代码高亮效果渲染插件 | 0.8.0 | [hongweipeng](https://github.com/hongweipeng) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/CodeStyle.zip)
 [CommentFilter](CommentFilter) | 评论昵称/链接/内容/IP过滤器插件 | 1.2.1 | [jrotty](https://github.com/jrotty),[ghostry](https://blog.ghostry.cn),[Hanny](http://www.imhan.com) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/CommentFilter.zip)
+[CommentPush](CommentPush) | 评论推送插件(微信/QQ/钉钉/邮箱) | 1.6.1 | [gaobinzhan](https://github.com/gaobinzhan) | [Download](https://github.com/gaobinzhan/CommentPush/archive/v1.6.1.zip)
 [CommentToMail](CommentToMail) | 发布或回复评论邮件自动提醒插件 | 2.0.1 | [Byends](https://github.com/visamz), [DEFE](https://github.com/defeme) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/CommentToMail.zip)
 [ContentIndex](ContentIndex) | 嵌入式文章内容目录自动生成插件 | 1.0.0 | [laobubu](https://github.com/laobubu) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/ContentIndex.zip)
 [Contribute](Contribute) | 免注册用户投稿与审查发布插件 | 1.0.0 | [ShingChi](https://github.com/shingchi) | [Special](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/Contribute.zip)
