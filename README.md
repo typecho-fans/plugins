@@ -29,7 +29,7 @@
 
  > 下表中下载链接文字用于TeStore列表附加图标：`Download`即社区版，`N/A`为不可用，`Special`为安装用法特殊。
 
-### 作品索引 (118)
+### 作品索引 (119)
 
 ###### TeStore使用下表“名称”创建安装文件夹，“版本”提示升级，请确保文本准确；注意按字母排序添加，自增上方括号内总数，简介不要太长。
 ```
@@ -98,6 +98,7 @@
 [LoginDesigner](LoginDesigner) | Typecho注册/登录界面美化插件 | 1.3.0 | [泽泽社长](https://github.com/jrotty) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-H_to_L/LoginDesigner.zip)
 [LoveKKComment](LoveKKComment) | 全能评论邮件通知+密码找回插件 | 1.0.5 | [康粑粑](https://github.com/ylqjgm) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-H_to_L/LoveKKComment.zip)
 [LoveKKWeiBo](LoveKKWeiBo) | 使用新浪微博作附件上传图床插件 | 1.0.1 | [康粑粑](https://github.com/ylqjgm) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-H_to_L/LoveKKWeiBo.zip)
+[MagikeEditor](MagikeEditor) | Magike移植Html源码编辑器插件 | 1.1.1 | [羽中](https://github.com/jzwalk), [Hanny](http://www.imhan.com) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/MagikeEditor.zip)
 [MarkdownParse](MarkdownParse) | Parsedown插件(MathJax+目录) | 1.2.3 | [mrgeneral](https://github.com/mrgeneralgoo) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/MarkdownParse.zip)
 [MenuTree](MenuTree) | 悬浮式文章内容目录自动生成插件 | 0.8.1 | [hongweipeng](https://github.com/hongweipeng) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/MenuTree.zip)
 [MostCache](MostCache) | Mysql/SAE下Memcache缓存插件 | 1.1.1 | [skylzl](https://github.com/xiaogouxo),[WeiCN](https://github.com/naicfeng) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/MostCache.zip)

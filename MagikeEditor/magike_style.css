@@ -1,0 +1,178 @@
+.toolbar
+{
+	margin:0 0 1px 0;
+	padding:0;
+	text-align:left;
+	width:100%;
+	float:left;
+	display:block;
+}
+
+.toolbar button
+{
+	border:1px solid #BEC9D1;
+	margin:0 1px 0 0;
+	padding:0 5px;
+	line-height:20px;
+	background:#FFF;
+	cursor:pointer;
+	background:url(btn.gif) repeat-x top;
+	display:block;
+	float:left;
+	font-size:14px;
+	font-family:verdana, Helvetica, sans-serif;
+}
+
+.toolbarspace
+{
+	clear:both;
+}
+
+.magikePopup
+{
+	height:202px;
+	width:402px;
+	left:50px;
+	top:20px;
+	position:absolute;
+	z-index:998;
+}
+
+.magikePopup p
+{
+	padding:10px 10px 0 10px;
+	margin:0;
+	font-size:10pt;
+	line-height:22px;
+	display:block;
+}
+
+.magikePopup p span
+{
+	color:#333;
+	margin-right:10px;
+	line-height:24px;
+	height:24px;
+	width:70px;
+	float:left;
+	display:block;
+}
+
+.magikePopup p input
+{
+	border:1px solid #ACA899;
+	border-bottom:1px solid #EBEBEB;
+	border-right:1px solid #EBEBEB;
+	padding:2px;
+}
+
+.magikePopup input.text
+{
+	width:250px;
+}
+
+.magikePopupShadow
+{
+	background:#000;
+	filter:alpha(opacity=30); 
+	-moz-opacity:0.30; 
+	opacity:0.30;
+	z-index:999;
+	position:absolute;
+	height:200px;
+	width:400px;
+	top:2px;
+	left:2px;
+}
+
+.magikePopupContent
+{
+	border:1px solid #222;
+	height:200px;
+	width:400px;
+	z-index:1000;
+	left:-3px;
+	top:-3px;
+	position:relative;
+	background:#FFF;
+}
+
+.magikePopupTitle
+{
+	border-bottom:1px solid #222;
+	margin:1px;
+	background:#3D77CB;
+	height:22px;
+	line-height:22px;
+	padding:0 5px;
+	color:#FFF;
+	font-size:10pt;
+	font-weight:bold;
+	font-family:Arial,helvetica,clean,sans-serif;
+}
+
+.magikePopupTitle span.magikePopupClose
+{
+	top:6px;
+	right:6px;
+	position:absolute;
+	cursor:pointer;
+	height:16px;
+	width:16px;
+	background:url(cancle.gif) top left no-repeat;
+}
+
+.magikeShadow
+{
+	top:0;
+	left:0;
+	position:absolute;
+	background:#000;
+	filter:alpha(opacity=30); 
+	-moz-opacity:0.30;
+	opacity:0.30;
+	z-index:10;
+}
+
+.magikePopupText, .magikePopupButton
+{
+	margin:0 1px;
+}
+
+.magikePopupButton span
+{
+	margin-top:5px;
+}
+
+.magikePopupButton span.button
+{
+	line-height:22px;
+	height:23px;
+	width:82px;
+	display:block;
+	cursor:pointer;
+	font-size:10pt;
+	color:#363636;
+	text-align:center;
+	float:left;
+	margin-right:3px;
+	background:url(glass_button.gif) top left no-repeat;
+}
+
+.magikePopupButton span.focus
+{
+	background:url(glass_button.gif) top right no-repeat;
+}
+
+.magikePopupButton span.click
+{
+	background:url(glass_button.gif) top right no-repeat;
+}
+
+.magikePopupMask
+{
+	width:100%;
+	height:440px;
+	display:block;
+	background:url(editor_loading.gif) center no-repeat;
+}
