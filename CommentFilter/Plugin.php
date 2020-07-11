@@ -1,4 +1,6 @@
 <?php
+if (!defined('__TYPECHO_ROOT_DIR__')) exit;
+
 /**
  * 评论过滤器 【<a href="https://github.com/typecho-fans/plugins" target="_blank">TF</a>社区维护版】
  * 
@@ -6,27 +8,23 @@
  * @author jrotty,ghostry,Hanny
  * @version 1.2.1
  * @link https://github.com/typecho-fans/plugins/tree/master/CommentFilter
-
- * 历史版本
+ *
  * version 1.2.1 at 2020-06-27[typecho-fans合并2012-12-31 ghostry修改版]
  * 增加首次评论过滤，评论者可以在评论底部看到自己的未审核评论
  *
  * version 1.2.0 at 2017-10-10[非原作者更新修改，jrotty魔改更新]
  * 增加评论者昵称/超链接过滤功能
  *
+ * 历史版本
  * version 1.1.0 at 2014-01-04
  * 增加机器评论过滤
- *
  * version 1.0.2 at 2010-05-16
  * 修正发表评论成功后，评论内容Cookie不清空的Bug
- *
  * version 1.0.1 at 2009-11-29
  * 增加IP段过滤功能
- *
  * version 1.0.0 at 2009-11-14
  * 实现评论内容按屏蔽词过滤功能
  * 实现过滤非中文评论功能
- *
  */
 class CommentFilter_Plugin implements Typecho_Plugin_Interface
 {

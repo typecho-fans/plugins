@@ -1,4 +1,6 @@
 <?php
+if (!defined('__TYPECHO_ROOT_DIR__')) exit;
+
 /**
  * 附件下载插件 【<a href="https://github.com/typecho-fans/plugins" target="_blank">TF</a>社区维护版】
  * 
@@ -15,7 +17,6 @@
  * 历史版本
  * version 1.0.1 at 2010-01-02
  * 修改下载地址路由
- *
  * version 1.0.0 at 2009-12-12
  * 实现用<attach>aid</attach>添加附件的功能
  * 与统计插件结合来实现下载次数的统计功能
