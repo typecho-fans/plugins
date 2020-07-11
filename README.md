@@ -113,6 +113,7 @@
 [Prism](Prism) | 多主题[Prism](https://prismjs.com)代码高亮插件([MD](https://baike.baidu.com/item/markdown/3245829)版) | 1.0.2 | [冰剑](https://github.com/binjoo) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/Prism.zip)
 [QNUpload](QNUpload) | 经典版(PHP5.2-5.6)七牛附件插件 | 1.3.1 | [rakiy](https://github.com/rakiy) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/QNUpload.zip)
 [QiniuFile](QiniuFile) | 新七牛附件插件(自定路径+截图等) | 1.3.3 | [LiCxi](https://github.com/gxuzf), [冰剑](https://github.com/binjoo), [abelyao](https://github.com/abelyao) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/QiniuFile.zip)
+[RandomThumbnail](RandomThumbnail) | 随机图片挂件 | 1.0.0 | [LittleJake](https://github.com/LittleJake) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/RandomThumbnail.zip)
 [Reposidget](Reposidget) | GitHub项目信息与内容展示栏插件 | 1.0.0 | [西秦公子](https://github.com/xiqingongzi) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/Reposidget.zip)
 [RewriteRule](RewriteRule) | 文章页面地址批量重定向跳转插件 | 1.0.0 | [laobubu](https://github.com/laobubu) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/RewriteRule.zip)
 [Rdog](Rdog) | 注册机制优化/发文自动审核插件 | 1.4.0 | [泽泽](https://github.com/jrotty) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/Rdog.zip)
