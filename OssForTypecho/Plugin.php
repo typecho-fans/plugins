@@ -1,4 +1,6 @@
 <?php
+if (!defined('__TYPECHO_ROOT_DIR__')) exit;
+
 /**
  *  阿里云OSS上传插件（Typecho）【<a href="https://github.com/typecho-fans/plugins" target="_blank">TF</a>社区维护版】
  *

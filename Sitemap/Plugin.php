@@ -1,4 +1,6 @@
 <?php
+if (!defined('__TYPECHO_ROOT_DIR__')) exit;
+
 /**
  * Google Sitemap 生成器 【<a href="https://github.com/typecho-fans/plugins" target="_blank">TF</a>社区维护版】
  * 
@@ -18,11 +20,9 @@
  * 历史版本
  * version 1.0.1 at 2010-01-02
  * 修改自定义静态链接时错误的Bug
- *
  * version 1.0.0 at 2010-01-02
  * Sitemap for Google
  * 生成文章和页面的Sitemap
- *
  */
 class Sitemap_Plugin implements Typecho_Plugin_Interface
 {

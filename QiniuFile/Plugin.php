@@ -1,4 +1,6 @@
 <?php
+if (!defined('__TYPECHO_ROOT_DIR__')) exit;
+
 /**
  * 将 Typecho 的附件上传至七牛云存储中。【<a href="https://github.com/typecho-fans/plugins" target="_blank">TF</a>社区维护版】
  * 

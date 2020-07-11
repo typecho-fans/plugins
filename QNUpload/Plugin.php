@@ -1,4 +1,6 @@
 <?php
+if (!defined('__TYPECHO_ROOT_DIR__')) exit;
+
 /**
  * 七牛云附件上传 【<a href="https://github.com/typecho-fans/plugins" target="_blank">TF</a>社区维护版】
  * 

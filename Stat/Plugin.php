@@ -1,4 +1,6 @@
 <?php
+if (!defined('__TYPECHO_ROOT_DIR__')) exit;
+
 /**
  * 页面浏览次数统计插件 【<a href="https://github.com/typecho-fans/plugins" target="_blank">TF</a>社区维护版】
  * 
@@ -20,14 +22,11 @@
  * 终于支持前台调用了
  * 接口支持Typecho 0.8的计数
  * 增加SQLite的支持
- *
  * version 1.0.1 at 2010-01-02
  * 修改安装出错处理
  * 修改安装时默认值错误
- *
  * version 1.0.0 at 2009-12-12
  * 实现浏览次数统计的基本功能
- *
  */
 class Stat_Plugin implements Typecho_Plugin_Interface
 {

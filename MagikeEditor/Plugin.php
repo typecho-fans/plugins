@@ -1,4 +1,6 @@
 <?php
+if (!defined('__TYPECHO_ROOT_DIR__')) exit;
+
 /**
  * 简易编辑器，从Magike移植过来的 【<a href="https://github.com/typecho-fans/plugins" target="_blank">TF</a>社区维护版】
  * 
@@ -17,19 +19,15 @@
  * 支持Typecho 0.9
  * 新方法兼容Attachment插件
  * 小小修改图片的插入方式
- *
  * version 1.0.3 at 2010-10-13
  * 修正一个JS的Bug
- *
  * version 1.0.2 at 2010-10-08
  * 与附件管理器插件相接
  * 多动插入图片的方式选择
  * 允许自定义一些简单按钮
  * 自动转换 http https ftp 地址
- *
  * version 1.0.1 at 2009-12-01
  * 修正一个插入图片的Bug
- *
  * version 1.0.0 at 2009-11-27
  * 完成从Magike的移植
  */
