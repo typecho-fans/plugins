@@ -55,7 +55,7 @@
 [AutoTags](AutoTags) | 按文章内容解析自动生成标签插件 | 1.0.0 | [DT27](https://github.com/DT27) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/AutoTags.zip)
 [Avatars](Avatars) | 读者墙评论头像排行插件(支持缓存) | 1.2.5 | [羽中](https://github.com/jzwalk) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/Avatars.zip)
 [BackToTop](BackToTop) | 二次元风格点击返回顶部按钮插件 | 1.0 | [夏目贵志](https://github.com/xiamuguizhi) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/BackToTop.zip)
-[CatClaw](CatClaw) | 影视[一号](https://qqdie.com/archives/typecho-video-template.html)[二号](https://qqdie.com/archives/typecho-film-theme.html)模板免登录采集插件 | 1.1.1 | [jrotty](https://github.com/jrotty) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/CatClaw.zip)
+[CatClaw](CatClaw) | 影视[一号](https://qqdie.com/archives/typecho-video-template.html)[二号](https://qqdie.com/archives/typecho-film-theme.html)模板免登录采集插件 | 1.1.2 | [jrotty](https://github.com/jrotty) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/CatClaw.zip)
 [CateFilter](CateFilter) | 首页过滤指定分类文章不显示插件 | 1.2.2 | [Rakiy](https://github.com/rakiy) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/CateFilter.zip)
 [ChangyanCallback](ChangyanCallback) | 搜狐畅言社会化评论服务回推插件 | 1.0.0 | [mrgeneral](https://github.com/mrgeneralgoo) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/ChangyanCallback.zip)
 [Ckeditor4Typecho](Ckeditor4Typecho) | CKEditor4所见即所得编辑器插件 | 1.0.0 | [zhulin3141](https://github.com/zhulin3141) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/Ckeditor4Typecho.zip)
