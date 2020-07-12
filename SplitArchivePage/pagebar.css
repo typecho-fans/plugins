@@ -1,0 +1,5 @@
+.archives_page_bar{ text-align: center; padding:5px 0px;}
+.archives_page_bar A{border:#aeaeae solid 1px;margin:30px 4px 0px 0px;padding:0 8px;display:inline-block;line-height: 25px;background:#FFF;color:#555555;text-decoration: none;}
+.archives_page_bar A:visited{color:#333333;}
+.archives_page_bar A:hover{color: #ffffff;background: #4094dc;border-color: #4094dc;}
+.archives_page_bar A.sel{color:#FFF !important;background:#337ab7;border-color: #337ab7;}
