@@ -264,7 +264,7 @@ if ($title[1][0] != "" && !empty($cate) && $cate!=0) {
          $pic=$pic[1][0];//封面id
          $vodurl = "";
          $vodurl = str_replace("#", "\r\n", $m3u8[1][0]);//视频地址
-         $zhuangtai=0;if(strpos($html,'完结') == false&&strpos($html,'集全') == false){$zhuangtai=1;}//状态
+         $zhuangtai=0;if(strpos($note[1][0],'完结') == false&&strpos($note[1][0],'集全') == false){$zhuangtai=1;}//状态
          $aid = $title_id[1][0];//资源站资源id
 
 
