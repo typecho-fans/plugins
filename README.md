@@ -29,7 +29,7 @@
 
  > 下表中下载链接文字用于TeStore列表附加图标：`Download`即社区版，`N/A`为不可用，`Special`为安装用法特殊。
 
-### 作品索引 (120)
+### 作品索引 (122)
 
 ###### TeStore使用下表“名称”创建安装文件夹，“版本”提示升级，请确保文本准确；注意按字母排序添加，自增上方括号内总数，简介不要太长。
 ```
@@ -85,6 +85,7 @@
 [GoogleCodePrettify](GoogleCodePrettify) | 谷歌Prettify代码高亮插件([MD](https://baike.baidu.com/item/markdown/3245829)版) | 2.0.0 | [公子](https://github.com/lizheming) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/GoogleCodePrettify.zip)
 [GravatarCache](GravatarCache) | Gravatar头像自动在本地缓存插件 | 2.0.2 | [Byends](https://github.com/visamz) | [Special](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/GravatarCache.zip)
 [Hermit](Hermit) | 虾米云音乐SM2列表型播放器插件 | 1.3.1 | [mufeng](https://github.com/iMuFeng) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-H_to_L/Hermit.zip)
+[HighlightSearchKeywords](HighlightSearchKeywords) | 高亮搜索引擎或站内搜关键字插件 | 0.1.3 | [羽中](https://github.com/jzwalk), [gouki](https://neatstudio.com) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-H_to_L/HighlightSearchKeywords.zip)
 [HighSlide](HighSlide) | 图片灯箱弹窗效果+页面相册插件 | 1.4.7 | [羽中](https://github.com/jzwalk) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-H_to_L/HighSlide.zip)
 [Html2Text](Html2Text) | Html代码转Markdown格式插件 | 0.1.0 | [冰剑](https://github.com/binjoo) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-H_to_L/Html2Text.zip)
 [IQapTcha](IQapTcha) | 评论滑动解锁验证+规则过滤插件 | 1.1.2 | [Byends](https://github.com/visamz) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-H_to_L/IQapTcha.zip)
@@ -126,7 +127,8 @@
 [SlimBox2](SlimBox2) | 轻量级jQuery版图片灯箱弹窗插件 | 1.0.7 | [Ryan](https://github.com/ryanfwy), [冰剑](https://github.com/binjoo) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/SlimBox2.zip)
 [Smilies](Smilies) | Typecho自定义图片表情替换插件 | 1.1.3 | [羽中](https://github.com/jzwalk), Willin Kan | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/Smilies.zip)
 [Snowstorm](Snowstorm) | (娱乐向)博客飘雪动态背景效果插件 | 1.0.1 | [阳光](https://github.com/rakiy) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/Snowstorm.zip)
-[Soso](Soso) | Typecho搜索过滤/高亮/增强插件 | 1.1.1 | [泽泽社长](https://github.com/jrotty) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/Soso.zip)
+[Soso](Soso) | Typecho搜索过滤/高亮等增强插件 | 1.1.1 | [泽泽社长](https://github.com/jrotty) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/Soso.zip)
+[SplitArchivePage](SplitArchivePage) | Typecho文章内插入分页符效果插件 | 0.1.7 | [Noisky](https://github.com/noisky) & [gouki](https://neatstudio.com) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/SplitArchivePage.zip)
 [Stat](Stat) | 文章浏览计数排行插件(支持附件等) | 1.0.4 | [羽中](https://github.com/jzwalk), [Jozhn](https://github.com/jozhn), [Hanny](http://www.imhan.com) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/Stat.zip)
 [Sticky](Sticky) | Typecho首页/分类页文章置顶插件 | 1.0.1 | [Ryan](https://github.com/benzBrake), Willin Kan | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/Sticky.zip)
 [Subscriber](Subscriber) | 指定文章/内容对登录会员可见插件 | 1.0.0beta | [羽中](https://github.com/jzwalk) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/Subscriber.zip)
