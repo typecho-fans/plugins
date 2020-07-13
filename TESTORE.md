@@ -27,7 +27,7 @@
 
  > 下表中的下载链接文字可用于附加图标：`下载`即非社区版，`不可用`显示为:no_entry:，`特殊`显示:warning:即安装或启用方法特殊。
 
-### 插件信息 (345)
+### 插件信息 (357)
 
 ###### TeStore使用下表“名称”创建安装文件夹，“版本”提示升级，请务必确保文本准确；添加时注意按字母排序，自增上方括号内总数，简介不要太长。
 ```
@@ -202,6 +202,7 @@
 [Mailer](https://github.com/AlanDecode/Typecho-Plugin-Mailer) | 评论邮件异步通知插件(开发版专用) | 1.0.1 | [熊猫小A](https://github.com/AlanDecode) | [特殊](https://github.com/AlanDecode/Typecho-Plugin-Mailer/archive/master.zip)
 [Maintain](https://xiamp.net/archives/23.html) | Typecho全局维护模式插件(免费版) | 1.0.1 | [Ryan](https://github.com/benzBrake) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/Maintain.zip)
 [Markdown](https://jiongks.name/blog/plugin-markdown) | 简易版Markdown解析+编辑器插件 | 1.1.1 | [勾三股四](https://jiongks.name) | [不可用](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/Markdown.zip)
+[MarkdownIFrame](https://github.com/youngzhaojia/typecho-plugins) | 系统[MD](https://baike.baidu.com/item/markdown/3245829)编辑器添加Iframe按钮插件 | 1.0.0 | [youngzhaojia](https://github.com/youngzhaojia) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/MarkdownIFrame.zip)
 [MarkdownKatex](https://github.com/zyuzhi/MarkdownKatex-typecho) | 基于[ParseDown](https://github.com/erusev/parsedown)解析Latex公式插件 | 1.0.1 | [zyuzhi](https://github.com/zyuzhi) | [下载](https://github.com/zyuzhi/MarkdownKatex-typecho/archive/master.zip)
 [MaterialPlayer](https://github.com/xxyangyoulin/typecho_plugin_material_player) | 可悬浮简洁风质感音乐播放器插件 | 1.0.0 | [xxyangyoulin](https://github.com/xxyangyoulin) | [下载](https://github.com/xxyangyoulin/typecho_plugin_material_player/archive/master.zip)
 [MathJax](https://github.com/typecho/plugins/blob/master/MathJax.php) | 基于CDN的MathJax公式渲染插件 | 1.0.0 | [mutoo](https://github.com/mutoo) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/MathJax.zip)
@@ -212,7 +213,8 @@
 [MetaPlus](https://github.com/mrasong/metaplus-for-typecho) | 在分类标签页面输出定制数据插件 | 1.0.0 | [mrasong](https://github.com/mrasong) | [下载](https://github.com/mrasong/metaplus-for-typecho/archive/master.zip)
 [Meting](https://github.com/MoePlayer/APlayer-Typecho) | 五大云音乐平台API播放器插件 | 2.1.2 | [METO](https://github.com/metowolf) | [下载](https://github.com/MoePlayer/APlayer-Typecho/archive/master.zip)
 [MoeTop](https://github.com/Sanakey/MoeTop) | 二次元可选模型返回顶部按钮插件 | 1.1.0 | [Sanakey](https://github.com/Sanakey) | [下载](https://github.com/Sanakey/MoeTop/archive/master.zip)
-[MouseFloating](https://github.com/icy2003/typecho-MouseFloating) | 自设随机漂浮字跟随鼠标特效插件 | 1.0.0 | [icy2003](https://github.com/icy2003) | [下载](https://github.com/icy2003/typecho-MouseFloating/archive/master.zip)
+[MouseCheck](https://github.com/caoruichn/typecho-plugin) | 漂浮字鼠标特效插件(可设颜色等) | 1.0.1 | [caorui](https://github.com/caoruichn) | [下载](https://github.com/caoruichn/typecho-plugin/archive/master.zip)
+[MouseFloating](https://github.com/icy2003/typecho-MouseFloating) | 定制随机漂浮字跟随鼠标特效插件 | 1.0.0 | [icy2003](https://github.com/icy2003) | [下载](https://github.com/icy2003/typecho-MouseFloating/archive/master.zip)
 [MultiTheme](https://github.com/jqnote/Typecho-MultiTheme) | Typecho多主题切换插件(定制参数) | 1.0.0 | [HackRose](https://github.com/jqnote) | [下载](https://github.com/jqnote/Typecho-MultiTheme/archive/master.zip)
 [MyPosition](https://github.com/CrazyBoyM/MyPosition) | Typecho写作时地图API定位插件 | 3.5.9 | [南城猫](https://github.com/CrazyBoyM) | [下载](https://github.com/CrazyBoyM/MyPosition/archive/master.zip)
 [MyUpload](https://github.com/jlice/typecho-MyUpload) | 上传图片本地或[TinyPNG](https://tinypng.com)压缩插件 | 1.5.0 | [文剑木然](https://github.com/jlice) | [特殊](https://github.com/jlice/typecho-MyUpload/archive/master.zip)
@@ -225,6 +227,7 @@
 [PageViews](https://github.com/PonyCool/typecho-plugins/blob/master/PageViews) | 统计文章/页面点击及总浏览量插件 | 1.0.1 | [Pony](https://github.com/PonyCool) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/PageViews.zip)
 [PandaBangumi](https://github.com/AlanDecode/PandaBangumi-Typecho-Plugin) | Bangumi追番剧目表展示功能插件 | 2.3 | [熊猫小A](https://github.com/AlanDecode) | [下载](https://github.com/AlanDecode/PandaBangumi-Typecho-Plugin/archive/master.zip)
 [Parsedown](https://github.com/kokororin/typecho-plugin-Parsedown) | [MD](https://baike.baidu.com/item/markdown/3245829)解析器替换为Parsedown插件 | 1.0 | [Kokororin](https://github.com/kokororin) | [下载](https://github.com/kokororin/typecho-plugin-Parsedown/archive/master.zip)
+[ParsedownExtra](https://github.com/GoldJohnKing/ParsedownExtra-for-Typecho) | ParsedownExtra解析插件(带TOC) | 1.0 | [Gold John King](https://github.com/GoldJohnKing) | [下载](https://github.com/GoldJohnKing/ParsedownExtra-for-Typecho/archive/master.zip)
 [PartiallyPassword](https://github.com/wuxianucw/PartiallyPassword) | 文章部分内容输入密码可阅读插件 | 3.0.0 | [wuxianucw](https://github.com/wuxianucw) | [下载](https://github.com/wuxianucw/PartiallyPassword/archive/master.zip)
 [Ping](https://www.liudon.org/1235.html) | Ping指定服务地址通知更新插件 | 1.0.0 | [Liudon](https://www.liudon.org) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/Ping.zip)
 [Pio](https://github.com/Dreamer-Paul/Pio) | (娱乐向)Live2D二次元看板娘插件 | 2.4 | [Dreamer-Paul](https://github.com/Dreamer-Paul) | [下载](https://github.com/Dreamer-Paul/Pio/archive/master.zip)
@@ -310,6 +313,7 @@
 [TextEditor](https://plugins.typecho.me/plugins/text-editor.html) | 基于[MooTools](https://mootools.net)Html文章编辑器插件 | 0.3.3 | [vfasky](http://vfasky.com) | [不可用](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/TextEditor.zip)
 [Textends](https://github.com/jiangmuzi/Textends) | 常用模版输出效果多功能扩展插件 | 1.0.0 | [绛木子](https://github.com/jiangmuzi) | [下载](https://github.com/jiangmuzi/Textends/archive/master.zip)
 [Textile2](https://github.com/typecho/plugins/tree/master/Textile2) | [MT](https://www.movabletype.org)式Textile2写作语法解析器插件 | 2.1.1 | Jim Riggs | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/Textile2.zip)
+[Thumbnail](https://github.com/hope183/typecho-plugin) | 自定义输出并裁切文章缩略图插件 | 1.0.0 | [CaiXin Liao](https://github.com/hope183) | [下载](https://github.com/hope183/typecho-plugin/archive/master.zip)
 [Thumbnail](https://mrasong.com/a/thumbnail-for-typecho) | Typecho多层判断文章缩略图插件 | 1.0.5 | [Mr.Asong](https://mrasong.com) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/Thumbnail.zip)
 [TimelyNotice](https://521-wf.com/archives/41.html) | SMTP邮件及时通知评论回复插件 | 2.0 | [WiFeng](https://github.com/WiFeng) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/TimelyNotice.zip)
 [TianAPIEnsentence](http://forum.typecho.org/viewtopic.php?f=6&t=11744) | 用[TianAPI](https://www.tianapi.com)输出英文经典名句插件 | 1.0.0 | [宇天行](https://www.huceo.com) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/TianAPIEnsentence.zip)
