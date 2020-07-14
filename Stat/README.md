@@ -35,7 +35,7 @@ Stat v1.0.4 - 社区维护版
 
 |参数|可用值|缺省值|说明|
 |---|:---:|:---:|:---:|
-|源码规则|任意Html代码<br/>{title}即文章标题<br/>{link}为文章地址|`<li><a href="{permalink}">{title}</a></li>`|每条输出源码格式|
+|源码规则|任意Html代码<br/>{title}即文章标题<br/>{link}为文章地址|`<li><a href="{link}">{title}</a></li>`|每条输出源码格式|
 |页面类型|post<br/>page<br/>attachment|post<br/>(文章)|可排行页面或附件|
 |分类或标签mid|整数<br/>(多个可用,隔开)|ALL<br/>(所有)|仅对文章类型有效|
 |数目|整数|10|总共输出文章条数|
