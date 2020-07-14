@@ -172,7 +172,7 @@ class Stat_Plugin implements Typecho_Plugin_Interface
 			$all[] = $item['mid'];
 		}
 
-		$format = !empty($params[0]) && is_string($params[0]) ? $params[0] : '<li><a href="{permalink}">{title}</a></li>';
+		$format = !empty($params[0]) && is_string($params[0]) ? $params[0] : '<li><a href="{link}">{title}</a></li>';
 		$type = !empty($params[1]) && is_string($params[1]) ? $params[1] : 'post';
 		$category = !empty($params[2]) && is_string($params[2]) ? $params[2] : 'ALL';
 		$limit = !empty($params[3]) && is_numeric($params[3]) ? $params[3] : 10;
