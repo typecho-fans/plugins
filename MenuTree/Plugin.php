@@ -1,131 +1,206 @@
 <?php
-if (!defined('__TYPECHO_ROOT_DIR__')) exit(0);
 /**
- * 文章目录树
- * 
- * @package MenuTree
- * @author hongweipeng
- * @version 0.8.1
- * @link https://www.hongweipeng.com
+ * 根据内容标题关系自动生成目录树 【<a href="https://github.com/typecho-fans/plugins" target="_blank">TF</a>社区维护版】
+ *
+ * @package Menu Tree
+ * @author BeaconFire,Melon
+ * @version 0.1.2
+ * @link https://github.com/typecho-fans/plugins/tree/master/MenuTree
  */
-class MenuTree_Plugin implements Typecho_Plugin_Interface {
 
-    public static $v = '0.8.1';
-    
+// 使用方法：
+// 在文章某处地方加上<!-- index-menu -->，程序会把这个注释替换成目录树
+
+// 样式：
+// .index-menu			整个目录
+// .index-menu-list	列表 ul
+// .index-menu-item	每个目录项 li
+// .index-menu-link	目录项连接 a
+
+// 独立模式下需要在主题模板中调用：$this->treeMenu();
+
+class MenuTree_Plugin implements Typecho_Plugin_Interface
+{
+
     /**
      * 索引ID
      */
     public static $id = 1;
-    
+
+    public static $pattern = '/(&lt;|<)!--\s*index-menu\s*--(&gt;|>)/i';
+
+    /**
+     * 标题匹配模式
+     */
+    public static $patternTitle = '/<h([1-6])[^>]*>.*?<\/h\1>/s';
+
     /**
      * 目录树
      */
     public static $tree = array();
 
-     /**
+    /**
      * 激活插件方法,如果激活失败,直接抛出异常
-     * 
+     *
      * @access public
      * @return void
-     * @throws Typecho_Plugin_Exception
      */
-    public static function activate() {
-        Typecho_Plugin::factory('Widget_Abstract_Contents')->contentEx = array(__CLASS__, 'parse');
-        Typecho_Plugin::factory('Widget_Archive')->header = array(__CLASS__, 'header');
-        Typecho_Plugin::factory('Widget_Archive')->footer = array(__CLASS__, 'footer');
+    public static function activate()
+    {
+        Typecho_Plugin::factory('admin/write-post.php')->bottom = array('MenuTree_Plugin', 'render');
+        Typecho_Plugin::factory('admin/write-page.php')->bottom = array('MenuTree_Plugin', 'render');
+        Typecho_Plugin::factory('Widget_Abstract_Contents')->contentEx = array('MenuTree_Plugin', 'contentEx');
+        Typecho_Plugin::factory('Widget_Abstract_Contents')->excerptEx = array('MenuTree_Plugin', 'excerptEx');
+        Typecho_Plugin::factory('Widget_Archive')->___treeMenu = array('MenuTree_Plugin', 'treeMenu');
     }
+
 
     /**
      * 禁用插件方法,如果禁用失败,直接抛出异常
-     * 
+     *
      * @static
      * @access public
      * @return void
-     * @throws Typecho_Plugin_Exception
      */
-    public static function deactivate(){}
+    public static function deactivate()
+    {
+        //do nothing
+    }
 
     /**
      * 获取插件配置面板
-     * 
+     *
      * @access public
      * @param Typecho_Widget_Helper_Form $form 配置面板
      * @return void
      */
-    public static function config(Typecho_Widget_Helper_Form $form){
+    public static function config(Typecho_Widget_Helper_Form $form)
+    {
+        $type = new Typecho_Widget_Helper_Form_Element_Checkbox('switch',
+            array('normal' => _t('嵌入模式'), 'single' => _t('独立模式')),
+            array('normal'),
+            _t('显示模式'));
 
-        $jq_import = new Typecho_Widget_Helper_Form_Element_Radio('jq_import', array(
-            0   =>  _t('不引入'),
-            1   =>  _t('引入')
-        ), 1, _t('是否引入jQuery'), _t('此插件需要jQuery，如已有选择不引入避免引入多余jQuery'));
-        $form->addInput($jq_import->addRule('enum', _t('必须选择一个模式'), array(0, 1)));
-
-        $hidden_set = new Typecho_Widget_Helper_Form_Element_Radio('hidden_no_title', array(
-            0   =>  _t('否'),
-            1   =>  _t('是')
-        ), 0, _t('文章无标题时隐藏'), _t('文章中无h1、h2、h3...时隐藏'));
-        $form->addInput($hidden_set->addRule('enum', _t('必须选择一个模式'), array(0, 1)));
-
+        $form->addInput($type);
     }
 
     /**
      * 个人用户的配置面板
-     * 
+     *
      * @access public
      * @param Typecho_Widget_Helper_Form $form
      * @return void
      */
-    public static function personalConfig(Typecho_Widget_Helper_Form $form){}
+    public static function personalConfig(Typecho_Widget_Helper_Form $form)
+    {
+        //do nothing
+    }
 
     /**
-     * 插件实现方法
-     * 
+     * 列表页忽略目录生成标记
+     *
      * @access public
-     * @return void
+     * @return string
      */
-    public static function render() {
-        
+    public static function excerptEx($html, $widget, $lastResult)
+    {
+        return self::rmMenuTag($html);
+    }
+
+    /**
+     * 内容页构造索引目录
+     *
+     * @access public
+     * @return string
+     * @throws Typecho_Plugin_Exception
+     */
+    public static function contentEx($html, $widget, $lastResult)
+    {
+        $html = empty($lastResult) ? $html : $lastResult;
+
+        $options = Helper::options()->plugin('MenuTree');
+
+        /**开关判断*/
+        if (!is_null($options->switch)
+            && (in_array('single', $options->switch) or in_array('normal', $options->switch))) {
+
+            $html = preg_replace_callback(self::$patternTitle, array('MenuTree_Plugin', 'parseCallback'), $html);
+
+            if (in_array('normal', $options->switch)) {
+                $html = preg_replace(self::$pattern, '<div class="index-menu">' . self::buildMenuHtml(self::$tree) . '</div>', $html);
+            } else {
+                $html = self::rmMenuTag($html);
+            }
+
+            self::$id = 1;
+            self::$tree = array();
+            return $html;
+        }
+
+        $html = self::rmMenuTag($html);
+        return $html;
+    }
+
+    /**
+     * 构造独立的索引目录
+     *
+     * @param $archive
+     * @return string
+     * @throws Typecho_Plugin_Exception
+     */
+    public static function treeMenu($archive)
+    {
+        $options = Helper::options()->plugin('MenuTree');
+
+        if (is_null($options->switch) || !in_array('single', $options->switch)) {
+            return '';
+        }
+
+        preg_replace_callback(self::$patternTitle, array('MenuTree_Plugin', 'parseCallback'), $archive->content);
+        $result = '<div class="index-menu">' . self::buildMenuHtml(self::$tree) . '</div>';
+        self::$id = 1;
+        self::$tree = array();
+        return $result;
     }
 
     /**
      * 解析
-     * 
+     *
      * @access public
-     * @param array $matches 解析值
+     * @param array $match 解析值
      * @return string
      */
-    public static function parseCallback( $match ) {
+    public static function parseCallback($match)
+    {
         $parent = &self::$tree;
 
         $html = $match[0];
         $n = $match[1];
         $menu = array(
             'num' => $n,
-            'title' => trim( strip_tags( $html ) ),
+            'title' => trim(strip_tags($html)),
             'id' => 'menu_index_' . self::$id,
             'sub' => array()
         );
         $current = array();
-        if( $parent ) {
-            $current = &$parent[ count( $parent ) - 1 ];
+        if ($parent) {
+            $current = &$parent[count($parent) - 1];
         }
         // 根
-        if( ! $parent || ( isset( $current['num'] ) && $n <= $current['num'] ) ) {
+        if (!$parent || (isset($current['num']) && $n <= $current['num'])) {
             $parent[] = $menu;
         } else {
-            while( is_array( $current[ 'sub' ] ) ) {
+            while (is_array($current['sub'])) {
                 // 父子关系
-                if( $current['num'] == $n - 1 ) {
-                    $current[ 'sub' ][] = $menu;
+                if ($current['num'] == $n - 1) {
+                    $current['sub'][] = $menu;
                     break;
-                }
-                // 后代关系，并存在子菜单
-                elseif( $current['num'] < $n && $current[ 'sub' ] ) {
-                    $current = &$current['sub'][ count( $current['sub'] ) - 1 ];
-                }
-                // 后代关系，不存在子菜单
+                } // 后代关系，并存在子菜单
+                elseif ($current['num'] < $n && $current['sub']) {
+                    $current = &$current['sub'][count($current['sub']) - 1];
+                } // 后代关系，不存在子菜单
                 else {
-                    for( $i = 0; $i < $n - $current['num']; $i++ ) {
+                    for ($i = 0; $i < $n - $current['num']; $i++) {
                         $current['sub'][] = array(
                             'num' => $current['num'] + 1,
                             'sub' => array()
@@ -138,100 +213,78 @@ class MenuTree_Plugin implements Typecho_Plugin_Interface {
             }
         }
         self::$id++;
-        return "<span id=\"{$menu['id']}\" name=\"{$menu['id']}\"></span>" . $html;
+        return "<span class=\"menu-target-fix\" id=\"{$menu['id']}\" name=\"{$menu['id']}\"></span>" . $html;
     }
-    
+
     /**
      * 构建目录树，生成索引
-     * 
+     *
      * @access public
+     * @param $tree
+     * @param bool $include
      * @return string
      */
-    public static function buildMenuHtml( $tree, $include = true ) {
+    public static function buildMenuHtml($tree, $include = true)
+    {
+
         $menuHtml = '';
-        foreach( $tree as $menu ) {
-            if( ! isset( $menu['id'] ) && $menu['sub'] ) {
-                $menuHtml .= self::buildMenuHtml( $menu['sub'], false );
-            } elseif( $menu['sub'] ) {
-                $menuHtml .= "<li><a data-scroll href=\"#{$menu['id']}\" title=\"{$menu['title']}\">{$menu['title']}</a>" . self::buildMenuHtml( $menu['sub'] ) . "</li>";
+        foreach ($tree as $menu) {
+            /**默认给第一个链接添加class: .current */
+            $current = ($menu['id'] == 'menu_index_1') ? 'current' : '';
+
+            if (!isset($menu['id']) && $menu['sub']) {
+                $menuHtml .= self::buildMenuHtml($menu['sub'], false);
+            } elseif ($menu['sub']) {
+                $menuHtml .= "<li class=\"index-menu-item\"><a data-scroll class=\"index-menu-link {$current}\" href=\"#{$menu['id']}\" title=\"{$menu['title']}\">{$menu['title']}</a>" . self::buildMenuHtml($menu['sub']) . "</li>";
             } else {
-                $menuHtml .= "<li><a data-scroll href=\"#{$menu['id']}\" title=\"{$menu['title']}\">{$menu['title']}</a></li>";
+                $menuHtml .= "<li class=\"index-menu-item\"><a data-scroll class=\"index-menu-link {$current}\" href=\"#{$menu['id']}\" title=\"{$menu['title']}\">{$menu['title']}</a></li>";
             }
         }
-        if( $include ) {
-            $menuHtml = '<ul>' . $menuHtml . '</ul>';
+        if ($include) {
+            $menuHtml = '<ul class="index-menu-list">' . $menuHtml . '</ul>';
         }
-        $menuHtml = str_replace("'", '&apos;', $menuHtml);
         return $menuHtml;
     }
 
     /**
-     * 判断是否是内容页，避免主页加载插件
+     * 删除文章中的菜单标记注释
+     *
+     * @param $html
+     * @return string|string[]|null
      */
-    public static function is_content() {
-        static $is_content = null;
-        if($is_content === null) {
-            $widget = Typecho_Widget::widget('Widget_Archive');
-            $is_content = !($widget->is('index') || $widget->is('search') || $widget->is('date') || $widget->is('category') || $widget->is('author'));
-        }
-        return $is_content;
-    }
-    /**
-     * 插件实现方法
-     * 
-     * @access public
-     * @return string
-     */
-    public static function parse( $html, $widget, $lastResult ) {
-        $html = empty( $lastResult ) ? $html : $lastResult;
-        if (!self::is_content()) {
-            return $html;
-        }
-        $html = preg_replace_callback( '/<h([1-6])[^>]*>.*?<\/h\1>/s', array( 'MenuTree_Plugin', 'parseCallback' ), $html );
+    public static function rmMenuTag($html)
+    {
+        $html = preg_replace(self::$pattern, '', $html);
         return $html;
     }
 
     /**
-     *为header添加css文件
-     *@return void
+     * 编辑器插入短代码功能。
+     * @access public
+     * @return void
      */
-    public static function header() {
-        if (!self::is_content()) {
-            return;
+    public static function render(){
+?>
+<script>
+$(function(){
+        var wmd = $('#wmd-image-button');
+        if (wmd.length>0) {
+            wmd.after(
+        '<li class="wmd-button" id="wmd-mn-button" style="padding-top:5px;" title="<?php _e("插入目录树"); ?>"><img src="data:image/svg+xml,%3csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'16\' height=\'16\' viewBox=\'0 0 24 24\'%3e%3cpath fill=\'%23999\' d=\'M22 18v-7h-9v-5h3v-6h-8v6h3v5h-9v7h-2v6h6v-6h-2v-5h7v5h-2v6h6v-6h-2v-5h7v5h-2v6h6v-6z\'/%3e%3c/svg%3e"/></li>');
+        } else {
+            $('.url-slug').after('<button type="button" id="wmd-mn-button" class="btn btn-xs" style="margin-right:5px;"><?php _e("插入目录树"); ?></button>');
         }
-        $cssUrl = Helper::options()->pluginUrl . '/MenuTree/menutree.css?v=' . self::$v;
-        echo '<link rel="stylesheet" type="text/css" href="' . $cssUrl . '" />';
+        $('#wmd-mn-button').click(function(){
+            var textarea = $('#text'),
+            mninput = '<!-- index-menu -->',
+            sel = textarea.getSelection(),
+            offset = (sel ? sel.start : 0)+mninput.length;
+            textarea.replaceSelection(mninput);
+            textarea.setSelection(offset,offset);
+        });
+});
+</script>
+<?php
     }
 
-    /**
-     *为footer添加js文件
-     *@return void
-     */
-    public static function footer() {
-        if (!self::is_content()) {
-            return;
-        }
-        if (Helper::options()->plugin('MenuTree')->jq_import) {
-            echo '<script src="//cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>';
-        }
-
-        if (empty(self::$tree) && Helper::options()->plugin('MenuTree')->hidden_no_title) {
-            return;
-        }
-
-        $html = '<div class="in-page-preview-buttons in-page-preview-buttons-full-reader"><svg data-toggle="dropdown" aria-expanded="false" class="dropdown-toggle icon-list" version="1.1" id="tree_nav" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="104.5 -245.5 51 51" style="enable-background:new 104.5 -245.5 50 50;" xml:space="preserve"><path d="M130.895-218.312c-0.922,0-1.842-0.317-2.59-0.951l-11.01-9.352c-1.684-1.43-1.889-3.955-0.459-5.638c1.43-1.684,3.953-1.89,5.639-0.459l8.42,7.152l8.42-7.152c1.686-1.43,4.211-1.225,5.639,0.459c1.43,1.684,1.225,4.208-0.459,5.638l-11.01,9.352C132.738-218.628,131.816-218.312,130.895-218.312z M133.486-206.289l11.008-9.352c1.684-1.43,1.889-3.955,0.459-5.638c-1.43-1.682-3.955-1.89-5.639-0.458l-8.418,7.152l-8.422-7.152c-1.686-1.431-4.209-1.225-5.639,0.459c-1.43,1.684-1.225,4.208,0.461,5.638l11.012,9.352c0.746,0.634,1.668,0.951,2.588,0.951C131.818-205.337,132.74-205.654,133.486-206.289z"/></svg><div class="dropdown-menu theme pull-right theme-white keep-open" id="toc-list"><h3>内容目录</h3><hr><div class="table-of-contents"><div class="toc"><ul><li>'. self::buildMenuHtml( self::$tree ) .'</div></div></div></li></ul></div>';
-        $js = Helper::options()->pluginUrl . '/MenuTree/dropdown.js?v=' . self::$v;
-        echo <<<HTML
-            <script src="{$js}"></script>
-            <script type="text/javascript">
-            jQuery('body').append('$html');
-            jQuery('.in-page-preview-buttons .dropdown-menu.keep-open').on('click', function (e) {
-              e.stopPropagation();
-            });
-            </script>
-HTML;
-        self::$id = 1;
-        self::$tree = array();
-
-    }
 }
