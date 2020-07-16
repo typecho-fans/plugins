@@ -27,7 +27,7 @@
 
  > 下表中的下载链接文字可用于附加图标：`下载`即非社区版，`不可用`显示为:no_entry:，`特殊`显示:warning:即安装或启用方法特殊。
 
-### 插件信息 (361)
+### 插件信息 (365)
 
 ###### TeStore使用下表“名称”创建安装文件夹，“版本”提示升级，请务必确保文本准确；添加时注意按字母排序，自增上方括号内总数，简介不要太长。
 ```
@@ -120,6 +120,7 @@
 [DarkReader](https://github.com/jackytsu/typecho-darkreader) | [Dark Reader](https://darkreader.org)关灯效果阅读器插件 | 1.0.0 | [南宫小骏](https://github.com/jackytsu) | [下载](https://github.com/jackytsu/typecho-darkreader/archive/master.zip)
 [DigestShow](https://521-wf.com/archives/25.html) | 遮罩列表正文显示为摘要效果插件 | 1.1.0 | [WiFeng](https://github.com/WiFeng) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/DigestShow.zip)
 [Digg](https://plugins.typecho.me/plugins/digg.html) | 顶踩投票文章并输出排行列表插件 | 1.1.0 | [doudou](https://github.com/doudoutime) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/Digg.zip)
+[DomainTheme](https://github.com/hongweipeng/DomainTheme_for_typecho) | 自建数据表按子域名切换主题插件 | 0.0.1 | [hongweipeng](https://github.com/hongweipeng) | [下载](https://github.com/hongweipeng/DomainTheme_for_typecho/archive/master.zip)
 [Donate](https://github.com/roomanl/typecho-plugin/blob/master/Donate) | 可选支付方式的打赏捐赠按钮插件 | 1.0.0 | [山顶洞洞人](https://github.com/roomanl) | [下载](https://github.com/roomanl/typecho-plugin/archive/master.zip)
 [DoubanBoard](https://github.com/AlanDecode/Typecho-Plugin-DoubanBoard) | 博客展示豆瓣书单或影单内容插件 | 0.5 | [熊猫小A](https://github.com/AlanDecode) | [下载](https://github.com/AlanDecode/Typecho-Plugin-DoubanBoard/archive/master.zip)
 [DoubanBooklist](https://github.com/FaithPatrick/DoubanBookList) | 博客展示豆瓣正在和已读书单插件 | 1.0.0 | [Patrick95](https://github.com/FaithPatrick) | [下载](https://github.com/FaithPatrick/DoubanBookList/archive/master.zip)
@@ -189,7 +190,8 @@
 [KindEditor](https://521-wf.com/archives/21.html) | 新版KindEditor可视化编辑器插件 | 2.2 | [WiFeng](https://github.com/WiFeng) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-H_to_L/KindEditor_WiFeng.zip)
 [KodoForTypecho](https://github.com/sy-records/KodoForTypecho) | 七牛云KODO作附件存储空间插件 | 1.0.0 | [沈唁](https://github.com/sy-records) | [下载](https://github.com/sy-records/KodoForTypecho/archive/master.zip)
 [LaTex](https://github.com/typecho/plugins/tree/master/LaTex) | Markdown版LaTex公式解析插件 | 1.1.0 | [mutoo](https://github.com/mutoo) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-H_to_L/LaTex.zip)
-[LazyLoading](https://github.com/LittleJake/Typecho-LazyLoading) | Typecho全站图片懒加载效果插件 | 1.0.0 | [LittleJake](https://github.com/LittleJake) | [下载](https://github.com/LittleJake/Typecho-LazyLoading/archive/master.zip)
+[LazyLoad](https://github.com/jazzi/typecho-lazyload) | 基于jQuery的图片懒加载效果插件 | 1.0.0 | [八云酱](https://github.com/bayunjiang) | [下载](https://github.com/jazzi/typecho-lazyload/archive/master.zip)
+[LazyLoading](https://github.com/LittleJake/Typecho-LazyLoading) | Typecho简易图片懒加载效果插件 | 1.0.0 | [LittleJake](https://github.com/LittleJake) | [下载](https://github.com/LittleJake/Typecho-LazyLoading/archive/master.zip)
 [LightAudioPlayer](https://github.com/zxc135781/Light-AudioPlayer-Plugin) | 极简式单曲Html5音乐播放器插件 | 1.0 | [Mike](https://github.com/zxc135781) | [下载](https://github.com/zxc135781/Light-AudioPlayer-Plugin/archive/master.zip)
 [Lightbox](https://plugins.typecho.me/plugins/lightbox.html) | 基于jQuery图片灯箱弹窗效果插件 | 2.5.1 | AC Yang | [不可用](https://github.com/typecho-fans/plugins/releases/download/plugins-H_to_L/Lightbox.zip)
 [LinxApi](https://github.com/kirileec/LinxApi) | 文章列表API插件(支持发布与编辑) | 1.0 | [linx](https://github.com/kirileec) | [下载](https://github.com/kirileec/LinxApi/archive/master.zip)
@@ -316,6 +318,8 @@
 [TextEditor](https://plugins.typecho.me/plugins/text-editor.html) | 基于[MooTools](https://mootools.net)Html文章编辑器插件 | 0.3.3 | [vfasky](http://vfasky.com) | [不可用](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/TextEditor.zip)
 [Textends](https://github.com/jiangmuzi/Textends) | 常用模版输出效果多功能扩展插件 | 1.0.0 | [绛木子](https://github.com/jiangmuzi) | [下载](https://github.com/jiangmuzi/Textends/archive/master.zip)
 [Textile2](https://github.com/typecho/plugins/tree/master/Textile2) | [MT](https://www.movabletype.org)式Textile2写作语法解析器插件 | 2.1.1 | Jim Riggs | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/Textile2.zip)
+[ThemeSwitcher](https://www.bigjin.com/post/themeswitcher.html) | 按设备自动切换不同主题外观插件 | 1.0.0 | [loftor](https://github.com/loftor-git) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/ThemeSwitcher.zip)
+[ThemeSwitcher](https://github.com/raindecloud/ThemeSwitcher) | 夜间换主题版ThemeSwitcher插件 | 1.0.0 | [rain](https://github.com/raindecloud) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/ThemeSwitcher_rain.zip)
 [Thumbnail](https://github.com/hope183/typecho-plugin) | 自定义输出并裁切文章缩略图插件 | 1.0.0 | [CaiXin Liao](https://github.com/hope183) | [下载](https://github.com/hope183/typecho-plugin/archive/master.zip)
 [Thumbnail](https://mrasong.com/a/thumbnail-for-typecho) | Typecho多层判断文章缩略图插件 | 1.0.5 | [Mr.Asong](https://mrasong.com) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/Thumbnail.zip)
 [TimelyNotice](https://521-wf.com/archives/41.html) | SMTP邮件及时通知评论回复插件 | 2.0 | [WiFeng](https://github.com/WiFeng) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/TimelyNotice.zip)
