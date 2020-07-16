@@ -57,7 +57,7 @@ MenuTree v0.1.2 - 社区维护版
 
 ## 贡献作者
 
-[![jzwalk](https://avatars1.githubusercontent.com/u/252331?v=3&s=100)](https://github.com/jzwalk) | [![xxyangyoulin](https://avatars1.githubusercontent.com/u/25523208?v=3&s=100)](https://github.com/xxyangyoulin) | [![wuruowuxin74](https://avatars1.githubusercontent.com/u/16893894?v=3&s=100)](https://github.com/wuruowuxin74) | ![Hanny](https://secure.gravatar.com/avatar/?d=mp&s=100)
+[![jzwalk](https://avatars1.githubusercontent.com/u/252331?v=3&s=100)](https://github.com/jzwalk) | [![xxyangyoulin](https://avatars1.githubusercontent.com/u/25523208?v=3&s=100)](https://github.com/xxyangyoulin) | [![wuruowuxin74](https://avatars1.githubusercontent.com/u/16893894?v=3&s=100)](https://github.com/wuruowuxin74) | [![Melon](https://secure.gravatar.com/avatar/?d=mp&s=100)](#)
 :---:|:---:|:---:|:---:
 [jzwalk](https://github.com/jzwalk) (2020) | [xxyangyoulin](https://github.com/xxyangyoulin) (2019) | [wuruowuxin74](https://github.com/wuruowuxin74) (2018) | Melon (2015)
 
@@ -69,9 +69,8 @@ MenuTree v0.1.2 - 社区维护版
 * [修正版(wuruowuxin74)](https://github.com/wuruowuxin74/MenuTree) - 添加摘要/锚点处理。
 * [原版](http://forum.typecho.org/viewtopic.php?f=6&t=8201&p=33354) - 实现插入代码替换目录树功能。
 
-欢迎社区成员继续贡献代码参与更新。
-
-另有带样式目录树插件[ContentIndex](https://github.com/typecho-fans/plugins/blob/master/ContentIndex)和Js悬浮目录树插件[MenuTree](https://github.com/typecho-fans/plugins/blob/master/MenuTree)可供参考。
+欢迎社区成员继续贡献代码参与更新。<br/>
+另有带样式目录树插件[ContentIndex](https://github.com/typecho-fans/plugins/blob/master/ContentIndex)和Js悬浮目录树插件[MenuTree](https://github.com/typecho-fans/plugins/blob/master/MenuTree_hongweipeng)可供参考。
 
 ## 授权协议
 

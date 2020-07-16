@@ -1,4 +1,6 @@
 <?php
+if (!defined('__TYPECHO_ROOT_DIR__')) exit;
+
 /**
  * 根据内容标题关系自动生成目录树 【<a href="https://github.com/typecho-fans/plugins" target="_blank">TF</a>社区维护版】
  *
