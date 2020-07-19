@@ -27,7 +27,7 @@
 
  > 下表中的下载链接文字可用于附加图标：`下载`即非社区版，`不可用`显示为:no_entry:，`特殊`显示:warning:即安装或启用方法特殊。
 
-### 插件信息 (373)
+### 插件信息 (377)
 
 ###### TeStore使用下表“名称”创建安装文件夹，“版本”提示升级，请务必确保文本准确；添加时注意按字母排序，自增上方括号内总数，简介不要太长。
 ```
@@ -46,6 +46,7 @@
 [ActiveSubmit](https://github.com/invelop/Typecho-ActiveSubmit) | 主动推送链接至百度插件(含分类) | 1.0 | [承影](https://github.com/invelop) | [下载](https://github.com/invelop/Typecho-ActiveSubmit/archive/master.zip)
 [Adminer](https://github.com/kokororin/typecho-plugin-adminer) | 后台集成Adminer数据库管理插件 | 1.0 | [kokororin](https://github.com/kokororin) | [下载](https://github.com/kokororin/typecho-plugin-adminer/archive/master.zip)
 [AdminLogin](https://github.com/v03413/Typecho_Plugins/tree/master/AdminLogin) | 微信/QQ号后台扫码登录注册插件 | 0.0.1 | [&#95;莫名&#95;](https://github.com/v03413) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/AdminLogin.zip)
+[AdsPlugin](https://github.com/ScientistPun/AdsPlugin_for_typecho) | Typecho自建数据广告位管理插件 | 1.0.0 | [ScientistPun](https://github.com/ScientistPun) | [下载](https://github.com/ScientistPun/AdsPlugin_for_typecho/archive/master.zip)
 [AjaxComment](https://github.com/qlwz/AjaxComment-For-Typecho) | 原生JS评论Ajax异步提交功能插件 | 1.0.0.2 | [情留メ蚊子](https://github.com/qlwz) | [下载](https://github.com/qlwz/AjaxComment-For-Typecho/archive/master.zip)
 [Akalin](https://github.com/huhaku/typecho_Akalin) | 指定常用登录地IP后台白名单插件 | 1.0.0 | [huhaku](https://github.com/huhaku) | [下载](https://github.com/huhaku/typecho_Akalin/archive/master.zip)
 [Akismet](https://github.com/typecho/plugins/tree/master/Akismet) | 经典反垃圾评论服务Akismet插件 | 1.1.4 | [qining](https://github.com/joyqi) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/Akismet.zip)
@@ -78,6 +79,7 @@
 [BilibiliEcho](https://github.com/pluveto/BilibiliEcho) | Bilibili动态同步到Typecho显示插件 | 1.0.0 | [pluvet](https://github.com/pluveto) | [下载](https://github.com/pluveto/BilibiliEcho/archive/master.zip)
 [BlockComment](https://github.com/typecho/plugins/tree/master/BlockComment) | Typecho禁评论发布IP黑名单插件 | 0.0.1 | [明城](https://github.com/mingcheng) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/BlockComment.zip)
 [BlockIP](https://github.com/kokororin/typecho-plugin-BlockIP) | Typecho禁前台访问IP黑名单插件 | 1.0 | [Kokororin](https://github.com/kokororin) | [下载](https://github.com/kokororin/typecho-plugin-BlockIP/archive/master.zip)
+[Bomb](https://github.com/qiuai1993/Bomb-Typecho-Plugin) | (娱乐向)评论框输入文字爆炸插件 | 1.1.0 | [cnguu](https://github.com/qiuai1993) | [下载](https://github.com/qiuai1993/Bomb-Typecho-Plugin/archive/master.zip)
 [BookInfo](http://forum.typecho.org/viewtopic.php?f=6&t=11149) | 短代码输出豆瓣图书信息卡片插件 | 1.0.0 | [Zephyr](http://notekit.cn) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/BookInfo.zip)
 [BufannaoCms](https://plugins.typecho.me/plugins/bufannao-cms.html) | 常用CMS化模板调用函数合集插件 | 1.0.0 | 不烦恼 | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/BufannaoCms.zip)
 [BufannaoWap](https://plugins.typecho.me/plugins/wap-for-typecho.html) | 旧Xhtml标准移动端页面生成插件 | 1.0.1 | 不烦恼 | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/BufannaoWap.zip)
@@ -161,6 +163,7 @@
 [GoogleCodePrettify](https://github.com/typecho/plugins/tree/master/GoogleCodePrettify) | 经典谷歌代码高亮插件(html标签) | 1.0.0 | [qining](https://github.com/joyqi) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/GoogleCodePrettify_qining.zip)
 [GoTop](https://github.com/MisakaTAT/GoTop) | 囧猫背影版挂绳返回顶部挂件插件 | 1.2.4 | [Zero](https://github.com/MisakaTAT) | [下载](https://github.com/MisakaTAT/GoTop/archive/master.zip)
 [GravatarServer](https://github.com/kraity/typecho-gravatar) | Gravatar服务器插件(支持QQ头像) | 1.1.1 | [权那他](https://github.com/kraity) | [下载](https://github.com/kraity/typecho-gravatar/archive/master.zip)
+[GravatarShortcode](https://github.com/Siphils/GravatarShortcode-Typecho-Plugin) | 文内插入Gravatar头像短代码插件 | 1.0.3 | [Siphils](https://github.com/Siphils) | [下载](https://github.com/Siphils/GravatarShortcode-Typecho-Plugin/archive/master.zip)
 [GravatarShow](https://github.com/szj1006/GravatarShow) | 简易替换Gravatar地址为https插件 | 1.0.0 | [SangSir](https://github.com/szj1006) | [下载](https://github.com/szj1006/GravatarShow/archive/master.zip)
 [GreyMemorialDay](https://github.com/baifan97/GreyMemorialDay) | 网站定时黑白化插件(兼容安卓界面) | 1.1.0 | [WhiteFan](https://github.com/baifan97) | [下载](https://github.com/baifan97/GreyMemorialDay/archive/master.zip)
 [HPCache](https://mingdeju.com/archives/typecho-cache-download.html) | Typecho静态化页面文件缓存插件 | 1.0 | [雷鬼](https://www.typechodev.com) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-H_to_L/HPCache.zip)
@@ -191,6 +194,7 @@
 [Kefu](https://github.com/1628972070/typecho) | Typecho右侧浮动式客服挂件插件 | 1.0.0 | [双少](https://github.com/1628972070) | [下载](https://github.com/1628972070/typecho/archive/master.zip)
 [KindEditor](https://github.com/hizhengfu/KindEditor) | 经典所见即所得富文本编辑器插件 | 4.0.1 | [hizhengfu](https://github.com/hizhengfu) | [下载](https://github.com/hizhengfu/KindEditor/archive/master.zip)
 [KindEditor](https://521-wf.com/archives/21.html) | 新版KindEditor可视化编辑器插件 | 2.2 | [WiFeng](https://github.com/WiFeng) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-H_to_L/KindEditor_WiFeng.zip)
+[KMarkdownPlus](https://github.com/kgysf/typecho-KMarkdownPlus-plugin) | [MD](https://baike.baidu.com/item/markdown/3245829)解析可引用Steam/BiliBili插件 | 1.1.0 | [桐谷咸鱼](https://github.com/kgysf) | [下载](https://github.com/kgysf/typecho-KMarkdownPlus-plugin/archive/master.zip)
 [KodoForTypecho](https://github.com/sy-records/KodoForTypecho) | 七牛云KODO作附件存储空间插件 | 1.0.0 | [沈唁](https://github.com/sy-records) | [下载](https://github.com/sy-records/KodoForTypecho/archive/master.zip)
 [LaTex](https://github.com/typecho/plugins/tree/master/LaTex) | Markdown版LaTex公式解析插件 | 1.1.0 | [mutoo](https://github.com/mutoo) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-H_to_L/LaTex.zip)
 [LazyLoad](https://github.com/jazzi/typecho-lazyload) | 基于jQuery的图片懒加载效果插件 | 1.0.0 | [八云酱](https://github.com/bayunjiang) | [下载](https://github.com/jazzi/typecho-lazyload/archive/master.zip)
