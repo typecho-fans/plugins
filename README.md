@@ -137,7 +137,7 @@
 [TEReplace](TEReplace) | SQL替换指定内容标题字段插件 | 1.3.0 | [泽泽](https://github.com/jrotty) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/TEReplace.zip)
 [TeKit](TeKit) | 模板用文章或评论数据输出插件 | 2.0.0 | [冰剑](https://github.com/binjoo) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/TeKit.zip)
 [TeStore](TeStore) | GitHub表格解析版插件仓库插件 | 1.1.5 | [羽中](https://github.com/jzwalk), [zhulin3141](https://github.com/zhulin3141) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/TeStore.zip)
-[ThemeDemo](ThemeDemo) | 使用页面参数预览主题外观插件 | 1.0.1 | [doudou](https://github.com/doudoutime) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/ThemeDemo.zip)
+[ThemeDemo](ThemeDemo) | 双模式导航条主题外观演示插件 | 1.2.1 | [ShingChi](https://github.com/shingchi), [doudou](https://github.com/doudoutime) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/ThemeDemo.zip)
 [Tinyfader](Tinyfader) | Typecho简易首页图片轮播插件 | 1.0.0 | Willin Kan | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/Tinyfader.zip)
 [Titleshow](Titleshow) | Typecho加1密文章显示标题插件 | 1.1.2 | [泽泽](https://github.com/jrotty) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/Titleshow.zip)
 [TopTop](TopTop) | 卡通吊绳点击返回顶部按钮插件 | 1.0.0 | [Heeeepin](https://github.com/ghosx) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/TopTop.zip)
