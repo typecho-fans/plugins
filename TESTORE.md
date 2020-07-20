@@ -27,7 +27,7 @@
 
  > 下表中的下载链接文字可用于附加图标：`下载`即非社区版，`不可用`显示为:no_entry:，`特殊`显示:warning:即安装或启用方法特殊。
 
-### 插件信息 (389)
+### 插件信息 (393)
 
 ###### TeStore使用下表“名称”创建安装文件夹，“版本”提示升级，请务必确保文本准确；添加时注意按字母排序，自增上方括号内总数，简介不要太长。
 ```
@@ -95,6 +95,7 @@
 [CkEditor](https://plugins.typecho.me/plugins/ckeditor-4-0-1-1.html) | 精简版CKEditor可视化编辑器插件 | 1.0.2 | jooies | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/CkEditor.zip)
 [Clipboard2markdown](https://github.com/FaithPatrick/typecho-clipboard2markdown) | Markdown剪贴板内容格式化插件 | 1.0.0 | [大袋鼠](https://github.com/FaithPatrick) | [下载](https://github.com/FaithPatrick/typecho-clipboard2markdown/archive/master.zip)
 [CloudflareIP](https://gitee.com/freej2015/CloudflareIP) | 从[Cloudflare](https://www.cloudflare.com)获取并替换用户IP插件 | 0.0.1 | [yaecho](https://gitee.com/freej2015) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/CloudflareIP.zip)
+[CloudflarePurgeCache](https://github.com/Akyuu/typecho-plugin-cloudflare-purge-cache) | [Cloudflare](https://www.cloudflare.com)静态化API清除缓存插件 | 1.0 | [Alice](https://github.com/Akyuu) | [下载](https://github.com/Akyuu/typecho-plugin-cloudflare-purge-cache/archive/master.zip)
 [ClsoFun](https://blog.clso.fun/posts/2019-05-02/typecho-plus-tutorial.html) | Typecho Plus多功能系统增强插件 | 0.5.3 | [二笔青年](https://blog.clso.fun) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/ClsoFun.zip)
 [CodeBox](https://plugins.typecho.me/plugins/code-box.html) | 美化版[GeSHi](http://qbnz.com/highlighter)库代码高亮效果插件 | 0.1.1 | jKey | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/CodeBox.zip)
 [CodeCopy](https://github.com/Tuziang/CodeCopy) | 为文中代码片段附加复制按钮插件 | 1.0.0 | [兔子昂](https://github.com/Tuziang) | [下载](https://github.com/Tuziang/CodeCopy/archive/master.zip)
@@ -102,6 +103,7 @@
 [Collect](https://qqdie.com/archives/lanmao-typecho-caiji.html) | [影视一号模板](https://qqdie.com/archives/typecho-video-template.html)站点用动漫采集插件 | 1.0.0 | Moez | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/Collect.zip)
 [Collection](https://github.com/tennsinn/Typecho_Plugin--Collection) | Typecho记录条目管理进度用插件 | 1.6.0 | [息E-敛](https://github.com/tennsinn) | [下载](https://github.com/tennsinn/Typecho_Plugin--Collection/archive/master.zip)
 [ColorfulTags](https://github.com/invelop/Typecho-ColorfulTags) | Typecho生成彩色版3D标签云插件 | 1.6 | [锋临](https://github.com/invelop) | [下载](https://github.com/invelop/Typecho-ColorfulTags/archive/master.zip)
+[Comment2Hook](https://github.com/SuperPHP/Typecho_Comment2Hook_Plugin) | 评论推送Webhooks三合一版插件 | 1.1.0 | [medmin](https://github.com/medmin) | [下载](https://github.com/SuperPHP/Typecho_Comment2Hook_Plugin/archive/master.zip)
 [Comment2IFTTT](https://github.com/Tsuk1ko/Comment2IFTTT) | 评论通知推送IFTTT扩展服务插件 | 1.0.0 | [神代綺凜](https://github.com/Tsuk1ko) | [下载](https://github.com/Tsuk1ko/Comment2IFTTT/archive/master.zip)
 [Comment2Mail](https://gitee.com/hoexhe/typecho-Comment2Mail) | 评论回复发邮件提醒插件(仅SMTP) | 1.3.0 | [Hoe](https://gitee.com/hoexhe) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/Comment2Mail_Hoe.zip)
 [Comment2Mail](https://github.com/ShadowySpirits/Comment2Mail) | 评论发邮件通知插件(支持MailGun) | 1.1.0 | [SSpirits](https://github.com/ShadowySpirits) | [下载](https://github.com/ShadowySpirits/Comment2Mail/archive/master.zip)
@@ -109,6 +111,7 @@
 [Comment2Wechat](https://github.com/YianAndCode/Comment2Wechat) | 评论推送至微信插件(兼容XmlRpc) | 1.1.0 | [Y!an](https://github.com/YianAndCode) | [下载](https://github.com/YianAndCode/Comment2Wechat/archive/master.zip)
 [CommentApprove](https://github.com/ennnnny/typecho/tree/master/CommentApprove) | 按邮箱自定义三种评论者身份插件 | 0.1.0 | [kuye](https://github.com/ennnnny) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/CommentApprove.zip)
 [CommentGun](https://github.com/xddxdd/typecho-commentgun) | 简化版MailGun评论邮件提醒插件 | 1.0.0 | [Lan Tian](https://github.com/xddxdd) | [下载](https://github.com/xddxdd/typecho-commentgun/archive/master.zip)
+[CommentHelper](https://github.com/ShangJixin/Typecho-Plugin-Nabo-CommentHelper) | [南博](https://nabo.krait.cn)App开发版评论异步通知插件 | 1.0 | [尚寂新](https://github.com/ShangJixin) | [下载](https://github.com/ShangJixin/Typecho-Plugin-Nabo-CommentHelper/archive/master.zip)
 [CommentMailPlus](https://github.com/oott123/CommentMailPlus) | MailGun评论提醒插件(cURL连接) | 0.0.4 | [oott123](https://github.com/oott123) | [下载](https://github.com/oott123/CommentMailPlus/archive/master.zip)
 [CommentReminder](https://github.com/imwis/CommentReminder) | Google APIs版评论邮件提醒插件 | 1.0.0 | [Wis Chu](https://github.com/imwis) | [下载](https://github.com/imwis/CommentReminder/archive/master.zip)
 [CommentToDingtalk](https://github.com/MoLeft/CommentToDingtalk) | Typecho评论通知推送至钉钉插件 | 1.0 | [MoLeft](https://github.com/MoLeft) | [下载](https://github.com/MoLeft/CommentToDingtalk/archive/master.zip)
@@ -266,6 +269,7 @@
 [Prismjs](https://github.com/WiseClock/Prismjs) | [Prism](https://prismjs.com)代码高亮插件(显示行号/语言) | 1.0.8 | [WiseClock](https://github.com/WiseClock) | [下载](https://github.com/WiseClock/Prismjs/archive/master.zip)
 [PrivateDiary](https://www.jethro.fun/index.php/archives/120) | 全站强制登录仅注册用户可见插件 | 1.0.0 | [Jethro](https://www.jethro.fun) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/PrivateDiary.zip)
 [Process](https://github.com/Closty/Process) | Typecho多彩页面加载进度条插件 | 2.1.3 | [瓶子](https://github.com/Closty) | [下载](https://github.com/Closty/Process/archive/master.zip)
+[PushToFirekylin](https://github.com/firekylin/typecho-push-to-firekylin) | Typecho发布文章同步至[Firekylin](https://firekylin.org)插件 | 0.1.0 | [公子](https://github.com/firekylin) | [下载](https://github.com/firekylin/typecho-push-to-firekylin/archive/master.zip)
 [PutToQiNiu](https://gitee.com/SeasLaugh/PutToQiNiu) | Typecho附件上传七牛云存储插件 | 1.0 | [Seaslaugh](https://gitee.com/SeasLaugh) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/PutToQiNiu.zip)
 [QPlayer](https://github.com/Jrohy/QPlayer-Typecho-Plugin) | 网易云解析悬浮式音乐播放器插件 | 1.3.4.2 | [Jrohy](https://github.com/Jrohy) | [不可用](https://github.com/Jrohy/QPlayer-Typecho-Plugin/archive/master.zip)
 [QPlayer2](https://github.com/moeshin/QPlayer2-Typecho) | 新网易云QPlayer音乐播放器插件 | 2.0.6 | [MoeShin](https://github.com/moeshin) | [下载](https://github.com/moeshin/QPlayer2-Typecho/archive/master.zip)
