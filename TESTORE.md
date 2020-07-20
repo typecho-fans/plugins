@@ -27,7 +27,7 @@
 
  > 下表中的下载链接文字可用于附加图标：`下载`即非社区版，`不可用`显示为:no_entry:，`特殊`显示:warning:即安装或启用方法特殊。
 
-### 插件信息 (381)
+### 插件信息 (389)
 
 ###### TeStore使用下表“名称”创建安装文件夹，“版本”提示升级，请务必确保文本准确；添加时注意按字母排序，自增上方括号内总数，简介不要太长。
 ```
@@ -56,6 +56,7 @@
 [AliUpload](https://github.com/typecho/plugins/tree/master/AliUpload) | 经典附件上传阿里云储存OSS插件 | 1.0.0 Beta | [loftor](https://github.com/loftor-git) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/AliUpload.zip)
 [AliceStyle](https://github.com/racns/AliceStyle) | 常见主题外观用美化效果合集插件 | 2.4.0 | [racns](https://github.com/racns) | [下载](https://github.com/racns/AliceStyle/archive/master.zip)
 [AllsitePasswd](http://leiyanhui.com/typecho_AllsitePasswd_Plugin) | Typecho自定义全站内容加密插件 | 1.0.0 | [小类](http://leiyanhui.com) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/AllsitePasswd.zip)
+[Aphorisms](https://github.com/hizyx/typecho-plugin-aphorisms) | Typecho自建数据版名言警句插件 | 1.0.0 | [好奇的 01](https://github.com/hizyx) | [下载](https://github.com/hizyx/typecho-plugin-aphorisms/archive/master.zip)
 [ArkEditor](https://github.com/CrazyBoyM/ArkEditor) | 沉浸式写作Markdown编辑器插件 | 1.0.0 | [方舟互联](https://github.com/CrazyBoyM) | [下载](https://github.com/CrazyBoyM/ArkEditor/archive/master.zip)
 [ArticleImg](https://github.com/istobran/Typecho-Plugin-ArticleImg) | 自建数据表设置文章封面图片插件 | 1.0.0 | [BangZ](https://github.com/istobran) | [下载](https://github.com/istobran/Typecho-Plugin-ArticleImg/archive/master.zip)
 [ArticlePoster](https://github.com/MoLeft/ArticlePoster) | Typecho文章内容生成海报图插件 | 1.0.7 | [MoLeft](https://github.com/MoLeft) | [下载](https://github.com/MoLeft/ArticlePoster/archive/master.zip)
@@ -189,6 +190,7 @@
 [Ideal](https://github.com/guugg/typecho-plugins-ideal) | [Handsome](https://www.ihewro.com/archives/489)主题功能增强美化插件 | 1.3.2 | [小宇宙](https://github.com/guugg) | [下载](https://github.com/guugg/typecho-plugins-ideal/archive/master.zip)
 [ImageBox](https://github.com/journey-ad/Image-Box-Typecho-Plugin) | 简易jQuery图片灯箱弹窗特效插件 | 0.1 | [journey.ad](https://github.com/journey-ad) | [下载](https://github.com/journey-ad/Image-Box-Typecho-Plugin/archive/master.zip)
 [Import](https://www.wamuban.com/plugin/2100.html) | 通用采集内容导入数据库接口插件 | 0.3 | fhy&[雷鬼](https://www.typechodev.com) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-H_to_L/Import.zip)
+[Integration](https://github.com/starskim/Typecho-Plugin-Integration) | Typecho自动生成注册邀请码插件 | 1.2.0 | [Satrs_Kim](https://github.com/starskim) | [下载](https://github.com/starskim/Typecho-Plugin-Integration/archive/master.zip)
 [InvitationCode](https://gitee.com/cx-a/TypechoInvitationCode) | Typecho自动生成注册邀请码插件 | 1.2.2 | [晨曦啊](https://gitee.com/cx-a) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-H_to_L/InvitationCode.zip)
 [IuckyMagic](https://github.com/wibus-wee/Typecho-Plugin-IuckyMagic) | [Handsome](https://www.ihewro.com/archives/489)主题专用魔改美化插件 | 2.2.0 | [Wibus](https://github.com/wibus-wee) | [下载](https://github.com/wibus-wee/Typecho-Plugin-IuckyMagic/archive/master.zip)
 [JustArchives](https://plugins.typecho.me/plugins/just-archives.html) | 页面输出折叠式文章归档列表插件 | 0.2.2 | jKey | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-H_to_L/JustArchives.zip)
@@ -207,7 +209,8 @@
 [Lightbox](https://plugins.typecho.me/plugins/lightbox.html) | 基于jQuery图片灯箱弹窗效果插件 | 2.5.1 | AC Yang | [不可用](https://github.com/typecho-fans/plugins/releases/download/plugins-H_to_L/Lightbox.zip)
 [LinxApi](https://github.com/kirileec/LinxApi) | 文章列表API插件(支持发布与编辑) | 1.0 | [linx](https://github.com/kirileec) | [下载](https://github.com/kirileec/LinxApi/archive/master.zip)
 [Live2D](https://github.com/dragonflylee/typecho-Live2D) | [Live2D](https://www.live2d.com)可定制尺寸看板娘挂件插件 | 1.0.0 | [fghrsh](https://github.com/dragonflylee) | [下载](https://github.com/dragonflylee/typecho-Live2D/archive/master.zip)
-[Live2d](https://gitee.com/kumaomao/live2d_typecho) | [Live2D](https://www.live2d.com)看板娘插件(可换模型材质) | 1.0.0 | [kumaomao](https://gitee.com/kumaomao) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-H_to_L/Live2d_kumaomao.zip)
+[Live2D](https://github.com/wangyu1997/Live2D-Typecho-Plugin) | [Live2D](https://www.live2d.com)看板娘交互式功能集成插件 | 1.0 | [熊猫小A](https://github.com/AlanDecode) | [下载](https://github.com/wangyu1997/Live2D-Typecho-Plugin/archive/master.zip)
+[Live2d](https://gitee.com/kumaomao/live2d_typecho) | [Live2D](https://www.live2d.com)看板娘插件(可截图换材质) | 1.0.0 | [kumaomao](https://gitee.com/kumaomao) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-H_to_L/Live2d_kumaomao.zip)
 [Live2dHistoire](https://www.wikimoe.com/?post=97) | [Live2D](https://www.live2d.com)可陪聊伊斯&蕾姆挂件插件 | 1.1.3 | [广树](https://github.com/eeg1412) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-H_to_L/Live2dHistoire.zip)
 [LivePhotoKit](https://github.com/MoeLoli/LivephotoKit-Typecho) | 文章内插入[LivePhoto](https://baike.baidu.com/item/Live%20Photo/19969095)动图视频插件 | 1.1.0 | [Sora Jin](https://github.com/MoeLoli) | [下载](https://github.com/MoeLoli/LivephotoKit-Typecho/archive/master.zip)
 [LockSite](https://github.com/zizdog/LockSite) | Typecho整站加密输入密码访问插件 | 0.0.1 | [zizdog](https://github.com/zizdog) | [下载](https://github.com/zizdog/LockSite/archive/master.zip)
@@ -247,7 +250,7 @@
 [ParsedownExtra](https://github.com/GoldJohnKing/ParsedownExtra-for-Typecho) | ParsedownExtra解析插件(带TOC) | 1.0 | [Gold John King](https://github.com/GoldJohnKing) | [下载](https://github.com/GoldJohnKing/ParsedownExtra-for-Typecho/archive/master.zip)
 [PartiallyPassword](https://github.com/wuxianucw/PartiallyPassword) | 文章部分内容输入密码可阅读插件 | 3.0.0 | [wuxianucw](https://github.com/wuxianucw) | [下载](https://github.com/wuxianucw/PartiallyPassword/archive/master.zip)
 [Ping](https://www.liudon.org/1235.html) | 向指定服务地址发送Ping通知插件 | 1.0.0 | [Liudon](https://www.liudon.org) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/Ping.zip)
-[Pio](https://github.com/Dreamer-Paul/Pio) | (娱乐向)[Live2D](https://www.live2d.com)二次元看板娘插件 | 2.4 | [Dreamer-Paul](https://github.com/Dreamer-Paul) | [下载](https://github.com/Dreamer-Paul/Pio/archive/master.zip)
+[Pio](https://github.com/Dreamer-Paul/Pio) | Live2D位置小贴士等多项定制插件 | 2.4 | [Dreamer-Paul](https://github.com/Dreamer-Paul) | [下载](https://github.com/Dreamer-Paul/Pio/archive/master.zip)
 [PlayAtWill](https://github.com/vfhky/PlayAtWill) | 迷你型Flash音乐播放器2合1插件 | 1.0.0 | [vfhky](https://github.com/vfhky) | [下载](https://github.com/vfhky/PlayAtWill/archive/master.zip)
 [PluginStorage](https://defe.me/prg/250.html) | Xml数据版Typecho插件仓库插件 | 1.0.1 | [df](https://github.com/defeme) | [不可用](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/PluginStorage.zip)
 [PluginUpload](https://qqdie.com/archives/pluginupload-typecho-plugin.html) | Typecho上传插件zip包自解压插件 | 1.0.0 | [术与道](https://github.com/shuyudao) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/PluginUpload.zip)
@@ -324,6 +327,7 @@
 [SyntaxHighlighter](https://plugins.typecho.me/maupassant/plugins/syntax-highlighter.html) | [SyntaxHighlighter](https://github.com/syntaxhighlighter/syntaxhighlighter)高亮插件(pre标签) | 0.0.5 | Tolbkni Kao | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/SyntaxHighlighter.zip)
 [TEDUriReplace](https://www.typechodev.com/plugins/%E5%85%B6%E4%BB%96%E6%8F%92%E4%BB%B6/typecho-url-replace.html) | 非数据库式批量替换文章内容插件 | 1.0 | [lgl](https://www.typechodev.com) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/TEDUriReplace.zip)
 [TableOfContents](https://github.com/phpgao/TableOfContents) | 下拉式文章内容目录自动生成插件 | 0.3 | [老高](https://github.com/phpgao) | [下载](https://github.com/phpgao/TableOfContents/archive/master.zip)
+[TagImg](https://github.com/iwege/typecho-tagimg) | 按Tag标签调用文章关联图片插件 | 1.0.4 | [iwege](https://github.com/iwege) | [下载](https://github.com/iwege/typecho-tagimg/archive/master.zip)
 [TeComment](https://github.com/jiangmuzi/TeComment) | 评论增强插件(表情工具栏Ajax等) | 2.0.0 | [绛木子](https://github.com/jiangmuzi) | [下载](https://github.com/jiangmuzi/TeComment/archive/master.zip)
 [TeConnect](https://github.com/jiangmuzi/TeConnect) | 用户用QQ/微博账号注册登录插件 | 1.0 | [绛木子](https://github.com/jiangmuzi) | [特殊](https://github.com/jiangmuzi/TeConnect/archive/master.zip)
 [TePostRatings](https://gitee.com/jiangmuzi/TePostRatings) | 简易版文章星级投票评分功能插件 | 0.0.2 | [绛木子](https://github.com/jiangmuzi) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/TePostViews.zip)
