@@ -206,7 +206,7 @@
 [Kefu](https://github.com/1628972070/typecho) | Typecho右侧浮动式客服挂件插件 | 1.0.0 | [双少](https://github.com/1628972070) | [下载](https://github.com/1628972070/typecho/archive/master.zip)
 [KindEditor](https://github.com/hizhengfu/KindEditor) | 经典所见即所得富文本编辑器插件 | 4.0.1 | [hizhengfu](https://github.com/hizhengfu) | [下载](https://github.com/hizhengfu/KindEditor/archive/master.zip)
 [KindEditor](https://521-wf.com/archives/21.html) | 新版KindEditor可视化编辑器插件 | 2.2 | [WiFeng](https://github.com/WiFeng) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-H_to_L/KindEditor_WiFeng.zip)
-[KMarkdownPlus](https://github.com/kgysf/typecho-KMarkdownPlus-plugin) | [MD](https://baike.baidu.com/item/markdown/3245829)解析支持引用Steam/BiliBili插件 | 1.1.0 | [桐谷咸鱼](https://github.com/kgysf) | [下载](https://github.com/kgysf/typecho-KMarkdownPlus-plugin/archive/master.zip)
+[KMarkdownPlus](https://github.com/kgysf/typecho-KMarkdownPlus-plugin) | [MD](https://baike.baidu.com/item/markdown/3245829)解析支持引用Steam/BiliBili插件 | 1.2.0 | [桐谷咸鱼](https://github.com/kgysf) | [下载](https://github.com/kgysf/typecho-KMarkdownPlus-plugin/archive/master.zip)
 [KodoForTypecho](https://github.com/sy-records/KodoForTypecho) | 七牛云KODO作附件存储空间插件 | 1.0.0 | [沈唁](https://github.com/sy-records) | [下载](https://github.com/sy-records/KodoForTypecho/archive/master.zip)
 [LaTex](https://github.com/typecho/plugins/tree/master/LaTex) | Markdown版LaTex公式解析插件 | 1.1.0 | [mutoo](https://github.com/mutoo) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-H_to_L/LaTex.zip)
 [LazyLoad](https://github.com/jazzi/typecho-lazyload) | 基于jQuery的图片懒加载效果插件 | 1.0.0 | [八云酱](https://github.com/bayunjiang) | [下载](https://github.com/jazzi/typecho-lazyload/archive/master.zip)
