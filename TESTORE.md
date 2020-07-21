@@ -27,7 +27,7 @@
 
  > 下表中的下载链接文字可用于附加图标：`下载`即非社区版，`不可用`显示为:no_entry:，`特殊`显示:warning:即安装或启用方法特殊。
 
-### 插件信息 (397)
+### 插件信息 (401)
 
 ###### TeStore使用下表“名称”创建安装文件夹，“版本”提示升级，请务必确保文本准确；添加时注意按字母排序，自增上方括号内总数，简介不要太长。
 ```
@@ -153,7 +153,8 @@
 [Filter](https://github.com/he0119/typecho-filter) | Typecho列表不显示加密文章插件 | 0.1.1 | [uy&#95;sun](https://github.com/he0119) | [下载](https://github.com/he0119/typecho-filter/archive/master.zip)
 [FlashMp3Player](https://github.com/typecho/plugins/tree/master/FlashMp3Player) | Flash版音乐播放器Dewplayer插件 | 1.0.1 | [qining](https://github.com/joyqi) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/FlashMp3Player.zip)
 [FlowChart](http://forum.typecho.org/viewtopic.php?f=6&t=10874) | Markdown语法flow生成流程图插件 | 1.2.1 | [ZhangZijing(Venteto)](https://github.com/pluveto) | [下载](https://github.com/hujy23/FlowChart-typecho-plugin/archive/master.zip)
-[FtpUpload](https://imnerd.org/FtpUpload-Plugin-For-Typecho.html) | 编辑器附加上传文件到FTP按钮插件 | 1.0 | [怡红公子)](http://github.com/lizheming) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/FtpUpload.zip)
+[FriendsCard](https://github.com/Indexyz/FriendsCard) | 短代码输出名片式友情链接效果插件 | 1.0.0 | [Indexyz](https://github.com/Indexyz) | [下载](https://github.com/Indexyz/FriendsCard/archive/master.zip)
+[FtpUpload](https://imnerd.org/FtpUpload-Plugin-For-Typecho.html) | 编辑器附加上传文件到FTP按钮插件 | 1.0 | [怡红公子](http://github.com/lizheming) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/FtpUpload.zip)
 [Gallery](https://github.com/leohowl/gallery-typecho) | 页面内图片套用画廊相册效果插件 | 0.0.1 | [Leohowl](https://github.com/leohowl) | [下载](https://github.com/leohowl/gallery-typecho/archive/master.zip)
 [GEETEST](https://gitee.com/loiou/GEETEST) | 极验证多功能定制评论验证码插件 | 1.0.0 | [LOIOU](https://gitee.com/loiou) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/GEETEST_LOIOU.zip)
 [Geetest](https://github.com/zhb127/z-typecho-plugin-geetest) | 极验证登录验证码插件(Session版) | 1.0.0 | [菠菜](https://github.com/zhb127) | [下载](https://github.com/zhb127/z-typecho-plugin-geetest/archive/master.zip)
@@ -241,6 +242,7 @@
 [MouseCheck](https://github.com/caoruichn/typecho-plugin) | 漂浮字鼠标特效插件(可设颜色等) | 1.0.1 | [caorui](https://github.com/caoruichn) | [下载](https://github.com/caoruichn/typecho-plugin/archive/master.zip)
 [MouseFloating](https://github.com/icy2003/typecho-MouseFloating) | 定制随机漂浮字跟随鼠标特效插件 | 1.0.0 | [icy2003](https://github.com/icy2003) | [下载](https://github.com/icy2003/typecho-MouseFloating/archive/master.zip)
 [MultiTheme](https://github.com/jqnote/Typecho-MultiTheme) | Typecho多主题切换插件(定制参数) | 1.0.0 | [HackRose](https://github.com/jqnote) | [下载](https://github.com/jqnote/Typecho-MultiTheme/archive/master.zip)
+[MyBangumi](https://github.com/panedioic/MyBangumi) | 自建数据显示追番和短评信息插件 | 0.1 | [Panedioic](https://github.com/panedioic) | [下载](https://github.com/panedioic/MyBangumi/archive/master.zip)
 [MyPosition](https://github.com/CrazyBoyM/MyPosition) | Typecho写作时地图API定位插件 | 3.5.9 | [南城猫](https://github.com/CrazyBoyM) | [下载](https://github.com/CrazyBoyM/MyPosition/archive/master.zip)
 [MyUpload](https://github.com/jlice/typecho-MyUpload) | 上传图片本地或[TinyPNG](https://tinypng.com)压缩插件 | 1.5.0 | [文剑木然](https://github.com/jlice) | [特殊](https://github.com/jlice/typecho-MyUpload/archive/master.zip)
 [NavMenu](https://github.com/doghap/NavMenu-For-Typecho) | Typecho自定义菜单管理配置插件 | 1.0.0 | [merdan](https://github.com/doghap) | [下载](https://github.com/doghap/NavMenu-For-Typecho/archive/master.zip)
@@ -282,6 +284,7 @@
 [Quicktags](https://github.com/LeToNode/typecho-plugin-Quicktags) | 快捷插入Html源码标签编辑器插件 | 1.0.2 | [leton](https://github.com/LeToNode) | [下载](https://github.com/LeToNode/typecho-plugin-Quicktags/archive/master.zip)
 [RandomArticleList](https://defe.me/prg/234.html) | Typecho可缓存随机文章列表插件 | 2.0.1 | [df](https://github.com/defeme) | [特殊](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/RandomArticleList.zip)
 [RandomDescription](https://github.com/phpgao/RandomDescription) | Typecho定时随机改站点描述插件 | 1.0 | [老高@PHPer](https://github.com/phpgao) | [下载](https://github.com/phpgao/RandomDescription/archive/master.zip)
+[RedirectableAttachmentLink](https://github.com/innc11/RedirectableAttachmentLink) | 阿里云OSS本地储存平滑迁移插件 | 1.1 | [innc11](https://github.com/innc11) | [下载](https://github.com/innc11/RedirectableAttachmentLink/archive/master.zip)
 [Remix](https://github.com/fengyiyi/Remix) | 缓存版[SM2](https://github.com/scottschiller/SoundManager2)虾米云音乐播放器插件 | 2.1.0 | [ShingChi](https://github.com/ShingChi) | [不可用](https://github.com/fengyiyi/Remix/archive/master.zip)
 [Restful](https://github.com/moefront/typecho-plugin-Restful) | Typecho开放式API插件(自定路径) | 1.2.0 | [MoeFront Studio](https://github.com/moefront) | [下载](https://github.com/moefront/typecho-plugin-Restful/archive/master.zip)
 [Reward](https://github.com/musnow/reward-for-typecho) | Typecho多平台打赏支付按钮插件 | 1.0 | [沐雪秋风](https://github.com/musnow) | [下载](https://github.com/musnow/reward-for-typecho/archive/master.zip)
@@ -323,7 +326,7 @@
 [Sound](https://github.com/qt06/typecho-plugin-sound) | Typecho自定义页面提示音效插件 | 1.0.0 | [杨永全](https://github.com/qt06) | [下载](https://github.com/qt06/typecho-plugin-sound/archive/master.zip)
 [SpammersGoAway](https://github.com/oott123/SpammersGoAway) | 挑战码机制防垃圾评论机器人插件 | 0.0.1 | [oott123](https://github.com/oott123) | [下载](https://github.com/oott123/SpammersGoAway/archive/master.zip)
 [Spider](http://forum.typecho.org/viewtopic.php?f=6&t=11650) | Typecho网站文章批量采集器插件 | 1.0.0 | Syan | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/Spider.zip)
-[Statistics](https://github.com/djspys1/typecho-statistics) | matomo/百度/谷歌统计代码插件 | 1.0.0 | [djspy](https://github.com/djspys1) | [下载](https://github.com/djspys1/typecho-statistics/archive/master.zip)
+[Statistics](https://github.com/djspys1/typecho-statistics) | matomo百度谷歌版统计代码插件 | 1.0.0 | [djspy](https://github.com/djspys1) | [下载](https://github.com/djspys1/typecho-statistics/archive/master.zip)
 [Statistics](https://github.com/milkcu/Statistics) | 自建数据版记录蜘蛛访客信息插件 | 1.0.0 | [MilkCu](https://github.com/milkcu) | [下载](https://github.com/milkcu/Statistics/archive/master.zip)
 [Storyline](https://github.com/LeToNode/typecho-plugin-Storyline) | Typecho故事线归档页面效果插件 | 0.0.1 | [letonode](https://github.com/LeToNode) | [下载](https://github.com/LeToNode/typecho-plugin-Storyline/archive/master.zip)
 [StreakRain](https://github.com/zhusaidong/streak-rain-typecho-plugin) | (娱乐向)动态线条雨背景效果插件 | 1.1.0 | [上官元恒](https://github.com/zhusaidong) | [下载](https://github.com/zhusaidong/streak-rain-typecho-plugin/archive/master.zip)
@@ -380,6 +383,7 @@
 [UploadGithubForTypecho](https://github.com/AyagawaSeirin/UploadGithubForTypecho) | GitHub存储附件插件(jsDelivr加速) | 1.1.0 | [AyagawaSeirin](https://github.com/AyagawaSeirin) | [下载](https://github.com/AyagawaSeirin/UploadGithubForTypecho/archive/master.zip)
 [Uptime](https://github.com/inkedawn/Typecho-Plugin-Uptime) | Typecho显示博客总运行时间插件 | 1.1.0 | [inkedawn](https://github.com/inkedawn) | [下载](https://github.com/inkedawn/Typecho-Plugin-Uptime/archive/master.zip)
 [UpyunForTypecho](https://github.com/wshunli/typecho-plugin-upyun) | 基于[UpyunFile](https://github.com/typecho-fans/plugins/blob/master/UpyunFile)新SDK版又拍云插件 | 1.0.0 | [wshunli](https://github.com/wshunli) | [下载](https://github.com/wshunli/typecho-plugin-upyun/archive/master.zip)
+[UrlSpam](https://github.com/soxft/UrlSpam) | 腾讯网址检测API过滤垃圾评论插件 | 1.1 | [xcsoft](https://github.com/soxft) | [下载](https://github.com/soxft/UrlSpam/archive/master.zip)
 [UserAgent](https://github.com/ennnnny/typecho/tree/master/UserAgent) | 图标版显示评论者系统/浏览器插件 | 0.1.0 | [kuye](https://github.com/ennnnny) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/UserAgent_kuye.zip)
 [UserAgent](https://github.com/UniqueOnly/UserAgent) | 文字版显示评论者系统/浏览器插件 | 1.0.0 | [Unique](https://github.com/UniqueOnly) | [下载](https://github.com/UniqueOnly/UserAgent/archive/master.zip)
 [UserInfo](https://github.com/LittleJake/Typecho-UserInfo) | 侧边栏输出简易自我介绍信息插件 | 1.0.0 | [LittleJake](https://github.com/LittleJake) | [下载](https://github.com/LittleJake/Typecho-UserInfo/archive/master.zip)
