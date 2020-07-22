@@ -13,7 +13,7 @@ class AMP_Action extends Typecho_Widget implements Widget_Interface_Do
         parent::__construct($request, $response, $params);
         $this->LOGO = Helper::options()->plugin('AMP')->LOGO;//同时为默认图片
         $this->db = Typecho_Db::get();
-        $this->tablename = $this->db->getPrefix().'PageCache';
+        $this->tablename = $this->db->getPrefix() . 'PageCache';
         $this->baseurl = Helper::options()->index;
         $this->baseurl = str_replace("https://", "//", $this->baseurl);
         $this->baseurl = str_replace("http://", "//", $this->baseurl);
@@ -29,7 +29,7 @@ class AMP_Action extends Typecho_Widget implements Widget_Interface_Do
     public static function headlink()
     {
         $widget = Typecho_Widget::widget('Widget_Archive');
-        $headurl='';//初始化输出内容
+        $headurl = '';//初始化输出内容
 
         if ($widget->is('index') and !isset($widget->request->page)) {//输出AMP首页
             if (Helper::options()->plugin('AMP')->ampIndex == 1) {
@@ -39,17 +39,17 @@ class AMP_Action extends Typecho_Widget implements Widget_Interface_Do
         }
 
         if ($widget->is('post')) {//文章页
-            $targetTemp=Typecho_Widget::widget('AMP_Action')->getUrlRule();//静态函数调用动态函数
-            if(isset($widget->request->cid)){
-                $cid=$widget->request->cid;
-                $target = str_replace('[cid:digital]',$cid , $targetTemp);
+            $targetTemp = Typecho_Widget::widget('AMP_Action')->getUrlRule();//静态函数调用动态函数
+            if (isset($widget->request->cid)) {
+                $cid = $widget->request->cid;
+                $target = str_replace('[cid:digital]', $cid, $targetTemp);
             }
-            if(isset($widget->request->slug)){
-                $slug=$widget->request->slug;
+            if (isset($widget->request->slug)) {
+                $slug = $widget->request->slug;
                 $target = str_replace('[slug]', $slug, $targetTemp);
             }
 
-            if(isset($target)){//输出文章页对应的AMP/MIP页面
+            if (isset($target)) {//输出文章页对应的AMP/MIP页面
                 $ampurl = Typecho_Common::url("amp/{$target}", Helper::options()->index);
                 $mipurl = Typecho_Common::url("mip/{$target}", Helper::options()->index);
                 $headurl = "\n<link rel=\"amphtml\" href=\"{$ampurl}\">\n";
@@ -107,13 +107,13 @@ class AMP_Action extends Typecho_Widget implements Widget_Interface_Do
     public function MIPpage()
     {
         $requestHash = $this->request->getPathinfo();
-        $context=$this->get($requestHash); //查找是否已经缓存
+        $context = $this->get($requestHash); //查找是否已经缓存
         $this->article = $this->getArticle($this->request->target);
 
         if (isset($this->article['isblank'])) {
             throw new Typecho_Widget_Exception("不存在或已删除。<a href='{$this->baseurl}'>返回首页</a>");
         }
-        if (Helper::options()->plugin('AMP')->OnlyForSpiders == 1){//判断是否是对应的爬虫来访
+        if (Helper::options()->plugin('AMP')->OnlyForSpiders == 1) {//判断是否是对应的爬虫来访
             $userAgent = strtolower($_SERVER['HTTP_USER_AGENT']);
             $spider = strtolower('Baiduspider');
             if (strpos($userAgent, $spider) == false) {//不是百度的蜘蛛
@@ -121,28 +121,28 @@ class AMP_Action extends Typecho_Widget implements Widget_Interface_Do
             }
         }
 
-        if(!is_null($context)){//有缓存的情况直接输出
+        if (!is_null($context)) {//有缓存的情况直接输出
             print($context);
-        }else{//没缓存的生成页面再进行缓存
-            $MIPpage=array(
-                'title'=>$this->article['title'],
-                'permalink'=>$this->article['permalink'],
-                'mipurl'=>$this->article['mipurl'],
-                'modified'=>date('Y-m-d\TH:i:s',$this->article['modified']),
-                'date'=>$this->article['date']->format('Y-m-d\TH:i:s'),
-                'isMarkdown'=>$this->article['isMarkdown'],
-                'imgData'=>$this->GetPostImg(),//MIP页面的结果化数据可以没有图片
-                'APPID'=>Helper::options()->plugin('AMP')->baiduAPPID,
-                'mip_stats_token'=> trim(Helper::options()->plugin('AMP')->mip_stats_token),
-                'desc'=>self::cleanUp($this->article['text']),
-                'publisher'=>Helper::options()->title,
-                'MIPtext'=>$this->MIPInit($this->article['text']),
-                'version'=>$this->version
+        } else {//没缓存的生成页面再进行缓存
+            $MIPpage = array(
+                'title' => $this->article['title'],
+                'permalink' => $this->article['permalink'],
+                'mipurl' => $this->article['mipurl'],
+                'modified' => date('Y-m-d\TH:i:s', $this->article['modified']),
+                'date' => $this->article['date']->format('Y-m-d\TH:i:s'),
+                'isMarkdown' => $this->article['isMarkdown'],
+                'imgData' => $this->GetPostImg(),//MIP页面的结果化数据可以没有图片
+                'APPID' => Helper::options()->plugin('AMP')->baiduAPPID,//熊掌号的APPID
+                'mip_stats_token' => trim(Helper::options()->plugin('AMP')->mip_stats_token),
+                'desc' => self::cleanUp($this->article['text']),
+                'publisher' => Helper::options()->title,
+                'MIPtext' => $this->MIPInit($this->article['text']),
+                'version' => $this->version
             );
             ob_start();
             require_once('templates/MIPpage.php');
             $cache = ob_get_contents();
-            $this->set($requestHash,$cache);
+            $this->set($requestHash, $cache);
         }
     }
 
@@ -183,16 +183,17 @@ class AMP_Action extends Typecho_Widget implements Widget_Interface_Do
             );
         }
         $arr = array('items' => $article_data);
-	    header("Access-Control-Allow-Origin: *");
-	    print(json_encode($arr));
+        header("Access-Control-Allow-Origin: *");
+        print(json_encode($arr));
     }
 
-    public function AMPindex(){
+    public function AMPindex()
+    {
 
         if (Helper::options()->plugin('AMP')->ampIndex == 0) {
             header("Location: {$this->baseurl}");
         }
-        require_once ('templates/AMPindex.php');
+        require_once('templates/AMPindex.php');
     }
 
     /**
@@ -205,49 +206,47 @@ class AMP_Action extends Typecho_Widget implements Widget_Interface_Do
     public function AMPpage()
     {
         $requestHash = $this->request->getPathinfo();
-        $context=$this->get($requestHash); //查找是否已经缓存
+        $context = $this->get($requestHash); //查找是否已经缓存
 
         $this->article = $this->getArticle($this->request->target);
         if (isset($this->article['isblank'])) {
             throw new Typecho_Widget_Exception('不存在或已删除');
         }
-        if (Helper::options()->plugin('AMP')->OnlyForSpiders == 1){//判断是否是对应的爬虫来访
+        if (Helper::options()->plugin('AMP')->OnlyForSpiders == 1) {//判断是否是对应的爬虫来访
             $userAgent = strtolower($_SERVER['HTTP_USER_AGENT']);
             $spider = strtolower('Googlebot');
             $spider2 = strtolower('google-amphtml');
-            if (strpos($userAgent, $spider) == false  or strpos($userAgent, $spider2) == false) {//不是Google的蜘蛛
+            if (strpos($userAgent, $spider) == false or strpos($userAgent, $spider2) == false) {//不是Google的蜘蛛
                 header("Location: {$this->article['permalink']}");
             }
         }
 
-        if(!is_null($context)){//有缓存的情况直接输出
+        if (!is_null($context)) {//有缓存的情况直接输出
             print($context);
-        }
-        else{
-            $AMPpage=array(
-                'title'=>$this->article['title'],
-                'permalink'=>$this->article['permalink'],
-                'mipurl'=>$this->article['mipurl'],
-                'modified'=>date('F j, Y',$this->article['modified']),
-                'date'=>$this->article['date']->format('F j, Y'),
-                'author'=>$this->article['author'],
-                'LOGO'=>$this->LOGO,
-                'isMarkdown'=>$this->article['isMarkdown'],
-                'imgData'=>$this->GetPostImg(),
-                'APPID'=>Helper::options()->plugin('AMP')->baiduAPPID,
-                'desc'=>self::cleanUp($this->article['text']),
-                'publisher'=>Helper::options()->title,
-                'AMPtext'=>$this->AMPInit($this->article['text']),
-                'version'=>$this->version
+        } else {
+            $AMPpage = array(
+                'title' => $this->article['title'],
+                'permalink' => $this->article['permalink'],
+                'mipurl' => $this->article['mipurl'],
+                'modified' => date('F j, Y', $this->article['modified']),
+                'date' => $this->article['date']->format('F j, Y'),
+                'author' => $this->article['author'],
+                'LOGO' => $this->LOGO,
+                'isMarkdown' => $this->article['isMarkdown'],
+                'imgData' => $this->GetPostImg(),
+                'desc' => self::cleanUp($this->article['text']),
+                'publisher' => Helper::options()->title,
+                'AMPtext' => $this->AMPInit($this->article['text']),
+                'version' => $this->version
             );
             //AMP页面的结果化数据必须有图片
-            if(!is_array($AMPpage['imgData'])){
-                $AMPpage['imgData']=self::getSizeArr($AMPpage['LOGO'],'1200','1200');//如果找不到图片就用LOGO
+            if (!is_array($AMPpage['imgData'])) {
+                $AMPpage['imgData'] = self::getSizeArr($AMPpage['LOGO'], '1200', '1200');//如果找不到图片就用LOGO
             }
             ob_start();
-            require_once ('templates/AMPpage.php');
+            require_once('templates/AMPpage.php');
             $cache = ob_get_contents();
-            $this->set($requestHash,$cache);
+            $this->set($requestHash, $cache);
         }
     }
 
@@ -257,9 +256,10 @@ class AMP_Action extends Typecho_Widget implements Widget_Interface_Do
      * date: 2020/3/13 11:44
      * 清理缓存
      */
-    public function cleancache(){
+    public function cleancache()
+    {
         $user = Typecho_Widget::widget('Widget_User');
-        if(!$user->pass('administrator')){
+        if (!$user->pass('administrator')) {
             die('未登录用户!');
         }
         $this->del('*');
@@ -286,50 +286,61 @@ class AMP_Action extends Typecho_Widget implements Widget_Interface_Do
         }
 
         //如果没有开启自动提交功能 则不推送
-        if ($options->plugin('AMP')->mipAutoSubmit == 0) {
+        $mipAutoSubmit = $options->plugin('AMP')->mipAutoSubmit;
+        if ($mipAutoSubmit == 0) {
             return;
         }
 
         //判断是否配置相关信息
-        if (is_null($options->plugin('AMP')->baiduAPPID) or is_null($options->plugin('AMP')->baiduTOKEN)) {
-            throw new Typecho_Plugin_Exception(_t('参数未正确配置，自动提交失败'));
-        }else{
-            $appid = trim($options->plugin('AMP')->baiduAPPID);//过滤空格
-            $token = trim($options->plugin('AMP')->baiduTOKEN);//过滤空格
-            $api = "http://data.zz.baidu.com/urls?appid={$appid}&token={$token}&type=realtime";//构建实时提交的地址
+//        if (is_null($options->plugin('AMP')->baiduAPPID) or is_null($options->plugin('AMP')->baiduTOKEN)) {
+        if (is_null($options->plugin('AMP')->baiduAPI)) {
+            throw new Typecho_Plugin_Exception(_t('未配置 快速收录接口地址，自动提交失败'));
+        } else {
+//            $appid = trim($options->plugin('AMP')->baiduAPPID);//过滤空格
+//            $token = trim($options->plugin('AMP')->baiduTOKEN);//过滤空格
+            //熊掌号下线后，修改未快速收录接口   2020.06.07
+
+            $api = trim($options->plugin('AMP')->baiduAPI);//默认填写的是快速收录地址
+            if ($mipAutoSubmit == 2) {//如果选择了普通收录地址，则进行替换
+                $api = preg_replace("/&type=[a-z]+/", "", $api);//将快速收录接口换成普通收录接口
+            }
         }
 
         $article = Typecho_Widget::widget('AMP_Action')->getArticleByCid($class->cid);//根据cid获取文章内容
 
-
-        if((int)$article['created']+86400 < (int)$article['modified'] ){//之前判断忽略了自动保存草稿的问题
+        if ((int)$article['created'] + 86400 < (int)$article['modified']) {//之前判断忽略了自动保存草稿的问题
             return;//草稿在一天之内的文章推送，否则不推送。
         }
 
 
-        $url=$article['mipurl'];
+
+        //获取文章链接
+        $url = $article['mipurl'];
 
 
         $hash = array(//发布之前清除对应的MIP/AMP缓存
             'mip' => str_replace(Helper::options()->index, "", $article['mipurl']),
             'amp' => str_replace(Helper::options()->index, "", $article['ampurl'])
         );
+
         Typecho_Widget::widget('AMP_Action')->del($hash);
 
-        //发送自动提交请求
-        $http = Typecho_Http_Client::get();
-        $http->setData($url);
-        $http->setHeader('Content-Type', 'text/plain');
 
 
+        //发送自动提交
         try {
 
-            $result = $http->send($api);
 
+            $http = Typecho_Http_Client::get();
+            $http->setData($url);//改为Post发送模式
+            $http->setHeader('Content-Type', 'text/plain');
+
+            $result = $http->send($api);
             $json = json_decode($result);
 
-            if(isset($json->error)){//提交出错时返回错误信息
-                throw new Typecho_Plugin_Exception(_t("错误代码：".$json->error."<br> 出错原因：".$json->message),$json->error);
+
+            if (isset($json->error)) {//提交出错时返回错误信息
+                throw new Typecho_Plugin_Exception(_t("错误代码：" . $json->error . "<br> 出错原因：" . $json->message), $json->error);
             }
 
         } catch (Exception $e) {
@@ -375,9 +386,9 @@ class AMP_Action extends Typecho_Widget implements Widget_Interface_Do
                 ->where('uid = ?', $article['authorId']);
             $author = $this->db->fetchRow($select);
             $article['author'] = $author['screenName'];
-            if($article['isMarkdown']==True){
+            if ($article['isMarkdown'] == True) {
                 $article['text'] = Markdown::convert($article['text']);
-            }else{
+            } else {
                 $article['text'] = Typecho_Widget::widget("Widget_Abstract_Contents")->autoP($article['text']);
             }
             $targetTemp = $this->getUrlRule();
@@ -401,7 +412,7 @@ class AMP_Action extends Typecho_Widget implements Widget_Interface_Do
     public function MakeArticleList($linkType = 'amp', $page = 0, $pageSize = 0)
     {
         $db = Typecho_Db::get();
-        $thismoment=time();//Fix sqlite不支持生成时间戳
+        $thismoment = time();//Fix sqlite不支持生成时间戳
         $sql = $db->select()->from('table.contents')
             ->where('table.contents.status = ?', 'publish')
             ->where('table.contents.type = ?', 'post')
@@ -419,7 +430,7 @@ class AMP_Action extends Typecho_Widget implements Widget_Interface_Do
 
         $targetTemp = $this->getUrlRule();
 
-        foreach ($articles AS $article) {
+        foreach ($articles as $article) {
             $article['categories'] = $db->fetchAll($db->select()->from('table.metas')
                 ->join('table.relationships', 'table.relationships.mid = table.metas.mid')
                 ->where('table.relationships.cid = ?', $article['cid'])
@@ -467,21 +478,21 @@ class AMP_Action extends Typecho_Widget implements Widget_Interface_Do
             $img_url = $img[1];
         } else {
             //正文里没找到图片就去附件里找
-            $attsrc=Typecho_Widget::widget('Widget_Contents_Attachment_Related', 'parentId=' . $this->article['cid'])->stack;
-            $att='';
-            foreach ($attsrc as $attimg){
-                $att=$att.$attimg['text'];
+            $attsrc = Typecho_Widget::widget('Widget_Contents_Attachment_Related', 'parentId=' . $this->article['cid'])->stack;
+            $att = '';
+            foreach ($attsrc as $attimg) {
+                $att = $att . $attimg['text'];
             }
             if (preg_match($pattern, $att, $img)) {//附件里只需要匹配img标签的内容
                 preg_match("/(?:\()(.*)(?:\))/i", $img[0], $result);
                 $img_url = $img[1];
-            }else{//附件里再找不到就调LOGO了
+            } else {//附件里再找不到就调LOGO了
 //                $img_url = $this->defaultPIC;
-                $img_url=null;//熊掌号修改了规则，如果图不对文的话会被惩罚，所以没有图片则不出图
+                $img_url = null;//熊掌号修改了规则，如果图不对文的话会被惩罚，所以没有图片则不出图
             }
         }
 
-        if(is_null($img_url)){//如果没有找到图片则返回空
+        if (is_null($img_url)) {//如果没有找到图片则返回空
             return null;
         } else {//如果找到文章图片则返回图片数组
             return self::getSizeArr($img_url);
@@ -489,7 +500,8 @@ class AMP_Action extends Typecho_Widget implements Widget_Interface_Do
     }
 
     //获取图片尺寸
-    private static function getSizeArr($img_url,$width='700',$height='400'){
+    private static function getSizeArr($img_url, $width = '700', $height = '400')
+    {
         try {//尝试获取图片尺寸
             list($width, $height, $type, $attr) = @getimagesize($img_url);
             $imgData = array(
@@ -520,7 +532,7 @@ class AMP_Action extends Typecho_Widget implements Widget_Interface_Do
         $text = str_replace('<!- toc end ->', '', $text);
         $text = str_replace('<style', '<style mip-custom" ', $text);
         $text = str_replace('javascript:content_index_toggleToc()', '#', $text);
-        $text = $this->stripHtmlTags(array('font','color','input','size'),$text,true) ;//清理指定HTML标签
+        $text = $this->stripHtmlTags(array('font', 'color', 'input', 'size'), $text, true);//清理指定HTML标签
         return $text;
     }
 
@@ -535,7 +547,7 @@ class AMP_Action extends Typecho_Widget implements Widget_Interface_Do
         $text = str_replace('<style', '<style amp-custom" ', $text);
         $text = str_replace('<!- toc end ->', '', $text);
         $text = str_replace('javascript:content_index_toggleToc()', '#', $text);
-        $text = $this->stripHtmlTags(array('font','color','input','size'),$text,true) ;//清理指定HTML标签
+        $text = $this->stripHtmlTags(array('font', 'color', 'input', 'size'), $text, true);//清理指定HTML标签
         return $text;
     }
 
@@ -569,7 +581,7 @@ class AMP_Action extends Typecho_Widget implements Widget_Interface_Do
         return $html;
     }
 
-      /**
+    /**
      * @param $text
      * @return string|string[]
      * author:Holmesian
@@ -579,12 +591,11 @@ class AMP_Action extends Typecho_Widget implements Widget_Interface_Do
     private function closeTags($text)
     {
         preg_match_all('/<img ([\s\S]*?)>/', $text, $mat);
-        $src=array_unique($mat[0]);
-        for ($i = 0; $i < count($src); $i++)
-        {
-            if (isset($src[$i])){
-                $plus =  $src[$i].'</img>';
-                $text = str_replace( $mat[0][$i],$plus, $text);
+        $src = array_unique($mat[0]);
+        for ($i = 0; $i < count($src); $i++) {
+            if (isset($src[$i])) {
+                $plus = $src[$i] . '</img>';
+                $text = str_replace($mat[0][$i], $plus, $text);
             }
         }
         return $text;
@@ -602,15 +613,15 @@ class AMP_Action extends Typecho_Widget implements Widget_Interface_Do
         //changefreq -> always、hourly、daily、weekly、monthly、yearly、never
         //priority -> 0.0优先级最低、1.0最高
         $root_url = Helper::options()->rootUrl;
-        if (isset($_GET['page'])){//Sitemap分页
+        if (isset($_GET['page'])) {//Sitemap分页
 
-            $page=$_GET['page'];
-        }else{
-            $page=1;
+            $page = $_GET['page'];
+        } else {
+            $page = 1;
         }
         if (isset($_GET['txt'])) {//增加纯文本地址列表
-            $articles = $this->MakeArticleList($maptype,$page,5000);
-            foreach ($articles AS $article) {
+            $articles = $this->MakeArticleList($maptype, $page, 1000);
+            foreach ($articles as $article) {
                 echo $article['permalink'] . "\n\r<br>";
             }
         } else {
@@ -623,8 +634,8 @@ class AMP_Action extends Typecho_Widget implements Widget_Interface_Do
             echo "\t\t<changefreq>daily</changefreq>\n";
             echo "\t\t<priority>1</priority>\n";
             echo "\t</url>\n";
-            $articles = $this->MakeArticleList($maptype,$page,5000);
-            foreach ($articles AS $article) {
+            $articles = $this->MakeArticleList($maptype, $page, 1000);
+            foreach ($articles as $article) {
                 echo "\t<url>\n";
                 echo "\t\t<loc>" . $article['permalink'] . "</loc>\n";
                 echo "\t\t<lastmod>" . date('Y-m-d', $article['modified']) . "</lastmod>\n";
@@ -638,13 +649,12 @@ class AMP_Action extends Typecho_Widget implements Widget_Interface_Do
     }
 
 
-
     /**
      * 截取功能函数
-     * @param string $text      截取的对象
-     * @param string $length    保留长度
-     * @param string $replace   替换结尾表示
-     * @param string $encoding  编码类型
+     * @param string $text 截取的对象
+     * @param string $length 保留长度
+     * @param string $replace 替换结尾表示
+     * @param string $encoding 编码类型
      * @return mixed
      */
 
@@ -658,28 +668,27 @@ class AMP_Action extends Typecho_Widget implements Widget_Interface_Do
 
     /**
      * 清理指定HTML标签函数
-     * @param array  $tags    删除的标签 array('font','color','input','size')
-     * @param string $str     html字符串
-     * @param bool   $type    是否保留标签的内容
+     * @param array $tags 删除的标签 array('font','color','input','size')
+     * @param string $str html字符串
+     * @param bool $type 是否保留标签的内容
      * @return mixed
      */
-    private function stripHtmlTags($tags, $str, $content=false)
+    private function stripHtmlTags($tags, $str, $content = false)
     {
         $html = [];
-        if($content){
+        if ($content) {
             foreach ($tags as $tag) {
-                $html[] = "/(<(?:\/" .$tag. "|" .$tag. ")[^>]*>)/is";
+                $html[] = "/(<(?:\/" . $tag . "|" . $tag . ")[^>]*>)/is";
             }
-        }else{
+        } else {
             foreach ($tags as $tag) {
-                $html[] = '/<' .$tag. '.*?>[\s|\S]*?<\/' .$tag. '>/is';
-                $html[] = '/<' .$tag. '.*?>/is';
+                $html[] = '/<' . $tag . '.*?>[\s|\S]*?<\/' . $tag . '>/is';
+                $html[] = '/<' . $tag . '.*?>/is';
             }
         }
         $data = preg_replace($html, '', $str);
         return $data;
     }
-
 
 
     /**
@@ -696,22 +705,22 @@ class AMP_Action extends Typecho_Widget implements Widget_Interface_Do
         }
 
         //清理自定义格式
-        $URLarr=explode('.',$slugtemp);
-        $target='';
-        foreach ($URLarr as $x){//寻找别名标记
-            if(strstr($x,'[slug]')){
-                $target='[slug]';
+        $URLarr = explode('.', $slugtemp);
+        $target = '';
+        foreach ($URLarr as $x) {//寻找别名标记
+            if (strstr($x, '[slug]')) {
+                $target = '[slug]';
             }
         }
-        if ($target!=='[slug]'){//没找到别名标记则用文章序号
-           $target='[cid:digital]';
+        if ($target !== '[slug]') {//没找到别名标记则用文章序号
+            $target = '[cid:digital]';
         }
 
         //根据后缀名情况拼接文章路径
-        if(count($URLarr)>1){
-            $slugtemp=$target.'.'.$URLarr[count($URLarr)-1];
-        }else{
-            $slugtemp=$target;
+        if (count($URLarr) > 1) {
+            $slugtemp = $target . '.' . $URLarr[count($URLarr) - 1];
+        } else {
+            $slugtemp = $target;
         }
 
         return $slugtemp;
@@ -720,13 +729,14 @@ class AMP_Action extends Typecho_Widget implements Widget_Interface_Do
 
     /**
      * 清理文章摘要内容
-     * @param array  $desc  文章内容
+     * @param array $desc 文章内容
      * @return mixed
      */
-    private static function cleanUp($desc){
-        $desc= str_replace(array("\r\n", "\r", "\n"), "", strip_tags($desc));//获取纯内容后去除换行
-        $desc=mb_substr($desc, 0, 150).'...';//截取前150个字符
-        $desc= str_replace('"', '\"', $desc);//转义传递给json的 "
+    private static function cleanUp($desc)
+    {
+        $desc = str_replace(array("\r\n", "\r", "\n"), "", strip_tags($desc));//获取纯内容后去除换行
+        $desc = mb_substr($desc, 0, 150) . '...';//截取前150个字符
+        $desc = str_replace('"', '\"', $desc);//转义传递给json的 "
         return $desc;
     }
 
@@ -740,8 +750,9 @@ class AMP_Action extends Typecho_Widget implements Widget_Interface_Do
      * author:Holmesian
      * date: 2020/3/13 11:40
      */
-    private function set($key, $cache){
-        if(Helper::options()->plugin('AMP')->cacheTime>0) {
+    private function set($key, $cache)
+    {
+        if (Helper::options()->plugin('AMP')->cacheTime > 0) {
             $installDb = $this->db;
             $time = (int)Helper::options()->plugin('AMP')->cacheTime;
             $expire = $time * 60 * 60;
@@ -753,15 +764,16 @@ class AMP_Action extends Typecho_Widget implements Widget_Interface_Do
 //            $sql = "REPLACE INTO $table  (`hash`,`cache`,`dateline`,`expire`) VALUES ('$key','$cache','$time','$expire')";
 //            $installDb->query($sql);
 
-            $installDb->query($installDb->insert($this->tablename)->rows(array("hash"=>$key,"cache"=>$cache,"dateline"=>$time,"expire"=>$expire)));//更换写入方法
+            $installDb->query($installDb->insert($this->tablename)->rows(array("hash" => $key, "cache" => $cache, "dateline" => $time, "expire" => $expire)));//更换写入方法
 
-        }else{
+        } else {
             return null;
         }
     }
 
-    private function del($key){
-        if(Helper::options()->plugin('AMP')->cacheTime>0) {
+    private function del($key)
+    {
+        if (Helper::options()->plugin('AMP')->cacheTime > 0) {
             $installDb = $this->db;
             if (is_array($key)) {
                 foreach ($key as $k => $v) {
@@ -774,13 +786,14 @@ class AMP_Action extends Typecho_Widget implements Widget_Interface_Do
                     $installDb->query($installDb->delete($this->tablename)->where('hash = ?', $key)->limit(1));
                 }
             }
-        }else{
+        } else {
             return null;
         }
     }
 
-    private function get($key){
-        if(Helper::options()->plugin('AMP')->cacheTime>0) {
+    private function get($key)
+    {
+        if (Helper::options()->plugin('AMP')->cacheTime > 0) {
             $installDb = $this->db;
 
             $condition = $installDb->select('cache', 'dateline', 'expire')->from($this->tablename)->where('hash = ?', $key);
@@ -790,13 +803,12 @@ class AMP_Action extends Typecho_Widget implements Widget_Interface_Do
             $cache = $row['cache'];
             $arr = json_decode($cache, true);
             return is_array($arr) ? $arr : $cache;
-        }else{
+        } else {
             return null;
         }
     }
 
     //------------页面缓存功能函数end------------
-
 
 
 }
