@@ -17,17 +17,17 @@
 
 1. 上传插件源码即视为允许社区修改，如果只为在插件仓库列表显示，编辑[TESTORE.md](TESTORE.md)写入下载链接等信息即可。
 
- > 目录内插件在TeStore列表带社区标记，作者可提交有特色但不再维护的作品，由其他成员视需求能力做后续修正。
+ > 目录下插件在TeStore中带社区标记，作者可提交有特色但不再维护的作品，由其他成员视需求能力做后续修正。
 
-2. 推荐用[**subtree**](https://aoxuis.me/bo-ke/2013-08-06-git-subtree)方法上传文件(可随时拉取原目录更新)，手动复制提交亦可，不再接受submodule链接文件夹方式。
+2. 推荐用[**subtree**](https://aoxuis.me/bo-ke/2013-08-06-git-subtree)方法上传源码(可随时拉取原目录更新)，手动复制提交亦可，不再接受submodule链接文件夹方式。
 
  > 若原目录作者回归本目录下源码未有修改可继续拉取同步，已产生社区版勿盲目覆盖，应视情况保留或修改合并。
 
 3. 管理会邀请GitHub插件作者给予目录权限，其他想参与童鞋可Fork修改后提交Pull Request，或在[Issues](https://github.com/typecho-fans/plugins/issues)申请加入。
 
-4. 插件应自带**README**，zip包上传至[releases](https://github.com/typecho-fans/plugins/releases)或放置在ZIP_CDN目录里，下载地址写入下方表格即可在TeStore安装。
+4. 插件应自带**README**，zip包上传至[releases](https://github.com/typecho-fans/plugins/releases)或放在ZIP_CDN文件夹里，下载地址写入下方表格即可在TeStore安装。
 
- > 下表中的下载链接文字可在TeStore列表附加图标：`Download`即社区版，`N/A`为不可用，`Special`是安装用法特殊。
+ > 下表中的下载链接文字可在TeStore附加图标：`Download`即社区版，`N/A`为不可用，`Special`是安装或用法特殊。
 
 ### 作品索引 (123)
 
