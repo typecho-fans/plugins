@@ -1,12 +1,12 @@
 <img src='https://typecho-fans.github.io/soap-group.png' align="right" />
 
-## Typecho-Fans外部插件登记表（TeStore专用）
+## Typecho Fans 外部插件登记表（TeStore专用）
 
 [![compatible](https://img.shields.io/badge/Typecho-%E2%89%881.0-red.svg?style=for-the-badge)](https://github.com/typecho/typecho)
 [![support](https://img.shields.io/badge/TeStore-Supported-green.svg?style=for-the-badge)](TeStore)
 [![contributors](https://img.shields.io/github/contributors/typecho-fans/plugins.svg?style=for-the-badge)](https://github.com/typecho-fans/plugins/graphs/contributors)
 
- > 本文件内插件信息由社区成员自由添加修改，不保证各版本兼容性但可通过链接文字进行标记，具体方式请阅读下方说明。:penguin:交流群号：[**40412938**](http://shang.qq.com/wpa/qunwpa?idkey=a5a8afedf099e18ddf9b530db9217251e39001d52aace42888bf470d9b6cb86a)
+ > 本文件内插件信息由社区成员自由添加修改，指向作者自己的发布目录，不保证各版本兼容性但可通过链接文字进行标记，具体方式请阅读下方说明。:penguin:交流QQ群：[**40412938**](http://shang.qq.com/wpa/qunwpa?idkey=a5a8afedf099e18ddf9b530db9217251e39001d52aace42888bf470d9b6cb86a)
 ------------------------------
 
 ### 使用帮助
@@ -15,17 +15,17 @@
 
 ### 编辑说明
 
-1. 插件作者可接受管理邀请获得目录写权限，克隆项目后修改本文件提交即可，也欢迎参与维护本目录下其他社区版插件。
+1. 插件作者可在[Issues](https://github.com/typecho-fans/plugins/issues)申请加入获得写权限，克隆项目后修改本文件提交即可，同时欢迎参与维护本目录下的社区版插件。
 
- > commit附注请写明每次修改的要点，如果你有作品愿意交由其他成员接手也可拉取到本目录下，具体详见[README.md](README.md)。
+ > commit附注请写明每次修改要点，如果有弃更的作品愿意交由其他成员接手也可上传至本目录，具体详见[README.md](README.md)。
 
-2. 其他童鞋可Fork本目录修改TESTORE.md表格部分，然后提交Pull Request申请合并，或在[Issues](https://github.com/typecho-fans/plugins/issues)里贴出你的插件信息亦可。
+2. 其他童鞋可Fork本目录修改TESTORE.md表格内容，然后提交Pull Request申请合并，或在[Issues](https://github.com/typecho-fans/plugins/issues)按格式贴出插件信息亦可。
 
  > 修改前最好先Ctrl+F本文件及[README.md](README.md)搜索下插件名，无版本号或作者署名区别的同名插件将视作重复添加或被移除。
 
 3. zip包下载链接请确保长期稳定，推荐上传至[releases](https://github.com/typecho-fans/plugins/releases)或放置在ZIP_CDN目录中后再将文件地址添加到下方的表格信息里。
 
- > 下表中的下载链接文字可用于附加图标：`下载`即非社区版，`不可用`显示为:no_entry:，`特殊`显示:warning:即安装或启用方法特殊。
+ > 下表中的下载链接文字可用于附加图标：`下载`即非社区版，`不可用`显示为:no_entry:，`特殊`显示:warning:意为安装或启用方法特殊。
 
 ### 插件信息 (405)
 
@@ -35,7 +35,7 @@
 ```
 
 名称 | 简介 | 版本 | 作者 | zip包
----- | :----: | :---: | ----: | :----:
+---- | ----: | :---: | ----: | :----:
 [APlayer](https://github.com/zgq354/APlayer-Typecho-Plugin) | 网易云解析Html5音乐播放器插件 | 1.4.11 | [ZGQ](https://github.com/zgq354) | [下载](https://github.com/zgq354/APlayer-Typecho-Plugin/archive/master.zip)
 [APlayerAtBottom](https://github.com/SatoSouta/Typecho-plugin-APlayerAtBottom) | 网易云解析吸底式音乐播放器插件 | 1.1.1 | [小太](https://github.com/SatoSouta) | [下载](https://github.com/SatoSouta/Typecho-plugin-APlayerAtBottom/archive/master.zip)
 [Acc](https://github.com/qt06/typecho-plugin-accessibility) | Typecho无障碍读屏标记修正插件 | 1.0.0 | [杨永全](https://github.com/qt06) | [下载](https://github.com/qt06/typecho-plugin-accessibility/archive/master.zip)
