@@ -23,7 +23,7 @@
 
  > 修改前最好先Ctrl+F本文件及[README.md](README.md)搜索下插件名，无版本号或作者署名区别的同名插件将视作重复添加或被移除。
 
-3. zip包下载链接请确保长期稳定，推荐上传至[releases](https://github.com/typecho-fans/plugins/releases)或放置在ZIP_CDN目录中后再将文件地址添加到下方的表格信息里。
+3. zip包下载链接请确保长期稳定，推荐上传至[releases](https://github.com/typecho-fans/plugins/releases)或放入ZIP_CDN文件夹后，再将文件地址添加到下方的表格信息里。
 
  > 下表中的下载链接文字可用于附加图标：`下载`即非社区版，`不可用`显示为:no_entry:，`特殊`显示:warning:意为安装或启用方法特殊。
 
