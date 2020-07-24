@@ -1,0 +1,24 @@
+name: "pre-release"
+
+on:
+  push:
+    branches:
+      - "master"
+
+jobs:
+  pre-release:
+    name: "Pre Release"
+    runs-on: "ubuntu-latest"
+
+    steps:
+      # TeStore插件依赖此Action在jsDelivr获取CDN加速版API统计数据，切勿删改！
+      - name: "Automatic Releases"
+        run: |
+          echo "实时标签已生成!"
+
+      - uses: "marvinpinto/action-automatic-releases@latest"
+        with:
+          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          automatic_release_tag: "latest"
+          prerelease: true
+          title: "实时打包标签(自动生成请忽略)"
