@@ -107,7 +107,7 @@
 [Collect](https://qqdie.com/archives/lanmao-typecho-caiji.html) | [影视一号模板](https://qqdie.com/archives/typecho-video-template.html)站点用动漫采集插件 | 1.0.0 | Moez | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/Collect.zip)
 [Collection](https://github.com/tennsinn/Typecho_Plugin--Collection) | Typecho记录条目管理进度用插件 | 1.6.0 | [息E-敛](https://github.com/tennsinn) | [下载](https://github.com/tennsinn/Typecho_Plugin--Collection/archive/master.zip)
 [ColorfulTags](https://github.com/invelop/Typecho-ColorfulTags) | Typecho生成彩色版3D标签云插件 | 1.6 | [锋临](https://github.com/invelop) | [下载](https://github.com/invelop/Typecho-ColorfulTags/archive/master.zip)
-[CommentAuditor](https://github.com/gspsp/CommentAuditor) | 评论内容审核插件 | 1.0.3 | [ihesro](https://b.nit9.cn/cross.html) | [下载](https://github.com/gspsp/CommentAuditor/archive/master.zip)
+[CommentAuditor](https://github.com/gspsp/CommentAuditor) | 支持自建规则API评论内容审核插件 | 1.0.3 | [ihesro](https://b.nit9.cn/cross.html) | [下载](https://github.com/gspsp/CommentAuditor/archive/master.zip)
 [Comment2Hook](https://github.com/SuperPHP/Typecho_Comment2Hook_Plugin) | 评论推送Webhooks三合一版插件 | 1.1.0 | [medmin](https://github.com/medmin) | [下载](https://github.com/SuperPHP/Typecho_Comment2Hook_Plugin/archive/master.zip)
 [Comment2IFTTT](https://github.com/Tsuk1ko/Comment2IFTTT) | 评论通知推送IFTTT扩展服务插件 | 1.0.0 | [神代綺凜](https://github.com/Tsuk1ko) | [下载](https://github.com/Tsuk1ko/Comment2IFTTT/archive/master.zip)
 [Comment2Mail](https://gitee.com/hoexhe/typecho-Comment2Mail) | 评论回复发邮件提醒插件(仅SMTP) | 1.3.0 | [Hoe](https://gitee.com/hoexhe) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/Comment2Mail_Hoe.zip)
