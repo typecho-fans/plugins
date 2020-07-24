@@ -16,8 +16,8 @@ jobs:
     steps:
       - name: "获取实时统计数据"
         id: "get-data"
+        working-directory: ./ZIP_CDN
         run: |
-          cd ZIP_CDN
           count=`git ls-files | wc -l`
           echo "::set-output name=totalNum::$count"
 
