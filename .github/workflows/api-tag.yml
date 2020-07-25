@@ -14,10 +14,10 @@ jobs:
     runs-on: "ubuntu-latest"
 
     steps:
-      - name: "删除上一次发布Tag"
-        uses: ame-yu/action-delete-latest-release@v2
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+#      - name: "删除上一次发布Tag"
+#        uses: ame-yu/action-delete-latest-release@v2
+#        with:
+#          github_token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: "检出当前Git仓库数据"
         uses: actions/checkout@v2
@@ -27,7 +27,7 @@ jobs:
         working-directory: ZIP_CDN
         run: |
           count=`git ls-files | wc -l`
-          echo "::set-output name=totalNum::$count"
+          echo "::set-output name=toTal::$count"
 
       - name: "获取最后提交时间戳"
         id: "get-update"
@@ -39,6 +39,6 @@ jobs:
         uses: "marvinpinto/action-automatic-releases@latest"
         with:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
-          automatic_release_tag: "${{ steps.get-data.outputs.totalNum }}-${{ steps.get-update.outputs.upDate }}"
+          automatic_release_tag: "${{ steps.get-total.outputs.toTal }}-${{ steps.get-update.outputs.upDate }}"
           prerelease: true
           title: "实时打包标签(自动生成请忽略)"
