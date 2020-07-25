@@ -1,6 +1,6 @@
 # TeStore插件仓库依赖此Action从jsDelivr获取CDN加速API数据，切勿删改！
 
-name: "推送时自动发布数据标签"
+name: "推送后自动更新数据标签"
 
 on:
   push:
@@ -10,17 +10,26 @@ on:
 jobs:
 
   api-tag:
-    name: "发布以API数据命名的Tag"
+    name: "更新以API数据命名的Tag"
     runs-on: "ubuntu-latest"
 
     steps:
-#      - name: "删除上一次发布Tag"
-#        uses: ame-yu/action-delete-latest-release@v2
-#        with:
-#          github_token: ${{ secrets.GITHUB_TOKEN }}
-
       - name: "检出当前Git仓库数据"
         uses: actions/checkout@v2
+
+      - name: "获取最新发布Tag名"
+        id: "get-tag"
+        run: |
+          tag=`git describe --tags`
+          echo "::set-output name=tagName::$tag"
+
+      - name: "删除上一次发布Tag"
+        uses: dev-drprasad/delete-tag-and-release@v0.1.2
+        with:
+          delete_release: true
+          tag_name: ${{ steps.get-tag.outputs.tagName }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: "获取ZIP_CDN文件数"
         id: "get-total"
@@ -35,7 +44,7 @@ jobs:
           stamp=`git log -1 --pretty=format:%ct`
           echo "::set-output name=upDate::$stamp"
 
-      - name: "发布实时打包Tag"
+      - name: "发布新实时打包Tag"
         uses: "marvinpinto/action-automatic-releases@latest"
         with:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
