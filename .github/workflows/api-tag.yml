@@ -15,7 +15,7 @@ jobs:
 
     steps:
       - name: "删除上一次发布Tag"
-        uses: jzwalk/action-delete-latest-release@v2
+        uses: ame-yu/action-delete-latest-release@v2
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
 
@@ -32,7 +32,7 @@ jobs:
       - name: "获取最后提交时间戳"
         id: "get-update"
         run: |
-          stamp=`git log -1`
+          stamp=`git log -1 --pretty=format:%ct`
           echo "::set-output name=upDate::$stamp"
 
       - name: "发布实时打包Tag"
