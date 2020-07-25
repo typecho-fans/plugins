@@ -14,9 +14,10 @@ jobs:
     runs-on: "ubuntu-latest"
 
     steps:
+      - uses: actions/checkout@v2
       - name: "获取实时统计数据"
         id: "get-data"
-        working-directory: ./ZIP_CDN
+        working-directory: ZIP_CDN
         run: |
           count=`git ls-files | wc -l`
           echo "::set-output name=totalNum::$count"
