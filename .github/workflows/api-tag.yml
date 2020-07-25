@@ -1,6 +1,6 @@
-# TeStore插件仓库依赖此Action在jsDelivr获取CDN加速API数据，切勿删改！
+# TeStore插件仓库依赖此Action从jsDelivr获取CDN加速API数据，切勿删改！
 
-name: "推送自动发布数据标签"
+name: "推送时自动发布数据标签"
 
 on:
   push:
@@ -14,18 +14,31 @@ jobs:
     runs-on: "ubuntu-latest"
 
     steps:
-      - uses: actions/checkout@v2
-      - name: "获取实时统计数据"
-        id: "get-data"
+      - name: "删除上一次发布Tag"
+        uses: jzwalk/action-delete-latest-release@v2
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: "检出当前Git仓库数据"
+        uses: actions/checkout@v2
+
+      - name: "获取ZIP_CDN文件数"
+        id: "get-total"
         working-directory: ZIP_CDN
         run: |
           count=`git ls-files | wc -l`
           echo "::set-output name=totalNum::$count"
 
+      - name: "获取最后提交时间戳"
+        id: "get-update"
+        run: |
+          stamp=`git log -1`
+          echo "::set-output name=upDate::$stamp"
+
       - name: "发布实时打包Tag"
         uses: "marvinpinto/action-automatic-releases@latest"
         with:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
-          automatic_release_tag: "${{ steps.get-data.outputs.totalNum }}"
+          automatic_release_tag: "${{ steps.get-data.outputs.totalNum }}-${{ steps.get-update.outputs.upDate }}"
           prerelease: true
           title: "实时打包标签(自动生成请忽略)"
