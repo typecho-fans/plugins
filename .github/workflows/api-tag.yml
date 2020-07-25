@@ -16,12 +16,11 @@ jobs:
     steps:
       - name: "检出当前Git仓库数据"
         uses: actions/checkout@v2
-        run: |
-          git fetch --prune --unshallow --tags
 
       - name: "获取最新发布Tag名"
         id: "get-tag"
         run: |
+          git fetch --prune --unshallow --tags
           tag=`git describe --abbrev=0 --tags`
           echo "::set-output name=tagName::$tag"
 
