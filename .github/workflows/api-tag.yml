@@ -20,7 +20,7 @@ jobs:
       - name: "获取最新发布Tag名"
         id: "get-tag"
         run: |
-          tag=`git describe --tags`
+          tag=`git describe --abbrev=0 --tags`
           echo "::set-output name=tagName::$tag"
 
       - name: "删除上一次发布Tag"
