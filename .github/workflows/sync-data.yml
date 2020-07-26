@@ -1,0 +1,21 @@
+# 同步仓库数据至Gitee等可加速服务地址供TeStore选择调用
+
+name: "推送后触发镜像同步"
+
+on:
+  push:
+    branches:
+      - "master"
+
+jobs:
+
+  dispatch-mirror:
+    name: "同步API和Gitee目录"
+    runs-on: "ubuntu-latest"
+
+    steps:
+      - name: "触发API目录更新"
+        uses: peter-evans/repository-dispatch@v1
+        with:
+          token: ${{ secrets.API_MIRROR }}
+          event-type: sync
