@@ -1,4 +1,4 @@
-# 同步仓库数据至Gitee等可加速服务地址供TeStore选择调用
+# 同步数据至Gitee/jsDelivr等加速地址供TeStore选择调用
 
 name: "推送后触发镜像同步"
 
@@ -14,9 +14,24 @@ jobs:
     runs-on: "ubuntu-latest"
 
     steps:
+      - name: "获取ZIP_CDN计数"
+        id: "get-total"
+        working-directory: ZIP_CDN
+        run: |
+          count=`git ls-files | wc -l`
+          echo "::set-output name=toTal::$count"
+
+      - name: "获取推送后时间戳"
+        id: "get-update"
+        run: |
+          stamp=`git log -1 --pretty=format:%ct`
+          echo "::set-output name=upDate::$stamp"
+
       - name: "触发API目录更新"
         uses: peter-evans/repository-dispatch@v1
         with:
           token: ${{ secrets.API_MIRROR }}
           repository: jzwalk/API_Mirror
           event-type: sync
+          # 传递两项数据参数
+          client-payload: '{"total": "${{ steps.get-total.outputs.toTal }}", "update": "${{ steps.get-update.outputs.upDate }}"}'
