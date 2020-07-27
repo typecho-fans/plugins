@@ -29,7 +29,7 @@
 
  > 下表中的下载链接文字可在TeStore附加图标：`Download`即社区版，`N/A`为不可用，`Special`是安装或用法特殊。
 
-### 作品索引 (123)
+### 作品索引 (124)
 
 ###### TeStore使用下表“名称”创建安装文件夹，“版本”提示升级，请确保文本准确；注意按字母排序添加，自增上方括号内总数，简介不要太长。
 ```
@@ -79,7 +79,7 @@
 [GeeTest](GeeTest) | 经典极验证拖拽评论验证码插件 | 1.0.1 | [啸傲居士](https://github.com/shuxiao9058) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/GeeTest.zip)
 [GithubCard](GithubCard) | GitHub项目或用户卡片挂件插件 | 1.0.0 | [chekun](https://github.com/chekun) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/GithubCard.zip)
 [GithubWidgetUser](GithubWidgetUser) | GitHub用户名片式展示挂件插件 | 0.2.0 | [hongweipeng](https://github.com/hongweipeng) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/GithubWidgetUser.zip)
-[GoLinks](GoLinks) | 自定义短链接跳转外部链接插件 | 0.3.0 | [DEFE](https://github.com/defeme) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/GoLinks.zip)
+[GoLinks](GoLinks) | 自定义外链转换为内链跳转插件 | 0.3.0 | [DEFE](https://github.com/defeme) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/GoLinks.zip)
 [GoodLuck](GoodLuck) | 手气不错链接跳转随机文章插件 | 1.0.2 | [Ryan](https://github.com/benzBrake) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/GoodLuck.zip)
 [GoogleAnalytics](GoogleAnalytics) | 异步加载版Google Analytics插件 | 1.0.0 | [WeiCN](https://github.com/naicfeng) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/GoogleAnalytics_WeiCN.zip)
 [GoogleCodePrettify](GoogleCodePrettify) | 谷歌Prettify代码高亮插件([MD](https://baike.baidu.com/item/markdown/3245829)版) | 2.0.0 | [公子](https://github.com/lizheming) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/GoogleCodePrettify.zip)
@@ -121,7 +121,7 @@
 [Rdog](Rdog) | 注册机制优化/发文自动审核插件 | 1.4.0 | [泽泽](https://github.com/jrotty) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/Rdog.zip)
 [RoutesHelper](RoutesHelper) | Typecho路由信息显示修改插件 | 1.0.3 | [doudou](https://github.com/doudoutime) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/RoutesHelper.zip)
 [SCS](SCS) | 系统附件用新浪云存储SCS插件 | 1.1.1 | [vfhky](https://github.com/vfhky) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/SCS.zip)
-[ShortLinks](ShortLinks) | 基于[GoLinks](GoLinks)带白名单短链接插件 | 1.1.0 b1 | [Ryan](https://github.com/benzBrake) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/ShortLinks.zip)
+[ShortLinks](ShortLinks) | 基于[GoLinks](GoLinks)增强外链转换插件 | 1.1.0 b1 | [Ryan](https://github.com/benzBrake) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/ShortLinks.zip)
 [Sinauth](Sinauth) | 新浪用户授权注册帐号登录插件 | 1.0.0 Beta | [jimmy chaw](https://github.com/web3d) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/Sinauth.zip)
 [Sitemap](Sitemap) | 动态生成Xml标准网站地图插件 | 1.0.4 | [迷你日志](https://minirizhi.com), [Hanny](http://www.imhan.com) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/Sitemap.zip)
 [SlantedExtend](SlantedExtend) | [Slanted主题](https://github.com/typecho-fans/themes/blob/master/Slanted)专用自定义字段插件 | 1.0.0 | [DT27](https://github.com/DT27) | [Special](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/SlantedExtend.zip)
@@ -149,6 +149,7 @@
 [UploadPlugin](UploadPlugin) | 上传zip自动安装插件/主题插件 | 1.1.3 | [DEFE](https://github.com/defeme) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/UploadPlugin.zip)
 [UpyunFile](UpyunFile) | Typecho附件用又拍云存储插件 | 1.0.4 | [SSpirits](https://github.com/ShadowySpirits),[Ryan](https://github.com/benzBrake),[codesee](https://github.com/codesee) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/UpyunFile.zip)
 [UserSign](UserSign) | 为博客用户添加个性签名档插件 | 0.0.1 | [hmoe](https://github.com/hmoe) | [Special](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/UserSign.zip)
+[Version](Version) | 文章页面可恢复多历史版本插件 | 1.2.2 | [innc11](https://github.com/innc11) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/Version.zip)
 [Views](Views) | Typecho文章浏览计数排行插件 | 1.0.1 | Willin Kan | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/Views.zip)
 [Watermark](Watermark) | 文章图片自动添加定制水印插件 | 1.2.0 | [DEFE](https://github.com/defeme) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/Watermark.zip)
 [WeChatHelper](WeChatHelper) | 微信公众号功能自定义集成插件 | 2.2.1 | [冰剑](https://github.com/binjoo) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/WeChatHelper.zip)
