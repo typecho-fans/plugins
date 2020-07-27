@@ -17,7 +17,7 @@ jobs:
       - name: "获取推送后时间戳"
         id: "get-update"
         run: |
-          stamp=`git log -1 --pretty=format:%ct`
+          stamp=`date +%s`
           echo "::set-output name=upDate::$stamp"
 
       - uses: actions/checkout@v2
