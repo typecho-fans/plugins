@@ -25,7 +25,7 @@ jobs:
         uses: actions/cache@v2
         id: get-cache
         with:
-          path: /home/runner/work/typecho-fans/plugins
+          path: /home/runner/work/typecho-fans-plugins
           key: ${{ runner.os }}-typecho-fans-plugins-cache
 
       - name: "打印缓存命中状态"
@@ -56,9 +56,10 @@ jobs:
           dst_key: ${{ secrets.SYNC_PV }}
           dst_token: ${{ secrets.GITEE_TOKEN }}
           account_type: org
+          cache_path: /github/workspace/typecho-fans-plugins
           static_list: "plugins"
           force_update: true
 
       - name: "打印缓存文件列表"
         run: |
-          ls -la /home/runner/work/typecho-fans/plugins
+          ls -la /home/runner/work/typecho-fans-plugins
