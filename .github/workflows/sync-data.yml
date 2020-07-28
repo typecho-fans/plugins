@@ -21,6 +21,16 @@ jobs:
           echo "::set-output name=upDate::$stamp"
 
       - uses: actions/checkout@v2
+      - name: "缓存系统环境数据"
+        uses: actions/cache@v2
+        id: get-cache
+        with:
+          path: /home/runner/work/typecho-fans/plugins
+          key: ${{ runner.os }}-typecho-fans-plugins-cache
+
+      - name: "打印缓存命中状态"
+        if: steps.get-cache.outputs.cache-hit == 'true'
+        run: echo "缓存成功"
 
       - name: "获取ZIP_CDN计数"
         id: "get-total"
@@ -37,3 +47,18 @@ jobs:
           event-type: sync
           # 传递两项数据参数
           client-payload: '{"total": "${{ steps.get-total.outputs.toTal }}", "update": "${{ steps.get-update.outputs.upDate }}"}'
+
+      - name: "同步Gitee镜像目录"
+        uses: Yikun/hub-mirror-action@master
+        with:
+          src: github/typecho-fans
+          dst: gitee/typecho-fans
+          dst_key: ${{ secrets.SYNC_PV }}
+          dst_token: ${{ secrets.GITEE_TOKEN }}
+          account_type: org
+          static_list: "plugins"
+          force_update: true
+
+      - name: "打印缓存文件列表"
+        run: |
+          ls -la /home/runner/work/typecho-fans/plugins
