@@ -149,7 +149,7 @@
 [UploadPlugin](UploadPlugin) | 上传zip自动安装插件/主题插件 | 1.1.3 | [DEFE](https://github.com/defeme) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/UploadPlugin.zip)
 [UpyunFile](UpyunFile) | Typecho附件用又拍云存储插件 | 1.0.4 | [SSpirits](https://github.com/ShadowySpirits),[Ryan](https://github.com/benzBrake),[codesee](https://github.com/codesee) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/UpyunFile.zip)
 [UserSign](UserSign) | 为博客用户添加个性签名档插件 | 0.0.1 | [hmoe](https://github.com/hmoe) | [Special](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/UserSign.zip)
-[Version](Version) | 文章页面可恢复多历史版本插件 | 1.2.2 | [innc11](https://github.com/innc11) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/Version.zip)
+[Version](Version) | 文章页面可恢复多历史版本插件 | 1.3 | [innc11](https://github.com/innc11) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/Version.zip)
 [Views](Views) | Typecho文章浏览计数排行插件 | 1.0.1 | Willin Kan | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/Views.zip)
 [Watermark](Watermark) | 文章图片自动添加定制水印插件 | 1.2.0 | [DEFE](https://github.com/defeme) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/Watermark.zip)
 [WeChatHelper](WeChatHelper) | 微信公众号功能自定义集成插件 | 2.2.1 | [冰剑](https://github.com/binjoo) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/WeChatHelper.zip)
