@@ -4,7 +4,7 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 
 class Version_Action extends Typecho_Widget implements Widget_Interface_Do
 {
-	public function __construct($request, $response, $params = null)
+    public function __construct($request, $response, $params = null)
     {
         parent::__construct($request, $response, $params);
 
@@ -16,7 +16,7 @@ class Version_Action extends Typecho_Widget implements Widget_Interface_Do
     }
 
     public function action()
-	{
+    {
 
     }
 
@@ -33,9 +33,9 @@ class Version_Action extends Typecho_Widget implements Widget_Interface_Do
         $this->response->setContentType('image/gif');
         echo base64_decode('R0lGODlhAQABAIAAAAAAAP///yH5BAQUAP8ALAAAAAABAAEAAAICRAEAOw==');
     }
-	
-	public function revert()
-	{
+    
+    public function revert()
+    {
         $this->permissionCheck();
 
         $vid = $this->request->get('vid');
@@ -51,6 +51,7 @@ class Version_Action extends Typecho_Widget implements Widget_Interface_Do
 
         $cid = $row['cid'];
 
+        // 找出文章和文章的草稿
         $raw = $db->fetchRow($db->select()->from('table.contents')->where("cid = ? ", $cid));
         $raw2 = $db->fetchRow($db->select()->from('table.contents')->where("parent = ? AND (type = 'post' OR type = 'post_draft' OR type = 'page' OR type = 'page_draft')", $cid));
         
@@ -58,19 +59,19 @@ class Version_Action extends Typecho_Widget implements Widget_Interface_Do
         {
             $raw['text'] = $row['text'];
             $raw2['text'] = $row['text'];
-    
+
+            // 开始回退
             $db->query($db->update('table.contents')->rows($raw)->where('cid = ? ', $cid));
             $db->query($db->update('table.contents')->rows($raw2)->where("parent = ?  AND (type = 'post' OR type = 'post_draft' OR type = 'page' OR type = 'page_draft')", $cid));
         }else{
             throw new Typecho_Widget_Exception(_t('数据为空'), 404);
         }
         
-        
-        $this->respond();
+        // $this->respond();
     }
     
     public function delete()
-	{
+    {
         $this->permissionCheck();
 
         $vid = $this->request->get('vid');
@@ -85,11 +86,11 @@ class Version_Action extends Typecho_Widget implements Widget_Interface_Do
 
         $db->query($db->delete($table)->where('vid = ? ', $vid));
         
-        $this->respond();
+        // $this->respond();
     }
     
     public function preview()
-	{
+    {
         $this->permissionCheck();
 
         $vid = $this->request->get('vid');
@@ -132,7 +133,7 @@ class Version_Action extends Typecho_Widget implements Widget_Interface_Do
             throw new Typecho_Widget_Exception(_t('数据为空'), 404);
         }
 
-        $this->respond();
+        // $this->respond();
     }
 
 }
