@@ -27,7 +27,7 @@
 
  > 下表中的下载链接文字可用于附加图标：`下载`即非社区版，`不可用`显示为:no_entry:，`特殊`显示:warning:意为安装或启用方法特殊。
 
-### 插件信息 (412)
+### 插件信息 (416)
 
 ###### TeStore使用下表“名称”创建安装文件夹，“版本”提示升级，请务必确保文本准确；添加时注意按字母排序，自增上方括号内总数，简介不要太长。
 ```
@@ -184,6 +184,7 @@
 [HTMLCompress](https://github.com/kokororin/typecho-plugin-HTMLCompress) | 页面内Html代码去可读性压缩插件 | 1.3 | [Kokororin](https://github.com/kokororin) | [下载](https://github.com/kokororin/typecho-plugin-HTMLCompress/archive/master.zip)
 [HandsomeNotice](https://github.com/acewfdy/Typecho/blob/master/Plugins/HandsomeNotice) | [Handsome](https://www.ihewro.com/archives/489)主题专用消息通知插件 | 1.0 | [jrotty](https://github.com/jrotty),[Weifeng](https://github.com/acewfdy) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-H_to_L/HandsomeNotice.zip)
 [HankRegister](https://github.com/Hank-Yan/typecho-register) | Typecho生成用户注册用页面插件 | 0.5.0 | [Hank-Yan](https://github.com/Hank-Yan) | [下载](https://github.com/Hank-Yan/typecho-register/archive/master.zip)
+[HeAdmin](https://github.com/yang2210670/HeAdmin) | Typecho清爽版后台界面美化插件 | 1.0.0 | [南玖](https://github.com/yang2210670) | [下载](https://github.com/yang2210670/HeAdmin/archive/master.zip)
 [HelloChangYan](https://www.cxiansheng.cn/server/278) | Typecho搜狐畅言用评论回推插件 | 1.1 | [命中水、](https://www.cxiansheng.cn)&[Angboo](https://github.com/1349920358) | [特殊](https://github.com/typecho-fans/plugins/releases/download/plugins-H_to_L/HelloChangYan.zip)
 [HelloRedis](https://github.com/1349920358/HelloRedis) | Redis数据库用页面缓存加速插件 | 1.1.0 | [Angboo](https://github.com/1349920358) | [下载](https://github.com/1349920358/HelloRedis/archive/master.zip)
 [HideText](https://github.com/journey-ad/HideText-Typecho-Plugin) | 防转载文内加不可见版权信息插件 | 0.1 | [journey.ad](https://github.com/journey-ad) | [下载](https://github.com/journey-ad/HideText-Typecho-Plugin/archive/master.zip)
@@ -195,6 +196,7 @@
 [Huaji](https://github.com/journey-ad/Huaji-Typecho-Plugin) | (娱乐向)滑稽表情动态图挂件插件 | 0.1 | [journey.ad](https://github.com/journey-ad) | [下载](https://github.com/journey-ad/Huaji-Typecho-Plugin/archive/master.zip)
 [HuifengMembers](https://github.com/wedojava/HuifengMember) | Typecho自建会员信息数据表插件 | 0.1.1 | [回风](https://github.com/wedojava) | [下载](https://github.com/wedojava/HuifengMember/archive/master.zip)
 [HoerMouse](https://gitee.com/hoexhe/HoerMouse) | 喷墨/气泡/爱心炫彩鼠标特效插件 | 1.3.0 | [Hoe](https://gitee.com/hoexhe) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-H_to_L/HoerMouse.zip)
+[HongStyle](https://github.com/gspsp/HongStyle) | Typecho替换文件式后台美化插件 | 1.0.0 | [ihesro](https://github.com/gspsp) | [下载](https://github.com/gspsp/HongStyle/archive/master.zip)
 [HotPostShow](https://github.com/zizdog/HotPostShow) | 按views浏览数输出轮播幻灯插件 | 0.1 | [zizdog](https://github.com/zizdog) | [下载](https://github.com/zizdog/HotPostShow/archive/master.zip)
 [HyperMD](https://github.com/journey-ad/HyperMD-Typecho-Plugin) | Markdown所见即所得编辑器插件 | 0.1 | [journey.ad](https://github.com/journey-ad) | [下载](https://github.com/journey-ad/HyperMD-Typecho-Plugin/archive/master.zip)
 [IShareEcho](https://github.com/pluveto/IShareEcho) | 在模板输出分享按钮及二维码插件 | 1.0.0 | [pluvet](https://github.com/pluveto) | [下载](https://github.com/pluveto/IShareEcho/archive/master.zip)
@@ -349,7 +351,8 @@
 [TableOfContents](https://github.com/phpgao/TableOfContents) | 下拉式文章内容目录自动生成插件 | 0.3 | [老高](https://github.com/phpgao) | [下载](https://github.com/phpgao/TableOfContents/archive/master.zip)
 [TagImg](https://github.com/iwege/typecho-tagimg) | 按Tag标签调用文章关联图片插件 | 1.0.4 | [iwege](https://github.com/iwege) | [下载](https://github.com/iwege/typecho-tagimg/archive/master.zip)
 [TeComment](https://github.com/jiangmuzi/TeComment) | 评论增强插件(表情工具栏Ajax等) | 2.0.0 | [绛木子](https://github.com/jiangmuzi) | [下载](https://github.com/jiangmuzi/TeComment/archive/master.zip)
-[TeConnect](https://github.com/jiangmuzi/TeConnect) | 用户用QQ/微博账号注册登录插件 | 1.0 | [绛木子](https://github.com/jiangmuzi) | [特殊](https://github.com/jiangmuzi/TeConnect/archive/master.zip)
+[TeConnect](https://github.com/ledccn/TeOauth) | 增强版15款平台账号注册登录插件 | 2.0 | [大卫科技Blog](https://github.com/ledccn) | [下载](https://github.com/ledccn/TeOauth/archive/master.zip)
+[TeConnect](https://github.com/jiangmuzi/TeConnect) | 经典版QQ/微博账号注册登录插件 | 1.0 | [绛木子](https://github.com/jiangmuzi) | [特殊](https://github.com/jiangmuzi/TeConnect/archive/master.zip)
 [TePostRatings](https://gitee.com/jiangmuzi/TePostRatings) | 简易版文章星级投票评分功能插件 | 0.0.2 | [绛木子](https://github.com/jiangmuzi) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/TePostViews.zip)
 [TePostViews](https://inwao.com/PostViews.html) | 按点击或评论数输出热门文章插件 | 1.0.0 | [inwao world](https://inwao.com),[绛木子](https://github.com/jiangmuzi) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/TePostViews.zip)
 [TeStat](https://github.com/jiangmuzi/TeStat) | 文章浏览/点赞/运行数据统计插件 | 1.1 | [绛木子](https://github.com/jiangmuzi) | [下载](https://github.com/jiangmuzi/TeStat/archive/master.zip)
@@ -408,6 +411,7 @@
 [WeMedia](https://github.com/muzishanshi/WeMediaForTypecho) | Typecho积分商城版付费阅读插件 | 1.0.16 | [二呆](https://github.com/muzishanshi) | [下载](https://github.com/muzishanshi/WeMediaForTypecho/archive/master.zip)
 [WeTypecho](https://github.com/MingliangLu/WeTypecho) | 多功能Typecho微信小程序版插件 | 0.1 | [成都第七帅](https://github.com/MingliangLu) | [特殊](https://github.com/MingliangLu/WeTypecho/archive/master.zip)
 [WebTotal](https://github.com/ss7247/Typecon__WebTotal) | 自增统计及输出网站浏览次数插件 | 1.0.0 | [astar](https://github.com/ss7247) | [下载](https://github.com/ss7247/Typecon__WebTotal/archive/master.zip)
+[WeChatHelper](https://github.com/ledccn/WeChatHelper) | 修改版微信助手插件(需Redis缓存) | 2.3.0 | [大卫科技Blog](https://github.com/ledccn) | [下载](https://github.com/ledccn/WeChatHelper/archive/master.zip)
 [WechatFans](https://github.com/muzishanshi/WechatFans) | 文章通过微信公众号验证可读插件 | 1.0.3 | [二呆](https://github.com/muzishanshi) | [下载](https://github.com/muzishanshi/WechatFans/archive/master.zip)
 [WechatShare](https://github.com/frederickjoe/Typecho_WechatShare_Plugin) | 缓存版微信分享缩略图与简介插件 | 1.0.0 | [huangfeiqiao](https://github.com/frederickjoe) | [下载](https://github.com/frederickjoe/Typecho_WechatShare_Plugin/archive/master.zip)
 [WeiboFile](https://github.com/muzishanshi/WeiboFile) | 微博等多平台图床+视频上传插件 | 1.0.20 | [二呆](https://github.com/muzishanshi) | [下载](https://github.com/muzishanshi/WeiboFile/archive/master.zip)
