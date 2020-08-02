@@ -34,6 +34,8 @@ SMTP
 
 钉钉机器人
 
+[微信公众号](https://mp.weixin.qq.com/debug/cgi-bin/sandbox?t=sandbox/login)
+
 ## 其它
 
 有 `bug` 直接提 `issue`
