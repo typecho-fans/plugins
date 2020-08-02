@@ -4,7 +4,7 @@
  *
  * @package CommentPush
  * @author 高彬展,奥秘Sir
- * @version 1.6.2
+ * @version 1.7.0
  * @link https://github.com/gaobinzhan/CommentPush
  * @blog https://blog.gaobinzhan.com
  */
@@ -15,6 +15,7 @@ require 'lib/AliYunEmailService.php';
 require 'lib/SmtpService.php';
 require 'lib/DingTalkBotService.php';
 require 'lib/EnterpriseWeChatService.php';
+require 'lib/OfficialAccountService.php';
 
 class CommentPush_Plugin implements Typecho_Plugin_Interface
 {
@@ -31,6 +32,8 @@ class CommentPush_Plugin implements Typecho_Plugin_Interface
         Typecho_Plugin::factory('Widget_Feedback')->comment = [__CLASS__, 'pushServiceReady'];
         Typecho_Plugin::factory('Widget_Feedback')->finishComment = [__CLASS__, 'pushServiceGo'];
 
+        Helper::addRoute('CommentPushAction','/CommentPush/officialAccount','CommentPush_Action','officialAccount');
+
         Helper::addPanel(1, 'CommentPush/Logs.php', 'CommentPush日志', 'CommentPush日志', 'administrator');
         return _t('CommentPush插件启用成功');
     }
@@ -42,6 +45,7 @@ class CommentPush_Plugin implements Typecho_Plugin_Interface
      */
     public static function deactivate()
     {
+        Helper::removeRoute('CommentPushAction');
         Helper::removePanel(1, 'CommentPush/Logs.php');
         if (Helper::options()->plugin('CommentPush')->isDelete == 1) {
             self::removeTable();
@@ -119,8 +123,9 @@ class CommentPush_Plugin implements Typecho_Plugin_Interface
             "AliYunEmailService" => _t('阿里云邮件'),
             "SmtpService" => _t('SMTP'),
             "DingTalkBotService" => _t('钉钉机器人'),
-            "EnterpriseWeChatService" => _t('企业微信机器人')
-        ], 'services', _t('推送服务 多选同时推送'), _t('插件作者：<a href="https://www.gaobinzhan.com">高彬展</a>&nbsp;<a href="https://blog.say521.cn/">奥秘Sir</a>'));
+            "EnterpriseWeChatService" => _t('企业微信机器人'),
+            "OfficialAccountService" => _t('微信公众号')
+        ], 'services', _t('推送服务 多选同时推送'), _t('插件作者：<a href="https://blog.gaobinzhan.com">高彬展</a>&nbsp;<a href="https://blog.say521.cn/">奥秘Sir</a>'));
         $form->addInput($services->addRule('required', _t('必须选择一项推送服务')));
 
         $isPushBlogger = new Typecho_Widget_Helper_Form_Element_Radio('isPushBlogger', [
@@ -144,6 +149,7 @@ class CommentPush_Plugin implements Typecho_Plugin_Interface
         self::smtpService($form);
         self::DingTalkBotService($form);
         self::EnterpriseWeChatService($form);
+        self::officialAccount($form);
 
 
     }
@@ -303,6 +309,31 @@ class CommentPush_Plugin implements Typecho_Plugin_Interface
 
         $EnterpriseWeChatWebhook = new Typecho_Widget_Helper_Form_Element_Text('EnterpriseWeChatWebhook', NULL, NULL, _t('企业微信 Webhook 地址'), _t("当选择企业微信机器人必须填写"));
         $form->addInput($EnterpriseWeChatWebhook);
+    }
+
+    private static function officialAccount(Typecho_Widget_Helper_Form $form){
+        $officialAccountTitle = new Typecho_Widget_Helper_Layout('div',['class' => 'typecho-page-title']);
+        $officialAccountTitle->html('<h2>微信公众号</h2>');
+        $form->addItem($officialAccountTitle);
+
+        $token = new Typecho_Widget_Helper_Form_Element_Text('officialAccountToken', null, null, _t('接口配置信息 Token'), '接口配置信息 Token，Url为：博客地址/CommentPush/officialAccount');
+        $form->addInput($token);
+
+        $appId = new Typecho_Widget_Helper_Form_Element_Text('officialAccountAppId', null, null, _t('appId'), '微信公众号 appID');
+        $form->addInput($appId);
+
+        $appSecret = new Typecho_Widget_Helper_Form_Element_Text('officialAccountAppSecret', null, null, _t('appSecret'), '微信公众号 appSecret');
+        $form->addInput($appSecret);
+
+        $openId = new Typecho_Widget_Helper_Form_Element_Text('officialAccountOpenid', null, null, _t('openid'), '接收信息的微信号 openid');
+        $form->addInput($openId);
+
+        $templateId = new Typecho_Widget_Helper_Form_Element_Text('officialAccountTemplateId', null, null, _t('templateId'), "消息模版 templateId 可选参数：'{{title.DATA}}','{{user.DATA}}','{{ip.DATA}}','{{content.DATA}}'<br>示例（将例子复制粘贴到微信公众号模版内容即可）：
+标题：{{title.DATA}}
+评论人：{{user.DATA}}
+IP：{{ip.DATA}}
+评论内容：{{content.DATA}}");
+        $form->addInput($templateId);
     }
 
     /**
