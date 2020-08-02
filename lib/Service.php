@@ -7,10 +7,7 @@ require_once 'Contract/ServiceInterface.php';
 
 abstract class Service implements ServiceInterface
 {
-    public function __handler($active, $comment, $plugin)
-    {
-        // TODO: Implement __handler() method.
-    }
+    abstract public function __handler($active, $comment, $plugin);
 
     public function logger($service, $object, $context, $result, $error = '')
     {
