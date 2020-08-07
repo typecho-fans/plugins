@@ -246,10 +246,22 @@ elseif(strpos($type,'剧') !== false){
 if(strpos($area,'美国') !== false||strpos($area,'欧美') !== false||strpos($area,'加拿大') !== false||strpos($area,'法国') !== false||strpos($area,'英国') !== false||strpos($area,'德国') !== false||strpos($area,'俄国') !== false||strpos($area,'俄罗斯') !== false||strpos($area,'欧洲') !== false){
 $cate=$t['欧美剧'];
 }
+elseif(strpos($area,'中国') !== false||strpos($area,'大陆') !== false||strpos($area,'国产') !== false||strpos($area,'内地') !== false){
+$cate=$t['国产剧'];
+}
 else {
  $area=$area.'剧';
-$cate=$t[$area]; }
+if(in_array($area,$t)){$cate=$t[$area];}else{$cate=$t['其他剧'];}
+ }
 }
+elseif(strpos($type,'综艺') !== false){
+$z=$this->shuzu(Helper::options()->Plugin('CatClaw')->zy);  
+$cate=$z[$type]; 
+}
+
+
+
+
 
 else{
     $cate=0;
