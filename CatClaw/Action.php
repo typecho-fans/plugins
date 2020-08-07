@@ -209,7 +209,7 @@ if(strpos($listcontentx,"</video>") == false && $zpg == 0){
     #标签
     preg_match_all($ruleMatchDetailInList, $listcontent[$i], $type);
 $type=$type[1][0];$area=$area[1][0];
-if(strpos($type,'动漫') !== false){
+if(strpos($type,'动漫') !== false && strpos($type,'动漫电影') === false){
 $d= $this->shuzu(Helper::options()->Plugin('CatClaw')->anime);
 if(strpos($area,'中国') !== false||strpos($area,'大陆') !== false||strpos($area,'内地') !== false||strpos($area,'国漫') !== false){
 $cate=$d['中国动漫'];
@@ -236,7 +236,7 @@ $cate=$d['其他动漫'];
 }
 
 
-elseif(strpos($type,'片') !== false){
+elseif(strpos($type,'片') !== false||strpos($type,'动漫电影') !== false){
  $f=$this->shuzu(Helper::options()->Plugin('CatClaw')->film);
 $cate=$f[$type]; 
 }
@@ -246,10 +246,22 @@ elseif(strpos($type,'剧') !== false){
 if(strpos($area,'美国') !== false||strpos($area,'欧美') !== false||strpos($area,'加拿大') !== false||strpos($area,'法国') !== false||strpos($area,'英国') !== false||strpos($area,'德国') !== false||strpos($area,'俄国') !== false||strpos($area,'俄罗斯') !== false||strpos($area,'欧洲') !== false){
 $cate=$t['欧美剧'];
 }
+elseif(strpos($area,'中国') !== false||strpos($area,'大陆') !== false||strpos($area,'国产') !== false||strpos($area,'内地') !== false){
+$cate=$t['国产剧'];
+}
 else {
  $area=$area.'剧';
-$cate=$t[$area]; }
+if(empty($t[$area])){$cate=$t['其他剧'];}else{$cate=$t[$area];}
+ }
 }
+elseif(strpos($type,'综艺') !== false){
+$z=$this->shuzu(Helper::options()->Plugin('CatClaw')->zy);  
+$cate=$z[$type]; 
+}
+
+
+
+
 
 else{
     $cate=0;
