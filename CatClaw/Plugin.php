@@ -6,7 +6,7 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
  * 
  * @package CatClaw
  * @author jrotty
- * @version 1.2.0
+ * @version 1.3.0
  * @link https://qqdie.com
  */
 class CatClaw_Plugin implements Typecho_Plugin_Interface
@@ -93,12 +93,22 @@ $a='中国动漫：
 欧美动漫：
 其他动漫：';
 
+$z='内地综艺：
+港台综艺：
+日韩综艺：
+欧美综艺：';
+
 
 $set3 = new Typecho_Widget_Helper_Form_Element_Textarea('film', NULL,$f, _t('电影分类绑定'), _t('请在冒号后面填写对应的分类mid，不填或者填0采集时则越过该分类'));
 $form->addInput($set3);
 
 $set4 = new Typecho_Widget_Helper_Form_Element_Textarea('tv', NULL,$t, _t('电视剧分类绑定'), _t('请在冒号后面填写对应的分类mid，不填或者填0采集时则越过该分类'));
 $form->addInput($set4);
+
+$set6 = new Typecho_Widget_Helper_Form_Element_Textarea('zy', NULL,$z, _t('综艺分类绑定'), _t('请在冒号后面填写对应的分类mid，不填或者填0采集时则越过该分类'));
+$form->addInput($set6);
+
+
 
 $set5 = new Typecho_Widget_Helper_Form_Element_Textarea('anime', NULL,$a, _t('动漫分类绑定'), _t('请在冒号后面填写对应的分类mid，不填或者填0采集时则越过该分类
 <section id="custom-field" class="typecho-post-option">
