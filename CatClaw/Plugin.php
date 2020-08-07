@@ -6,7 +6,7 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
  * 
  * @package CatClaw
  * @author jrotty
- * @version 1.3.0
+ * @version 1.5.0
  * @link https://qqdie.com
  */
 class CatClaw_Plugin implements Typecho_Plugin_Interface
@@ -72,7 +72,7 @@ $f='动作片：
 恐怖片：
 剧情片：
 战争片：
-记录片：
+纪录片：
 微电影：
 伦理片：
 动漫电影：';
