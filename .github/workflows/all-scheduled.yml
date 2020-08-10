@@ -1,0 +1,72 @@
+# 自动检测所有已登记GitHub插件版本并更新zip
+
+name: "定时更新全GitHub插件"
+
+on:
+  schedule:
+    - cron: "0 13 * * 1"
+#服务器时间：下午1点，每周一
+
+jobs:
+
+  auto-update:
+    name: "自动更新GitHub插件"
+    runs-on: "ubuntu-latest"
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: "执行PHP脚本"
+        run: |
+          php auto-update.php
+
+      - name: "提交更新文件"
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: "Auto update GitHub plugins in TESTORE.md"
+
+      - name: "上传操作记录"
+        uses: actions/upload-artifact@v2
+        with:
+          name: "updates-log"
+          path: /home/runner/work/API_Mirror/TMP/updates.log
+
+      - name: "检测压缩文件"
+        id: match-zips
+        run: |
+          a2c=`find /home/runner/work/API_Mirror/TMP/NEW -type f -name "[a-cA-C]*"`
+          echo "::set-output name=A2C::$a2c"
+          m2r=`find /home/runner/work/API_Mirror/TMP/NEW -type f -name "[m-rM-R]*"`
+          echo "::set-output name=M2R::$m2r"
+          s2z=`find /home/runner/work/API_Mirror/TMP/NEW -type f -name "[s-zS-Z]*"`
+          echo "::set-output name=S2Z::$s2z"
+
+      - name: "发布压缩包A-C"
+        uses: svenstaro/upload-release-action@v2
+        if: steps.match-zips.outputs.A2C
+        with:
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          file: /home/runner/work/API_Mirror/TMP/NEW/[a-cA-C]*
+          tag: "plugins-A_to_C"
+          overwrite: true
+          file_glob: true
+
+      - name: "发布压缩包M-R"
+        uses: svenstaro/upload-release-action@v2
+        if: steps.match-zips.outputs.M2R
+        with:
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          file: /home/runner/work/API_Mirror/TMP/NEW/[m-rM-R]*
+          tag: "plugins-M_to_R"
+          overwrite: true
+          file_glob: true
+
+      - name: "发布压缩包S-Z"
+        uses: svenstaro/upload-release-action@v2
+        if: steps.match-zips.outputs.S2Z
+        with:
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          file: /home/runner/work/API_Mirror/TMP/NEW/[s-zS-Z]*
+          tag: "plugins-S_to_Z"
+          overwrite: true
+          file_glob: true
