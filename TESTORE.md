@@ -121,7 +121,7 @@
 [CommentMailPlus](https://github.com/oott123/CommentMailPlus) | MailGun评论提醒插件(cURL连接) | 0.0.4 | [oott123](https://github.com/oott123) | [下载](https://github.com/oott123/CommentMailPlus/archive/master.zip)
 [CommentReminder](https://github.com/imwis/CommentReminder) | Google APIs版评论邮件提醒插件 | 1.0.0 | [Wis Chu](https://github.com/imwis) | [下载](https://github.com/imwis/CommentReminder/archive/master.zip)
 [CommentToDingtalk](https://github.com/MoLeft/CommentToDingtalk) | Typecho评论通知推送至钉钉插件 | 1.0 | [MoLeft](https://github.com/MoLeft) | [下载](https://github.com/MoLeft/CommentToDingtalk/archive/master.zip)
-[CommentToMail](https://github.com/uniartisan/CommentToMail) | 网址监控触发版评论邮件提醒插件 | 4.2.5 | [Uniartisan](https://github.com/uniartisan) | [下载](http://blog.uniartisan.com/app/CommentToMail.zip)
+[CommentToMail](https://github.com/uniartisan/CommentToMail) | 网址监控触发版评论邮件提醒插件 | 4.2.6 | [Uniartisan](https://github.com/uniartisan) | [下载](https://github.com/uniartisan/CommentToMail/archive/v4.2.6.zip)
 [CommentToWechat](https://github.com/lscho/CommentToWechat_for_typecho) | [Server酱](http://sc.ftqq.com)公众号评论微信通知插件 | 0.1 | [lscho](https://github.com/lscho) | [下载](https://github.com/lscho/CommentToWechat_for_typecho/archive/master.zip)
 [CommentTracks](https://plugins.typecho.me/plugins/comment-tracks.html) | 按邮箱输出访客评论过的文章插件 | 1.0.0 | 不烦恼 | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/CommentTracks.zip)
 [CommentsByQQ](http://www.pxwei.com/archives/54) | 连接QQ机器人发送评论提醒插件 | 1.0.0 | [Pxwei](http://www.pxwei.com) | [不可用](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/CommentsByQQ.zip)
