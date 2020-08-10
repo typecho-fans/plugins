@@ -36,6 +36,10 @@ jobs:
         run: |
           a2c=`find /home/runner/work/plugins/TMP/NEW -type f -name "[a-cA-C]*"`
           echo "::set-output name=A2C::$a2c"
+          a2c=`find /home/runner/work/plugins/TMP/NEW -type f -name "[d-gD-G]*"`
+          echo "::set-output name=D2G::$d2g"
+          a2c=`find /home/runner/work/plugins/TMP/NEW -type f -name "[h-lH-L]*"`
+          echo "::set-output name=H2L::$h2l"
           m2r=`find /home/runner/work/plugins/TMP/NEW -type f -name "[m-rM-R]*"`
           echo "::set-output name=M2R::$m2r"
           s2z=`find /home/runner/work/plugins/TMP/NEW -type f -name "[s-zS-Z]*"`
@@ -48,6 +52,26 @@ jobs:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           file: /home/runner/work/plugins/TMP/NEW/[a-cA-C]*
           tag: "plugins-A_to_C"
+          overwrite: true
+          file_glob: true
+
+      - name: "发布压缩包D-G"
+        uses: svenstaro/upload-release-action@v2
+        if: steps.match-zips.outputs.D2G
+        with:
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          file: /home/runner/work/plugins/TMP/NEW/[d-gD-G]*
+          tag: "plugins-D_to_G"
+          overwrite: true
+          file_glob: true
+
+      - name: "发布压缩包H-L"
+        uses: svenstaro/upload-release-action@v2
+        if: steps.match-zips.outputs.H2L
+        with:
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          file: /home/runner/work/plugins/TMP/NEW/[h-lH-L]*
+          tag: "plugins-H_to_L"
           overwrite: true
           file_glob: true
 
