@@ -22,7 +22,7 @@ jobs:
 
       - name: "执行PHP脚本"
         run: |
-          php auto-update.php ${{ github.event.inputs.repo-url }}
+          php AUTO-UPDATE.php ${{ github.event.inputs.repo-url }}
 
       - name: "提交更新文件"
         uses: stefanzweifel/git-auto-commit-action@v4
