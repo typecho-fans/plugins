@@ -1,6 +1,6 @@
-# 同步数据至Gitee/jsDelivr等加速地址供TeStore选择调用
+# 同步数据至Gitee/jsDelivr等加速地址供TeStore调用
 
-name: "推送后触发镜像同步"
+name: "推送自动触发镜像同步"
 
 on:
   push:
@@ -37,7 +37,7 @@ jobs:
           # 传递两项数据参数
           client-payload: '{"total": "${{ steps.get-total.outputs.toTal }}", "update": "${{ steps.get-update.outputs.upDate }}"}'
 
-      - name: "同步Gitee镜像目录"
+      - name: "Gitee镜像目录同步"
         uses: Yikun/hub-mirror-action@master
         with:
           src: github/typecho-fans
