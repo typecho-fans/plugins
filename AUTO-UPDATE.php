@@ -1,4 +1,11 @@
 <?php
+	/**
+	 * Typecho-Fans/Plugins专用自动化升级插件脚本
+	 * (非插件！供GitHub Actions功能调用，勿删改！)
+	 * 作者：羽中
+	 * 反馈：https://github.com/typecho-fans/plugins/issues
+	 */
+
 	date_default_timezone_set('Asia/Shanghai');
 
 	//预设循环内变量
