@@ -232,7 +232,8 @@
 	 */
 	function cdnZip($pluginName,$pluginAuthor)
 	{
-		$datas = json_decode(file_get_contents('https://api.github.com/repos/typecho-fans/plugins/contents/ZIP_CDN'),true);
+		$datas = json_decode(file_get_contents('https://api.github.com/repos/typecho-fans/plugins/contents/ZIP_CDN',0,
+			stream_context_create(array('http'=>array('header'=>array('User-Agent: PHP'))))),true);
 		$cdn = '';
 		foreach ($datas as $data) {
 			if ($data['name']==$pluginName.'_'.$pluginAuthor.'.zip') { //带作者名优先
