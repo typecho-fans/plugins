@@ -6,7 +6,7 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
  * 
  * @package CatClaw
  * @author jrotty
- * @version 1.1.1
+ * @version 1.5.0
  * @link https://qqdie.com
  */
 class CatClaw_Plugin implements Typecho_Plugin_Interface
@@ -22,7 +22,6 @@ class CatClaw_Plugin implements Typecho_Plugin_Interface
     public static function activate()
     {
         Helper::addRoute("route_catclaw","/catclaw","CatClaw_Action",'action');
-	  Typecho_Plugin::factory('Widget_Contents_Post_Edit')->finishSave= array('CatClaw_Plugin', 'savereturn');
     }
     
     /**
@@ -73,7 +72,7 @@ $f='动作片：
 恐怖片：
 剧情片：
 战争片：
-记录片：
+纪录片：
 微电影：
 伦理片：
 动漫电影：';
@@ -94,6 +93,11 @@ $a='中国动漫：
 欧美动漫：
 其他动漫：';
 
+$z='内地综艺：
+港台综艺：
+日韩综艺：
+欧美综艺：';
+
 
 $set3 = new Typecho_Widget_Helper_Form_Element_Textarea('film', NULL,$f, _t('电影分类绑定'), _t('请在冒号后面填写对应的分类mid，不填或者填0采集时则越过该分类'));
 $form->addInput($set3);
@@ -101,13 +105,18 @@ $form->addInput($set3);
 $set4 = new Typecho_Widget_Helper_Form_Element_Textarea('tv', NULL,$t, _t('电视剧分类绑定'), _t('请在冒号后面填写对应的分类mid，不填或者填0采集时则越过该分类'));
 $form->addInput($set4);
 
+$set6 = new Typecho_Widget_Helper_Form_Element_Textarea('zy', NULL,$z, _t('综艺分类绑定'), _t('请在冒号后面填写对应的分类mid，不填或者填0采集时则越过该分类'));
+$form->addInput($set6);
+
+
+
 $set5 = new Typecho_Widget_Helper_Form_Element_Textarea('anime', NULL,$a, _t('动漫分类绑定'), _t('请在冒号后面填写对应的分类mid，不填或者填0采集时则越过该分类
 <section id="custom-field" class="typecho-post-option">
 <label id="custom-field-expand" class="typecho-label">采集插件说明</label>
    <br>插件采集会默认跳过同名已存在的文章，会自动更新同名连载状态的文章！文章标签如果采集站接口未提供则默认为【待定】<br>
    <br>1.采集站必须使用m3u8接口<br>2.以下是操作地址：<br>
     先手动添加：<br>
-    Url:http://你的地址/catclaw/?pg=1&type=add&day=1&id=1&pass=你的密码 (GET)<br>
+    Url:http://你的地址/catclaw/?pg=1&type=add&day=1&id=1&pass=你的密码 (GET)【如果你站没有开起伪静态。需要在‘catclaw’前加‘index.php/’】<br>
     参数：<br>
     pg = 页数<br>
     type = 操作类型（add和cron，add是手动采集，cron是用于服务器定时任务的）<br>
@@ -117,7 +126,7 @@ $set5 = new Typecho_Widget_Helper_Form_Element_Textarea('anime', NULL,$a, _t('�
     <br>
     下面是监控地址：
     <br>
-    http://你的地址/catclaw/?pg=1&type=cron&day=1&id=1&pass=你的密码 (GET)
+    http://你的地址/catclaw/?pg=1&type=cron&day=1&id=1&pass=你的密码 (GET)【如果你站没有开起伪静态。需要在‘catclaw’前加‘index.php/’】
     <br>监控地址一般填于服务器定时任务，day参数不要填max以免卡死！
     <p></p>
     </section>'));
@@ -134,17 +143,5 @@ $form->addInput($set5);
      */
     public static function personalConfig(Typecho_Widget_Helper_Form $form){}
     
-    /**
-     * 插件实现方法
-     * 
-     * @access public
-     * @return void
-     */
-    public static function savereturn($con,$obj)
-    {
-return;
-    }
-
-
    
 }
