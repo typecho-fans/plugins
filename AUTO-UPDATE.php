@@ -13,6 +13,7 @@
 	$links = array();
 	$metas = array();
 	$url = '';
+	$isManal = false;
 	$all = 0;
 	$authorCode = '';
 	$separator = '';
@@ -70,8 +71,12 @@
 
 			if ($column) {
 				$url = $links['0']['0'];
+				//兼容手动更新参数
+				if (!empty($argv['1'])) {
+					$isManal =  strpos($argv['1'],'github.com') && $argv['1']==$url;
+				}
 				//仅处理GitHub仓库
-				if (empty($argv['1']) ? strpos($url,'github.com') : (strpos($argv['1'],'github.com') && $argv['1']==$url)) { //兼容手动参数
+				if (strpos($url,'github.com') || $isManal) {
 					++$all;
 
 					//获取插件主文件地址
@@ -105,7 +110,7 @@
 					//对比文件版本号更新
 					$infos = call_user_func('parseInfo',$pluginFile);
 					$version = stripos($metas['0']['2'],'v')===0 ? trim(substr($metas['0']['2'],1)) : trim($metas['0']['2']);
-					if ($infos && $infos['version']>$version) {
+					if ($infos && $infos['version']>$version || $isManal) { //手动强制更新
 						++$update;
 						$zip = end($links['0']);
 
