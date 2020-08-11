@@ -2,7 +2,7 @@
 
 * 神代綺凜式魔改js
 * By: Sanakey
-* Last Update: 2020.05.08
+* Last Update: 2020.08.11
 
 神代綺凜式魔改js文件。
 
@@ -42,8 +42,10 @@ $(document).ready(function () {
         });
         console.log("\n %c handsome modified %c by \u795e\u4ee3\u7eee\u51db moe.best \n",
             "color:#444;background:#eee;padding:5px 0;", "color:#fff;background:#876;padding:5px 0;");
+        console.log("\n %c handsome modified %c by Sanakey | www.keymoe.com \n",
+            "color:#444;background:#eee;padding:5px 0;", "color:#fff;background:#71bef1;padding:5px 0;");
         console.log("%c ",
-            "background:url(https://ws1.sinaimg.cn/large/71785a53ly1fxylsf6ke7j216z0o6q8j.jpg) no-repeat center;background-size:cover;padding-left:100%;padding-bottom:55%;overflow:hidden;border-radius:10px;margin:5px 0"
+            "background:url(https://api.btstu.cn/sjbz/?lx=dongman) no-repeat center;background-size:cover;padding-left:100%;padding-bottom:55%;overflow:hidden;border-radius:10px;margin:5px 0"
         );
         window.setInterval(function () {
             if (document.getElementById("aboutPage")) {
@@ -59,7 +61,8 @@ $(document).ready(function () {
 
 
     // <div id="bg"></div> 添加背景div
-    $('#header').before('<div id="bg"></div>');
+    $('#header').before('<div id="mybg"></div>');
+    $('#alllayout').before('<div id="mybg"></div>');
 
     // 优化主页面无法点击图片进入文章
     // if (!$('.post-meta .ahover').length > 0) {
@@ -160,15 +163,15 @@ function setCopyright(type) {
 
     var badgeInfo = '&nbsp;|&nbsp; \n' +
         '<div class="github-badge">\n' +
-        '    <a href="https://moe.best/" target="_blank" title="handsome主题由JindaiKirin魔改">\n' +
-        '        <span class="badge-subject">Modified</span><span class="badge-value bg-red">JindaiKirin</span>\n' +
+        '    <a href="https://keymoe.com/" target="_blank" title="由JindaiKirin/Sanakey魔改">\n' +
+        '        <span class="badge-subject">Modified</span><span class="badge-value bg-red">JindaiKirin/Sanakey</span>\n' +
         '    </a>\n' +
         '</div>' +
         '&nbsp;&nbsp; \n';
 
     var textInfo = '&nbsp;|&nbsp; \n' +
-        '    <a href="https://moe.best/" target="_blank" title="handsome主题由JindaiKirin魔改">\n' +
-        '        Modified&nbsp;&nbsp;JindaiKirin\n' +
+        '    <a href="https://keymoe.com/" target="_blank" title="handsome主题由JindaiKirin/Sanakey魔改">\n' +
+        '        Modified&nbsp;&nbsp;JindaiKirin/Sanakey\n' +
         '    </a>\n';
     '&nbsp;&nbsp; \n';
     // var copyrightInfo = type?textInfo:badgeInfo;

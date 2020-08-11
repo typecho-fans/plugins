@@ -11,10 +11,22 @@
 
 ## 更新
 
-### 1.1.0
+### 3.0.0
 
-- 删除原打字特效代码，推荐使用更强大的[ActivatePowerMode](https://github.com/AlanDecode/Typecho-Plugin-ActivatePowerMode)。
-- 添加关闭标题卖萌选项。
+- 小细节适配 handsome 7.2.1
+- 适配深色模式，优化深色模式显示
+- 支持开启盒子模型 (支持handsome 6.0以上的版本)
+- 支持首页不设置头图
+
+### 2.2.0
+
+- 添加右下角版权样式切换功能
+
+### 2.1.0
+
+- 优化部分代码
+- 修复文章内没有目录时，右侧栏会自动隐藏的 bug
+
 
 ### 2.0.0
 
@@ -27,14 +39,10 @@
 - 美化部分字体图标
 - 以及更多细节优化
 
-### 2.1.0
+### 1.1.0
 
-- 优化部分代码
-- 修复文章内没有目录时，右侧栏会自动隐藏的 bug
-
-### 2.2.0
-
-- 添加右下角版权样式切换功能
+- 删除原打字特效代码，推荐使用更强大的[ActivatePowerMode](https://github.com/AlanDecode/Typecho-Plugin-ActivatePowerMode)。
+- 添加关闭标题卖萌选项。
 
 ## 主题
 
