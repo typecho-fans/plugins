@@ -64,6 +64,7 @@
 [ArticlePoster](https://github.com/MoLeft/ArticlePoster) | Typecho文章内容生成海报图插件 | 1.0.7 | [MoLeft](https://github.com/MoLeft) | [下载](https://github.com/MoLeft/ArticlePoster/archive/master.zip)
 [AtAndInform](https://blog.ghostry.cn/program/zi-ji-xie-le-ge-cha-jian---ou-ye.html) | 文章@评论者时发送邮件提醒插件 | 1.0.0 | [ghostry](https://blog.ghostry.cn) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/AtAndInform.zip)
 [AutoBaiduSubmit](https://github.com/jinfeijie/AutoBaiduSubmit) | 访问页面自动提交链接至百度插件 | 1.0.2 | [JinFeiJie](https://github.com/jinfeijie) | [下载](https://github.com/jinfeijie/AutoBaiduSubmit/archive/1.0.2.zip)
+[AutoIndent](https://github.com/chen2bing/AutoIndent) | 使用jQuery自动缩进段落首行插件 | 1.0 | [cbb](https://github.com/chen2bing) | [下载](https://github.com/chen2bing/AutoIndent/archive/master.zip)
 [AutoKaTeX](https://github.com/Skywt2003/AutoKaTeX) | Typecho新版[KaTeX](https://github.com/Khan/KaTeX)自动渲染插件 | 0.1.0 | [SkyWT](https://github.com/Skywt2003) | [下载](https://github.com/Skywt2003/AutoKaTeX/archive/master.zip)
 [AutoSaveImage](https://www.cxiansheng.cn/server/278) | 自动下载替换文章内远程图片插件 | 1.0.0 | [dream](https://www.cxiansheng.cn) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/AutoSaveImage.zip)
 [Avartar](https://github.com/typecho/plugins/blob/master/Avartar.php) | 自定义替换Gravatar头像代理插件 | 1.0.0 Beta | [loftor](https://github.com/loftor-git) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/Avartar.zip)
