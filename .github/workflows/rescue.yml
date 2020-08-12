@@ -1,0 +1,25 @@
+# 删除Action提交生成的无法拉取文件
+
+name: "手动清除远端文件"
+
+on: 
+  workflow_dispatch
+
+jobs:
+
+  auto-update:
+    name: "临时删除bug文件"
+    runs-on: "ubuntu-latest"
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: "执行删除"
+        run: |
+          rm -f /home/runner/work/plugins/plugins/ZIP_CDN/iThumb_Ryan<github-benzbrake@woai.ru>.zip
+
+      - name: "提交更新"
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: "Remove invalid file"
+
