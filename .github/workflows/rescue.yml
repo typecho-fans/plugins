@@ -14,9 +14,13 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
+      - name: "列表文件"
+        run: |
+          ls /home/runner/work/plugins/plugins/ZIP_CDN
+
       - name: "执行删除"
         run: |
-          rm -f /home/runner/work/plugins/plugins/ZIP_CDN/iThumb_Ryan<github-benzbrake@woai.ru>.zip
+          find /home/runner/work/plugins/plugins/ZIP_CDN -type f -name "*<*>*" -delete -maxdepth 1
 
       - name: "提交更新"
         uses: stefanzweifel/git-auto-commit-action@v4
