@@ -384,7 +384,7 @@
 [TrickyTitleBar](http://forum.typecho.org/viewtopic.php?f=6&t=10134) | 使浏览器标题栏切换显示文字插件 | 1.0.0 | [Cai](http://zwho.me) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/TrickyTitleBar.zip)
 [TpCache](https://github.com/phpgao/TpCache) | Memcache/Redis数据库缓存插件 | 0.7 | [老高](https://github.com/phpgao) | [下载](https://github.com/phpgao/TpCache/archive/master.zip)
 [TpHtmlCache](https://github.com/huhaku/typecho_TpHtmlCache) | Typecho文章页面静态化缓存插件 | 1.1.0 | [huhaku](https://github.com/huhaku) | [下载](https://github.com/huhaku/typecho_TpHtmlCache/archive/master.zip)
-[TusyUpload](https://gitee.com/mayoushang/typecho_tusyupload) | Typecho附件使用[图速云](https://oss.bilnn.com)储存插件 | 1.0.0 | [Myxf](https://gitee.com/mayoushang) | [下载](https://github.com/panxianhai/TypExport/archive/master.zip)
+[TusyUpload](https://gitee.com/mayoushang/typecho_tusyupload) | Typecho附件使用[图速云](https://oss.bilnn.com)储存插件 | 1.0.0 | [Myxf](https://gitee.com/mayoushang) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/TusyUpload.zip)
 [TypExport](https://github.com/panxianhai/TypExport) | Typecho数据导出WordPress插件 | 0.9.0 | [panxianhai](https://github.com/panxianhai) | [下载](https://github.com/panxianhai/TypExport/archive/master.zip)
 [TypechoFusion](https://github.com/jrotty/Typecho-Fusionapp) | 定制[Fusion App](https://www.coolapk.com/apk/cn.coldsong.fusionapp)套用专属皮肤插件 | 1.1.1 | [Jrotty](https://github.com/jrotty) | [下载](https://github.com/jrotty/Typecho-Fusionapp/archive/master.zip)
 [TypechoPing](https://www.clanfei.com/2012/08/1642.html) | Ping自动更新服务插件(支持SAE) | 1.1.0 | [蓝飞](https://github.com/Lanfei) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/TypechoPing.zip)
