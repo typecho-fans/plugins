@@ -112,7 +112,37 @@
 							if ($infos['version']>$version || !empty($argv['1'])) { //或手动强制更新
 								++$update;
 								$zip = end($links['0']);
-								$cdn = 'ZIP_CDN/'.$name['0'].'_'.$infos['author'].'.zip';
+								//提取多作者名
+								$authorCode = html_entity_decode(trim($metas['0']['3']));
+								switch (true) {
+									case (strpos($authorCode,',')) :
+									$separator = ',';
+									break;
+									case (strpos($authorCode,', ')) :
+									$separator = ', ';
+									break;
+									case (strpos($authorCode,'&')) :
+									$separator = '&';
+									break;
+									case (strpos($authorCode,' & ')) :
+									$separator = ' & ';
+									break;
+								}
+								if ($separator) {
+									$authors = explode($separator,$authorCode);
+									$authorName = '';
+									foreach ($authors as $key=>$author) {
+										preg_match('/(?<=\[)[^\]]+/',$author,$authorName);
+										$authorNames[] = empty($authorName['0']) ? $author : $authorName['0'];
+									}
+									$authorName = implode($separator,$authorNames);
+								} else {
+									$authorName = '';
+									preg_match('/(?<=\[)[^\]]+/',$authorCode,$authorName);
+									$authorName = $authorName['0'];
+								}
+								//zip包名带作者
+								$cdn = 'ZIP_CDN/'.$name['0'].'_'.($separator ? implode('_',$authorNames) : $authorName).'.zip';
 
 								//标签下载的要重新打包
 								if (strpos($zip,'typecho-fans/plugins/releases/download')) {
@@ -131,35 +161,6 @@
 										$phpZip->extractTo($tmpSub);
 										$master = $tmpSub.'/'.basename($url).'-master/';
 
-										//提取多作者名
-										$authorCode = html_entity_decode(trim($metas['0']['3']));
-										switch (true) {
-											case (strpos($authorCode,',')) :
-											$separator = ',';
-											break;
-											case (strpos($authorCode,', ')) :
-											$separator = ', ';
-											break;
-											case (strpos($authorCode,'&')) :
-											$separator = '&';
-											break;
-											case (strpos($authorCode,' & ')) :
-											$separator = ' & ';
-											break;
-										}
-										if ($separator) {
-											$authors = explode($separator,$authorCode);
-											$authorName = '';
-											foreach ($authors as $key=>$author) {
-												preg_match('/(?<=\[)[^\]]+/',$author,$authorName);
-												$authorNames[] = empty($authorName['0']) ? $author : $authorName['0'];
-											}
-											$authorName = implode($separator,$authorNames);
-										} else {
-											$authorName = '';
-											preg_match('/(?<=\[)[^\]]+/',$authorCode,$authorName);
-											$authorName = $authorName['0'];
-										}
 										//强制替换作者名
 										$renamed = '';
 										if ($authorName!==trim(strip_tags($infos['author']))) {
@@ -235,6 +236,7 @@
 			$tables[] = $column;
 		}
 	}
+	sort($tables);
 
 	//重组文档并生成日志
 	file_put_contents('TESTORE.md',implode(PHP_EOL,$desciptions).PHP_EOL.implode(PHP_EOL,$tables));
