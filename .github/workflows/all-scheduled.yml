@@ -36,9 +36,9 @@ jobs:
         run: |
           a2c=`find /home/runner/work/plugins/TMP/NEW -type f -name "[a-cA-C]*"`
           echo "::set-output name=A2C::$a2c"
-          a2c=`find /home/runner/work/plugins/TMP/NEW -type f -name "[d-gD-G]*"`
+          d2g=`find /home/runner/work/plugins/TMP/NEW -type f -name "[d-gD-G]*"`
           echo "::set-output name=D2G::$d2g"
-          a2c=`find /home/runner/work/plugins/TMP/NEW -type f -name "[h-lH-L]*"`
+          h2l=`find /home/runner/work/plugins/TMP/NEW -type f -name "[h-lH-L]*"`
           echo "::set-output name=H2L::$h2l"
           m2r=`find /home/runner/work/plugins/TMP/NEW -type f -name "[m-rM-R]*"`
           echo "::set-output name=M2R::$m2r"
