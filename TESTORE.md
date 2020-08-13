@@ -27,7 +27,7 @@
 
  > 下表中的下载链接文字可用于附加图标：`下载`即非社区版，`不可用`显示为:no_entry:，`特殊`显示:warning:意为安装或启用方法特殊。
 
-### 插件信息 (417)
+### 插件信息 (418)
 
 ###### TeStore使用下表“名称”创建安装文件夹，“版本”提示升级，请务必确保文本准确；添加时注意按字母排序，自增上方括号内总数，简介不要太长。
 ```
@@ -398,6 +398,7 @@
 [Uptime](https://github.com/inkedawn/Typecho-Plugin-Uptime) | Typecho显示博客总运行时间插件 | 1.1.0 | [inkedawn](https://github.com/inkedawn) | [下载](https://github.com/inkedawn/Typecho-Plugin-Uptime/archive/master.zip)
 [UpyunForTypecho](https://github.com/wshunli/typecho-plugin-upyun) | 基于[UpyunFile](https://github.com/typecho-fans/plugins/blob/master/UpyunFile)新SDK版又拍云插件 | 1.0.0 | [wshunli](https://github.com/wshunli) | [下载](https://github.com/wshunli/typecho-plugin-upyun/archive/master.zip)
 [UrlSpam](https://github.com/soxft/UrlSpam) | 腾讯网址检测API过滤垃圾评论插件 | 1.1 | [xcsoft](https://github.com/soxft) | [下载](https://github.com/soxft/UrlSpam/archive/master.zip)
+[UserAgent](https://github.com/hakula139/UserAgent-for-Typecho) | 图标[UserAgent](https://github.com/ennnnny/typecho/tree/master/UserAgent)后续增强更新插件 | 0.2.3 | [Hakula](https://github.com/hakula139) | [下载](https://github.com/hakula139/UserAgent-for-Typecho/archive/master.zip)
 [UserAgent](https://github.com/UniqueOnly/UserAgent) | 文字版显示评论者系统/浏览器插件 | 1.0.0 | [Unique](https://github.com/UniqueOnly) | [下载](https://github.com/UniqueOnly/UserAgent/archive/master.zip)
 [UserAgent](https://github.com/ennnnny/typecho/tree/master/UserAgent) | 图标版显示评论者系统/浏览器插件 | 0.1.0 | [kuye](https://github.com/ennnnny) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/UserAgent_kuye.zip)
 [UserInfo](https://github.com/LittleJake/Typecho-UserInfo) | 侧边栏输出简易自我介绍信息插件 | 1.0.0 | [LittleJake](https://github.com/LittleJake) | [下载](https://github.com/LittleJake/Typecho-UserInfo/archive/master.zip)
