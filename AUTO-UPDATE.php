@@ -63,7 +63,7 @@
 	$lines = explode(PHP_EOL,$source);
 	$count = count($lines);
 	foreach ($lines as $line=>$column) {
-		if ($line=<38) {
+		if ($line<=38) {
 			$desciptions[] = $column;
 		} elseif ($column) {
 			preg_match_all('/(?<=\()[^\)]+/',$column,$links);
