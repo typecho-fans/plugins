@@ -65,7 +65,7 @@
 	foreach ($lines as $line=>$column) {
 		if ($line<38) {
 			$desciptions[] = $column;
-		} else {
+		} elseif (39<=$line<58) {
 			preg_match_all('/(?<=\()[^\)]+/',$column,$links);
 			preg_match_all('/(?<=)[^\|]+/',$column,$metas);
 
@@ -234,12 +234,14 @@
 				}
 			}
 			$tables[] = $column;
+		} else {
+			$rests[] = $column;
 		}
 	}
 	sort($tables);
 
 	//重组文档并生成日志
-	file_put_contents('TESTORE.md',implode(PHP_EOL,$desciptions).implode(PHP_EOL,$tables).PHP_EOL);
+	file_put_contents('TESTORE.md',implode(PHP_EOL,$desciptions).implode(PHP_EOL,$tables).implode(PHP_EOL,$rests).PHP_EOL);
 	file_put_contents($tmpDir.'/updates.log',$logs.
 		'SCANED: '.$all.PHP_EOL.
 		'NEED UPDATE: '.$update.PHP_EOL.
