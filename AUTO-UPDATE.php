@@ -91,6 +91,7 @@
 						if ($api) {
 							$datas = json_decode($api,true);
 							foreach ($datas['tree'] as $tree) {
+								$path = '';
 								if (false!==stripos($tree['path'],($sub ? $name['0'].'/Plugin.php' : 'Plugin.php'))) {
 									$path = $tree['path'];
 									break;
