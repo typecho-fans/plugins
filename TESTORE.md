@@ -35,8 +35,7 @@
 ```
 
 名称 | 简介 | 版本 | 作者 | zip包
----- | ----: | :---: | ----: | :----:
-[APlayerAtBottom](https://github.com/SatoSouta/Typecho-plugin-APlayerAtBottom) | 网易云解析吸底式音乐播放器插件 | 1.1.1 | [小太](https://github.com/SatoSouta) | [下载](https://github.com/SatoSouta/Typecho-plugin-APlayerAtBottom/archive/master.zip)
+---- | ----: | :---: | ----: | :----:[APlayerAtBottom](https://github.com/SatoSouta/Typecho-plugin-APlayerAtBottom) | 网易云解析吸底式音乐播放器插件 | 1.1.1 | [小太](https://github.com/SatoSouta) | [下载](https://github.com/SatoSouta/Typecho-plugin-APlayerAtBottom/archive/master.zip)
 [APlayer](https://github.com/zgq354/APlayer-Typecho-Plugin) | 网易云解析Html5音乐播放器插件 | 1.4.11 | [ZGQ](https://github.com/zgq354) | [下载](https://github.com/zgq354/APlayer-Typecho-Plugin/archive/master.zip)
 [Acc](https://github.com/qt06/typecho-plugin-accessibility) | Typecho无障碍读屏标记修正插件 | 1.0.0 | [杨永全](https://github.com/qt06) | [下载](https://github.com/qt06/typecho-plugin-accessibility/archive/master.zip)
 [AccessBmob](https://github.com/kraity/typecho-accessBmob) | Bmob后端云数据库版[Access](https://github.com/kokororin/typecho-plugin-Access)插件 | 1.2 | [权那他](https://github.com/kraity) | [下载](https://github.com/kraity/typecho-accessBmob/archive/master.zip)
@@ -47,16 +46,15 @@
 [AdminLogin](https://github.com/v03413/Typecho_Plugins/tree/master/AdminLogin) | 微信/QQ号后台扫码登录注册插件 | 0.1.1 | [_莫名_](https://github.com/v03413) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/AdminLogin.zip)
 [Adminer](https://github.com/kokororin/typecho-plugin-adminer) | 后台集成Adminer数据库管理插件 | 1.0 | [kokororin](https://github.com/kokororin) | [下载](https://github.com/kokororin/typecho-plugin-adminer/archive/master.zip)
 [AdsPlugin](https://github.com/ScientistPun/AdsPlugin_for_typecho) | Typecho自建数据广告位管理插件 | 1.0.0 | [ScientistPun](https://github.com/ScientistPun) | [下载](https://github.com/ScientistPun/AdsPlugin_for_typecho/archive/master.zip)
-[Aidnabo](https://github.com/kraity/typecho-aidnabo) | [南博](https://nabo.krait.cn)App账户登录等功能助手插件 | 1.1 | [权那他](https://github.com/kraity) | [下载](https://github.com/kraity/typecho-aidnabo/archive/master.zip)
+[Aidnabo](https://github.com/kraity/typecho-aidnabo) | [南博](https://nabo.krait.cn)App账户登录等功能助手插件 | 1.2 | [权那他](https://github.com/kraity) | [下载](https://github.com/kraity/typecho-aidnabo/archive/master.zip)
 [AjaxComment](https://github.com/qlwz/AjaxComment-For-Typecho) | 原生JS评论Ajax异步提交功能插件 | 1.0.0.2 | [情留メ蚊子](https://github.com/qlwz) | [下载](https://github.com/qlwz/AjaxComment-For-Typecho/archive/master.zip)
 [Akalin](https://github.com/huhaku/typecho_Akalin) | 指定常用登录地IP后台白名单插件 | 1.0.0 | [huhaku](https://github.com/huhaku) | [下载](https://github.com/huhaku/typecho_Akalin/archive/master.zip)
 [Akismet](https://github.com/typecho/plugins/tree/master/Akismet) | 经典反垃圾评论服务Akismet插件 | 1.1.4 | [qining](https://github.com/joyqi) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/Akismet.zip)
 [Album](https://github.com/THX-plus/Album) | Typecho模版型页面相册系统插件 | 1.2 | [我本奈何](https://github.com/THX-plus) | [下载](https://github.com/THX-plus/Album/archive/master.zip)
 [AliOSS](https://github.com/chaclee/typecho-oss) | Typecho附件上传阿里云OSS插件 | 1.0.1 | [raintao](https://github.com/chaclee) | [下载](https://github.com/chaclee/typecho-oss/archive/master.zip)
-[AliOssForTypecho](https://github.com/droomo/AliOssForTypecho) | 新OSS云储存插件(本地备份+样式) | 1.1.1 | [droomo.](https://github.com/droomo) | [下载](https://github.com/droomo/AliOssForTypecho/archive/master.zip)
+[AliOssForTypecho](https://github.com/droomo/AliOssForTypecho) | 新OSS云储存插件(本地备份+样式) | 1.1.8 | [droomo.](https://github.com/droomo) | [下载](https://github.com/droomo/AliOssForTypecho/archive/master.zip)
 [AliUpload](https://github.com/typecho/plugins/tree/master/AliUpload) | 经典附件上传阿里云储存OSS插件 | 1.0.0 Beta | [loftor](https://github.com/loftor-git) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/AliUpload.zip)
-[AliceStyle](https://github.com/racns/AliceStyle) | 常见主题外观用美化效果合集插件 | 2.4.0 | [racns](https://github.com/racns) | [下载](https://github.com/racns/AliceStyle/archive/master.zip)
-[AllsitePasswd](http://leiyanhui.com/typecho_AllsitePasswd_Plugin) | Typecho自定义全站内容加密插件 | 1.0.0 | [小类](http://leiyanhui.com) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/AllsitePasswd.zip)
+[AliceStyle](https://github.com/racns/AliceStyle) | 常见主题外观用美化效果合集插件 | 2.4.0 | [racns](https://github.com/racns) | [下载](https://github.com/racns/AliceStyle/archive/master.zip)[AllsitePasswd](http://leiyanhui.com/typecho_AllsitePasswd_Plugin) | Typecho自定义全站内容加密插件 | 1.0.0 | [小类](http://leiyanhui.com) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/AllsitePasswd.zip)
 [Aphorisms](https://github.com/hizyx/typecho-plugin-aphorisms) | Typecho自建数据版名言警句插件 | 1.0.0 | [好奇的 01](https://github.com/hizyx) | [下载](https://github.com/hizyx/typecho-plugin-aphorisms/archive/master.zip)
 [ArkEditor](https://github.com/CrazyBoyM/ArkEditor) | 沉浸式写作Markdown编辑器插件 | 1.0.0 | [方舟互联](https://github.com/CrazyBoyM) | [下载](https://github.com/CrazyBoyM/ArkEditor/archive/master.zip)
 [ArmX](https://github.com/natcube/ArmX) | [ArmX](https://github.com/natcube/ArmX/tree/master/themes/armx)主题用七合一扩展增强插件 | 1.0.0 | [NatLiu](https://github.com/natcube) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/ArmX.zip)
@@ -454,3 +452,4 @@
 [waterMark](https://github.com/internelp/waterMark) | 图片自动添加Gif/Png格式水印插件 | 1.0.1 | [应用侠](https://github.com/internelp) | [下载](https://github.com/internelp/waterMark/archive/master.zip)
 [ymplayer](https://github.com/kokororin/typecho-plugin-ymplayer) | Html5可伸缩海报音乐播放器插件 | 0.7 | [kokororin](https://github.com/kokororin) | [特殊](https://github.com/kokororin/typecho-plugin-ymplayer/archive/master.zip)
 [zbgray](http://forum.typecho.org/viewtopic.php?f=6&t=11271) | Typecho简易祭日用整站变灰插件 | 1.0.0 | jyzb02 | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/zbgray.zip)
+
