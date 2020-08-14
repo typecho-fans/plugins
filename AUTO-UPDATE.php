@@ -65,9 +65,9 @@
 	foreach ($lines as $line=>$column) {
 		if ($line<38) {
 			$desciptions[] = $column;
-		} elseif ($line<=58) {
+		} elseif ($line<=77) {
 			$finished[] = $column;
-		} elseif ($line<=77 && $line>=59) {
+		} elseif ($line<=116 && $line>=78) {
 
 			if ($column) {
 				preg_match_all('/(?<=\()[^\)]+/',$column,$links);
