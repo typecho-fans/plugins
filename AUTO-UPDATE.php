@@ -30,6 +30,7 @@
 	$pluginFile = '';
 	$logs = '--------------'.PHP_EOL.date('Y-m-d',time()).PHP_EOL;
 	$infos = array();
+	$match = array();
 	$version = '';
 	$update = 0;
 	$zip = '';
@@ -66,9 +67,9 @@
 	foreach ($lines as $line=>$column) {
 		if ($line<38) {
 			$desciptions[] = $column;
-		} elseif ($line<=314) {
+		} elseif ($line<=413) {
 			$finished[] = $column;
-		} elseif ($line<=413 && $line>=315) {
+		} else {
 
 			if ($column) {
 				preg_match_all('/(?<=\()[^\)]+/',$column,$links);
@@ -133,7 +134,9 @@
 						}
 					}
 					if ($infos['version']) {
-						$infos['version'] = trim(strip_tags($infos['version']));
+						if (preg_match('/\d+(.\d+)*/',trim($infos['version']),$match)) {
+							$infos['version'] = $match['0'];
+						}
 						$version = stripos($metas['0']['2'],'v')===0 ? trim(substr($metas['0']['2'],1)) : trim($metas['0']['2']);
 						if ($infos['version']>$version || !empty($argv['2'])) { //或手动强制更新
 							++$update;
@@ -264,7 +267,7 @@
 	sort($tables);
 
 	//重组文档并生成日志
-	file_put_contents('TESTORE.md',implode(PHP_EOL,$desciptions).implode(PHP_EOL,$tables).PHP_EOL);
+	file_put_contents('TESTORE.md',implode(PHP_EOL,$desciptions).PHP_EOL.implode(PHP_EOL,$finished).PHP_EOL.implode(PHP_EOL,$tables));
 	file_put_contents($tmpDir.'/updates.log',$logs.
 		'SCANED: '.$all.PHP_EOL.
 		'NEED UPDATE: '.$update.PHP_EOL.
