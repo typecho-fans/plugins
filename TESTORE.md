@@ -412,7 +412,6 @@
 [WeChatHelper](https://github.com/ledccn/WeChatHelper) | 修改版微信助手插件(需Redis缓存) | 2.3.0 | [大卫科技Blog](https://github.com/ledccn) | [下载](https://github.com/ledccn/WeChatHelper/archive/master.zip)
 [WeChatNotice](https://github.com/zgcwkjOpenProject/Typecho_Plugins_WeChatNotice) | 文章评论推送自建微信公众号插件 | 1.0.0 | [zgcwkj](https://github.com/zgcwkjOpenProject) | [下载](https://github.com/zgcwkjOpenProject/Typecho_Plugins_WeChatNotice/archive/master.zip)
 [WeMedia](https://github.com/muzishanshi/WeMediaForTypecho) | Typecho积分商城版付费阅读插件 | 1.0.16 | [二呆](https://github.com/muzishanshi) | [下载](https://github.com/muzishanshi/WeMediaForTypecho/archive/master.zip)
-
 [WeTypecho](https://github.com/MingliangLu/WeTypecho) | 多功能Typecho微信小程序版插件 | 0.1 | [成都第七帅](https://github.com/MingliangLu) | [特殊](https://github.com/MingliangLu/WeTypecho/archive/master.zip)
 [WebTotal](https://github.com/ss7247/Typecon__WebTotal) | 自增统计及输出网站浏览次数插件 | 1.0.0 | [astar](https://github.com/ss7247) | [下载](https://github.com/ss7247/Typecon__WebTotal/archive/master.zip)
 [WechatFans](https://github.com/muzishanshi/WechatFans) | 文章通过微信公众号验证可读插件 | 1.0.3 | [二呆](https://github.com/muzishanshi) | [下载](https://github.com/muzishanshi/WechatFans/archive/master.zip)
