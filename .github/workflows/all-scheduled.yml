@@ -19,7 +19,7 @@ jobs:
 
       - name: "执行PHP脚本"
         run: |
-          php AUTO-UPDATE.php
+          php AUTO-UPDATE.php ${{ secrets.GITHUB_TOKEN }}
 
       - name: "提交更新文件"
         uses: stefanzweifel/git-auto-commit-action@v4
