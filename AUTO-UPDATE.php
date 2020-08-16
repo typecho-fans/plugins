@@ -253,7 +253,7 @@
 						}
 					}
 				} else {
-					$logs .= 'Error: "'.$url.'" has no valid plugin file!'.PHP_EOL;
+					$logs .= 'Error: "'.$pluginFile.'" not valid!'.PHP_EOL;
 				}
 			}
 			$tables[] = $column;
