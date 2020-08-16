@@ -3,9 +3,8 @@
 name: "定时更新全GitHub插件"
 
 on:
-  workflow_dispatch
-#  schedule:
-#    - cron: "0 13 * * 1"
+  schedule:
+    - cron: "0 13 * * 1"
 #服务器时间：下午1点，每周一
 
 jobs:
