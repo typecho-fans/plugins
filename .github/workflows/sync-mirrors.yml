@@ -1,11 +1,17 @@
 # 同步数据至Gitee/jsDelivr等加速地址供TeStore调用
 
-name: "推送自动触发镜像同步"
+name: "更新Action后同步镜像"
 
 on:
-  push:
+  workflow_run:
+    workflows:
+      - "手动更新单GitHub插件"
+      - "定时更新全GitHub插件"
+      - "推送更新变动插件zip包"
     branches:
       - "master"
+    types:
+      - completed
 
 jobs:
 
@@ -14,7 +20,7 @@ jobs:
     runs-on: "ubuntu-latest"
 
     steps:
-      - name: "获取推送后时间戳"
+      - name: "获取执行后时间戳"
         id: "get-update"
         run: |
           stamp=`date +%s`
@@ -37,7 +43,7 @@ jobs:
           # 传递两项数据参数
           client-payload: '{"total": "${{ steps.get-total.outputs.toTal }}", "update": "${{ steps.get-update.outputs.upDate }}"}'
 
-      - name: "Gitee镜像目录同步"
+      - name: "推送Gitee镜像同步"
         uses: Yikun/hub-mirror-action@master
         with:
           src: github/typecho-fans

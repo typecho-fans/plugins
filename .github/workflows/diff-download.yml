@@ -1,30 +1,47 @@
-# 自动检测所有已登记GitHub插件版本并同步更新zip
+# 推送检测新增或改动的外部插件版本并强制更新zip
 
-name: "定时更新全GitHub插件"
+name: "推送更新变动插件zip包"
 
 on:
-  schedule:
-    - cron: "0 19 * * SUN"
-#服务器时间：晚7点，每周日
-#北京时间：凌晨3点，每周一
+  push:
+    branches:
+      - "master"
 
 jobs:
 
-  auto-update:
-    name: "自动更新GitHub插件"
+  md-check:
+    name: "检测文档是否有改动"
     runs-on: "ubuntu-latest"
+    outputs:
+      altered: ${{ steps.grep-diff.outputs.found }}
+
+    steps:
+      - id: grep-diff
+        run: |
+          if curl -s https://github.com/typecho-fans/plugins/commit/master.diff | grep "+++ b/TESTORE.md"
+            then
+              echo "::set-output name=found::1"
+          else
+              echo "::set-output name=found::"
+          fi
+
+  auto-update:
+    name: "更新有变动的插件zip"
+    runs-on: "ubuntu-latest"
+    needs: md-check
+    if: needs.md-check.outputs.altered
 
     steps:
       - uses: actions/checkout@v2
 
       - name: "执行PHP脚本"
         run: |
-          php AUTO-UPDATE.php ${{ secrets.GITHUB_TOKEN }}
+          php AUTO-UPDATE.php ${{ secrets.GITHUB_TOKEN }} diff
 
       - name: "提交更新文件"
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
-          commit_message: "Auto update GitHub plugins in TESTORE.md"
+          commit_message: "Upload zips of altered plugins in TESTORE.md"
 
       - name: "上传操作记录"
         uses: actions/upload-artifact@v2
