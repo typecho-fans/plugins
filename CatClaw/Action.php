@@ -364,12 +364,11 @@ echo '插件配置中的用户名或密码错误！';exit;
             }
             $uid=$this->user->uid;
 
-
-     
-     
-     $db = Typecho_Db::get();
-     if($db->fetchRow($db->select()->from ('table.contents')->where ('title = ?',$title))){
-$cid=$db->fetchRow($db->select()->from ('table.contents')->where ('title = ?',$title))['cid'];
+$titlex=str_replace("&","&amp;",$title); //解决&符号导致的番剧存在与否的判断bug
+	
+$db = Typecho_Db::get();
+if($db->fetchRow($db->select()->from ('table.contents')->where ('title = ?',$titlex))){
+$cid=$db->fetchRow($db->select()->from ('table.contents')->where ('title = ?',$titlex))['cid'];
 
 
 if($db->fetchRow($db->select()->from ('table.fields')->where ('cid = ?',$cid)->where ('name = ?','zhuangtai'))['str_value']!=0){
