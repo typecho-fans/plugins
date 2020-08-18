@@ -1,4 +1,4 @@
-# 手动检测某个已登记GitHub插件版本并同步更新zip
+# 手动检测某个已登记GitHub插件版本并强制更新zip
 # 运行方法：点击顶部"Actions" - 左侧选本脚本名 - 右上可见"Run workflow"
 
 name: "手动更新单GitHub插件"
@@ -9,7 +9,7 @@ on:
       repo-url:
         description: "GitHub插件目录地址(结尾勿带'/'号)"
         required: true
-        default: 'https://github.com/user/repo'
+        default: "https://github.com/user/repo"
 
 jobs:
 
@@ -27,7 +27,7 @@ jobs:
       - name: "提交更新文件"
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
-          commit_message: "Auto update a GitHub plugin in TESTORE.md"
+          commit_message: "Force update a GitHub plugin in TESTORE.md"
 
       - name: "上传操作记录"
         uses: actions/upload-artifact@v2
