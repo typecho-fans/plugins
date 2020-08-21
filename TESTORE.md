@@ -27,7 +27,7 @@
 
  > 下表中的下载链接文字可用于附加图标：`下载`即非社区版，`不可用`显示为:no_entry:，`特殊`显示:warning:意为安装或启用方法特殊。
 
-### 插件信息 (450)
+### 插件信息 (454)
 
 ###### TeStore使用下表“名称”创建安装文件夹，“版本”提示升级，请务必确保文本准确；添加时注意按字母排序，自增上方括号内总数，简介不要太长。
 ```
@@ -347,7 +347,7 @@
 [Shields](https://github.com/journey-ad/Shields-Typecho-Plugin) | 自解析[Shields.io](https://shields.io)版GitHub按钮插件 | 1.0.0 | [journey.ad](https://github.com/journey-ad) | [下载](https://github.com/journey-ad/Shields-Typecho-Plugin/archive/master.zip)
 [Shop](https://github.com/ilanlanya/typecho-plugin-shop) | Typecho非官方线上主题商店插件 | 1.0.0 | [LiCxi](https://github.com/ilanlanya) | [不可用](https://github.com/ilanlanya/typecho-plugin-shop/archive/master.zip)
 [ShortCode](https://github.com/moeshin/Typecho-Plugin-ShortCode) | Typecho自定义短代码API功能插件 | 1.0.1 | [小さな手は](https://github.com/moeshin) | [下载](https://github.com/moeshin/Typecho-Plugin-ShortCode/archive/master.zip)
-[ShowGithubRepo](https://github.com/loststar/ShowGithubRepo) | 免jQuery简洁GitHub项目展示插件 | 1.2.1-Alpha | [Loststar](https://github.com/loststar) | [下载](https://github.com/loststar/ShowGithubRepo/archive/master.zip)
+[ShowGithubRepo](https://github.com/loststar/ShowGithubRepo) | 免jQuery简洁GitHub项目展示插件 | 1.2.1 | [Loststar](https://github.com/loststar) | [下载](https://github.com/loststar/ShowGithubRepo/archive/master.zip)
 [Simditor](https://github.com/NickVico/simditor-for-typecho) | 可视化含代码高亮Html编辑器插件 | 1.0.0 | [NickVico](https://github.com/NickVico) | [下载](https://github.com/NickVico/simditor-for-typecho/archive/master.zip)
 [SimpleCDN](https://github.com/Quarkay/Typecho-SimpleCDN) | 匹配文章内容替换为CDN链接插件 | 1.0.0 | [Quarkay](https://github.com/Quarkay) | [下载](https://github.com/Quarkay/Typecho-SimpleCDN/archive/master.zip)
 [SimpleCode](https://github.com/typecho/plugins/blob/master/SimpleCode.php) | 简易用PHP自带函数高亮代码插件 | 1.0.2 | [qining](https://github.com/joyqi) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/SimpleCode.zip)
