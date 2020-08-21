@@ -27,7 +27,7 @@
 
  > 下表中的下载链接文字可用于附加图标：`下载`即非社区版，`不可用`显示为:no_entry:，`特殊`显示:warning:意为安装或启用方法特殊。
 
-### 插件信息 (438)
+### 插件信息 (442)
 
 ###### TeStore使用下表“名称”创建安装文件夹，“版本”提示升级，请务必确保文本准确；添加时注意按字母排序，自增上方括号内总数，简介不要太长。
 ```
@@ -94,6 +94,7 @@
 [BufannaoCms](https://plugins.typecho.me/plugins/bufannao-cms.html) | 常用CMS化模板调用函数合集插件 | 1.0.0 | 不烦恼 | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/BufannaoCms.zip)
 [BufannaoWap](https://plugins.typecho.me/plugins/wap-for-typecho.html) | 旧Xhtml标准移动端页面生成插件 | 1.0.1 | 不烦恼 | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/BufannaoWap.zip)
 [ByeTyp](https://github.com/sunxiyuan/ByeTyp) | 新版数据库导出至WordPress插件 | 1.4 | [sunxiyuan](https://github.com/sunxiyuan) | [下载](https://github.com/sunxiyuan/ByeTyp/archive/master.zip)
+[CSDN](https://github.com/ddddyyyy/CSDN) | 将CSDN博文迁移至Typecho插件 | 1.0.0 | [MDY](https://github.com/ddddyyyy) | [下载](https://github.com/ddddyyyy/CSDN/archive/master.zip)
 [Calendar](https://github.com/istobran/typecho-calender-plugin) | Typecho博客侧边栏显示日历插件 | 1.0.0 | [BangZ](https://github.com/istobran) | [下载](https://github.com/istobran/typecho-calender-plugin/archive/master.zip)
 [Canvas](https://github.com/orzMaster/Canvas-Typecho-Plugin) | Typecho炫酷感网页粒子背景插件 | 1.0.0 | [orzMaster](https://github.com/orzMaster) | [下载](https://github.com/orzMaster/Canvas-Typecho-Plugin/archive/master.zip)
 [Captcha](https://github.com/KimiChen/Typecho-Captcha) | Typecho定制文字评论验证码插件 | 1.0.0 | [qining](https://github.com/joyqi) & [Kimi](https://github.com/KimiChen) | [下载](https://github.com/KimiChen/Typecho-Captcha/archive/master.zip)
@@ -138,7 +139,6 @@
 [CreativeCommons](https://github.com/zhangpeng96/typecho-creative-commons) | 文末自动加知识共享版权声明插件 | 0.6.2 | [zhangpeng96](https://github.com/zhangpeng96) | [下载](https://github.com/zhangpeng96/typecho-creative-commons/archive/master.zip)
 [Creole](https://github.com/typecho/plugins/tree/master/Creole) | Wiki式Creole写作语法解析器插件 | 0.2 | [明城](https://github.com/mingcheng) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/Creole.zip)
 [CustomCssAndJs](https://github.com/kyuuseiryuu/typecho-plugin-custom-css-js) | 输出定制头部Css或尾部Js代码插件 | 1.0 | [KyuuSeiryuu](https://github.com/kyuuseiryuu) | [下载](https://github.com/kyuuseiryuu/typecho-plugin-custom-css-js/archive/master.zip)
-[CSDN](https://github.com/ddddyyyy/CSDN) | 将CSDN博文迁移至Typecho插件 | 1.0.0 | [MDY](https://github.com/ddddyyyy) | [下载](https://github.com/ddddyyyy/CSDN/archive/master.zip)
 [DDSBLinks](https://github.com/Nyarime/DDSBLinks) | [DD.SB](https://dd.sb)短链接版跳转外链转换插件 | 1.1.0 b2 | [BBleae](https://baka.studio) & [Nyarime](https://github.com/Nyarime) | [下载](https://github.com/Nyarime/DDSBLinks/archive/master.zip)
 [DPlayer](https://github.com/MoePlayer/DPlayer-Typecho) | 全能音视频播放器插件(支持弹幕) | 1.1.0 | [Volio](https://github.com/volio) | [下载](https://github.com/MoePlayer/DPlayer-Typecho/archive/master.zip)
 [DarkReader](https://github.com/jackytsu/typecho-darkreader) | [Dark Reader](https://darkreader.org)关灯效果阅读器插件 | 1.0.0 | [南宫小骏](https://github.com/jackytsu) | [下载](https://github.com/jackytsu/typecho-darkreader/archive/master.zip)
