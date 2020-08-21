@@ -27,7 +27,7 @@
 
  > 下表中的下载链接文字可用于附加图标：`下载`即非社区版，`不可用`显示为:no_entry:，`特殊`显示:warning:意为安装或启用方法特殊。
 
-### 插件信息 (442)
+### 插件信息 (446)
 
 ###### TeStore使用下表“名称”创建安装文件夹，“版本”提示升级，请务必确保文本准确；添加时注意按字母排序，自增上方括号内总数，简介不要太长。
 ```
@@ -163,8 +163,8 @@
 [ExtraVerification](https://github.com/imwis/ExtraVerification) | Google双重验证登录机制整合插件 | 1.1.0 | [Wis](https://github.com/imwis) | [特殊](https://github.com/imwis/ExtraVerification/releases/download/1.1.0/ExtraVerification_1.1.0.zip)
 [FHilight](https://defe.me/prg/153.html) | [SyntaxHighlighter](https://github.com/syntaxhighlighter/syntaxhighlighter)高亮插件(短代码) | 1.1.2 | [df](https://github.com/defeme) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/FHilight.zip)
 [Famous](#) | Typecho模板用输出名言200句插件 | 1.0.2 | [iwege](http://www.reistlin.com) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/Famous.zip)
-[FancyBox](https://github.com/zzf88521/FancyBox-Typecho) | 基于jQuery的多功能弹窗特效插件 | 0.0.1 | [路飞](https://github.com/zzf88521) | [下载](https://github.com/zzf88521/FancyBox-Typecho/archive/master.zip)
 [FancyBox](https://github.com/trisolaris233/FancyBox) | Typecho简易版图片灯箱弹窗插件 | 1.0.0 | [阳光加冰](https://github.com/trisolaris233) | [下载](https://github.com/trisolaris233/FancyBox/archive/master.zip)
+[FancyBox](https://github.com/zzf88521/FancyBox-Typecho) | 基于jQuery的多功能弹窗特效插件 | 0.0.1 | [路飞](https://github.com/zzf88521) | [下载](https://github.com/zzf88521/FancyBox-Typecho/archive/master.zip)
 [FancyCaptcha](https://plugins.typecho.me/plugins/comments-fancy-captcha.html) | jQuery UI版多选拖拽式验证码插件 | 1.0.0 | 小强 | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/FancyCaptcha.zip)
 [Fckeditor](https://plugins.typecho.me/plugins/fckeditor-for-typecho.html) | 支持代码高亮的可视化编辑器插件 | 1.0.0 | Shion | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/Fckeditor.zip)
 [FileCache](https://plugins.typecho.me/plugins/file-cache.html) | 经典版Typecho生成静态缓存插件 | 1.0.0 | Shion | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/FileCache.zip)
