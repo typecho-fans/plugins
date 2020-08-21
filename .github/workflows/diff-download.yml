@@ -13,30 +13,45 @@ jobs:
     name: "检测文档是否有改动"
     runs-on: "ubuntu-latest"
     outputs:
-      altered: ${{ steps.grep-diff.outputs.found }}
+      diffUrl: ${{ steps.hash-name.outputs.url }}
+      hasMD: ${{ steps.grep-diff.outputs.md }}
 
     steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 2
+
+      - id: hash-name
+        run: |
+          hash=`git log HEAD^ -1 | grep commit | awk '{print $2}'`
+          if [ -z `git log -1 --pretty=%B | grep "Merge branch"` ]
+            then
+              hash="master"
+          fi
+          diff=https://github.com/typecho-fans/plugins/commit/"$hash".diff
+          echo "::set-output name=url::$diff"
+
       - id: grep-diff
         run: |
-          if curl -s https://github.com/typecho-fans/plugins/commit/master.diff | grep "+++ b/TESTORE.md"
+          if curl -s "${{ steps.hash-name.outputs.url }}" | grep "+++ b/TESTORE.md"
             then
-              echo "::set-output name=found::1"
+              echo "::set-output name=md::1"
           else
-              echo "::set-output name=found::"
+              echo "::set-output name=md::"
           fi
 
   auto-update:
     name: "更新有变动的插件zip"
     runs-on: "ubuntu-latest"
     needs: md-check
-    if: needs.md-check.outputs.altered
+    if: needs.md-check.outputs.hasMD
 
     steps:
       - uses: actions/checkout@v2
 
       - name: "执行PHP脚本"
         run: |
-          php AUTO-UPDATE.php ${{ secrets.GITHUB_TOKEN }} diff
+          php AUTO-UPDATE.php ${{ secrets.GITHUB_TOKEN }} ${{ needs.md-check.outputs.diffUrl }}
 
       - name: "提交更新文件"
         uses: stefanzweifel/git-auto-commit-action@v4

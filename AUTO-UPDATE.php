@@ -18,8 +18,8 @@
 	}
 
 	//分析最新文档变化
-	if (!empty($argv['2']) && $argv['2']=='diff') {
-		$record = @file_get_contents('https://github.com/typecho-fans/plugins/commit/master.diff',0,
+	if (!empty($argv['2']) && strpos($argv['2'],'.diff')) {
+		$record = @file_get_contents($argv['2'],0,
 			stream_context_create(array('http'=>array('header'=>array('Accept: application/vnd.github.v3.diff')))));
 		$diffs = explode(PHP_EOL,$record);
 
@@ -98,6 +98,10 @@
 	$count = count($lines);
 	foreach ($lines as $line=>$column) {
 		if ($line<38) {
+			if ($line=='29') {
+				preg_match('/(?<=\()[^\)]+/',$column,$counts);
+				$column = str_replace($counts['0'],$count-39,$column);
+			}
 			$desciptions[] = $column;
 		} elseif ($column) {
 			preg_match_all('/(?<=\()[^\)]+/',$column,$links);
@@ -108,7 +112,7 @@
 			//判断地址参数
 			if (empty($argv['2'])) { //默认处理GitHub源
 				$condition = $github;
-			} elseif ($argv['2']=='diff') { //提交处理变化地址 (不限GitHub)
+			} elseif (strpos($argv['2'],'.diff')) { //提交处理变化地址 (不限GitHub)
 				$condition = $urls && in_array($url,$urls);
 			} else { //手动处理参数指定
 				$condition = strpos($argv['2'],'github.com') && $argv['2']==$url;
