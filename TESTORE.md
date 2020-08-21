@@ -27,7 +27,7 @@
 
  > 下表中的下载链接文字可用于附加图标：`下载`即非社区版，`不可用`显示为:no_entry:，`特殊`显示:warning:意为安装或启用方法特殊。
 
-### 插件信息 (446)
+### 插件信息 (450)
 
 ###### TeStore使用下表“名称”创建安装文件夹，“版本”提示升级，请务必确保文本准确；添加时注意按字母排序，自增上方括号内总数，简介不要太长。
 ```
@@ -231,8 +231,8 @@
 [KindEditor](https://521-wf.com/archives/21.html) | 新版KindEditor可视化编辑器插件 | 2.2 | [WiFeng](https://github.com/WiFeng) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-H_to_L/KindEditor_WiFeng.zip)
 [KindEditor](https://github.com/hizhengfu/KindEditor) | 经典所见即所得富文本编辑器插件 | 4.0.1 | [hizhengfu](https://github.com/hizhengfu) | [下载](https://github.com/hizhengfu/KindEditor/archive/master.zip)
 [KodoForTypecho](https://github.com/sy-records/KodoForTypecho) | 七牛云KODO作附件存储空间插件 | 1.0.0 | [沈唁](https://github.com/sy-records) | [下载](https://github.com/sy-records/KodoForTypecho/archive/master.zip)
-[LaTex](https://github.com/typecho/plugins/tree/master/LaTex) | Markdown版LaTex公式解析插件 | 1.1.0 | [mutoo](https://github.com/mutoo) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-H_to_L/LaTex.zip)
 [LaTeXTypecho](https://github.com/Imyukehan/LaTeXTypecho) | 使用[MathJax](https://www.mathjax.org)渲染LaTex公式插件 | beta | [Khan](https://github.com/Imyukehan) | [下载](https://github.com/Imyukehan/LaTeXTypecho/archive/master.zip)
+[LaTex](https://github.com/typecho/plugins/tree/master/LaTex) | Markdown版LaTex公式解析插件 | 1.1.0 | [mutoo](https://github.com/mutoo) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-H_to_L/LaTex.zip)
 [LazyLoad](https://github.com/jazzi/typecho-lazyload) | 基于jQuery的图片懒加载效果插件 | 1.0.0 | [八云酱](https://github.com/bayunjiang) | [下载](https://github.com/jazzi/typecho-lazyload/archive/master.zip)
 [LazyLoading](https://github.com/LittleJake/Typecho-LazyLoading) | Typecho简易图片懒加载效果插件 | 1.0.0 | [LittleJake](https://github.com/LittleJake) | [下载](https://github.com/LittleJake/Typecho-LazyLoading/archive/master.zip)
 [LightAudioPlayer](https://github.com/zxc135781/Light-AudioPlayer-Plugin) | 极简式单曲Html5音乐播放器插件 | 1.0 | [Mike](https://github.com/zxc135781) | [下载](https://github.com/zxc135781/Light-AudioPlayer-Plugin/archive/master.zip)
@@ -450,8 +450,8 @@
 [WikimoeBangumi](https://github.com/eeg1412/typecho_bangumi_plugin) | 用API获取Bangumi追番信息插件 | 1.0.0 | [广树](https://github.com/eeg1412) | [下载](https://github.com/eeg1412/typecho_bangumi_plugin/archive/master.zip)
 [WordCount](https://github.com/jrotty/WordCount) | Typecho文章字数实时计算器插件 | 1.6 | [Jrotty](https://github.com/jrotty) | [下载](https://github.com/jrotty/WordCount/archive/master.zip)
 [WordpressToTypecho](https://github.com/typecho/plugins/tree/master/WordpressToTypecho) | Wordpress数据库导入Typecho插件 | 1.0.3 Beta | [qining](https://github.com/joyqi) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/WordpressToTypecho.zip)
-[Words](https://github.com/tennsinn/Typecho-Plugins/tree/master/Words) | Typecho自建数据仿微博碎语插件 | 1.1.2 | [息E-敛](https://github.com/tennsinn) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/Words.zip)
 [WordsCounter](https://github.com/elatisy/Typecho_WordsCounter) | Typecho文章或全站字数统计插件 | 1.0.0 | [Elatis](https://github.com/elatisy) | [下载](https://github.com/elatisy/Typecho_WordsCounter/archive/master.zip)
+[Words](https://github.com/tennsinn/Typecho-Plugins/tree/master/Words) | Typecho自建数据仿微博碎语插件 | 1.1.2 | [息E-敛](https://github.com/tennsinn) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/Words.zip)
 [WowScroll](https://github.com/Sanakey/WowScroll) | 页面元素载入时显示动画特效插件 | 1.1.1 | [Sanakey](https://github.com/Sanakey) | [下载](https://github.com/Sanakey/WowScroll/archive/master.zip)
 [XmlRpcAid](https://github.com/MliKiowa/XmlRpcAid-By-Nabo) | [南博](https://nabo.krait.cn)App用更新XmlRpc文件插件 | 2.0.0 | [乔千](https://github.com/MliKiowa) | [下载](https://github.com/MliKiowa/XmlRpcAid-By-Nabo/archive/master.zip)
 [Youtube](https://github.com/ayangyuan/Youtube-Typecho-Plugin) | 快捷嵌入Youtube/Vimeo视频插件 | 1.0 | [Y.Y](https://github.com/ayangyuan) | [下载](https://github.com/ayangyuan/Youtube-Typecho-Plugin/archive/master.zip)
@@ -472,8 +472,8 @@
 [nginxhelper](https://github.com/gzare/Typecho-NginxHelper) | Typecho自动清理Nginx下缓存插件 | 0.1 Beta | [Zare](https://github.com/gzare) | [特殊](https://github.com/gzare/Typecho-NginxHelper/archive/master.zip)
 [notice](https://github.com/jrotty/typecho-for-notice) | 按来路地址输出欢迎消息通知插件 | 0.3 | [jrotty](https://github.com/jrotty) | [下载](https://github.com/jrotty/typecho-for-notice/archive/master.zip)
 [oneimg](https://github.com/haocity/oneimg-typecho) | 为页面添加可变背景图片效果插件 | 1.0 | [疯狂减肥带](https://github.com/haocity) | [下载](https://github.com/haocity/oneimg-typecho/archive/master.zip)
-[paywall](https://www.mantouxia.com/632.html) | [知12](https://www.zhi12.cn)内容创作平台用付费阅读插件 | 3.0.0 | [calmhe](https://www.zhi12.cn) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/paywall.zip)
 [pScaleUp](https://github.com/liangddyy/pScaleUp) | 自定义倍数点击图片放大特效插件 | 1.0.1 | [梁先生呀](https://github.com/liangddyy) | [下载](https://github.com/liangddyy/pScaleUp/archive/master.zip)
+[paywall](https://www.mantouxia.com/632.html) | [知12](https://www.zhi12.cn)内容创作平台用付费阅读插件 | 3.0.0 | [calmhe](https://www.zhi12.cn) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/paywall.zip)
 [platformSelect](https://github.com/internelp/platformSelect) | 自定义字段设置文章所属平台插件 | 1.0.0 | [枫叶](https://github.com/internelp) | [下载](https://github.com/internelp/platformSelect/archive/master.zip)
 [qcspam](https://qaqwq.com/437.html) | 基于腾讯云内容检测评论过滤插件 | 1.0.0 | [Kuwaku](https://qaqwq.com) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/qcspam.zip)
 [reCaptcha](https://github.com/plok5202008/Typecho-reCaptcha) | v2版[reCAPTCHA](https://www.google.com/recaptcha)评论验证码插件 | 1.0.0 | [清浅](https://github.com/plok5202008) | [下载](https://github.com/plok5202008/Typecho-reCaptcha/archive/master.zip)
