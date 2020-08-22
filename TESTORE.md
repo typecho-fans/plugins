@@ -27,7 +27,7 @@
 
  > 下表中的下载链接文字可用于附加图标：`下载`即非社区版，`不可用`显示为:no_entry:，`特殊`显示:warning:意为安装或启用方法特殊。
 
-### 插件信息 (462)
+### 插件信息 (463)
 
 ###### TeStore使用下表“名称”创建安装文件夹，“版本”提示升级，请务必确保文本准确；添加时注意按字母排序，自增上方括号内总数，简介不要太长。
 ```
@@ -348,7 +348,7 @@
 [SequenceDiagram](http://forum.typecho.org/viewtopic.php?f=6&t=10873) | Markdown语法seq生成时序图插件 | 1.2.0 | [ZhangZijing(Venteto)](https://github.com/pluveto) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/SequenceDiagram.zip)
 [SeriesIndex](https://github.com/slipperstree/SeriesIndex) | 按slug序号生成系列文章目录树插件 | 0.1.0 | [mango](https://github.com/slipperstree) | [下载](https://github.com/slipperstree/SeriesIndex/archive/master.zip)
 [ServerInformation](https://networkos.club/archives/typecho_ServerInformation.html) | 后台查看服务器流量等信息图插件 | 1.0.0 | [不明](https://networkos.club) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/ServerInformation.zip)
-[ServerStatus](https://github.com/acewfdy/Typecho/tree/master/Plugins/ServerStatus) | Typecho前台服务器状态展示插件 | 2.1.0 | [Weifeng](https://github.com/acewfdy) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/ServerStatus.zip)
+[ServerStatus](https://github.com/acewfdy/Typecho/tree/master/Plugins/ServerStatus) | Typecho前台服务器状态展示插件 | 0E2 | [Weifeng](https://github.com/acewfdy) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/ServerStatus_.zip)
 [SetCategoryPwd](https://github.com/coder-wu/typecho-pwd-plugin) | Typecho批量加密分类下文章插件 | 1.0.0 beta | [coderwu](https://github.com/coder-wu) | [下载](https://github.com/coder-wu/typecho-pwd-plugin/archive/master.zip)
 [ShenJianShou](https://www.wamuban.com/plugin/2097.html) | 神箭手采集器官方版内容发布插件 | 4.2.4 | [神箭手云](http://www.shenjian.io) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/ShenJianShou.zip)
 [Shields](https://github.com/journey-ad/Shields-Typecho-Plugin) | 自解析[Shields.io](https://shields.io)版GitHub按钮插件 | 1.0.0 | [journey.ad](https://github.com/journey-ad) | [下载](https://github.com/journey-ad/Shields-Typecho-Plugin/archive/master.zip)
@@ -376,7 +376,7 @@
 [Sound](https://github.com/qt06/typecho-plugin-sound) | Typecho自定义页面提示音效插件 | 1.0.0 | [杨永全](https://github.com/qt06) | [下载](https://github.com/qt06/typecho-plugin-sound/archive/master.zip)
 [SpammersGoAway](https://github.com/oott123/SpammersGoAway) | 挑战码机制防垃圾评论机器人插件 | 0.0.1 | [oott123](https://github.com/oott123) | [下载](https://github.com/oott123/SpammersGoAway/archive/master.zip)
 [Spider](http://forum.typecho.org/viewtopic.php?f=6&t=11650) | Typecho网站文章批量采集器插件 | 1.0.0 | Syan | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/Spider.zip)
-[Statistics](https://github.com/Liudon/typecho-plugins/tree/master/Statistics) | 模板底部输出自定义统计代码插件 | 1.0.0 | [Liudon](https://github.com/Liudon) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/Statistics.zip)
+[Statistics](https://github.com/Liudon/typecho-plugins/tree/master/Statistics) | 模板底部输出自定义统计代码插件 | 1.0.0 | [Liudon](https://github.com/Liudon) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/Statistics___.zip)
 [Statistics](https://github.com/djspys1/typecho-statistics) | matomo百度谷歌版统计代码插件 | 1.0.0 | [djspy](https://github.com/djspys1) | [下载](https://github.com/djspys1/typecho-statistics/archive/master.zip)
 [Statistics](https://github.com/milkcu/Statistics) | 自建数据版记录蜘蛛访客信息插件 | 1.0.0 | [MilkCu](https://github.com/milkcu) | [下载](https://github.com/milkcu/Statistics/archive/master.zip)
 [Storyline](https://github.com/LeToNode/typecho-plugin-Storyline) | Typecho故事线归档页面效果插件 | 0.0.1 | [letonode](https://github.com/LeToNode) | [下载](https://github.com/LeToNode/typecho-plugin-Storyline/archive/master.zip)
@@ -482,8 +482,8 @@
 [kiana](https://github.com/jrotty/typecho-kiana) | (娱乐向)二次元琪亚娜卡通人插件 | 1.0 | [jrotty](https://github.com/jrotty) | [下载](https://github.com/jrotty/typecho-kiana/archive/master.zip)
 [macOScode](https://github.com/lei2rock/Typecho-Plugin-macOScode) | [Handsome](https://www.ihewro.com/archives/489)用Mac风代码高亮插件 | 1.0.0 | [lei2rock](https://github.com/lei2rock) | [下载](https://github.com/lei2rock/Typecho-Plugin-macOScode/archive/master.zip)
 [nginxhelper](https://github.com/gzare/Typecho-NginxHelper) | Typecho自动清理Nginx下缓存插件 | 0.1 Beta | [Zare](https://github.com/gzare) | [特殊](https://github.com/gzare/Typecho-NginxHelper/archive/master.zip)
+[notice](https://github.com/acewfdy/Typecho/tree/master/Plugins/notice) | [Toastr](https://github.com/CodeSeven/toastr)样式版[notice](https://github.com/jrotty/typecho-for-notice)消息通知插件 | 1.0 | [jrotty](https://github.com/jrotty),[Weifeng](https://github.com/acewfdy) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/notice_.zip)
 [notice](https://github.com/jrotty/typecho-for-notice) | 按来路地址输出欢迎消息通知插件 | 0.3 | [jrotty](https://github.com/jrotty) | [下载](https://github.com/jrotty/typecho-for-notice/archive/master.zip)
-[notice](https://github.com/acewfdy/Typecho/tree/master/Plugins/notice) | [Toastr](https://github.com/CodeSeven/toastr)样式版[notice](https://github.com/jrotty/typecho-for-notice)消息通知插件 | 0.4 | [jrotty](https://github.com/jrotty),[Weifeng](https://github.com/acewfdy) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/notice.zip)
 [oneimg](https://github.com/haocity/oneimg-typecho) | 为页面添加可变背景图片效果插件 | 1.0 | [疯狂减肥带](https://github.com/haocity) | [下载](https://github.com/haocity/oneimg-typecho/archive/master.zip)
 [pScaleUp](https://github.com/liangddyy/pScaleUp) | 自定义倍数点击图片放大特效插件 | 1.0.1 | [梁先生呀](https://github.com/liangddyy) | [下载](https://github.com/liangddyy/pScaleUp/archive/master.zip)
 [paywall](https://www.mantouxia.com/632.html) | [知12](https://www.zhi12.cn)内容创作平台用付费阅读插件 | 3.0.0 | [calmhe](https://www.zhi12.cn) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/paywall.zip)
