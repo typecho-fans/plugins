@@ -27,7 +27,7 @@
 
  > 下表中的下载链接文字可用于附加图标：`下载`即非社区版，`不可用`显示为:no_entry:，`特殊`显示:warning:意为安装或启用方法特殊。
 
-### 插件信息 (463)
+### 插件信息 (467)
 
 ###### TeStore使用下表“名称”创建安装文件夹，“版本”提示升级，请务必确保文本准确；添加时注意按字母排序，自增上方括号内总数，简介不要太长。
 ```
@@ -467,14 +467,14 @@
 [Words](https://github.com/tennsinn/Typecho-Plugins/tree/master/Words) | Typecho自建数据仿微博碎语插件 | 1.1.2 | [息E-敛](https://github.com/tennsinn) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/Words.zip)
 [WowScroll](https://github.com/Sanakey/WowScroll) | 页面元素载入时显示动画特效插件 | 1.1.1 | [Sanakey](https://github.com/Sanakey) | [下载](https://github.com/Sanakey/WowScroll/archive/master.zip)
 [XmlRpcAid](https://github.com/MliKiowa/XmlRpcAid-By-Nabo) | [南博](https://nabo.krait.cn)App用更新XmlRpc文件插件 | 2.0.0 | [乔千](https://github.com/MliKiowa) | [下载](https://github.com/MliKiowa/XmlRpcAid-By-Nabo/archive/master.zip)
-[YkSwfNoAd](https://github.com/nagatoyk/typecho-plug/blob/master/YkSwfNoAd.php) | 优酷视频转换为无广告播放器插件 | 0.0.3 | [镜花水月](https://github.com/nagatoyk) | [不可用](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/YkSwfNoAd.zip)
+[YkSwfNoAd](https://github.com/nagatoyk/typecho-plug/blob/master/YkSwfNoAd.php) | 优酷视频转换为无广告播放器插件 | 0.0.3 | [镜花水月](https://github.com/nagatoyk) | [不可用](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/YkSwfNoAd_.zip)
 [Youtube](https://github.com/ayangyuan/Youtube-Typecho-Plugin) | 快捷嵌入Youtube/Vimeo视频插件 | 1.0 | [Y.Y](https://github.com/ayangyuan) | [下载](https://github.com/ayangyuan/Youtube-Typecho-Plugin/archive/master.zip)
 [YuqueSync](https://gitee.com/juexe/YuqueSync) | [语雀](https://www.yuque.com)云端知识库内容同步加载插件 | 1.0.0 | [Juexe](https://gitee.com/juexe) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/YuqueSync.zip)
 [ZenCoding](https://github.com/typecho/plugins/tree/master/ZenCoding) | 编辑器输入Html/Css语法辅助插件 | 1.0.0 | [qining](https://github.com/joyqi) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/ZenCoding.zip)
-[acfun](https://github.com/nagatoyk/typecho-plug/blob/master/acfun.php) | [AcFun](https://www.acfun.cn)(AC娘)弹幕播放器转换插件 | 0.0.4 beta | [镜花水月](https://github.com/nagatoyk) | [不可用](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/acfun.zip)
+[acfun](https://github.com/nagatoyk/typecho-plug/blob/master/acfun.php) | [AcFun](https://www.acfun.cn)(AC娘)弹幕播放器转换插件 | 0.0.4 | [镜花水月](https://github.com/nagatoyk) | [不可用](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/acfun_.zip)
 [backtotop](https://github.com/Youclose/backtotop) | Typecho极简风返回顶部按钮插件 | 0.1 | [pioauh](https://github.com/Youclose) | [下载](https://github.com/Youclose/backtotop/archive/master.zip)
-[bilibili](https://github.com/nagatoyk/typecho-plug/blob/master/bilibili.php) | [Bilibili]((https://www.bilibili.com))弹幕播放器转换(Flash)插件 | 1.0.0 beta | [镜花水月](https://github.com/nagatoyk) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/bilibili.zip)
-[bilibili](https://github.com/Hcreak/typecho-plugin-bilibili) | 短代码在文内嵌入[Bilibili](https://www.bilibili.com)视频插件 | 1.0.0 beta | [Hcreak](https://github.com/Hcreak) | [下载](https://github.com/Hcreak/typecho-plugin-bilibili/archive/master.zip)
+[bilibili](https://github.com/Hcreak/typecho-plugin-bilibili) | 短代码在文内嵌入[Bilibili](https://www.bilibili.com)视频插件 | 1.0.0 | [Hcreak](https://github.com/Hcreak) | [下载](https://github.com/Hcreak/typecho-plugin-bilibili/archive/master.zip)
+[bilibili](https://github.com/nagatoyk/typecho-plug/blob/master/bilibili.php) | [Bilibili]((https://www.bilibili.com))弹幕播放器转换(Flash)插件 | 1.0.0 | [镜花水月](https://github.com/nagatoyk) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/bilibili__.zip)
 [cPlayer](https://github.com/journey-ad/cPlayer-Typecho-Plugin) | 带网易云解析全能音乐播放器插件 | 1.2.13 | [journey.ad](https://github.com/journey-ad) | [下载](https://github.com/journey-ad/cPlayer-Typecho-Plugin/archive/master.zip)
 [cosUploadV5](https://github.com/dishcheng/cosUploadV5) | 附件使用COS腾讯云存储V5版插件 | 3.0 | [菜菜子](https://github.com/dishcheng) | [下载](https://github.com/dishcheng/cosUploadV5/archive/master.zip)
 [editorG](https://qqdie.com/archives/editor-G.html) | 系统Markdown编辑器小优化插件 | 0.2 | [Jrotty](https://github.com/jrotty) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/editorG.zip)
