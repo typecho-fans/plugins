@@ -160,7 +160,7 @@
 							//查找主文件路径
 							foreach ($datas['tree'] as $tree) {
 								$path = '';
-								if (false!==stripos($tree['path'],($sub ? $name['0'].'/Plugin.php' : 'Plugin.php'))) {
+								if (false!==strpos($tree['path'],($sub ? $name['0'].'/Plugin.php' : 'Plugin.php'))) {
 									$path = $tree['path'];
 									break;
 								}
@@ -182,7 +182,7 @@
 
 					if ($infos['version']) {
 						//提取版本号
-						if (preg_match('/\d+(.\d+)*/',trim($infos['version']),$match)) {
+						if (preg_match('/\d+(.\d+)*/',trim(strip_tags($infos['version'])),$match)) {
 							$infos['version'] = $match['0'];
 						}
 						$version = stripos($metas['0']['2'],'v')===0 ? trim(substr($metas['0']['2'],1)) : trim($metas['0']['2']);
