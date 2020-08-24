@@ -1,11 +1,11 @@
 <?php
 // if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 /**
- * 基于<a href="https://www.ihewro.com/archives/489/">handsome主题</a>的<a href="https://moe.best/">神代綺凜</a>式魔改主题 </br> 更新时间: <span style="color:red">2020-08-11</span>      
+ * 基于<a href="https://www.ihewro.com/archives/489/">handsome主题</a>的<a href="https://moe.best/">神代綺凜</a>式魔改主题 </br> 更新时间: <span style="color:red">2020-08-24</span>      
  *
  * @package KirinShiKi
  * @author Sanakey
- * @version 3.0.0
+ * @version 3.0.1
  * @link https://keymoe.com
  */
 class KirinShiKi_Plugin implements Typecho_Plugin_Interface
@@ -57,7 +57,7 @@ class KirinShiKi_Plugin implements Typecho_Plugin_Interface
 
             echo "</div>";
         }
-        check_update("3.0.0");
+        check_update("3.0.1");
 
         // 自定义pc背景
         $pcBg = new Typecho_Widget_Helper_Form_Element_Text(
@@ -177,9 +177,9 @@ class KirinShiKi_Plugin implements Typecho_Plugin_Interface
         $script .= '</script>';
         // $script = '<script>$(document).on("ready pjax:end", ' . 'function() {needpjax()});</script>';
         $css = '<style>
-            #bg{background-image:url(' . $pcBg . ');}
+            #mybg{background-image:url(' . $pcBg . ');}
             @media screen and (max-width:991px) {
-                #bg { 
+                #mybg { 
                     background-image:url(' . $mpBg . ');
                 }
             }
