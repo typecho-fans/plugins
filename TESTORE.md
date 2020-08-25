@@ -96,7 +96,7 @@
 [BufannaoWap](https://plugins.typecho.me/plugins/wap-for-typecho.html) | 旧Xhtml标准移动端页面生成插件 | 1.0.1 | 不烦恼 | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/BufannaoWap.zip)
 [ByeTyp](https://github.com/sunxiyuan/ByeTyp) | 新版数据库导出至WordPress插件 | 1.4 | [sunxiyuan](https://github.com/sunxiyuan) | [下载](https://github.com/sunxiyuan/ByeTyp/archive/master.zip)
 [CKEditor](https://github.com/lizhineng/ckeditor-for-typecho) | CKEditor4所见即所得编辑器插件 | 1.0.0 | [Li Zhineng](https://github.com/lizhineng) | [下载](https://github.com/lizhineng/ckeditor-for-typecho/archive/master.zip)
-[CSDN](https://github.com/ddddyyyy/CSDN) | 将CSDN博文迁移至Typecho插件 | 1.0.0 | [MDY](https://github.com/ddddyyyy) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/CSDN.zip)
+[CSDN](https://github.com/ddddyyyy/CSDN) | 将CSDN博文迁移至Typecho插件 | 1.0.0 | [MDY](https://github.com/ddddyyyy) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/CSDN_.zip)
 [Calendar](https://github.com/istobran/typecho-calender-plugin) | Typecho博客侧边栏显示日历插件 | 1.0.0 | [BangZ](https://github.com/istobran) | [下载](https://github.com/istobran/typecho-calender-plugin/archive/master.zip)
 [Canvas](https://github.com/orzMaster/Canvas-Typecho-Plugin) | Typecho炫酷感网页粒子背景插件 | 1.0.0 | [orzMaster](https://github.com/orzMaster) | [下载](https://github.com/orzMaster/Canvas-Typecho-Plugin/archive/master.zip)
 [Captcha](https://github.com/KimiChen/Typecho-Captcha) | Typecho定制文字评论验证码插件 | 1.0.0 | [qining](https://github.com/joyqi) & [Kimi](https://github.com/KimiChen) | [下载](https://github.com/KimiChen/Typecho-Captcha/archive/master.zip)
