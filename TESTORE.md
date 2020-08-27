@@ -27,7 +27,7 @@
 
  > 下表中的下载链接文字可用于附加图标：`下载`即非社区版，`不可用`显示为:no_entry:，`特殊`显示:warning:意为安装或启用方法特殊。
 
-### 插件信息 (467)
+### 插件信息 (465)
 
 ###### TeStore使用下表“名称”创建安装文件夹，“版本”提示升级，请务必确保文本准确；添加时注意按字母排序，自增上方括号内总数，简介不要太长。
 ```
@@ -38,7 +38,6 @@
 ---- | ----: | :---: | ----: | :----:
 [APlayerAtBottom](https://github.com/SatoSouta/Typecho-plugin-APlayerAtBottom) | 网易云解析吸底式音乐播放器插件 | 1.1.1 | [小太](https://github.com/SatoSouta) | [下载](https://github.com/SatoSouta/Typecho-plugin-APlayerAtBottom/archive/master.zip)
 [APlayer](https://github.com/zgq354/APlayer-Typecho-Plugin) | 网易云解析Html5音乐播放器插件 | 1.4.11 | [ZGQ](https://github.com/zgq354) | [下载](https://github.com/zgq354/APlayer-Typecho-Plugin/archive/master.zip)
-[AbbrSlug](https://github.com/cyea/Typecho-AbbrSlug) | 多种算法生成数字文章缩略名插件 | 1.0.0 | [羽叶](https://github.com/cyea) | [下载](https://github.com/cyea/Typecho-AbbrSlug/archive/master.zip)
 [Acc](https://github.com/qt06/typecho-plugin-accessibility) | Typecho无障碍读屏标记修正插件 | 1.0.0 | [杨永全](https://github.com/qt06) | [下载](https://github.com/qt06/typecho-plugin-accessibility/archive/master.zip)
 [AccessBmob](https://github.com/kraity/typecho-accessBmob) | [Bmob](https://www.bmob.cn)后端云数据库版[Access](https://github.com/kokororin/typecho-plugin-Access)插件 | 1.2 | [权那他](https://github.com/kraity) | [下载](https://github.com/kraity/typecho-accessBmob/archive/master.zip)
 [Access](https://github.com/kokororin/typecho-plugin-Access) | Typecho查看访客记录统计表插件 | 2.0.2 | [Kokororin](https://github.com/kokororin) | [下载](https://github.com/kokororin/typecho-plugin-Access/archive/master.zip)
@@ -96,7 +95,6 @@
 [BufannaoWap](https://plugins.typecho.me/plugins/wap-for-typecho.html) | 旧Xhtml标准移动端页面生成插件 | 1.0.1 | 不烦恼 | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/BufannaoWap.zip)
 [ByeTyp](https://github.com/sunxiyuan/ByeTyp) | 新版数据库导出至WordPress插件 | 1.4 | [sunxiyuan](https://github.com/sunxiyuan) | [下载](https://github.com/sunxiyuan/ByeTyp/archive/master.zip)
 [CKEditor](https://github.com/lizhineng/ckeditor-for-typecho) | CKEditor4所见即所得编辑器插件 | 1.0.0 | [Li Zhineng](https://github.com/lizhineng) | [下载](https://github.com/lizhineng/ckeditor-for-typecho/archive/master.zip)
-[CSDN](https://github.com/ddddyyyy/CSDN) | 将CSDN博文迁移至Typecho插件 | 1.0.0 | [MDY](https://github.com/ddddyyyy) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/CSDN_.zip)
 [Calendar](https://github.com/istobran/typecho-calender-plugin) | Typecho博客侧边栏显示日历插件 | 1.0.0 | [BangZ](https://github.com/istobran) | [下载](https://github.com/istobran/typecho-calender-plugin/archive/master.zip)
 [Canvas](https://github.com/orzMaster/Canvas-Typecho-Plugin) | Typecho炫酷感网页粒子背景插件 | 1.0.0 | [orzMaster](https://github.com/orzMaster) | [下载](https://github.com/orzMaster/Canvas-Typecho-Plugin/archive/master.zip)
 [Captcha](https://github.com/KimiChen/Typecho-Captcha) | Typecho定制文字评论验证码插件 | 1.0.0 | [qining](https://github.com/joyqi) & [Kimi](https://github.com/KimiChen) | [下载](https://github.com/KimiChen/Typecho-Captcha/archive/master.zip)
