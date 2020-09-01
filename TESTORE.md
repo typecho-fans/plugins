@@ -167,6 +167,7 @@
 [Famous](#) | Typecho模板用输出名言200句插件 | 1.0.2 | [iwege](http://www.reistlin.com) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/Famous.zip)
 [FancyBox](https://github.com/trisolaris233/FancyBox) | Typecho简易版图片灯箱弹窗插件 | 1.0.0 | [阳光加冰](https://github.com/trisolaris233) | [下载](https://github.com/trisolaris233/FancyBox/archive/master.zip)
 [FancyBox](https://github.com/zzf88521/FancyBox-Typecho) | 基于jQuery的多功能弹窗特效插件 | 0.0.1 | [路飞](https://github.com/zzf88521) | [下载](https://github.com/zzf88521/FancyBox-Typecho/archive/master.zip)
+[fancyboxJQ](https://github.com/ShangJixin/Typecho-Plugin-fancyboxJQ) | 	用 jQuery 的方式给站点引入 fancybox 灯箱 | 1.1.1 | [尚寂新](https://github.com/ShangJixin) | [下载](https://github.com/ShangJixin/Typecho-Plugin-fancyboxJQ/archive/1.1.1.zip)
 [FancyCaptcha](https://plugins.typecho.me/plugins/comments-fancy-captcha.html) | jQuery UI版多选拖拽式验证码插件 | 1.0.0 | 小强 | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/FancyCaptcha.zip)
 [Fckeditor](https://plugins.typecho.me/plugins/fckeditor-for-typecho.html) | 支持代码高亮的可视化编辑器插件 | 1.0.0 | Shion | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/Fckeditor.zip)
 [FileCache](https://plugins.typecho.me/plugins/file-cache.html) | 经典版Typecho生成静态缓存插件 | 1.0.0 | Shion | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/FileCache.zip)
