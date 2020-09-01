@@ -465,6 +465,7 @@
 [Words](https://github.com/tennsinn/Typecho-Plugins/tree/master/Words) | Typecho自建数据仿微博碎语插件 | 1.1.2 | [息E-敛](https://github.com/tennsinn) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/Words.zip)
 [WowScroll](https://github.com/Sanakey/WowScroll) | 页面元素载入时显示动画特效插件 | 1.1.1 | [Sanakey](https://github.com/Sanakey) | [下载](https://github.com/Sanakey/WowScroll/archive/master.zip)
 [XmlRpcAid](https://github.com/MliKiowa/XmlRpcAid-By-Nabo) | [南博](https://nabo.krait.cn)App用更新XmlRpc文件插件 | 2.0.0 | [乔千](https://github.com/MliKiowa) | [下载](https://github.com/MliKiowa/XmlRpcAid-By-Nabo/archive/master.zip)
+[XMUserAgent](https://github.com/benzBrake/XMUserAgent) | Typecho UserAgent 渲染插件 | 0.3 | [Ryan](https://github.com/benzBrake) | [下载](https://github.com/benzBrake/XMUserAgent/archive/master.zip)
 [YkSwfNoAd](https://github.com/nagatoyk/typecho-plug/blob/master/YkSwfNoAd.php) | 优酷视频转换为无广告播放器插件 | 0.0.3 | [镜花水月](https://github.com/nagatoyk) | [不可用](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/YkSwfNoAd_.zip)
 [Youtube](https://github.com/ayangyuan/Youtube-Typecho-Plugin) | 快捷嵌入Youtube/Vimeo视频插件 | 1.0 | [Y.Y](https://github.com/ayangyuan) | [下载](https://github.com/ayangyuan/Youtube-Typecho-Plugin/archive/master.zip)
 [YuqueSync](https://gitee.com/juexe/YuqueSync) | [语雀](https://www.yuque.com)云端知识库内容同步加载插件 | 1.0.0 | [Juexe](https://gitee.com/juexe) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/YuqueSync.zip)
