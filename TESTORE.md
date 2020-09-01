@@ -27,7 +27,7 @@
 
  > 下表中的下载链接文字可用于附加图标：`下载`即非社区版，`不可用`显示为:no_entry:，`特殊`显示:warning:意为安装或启用方法特殊。
 
-### 插件信息 (466)
+### 插件信息 (467)
 
 ###### TeStore使用下表“名称”创建安装文件夹，“版本”提示升级，请务必确保文本准确；添加时注意按字母排序，自增上方括号内总数，简介不要太长。
 ```
@@ -167,7 +167,6 @@
 [Famous](#) | Typecho模板用输出名言200句插件 | 1.0.2 | [iwege](http://www.reistlin.com) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/Famous.zip)
 [FancyBox](https://github.com/trisolaris233/FancyBox) | Typecho简易版图片灯箱弹窗插件 | 1.0.0 | [阳光加冰](https://github.com/trisolaris233) | [下载](https://github.com/trisolaris233/FancyBox/archive/master.zip)
 [FancyBox](https://github.com/zzf88521/FancyBox-Typecho) | 基于jQuery的多功能弹窗特效插件 | 0.0.1 | [路飞](https://github.com/zzf88521) | [下载](https://github.com/zzf88521/FancyBox-Typecho/archive/master.zip)
-[fancyboxJQ](https://github.com/ShangJixin/Typecho-Plugin-fancyboxJQ) | 	用 jQuery 的方式给站点引入 fancybox 灯箱 | 1.1.1 | [尚寂新](https://github.com/ShangJixin) | [下载](https://github.com/ShangJixin/Typecho-Plugin-fancyboxJQ/archive/1.1.1.zip)
 [FancyCaptcha](https://plugins.typecho.me/plugins/comments-fancy-captcha.html) | jQuery UI版多选拖拽式验证码插件 | 1.0.0 | 小强 | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/FancyCaptcha.zip)
 [Fckeditor](https://plugins.typecho.me/plugins/fckeditor-for-typecho.html) | 支持代码高亮的可视化编辑器插件 | 1.0.0 | Shion | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/Fckeditor.zip)
 [FileCache](https://plugins.typecho.me/plugins/file-cache.html) | 经典版Typecho生成静态缓存插件 | 1.0.0 | Shion | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/FileCache.zip)
@@ -478,6 +477,7 @@
 [cPlayer](https://github.com/journey-ad/cPlayer-Typecho-Plugin) | 带网易云解析全能音乐播放器插件 | 1.2.13 | [journey.ad](https://github.com/journey-ad) | [下载](https://github.com/journey-ad/cPlayer-Typecho-Plugin/archive/master.zip)
 [cosUploadV5](https://github.com/dishcheng/cosUploadV5) | 附件使用COS腾讯云存储V5版插件 | 3.0 | [菜菜子](https://github.com/dishcheng) | [下载](https://github.com/dishcheng/cosUploadV5/archive/master.zip)
 [editorG](https://qqdie.com/archives/editor-G.html) | 系统Markdown编辑器小优化插件 | 0.2 | [Jrotty](https://github.com/jrotty) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/editorG.zip)
+[fancyboxJQ](https://github.com/ShangJixin/Typecho-Plugin-fancyboxJQ) | 	用 jQuery 的方式给站点引入 fancybox 灯箱 | 1.1.1 | [尚寂新](https://github.com/ShangJixin) | [下载](https://github.com/ShangJixin/Typecho-Plugin-fancyboxJQ/archive/1.1.1.zip)
 [footeranimation](http://forum.typecho.org/viewtopic.php?f=6&t=11272) | Typecho页脚加透明动画图片插件 | 1.0 | jyzb02 | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/footeranimation.zip)
 [fuckadblock](https://qqdie.com/archives/fuckadblock-typecho-plugin.html) | 站长反广告过滤自动检测弹窗插件 | 3.2.1 | [泽泽社长](https://github.com/jrotty) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/fuckadblock.zip)
 [gifstop](https://github.com/jrotty/typecho-gifstop) | 阻止Gif格式图片动画自动播放插件 | 1.0 | [Jrotty](https://github.com/jrotty) | [下载](https://github.com/jrotty/typecho-gifstop/archive/master.zip)
