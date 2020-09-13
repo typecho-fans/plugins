@@ -27,7 +27,7 @@ Sitemap v1.0.4 - 社区维护版
 **使用方法**：
 ##### 1. 下载本插件，放在 `usr/plugins/` 目录中，确保文件夹名为 Sitemap；
 ##### 2. 激活插件；
-##### 3. 访问http://[example].com/sitemap.xml即可看到页面效果。
+##### 3. 访问http://[example].com/index.php/sitemap.xml即可看到页面效果。
 
 </td>
 </tr>
