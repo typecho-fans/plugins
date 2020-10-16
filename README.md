@@ -141,7 +141,7 @@
 [TeStore](TeStore) | GitHub表格解析版插件仓库插件 | 1.1.5 | [羽中](https://github.com/jzwalk), [zhulin3141](https://github.com/zhulin3141) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/TeStore.zip)
 [ThemeDemo](ThemeDemo) | 双模式导航条主题外观演示插件 | 1.2.1 | [ShingChi](https://github.com/shingchi), [doudou](https://github.com/doudoutime) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/ThemeDemo.zip)
 [Tinyfader](Tinyfader) | Typecho简易首页图片轮播插件 | 1.0.0 | Willin Kan | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/Tinyfader.zip)
-[Titleshow](Titleshow) | Typecho加1密文章显示标题插件 | 1.1.2 | [泽泽](https://github.com/jrotty) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/Titleshow.zip)
+[Titleshow](Titleshow) | Typecho加密文章显示标题插件 | 1.1.2 | [泽泽](https://github.com/jrotty) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/Titleshow.zip)
 [TopTop](TopTop) | 卡通吊绳点击返回顶部按钮插件 | 1.0.0 | [Heeeepin](https://github.com/ghosx) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/TopTop.zip)
 [Typembed](Typembed) | 常见视频站链接转为播放器插件 | 1.3.0 | [Fengzi](https://github.com/nothingisover) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/Typembed.zip)
 [Ueditor](Ueditor) | 百度贴吧可视编辑器Ueditor插件 | 1.0.0 | [zhulin3141](https://github.com/zhulin3141) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/Ueditor.zip)
