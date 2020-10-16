@@ -27,7 +27,7 @@
 
  > 下表中的下载链接文字可用于附加图标：`下载`即非社区版，`不可用`显示为:no_entry:，`特殊`显示:warning:意为安装或启用方法特殊。
 
-### 插件信息 (467)
+### 插件信息 (468)
 
 ###### TeStore使用下表“名称”创建安装文件夹，“版本”提示升级，请务必确保文本准确；添加时注意按字母排序，自增上方括号内总数，简介不要太长。
 ```
@@ -501,6 +501,6 @@
 [upimgchr](https://gitee.com/jclser/upimgchr-for-typecho) | 编辑器添加[路过图床](https://imgchr.com)上传按钮插件 | 1.0 | [jclser](https://gitee.com/jclser) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/upimgchr.zip)
 [wangEditor](https://github.com/journey-ad/wangEditor-Typecho-Plugin) | 所见即所得编辑器wangEditor插件 | 1.0.1 | [journey.ad](https://github.com/journey-ad) | [下载](https://github.com/journey-ad/wangEditor-Typecho-Plugin/archive/master.zip)
 [waterMark](https://github.com/internelp/waterMark) | 图片自动添加Gif/Png格式水印插件 | 1.0.1 | [应用侠](https://github.com/internelp) | [下载](https://github.com/internelp/waterMark/archive/master.zip)
+[WxFollowView](https://github.com/Moidea/WxFollowView) | Typecho文章关注公众号获取密码插件 | 2.0.0 | [多思多金Roogle](https://www.moidea.info) | [下载](https://github.com/Moidea/WxFollowView/releases/download/2.0/WxFollowView.zip)
 [ymplayer](https://github.com/kokororin/typecho-plugin-ymplayer) | Html5可伸缩海报音乐播放器插件 | 0.7 | [kokororin](https://github.com/kokororin) | [特殊](https://github.com/kokororin/typecho-plugin-ymplayer/archive/master.zip)
 [zbgray](http://forum.typecho.org/viewtopic.php?f=6&t=11271) | Typecho简易祭日用整站变灰插件 | 1.0.0 | jyzb02 | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/zbgray.zip)
-[WxFollowView](https://github.com/Moidea/WxFollowView) | Typecho文章关注公众号获取密码插件 | 2.0.0 | [多思多金Roogle](https://www.moidea.info) | [下载](https://github.com/Moidea/WxFollowView/releases/download/2.0/WxFollowView.zip)
