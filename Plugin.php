@@ -4,9 +4,9 @@
  * 基于<a href="https://www.ihewro.com/archives/489/">handsome主题</a>的<a href="https://moe.best/">神代綺凜</a>式魔改主题 </br> 更新时间: <span style="color:red">2020-08-24</span>      
  *
  * @package KirinShiKi
- * @author Sanakey
+ * @author Sanakey,JeffersonQin
  * @version 3.0.1
- * @link https://keymoe.com
+ * @link https://github.com/JeffersonQin/KirinShiKi
  */
 class KirinShiKi_Plugin implements Typecho_Plugin_Interface
 {
