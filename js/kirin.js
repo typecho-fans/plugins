@@ -165,15 +165,15 @@ function setCopyright(type) {
 
     var badgeInfo = '&nbsp;|&nbsp; \n' +
         '<div class="github-badge">\n' +
-        '    <a href="https://keymoe.com/" target="_blank" title="由JindaiKirin/Sanakey魔改">\n' +
-        '        <span class="badge-subject">Modified</span><span class="badge-value bg-red">JindaiKirin/Sanakey</span>\n' +
+        '    <a href="https://gyrojeff.top/" target="_blank" title="由JindaiKirin/JeffersonQin魔改">\n' +
+        '        <span class="badge-subject">Modified</span><span class="badge-value bg-red">JindaiKirin/JeffersonQin</span>\n' +
         '    </a>\n' +
         '</div>' +
         '&nbsp;&nbsp; \n';
 
     var textInfo = '&nbsp;|&nbsp; \n' +
-        '    <a href="https://keymoe.com/" target="_blank" title="handsome主题由JindaiKirin/Sanakey魔改">\n' +
-        '        Modified&nbsp;&nbsp;JindaiKirin/Sanakey\n' +
+        '    <a href="https://gyrojeff.top/" target="_blank" title="handsome主题由JindaiKirin/JeffersonQin魔改">\n' +
+        '        Modified&nbsp;&nbsp;JindaiKirin/JeffersonQin\n' +
         '    </a>\n';
     '&nbsp;&nbsp; \n';
     // var copyrightInfo = type?textInfo:badgeInfo;
