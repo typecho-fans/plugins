@@ -6,13 +6,13 @@
 
 神代綺凜式魔改js文件。
 
-本代码为神代綺凜(https://moe.best)原创，Sanakey(https://keymoe.com)魔改，并遵守 GPL 2.0 开源协议。
+本代码为神代綺凜(https://moe.best)原创，Sanakey(https://keymoe.com)魔改，JeffersonQin(https://gyrojeff.top)再度魔改，并遵守 GPL 2.0 开源协议。
 
 *** */
 
-$(document).ready(function () {
+$(document).ready(function() {
     // 神代綺凜原js部分
-    (function () {
+    (function() {
         var b = !0;
         // window.setInterval(, 300);
         function scrolling() {
@@ -34,9 +34,9 @@ $(document).ready(function () {
         }
         var timer = null;
 
-        $(document).scroll(function () {
+        $(document).scroll(function() {
             clearTimeout(timer);
-            timer = setTimeout(function () {
+            timer = setTimeout(function() {
                 scrolling();
             }, 30)
         });
@@ -44,10 +44,12 @@ $(document).ready(function () {
             "color:#444;background:#eee;padding:5px 0;", "color:#fff;background:#876;padding:5px 0;");
         console.log("\n %c handsome modified %c by Sanakey | www.keymoe.com \n",
             "color:#444;background:#eee;padding:5px 0;", "color:#fff;background:#71bef1;padding:5px 0;");
+        console.log("\n %c handsome modified %c by JeffersonQin | gyrojeff.top \n",
+            "color:#444;background:#eee;padding:5px 0;", "color:#fff;background:#7266ba;padding:5px 0;");
         console.log("%c ",
             "background:url(https://api.btstu.cn/sjbz/?lx=dongman) no-repeat center;background-size:cover;padding-left:100%;padding-bottom:55%;overflow:hidden;border-radius:10px;margin:5px 0"
         );
-        window.setInterval(function () {
+        window.setInterval(function() {
             if (document.getElementById("aboutPage")) {
                 var a = document.getElementById("aboutPage"),
                     b = a.contentWindow.document.getElementById("mainc");
@@ -81,7 +83,7 @@ $(document).ready(function () {
 })
 
 
-$(window).load(function () {
+$(window).load(function() {
     1 < location.hash.length && $('.tocify-item[data-unique="' + decodeURI(location.hash.substr(1)) + '"]').click()
 });
 
@@ -91,7 +93,7 @@ function updateLiveStatus(b) {
 
 function getHref() {
     var hrefArr = [];
-    $('.post-meta .index-post-title>a').each(function () {
+    $('.post-meta .index-post-title>a').each(function() {
         hrefArr.push($(this).attr('href'));
         $(this).find('span').addClass('sticky');
     });
@@ -100,7 +102,7 @@ function getHref() {
 }
 
 function setHref(arr) {
-    $('.post-meta').each(function (index) {
+    $('.post-meta').each(function(index) {
         $(this).append('<a href="' + arr[index] + '" class="ahover"></a>')
     });
 }
@@ -119,12 +121,12 @@ function colorfulTags() {
 function moeTitle() {
     var OriginTitile = document.title;
     var d;
-    document.addEventListener("visibilitychange", function () {
-        document.hidden ? (clearTimeout(d), d = setTimeout(function () {
+    document.addEventListener("visibilitychange", function() {
+        document.hidden ? (clearTimeout(d), d = setTimeout(function() {
             document.title =
                 "|\uff65\u03c9\uff65\uff40\u0029\u4f60\u770b\u4e0d\u89c1\u6211\u2026\u2026"
         }, 500)) : (document.title = "_(:3\u300d\u300d\u8fd8\u662f\u88ab\u53d1\u73b0\u4e86", d =
-            setTimeout(function () {
+            setTimeout(function() {
                 document.title = OriginTitile
             }, 2E3))
     })
@@ -134,7 +136,7 @@ function moeTitle() {
 function copyTips(text) {
     var timer = null;
     var dialog = {
-        msg: function (msg, time) {
+        msg: function(msg, time) {
             var time = time || 3000;
             var dialogElement = $('#my-dialog-layer');
             var dom = '<div id="my-dialog-layer" style="z-index: 99999; max-width: 360px; min-width:100px; background-color: rgba(0,0,0,.6); color: #fff;position: fixed; top: 50%; left: 50%; transform: translate(-50%,-50%); ">\n' +
@@ -142,18 +144,18 @@ function copyTips(text) {
                 '</div>'
             if (dialogElement.length == 0) {
                 $('body').append(dom);
-                timer = setTimeout(function () {
+                timer = setTimeout(function() {
                     $('#my-dialog-layer').remove();
                 }, time)
             }
             clearTimeout(timer);
-            timer = setTimeout(function () {
+            timer = setTimeout(function() {
                 $('#my-dialog-layer').remove();
             }, time)
 
         }
     }
-    document.addEventListener("copy", function () {
+    document.addEventListener("copy", function() {
         dialog.msg(text || '复制成功，如需转载请注明出处！', 3000);
     })
 }

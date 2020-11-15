@@ -1,6 +1,8 @@
 # KirinShiKi
 
-基于 handsome 主题的神代綺凜式魔改主题插件
+基于 handsome 主题的神代綺凜式魔改主题插件.
+
+这是一个Fork项目，原址详见GitHub上方。本项目基于原项目进行了进一步修改，修复了时光机的背景问题、限宽问题、以及侧边栏的透明问题和鼠标悬浮效果。如果你有任何疑问，欢迎来我的博客gyrojeff.top或者发送邮件到1247006353@qq.com咨询我。
 
 ## 食用方法
 
@@ -49,7 +51,8 @@
 
 ## 主题
 
-预览效果: [Sanakey の小站](https://keymoe.com)
+- 预览效果: [Sanakey の小站](https://keymoe.com)
+- 预览效果: [打工人的奶茶铺](https://gyrojeff.top)
 
 ## 感谢
 
