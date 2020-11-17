@@ -280,7 +280,7 @@
 [MyBangumi](https://github.com/panedioic/MyBangumi) | 自建数据显示追番和短评信息插件 | 0.1 | [Panedioic](https://github.com/panedioic) | [下载](https://github.com/panedioic/MyBangumi/archive/master.zip)
 [MyPosition](https://github.com/CrazyBoyM/MyPosition) | Typecho写作时地图API定位插件 | 3.5.9 | [南城猫](https://github.com/CrazyBoyM) | [下载](https://github.com/CrazyBoyM/MyPosition/archive/master.zip)
 [MyUpload](https://github.com/jlice/typecho-MyUpload) | 上传图片本地或[TinyPNG](https://tinypng.com)压缩插件 | 1.5.0 | [文剑木然](https://github.com/jlice) | [特殊](https://github.com/jlice/typecho-MyUpload/archive/master.zip)
-[NavMenu](https://github.com/doghap/NavMenu-For-Typecho) | Typecho自定义菜单管理配置插件 | 1.0.0 | [merdan](https://github.com/doghap) | [下载](https://github.com/doghap/NavMenu-For-Typecho/archive/master.zip)
+[NavMenu](https://github.com/doghap/NavMenu) | Typecho自定义菜单管理配置插件 | 1.0.0 | [merdan](https://github.com/doghap) | [下载](https://github.com/doghap/NavMenu/archive/NavMenu.zip)
 [NewPost](https://github.com/iLay1678/NewPost) | 通过API接口地址发布导入文章插件 | 1.1 | [ilay](https://github.com/iLay1678) | [下载](https://github.com/iLay1678/NewPost/archive/master.zip)
 [Nos](https://github.com/163yun/nos-typecho-plugin) | Typecho网易云对象存储NOS插件 | 1.0.0 | [白宦成](https://github.com/bestony) | [下载](https://github.com/163yun/nos-typecho-plugin/archive/master.zip)
 [NotAllowIp](https://github.com/tangmaoguo/NotAllowIp-Typecho-Plugin) | Typecho设禁止访问IP黑名单插件 | 1.0.0 | [BlackStyle](https://github.com/tangmaoguo) | [下载](https://github.com/tangmaoguo/NotAllowIp-Typecho-Plugin/archive/master.zip)
