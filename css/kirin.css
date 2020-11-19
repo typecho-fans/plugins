@@ -50,6 +50,22 @@ html.theme-dark .badge {
     color: #fff
 }
 
+.bg-white {
+    max-width: 1024px;
+    margin: auto;
+}
+
+.comment-respond .panel-default {
+    max-width: 1024px;
+    margin: auto;
+}
+
+.wrapper-md>.timeline {
+    max-width: 810px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 
 /* Modification by JeffersonQin ended*/
 
