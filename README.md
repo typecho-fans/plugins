@@ -99,7 +99,7 @@
 [Like](Like) | Typecho文章点赞排行统计插件 | 1.0.1 | [skylzl](https://github.com/xiaogouxo) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-H_to_L/Like.zip)
 [Links](Links) | Typecho友情链接数据管理插件 | 1.2.3 | [懵仙兔兔](https://github.com/Mejituu), [Hanny](http://www.imhan.com) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-H_to_L/Links.zip)
 [LoginDesigner](LoginDesigner) | Typecho注册/登录界面美化插件 | 1.3.0 | [泽泽社长](https://github.com/jrotty) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-H_to_L/LoginDesigner.zip)
-[LoveKKComment](LoveKKComment) | 评论邮件通知与密码找回插件 | 1.0.5 | [康粑粑](https://github.com/ylqjgm) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-H_to_L/LoveKKComment.zip)
+[LoveKKComment](LoveKKComment) | 评论邮件通知与密码找回插件 | 1.0.6 | [康粑粑](https://github.com/ylqjgm) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-H_to_L/LoveKKComment.zip)
 [LoveKKWeiBo](LoveKKWeiBo) | 用新浪微博作附件上传图床插件 | 1.0.1 | [康粑粑](https://github.com/ylqjgm) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-H_to_L/LoveKKWeiBo.zip)
 [MagikeEditor](MagikeEditor) | Magike移植Html源码编辑器插件 | 1.1.1 | [羽中](https://github.com/jzwalk), [Hanny](http://www.imhan.com) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/MagikeEditor.zip)
 [MarkdownParse](MarkdownParse) | Parsedown插件(MathJax+目录) | 1.2.3 | [mrgeneral](https://github.com/mrgeneralgoo) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/MarkdownParse.zip)
