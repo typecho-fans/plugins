@@ -4,7 +4,7 @@
  *
  * @package LoveKKComment
  * @author  康粑粑
- * @version 1.0.5
+ * @version 1.0.6
  * @link    https://www.usebsd.com
  */
 
@@ -323,7 +323,7 @@ class LoveKKComment_Plugin implements Typecho_Plugin_Interface
                 // 调用异步回调模式
                 Helper::requestService('asyncApproved', $comment);
             } else {
-                self::sendMail($comment->coid, TRUE);
+                self::sendMail($comment->coid ?? $comment['coid'], TRUE);
             }
         }
     }
