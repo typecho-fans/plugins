@@ -181,6 +181,7 @@
 [Geetest](https://github.com/99kyuu/GeetestV3_for_Typecho) | 极验证V3版登录注册用验证码插件 | 1.0.0 | [玖玖kyuu](https://github.com/99kyuu) | [特殊](https://github.com/99kyuu/GeetestV3_for_Typecho/archive/master.zip)
 [Geetest](https://github.com/jinfeijie/Geetest) | 极验证V3版评论用图形验证码插件 | 1.0.3 | [mrjin](https://github.com/jinfeijie) | [下载](https://github.com/jinfeijie/Geetest/archive/1.0.3.zip)
 [Geetest](https://github.com/zhb127/z-typecho-plugin-geetest) | 极验证登录验证码插件(Session版) | 1.0.0 | [菠菜](https://github.com/zhb127) | [下载](https://github.com/zhb127/z-typecho-plugin-geetest/archive/master.zip)
+[Geetest](https://github.com/zhb127/z-typecho-plugin-geetest) | 极验V3版登录、注册、自定义页面全能验证码插件 | 1.1.0 | [小胖狐](https://github.com/xueshanlinghu) | [下载](https://github.com/xueshanlinghu/typecho-plugin-geetest/archive/1.1.0.zip) 
 [GetIPIntel](https://github.com/xddxdd/typecho-getipintel) | 禁止使用代理用户评论反欺诈插件 | 1.0.0 | [Lan Tian](https://github.com/xddxdd) | [下载](https://github.com/xddxdd/typecho-getipintel/archive/master.zip)
 [GetRealIP](https://github.com/PonyCool/typecho-plugins/tree/master/GetRealIP) | Typecho获取访客真实IP地址插件 | 1.0.0 | [Pony](https://github.com/PonyCool) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/GetRealIP.zip)
 [GistEcho](https://github.com/flxxyz/GistEcho) | 短代码方式在文章内嵌入Gist插件 | 1.0.0 | [flxxyz](https://github.com/flxxyz) | [下载](https://github.com/flxxyz/GistEcho/archive/master.zip)
@@ -504,3 +505,4 @@
 [waterMark](https://github.com/internelp/waterMark) | 图片自动添加Gif/Png格式水印插件 | 1.0.1 | [应用侠](https://github.com/internelp) | [下载](https://github.com/internelp/waterMark/archive/master.zip)
 [ymplayer](https://github.com/kokororin/typecho-plugin-ymplayer) | Html5可伸缩海报音乐播放器插件 | 0.7 | [kokororin](https://github.com/kokororin) | [特殊](https://github.com/kokororin/typecho-plugin-ymplayer/archive/master.zip)
 [zbgray](http://forum.typecho.org/viewtopic.php?f=6&t=11271) | Typecho简易祭日用整站变灰插件 | 1.0.0 | jyzb02 | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/zbgray.zip)
+
