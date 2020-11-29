@@ -317,7 +317,7 @@
 [PushToFirekylin](https://github.com/firekylin/typecho-push-to-firekylin) | Typecho发文章同步至[Firekylin](https://firekylin.org)插件 | 0.1.0 | [公子](https://github.com/firekylin) | [下载](https://github.com/firekylin/typecho-push-to-firekylin/archive/master.zip)
 [PushToWeixin](https://github.com/Curtion/PushToWeixin) | [Server酱](http://sc.ftqq.com)推送评论通知到微信插件 | 1.0.0 | [Curtion](https://github.com/Curtion) | [下载](https://github.com/Curtion/PushToWeixin/archive/master.zip)
 [PutToQiNiu](https://gitee.com/SeasLaugh/PutToQiNiu) | Typecho附件上传七牛云存储插件 | 1.0 | [Seaslaugh](https://gitee.com/SeasLaugh) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/PutToQiNiu.zip)
-[QPlayer2](https://github.com/moeshin/QPlayer2-Typecho) | 新网易云QPlayer音乐播放器插件 | 2.0.7 | [MoeShin](https://github.com/moeshin) | [下载](https://github.com/moeshin/QPlayer2-Typecho/archive/master.zip)
+[QPlayer2](https://github.com/moeshin/QPlayer2-Typecho) | 新网易云QPlayer音乐播放器插件 | 2.0.8 | [MoeShin](https://github.com/moeshin) | [下载](https://github.com/moeshin/QPlayer2-Typecho/archive/master.zip)
 [QPlayer](https://github.com/Jrohy/QPlayer-Typecho-Plugin) | 网易云解析悬浮式音乐播放器插件 | 1.3.4.2 | [Jrohy](https://github.com/Jrohy) | [不可用](https://github.com/Jrohy/QPlayer-Typecho-Plugin/archive/master.zip)
 [QRCode](https://github.com/aneasystone/typecho-qrcode) | 文章末尾自动生成网址二维码插件 | 1.1 | [aneasystone](https://github.com/aneasystone) | [下载](https://github.com/aneasystone/typecho-qrcode/archive/master.zip)
 [QiniuPostUploader](https://github.com/trickyEdecay/qiniuupload-for-typecho) | 上传文件到七牛云插件(独立功能) | 0.1 | [trickyedecay](https://github.com/trickyEdecay) | [下载](https://github.com/trickyEdecay/qiniuupload-for-typecho/archive/master.zip)
