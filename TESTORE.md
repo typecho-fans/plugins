@@ -27,7 +27,7 @@
 
  > 下表中的下载链接文字可用于附加图标：`下载`即非社区版，`不可用`显示为:no_entry:，`特殊`显示:warning:意为安装或启用方法特殊。
 
-### 插件信息 (468)
+### 插件信息 (470)
 
 ###### TeStore使用下表“名称”创建安装文件夹，“版本”提示升级，请务必确保文本准确；添加时注意按字母排序，自增上方括号内总数，简介不要太长。
 ```
@@ -180,6 +180,7 @@
 [Gallery](https://github.com/leohowl/gallery-typecho) | 页面内图片套用画廊相册效果插件 | 0.0.1 | [Leohowl](https://github.com/leohowl) | [下载](https://github.com/leohowl/gallery-typecho/archive/master.zip)
 [Geetest](https://github.com/99kyuu/GeetestV3_for_Typecho) | 极验证V3版登录注册用验证码插件 | 1.0.0 | [玖玖kyuu](https://github.com/99kyuu) | [特殊](https://github.com/99kyuu/GeetestV3_for_Typecho/archive/master.zip)
 [Geetest](https://github.com/jinfeijie/Geetest) | 极验证V3版评论用图形验证码插件 | 1.0.3 | [mrjin](https://github.com/jinfeijie) | [下载](https://github.com/jinfeijie/Geetest/archive/1.0.3.zip)
+[Geetest](https://github.com/zhb127/z-typecho-plugin-geetest) | 极验V3版登录、注册、自定义页面全能验证码插件 | 1.0.0 | [小胖狐](https://github.com/xueshanlinghu) | [下载](https://github.com/xueshanlinghu/typecho-plugin-geetest/archive/1.0.0.zip) 
 [Geetest](https://github.com/zhb127/z-typecho-plugin-geetest) | 极验证登录验证码插件(Session版) | 1.0.0 | [菠菜](https://github.com/zhb127) | [下载](https://github.com/zhb127/z-typecho-plugin-geetest/archive/master.zip)
 [Geetest](https://github.com/xueshanlinghu/typecho-plugin-geetest) | 极验V3版登录、注册、自定义页面全能验证码插件 | 1.1.0 | [小胖狐](https://github.com/xueshanlinghu) | [下载](https://github.com/xueshanlinghu/typecho-plugin-geetest/archive/1.1.0.zip) 
 [GetIPIntel](https://github.com/xddxdd/typecho-getipintel) | 禁止使用代理用户评论反欺诈插件 | 1.0.0 | [Lan Tian](https://github.com/xddxdd) | [下载](https://github.com/xddxdd/typecho-getipintel/archive/master.zip)
@@ -318,7 +319,7 @@
 [PushToFirekylin](https://github.com/firekylin/typecho-push-to-firekylin) | Typecho发文章同步至[Firekylin](https://firekylin.org)插件 | 0.1.0 | [公子](https://github.com/firekylin) | [下载](https://github.com/firekylin/typecho-push-to-firekylin/archive/master.zip)
 [PushToWeixin](https://github.com/Curtion/PushToWeixin) | [Server酱](http://sc.ftqq.com)推送评论通知到微信插件 | 1.0.0 | [Curtion](https://github.com/Curtion) | [下载](https://github.com/Curtion/PushToWeixin/archive/master.zip)
 [PutToQiNiu](https://gitee.com/SeasLaugh/PutToQiNiu) | Typecho附件上传七牛云存储插件 | 1.0 | [Seaslaugh](https://gitee.com/SeasLaugh) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/PutToQiNiu.zip)
-[QPlayer2](https://github.com/moeshin/QPlayer2-Typecho) | 新网易云QPlayer音乐播放器插件 | 2.0.7 | [MoeShin](https://github.com/moeshin) | [下载](https://github.com/moeshin/QPlayer2-Typecho/archive/master.zip)
+[QPlayer2](https://github.com/moeshin/QPlayer2-Typecho) | 新网易云QPlayer音乐播放器插件 | 2.0.8 | [MoeShin](https://github.com/moeshin) | [下载](https://github.com/moeshin/QPlayer2-Typecho/archive/master.zip)
 [QPlayer](https://github.com/Jrohy/QPlayer-Typecho-Plugin) | 网易云解析悬浮式音乐播放器插件 | 1.3.4.2 | [Jrohy](https://github.com/Jrohy) | [不可用](https://github.com/Jrohy/QPlayer-Typecho-Plugin/archive/master.zip)
 [QRCode](https://github.com/aneasystone/typecho-qrcode) | 文章末尾自动生成网址二维码插件 | 1.1 | [aneasystone](https://github.com/aneasystone) | [下载](https://github.com/aneasystone/typecho-qrcode/archive/master.zip)
 [QiniuPostUploader](https://github.com/trickyEdecay/qiniuupload-for-typecho) | 上传文件到七牛云插件(独立功能) | 0.1 | [trickyedecay](https://github.com/trickyEdecay) | [下载](https://github.com/trickyEdecay/qiniuupload-for-typecho/archive/master.zip)
