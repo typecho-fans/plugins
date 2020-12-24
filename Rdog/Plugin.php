@@ -5,8 +5,8 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
  * 
  * @package 权限狗
  * @author 泽泽
- * @version 1.4.0
- * @link https://qqdie.com/archives/typecho-Rdog.html
+ * @version 1.5.0
+ * @link https://zezeshe.com/archives/typecho-Rdog.html
  */
 class Rdog_Plugin extends Widget_Abstract_Users implements Typecho_Plugin_Interface
 {
@@ -45,6 +45,10 @@ class Rdog_Plugin extends Widget_Abstract_Users implements Typecho_Plugin_Interf
      */
     public static function config(Typecho_Widget_Helper_Form $form)
     {
+//echo '<pre>';
+//$catinfo=Typecho_Widget::widget('Widget_Metas_Category_List')->stack;
+//$catmid = array_column($catinfo, 'mid');
+//print_r($catmid);
 
     $yonghuzu = new Typecho_Widget_Helper_Form_Element_Radio('yonghuzu',array(
       'visitor' => _t('访问者'),
@@ -64,8 +68,8 @@ class Rdog_Plugin extends Widget_Abstract_Users implements Typecho_Plugin_Interf
     $form->addInput($tuozhan->multiMode());
       
       
-//    $tcat = new Typecho_Widget_Helper_Form_Element_Text('tcat', NULL, NULL, _t('特例分类'), _t('在这里填入一个分类mid，分类间用英文的半角逗号隔开如【1,2】，这些分类贡献者发布文章必须需要经过审核！'));
-//    $form->addInput($tcat);
+    $tcat = new Typecho_Widget_Helper_Form_Element_Text('tcat', NULL, NULL, _t('特例分类'), _t('在这里填入一个分类mid，分类间用英文的半角逗号隔开如【1,2】，这些分类贡献者发布文章也必须需要经过审核！'));
+    $form->addInput($tcat);
     }
     
     /**
@@ -131,16 +135,26 @@ public static function zhucewan($obj) {
   
 public static function fabu($con,$obj) {
   /*插件用户设置是否勾选*/    
-  if (!empty(Typecho_Widget::widget('Widget_Options')->plugin('Rdog')->tuozhan) && in_array('contributor-nb',  Typecho_Widget::widget('Widget_Options')->plugin('Rdog')->tuozhan)){
+if (!empty(Typecho_Widget::widget('Widget_Options')->plugin('Rdog')->tuozhan) && in_array('contributor-nb',  Typecho_Widget::widget('Widget_Options')->plugin('Rdog')->tuozhan)){
  /*获取插件设置的分类id*/      
-//$tcat = Typecho_Widget::widget('Widget_Options')->plugin('Rdog')->tcat;
+$tcat = Typecho_Widget::widget('Widget_Options')->plugin('Rdog')->tcat;
+/*转成数组*/
+$t=explode(",",$tcat);
+
+
 /*求插件设置的分类id数据与用户勾选的分类数据交集*/
-//$result=array_intersect($tcat,$con['category']);   && count($result)==0
+$result=array_intersect($t,$con['category']);
+
+/*不存在交集*/
+if(count($result)==0){
   /*如果用户是贡献者临时给予编辑权限，并且非特例分类*/
-  if($obj->author->group=='contributor'||$obj->user->group=='contributor'){
+if($obj->author->group=='contributor'||$obj->user->group=='contributor'){
   $obj->user->group='editor';
-  }}
-  return $con;
+  }
+}
+}
+
+return $con;
 }
   
   
