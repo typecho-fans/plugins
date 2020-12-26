@@ -13,6 +13,12 @@
 
 ## 更新
 
+### 3.1.1
+
+见博客：
+- https://gyrojeff.top/index.php/archives/14/
+- https://gyrojeff.top/index.php/archives/152/
+
 ### 3.0.1
 
 - 修复背景设置无效的问题

@@ -1,11 +1,11 @@
 <?php
 // if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 /**
- * 基于<a href="https://www.ihewro.com/archives/489/">handsome主题</a>的<a href="https://moe.best/">神代綺凜</a>式魔改主题 </br> 更新时间: <span style="color:red">2020-08-24</span>      
+ * 基于<a href="https://www.ihewro.com/archives/489/">handsome主题</a>的<a href="https://moe.best/">神代綺凜</a>式魔改主题 </br> 更新时间: <span style="color:red">2020-12-26</span>      
  *
  * @package KirinShiKi
  * @author Sanakey,JeffersonQin
- * @version 3.0.1
+ * @version 3.1.1
  * @link https://github.com/JeffersonQin/KirinShiKi
  */
 class KirinShiKi_Plugin implements Typecho_Plugin_Interface
@@ -50,14 +50,14 @@ class KirinShiKi_Plugin implements Typecho_Plugin_Interface
             echo "<style>.info{text-align:center; margin:20px 0;} .info > *{margin:0 0 15px} .buttons a{background:#467b96; color:#fff; border-radius:4px; padding: 8px 10px; display:inline-block;}.buttons a+a{margin-left:10px}</style>";
             echo "<div class='info'>";
             echo "<h2>神代綺凜式魔改主题插件 (" . $version . ")</h2>";
-            echo "<p>By: <a href='https://github.com/Sanakey'>Sanakey</a></p>";
-            echo "<p class='buttons'><a href='https://keymoe.com/archives/31/'>插件说明</a>
-                <a href='https://github.com/Sanakey/KirinShiKi'>查看更新</a></p>";
-            echo "<p>更多说明请点击插件说明或<a href='https://github.com/Sanakey/KirinShiKi'>点击前往github查看</a>~</p>";
+            echo "<p>By: <a href='https://github.com/Sanakey'>Sanakey</a>, Modified By: <a href='https://github.com/JeffersonQin/'>JeffersonQin</a></p>";
+            echo "<p class='buttons'><a href='https://keymoe.com/archives/31/'>原插件说明</a>
+                <a href='https://github.com/JeffersonQin/'>查看更新</a></p>";
+            echo "<p>更多说明请点击插件说明或<a href='https://github.com/JeffersonQin/'>点击前往github查看</a>~</p>";
 
             echo "</div>";
         }
-        check_update("3.0.1");
+        check_update("3.1.1");
 
         // 自定义pc背景
         $pcBg = new Typecho_Widget_Helper_Form_Element_Text(
@@ -117,6 +117,17 @@ class KirinShiKi_Plugin implements Typecho_Plugin_Interface
         );
         $form->addInput($copyrightType);
 
+	$colorfultags = new Typecho_Widget_Helper_Form_Element_Radio(
+	    'colorfultags',
+	    array(
+		'0' => _t('否'),
+                '1' => _t('是'),
+	    ),
+            '1',
+	    _t('启用彩色标签云')
+        );
+        $form->addInput($colorfultags);
+
         // 是否启用了pjax
         $pjax = new Typecho_Widget_Helper_Form_Element_Radio(
             'pjax',
@@ -165,7 +176,13 @@ class KirinShiKi_Plugin implements Typecho_Plugin_Interface
         echo "<script src='$src'></script>";
         //   echo '<script type="text/javascript" src="' . $src . '"></script>';
 
-        $code = 'setHref(getHref());colorfulTags();' . ($moeTitle ? 'moeTitle();' : '') . ($copyTips ? 'copyTips();' : '');
+	$colorfultags = $options->plugin('KirinShiKi')->colorfultags;
+
+	$code = 'setHref(getHref());';
+	if ($colorfultags) {
+	    $code .= 'colorfulTags();';
+	}
+        $code .= ($moeTitle ? 'moeTitle();' : '') . ($copyTips ? 'copyTips();' : '');
 
         $pjax = $options->plugin('KirinShiKi')->pjax;
         $script = '<script> setCopyright(' . $copyrightType . ');';

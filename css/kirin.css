@@ -43,10 +43,12 @@ html.theme-dark .col.asideBar.w-md:hover {
 }
 
 html.theme-dark .post-tags a {
+    background-color: #23b7e5;
     color: #fff
 }
 
 html.theme-dark .badge {
+    background-color: #23b7e5;
     color: #fff
 }
 
@@ -64,6 +66,16 @@ html.theme-dark .badge {
     max-width: 810px;
     margin-left: auto;
     margin-right: auto;
+}
+
+.badge {
+    /*color: #dcf2f8;*/
+    background-color: #23b7e5;
+}
+
+html.theme-dark .badge {
+    /*color: #dcf2f8;*/
+    background-color: #23b7e5;
 }
 
 
@@ -381,7 +393,7 @@ header.wrapper-md {
 }
 
 #footer>.wrapper {
-    background-color: rgba(237, 241, 242, .8)
+    background-color: rgb(237, 241, 242)
 }
 
 .streamline {
@@ -1070,9 +1082,8 @@ i.fontello-dedent.text {
     text-shadow: none;
     font-size: 12px;
     color: #fff;
-    line-height: 15px;
+    line-height: 13px;
     background-color: #abbac3;
-    margin-bottom: 5px
 }
 
 .github-badge .badge-subject {
@@ -1176,7 +1187,8 @@ i.fontello-dedent.text {
 }
 
 .badge.pull-right {
-    background-color: #a5dee4;
+    color: #dcf2f8;
+    background-color: #23b7e5;
 }
 
 .wrapper-md>.breadcrumb .fontello-home {
