@@ -78,6 +78,16 @@ html.theme-dark .badge {
     background-color: #23b7e5;
 }
 
+::selection {
+    background: #e74c3c;
+    color: white;
+}
+
+::-moz-selection {
+    background: #e74c3c;
+    color: white;
+}
+
 
 /* Modification by JeffersonQin ended*/
 
