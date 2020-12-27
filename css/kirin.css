@@ -88,6 +88,10 @@ html.theme-dark .badge {
     color: white;
 }
 
+hr {
+    border-top: 2px dotted #f05050;
+}
+
 
 /* Modification by JeffersonQin ended*/
 
