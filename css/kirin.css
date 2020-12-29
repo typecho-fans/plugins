@@ -42,16 +42,6 @@ html.theme-dark .col.asideBar.w-md:hover {
     background: rgba(0, 0, 0, 0.98)
 }
 
-html.theme-dark .post-tags a {
-    background-color: #23b7e5;
-    color: #fff
-}
-
-html.theme-dark .badge {
-    background-color: #23b7e5;
-    color: #fff
-}
-
 .bg-white {
     max-width: 1024px;
     margin: auto;
@@ -70,12 +60,26 @@ html.theme-dark .badge {
 
 .badge {
     /*color: #dcf2f8;*/
+    color: #fff;
     background-color: #23b7e5;
+    border-radius: .25em;
 }
 
 html.theme-dark .badge {
     /*color: #dcf2f8;*/
+    color: #fff;
     background-color: #23b7e5;
+}
+
+.post-tags a {
+    background-color: #23b7e5;
+    color: #fff;
+    border-radius: .25em;
+}
+
+html.theme-dark .post-tags a {
+    background-color: #23b7e5;
+    color: #fff
 }
 
 ::selection {
@@ -1084,7 +1088,7 @@ ul.nav-sub>li>a>i {
 */
 
 i.fontello-dedent.text {
-    color: #fff;
+    color: rgb(119, 119, 119);
 }
 
 
