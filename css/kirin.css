@@ -96,6 +96,14 @@ hr {
     border-top: 2px dotted #f05050;
 }
 
+#post-content {font-size: 15px;}
+#post-content a{border-bottom:none!important;background-color:transparent;color:#0366d6!important;text-decoration:none}
+#post-content a:hover{border-bottom:1px solid #0366d6!important}
+#post-content a:active,#post-content a:hover{outline-width:0}
+#post-content strong{font-weight:bolder}
+#post-content{color:#24292e}
+#post-content p {margin: 10px 0 10px 0;}
+#post-content li>p, #post-content ul{margin:0}
 
 /* Modification by JeffersonQin ended*/
 
