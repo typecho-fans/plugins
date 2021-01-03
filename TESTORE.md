@@ -153,7 +153,7 @@
 [DoubanBoard](https://github.com/AlanDecode/Typecho-Plugin-DoubanBoard) | 博客展示豆瓣书单或影单内容插件 | 0.5 | [熊猫小A](https://github.com/AlanDecode) | [下载](https://github.com/AlanDecode/Typecho-Plugin-DoubanBoard/archive/master.zip)
 [DoubanBooklist](https://github.com/FaithPatrick/DoubanBookList) | 博客展示豆瓣正在和已读书单插件 | 1.0.0 | [Patrick95](https://github.com/FaithPatrick) | [下载](https://github.com/FaithPatrick/DoubanBookList/archive/master.zip)
 [DrakNight](https://qqdie.com/archives/draknight-typecho-plugin.html) | Typecho定时自启动夜间模式插件 | 1.0.0 | [术与道](https://github.com/shuyudao) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/DrakNight.zip)
-[Dynamics](https://github.com/kraity/Dynamics) | [南博](https://nabo.krait.cn)App用发布动态说说模块插件 | 1.6.1 | [权那他](https://github.com/kraity) | [下载](https://github.com/kraity/Dynamics/archive/master.zip)
+[Dynamics](https://github.com/kraity/Dynamics) | [南博](https://nabo.krait.cn)App用发布动态说说模块插件 | 1.7 | [权那他](https://github.com/kraity) | [下载](https://github.com/kraity/Dynamics/archive/master.zip)
 [EditorAdv](https://github.com/leafvmaple/typecho-plugin-EditorAdv) | 系统MD编辑器整合代码高亮插件 | 0.2 | [Leafvmaple](https://github.com/leafvmaple) | [下载](https://github.com/leafvmaple/typecho-plugin-EditorAdv/archive/master.zip)
 [EditorLR](https://github.com/hongweipeng/EditorLR_for_typecho) | Markdown编辑器分屏式预览插件 | 0.7.1 | [hongweipeng](https://github.com/hongweipeng) | [下载](https://github.com/hongweipeng/EditorLR_for_typecho/archive/master.zip)
 [Editor](https://plugins.typecho.me/plugins/ckeditor-syntax-highlighter.html) | 整合代码高亮CKEditor编辑器插件 | 1.0.1 | QFisH | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/Editor_QFisH.zip)
