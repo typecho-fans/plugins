@@ -272,7 +272,7 @@ if ($title[1][0] != "" && !empty($cate) && $cate!=0) {
          @($dramas = strip_tags($drama[1][0]));
          @$dramas = $this->trimall($dramas);//简介
          $years = substr($year[1][0], 0, 4);//年份
-         $tags = $tag[1][0];if(empty($tags)){$tags='待定';}//标签
+         $tags = $tag[1][0];if(empty($tags)){$tags='';}//标签
          $pic=$pic[1][0];//封面id
          $vodurl = "";
          $vodurl = str_replace("#", "\r\n", $m3u8[1][0]);//视频地址
