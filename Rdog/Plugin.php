@@ -5,7 +5,7 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
  * 
  * @package 权限狗
  * @author 泽泽
- * @version 1.5.0
+ * @version 1.6.0
  * @link https://zezeshe.com/archives/typecho-Rdog.html
  */
 class Rdog_Plugin extends Widget_Abstract_Users implements Typecho_Plugin_Interface
@@ -19,11 +19,11 @@ class Rdog_Plugin extends Widget_Abstract_Users implements Typecho_Plugin_Interf
      */
     public static function activate()
     {
-      Typecho_Plugin::factory('Widget_Register')->register = array('Rdog_Plugin', 'zhuce'); 
-	  Typecho_Plugin::factory('Widget_Register')->finishRegister = array('Rdog_Plugin', 'zhucewan');
-	  Typecho_Plugin::factory('Widget_Contents_Post_Edit')->write = array('Rdog_Plugin', 'fabu');
-	  Typecho_Plugin::factory('Widget_Contents_Post_Edit')->finishPublish = array('Rdog_Plugin', 'fabuwan');
-      Typecho_Plugin::factory('admin/footer.php')->end = array('Rdog_Plugin', 'footerjs');
+      Typecho_Plugin::factory('Widget_Register')->register_11 = array('Rdog_Plugin', 'zhuce'); 
+	  Typecho_Plugin::factory('Widget_Register')->finishRegister_11 = array('Rdog_Plugin', 'zhucewan');
+	  Typecho_Plugin::factory('Widget_Contents_Post_Edit')->write_11 = array('Rdog_Plugin', 'fabu');
+	  Typecho_Plugin::factory('Widget_Contents_Post_Edit')->finishPublish_11 = array('Rdog_Plugin', 'fabuwan');
+      Typecho_Plugin::factory('admin/footer.php')->end_11 = array('Rdog_Plugin', 'footerjs');
     }
     
     /**
@@ -160,10 +160,7 @@ return $con;
   
  public static function fabuwan($con,$obj) {
            /** 跳转验证后地址 */
-        if($obj->request->referer=='return'){
-          exit;
-        }
-        elseif (NULL != $obj->request->referer) {
+if (NULL != $obj->request->referer) {
             /** 发送ping */
             $trackback = array_unique(preg_split("/(\r|\n|\r\n)/", trim($obj->request->trackback)));
             $obj->widget('Widget_Service')->sendPing($obj->cid, $trackback);
