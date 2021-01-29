@@ -121,7 +121,7 @@
 [RandomThumbnail](RandomThumbnail) | 随机图片挂件插件(支持懒加载) | 1.0.0 | [LittleJake](https://github.com/LittleJake) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/RandomThumbnail.zip)
 [Reposidget](Reposidget) | GitHub项目信息与内容展示插件 | 1.0.0 | [西秦公子](https://github.com/xiqingongzi) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/Reposidget.zip)
 [RewriteRule](RewriteRule) | 文章或页面地址重定向跳转插件 | 1.0.0 | [laobubu](https://github.com/laobubu) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/RewriteRule.zip)
-[Rdog](Rdog) | 注册机制优化/发文自动审核插件 | 1.5.0 | [泽泽](https://github.com/jrotty) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/Rdog.zip)
+[Rdog](Rdog) | 注册机制优化/发文自动审核插件 | 1.6.0 | [泽泽](https://github.com/jrotty) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/Rdog.zip)
 [RoutesHelper](RoutesHelper) | Typecho路由信息显示修改插件 | 1.0.3 | [doudou](https://github.com/doudoutime) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/RoutesHelper.zip)
 [SCS](SCS) | 系统附件用新浪云存储SCS插件 | 1.1.1 | [vfhky](https://github.com/vfhky) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/SCS.zip)
 [ShortLinks](ShortLinks) | 基于[GoLinks](GoLinks)增强外链转换插件 | 1.1.0 b1 | [Ryan](https://github.com/benzBrake) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/ShortLinks.zip)
