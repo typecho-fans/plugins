@@ -1,6 +1,7 @@
 <?php
 /**
  * @author gaobinzhan <gaobinzhan@gmail.com>
+ * @modify 小码农 <chengshongguo@qq.com> 增加实例化方法
  */
 
 require_once 'Service.php';
@@ -29,7 +30,14 @@ class AliYunEmailService extends Service
             'version' => '2017-06-22'
         ]
     ];
+    public static function create(){
 
+		static $instance ;
+		if (!$instance){ 
+		    $instance = new AliYunEmailService();
+		}
+		return $instance;
+	}
     public function __handler($active, $comment, $plugin)
     {
         try {

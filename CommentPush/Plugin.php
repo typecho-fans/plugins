@@ -353,6 +353,9 @@ IP：{{ip.DATA}}
         return $comment;
     }
 
+    /**
+     * @modify 小码农 <chengshongguo@qq.com> 增加实例化方法
+     */
     public static function pushServiceGo($comment)
     {
         $options = Helper::options();
@@ -366,6 +369,9 @@ IP：{{ip.DATA}}
         self::$comment['coid'] = $comment->coid;
 
         /** @var QQService | WeChatService | AliYunEmailService | SmtpService | DingTalkBotService | EnterpriseWeChatService $service */
-        foreach ($services as $service) call_user_func([$service, '__handler'], self::$active, self::$comment, $plugin);
+        foreach ($services as $service){
+            $inst=call_user_func([$service,'create']);
+            call_user_func([$inst, '__handler'], self::$active, self::$comment, $plugin);
+        } 
     }
 }

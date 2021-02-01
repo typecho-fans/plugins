@@ -1,6 +1,7 @@
 <?php
 /**
  * @author gaobinzhan <gaobinzhan@gmail.com>
+ * @modify 小码农 <chengshongguo@qq.com> 增加实例化方法
  */
 
 require_once 'Contract/ServiceInterface.php';
@@ -8,6 +9,7 @@ require_once 'Contract/ServiceInterface.php';
 abstract class Service implements ServiceInterface
 {
     abstract public function __handler($active, $comment, $plugin);
+    abstract public static function create();
 
     public function logger($service, $object, $context, $result, $error = '')
     {

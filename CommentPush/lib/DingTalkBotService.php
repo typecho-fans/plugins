@@ -1,12 +1,21 @@
 <?php
 /**
  * @author stars_kim <stars_kim@163.com>
+ * @modify 小码农 <chengshongguo@qq.com> 增加实例化方法
  */
 
 require_once 'Service.php';
 
 class DingTalkBotService extends Service
 {
+    public static function create(){
+
+		static $instance ;
+		if (!$instance){ 
+		    $instance = new DingTalkBotService();
+		}
+		return $instance;
+	}
     public function __handler($active, $comment, $plugin)
     {
         try {
