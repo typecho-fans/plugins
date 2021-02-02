@@ -109,7 +109,7 @@ class AutoTags_Plugin implements Typecho_Plugin_Interface
                 }
             }
             $contents['tags'] = implode(',', array_unique($sourceTags));
-            if(count($contents['tags'])<3){
+            if(is_array($contents['tags']) && count($contents['tags'])<3){
                 $ch = curl_init('http://api.bosonnlp.com/keywords/analysis?top_k=5');
                 curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
                 curl_setopt($ch, CURLOPT_POSTFIELDS,$postString);
