@@ -4,10 +4,12 @@ Typecho 密码找回插件
 # 插件信息
 1、在此基础上进行的修改：https://github.com/typecho-fans/plugins/tree/master/Passport  
 2、主要更新了一下PHPMailer到最新版本  
+3、增加记录，防止邮件短时间内频繁发送相同信息  
+4、自动增加忘记密码链接  
 
 # 使用帮助
 1、上传插件包  
-2、:warning:打开 admin/login.php 文件，做以下修改：
+<s>2、:warning:打开 admin/login.php 文件，做以下修改：
 ```
 // 找到这里
 <?php if($options->allowRegister): ?>
@@ -23,4 +25,4 @@ Typecho 密码找回插件
    }
 ?>
 ```
-提示：其他地方也可以，自己根据需要进行调整吧。
+提示：其他地方也可以，自己根据需要进行调整吧。</s>

@@ -5,7 +5,7 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
  *
  * @package Passport
  * @author 小否先生,ShingChi
- * @version 1.0.1
+ * @version 1.0.2
  * @link https://github.com/mhcyong
  * @dependence 14.5.26-*
  */
@@ -20,8 +20,11 @@ class Passport_Plugin implements Typecho_Plugin_Interface
      */
     public static function activate()
     {
+        // 创建数据库字段
+        Passport_Plugin::addTable();
         Helper::addRoute('passport_forgot', '/passport/forgot', 'Passport_Widget', 'doForgot');
         Helper::addRoute('passport_reset', '/passport/reset', 'Passport_Widget', 'doReset');
+        Typecho_Plugin::factory('admin/footer.php')->end = array('Passport_Plugin', 'addFooter');
 
         return _t('请配置此插件的SMTP信息, 以使您的插件生效');
     }
@@ -60,11 +63,15 @@ class Passport_Plugin implements Typecho_Plugin_Interface
             'none' => _t('无')
         ), 'ssl', _t('安全类型'));
 
+        $repeat = new Typecho_Widget_Helper_Form_Element_Radio('repeat', array('0' => _t('不允许'), '1' => _t('允许')), 0, _t('是否允许失效时间内重复发送邮件'),
+        _t('建议关闭，减少邮箱短时间重复发送.'));
+
         $form->addInput($host);
         $form->addInput($port);
         $form->addInput($username);
         $form->addInput($password);
         $form->addInput($secure);
+        $form->addInput($repeat);
     }
 
     /**
@@ -75,4 +82,30 @@ class Passport_Plugin implements Typecho_Plugin_Interface
      * @return void
      */
     public static function personalConfig(Typecho_Widget_Helper_Form $form){}
+
+    /**
+     * 创建数据库字段
+     *
+     * @throws Typecho_Db_Exception
+     */
+    private static function addTable()
+    {
+        $db = Typecho_Db::get();
+        try {
+            $db->query($db->select('table.users.passport_token')->from('table.users'));
+        } catch (Typecho_Db_Exception $e) {
+            $sql = "ALTER TABLE `" . $db->getPrefix() . "users` ADD `passport_token` VARCHAR(255)  DEFAULT '';";
+            $db->query($sql);
+        }
+    }
+
+    /**
+     * 登录界面添加js
+     */
+    public static function addFooter()
+    {
+        if (!Typecho_Widget::widget('Widget_User')->hasLogin()) {
+            echo "<script>var link = $('.typecho-login-wrap .typecho-login .more-link');if (link.length) {link.append('&bull;<a href=\"/passport/forgot\">忘记密码</a>');}</script>";
+        }
+    }
 }

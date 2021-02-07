@@ -90,6 +90,19 @@ class Passport_Widget extends Typecho_Widget
                 return false;
             }
 
+            if (!empty($user['passport_token']) && $this->config->repeat != 1) {
+                /* 校验之前的token，防止重复发送 */
+                list($uid, $hashValidate, $timeStamp) = explode('.', base64_decode($user['passport_token']));
+                $currentTimeStamp = $this->options->gmtTime;
+
+                /* 检查链接时效 */
+                if (($currentTimeStamp - $timeStamp) <= 3600) {
+                    // 链接失效, 返回登录页
+                    $this->notice->set(_t('链接1小时有效，请勿重复提交重置申请'), 'notice');
+                    return false;
+                }
+            }
+
             /* 生成重置密码地址 */
             $hashString = $user['name'] . $user['mail'] . $user['password'];
             $hashValidate = Typecho_Common::hash($hashString);
@@ -138,6 +151,11 @@ class Passport_Widget extends Typecho_Widget
                     $this->notice->set(_t('邮件发送失败, 请重试或联系站长'), 'error');
                 } else {
                     $this->notice->set(_t('邮件已成功发送, 请注意查收'), 'success');
+                    // 记录token
+                    try {
+                        $db->query($db->update('table.users')->rows(
+                            array('passport_token' => $token))->where('uid = ?', $user['uid']));
+                    } catch (Typecho_Db_Exception $e) {}
                 }
             } catch (Exception $e) {
                 echo '邮件发送失败: ', $mail->ErrorInfo;
@@ -155,7 +173,13 @@ class Passport_Widget extends Typecho_Widget
     {
         /* 验证token */
         $token = $this->request->filter('strip_tags', 'trim', 'xss')->token;
-        list($uid, $hashValidate, $timeStamp) = explode('.', base64_decode($token));
+        try {
+            list($uid, $hashValidate, $timeStamp) = explode('.', base64_decode($token));
+        } catch (Exception $e) {
+            // 链接解析错误, 返回登录页
+            $this->notice->set(_t('该链接已失效, 请重新获取'), 'notice');
+            $this->response->redirect($this->options->loginUrl);
+        }
         $currentTimeStamp = $this->options->gmtTime;
 
         /* 检查链接时效 */
@@ -191,7 +215,7 @@ class Passport_Widget extends Typecho_Widget
             $password = $hasher->HashPassword($this->request->password);
 
             $update = $db->query($db->update('table.users')
-                ->rows(array('password' => $password))
+                ->rows(array('password' => $password, 'passport_token' => ''))
                 ->where('uid = ?', $user['uid']));
 
             if (!$update) {
