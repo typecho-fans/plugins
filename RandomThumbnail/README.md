@@ -4,25 +4,28 @@
 
 
 根据后台设置链接随机生成图片。
-    
+
+支持自定义模板。
 
 ## 安装方法
 
-1. `git clone`或zip下载，将 Typecho-RandomThumbnail 文件夹放入`网站目录/usr/plugins`文件夹内，文件夹权限0755，插件文件0644。
+1. `git clone`或zip下载，将 Typecho-RandomThumbnail 中`RandomThumbnail`文件夹放入`网站目录/usr/plugins`文件夹内，文件夹权限0755，插件文件0644。
 2. 打开Typecho后台激活插件
 3. 添加图片链接
 4. 在挂件位置插入
 ```php
-<?php echo RandomThumbnail_Plugin::getThumbnail($seed, $height, $width, $class, $style) ?>
+<?php echo RandomThumbnail_Plugin::getThumbnail($seed); ?>
 ```
-
+## 参数说明
+### 调用函数参数
 | 参数    | 参数名      | 参数类型 | 备注 |
 | ------- | ----------- | -------- | ---- |
 | $seed   | 随机数      | int      | 可选 |
-| $height | 图片高度    | int      | 可选 |
-| $width  | 图片宽度    | int      | 可选 |
-| $class  | 自定义class | string   | 可选 |
-| $style  | 自定义样式  | string   | 可选 |
+
+### 设置模板参数
+| 参数    | 参数名      | 参数类型  | 备注 |
+| ------- | ---------- | -------- | ---- |
+| img_url | 图片地址    | String   | - |
 
 
 ## Demo
@@ -36,4 +39,4 @@
 Typecho
 
 ## 开源协议
-基于Apache2.0
+Apache2.0
