@@ -175,6 +175,12 @@ if(strpos($listcontentx,"</video>") == false && $zpg == 0){
     $ruleMatchDetailInList = "~<name>\\<\\!\\[CDATA\\[(.*?)\\]\\]\\>\\<\\/name>~";
     #正则表达式
     preg_match_all($ruleMatchDetailInList, $listcontent[$i], $title);
+    #正则表达式
+    preg_match_all($ruleMatchDetailInList, $listcontent[$i], $title);
+    
+    $ruleMatchDetailInList = "~<subname>\\<\\!\\[CDATA\\[(.*?)\\]\\]\\>\\<\\/subname>~";
+    preg_match_all($ruleMatchDetailInList, $listcontent[$i], $subname);
+    
     //视频名称
     $ruleMatchDetailInList = "~<des>\\<\\!\\[CDATA\\[(.*?)\\]\\]\\>\\<\\/des>~";
     #正则表达式
@@ -304,11 +310,18 @@ $fn[3]='mp4';
 $ft[3]='str';
 $fv[3]=$vodurl;
 
-if(Helper::options()->Plugin('CatClaw')->autoup){
-$fn[4]='autoup';
+$fn[4]='name';
 $ft[4]='str';
-$fv[4]=Helper::options()->Plugin('CatClaw')->autoup.'$'.$aid;
+$fv[4]=$subname[1][0];
+
+
+if(Helper::options()->Plugin('CatClaw')->autoup){
+$fn[5]='autoup';
+$ft[5]='str';
+$fv[5]=Helper::options()->Plugin('CatClaw')->autoup.'$'.$aid;
 }
+
+
 
 
 
