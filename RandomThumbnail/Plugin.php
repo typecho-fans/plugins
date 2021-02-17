@@ -18,10 +18,7 @@ class RandomThumbnail_Plugin implements Typecho_Plugin_Interface
      */
     public static function activate()
     {
-        Typecho_Plugin::factory('Widget_Archive')->beforeRender = array(
-            'RandomThumbnail_Plugin',
-        );
-
+        Typecho_Plugin::factory('Widget_Archive')->beforeRender = array('RandomThumbnail_Plugin',);
     }
 
     /**
@@ -40,15 +37,21 @@ class RandomThumbnail_Plugin implements Typecho_Plugin_Interface
      * @return void
      */
     public static function config(Typecho_Widget_Helper_Form $form){
-        $url = new Typecho_Widget_Helper_Form_Element_Textarea('url', NULL, NULL, _t('缩略图地址'), _t('输入图片地址，一行一条'));
-        $lazyload = new Typecho_Widget_Helper_Form_Element_Radio('lazyload',array('0' => _t('否'),'1' => _t('是')),'0', _t('开启Lazyload'));
-        $lazyload_tag = new Typecho_Widget_Helper_Form_Element_Text('lazyload_tag', NULL, NULL, _t('图片URL标签'), _t('输入图片图片URL标签'));
-        $lazyload_url = new Typecho_Widget_Helper_Form_Element_Text('lazyload_url', NULL, NULL, _t('替换图片地址'), _t('输入图片地址'));
+        $url = new Typecho_Widget_Helper_Form_Element_Textarea('url', NULL, NULL, _t('图片地址'), _t('输入图片地址，一行一条'));
+        $template = new Typecho_Widget_Helper_Form_Element_Textarea(
+            'template',
+            NULL,
+            <<<EOF
+<div style="width: fit-content; height: 300px; overflow: hidden; border-radius: 10px; max-height: 100%; max-width: 100%; margin:5% auto;">
+    <img src="{img_src}" alt="head-img" class="" style="">
+</div>
+EOF,
+            _t('图片显示自定义模板'),
+            _t('可用变量参考：<a href="https://github.com/LittleJake/Typecho-RandomThumbnail/blob/master/README.md" target="_blank">README.md</a>')
+        );
 
         $form->addInput($url);
-        $form->addInput($lazyload);
-        $form->addInput($lazyload_tag);
-        $form->addInput($lazyload_url);
+        $form->addInput($template);
     }
 
     /**
@@ -66,21 +69,13 @@ class RandomThumbnail_Plugin implements Typecho_Plugin_Interface
      *
      * @author LittleJake
      * @param int $seed 随机数
-     * @param string $height 图片高度
-     * @param string $width 图片宽度
-     * @param string $class 自定义class
-     * @param string $style 自定义样式
      * @return bool
      */
 
-    public static function getThumbnail($seed = 0,$height = "fit-content", $width = "fit-content", $class = '', $style = '')
+    public static function getThumbnail($seed = 0)
     {
         try{
             $url = Typecho_Widget::widget('Widget_Options')->plugin('RandomThumbnail')->url;
-            $lazyload = Typecho_Widget::widget('Widget_Options')->plugin('RandomThumbnail')->lazyload;
-            $lazyload_tag = Typecho_Widget::widget('Widget_Options')->plugin('RandomThumbnail')->lazyload_tag;
-            $lazyload_url = Typecho_Widget::widget('Widget_Options')->plugin('RandomThumbnail')->lazyload_url;
-
             $urls = explode("\r\n",$url);
 
             if(sizeof($urls) == 0)
@@ -88,21 +83,25 @@ class RandomThumbnail_Plugin implements Typecho_Plugin_Interface
 
             $seed = $seed>0?$seed:rand(0,9999);
             $num = sizeof($urls);
-
             $index = $seed % $num;
 
-            if($lazyload == 1)
-                echo "<div style='width: $width; height: $height; overflow: hidden; border-radius: 10px; max-height: 100%; max-width: 100%'>
-<img $lazyload_tag='$urls[$index]' src='$lazyload_url' alt='head-img-$seed' class='$class' style='$style'>
-</div>";
-            else
-                echo "<div style='width: $width; height: $height; overflow: hidden; border-radius: 10px; max-height: 100%; max-width: 100%'>
-<img src='$urls[$index]' alt='head-img-$seed' class='$class' style='$style'>
-</div>";
+            echo self::format($urls[$index]);
+
             return true;
         } catch (\Exception $e){
             return false;
         }
+    }
 
+    /**
+     * 用于处理模板数据
+     *
+     * @param $url
+     * @return string|string[]
+     * @throws Typecho_Exception
+     */
+    public static function format($url){
+        return str_replace('{img_src}',$url, Typecho_Widget::widget('Widget_Options')
+            ->plugin('RandomThumbnail')->template);
     }
 }
