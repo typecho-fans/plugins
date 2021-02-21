@@ -187,7 +187,7 @@
 [GistEcho](https://github.com/flxxyz/GistEcho) | 短代码方式在文章内嵌入Gist插件 | 1.0.0 | [flxxyz](https://github.com/flxxyz) | [下载](https://github.com/flxxyz/GistEcho/archive/master.zip)
 [GitHubGit](https://github.com/typecho/plugins/tree/master/GitHubGit) | 同步至GitHub静态博客Jekyll插件 | 0.0.1 | [weakish](https://github.com/weakish) | [特殊](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/GitHubGit.zip)
 [GitHubShow](https://github.com/HyanCat/Typecho-GitHubShow) | jQuery版短代码式GitHub挂件插件 | 0.0.2 | [HyanCat](https://github.com/HyanCat) | [下载](https://github.com/HyanCat/Typecho-GitHubShow/archive/master.zip)
-[GitStatic](https://github.com/MliKiowa/GitStatic) | Typecho用GitHub做附件图床插件 | 2.0.0 | [乔千](https://github.com/MliKiowa) | [下载](https://github.com/MliKiowa/GitStatic/archive/master.zip)
+[GitStatic](https://github.com/MliKiowa/GitStatic) | Typecho用GitHub做附件图床插件 | 6.0.0 | [乔千](https://github.com/MliKiowa) | [下载](https://github.com/MliKiowa/GitStatic/archive/master.zip)
 [GitWidget](https://gitee.com/SimonH/typecho-gitwidget) | Github或Gitee项目预览小挂件插件 | 1.0.0 | [Simon.H](https://gitee.com/SimonH) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/GitWidget.zip)
 [GithubGist](https://github.com/fengqi/typecho-gitst-proxy) | 文内[Gist](https://gist.github.com)替换为代理加速地址插件 | 0.0.1 | [Simple Code](https://github.com/fengqi) | [特殊](https://github.com/fengqi/typecho-gitst-proxy/archive/master.zip)
 [Gitment4typecho](https://github.com/nitu2003/Gitment4typecho) | 基于[Gitment](https://github.com/imsun/gitment)的评论/留言系统插件 | 1.2 | [Taskeren](https://github.com/nitu2003) | [下载](https://github.com/nitu2003/Gitment4typecho/archive/master.zip)
