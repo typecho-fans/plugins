@@ -1,6 +1,7 @@
 <?php
 /**
  * @author gaobinzhan <gaobinzhan@gmail.com>
+ * @modify 小码农 <chengshongguo@qq.com> 增加实例化方法
  */
 
 require_once 'Service.php';
@@ -9,6 +10,14 @@ require_once 'Extend/PHPMailer.php';
 
 class SmtpService extends Service
 {
+    public static function create(){
+
+		static $instance ;
+		if (!$instance){ 
+		    $instance = new SmtpService();
+		}
+		return $instance;
+	}
     public function __handler($active, $comment, $plugin)
     {
         try {
