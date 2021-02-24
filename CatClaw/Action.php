@@ -242,10 +242,7 @@ $cate=$d['其他动漫'];
 }
 
 
-elseif(strpos($type,'片') !== false||strpos($type,'动漫电影') !== false){
- $f=$this->shuzu(Helper::options()->Plugin('CatClaw')->film);
-$cate=$f[$type]; 
-}
+
 
 elseif(strpos($type,'剧') !== false){
   $t=$this->shuzu(Helper::options()->Plugin('CatClaw')->tv);  
@@ -265,7 +262,10 @@ $z=$this->shuzu(Helper::options()->Plugin('CatClaw')->zy);
 $cate=$z[$type]; 
 }
 
-
+elseif(strpos($type,'片') !== false||strpos($type,'动漫电影') !== false){
+ $f=$this->shuzu(Helper::options()->Plugin('CatClaw')->film);
+$cate=$f[$type]; 
+}
 
 
 
