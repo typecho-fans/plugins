@@ -123,7 +123,7 @@
 [Comment2Telegram](https://github.com/MoeLoli/Comment2Telegram) | 评论操作通知推送至[Telegram](https://telegram.org)插件 | 1.3.2 | [Sora Jin](https://github.com/MoeLoli) | [下载](https://github.com/MoeLoli/Comment2Telegram/archive/master.zip)
 [Comment2Wechat](https://github.com/YianAndCode/Comment2Wechat) | 评论推送至微信插件(兼容XmlRpc) | 1.1.0 | [Y!an](https://github.com/YianAndCode) | [下载](https://github.com/YianAndCode/Comment2Wechat/archive/master.zip)
 [CommentApprove](https://github.com/ennnnny/typecho/tree/master/CommentApprove) | 按邮箱自定义三种评论者身份插件 | 0.1.0 | [kuye](https://github.com/ennnnny) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/CommentApprove.zip)
-[CommentAuditor](https://github.com/gspsp/CommentAuditor) | 支持自建规则API评论内容审核插件 | 1.0.4 | [ihesro](https://b.nit9.cn/cross.html) | [下载](https://github.com/gspsp/CommentAuditor/archive/master.zip)
+[CommentAuditor](https://github.com/gspsp/CommentAuditor) | 支持自建规则API评论内容审核插件 | 1.0.5 | [ihesro](https://b.nit9.cn/cross.html) | [下载](https://github.com/gspsp/CommentAuditor/archive/master.zip)
 [CommentGun](https://github.com/xddxdd/typecho-commentgun) | 简化版MailGun评论邮件提醒插件 | 1.0.0 | [Lan Tian](https://github.com/xddxdd) | [下载](https://github.com/xddxdd/typecho-commentgun/archive/master.zip)
 [CommentHelper](https://github.com/ShangJixin/Typecho-Plugin-Nabo-CommentHelper) | [南博](https://nabo.krait.cn)App开发版评论异步通知插件 | 1.0 | [尚寂新](https://github.com/ShangJixin) | [下载](https://github.com/ShangJixin/Typecho-Plugin-Nabo-CommentHelper/archive/master.zip)
 [CommentMailPlus](https://github.com/oott123/CommentMailPlus) | MailGun评论提醒插件(cURL连接) | 0.0.4 | [oott123](https://github.com/oott123) | [下载](https://github.com/oott123/CommentMailPlus/archive/master.zip)
