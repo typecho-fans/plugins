@@ -6,7 +6,7 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
  *
  * @package Typecho-RandomThumbnail
  * @author  LittleJake
- * @version 1.0.0
+ * @version 2.0.0
  * @link https://blog.littlejake.net
  */
 class RandomThumbnail_Plugin implements Typecho_Plugin_Interface
@@ -35,14 +35,15 @@ class RandomThumbnail_Plugin implements Typecho_Plugin_Interface
      */
     public static function config(Typecho_Widget_Helper_Form $form){
         $url = new Typecho_Widget_Helper_Form_Element_Textarea('url', NULL, NULL, _t('图片地址'), _t('输入图片地址，一行一条'));
-        $template = new Typecho_Widget_Helper_Form_Element_Textarea(
-            'template',
-            NULL,
-            <<EOF
+		$html = <<<EOF
 <div style="width: fit-content; height: 300px; overflow: hidden; border-radius: 10px; max-height: 100%; max-width: 100%; margin:5% auto;">
     <img src="{img_src}" alt="head-img" class="" style="">
 </div>
-EOF,
+EOF;
+        $template = new Typecho_Widget_Helper_Form_Element_Textarea(
+            'template',
+            NULL,
+            $html,
             _t('图片显示自定义模板'),
             _t('可用变量参考：<a href="https://github.com/LittleJake/Typecho-RandomThumbnail/blob/master/README.md" target="_blank">README.md</a>')
         );
