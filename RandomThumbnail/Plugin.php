@@ -38,7 +38,7 @@ class RandomThumbnail_Plugin implements Typecho_Plugin_Interface
         $template = new Typecho_Widget_Helper_Form_Element_Textarea(
             'template',
             NULL,
-            <<<EOF
+            <<EOF
 <div style="width: fit-content; height: 300px; overflow: hidden; border-radius: 10px; max-height: 100%; max-width: 100%; margin:5% auto;">
     <img src="{img_src}" alt="head-img" class="" style="">
 </div>
