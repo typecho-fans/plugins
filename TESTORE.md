@@ -27,7 +27,7 @@
 
  > 下表中的下载链接文字可用于附加图标：`下载`即非社区版，`不可用`显示为:no_entry:，`特殊`显示:warning:意为安装或启用方法特殊。
 
-### 插件信息 (469)
+### 插件信息 (470)
 
 ###### TeStore使用下表“名称”创建安装文件夹，“版本”提示升级，请务必确保文本准确；添加时注意按字母排序，自增上方括号内总数，简介不要太长。
 ```
@@ -261,8 +261,8 @@
 [Maintain](https://xiamp.net/archives/23.html) | Typecho全局维护模式插件(免费版) | 1.0.1 | [Ryan](https://github.com/benzBrake) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/Maintain.zip)
 [MarkdownIFrame](https://github.com/youngzhaojia/typecho-plugins) | 系统[MD](https://baike.baidu.com/item/markdown/3245829)编辑器添加Iframe按钮插件 | 1.0.0 | [youngzhaojia](https://github.com/youngzhaojia) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/MarkdownIFrame.zip)
 [MarkdownKatex](https://github.com/zyuzhi/MarkdownKatex-typecho) | [ParsedownExtra](https://github.com/erusev/parsedown-extra)+[KaTeX](https://github.com/Khan/KaTeX)解析插件 | 1.0.1 | [zyuzhi](https://github.com/zyuzhi) | [下载](https://github.com/zyuzhi/MarkdownKatex-typecho/archive/master.zip)
+[MarkdownParse](https://github.com/mrgeneralgoo/typecho-markdown) | Markdown解析(MathJax+Mermaid+目录) | 1.4.0 | [mrgeneral](https://github.com/mrgeneralgoo) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/MarkdownParse_.zip)
 [Markdown](https://jiongks.name/blog/plugin-markdown) | 简易版Markdown解析+编辑器插件 | 1.1.1 | [勾三股四](https://jiongks.name) | [不可用](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/Markdown.zip)
-[MarkdownParse](https://github.com/mrgeneralgoo/typecho-markdown) | Markdown解析(MathJax+Mermaid+目录) | 1.4.0 | [mrgeneral](https://github.com/mrgeneralgoo) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/MarkdownParse.zip)
 [MaterialPlayer](https://github.com/xxyangyoulin/typecho_plugin_material_player) | 可悬浮简洁风质感音乐播放器插件 | 1.0.0 | [xxyangyoulin](https://github.com/xxyangyoulin) | [下载](https://github.com/xxyangyoulin/typecho_plugin_material_player/archive/master.zip)
 [MathJax](https://github.com/typecho/plugins/blob/master/MathJax.php) | 基于CDN的[MathJax](https://www.mathjax.org)公式渲染插件 | 1.0.0 | [mutoo](https://github.com/mutoo) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/MathJax.zip)
 [MbEditorFree](https://qqdie.com/archives/mbeditor-mbeditor-plugin.html) | 绚彩高亮模板编辑器插件(免费版) | 1.0.0 | [点我购买付费版](https://qqdie.com/archives/mbeditor-mbeditor-plugin.html) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/MbEditorFree.zip)
