@@ -27,7 +27,7 @@
 
  > 下表中的下载链接文字可用于附加图标：`下载`即非社区版，`不可用`显示为:no_entry:，`特殊`显示:warning:意为安装或启用方法特殊。
 
-### 插件信息 (470)
+### 插件信息 (471)
 
 ###### TeStore使用下表“名称”创建安装文件夹，“版本”提示升级，请务必确保文本准确；添加时注意按字母排序，自增上方括号内总数，简介不要太长。
 ```
@@ -287,6 +287,7 @@
 [Nos](https://github.com/163yun/nos-typecho-plugin) | Typecho网易云对象存储NOS插件 | 1.0.0 | [白宦成](https://github.com/bestony) | [下载](https://github.com/163yun/nos-typecho-plugin/archive/master.zip)
 [NotAllowIp](https://github.com/tangmaoguo/NotAllowIp-Typecho-Plugin) | Typecho设禁止访问IP黑名单插件 | 1.0.0 | [BlackStyle](https://github.com/tangmaoguo) | [下载](https://github.com/tangmaoguo/NotAllowIp-Typecho-Plugin/archive/master.zip)
 [Notes](https://github.com/ghostboyzone/typecho-notes-plugin) | Markdown编辑器版便签系统插件 | 0.0.1 | [GhostBoyZone](https://github.com/ghostboyzone) | [下载](https://github.com/ghostboyzone/typecho-notes-plugin/archive/master.zip)
+[Notice](https://github.com/RainshawGao/Typecho-Plugin-Notice) | 评论异步通知插件 | 0.7.2 | [Rainshaw](https://github.com/RainshawGao/) | [下载](https://github.com/RainshawGao/Typecho-Plugin-Notice/archive/master.zip)
 [Notifier](https://github.com/zengxs/TypechoNotifier) | 评论用腾讯谷歌企业邮件通知插件 | 0.1.0 | [zengxs](https://github.com/zengxs) | [下载](https://github.com/zengxs/TypechoNotifier/archive/master.zip)
 [Nprogress](https://github.com/Vndroid/Nprogress) | jQuery版全局多彩进度条特效插件 | 1.1.1 | [Cain](https://github.com/Vndroid) | [下载](https://github.com/Vndroid/Nprogress/archive/master.zip)
 [ObsUpload](https://github.com/iddddg/ObsUpload) | Typecho附件上传华为云OBS插件 | 1.0.0 | [淡定定定哥](https://github.com/iddddg) | [下载](https://github.com/iddddg/ObsUpload/archive/master.zip)
