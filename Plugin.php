@@ -43,9 +43,8 @@ class KirinShiKi_Plugin implements Typecho_Plugin_Interface
 	 */
 	public static function config(Typecho_Widget_Helper_Form $form)
 	{
-
 		// 插件信息与更新检测
-		function check_update($version)
+		$check_update = function($version)
 		{
 			echo "<style>.info{text-align:center; margin:20px 0;} .info > *{margin:0 0 15px} .buttons a{background:#467b96; color:#fff; border-radius:4px; padding: 8px 10px; display:inline-block;}.buttons a+a{margin-left:10px}</style>";
 			echo "<div class='info'>";
@@ -57,7 +56,7 @@ class KirinShiKi_Plugin implements Typecho_Plugin_Interface
 
 			echo "</div>";
 		}
-		check_update("3.1.1");
+		$check_update("3.1.1");
 
 		// 自定义pc背景
 		$pcBg = new Typecho_Widget_Helper_Form_Element_Text(
