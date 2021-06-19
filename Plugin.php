@@ -55,7 +55,7 @@ class KirinShiKi_Plugin implements Typecho_Plugin_Interface
 			echo "<p>更多说明请点击插件说明或<a href='https://github.com/JeffersonQin/'>点击前往github查看</a>~</p>";
 
 			echo "</div>";
-		}
+		};
 		$check_update("3.1.1");
 
 		// 自定义pc背景
@@ -116,14 +116,14 @@ class KirinShiKi_Plugin implements Typecho_Plugin_Interface
 		);
 		$form->addInput($copyrightType);
 
-	$colorfultags = new Typecho_Widget_Helper_Form_Element_Radio(
-		'colorfultags',
-		array(
-		'0' => _t('否'),
-				'1' => _t('是'),
-		),
-			'1',
-		_t('启用彩色标签云')
+		$colorfultags = new Typecho_Widget_Helper_Form_Element_Radio(
+			'colorfultags',
+			array(
+			'0' => _t('否'),
+					'1' => _t('是'),
+			),
+				'1',
+			_t('启用彩色标签云')
 		);
 		$form->addInput($colorfultags);
 
