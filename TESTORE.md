@@ -234,6 +234,7 @@
 [Kefu](https://github.com/1628972070/typecho) | Typecho右侧浮动式客服挂件插件 | 1.0.0 | [双少](https://github.com/1628972070) | [下载](https://github.com/1628972070/typecho/archive/master.zip)
 [KindEditor](https://521-wf.com/archives/21.html) | 新版KindEditor可视化编辑器插件 | 2.2 | [WiFeng](https://github.com/WiFeng) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-H_to_L/KindEditor_WiFeng.zip)
 [KindEditor](https://github.com/hizhengfu/KindEditor) | 经典所见即所得富文本编辑器插件 | 4.0.1 | [hizhengfu](https://github.com/hizhengfu) | [下载](https://github.com/hizhengfu/KindEditor/archive/master.zip)
+[KirinShiKi](https://github.com/JeffersonQin/KirinShiKi) | 基于handsome主题的[神代綺凜](https://moe.best)式魔改主题 | 3.1.1 | [JeffersonQin](https://github.com/JeffersonQin), [Sanakey](https://github.com/Sanakey) | [下载](https://github.com/JeffersonQin/KirinShiKi/archive/refs/tags/v3.1.1.zip)
 [KodoForTypecho](https://github.com/sy-records/KodoForTypecho) | 七牛云KODO作附件存储空间插件 | 1.0.0 | [沈唁](https://github.com/sy-records) | [下载](https://github.com/sy-records/KodoForTypecho/archive/master.zip)
 [LaTeXTypecho](https://github.com/Imyukehan/LaTeXTypecho) | 使用[MathJax](https://www.mathjax.org)渲染LaTex公式插件 | beta | [Khan](https://github.com/Imyukehan) | [下载](https://github.com/Imyukehan/LaTeXTypecho/archive/master.zip)
 [LaTex](https://github.com/typecho/plugins/tree/master/LaTex) | Markdown版LaTex公式解析插件 | 1.1.0 | [mutoo](https://github.com/mutoo) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-H_to_L/LaTex.zip)
