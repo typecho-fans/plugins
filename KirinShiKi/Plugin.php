@@ -171,7 +171,7 @@ class KirinShiKi_Plugin implements Typecho_Plugin_Interface
 		$path = $options->pluginUrl . '/KirinShiKi/';
 		echo '<link rel="stylesheet" type="text/css" href="' . $path . 'css/kirin.css" />';
 		//  输出js文件
-		$src = $options->pluginUrl . '/KirinShiKi/js/kirin.js';
+		$src = $options->pluginUrl . '/KirinShiKi/js/kirin.min.js';
 		echo "<script src='$src'></script>";
 		//   echo '<script type="text/javascript" src="' . $src . '"></script>';
 
