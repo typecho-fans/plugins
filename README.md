@@ -39,6 +39,7 @@
 名称 | 简介 | 版本 | 作者 | zip包
 ---- | ----: | :---: | ----: | :----:
 [AMP](AMP) | 生成AMP/MIP移动标准页面插件 | 0.7.6.1 | [Holmesian](https://github.com/holmesian) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/AMP.zip)
+[AutoBackup](AutoBackup) | 数据库定时备份至邮箱插件 | 1.3.0 | [jrotty](https://github.com/jrotty) | [Download]https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/AutoBackup.zip)
 [AjaxComments](AjaxComments) | 嵌套评论Ajax异步提交效果插件 | 1.2.0 | [Byends](https://github.com/visamz), Willin Kan | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/AjaxComments.zip)
 [AbbrSlug](AbbrSlug) | 多种算法生成数字文章缩略名插件 | 1.0.0 | [羽叶](https://github.com/cyea) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/AbbrSlug.zip)
 [AllowIp](AllowIp) | Typecho可访问后台IP白名单插件 | 1.0.1 | [Fuzqing](https://github.com/fuzqing) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/AllowIp.zip)
