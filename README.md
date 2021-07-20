@@ -39,7 +39,6 @@
 名称 | 简介 | 版本 | 作者 | zip包
 ---- | ----: | :---: | ----: | :----:
 [AMP](AMP) | 生成AMP/MIP移动标准页面插件 | 0.7.6.1 | [Holmesian](https://github.com/holmesian) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/AMP.zip)
-[AutoBackup](AutoBackup) | 数据库定时备份至邮箱插件 | 1.3.0 | [泽泽](https://github.com/jrotty) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/AutoBackup.zip)
 [AjaxComments](AjaxComments) | 嵌套评论Ajax异步提交效果插件 | 1.2.0 | [Byends](https://github.com/visamz), Willin Kan | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/AjaxComments.zip)
 [AbbrSlug](AbbrSlug) | 多种算法生成数字文章缩略名插件 | 1.0.0 | [羽叶](https://github.com/cyea) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/AbbrSlug.zip)
 [AllowIp](AllowIp) | Typecho可访问后台IP白名单插件 | 1.0.1 | [Fuzqing](https://github.com/fuzqing) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/AllowIp.zip)
@@ -52,6 +51,7 @@
 [At](At) | @链接评论回复与邮件提醒插件 | 0.1.1 | [公子](https://github.com/lizheming) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/At.zip)
 [Attachment](Attachment) | 附件下载美化计数(搭配[Stat](Stat))插件 | 1.0.2 | [羽中](https://github.com/jzwalk), [Hanny](http://www.imhan.com) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/Attachment.zip)
 [AudioPlayer](AudioPlayer) | 可定制配色伸缩音乐播放器插件 | 1.2.6 | [羽中](https://github.com/jzwalk) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/AudioPlayer.zip)
+[AutoBackup](AutoBackup) | 数据库定时备份至邮箱插件 | 1.3.0 | [泽泽](https://github.com/jrotty) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/AutoBackup.zip)
 [AutoLaTeX](AutoLaTeX) | LaTeX公式两种模式自动渲染插件 | 0.1.0 | [bLue](https://github.com/dreamerblue) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/AutoLaTeX.zip)
 [AutoSlug](AutoSlug) | 文章缩略名用翻译API生成插件 | 2.1.1 | [ShingChi](https://github.com/shingchi) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/AutoSlug.zip)
 [AutoTags](AutoTags) | 文章内容解析自动生成标签插件 | 1.0.0 | [DT27](https://github.com/DT27) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/AutoTags.zip)
