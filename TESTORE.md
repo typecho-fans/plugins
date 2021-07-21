@@ -470,6 +470,7 @@
 [Words](https://github.com/tennsinn/Typecho-Plugins/tree/master/Words) | Typecho自建数据仿微博碎语插件 | 1.1.2 | [息E-敛](https://github.com/tennsinn) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/Words.zip)
 [WowScroll](https://github.com/Sanakey/WowScroll) | 页面元素载入时显示动画特效插件 | 1.1.1 | [Sanakey](https://github.com/Sanakey) | [下载](https://github.com/Sanakey/WowScroll/archive/master.zip)
 [WxFollowView](https://github.com/Moidea/WxFollowView) | Typecho文章关注公众号获取密码插件 | 2.0 | [多思多金Roogle](https://www.moidea.info) | [下载](https://github.com/Moidea/WxFollowView/releases/download/2.0/WxFollowView.zip)
+[XEditor](https://xiamp.net/archives/automatic-backup-of-typecho-database-to-mailbox-plugin-autobackup.html) | 基于 Vditor 的 Markdown 编辑器 | 1.1.2 | [Ryan](https://github.com/benzBrake) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/XEditor.zip)
 [XMUserAgent](https://github.com/benzBrake/XMUserAgent) | Typecho UserAgent 渲染插件 | 0.3 | [Ryan](https://github.com/benzBrake) | [下载](https://github.com/benzBrake/XMUserAgent/archive/master.zip)
 [XmlRpcAid](https://github.com/MliKiowa/XmlRpcAid-By-Nabo) | [南博](https://nabo.krait.cn)App用更新XmlRpc文件插件 | 2.0.0 | [乔千](https://github.com/MliKiowa) | [下载](https://github.com/MliKiowa/XmlRpcAid-By-Nabo/archive/master.zip)
 [YkSwfNoAd](https://github.com/nagatoyk/typecho-plug/blob/master/YkSwfNoAd.php) | 优酷视频转换为无广告播放器插件 | 0.0.3 | [镜花水月](https://github.com/nagatoyk) | [不可用](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/YkSwfNoAd_.zip)
