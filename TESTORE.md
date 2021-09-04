@@ -46,6 +46,7 @@
 [ActiveSubmit](https://github.com/invelop/Typecho-ActiveSubmit) | 主动推送链接至百度插件(含分类) | 1.0 | [承影](https://github.com/invelop) | [下载](https://github.com/invelop/Typecho-ActiveSubmit/archive/master.zip)
 [AdminLogin](https://github.com/v03413/Typecho_Plugins/tree/master/AdminLogin) | 微信/QQ号后台扫码登录注册插件 | 0.1.1 | [_莫名_](https://github.com/v03413) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/AdminLogin.zip)
 [Adminer](https://github.com/kokororin/typecho-plugin-adminer) | 后台集成Adminer数据库管理插件 | 1.0 | [kokororin](https://github.com/kokororin) | [下载](https://github.com/kokororin/typecho-plugin-adminer/archive/master.zip)
+[AddTheme](https://github.com/cikiChe/addtheme) | 在线自动下载主题 | 0.0.1 | [ciki](https://github.com/cikiChe/addtheme) | [下载](https://github.com/cikiChe/addtheme/archive/refs/tags/v0.02.zip)
 [AdsPlugin](https://github.com/ScientistPun/AdsPlugin_for_typecho) | Typecho自建数据广告位管理插件 | 1.0.0 | [ScientistPun](https://github.com/ScientistPun) | [下载](https://github.com/ScientistPun/AdsPlugin_for_typecho/archive/master.zip)
 [Aidnabo](https://github.com/kraity/typecho-aidnabo) | [南博](https://nabo.krait.cn)App账户登录等功能助手插件 | 1.2 | [权那他](https://github.com/kraity) | [下载](https://github.com/kraity/typecho-aidnabo/archive/master.zip)
 [AjaxComment](https://github.com/qlwz/AjaxComment-For-Typecho) | 原生JS评论Ajax异步提交功能插件 | 1.0.0.2 | [情留メ蚊子](https://github.com/qlwz) | [下载](https://github.com/qlwz/AjaxComment-For-Typecho/archive/master.zip)
