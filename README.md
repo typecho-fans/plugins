@@ -133,7 +133,7 @@
 [SlimBox2](SlimBox2) | 轻量级jQuery图片灯箱弹窗插件 | 1.0.7 | [Ryan](https://github.com/ryanfwy), [冰剑](https://github.com/binjoo) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/SlimBox2.zip)
 [Smilies](Smilies) | Typecho定制图片表情功能插件 | 1.1.3 | [羽中](https://github.com/jzwalk), Willin Kan | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/Smilies.zip)
 [Snowstorm](Snowstorm) | (娱乐向)动态飘雪背景效果插件 | 1.0.1 | [阳光](https://github.com/rakiy) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/Snowstorm.zip)
-[Soso](Soso) | Typecho搜索过滤/高亮/增强插件 | 1.1.1 | [泽泽社长](https://github.com/jrotty) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/Soso.zip)
+[Soso](Soso) | Typecho搜索过滤/高亮/增强插件 | 1.2.2 | [泽泽社长](https://github.com/jrotty) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/Soso.zip)
 [SplitArchivePage](SplitArchivePage) | Typecho文章应用分页效果插件 | 0.1.7 | [Noisky](https://github.com/noisky) & [gouki](https://neatstudio.com) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/SplitArchivePage.zip)
 [Stat](Stat) | 文章浏览数排行插件(支持附件) | 1.0.4 | [羽中](https://github.com/jzwalk), [Jozhn](https://github.com/jozhn), [Hanny](http://www.imhan.com) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/Stat.zip)
 [Sticky](Sticky) | Typecho首页/分类文章置顶插件 | 1.0.1 | [Ryan](https://github.com/benzBrake), Willin Kan | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/Sticky.zip)
