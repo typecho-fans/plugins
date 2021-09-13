@@ -4,8 +4,8 @@
  * 
  * @package Soso
  * @author 泽泽社长
- * @version 1.1.1
- * @link http://qqdie.com/
+ * @version 1.2.2
+ * @link http://zezeshe.com/
  */
 class Soso_Plugin implements Typecho_Plugin_Interface
 {
@@ -19,10 +19,6 @@ class Soso_Plugin implements Typecho_Plugin_Interface
     public static function activate()
     {
         Typecho_Plugin::factory('Widget_Archive')->search = array('Soso_Plugin', 'soso'); 
-        Typecho_Plugin::factory('Widget_Abstract_Contents')->contentEx = array('Soso_Plugin','keywordsl');
-        Typecho_Plugin::factory('Widget_Abstract_Contents')->excerptEx = array('Soso_Plugin','keywordsl');
-        Typecho_Plugin::factory('Widget_Archive')->title = array('Soso_Plugin','keywordst');
-        Typecho_Plugin::factory('Widget_Archive')->callExcerpts = array('Soso_Plugin', 'excerpts');
         return _t('插件已激活，现在可以对插件进行设置！');
     }
     /**
@@ -51,13 +47,22 @@ class Soso_Plugin implements Typecho_Plugin_Interface
       
       
     $tuozhan = new Typecho_Widget_Helper_Form_Element_Checkbox('tuozhan', 
-    array('keyred' => _t('被搜索的<font color="red">词汇</font>高亮显示'),
+    array(
+    'pinlv' => _t('勾选该项开启搜索频率限制，开启后请配置下方设置'),
 ),
-    array(), _t('拓展设置'), _t('<p style="background: #fff;margin: 2px 0;padding: 5px;">如果模板中缩略内容使用的是<code style="color: red;">$this->excerpt(140, \'...\')</code>请改为<code style="color: red;">$this->excerpts($this,140)</code>其中140为缩略内容的长度</p><div style="background: #fff;margin: 15px 0;padding: 10px 5px;"><p style="font-weight: bold;margin-top: 0;">感谢：</p>
-    <a href="http://qqdie.com/" target="_blank">泽泽</a> <font color="red">❤</font> <a href="http://siitake.cn/" target="_blank">香菇</a>，<a href="http://ysido.com/" target="_blank">Rakiy</a>
-    </div>'));
+
+    array(), _t('拓展设置'), _t(''));
     $form->addInput($tuozhan->multiMode());
       
+    
+    $count = new Typecho_Widget_Helper_Form_Element_Text('count', NULL, '1', _t('限制搜索次数'), _t(''));
+    $form->addInput($count->addRule('isInteger', '请填纯数字次数'));  
+    
+    $time = new Typecho_Widget_Helper_Form_Element_Text('time', NULL, '60', _t('阻止时间（以秒为单位）'), _t(''));
+    $form->addInput($time->addRule('isInteger', '请填正确秒数'));  
+      
+    $txt = new Typecho_Widget_Helper_Form_Element_Text('txt', NULL, '一分钟只能搜索一次，请稍后再试！', _t('被限制后的显示提示'), _t(''));
+    $form->addInput($txt); 
 
  
       
@@ -85,81 +90,91 @@ class Soso_Plugin implements Typecho_Plugin_Interface
      * @return void
      */
     public static function soso($keywords, $obj) {
-  $Somo = Typecho_Widget::widget('Widget_Options')->plugin('Soso')->Somo;//获取设置参数
- $cat=intval($obj->request->cat);
+$count=intval(Typecho_Widget::widget('Widget_Options')->plugin('Soso')->count);
+$time=Typecho_Widget::widget('Widget_Options')->plugin('Soso')->time;
+$txt=Typecho_Widget::widget('Widget_Options')->plugin('Soso')->txt;
+$Somo = Typecho_Widget::widget('Widget_Options')->plugin('Soso')->Somo;//获取设置参数
+
+if(empty($count)){$count=1;}
+if(empty($time)){$time=60;}
+if(empty($txt)){$txt=$time."秒内只能搜索".$count."次，请稍后再试！";}
+ $cat=intval($obj->request->get('cat'));
 
   $searchQuery = '%' . str_replace(' ', '%', $keywords) . '%';
-  $po = $obj->select()->join('table.relationships','table.relationships.cid = table.contents.cid','right')->join('table.metas','table.relationships.mid = table.metas.mid','right')->where('table.metas.type=?','category')
-    ->where("table.contents.password IS NULL OR table.contents.password = ''")
-    ->where('table.contents.status = ?', 'publish')
-    ->where('table.contents.title LIKE ? OR table.contents.text LIKE ?', $searchQuery, $searchQuery)
-    ->where('table.contents.type = ?', 'post')->group('cid'); 
-//定制功能，用来根据分类id搜索内容，需模板代码配合才会启用
-if($cat>0){
- $po = $po->where('table.relationships.mid = ? OR table.metas.parent = ?',$cat,$cat);
+
+
+
+if (!empty(Typecho_Widget::widget('Widget_Options')->plugin('Soso')->tuozhan) && in_array('pinlv',  Typecho_Widget::widget('Widget_Options')->plugin('Soso')->tuozhan)){
+session_start();
+
+
+
+$ip=self::get_the_user_ip();//获取请求者ip
+
+if(!empty($ip)){
+
+if(!empty($_SESSION[$ip])&&empty($page)){
+$timeout=time()-$_SESSION[$ip];//获取两次请求的时间差
+if($timeout<$time){//如果时间差达到被限制的时间
+if($_SESSION['count']<=$count){//如果请求次数未超过规定次数
+$_SESSION['count']++;//请求次数+1
+include('search.php');
+}else{
+    
+include('theme.php');
+exit;//否则就发出限制提示
+} 
+    
+} 
+else{//如果搜索间隔超过限制就允许正常搜索
+$_SESSION['count']=1;//请求次数重置
+$_SESSION[$ip]=time();
+$_SESSION['count']++;//请求次数+1
+include('search.php');  
 }
-      
-//常规搜索
- if($Somo==2){
- $po = $po->where('table.contents.title LIKE ?', $searchQuery);//只允许搜索文章标题
- }
-       $sid = Typecho_Widget::widget('Widget_Options')->plugin('Soso')->sid;
-      if(!$sid){}else{
- $sid = explode(',', $sid);
-        $sid = array_unique($sid);  //去除重复值
-        foreach ($sid as $k => $v) {
-             $po = $po->where('table.relationships.mid != '.intval($v));//确保每个值都是数字
-        } 
-      }
-      
-  $se = clone $po;
-  $obj->setCountSql($se);  
-      
-  $page=$obj->request->get('page');
-  $po = $po->order('table.contents.created', Typecho_Db::SORT_DESC)
-         ->page($page, $obj->parameter->pageSize);
-  $obj->query($po);
-      
-    return   $keywords;
+}else{//如果ip为第一次搜索，或者处于搜索页面翻页状态就照常搜索
+if(empty($page)){//翻页时不重置时间，不减少次数
+$_SESSION[$ip]=time();
+$_SESSION['count']=1;//请求次数重置
+}
+include('search.php');  
+}
+
+}
+else{
+    
+$txt= 'IP读取失败，请关闭隐藏IP的相关工具后再次进行搜索！'; 
+include('theme.php');
+exit;
+    
+}
+
+}
+else{
+include('search.php');   
+}
+
+
+
+
+
 }
     
 
 
-public static function keywordsl($con, $obj,$text) {
-  $text = empty($text)?$con:$text;
-  if (!empty(Typecho_Widget::widget('Widget_Options')->plugin('Soso')->tuozhan) && in_array('keyred',  Typecho_Widget::widget('Widget_Options')->plugin('Soso')->tuozhan)){
-$keywords=$obj->request->keywords;
 
-$text = preg_replace_callback('#(.*?)\[Meting\](.*?)\[\/Meting\](.*?)#', 
-                              function($s)use($keywords){
-return str_ireplace($keywords,'<font color="red">'.$keywords.'</font>', $s[1]).'[Meting]'.$s[2].'[/Meting]'.str_ireplace($keywords,'<font color="red">'.$keywords.'</font>', $s[3]);
-}    
-                              , $text);  
+    private static function get_the_user_ip() {
+		if ( ! empty( $_SERVER['HTTP_CLIENT_IP'] ) ) {
+			$ip = $_SERVER['HTTP_CLIENT_IP'];
+		} elseif ( ! empty( $_SERVER['HTTP_X_FORWARDED_FOR'] ) ) {
+			$ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
+		} else {
+			$ip = $_SERVER['REMOTE_ADDR'];
+		}
+		return $ip;
+	}
+  
 
-      }
-        return $text;
-      
-      
-} 
-  
-  public static function keywordst($titl, $obj) {
-  if (!empty(Typecho_Widget::widget('Widget_Options')->plugin('Soso')->tuozhan) && in_array('keyred',  Typecho_Widget::widget('Widget_Options')->plugin('Soso')->tuozhan)){
-$keywords = $obj->request->keywords;
-$titl = str_ireplace($keywords,'<font color="red">'.$keywords.'</font>',$titl);
-  }
-        return $titl; 
-}  
-  
-  
-  public static function excerpts($obj,$lenth = 90)
-    {  
-$content = Typecho_Common::subStr(strip_tags($obj->excerpt), 0, intval($lenth), '...');
-    if (!empty(Typecho_Widget::widget('Widget_Options')->plugin('Soso')->tuozhan) && in_array('keyred',  Typecho_Widget::widget('Widget_Options')->plugin('Soso')->tuozhan)){
-$keywords=$obj->request->keywords;
-$content = str_ireplace($keywords,'<font color="red">'.$keywords.'</font>', $content);
-    }
-        echo $content;
-    }
   
   
   
