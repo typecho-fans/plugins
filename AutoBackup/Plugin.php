@@ -4,7 +4,7 @@
  * 
  * @package AutoBackup
  * @author 泽泽社长
- * @version 1.3.1
+ * @version 1.3.2
  * @link https://zezeshe.com/archives/autobackup-typecho-plugins.html
  */
 class AutoBackup_Plugin implements Typecho_Plugin_Interface
@@ -45,6 +45,8 @@ class AutoBackup_Plugin implements Typecho_Plugin_Interface
 	 */
 	public static function config(Typecho_Widget_Helper_Form $form)
 	{
+$rooturl=Helper::options()->rootUrl;if (Helper::options()->rewrite==0){$rooturl=$rooturl.'/index.php';}
+
       $tables = new Typecho_Widget_Helper_Form_Element_Checkbox('tables', self::listTables(), self::listTables(), _t('需要备份的数据表'), _t('选择你需要备份的数据表，插件首次启动时会默认全选'));
         $form->addInput($tables);
 
@@ -78,7 +80,7 @@ class AutoBackup_Plugin implements Typecho_Plugin_Interface
 		$blogcron = new Typecho_Widget_Helper_Form_Element_Radio('blogcron', array('0' => _t('关闭'), '1' => _t('开启')), '0', _t('监听文章接口'), _t('监听文章发布于评论接口，然后判断是否达到设置的时间间隔，如果达到就发送数据库备份文件到邮箱，未达到就不发送，该功能在触发发送备份时可能会拖慢博客反应速度，所以默认关闭该项，推荐使用下方的定时任务功能'));
         $form->addInput($blogcron);
 		
-		$cronpass = new Typecho_Widget_Helper_Form_Element_Password('cronpass', NULL, NULL, _t('定时任务接口秘钥'),_t('定时任务接口地址：http://你的域名/autobackup?taken=你设置的秘钥，该项不填写则不开启定时任务接口，将定时任务接口的链接填写到一些定时任务的网站，比如宝塔服务器的定时任务功能'));
+		$cronpass = new Typecho_Widget_Helper_Form_Element_Password('cronpass', NULL, NULL, _t('定时任务接口秘钥'),_t('定时任务接口地址：'.$rooturl.'/autobackup?taken=你设置的秘钥，该项不填写则不开启定时任务接口，将定时任务接口的链接填写到一些定时任务的网站，比如宝塔服务器的定时任务功能'));
 		$form->addInput($cronpass);
 		
 	}
