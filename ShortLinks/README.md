@@ -6,6 +6,13 @@ Typecho 外链转内链插件，支持正文和评论者链接。
 
 从比 1.0.9 更老的版本升级上来建议先禁用再启用。
 
+本插件自从 1.1.0 b2 开始收费，收费方式为自由付费。
+你觉得它值多少钱就付款给我多少钱！如果觉得一文不值，你也可以直接白嫖！
+
+[![Buy Ryan A Coffee](https://bmc-cdn.nyc3.digitaloceanspaces.com/BMC-button-images/custom_images/orange_img.png "Buy Ryan A Coffee")](https://www.buymeacoffee.com/buyryanacoffie "Buy Ryan A Coffee")
+
+或者过去 [我的博客](https://xiamp.net/archives/typecho-plugin-shortlinks.html) 打赏 
+
 ## 获取 Download
 
 [最稳定版下载地址](https://github.com/benzBrake/ShortLinks/releases/latest)
@@ -17,8 +24,9 @@ Typecho 外链转内链插件，支持正文和评论者链接。
 3. 自定义短链功能来自[golinks](http://defe.me/prg/429.html "golinks")；
 4. 支持 referer 白名单和外链转换白名单；
 5. 支持跳转页面，可以自行制作模板放到 templates 目录下，插件设置里可选择，目前自带 5 个模板；
-6. 支持自定义字段转换（实验性功能）；
+6. 支持自定义字段转换（实验性功能，开启强制转换后更好用）；
 7. 支持关闭指定页面的链接转换功能。添加自定义字段 `noshort` 即可；
+8. 支持前台渲染插件(实验性功能，插件设置中开启强制转换)
 
 ## 使用方法 Usage
 

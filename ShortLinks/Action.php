@@ -100,11 +100,11 @@ class ShortLinks_Action extends Typecho_Widget implements Widget_Interface_Do
             // 增加统计
             $count = $this->db->fetchObject($this->db->select('count')
                     ->from('table.shortlinks')
-                    ->where('key = ?', $key))->count;
+                    ->where('key = ?', $requestString))->count;
             $count = $count + 1;
             $this->db->query($this->db->update('table.shortlinks')
                     ->rows(array('count' => $count))
-                    ->where('key = ?', $key));
+                    ->where('key = ?', $requestString));
         } else if ($requestString === ShortLinks_Plugin::urlSafeB64Encode(ShortLinks_Plugin::urlSafeB64Decode($requestString))) {
             // 自动转换链接处理
             $target = ShortLinks_Plugin::urlSafeB64Decode($requestString);
