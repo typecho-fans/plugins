@@ -79,7 +79,7 @@
 [BaiduSitemap](https://github.com/milkcu/BaiduSitemap) | 百度标准Xml或Html站点地图插件 | 0.5 | [Milkcu](https://github.com/milkcu) | [下载](https://github.com/milkcu/BaiduSitemap/archive/master.zip)
 [BaiduSlug](https://github.com/gischuck/BaiduSlug) | 用百度翻译API自动生成slug名插件 | 1.0 | [Chuck](https://github.com/gischuck) | [下载](https://github.com/gischuck/BaiduSlug/archive/master.zip)
 [BaiduSubmit](https://github.com/phpgao/BaiduSubmit) | 推送Sitemap文章链接至百度插件 | 0.5.2 | [老高](https://github.com/phpgao) | [下载](https://github.com/phpgao/BaiduSubmit/archive/master.zip)
-[BaiduTextCensor](https://github.com/sy-records/ty-baidu-textcensor) | 百度云审核过滤评论敏感内容插件 | 1.0.1 | [沈唁](https://github.com/sy-records) | [下载](https://github.com/sy-records/ty-baidu-textcensor/archive/master.zip)
+[BaiduTextCensor](https://github.com/sy-records/ty-baidu-textcensor) | 百度云审核过滤评论敏感内容插件 | 1.0.2 | [沈唁](https://github.com/sy-records) | [下载](https://github.com/sy-records/ty-baidu-textcensor/archive/master.zip)
 [BaiduTongji](https://github.com/liiklin/BaiduTongji) | 设置百度统计ID自动加载代码插件 | 1.0.0 | [linjun](https://github.com/liiklin) | [下载](https://github.com/liiklin/BaiduTongji/archive/master.zip)
 [BanbanStyle](https://github.com/lei2rock/Typecho-Assets/tree/master/plugins/BanbanStyle) | [Handsome](https://www.ihewro.com/archives/489)主题常用功能集成插件 | 0.3.1 | [lei2rock](https://github.com/lei2rock) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/BanbanStyle.zip)
 [BangumiList](https://github.com/ShadowySpirits/BangumiList) | 短代码输出Bangumi追番列表插件 | 1.0.0 | [SSpirits](https://github.com/ShadowySpirits) | [下载](https://github.com/ShadowySpirits/BangumiList/archive/master.zip)
