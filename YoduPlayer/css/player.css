@@ -1,0 +1,152 @@
+#bgmplayer {
+    position: fixed;
+    top: 0;
+    z-index: 999;
+    right: 0;
+    background: rgba(255,255,255,0.8);
+    color: black;
+    transition: transform .5s ease;
+    box-shadow: 0 0 6px 1px rgb(221,221,221);
+     -webkit-box-shadow: 0 0 6px 1px rgb(221,221,221);
+    -moz-box-shadow: 0 0 6px 1px rgba(221,221,221,1);
+}
+#bgmplayer ::-webkit-scrollbar {
+    width: 3px !important;
+}
+
+#bgmplayer ::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3) !important;
+    border-radius: 10px !important;
+}
+
+#bgmplayer ::-webkit-scrollbar-thumb {
+    border-radius: 10px !important;
+    background: rgba(0,0,0,0.1) !important;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5) !important;
+}
+#bgmplayer ::-webkit-scrollbar-thumb:window-inactive {
+    background: rgba(255,0,0,0.4) !important;
+}
+#bgmplayer .ydicon {
+    width: 16px;
+    display: inherit;
+}
+.bgmplayer{
+transform: translateX(218px);    -webkit-transform: translateX(218px);
+ -ms-transform: translateX(218px);
+}
+.bgmon{
+transform: translateX(0px);    -webkit-transform: translateX(0);
+   -ms-transform: translateX(0);
+}
+span.bgmbuttom{    
+    cursor: pointer;
+    float: left;
+    padding: 25.5px 3px;
+}
+#bgmpanel {
+    width: 240px;
+    height: 60px;
+    padding: 5px 0;
+}
+#jindu {width:0%;
+    height: 3px;
+    background-color: rgba(0, 0, 0, 0.32);
+    position: absolute;
+    bottom: 0;
+}
+.bgmfm {    cursor: pointer;
+    float: left;    margin: 0 10px 0 5px;
+}
+.bgmfm img {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;    border: 2px solid #ccc;
+}
+
+.bgmtitle {
+    font-size: 15px;
+    padding: 5px 0;white-space: nowrap;    overflow: hidden;    margin-right: 5px;
+}
+.bgmtime {
+    float: left;
+}
+.bgmtime span {
+    font-size: 15px;
+    margin: 0 5px 0 0;
+}
+.bgmbtn {
+    float: right;
+}
+.bgmbtn span {
+    padding: 3px;
+    cursor: pointer;
+}
+.bgmbtn span:hover{
+    background-color: rgba(228, 228, 228, 0.54);
+}
+@-webkit-keyframes rotation{
+from {-webkit-transform: rotate(0deg);}
+to {-webkit-transform: rotate(360deg);}
+}
+.bgmfm .Rotation{
+    border: 2px solid #FFF;
+    box-shadow: 0 0 5px #ccc;
+-webkit-transform: rotate(360deg);
+animation: rotation 9.8s linear infinite;
+-moz-animation: rotation 9.8s linear infinite;
+-webkit-animation: rotation 9.8s linear infinite;
+-o-animation: rotation 9.8s linear infinite;
+}
+.bgmfm .Rotation.paused{animation-play-state:paused;}
+#playlist { 
+    border-top: 1px solid rgba(138, 138, 138, 0.21);
+    margin:0 0 8px 0;
+    width: 240px;
+    max-height: 130px;
+    padding-left: 0px;
+    font-size: 13px;
+    overflow-y: auto;
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4,0,0.2,1);
+    transition-duration: 300ms;
+    scrollbar-color: #718096 #cbd5e0;
+    scrollbar-width: thin;
+}
+#playlist.yhidden{
+    max-height:0;
+    margin: 0;
+    overflow-y: hidden;
+}
+.yd-lib{
+    border-left: 3px solid transparent;
+    line-height: 2;
+    cursor: pointer;
+    padding: 1px 3px;
+    border-bottom: 1px dashed #c2c2c2;
+    word-break: break-all;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+}
+#playlist .yd-lib:last-child{
+  border-bottom:none;  
+}
+.yd-playing {
+    border-left: 3px solid #000000;
+}
+li.yd-lib:hover{
+    background-color: #000000;
+    color: white;
+}
+.dark #bgmplayer {background: rgba(0, 0, 0, 0.5);color: white;
+    box-shadow: 0 0 6px 1px rgb(100,100,100);
+     -webkit-box-shadow: 0 0 6px 1px rgb(100,100,100);
+    -moz-box-shadow: 0 0 6px 1px rgba(100,100,100,1);}
+.dark #jindu {background-color: rgba(251, 251, 251, 0.68);}
+.dark .yd-playing{border-left: 3px solid #ff0000;}
+.dark li.yd-lib:hover{
+background-color: #fff;
+color: black;
+}
