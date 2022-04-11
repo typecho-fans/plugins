@@ -26,3 +26,7 @@ function() {
     next();
 },
 false);
+
+yaudio.addEventListener("error", function() {
+    next();
+}, false);

@@ -3,10 +3,31 @@
     font-style: normal
 }
 
-bgm [class*=" icon-"],bgm [class^=icon-]{font-family:ydbgm!important;speak:none;font-style:normal;font-weight:400;font-variant:normal;text-transform:none;line-height:1;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+bgm [class*=" icon-"],bgm [class^=icon-]{font-family:ydbgm!important;speak:none;font-style:normal;font-weight:400;font-variant:normal;text-transform:none;line-height:1;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;font-size: 16px;}
 
 .icon-music:before{content:"\f001"}.icon-you:before{content:"\f105"}.icon-bofang:before{content:"\f1d8"}
 
-
-
-.ymusic{z-index:999;position:fixed;right:5px;top:57px;width:24px;height:24px;line-height:24px;text-align:center;border-radius:5px;background:#fff;color:red;cursor:pointer;box-shadow:0 0 8px #555}bgm a,bgm a:hover{text-decoration:none}bgm a:hover{color:#2479CC}#ydnext{top: 96px;}@media only screen and (min-width:767px){.ymusic {top: 5px;}#ydnext{top: 44px;}}
+bgm {
+    position: fixed;
+    right: 5px;
+    top: 65px;
+}
+bgm a {
+    display: flex;
+    background: white;
+    margin-bottom: 10px;
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+    color: red;
+    cursor: pointer;
+    -moz-box-shadow:3px 3px 6px #858585; -webkit-box-shadow:3px 3px 6px #858585; box-shadow:3px 3px 6px #858585;
+}
+.dark bgm a{
+    background: #1f2937; 
+    -moz-box-shadow:3px 3px 6px #718096; -webkit-box-shadow:3px 3px 6px #718096; box-shadow:3px 3px 6px #718096; 
+    color: white;
+}
