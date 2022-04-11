@@ -161,7 +161,7 @@
 [WeChatShare](WeChatShare) | 定制文章微信/QQ分享链接插件 | 1.0.6 | [Fuzqing](https://github.com/fuzqing) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/WeChatShare.zip)
 [WeiboSync](WeiboSync) | 博客文章更新推送新浪微博插件 | 1.0.0 | [vfhky](https://github.com/vfhky) | [Special](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/WeiboSync.zip)
 [XiaMiPlayer](XiaMiPlayer) | 虾米音乐jPlayer极简播放器插件 | 3.1.4 | [公子](https://github.com/lizheming) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/XiaMiPlayer.zip)
-[YoduBGM](YoduBGM) | 迷你按钮型BGM音乐播放器插件 | 1.6.0 | [Jrotty](https://github.com/jrotty) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/YoduBGM.zip)
+[YoduBGM](YoduBGM) | 迷你按钮型BGM音乐播放器插件 | 1.7.0 | [Jrotty](https://github.com/jrotty) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/YoduBGM.zip)
 [YoduPlayer](YoduPlayer) | 悬浮式音乐播放器插件(支持Pjax) | 2.4.6 | [Jrotty](https://github.com/jrotty) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/YoduPlayer.zip)
 [Zan](Zan) | 自定义字段输出文章点赞数插件 | 1.0.0 | [冰剑](https://github.com/binjoo) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/Zan.zip)
 [alexarank](alexarank) | 在主题模板中输出Alexa排名插件 | 1.0 | [Jrotty](https://github.com/jrotty) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/alexarank.zip)
