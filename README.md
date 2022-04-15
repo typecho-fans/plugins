@@ -141,7 +141,7 @@
 [SyncPost](SyncPost) | 新浪腾讯微博豆瓣更新推送插件 | 1.0.0 | [冰剑](https://github.com/binjoo) | [N/A](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/SyncPost.zip)
 [TEReplace](TEReplace) | SQL替换指定内容标题字段插件 | 1.3.0 | [泽泽](https://github.com/jrotty) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/TEReplace.zip)
 [TeKit](TeKit) | 模板用文章或评论数据输出插件 | 2.0.0 | [冰剑](https://github.com/binjoo) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/TeKit.zip)
-[tagshelper](tagshelper) | 发布文章列出已用标签供点选插件 | 1.1 | [泽泽社长](https://github.com/jrotty) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/tagshelper.zip)
+[tagshelper](tagshelper) | 发布文章列出已用标签供点选插件 | 1.1 | [泽泽社长](https://github.com/jrotty) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/tagshelper.zip)
 [TeStore](TeStore) | GitHub表格解析版插件仓库插件 | 1.1.5 | [羽中](https://github.com/jzwalk), [zhulin3141](https://github.com/zhulin3141) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/TeStore.zip)
 [ThemeDemo](ThemeDemo) | 双模式导航条主题外观演示插件 | 1.2.1 | [ShingChi](https://github.com/shingchi), [doudou](https://github.com/doudoutime) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/ThemeDemo.zip)
 [Tinyfader](Tinyfader) | Typecho简易首页图片轮播插件 | 1.0.0 | Willin Kan | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/Tinyfader.zip)
