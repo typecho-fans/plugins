@@ -15,7 +15,7 @@ use Typecho\Date;
  * typecho 评论通过时发送邮件提醒,要求typecho1.2.o及以上,项目地址<a href="https://github.com/jrotty/CommentNotifier" target="_blank">https://github.com/jrotty/CommentNotifier</a>
  * @package CommentNotifier
  * @author 泽泽社长
- * @version 1.0.0
+ * @version 1.0.2
  * @link http://blog.zezeshe.com
  */
 
@@ -188,21 +188,32 @@ $ae=$db->fetchRow($db->select()->from ('table.users')->where ('table.users.uid=?
      */
     public static function mark($comment, $edit, $status)
     {
-        // 在后台标记评论状态为[approved 审核通过]时, 发信给上级评论人
-        if ($status == 'approved' && 0 < $edit->parent) {
-            $parent = self::getParent($edit);
+        $recipients = [];
+        $CommentNotifier = Options::alloc()->plugin('CommentNotifier');
+        $from = $CommentNotifier->adminfrom; // 站长邮箱
+        // 在后台标记评论状态为[approved 审核通过]时, 发信给上级评论人或作者
+        if ($status == 'approved') {
+            
+            // 如果有上级
+            if ($edit->parent > 0) {
+            $recipients[] = self::getParent($edit);//获取上级评论信息
+            }else{
+            $recipients[] = self::getzuozhe($edit);//获取作者信息
+            }
+                        
             // 如果自己回复自己的评论, 不做任何操作
-            if ($parent['mail'] == $edit->mail) {
+            if ($recipients[0]['mail'] == $edit->mail) {
                 return;
             }
-            $CommentNotifier = Options::alloc()->plugin('CommentNotifier');
-            $from = $CommentNotifier->adminfrom; // 站长邮箱
             // 如果上级是博主, 不做任何操作
-            if ($parent['mail'] == $from) {
+            if ($recipients[0]['mail'] == $from) {
+                return;
+            }
+            //邮箱为空时就不发邮件
+            if(empty($recipients[0]['mail'])){
                 return;
             }
             
-            $recipients[] = $parent;
             self::sendMail($edit, $recipients, '您有一条新的回复');
         }
     }
@@ -223,7 +234,7 @@ $ae=$db->fetchRow($db->select()->from ('table.users')->where ('table.users.uid=?
         // 审核通过
         if ($comment->status == 'approved') {
             // 不需要发信给博主
-            if ($comment->authorId != $comment->ownerId && $comment->mail != $CommentNotifier->from) {
+            if ($comment->authorId != $comment->ownerId && $comment->mail != $from) {
                 $recipients[] = self::getzuozhe($comment);//收到新评论后发送给文章作者
             }
             // 如果有上级
