@@ -15,7 +15,7 @@ use Typecho\Date;
  * typecho 评论通过时发送邮件提醒,要求typecho1.2.o及以上,项目地址<a href="https://github.com/jrotty/CommentNotifier" target="_blank">https://github.com/jrotty/CommentNotifier</a>
  * @package CommentNotifier
  * @author 泽泽社长
- * @version 1.0.2
+ * @version 1.0.3
  * @link http://blog.zezeshe.com
  */
 
@@ -242,7 +242,7 @@ $ae=$db->fetchRow($db->select()->from ('table.users')->where ('table.users.uid=?
                 // 查询上级评论人
                 $parent = self::getParent($comment);//获取上级评论者邮箱
                 // 如果上级是博主和自己回复自己, 不需要发信
-                if ($parent['mail'] != $xfrom && $parent['mail'] != $comment->mail) {
+                if ($parent['mail'] != $from && $parent['mail'] != $comment->mail) {
                     $recipients[] = $parent;
                 }
             }
