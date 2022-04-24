@@ -20,11 +20,11 @@ Typecho博客评论邮件提醒
 - 邮件服务基于[`PHPMailer`](https://github.com/PHPMailer/PHPMailer/ )
 
 
-#### 其他
+#### 感谢
 
-项目基于 [https://gitee.com/HoeXhe/typecho-Comment2Mail](https://gitee.com/HoeXhe/typecho-Comment2Mail)1.2.1版本，感谢Hoe！
+[https://gitee.com/HoeXhe/typecho-Comment2Mail](https://gitee.com/HoeXhe/typecho-Comment2Mail)
 
-在原版基础上按照Typecho1.2.0新写法重新构造！
+[https://github.com/typecho-fans/plugins/tree/master/CommentToMail](https://github.com/typecho-fans/plugins/tree/master/CommentToMail)
 
 #### 发信逻辑
 文章收到新评论后，如果评论有父级，则发提醒给父级评论，否则发给提醒给文章作者；
