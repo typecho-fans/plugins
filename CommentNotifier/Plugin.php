@@ -10,12 +10,13 @@ use Widget\Options;
 use Widget\Base\Comments;
 use Typecho\Db;
 use Typecho\Date;
+use Utils\Helper;
 
 /**
  * typecho 评论通过时发送邮件提醒,要求typecho1.2.o及以上,项目地址<a href="https://github.com/jrotty/CommentNotifier" target="_blank">https://github.com/jrotty/CommentNotifier</a>
  * @package CommentNotifier
  * @author 泽泽社长
- * @version 1.0.3
+ * @version 1.1.2
  * @link http://blog.zezeshe.com
  */
 
@@ -28,6 +29,8 @@ use PHPMailer\PHPMailer\Exception;
 
 class Plugin implements PluginInterface
 {
+    /** @var string 控制菜单链接 */
+    public static $panel  = 'CommentNotifier/console.php';
     /**
      * 激活插件方法,如果激活失败,直接抛出异常
      *
@@ -39,6 +42,7 @@ class Plugin implements PluginInterface
         \Typecho\Plugin::factory('Widget_Feedback')->finishComment = __CLASS__. '::finishComment'; // 前台提交评论完成接口
         \Typecho\Plugin::factory('Widget_Comments_Edit')->finishComment = __CLASS__. '::finishComment'; // 后台操作评论完成接口
         \Typecho\Plugin::factory('Widget_Comments_Edit')->mark = __CLASS__. '::mark'; // 后台标记评论状态完成接口
+        Helper::addPanel(1, self::$panel, '评论邮件提醒', '评论邮件提醒控制台', 'administrator');
         return _t('请配置邮箱SMTP选项!');
     }
 
@@ -51,6 +55,7 @@ class Plugin implements PluginInterface
      */
     public static function deactivate()
     {
+        Helper::removePanel(1, self::$panel); 
     }
 
     /**
@@ -193,10 +198,11 @@ $ae=$db->fetchRow($db->select()->from ('table.users')->where ('table.users.uid=?
         $from = $CommentNotifier->adminfrom; // 站长邮箱
         // 在后台标记评论状态为[approved 审核通过]时, 发信给上级评论人或作者
         if ($status == 'approved') {
-            
+            $type=0;
             // 如果有上级
             if ($edit->parent > 0) {
             $recipients[] = self::getParent($edit);//获取上级评论信息
+            $type=1;
             }else{
             $recipients[] = self::getzuozhe($edit);//获取作者信息
             }
@@ -214,7 +220,7 @@ $ae=$db->fetchRow($db->select()->from ('table.users')->where ('table.users.uid=?
                 return;
             }
             
-            self::sendMail($edit, $recipients, '您有一条新的回复');
+            self::sendMail($edit, $recipients, $type);
         }
     }
 
@@ -233,12 +239,14 @@ $ae=$db->fetchRow($db->select()->from ('table.users')->where ('table.users.uid=?
         $recipients = [];
         // 审核通过
         if ($comment->status == 'approved') {
+            $type=0;//0为无父级评论
             // 不需要发信给博主
             if ($comment->authorId != $comment->ownerId && $comment->mail != $from) {
                 $recipients[] = self::getzuozhe($comment);//收到新评论后发送给文章作者
             }
             // 如果有上级
             if ($comment->parent > 0) {
+            $type=1;//1为有父级评论
                 // 查询上级评论人
                 $parent = self::getParent($comment);//获取上级评论者邮箱
                 // 如果上级是博主和自己回复自己, 不需要发信
@@ -246,11 +254,11 @@ $ae=$db->fetchRow($db->select()->from ('table.users')->where ('table.users.uid=?
                     $recipients[] = $parent;
                 }
             }
-            self::sendMail($comment, $recipients, '您有一条新的回复');
+            self::sendMail($comment, $recipients, $type);
         } else {
             // 如果所有评论必须经过审核, 通知博主审核评论
             $recipients[] = ['name' => $fromName, 'mail' => $from];
-            self::sendMail($comment, $recipients, '您有一条新的待审核回复');
+            self::sendMail($comment, $recipients, 2);//2为待审核评论
         }
     }
 
@@ -260,7 +268,7 @@ $ae=$db->fetchRow($db->select()->from ('table.users')->where ('table.users.uid=?
      * @param $desc
      * @throws Typecho_Plugin_Exception
      */
-    private static function sendMail($comment, $recipients, $desc)
+    private static function sendMail($comment, $recipients, $type)
     {
         if (empty($recipients)) return; // 没有收信人
         try {
@@ -286,11 +294,17 @@ $ae=$db->fetchRow($db->select()->from ('table.users')->where ('table.users.uid=?
             foreach ($recipients as $recipient) {
                 $mail->addAddress($recipient['mail'], $recipient['name']); // 发件人
             }
-            $mail->Subject = '你有来自《' . $comment->title . '》文章的新回复';
-
+            if($type==1){
+            $mail->Subject = '你在[' . $comment->title . ']的评论有了新的回复';
+            }elseif ($type==2) {
+            $mail->Subject = '文章《' . $comment->title . '》有条待审评论';
+            }else{
+            $mail->Subject = '你的《' . $comment->title . '》文章有了新的评论';
+            }
+            
             $mail->isHTML(); // 邮件为HTML格式
             // 邮件内容
-            $content = self::mailBody($comment, $options, $desc);
+            $content = self::mailBody($comment, $options, $type);
             $mail->Body = $content;
             $mail->send();
 
@@ -329,25 +343,84 @@ $ae=$db->fetchRow($db->select()->from ('table.users')->where ('table.users.uid=?
      * @return string
      * 很朴素的邮件风格
      */
-    private static function mailBody($comment, $options, $desc)
+    private static function mailBody($comment, $options, $type)
     {
         $commentAt = new Date($comment->created);
         $commentAt = $commentAt->format('Y-m-d H:i:s');
-      $commentText = htmlspecialchars($comment->text);
-        $content = <<<HTML
-<style type="text/css">.qmbox style, .qmbox script, .qmbox head, .qmbox link, .qmbox meta {display: none !important;}.emailz{background-color:white;border-top:2px solid #12ADDB;box-shadow:0 1px 3px #AAAAAA;line-height:180%;padding:0 15px 12px;width:500px;margin:35px auto;color:#555555;font-family:'Century Gothic','Trebuchet MS','Hiragino Sans GB',微软雅黑,'Microsoft Yahei',Tahoma,Helvetica,Arial,'SimSun',sans-serif;font-size:14px;}@media(max-width:767px){.emailz{width: 88%;}}</style>
-<div class="emailz">  
-<h2 style="border-bottom:1px solid #DDD;font-size:14px;font-weight:normal;padding:13px 0 10px 8px;"><span style="color: #12ADDB;font-weight: bold;">&gt; </span>在<a style="text-decoration:none;color: #12ADDB;" href="{$comment->permalink}" target="_blank" rel="noopener">《{$comment->title}》</a>中，$desc</h2>
-        <div style="padding:0 12px 0 12px;margin-top:18px">  
-            <p>时间：<span style="border-bottom:1px dashed #ccc;" t="5" times=" 20:42">{$commentAt}</p>  
-            <p style="background-color: #f5f5f5;border: 0px solid #DDD;padding: 10px 15px;margin:18px 0">{$commentText}</p>  
-            <p>评论者:<span style="color: #12ADDB;">{$comment->author}</span></p>  
-            <p style="background-color: #f5f5f5;border: 0px solid #DDD;padding: 10px 15px;margin:18px 0"> <a href="{$comment->mail}" target="_blank" rel="noopener">{$comment->mail}</a></p> 
-            <p>您可以点击 <a style="text-decoration:none; color:#12addb" href="{$comment->permalink}" target="_blank" rel="noopener">查看回复的完整內容 </a>，欢迎再次光临 <a style="text-decoration:none; color:#12addb" href="{$options->siteUrl}" target="_blank" rel="noopener">{$options->title}</a>。</p>  
-        </div>  
-</div>
-HTML;
+        $commentText = htmlspecialchars($comment->text);
+        $html='owner';
+        if($type==1){
+        $html='guest';
+        }elseif($type==2){
+        $html='notice';
+        }
+        $db=Db::get();
+        $ParentInfo=$db->fetchRow($db->select('author', 'mail', 'text')
+                      ->from('table.comments')
+                      ->where('coid = ?', $comment->parent));
+        $Pmail='';$Pname='';$Ptext='';
+        if(!empty($ParentInfo)){
+        $Pmail=$ParentInfo['mail'];$Pname=$ParentInfo['author'];$Ptext=$ParentInfo['text'];
+        }
+        
+        
+        $content = self::getTemplate($html);
+        $search  = array(
+            '{title}',//文章标题
+            '{time}',//评论发出时间
+            '{commentText}',//评论内容
+            '{author}',//评论人昵称
+            '{mail}',//评论者邮箱
+            '{permalink}',//评论楼层链接
+            '{siteUrl}',//网站地址
+            '{siteTitle}',//网站标题
+            '{Pname}',//父级评论昵称
+            '{Ptext}',//父级评论内容
+            '{Pmail}',//父级评论邮箱
+        );
+        $replace = array(
+            $comment->title,
+            $commentAt,
+            $commentText,
+            $comment->author,
+            $comment->mail,
+            $comment->permalink,
+            $options->siteUrl,
+            $options->title,
+            $Pname,
+            $Ptext,
+            $Pmail,
+        );
+
+        $content = str_replace($search, $replace, $content);
         return $content;
     }
 
+    /*
+     * 获取邮件正文模板
+     * $author owner为博主 guest为访客
+     */
+    private static function getTemplate($template = 'owner')
+    {
+        $template .= '.html';
+        $filename = dirname(__FILE__) . '/' . $template;
+
+        if (!file_exists($filename)) {
+        return <<<HTML
+<style type="text/css">.qmbox style, .qmbox script, .qmbox head, .qmbox link, .qmbox meta {display: none !important;}.emailz{background-color:white;border-top:2px solid #12ADDB;box-shadow:0 1px 3px #AAAAAA;line-height:180%;padding:0 15px 12px;width:500px;margin:35px auto;color:#555555;font-family:'Century Gothic','Trebuchet MS','Hiragino Sans GB',微软雅黑,'Microsoft Yahei',Tahoma,Helvetica,Arial,'SimSun',sans-serif;font-size:14px;}@media(max-width:767px){.emailz{width: 88%;}}</style>
+<div class="emailz">  
+<h2 style="border-bottom:1px solid #DDD;font-size:14px;font-weight:normal;padding:13px 0 10px 8px;"><span style="color: #12ADDB;font-weight: bold;">&gt; </span>在<a style="text-decoration:none;color: #12ADDB;" href="{permalink}" target="_blank" rel="noopener">[{title}]</a>文章中有了新的回复</h2>
+        <div style="padding:0 12px 0 12px;margin-top:18px">  
+            <p>时间：<span style="border-bottom:1px dashed #ccc;" t="5" times=" 20:42">{time}</p>  
+            <p style="background-color: #f5f5f5;border: 0px solid #DDD;padding: 10px 15px;margin:18px 0">{commentText}</p>  
+            <p>评论者:<span style="color: #12ADDB;">{author}</span></p>  
+            <p style="background-color: #f5f5f5;border: 0px solid #DDD;padding: 10px 15px;margin:18px 0"> <a href="{mail}" target="_blank" rel="noopener">{mail}</a></p> 
+            <p>您可以点击 <a style="text-decoration:none; color:#12addb" href="{permalink}" target="_blank" rel="noopener">查看回复的完整內容 </a>，欢迎再次光临 <a style="text-decoration:none; color:#12addb" href="{siteUrl}" target="_blank" rel="noopener">{siteTitle}</a>。</p>  
+        </div>  
+</div>
+HTML;
+        }
+
+        return file_get_contents(dirname(__FILE__) . '/' . $template);
+    }
 }
