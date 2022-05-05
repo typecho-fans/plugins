@@ -67,7 +67,7 @@
 [CommentFilter](CommentFilter) | 评论昵称/链接/内容/IP过滤插件 | 1.2.1 | [jrotty](https://github.com/jrotty),[ghostry](https://blog.ghostry.cn),[Hanny](http://www.imhan.com) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/CommentFilter.zip)
 [CommentPush](CommentPush) | 评论推送微信QQ钉钉邮箱插件 | 1.7.1 | [gaobinzhan](https://github.com/gaobinzhan),[奥秘Sir](https://blog.say521.cn) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/CommentPush.zip)
 [CommentToMail](CommentToMail) | 发布回复评论邮件自动提醒插件 | 2.0.1 | [Byends](https://github.com/visamz), [DEFE](https://github.com/defeme) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/CommentToMail.zip)
-[CommentNotifie](CommentNotifier) | 评论邮件提醒插件要求Typecho1.2.0版本及以上 | 1.0.3 | [泽泽社长](https://github.com/jrotty) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/CommentNotifier.zip)
+[CommentNotifier](CommentNotifier) | 评论邮件提醒插件要求Typecho1.2.0版本及以上 | 1.2.8 | [泽泽社长](https://github.com/jrotty) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/CommentNotifier.zip)
 [ContentIndex](ContentIndex) | 自动生成美化版文章目录树插件 | 1.0.0 | [laobubu](https://github.com/laobubu) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/ContentIndex.zip)
 [Contribute](Contribute) | 前台免注册投稿及审查发布插件 | 1.0.0 | [ShingChi](https://github.com/shingchi) | [Special](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/Contribute.zip)
 [CosForTypecho](CosForTypecho) | Typecho用腾讯云COS存储插件 | 1.0.1 | [Charmeryl](https://github.com/jqjiang819) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/CosForTypecho.zip)
