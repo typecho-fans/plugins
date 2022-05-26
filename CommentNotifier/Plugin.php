@@ -18,7 +18,7 @@ use Utils\Helper;
  * typecho 评论通过时发送邮件提醒,要求typecho1.2.0及以上,项目地址<a href="https://github.com/jrotty/CommentNotifier" target="_blank">https://github.com/jrotty/CommentNotifier</a>
  * @package CommentNotifier
  * @author 泽泽社长
- * @version 1.2.8
+ * @version 1.2.9
  * @link http://blog.zezeshe.com
  */
 
@@ -75,7 +75,7 @@ class Plugin implements PluginInterface
         $log = new Checkbox('log', ['log' => _t('记录日志')], 'log', _t('记录日志'), _t('启用后将当前目录生成一个log.txt 注:目录需有写入权限'));
         $form->addInput($log);
         
-        $yibu = new Radio('yibu', array('0' => _t('不启用'), '1' => _t('启用'),), '0', _t('异步提交'), _t('默认不启用异步提交，异步提交实验中暂时不建议开启！'));
+        $yibu = new Radio('yibu', array('0' => _t('不启用'), '1' => _t('启用'),), '0', _t('异步提交'), _t('注意：如你博客使用ajax提交评论请不要开启此项否则可能导致邮件无法发送！'));
         $form->addInput($yibu);
 
         $layout = new Layout();
@@ -104,7 +104,7 @@ class Plugin implements PluginInterface
         $form->addInput($SMTPPassword->addRule('required', _t('SMTP登录密码必填!')));
 
         // 服务器安全模式
-        $SMTPSecure = new Radio('SMTPSecure', array('' => _t('无安全加密'), 'ssl' => _t('SSL加密'), 'tls' => _t('TLS加密')), 'none', _t('SMTP加密模式'));
+        $SMTPSecure = new Radio('SMTPSecure', array('' => _t('无安全加密'), 'ssl' => _t('SSL加密'), 'tls' => _t('TLS加密')), '', _t('SMTP加密模式'));
         $form->addInput($SMTPSecure);
 
         // SMTP server port
