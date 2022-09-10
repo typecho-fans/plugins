@@ -6,10 +6,14 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
  * 
  * @package Sitemap
  * @author 迷你日志, Hanny
- * @version 1.0.4
+ * @version 1.0.5
  * @dependence 9.9.2-*
  * @link https://github.com/typecho-fans/plugins/blob/master/Sitemap
  *
+ * 
+ * varsion 1.0.5 at 2022--9-10 by 泽泽社长
+ * 分类链接支持{directory}多级分类
+ * 
  * version 1.0.4 at 2020-07-02 by Typecho Fans (合并多人修改)
  * 调整优先级比例，增加分类页面及首页链接 by 迷你日志/羽中
  * 页面改xml后缀，加入美化样式，简化时间戳 by Suming/八云酱
