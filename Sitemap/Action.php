@@ -19,10 +19,9 @@ class Sitemap_Action extends Typecho_Widget implements Widget_Interface_Do
 		->where('table.contents.created < ?', $options->gmtTime)
 		->where('table.contents.type = ?', 'post')
 		->order('table.contents.created', Typecho_Db::SORT_DESC));
-
-		$cates = $db->fetchAll($db->select()->from('table.metas')
-		->where('table.metas.type = ?', 'category')
-		->order('table.metas.order', Typecho_Db::SORT_DESC));
+		
+		Typecho_Widget::widget('Widget_Metas_Category_List@cate')->to($cates);
+		
 
 		$tags = $db->fetchAll($db->select()->from('table.metas')
 		->where('table.metas.type = ?', 'tag')
@@ -74,20 +73,15 @@ class Sitemap_Action extends Typecho_Widget implements Widget_Interface_Do
 			echo "\t\t<priority>0.8</priority>\n";
 			echo "\t</url>\n";
 		}
-		foreach($cates AS $cate) {
-			$type = $cate['type'];
+		while($cates->next()){
 			$art_rs = $db->fetchRow($db->select()->from('table.contents')
 					->join('table.relationships', 'table.contents.cid = table.relationships.cid')
 					->where('table.contents.status = ?', 'publish')
-					->where('table.relationships.mid = ?', $cate['mid'])
+					->where('table.relationships.mid = ?', $cates->mid)
 					->order('table.relationships.cid', Typecho_Db::SORT_DESC)
 					->limit(1));
-			$routeExists = (NULL != Typecho_Router::get($type));
-			$cate['pathinfo'] = $routeExists ? Typecho_Router::url($type, $cate) : '#';
-			$cate['permalink'] = Typecho_Common::url($cate['pathinfo'], $options->index);
-
 			echo "\t<url>\n";
-			echo "\t\t<loc>".$cate['permalink']."</loc>\n";
+			echo "\t\t<loc>".$cates->permalink."</loc>\n";
 			echo "\t\t<lastmod>".date('Y-m-d',$art_rs['modified'])."</lastmod>\n";
 			echo "\t\t<changefreq>daily</changefreq>\n";
 			echo "\t\t<priority>0.5</priority>\n";
