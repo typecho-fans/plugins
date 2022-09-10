@@ -129,7 +129,7 @@
 [SCS](SCS) | 系统附件用新浪云存储SCS插件 | 1.1.1 | [vfhky](https://github.com/vfhky) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/SCS.zip)
 [ShortLinks](ShortLinks) | 基于[GoLinks](GoLinks)增强外链转换插件 | 1.2.0 b2 | [Ryan](https://github.com/benzBrake) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/ShortLinks.zip)
 [Sinauth](Sinauth) | 新浪用户授权注册帐号登录插件 | 1.0.0 Beta | [jimmy chaw](https://github.com/web3d) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/Sinauth.zip)
-[Sitemap](Sitemap) | 动态生成Xml标准网站地图插件 | 1.0.4 | [迷你日志](https://minirizhi.com), [Hanny](http://www.imhan.com) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/Sitemap.zip)
+[Sitemap](Sitemap) | 动态生成Xml标准网站地图插件 | 1.0.5 | [迷你日志](https://minirizhi.com), [Hanny](http://www.imhan.com) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/Sitemap.zip)
 [SlantedExtend](SlantedExtend) | [Slanted主题](https://github.com/typecho-fans/themes/blob/master/Slanted)专用自定义字段插件 | 1.0.0 | [DT27](https://github.com/DT27) | [Special](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/SlantedExtend.zip)
 [SlimBox2](SlimBox2) | 轻量级jQuery图片灯箱弹窗插件 | 1.0.7 | [Ryan](https://github.com/ryanfwy), [冰剑](https://github.com/binjoo) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/SlimBox2.zip)
 [Smilies](Smilies) | Typecho定制图片表情功能插件 | 1.1.3 | [羽中](https://github.com/jzwalk), Willin Kan | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/Smilies.zip)
