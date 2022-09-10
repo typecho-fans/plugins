@@ -2,7 +2,7 @@
     <img src="https://typecho-fans.github.io/text-logo.svg" alt="TF Logo" title="Typecho Fans开源作品社区" align="right" height="100" />
 </a>
 
-Sitemap v1.0.4 - 社区维护版
+Sitemap v1.0.5 - 社区维护版
 ======================
 <h4 align="center">—— 动态生成符合搜索引擎收录标准的Xml格式站点地图插件，支持输出分类/标签页地址。</h4>
 
@@ -35,6 +35,8 @@ Sitemap v1.0.4 - 社区维护版
 
 ## 版本历史
 
+ * v1.0.5 (22-09-210 [@jrotty](https://github.com/jrotty))
+   * 分类链接支持{directory}多级分类
  * v1.0.4 (20-7-02 [@jzwalk](https://github.com/jzwalk))
    * 增加首页地址输出，合并4个衍生版改动：
    * 含魔改版Sitemap功能支持分类/标签地址输出([@kavico](https://minirizhi.com))；
