@@ -512,3 +512,4 @@
 [waterMark](https://github.com/internelp/waterMark) | 图片自动添加Gif/Png格式水印插件 | 1.0.1 | [应用侠](https://github.com/internelp) | [下载](https://github.com/internelp/waterMark/archive/master.zip)
 [ymplayer](https://github.com/kokororin/typecho-plugin-ymplayer) | Html5可伸缩海报音乐播放器插件 | 0.7 | [kokororin](https://github.com/kokororin) | [特殊](https://github.com/kokororin/typecho-plugin-ymplayer/archive/master.zip)
 [zbgray](http://forum.typecho.org/viewtopic.php?f=6&t=11271) | Typecho简易祭日用整站变灰插件 | 1.0.0 | jyzb02 | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/zbgray.zip)
+[freewindreward](https://github.com/kevinlu98/FreewindReward) | Freewind主题专属打赏插件 | 1.3 | kevinlu98 | [下载](https://github.com/kevinlu98/FreewindReward/releases/download/1.0/FreewindReward.zip)
