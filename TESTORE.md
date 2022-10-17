@@ -27,7 +27,7 @@
 
  > 下表中的下载链接文字可用于附加图标：`下载`即非社区版，`不可用`显示为:no_entry:，`特殊`显示:warning:意为安装或启用方法特殊。
 
-### 插件信息 (476)
+### 插件信息 (477)
 
 ###### TeStore使用下表“名称”创建安装文件夹，“版本”提示升级，请务必确保文本准确；添加时注意按字母排序，自增上方括号内总数，简介不要太长。
 ```
@@ -489,7 +489,7 @@
 [editorG](https://qqdie.com/archives/editor-G.html) | 系统Markdown编辑器小优化插件 | 0.2 | [Jrotty](https://github.com/jrotty) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/editorG.zip)
 [fancyboxJQ](https://github.com/ShangJixin/Typecho-Plugin-fancyboxJQ) | 	用 jQuery 的方式给站点引入 fancybox 灯箱 | 1.1.1 | [尚寂新](https://github.com/ShangJixin) | [下载](https://github.com/ShangJixin/Typecho-Plugin-fancyboxJQ/archive/1.1.1.zip)
 [footeranimation](http://forum.typecho.org/viewtopic.php?f=6&t=11272) | Typecho页脚加透明动画图片插件 | 1.0 | jyzb02 | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/footeranimation.zip)
-[freewindreward](https://github.com/kevinlu98/FreewindReward) | Freewind主题专属打赏插件 | 1.3 | kevinlu98 | [下载](https://github.com/kevinlu98/FreewindReward/releases/download/1.0/FreewindReward.zip)
+[freewindreward](https://github.com/kevinlu98/FreewindReward) | Freewind主题专属打赏插件 | 1.0.0 | kevinlu98 | [下载](https://github.com/kevinlu98/FreewindReward/releases/download/1.0/FreewindReward.zip)
 [fuckadblock](https://qqdie.com/archives/fuckadblock-typecho-plugin.html) | 站长反广告过滤自动检测弹窗插件 | 3.2.1 | [泽泽社长](https://github.com/jrotty) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/fuckadblock.zip)
 [gifstop](https://github.com/jrotty/typecho-gifstop) | 阻止Gif格式图片动画自动播放插件 | 1.0 | [Jrotty](https://github.com/jrotty) | [下载](https://github.com/jrotty/typecho-gifstop/archive/master.zip)
 [gotop](https://qqdie.com/archives/typecho-to-return-to-the-top-of-the-plug-in-i-first-ran-and-eggs.html) | 阻止Gif格式图片动画自动播放插件 | 1.0 | [jrotty](https://github.com/jrotty) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/gotop.zip)
