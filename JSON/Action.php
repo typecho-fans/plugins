@@ -96,7 +96,11 @@ class JSON_Action extends Typecho_Widget implements Widget_Interface_Do {
 			->join('table.relationships', 'table.metas.mid = table.relationships.mid', Typecho_DB::LEFT_JOIN)
 			->where('table.relationships.cid = ?', $post['cid'])
 			->where('table.metas.type = ?', 'tag'));
-            $post['thumb'] = $this->db->fetchAll($this->db->select('str_value')->from('table.fields')->where('cid = ?', $post['cid']))?$this->db->fetchAll($this->db->select('str_value')->from('table.fields')->where('cid = ?', $post['cid'])):array(array("str_value"=>"https://ww4.sinaimg.cn/large/a15b4afegw1f8sqaz6y6bj20go06j0u2"));
+            $fields=$this->db->fetchAll($this->db->select('name','str_value')->from('table.fields')->where('cid = ?', $post['cid']))?$this->db->fetchAll($this->db->select('name','str_value')->from('table.fields')->where('cid = ?', $post['cid'])):array(array("name"=>"null","str_value"=>"https://i0.hdslb.com/bfs/article/a2ae2ed735a899ff319a6112c8de60512ad04d11.jpg@942w_590h_progressive.jpg"));
+            foreach($fields as $field) {
+            $newfields[$field['name']]=$field['str_value'];
+            }
+            $post['fields'] = $newfields;
             $result[] = $post;
         }
         $this->export($result);
