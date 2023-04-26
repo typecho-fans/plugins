@@ -106,6 +106,7 @@
 [LoveKKWeiBo](LoveKKWeiBo) | 用新浪微博作附件上传图床插件 | 1.0.1 | [康粑粑](https://github.com/ylqjgm) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-H_to_L/LoveKKWeiBo.zip)
 [MagikeEditor](MagikeEditor) | Magike移植Html源码编辑器插件 | 1.1.1 | [羽中](https://github.com/jzwalk), [Hanny](http://www.imhan.com) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/MagikeEditor.zip)
 [MarkdownParse](https://github.com/mrgeneralgoo/typecho-markdown) | Markdown解析(MathJax+Mermaid+目录) | 1.4.3 | [mrgeneral](https://github.com/mrgeneralgoo) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/MarkdownParse.zip)
+[Memos](https://github.com/fengqi/typecho-memos) | Memos列表读取插件 | 0.0.1 | [fengqi](https://github.com/fengqi) | [Download](https://github.com/fengqi/typecho-memos/archive/refs/tags/v0.0.1.zip)
 [MenuTree](MenuTree) | 代码嵌入式文章内容目录树插件 | 0.1.2 | [BeaconFire](https://github.com/wuruowuxin74),Melon | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/MenuTree.zip)
 [MenuTree](MenuTree_hongweipeng) | 右侧悬浮式文章内容目录树插件 | 0.8.1 | [hongweipeng](https://github.com/hongweipeng) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/MenuTree_hongweipeng.zip)
 [MostCache](MostCache) | Mysql/SAE下Memcache缓存插件 | 1.1.1 | [skylzl](https://github.com/xiaogouxo),[WeiCN](https://github.com/naicfeng) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/MostCache.zip)
