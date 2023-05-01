@@ -112,7 +112,7 @@
 [MostCache](MostCache) | Mysql/SAE下Memcache缓存插件 | 1.1.1 | [skylzl](https://github.com/xiaogouxo),[WeiCN](https://github.com/naicfeng) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/MostCache.zip)
 [MyPlayer](MyPlayer) | 万能播放器视频站链接转换插件 | 1.1.3 | [perichr](http://github.com/perichr) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/MyPlayer.zip)
 [MyTagCloud](MyTagCloud) | Typecho自定义标签云效果插件 | 1.0.0 | [Ma Yanlong](https://github.com/YanlongMa) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/MyTagCloud.zip)
-[NavMenu](NavMenu) | Typecho自定义插件 | 1.1.0 b1 | [Ryan](https://github.com/benzBrake),[merdan](https://github.com/doghap) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/NavMenu.zip)
+[NavMenu](NavMenu) | Typecho自定义插件 | 1.1.1 | [Ryan](https://github.com/benzBrake),[merdan](https://github.com/doghap) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/NavMenu.zip)
 [Ncache](Ncache) | Nginx开启fastcgi_cache缓存插件 | 1.1 | [WeiCN](https://github.com/naicfeng) | [Special](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/Ncache.zip)
 [OssForTypecho](OssForTypecho) | 阿里云OSS插件(流上传+缩略图) | 1.0.2 | [权那他](https://github.com/kraity), [Charmeryl](https://github.com/jqjiang819) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/OssForTypecho.zip)
 [Passport](Passport) | 注册用户密码邮件找回功能插件 | 1.0.1 | [胖蒜网](https://github.com/mhcyong),[ShingChi](https://github.com/shingchi) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/Passport.zip)
