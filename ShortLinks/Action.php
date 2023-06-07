@@ -11,12 +11,14 @@ class ShortLinks_Action extends Typecho_Widget implements Widget_Interface_Do
 {
     private $db;
     private $options;
+    private $notice;
     public function __construct($request, $response, $params = null)
     {
         parent::__construct($request, $response, $params);
         $this->db = Typecho_Db::get();
         $this->options = self::getOptions();
         $this->options->setDefault('logoUrl=' . Helper::options()->pluginUrl . '/ShortLinks/logo.png&siteCreatedYear=' . Helper::options()->plugin('ShortLinks')->siteCreatedYear . '&currentYear=' . date('Y'));
+        $this->notice = $this->widget('Widget_Notice');
     }
 
     /**
@@ -29,10 +31,10 @@ class ShortLinks_Action extends Typecho_Widget implements Widget_Interface_Do
         $key = $key ? $key : Typecho_Common::randString(8);
         $target = $this->request->target;
         if ($target === "" || $target === "http://") {
-            $this->widget('Widget_Notice')->set(_t('请输入目标链接。'), null, 'error');
+            $this->notice->set(_t('请输入目标链接。'), 'error');
         } //判断key是否被占用
         elseif ($this->getTarget($key)) {
-            $this->widget('Widget_Notice')->set(_t('该key已被使用，请更换key值。'), null, 'error');
+            $this->notice->set(_t('该key已被使用，请更换key值！'), 'error');
         } else {
             $links = array(
                 'key' => $key,
@@ -40,6 +42,11 @@ class ShortLinks_Action extends Typecho_Widget implements Widget_Interface_Do
                 'count' => 0,
             );
             $insertId = $this->db->query($this->db->insert('table.shortlinks')->rows($links));
+            if($insertId) {
+                $this->notice->set(_t('链接创建成功！'), 'success');
+            } else {
+                $this->notice->set(_t('链接创建失败！'), 'error');
+            }
         }
     }
 
@@ -51,14 +58,15 @@ class ShortLinks_Action extends Typecho_Widget implements Widget_Interface_Do
     public function edit()
     {
         $target = $this->request->url;
+        $target = base64_decode($target); // base64解码url
         $id = $this->request->id;
         if (trim($target) == "" || $target == "http://") {
-            Typecho_Response::throwJson('error');
+            $this->response->throwJson('error');
         } else {
             if ($id) {
                 $this->db->query($this->db->update('table.shortlinks')->rows(array('target' => $target))
                         ->where('id = ?', $id));
-                Typecho_Response::throwJson('success');
+                $this->response->throwJson('success');
             }
         }
     }
@@ -70,9 +78,13 @@ class ShortLinks_Action extends Typecho_Widget implements Widget_Interface_Do
      */
     public function del($id)
     {
-        $this->db->query($this->db->delete('table.shortlinks')
+        $affect = $this->db->query($this->db->delete('table.shortlinks')
                 ->where('id = ?', $id));
-
+        if ($affect) {
+            $this->notice->set(_t('删除链接成功。'), 'success');
+        } else {
+            $this->notice->set(_t('链接删除失败，可能是该链接不存在。'), 'error');
+        }
     }
 
     /**
@@ -116,7 +128,7 @@ class ShortLinks_Action extends Typecho_Widget implements Widget_Interface_Do
             }
             if (!$allow_redirect) {
                 // referer 非法跳转到首页
-                $this->response->redirect($siteUrl, 301);
+                $this->response->redirect(Typecho_Widget::widget('Widget_Options')->siteUrl, 301);
                 exit();
             }
         } else {
@@ -163,7 +175,7 @@ class ShortLinks_Action extends Typecho_Widget implements Widget_Interface_Do
         $link = $this->request->link;
         Helper::removeRoute('go');
         Helper::addRoute('go', $link, 'ShortLinks_Action', 'shortlink');
-        Typecho_Response::throwJson('success');
+        $this->response->throwJson('success');
     }
 
     public function action()
