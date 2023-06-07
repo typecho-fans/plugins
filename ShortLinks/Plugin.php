@@ -5,7 +5,7 @@
  *
  * @package ShortLinks
  * @author Ryan
- * @version 1.2.0 b1
+ * @version 1.2.0
  * @link https://github.com/benzBrake/ShortLinks
  */
 
@@ -47,10 +47,18 @@ class ShortLinks_Plugin implements Typecho_Plugin_Interface
 				  PRIMARY KEY (`id`)
 				) DEFAULT CHARSET=$charset AUTO_INCREMENT=1");
         }
-        $helper = self::helper();
-        $helper::addAction('shortlinks', 'ShortLinks_Action');
-        $helper::addRoute('go', '/go/[key]/', 'ShortLinks_Action', 'shortlink');
-        $helper::addPanel(2, 'ShortLinks/panel.php', '短链管理', '短链接管理', 'administrator');
+        if ("Pdo_Pgsql" === $adapter || "Pgsql" === $adapter) {
+            $db->query("CREATE TABLE IF NOT EXISTS " . $tableName . " (
+                id SERIAL PRIMARY KEY,
+                key TEXT NOT NULL,
+                target TEXT NOT NULL,
+                count INTEGER DEFAULT 0)");
+        }
+
+        Helper::addAction('shortlinks', 'ShortLinks_Action');
+        Helper::addRoute('go', '/go/[key]/', 'ShortLinks_Action', 'shortlink');
+        Helper::addPanel(2, 'ShortLinks/panel.php', '短链管理', '短链接管理', 'administrator');
+
         if (class_exists('\Widget\Base\Contents')) {
             Typecho\Plugin::factory('\Widget\Base\Contents')->contentEx = array('ShortLinks_Plugin', 'replace');
             Typecho\Plugin::factory('\Widget\Base\Contents')->excerptEx = array('ShortLinks_Plugin', 'replace');
@@ -82,13 +90,25 @@ class ShortLinks_Plugin implements Typecho_Plugin_Interface
     public static function deactivate()
     {
         $config = self::options('ShortLinks');
-        $helper = self::helper();
         $db = self::db();
-        $helper::removeRoute('go');
-        $helper::removeAction('shortlinks');
-        $helper::removePanel(2, 'ShortLinks/panel.php');
+        $adapter = $db->getAdapterName();
+        $dropTableSql = '';
+
+        Helper::removeRoute('go');
+        Helper::removeAction('shortlinks');
+        Helper::removePanel(2, 'ShortLinks/panel.php');
+
         if ($config->isDrop == 0) {
-            $db->query("DROP TABLE `{$db->getPrefix()}shortlinks`", Typecho_Db::WRITE);
+            if ("Pdo_SQLite" === $adapter || "SQLite" === $adapter) {
+                $dropTableSql = "DROP TABLE '{$db->getPrefix()}shortlinks'";
+            }
+            if ("Pdo_Mysql" === $adapter || "Mysql" === $adapter) {
+                $dropTableSql = "DROP TABLE `{$db->getPrefix()}shortlinks`";
+            }
+            if ("Pdo_Pgsql" === $adapter || "Pgsql" === $adapter) {
+                $dropTableSql = "DROP TABLE \"{$db->getPrefix()}shortlinks\"";
+            }
+            $db->query($dropTableSql, Typecho_Db::WRITE);
             return (_t('短链接插件已被禁用，其表（%s）已被删除！', $db->getPrefix() . 'shortlinks'));
         } else {
             return (_t('短链接插件已被禁用，但是其表（%s）并没有被删除！', $db->getPrefix() . 'shortlinks'));
@@ -171,16 +191,18 @@ class ShortLinks_Plugin implements Typecho_Plugin_Interface
      * @return array|string|string[] $content
      * @throws \Typecho\Plugin\Exception
      */
-    public static function replace($text, $widget, $lastResult)
+    public static function replace(string $text, $widget, $lastResult)
     {
         $text = empty($lastResult) ? $text : $lastResult;
         $pluginOption = self::options('ShortLinks'); // 插件选项
         $target = ($pluginOption->target) ? ' target="_blank" ' : ''; // 新窗口打开
         if ($pluginOption->convert == 1) {
-            $fields = unserialize($widget->fields);
-            if (is_array($fields) && array_key_exists("noshort", $fields)) {
-                // 部分文章不转换
-                return $text;
+            if ($widget->fields) {
+                $fields = unserialize($widget->fields);
+                if (is_array($fields) && array_key_exists("noshort", $fields)) {
+                    // 部分文章不转换
+                    return $text;
+                }
             }
             // 文章内容和评论内容处理
             @preg_match_all('/<a(.*?)href="(?!#)(.*?)"(.*?)>/', $text, $matches);
@@ -266,7 +288,7 @@ class ShortLinks_Plugin implements Typecho_Plugin_Interface
      * @return mixed $string
      * @throws \Typecho\Plugin\Exception
      */
-    public static function convertLink($link, $check = true)
+    public static function convertLink($link, bool $check = true)
     {
         $pluginOption = self::options('ShortLinks');
         $linkBase = ltrim(rtrim(Typecho_Router::get('go')['url'], '/'), '/'); // 防止链接形式修改后不能用
@@ -298,7 +320,7 @@ class ShortLinks_Plugin implements Typecho_Plugin_Interface
      * @return Array
      * @throws \Typecho\Plugin\Exception
      */
-    public static function forceConvert($value, $widget, $lastResult)
+    public static function forceConvert(array $value, $widget, $lastResult): array
     {
         $value = empty($lastResult) ? $value : $lastResult;
         $pluginOption = self::options('ShortLinks');
@@ -335,11 +357,11 @@ class ShortLinks_Plugin implements Typecho_Plugin_Interface
      * 检查域名是否在数组中存在
      *
      * @access public
-     * @param $url $arr
-     * @param $class
+     * @param string $url
+     * @param array|null $arr
      * @return boolean
      */
-    public static function checkDomain($url, $arr)
+    public static function checkDomain(string $url, ?array $arr): bool
     {
         if ($arr === null) {
             return false;
@@ -361,13 +383,12 @@ class ShortLinks_Plugin implements Typecho_Plugin_Interface
      * 一行一个文本框转数组
      *
      * @access public
-     * @param $textarea
-     * @param $class
-     * @return $arr
+     * @param string|null $textarea
+     * @return array
      */
-    public static function textareaToArr($textarea)
+    public static function textareaToArr(?string $textarea): ?array
     {
-        $str = str_replace(array("\r\n", "\r", "\n"), "|", $textarea);
+        $str = str_replace(array("\r\n", "\r", "\n"), "|", $textarea ?? "");
         if ($str == "") {
             return null;
         }
@@ -395,20 +416,20 @@ class ShortLinks_Plugin implements Typecho_Plugin_Interface
     /**
      * Base64 编码
      *
-     * @param string $str
+     * @param string|null $str
      * @return string
      * @date 2020-05-01
      */
-    public static function urlSafeB64Encode($str)
+    public static function urlSafeB64Encode(?string $str): string
     {
-        $data = base64_encode($str);
+        $data = base64_encode($str ?? "");
         return str_replace(array('+', '/', '='), array('-', '_', ''), $data);
     }
 
     /**
      * 获得配置信息
      *
-     * @return Typecho_Options
+     * @return Typecho\Config|Typecho_Config
      * @throws \Typecho\Plugin\Exception
      */
     public static function options($plugin = null)
@@ -426,20 +447,12 @@ class ShortLinks_Plugin implements Typecho_Plugin_Interface
     }
 
     /**
-     * 获取 Helper 类
-     * @return mixed
-     */
-    public static function helper() {
-        return Helper;
-    }
-
-
-    /**
      * 获取数据库对象
      * @return mixed
      * @throws \Typecho\Db\Exception
      */
-    public static function db() {
+    public static function db()
+    {
         if (class_exists('Typecho\Db')) {
             return Typecho\Db::get();
         } else {
