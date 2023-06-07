@@ -2,9 +2,9 @@
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 
 $storeUrl = Typecho_Common::url(__TYPECHO_ADMIN_DIR__.'te-store/',$this->options->index);
-$keywords = htmlspecialchars($this->request->keywords);
-$group = htmlspecialchars($this->request->group);
-$page = htmlspecialchars($this->request->page);
+$keywords = htmlspecialchars($this->request->keywords ?? "");
+$group = htmlspecialchars($this->request->group ?? "");
+$page = htmlspecialchars($this->request->page ?? "");
 define('TYPEHO_ADMIN_PATH',__TYPECHO_ROOT_DIR__.__TYPECHO_ADMIN_DIR__);
 
 //异步加载插件列表
