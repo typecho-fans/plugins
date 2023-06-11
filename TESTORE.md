@@ -510,6 +510,6 @@
 [stop](https://github.com/jrotty/stop) | 游客访问后台地址跳转至404插件 | 1.7 | [张老师](https://github.com/jrotty) | [下载](https://github.com/jrotty/stop/archive/master.zip)
 [upimgchr](https://gitee.com/jclser/upimgchr-for-typecho) | 编辑器添加[路过图床](https://imgchr.com)上传按钮插件 | 1.0 | [jclser](https://gitee.com/jclser) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/upimgchr.zip)
 [wangEditor](https://github.com/journey-ad/wangEditor-Typecho-Plugin) | 所见即所得编辑器wangEditor插件 | 1.0.1 | [journey.ad](https://github.com/journey-ad) | [下载](https://github.com/journey-ad/wangEditor-Typecho-Plugin/archive/master.zip)
-[waterMark](https://github.com/internelp/waterMark) | 图片自动添加Gif/Png格式水印插件 | 1.0.1 | [应用侠](https://github.com/internelp) | [下载](https://github.com/internelp/waterMark/archive/master.zip)
+[waterMark](https://github.com/internelp/waterMark) | 图片自动添加Gif/Png格式水印插件 | 1.0.2 | [应用侠](https://github.com/internelp) | [下载](https://github.com/internelp/waterMark/archive/master.zip)
 [ymplayer](https://github.com/kokororin/typecho-plugin-ymplayer) | Html5可伸缩海报音乐播放器插件 | 0.7 | [kokororin](https://github.com/kokororin) | [特殊](https://github.com/kokororin/typecho-plugin-ymplayer/archive/master.zip)
 [zbgray](http://forum.typecho.org/viewtopic.php?f=6&t=11271) | Typecho简易祭日用整站变灰插件 | 1.0.0 | jyzb02 | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/zbgray.zip)
