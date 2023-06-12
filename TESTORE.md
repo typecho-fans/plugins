@@ -42,7 +42,7 @@
 [Acc](https://github.com/qt06/typecho-plugin-accessibility) | Typecho无障碍读屏标记修正插件 | 1.0.0 | [杨永全](https://github.com/qt06) | [下载](https://github.com/qt06/typecho-plugin-accessibility/archive/master.zip)
 [AccessBmob](https://github.com/kraity/typecho-accessBmob) | [Bmob](https://www.bmob.cn)后端云数据库版[Access](https://github.com/kokororin/typecho-plugin-Access)插件 | 1.2 | [权那他](https://github.com/kraity) | [下载](https://github.com/kraity/typecho-accessBmob/archive/master.zip)
 [Access](https://github.com/kokororin/typecho-plugin-Access) | Typecho查看访客记录统计表插件 | 2.1.0 | [Kokororin](https://github.com/kokororin) | [下载](https://github.com/kokororin/typecho-plugin-Access/archive/master.zip)
-[Accessories](https://xiamp.net/archives/accessories-pro.html) | 多功能附件下载增强插件(免费版) | 1.0.8 | [Ryan](https://github.com/benzBrake) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/Accessories.zip)
+[Accessories](https://github.com/benzBrake/Accessories) | 多功能附件下载增强插件(免费版) | 1.0.8 | [Ryan](https://github.com/benzBrake) | [下载](https://github.com/benzBrake/Accessories/archive/refs/heads/master.zip)
 [ActivatePowerMode](https://gitee.com/hoexhe/ActivatePowerMode) | (娱乐向)疯狂打字机输入特效插件 | 1.0.0 | [Hoe](https://gitee.com/hoexhe) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/ActivatePowerMode.zip)
 [ActiveSubmit](https://github.com/invelop/Typecho-ActiveSubmit) | 主动推送链接至百度插件(含分类) | 1.0 | [承影](https://github.com/invelop) | [下载](https://github.com/invelop/Typecho-ActiveSubmit/archive/master.zip)
 [AddTheme](https://github.com/cikiChe/addtheme) | 在线自动下载主题 | 0.0.1 | [ciki](https://github.com/cikiChe/addtheme) | [下载](https://github.com/cikiChe/addtheme/archive/refs/tags/v0.02.zip)
