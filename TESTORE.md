@@ -272,7 +272,7 @@
 [MathJax](https://github.com/typecho/plugins/blob/master/MathJax.php) | 基于CDN的[MathJax](https://www.mathjax.org)公式渲染插件 | 1.0.0 | [mutoo](https://github.com/mutoo) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/MathJax.zip)
 [MbEditorFree](https://qqdie.com/archives/mbeditor-mbeditor-plugin.html) | 绚彩高亮模板编辑器插件(免费版) | 1.0.0 | [点我购买付费版](https://qqdie.com/archives/mbeditor-mbeditor-plugin.html) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/MbEditorFree.zip)
 [Mcode](https://github.com/0x50j/Mcode) | 明哥登录验证码插件(支持白名单) | 2.1.0 | [Mingo](https://github.com/0x50j) | [特殊](https://github.com/0x50j/Mcode/archive/master.zip)
-[MemorialDay](https://github.com/sy-records/MemorialDay) | 公祭哀悼日网站应用灰色滤镜插件 | 1.0.0 | [沈唁](https://github.com/sy-records) | [下载](https://github.com/sy-records/MemorialDay/archive/master.zip)
+[MemorialDay](https://github.com/sy-records/MemorialDay) | 公祭哀悼日网站应用灰色滤镜插件 | 1.0.3 | [沈唁](https://github.com/sy-records) | [下载](https://github.com/sy-records/MemorialDay/archive/master.zip)
 [MemoryUsage](https://plugins.typecho.me/plugins/memory-usage.html) | 后台显示或前台输出内存占用插件 | 1.0.0 | [doudou](https://github.com/doudoutime) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/MemoryUsage.zip)
 [Messages](https://github.com/kraity/Messages) | [南博](https://nabo.krait.cn)App用实时消息推送模块插件 | 1.0 | [权那他](https://github.com/kraity) | [下载](https://github.com/kraity/Messages/archive/master.zip)
 [MetaPlus](https://github.com/mrasong/metaplus-for-typecho) | 在分类标签页面输出定制数据插件 | 1.0.0 | [mrasong](https://github.com/mrasong) | [下载](https://github.com/mrasong/metaplus-for-typecho/archive/master.zip)
