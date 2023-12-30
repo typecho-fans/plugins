@@ -97,7 +97,7 @@
 [JSON](JSON) | 以Json格式输出博客数据API插件 | 1.1 | [姬长信](https://github.com/insoxin),[SangSir](https://gitee.com/hkq15),[公子](https://github.com/lizheming) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-H_to_L/JSON.zip)
 [JWPlayer](JWPlayer) | Html5流媒体播放器Jwplayer插件 | 1.0.9 | [羽中](https://github.com/jzwalk) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-H_to_L/JWPlayer.zip)
 [JustFeed](JustFeed) | 文章Feed尾部添加定制信息插件 | 0.1.2 | [eallion](https://github.com/eallion), jKey | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-H_to_L/JustFeed.zip)
-[Keywords](Keywords) | 文章指定关键词自动加链接插件 | 1.0.8 | [羽中](https://github.com/jzwalk) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-H_to_L/Keywords.zip)
+[Keywords](Keywords) | 文章指定关键词自动加链接插件 | 1.0.9 | [羽中](https://github.com/jzwalk) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-H_to_L/Keywords.zip)
 [LREditor](LREditor) | Markdown编辑器左右预览插件 | 0.0.4 | [公子](http://github.com/lizheming) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-H_to_L/LREditor.zip)
 [Like](Like) | Typecho文章点赞排行统计插件 | 1.0.1 | [skylzl](https://github.com/xiaogouxo) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-H_to_L/Like.zip)
 [Links](Links) | Typecho友情链接数据管理插件 | 1.2.3 | [懵仙兔兔](https://github.com/Mejituu), [Hanny](http://www.imhan.com) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-H_to_L/Links.zip)
