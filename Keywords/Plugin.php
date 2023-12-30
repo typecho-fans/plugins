@@ -5,7 +5,7 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
  * 
  * @package Keywords
  * @author 羽中
- * @version 1.0.8
+ * @version 1.0.9
  * @dependence 13.12.12-*
  * @link http://www.yzmb.me/archives/net/keywords-for-typecho
  */
@@ -48,11 +48,11 @@ class Keywords_Plugin implements Typecho_Plugin_Interface
 		$keywords->input->setAttribute('style','max-width:400px;height:150px;');
 		$form->addInput($keywords);
 
-		$autolink = new Typecho_Widget_Helper_Form_Element_Checkbox('autolink',array('catslink'=>_t('分类名称'),'tagslink'=>_t('标签名称')),NULL,_t('自动内链'),_t('将与分类/标签名相同的词替换为分类/标签页链接'));
+		$autolink = new Typecho_Widget_Helper_Form_Element_Checkbox('autolink',array('catslink'=>_t('分类名称'),'tagslink'=>_t('标签名称')),[],_t('自动内链'),_t('将与分类/标签名相同的词替换为分类/标签页链接'));
 		$form->addInput($autolink);
 
 		$nofollow = new Typecho_Widget_Helper_Form_Element_Checkbox('nofollow',
-		array(1=>_t('nofollow标记')),NULL,_t('内链设置'));
+		array(1=>_t('nofollow标记')),[],_t('内链设置'));
 		$form->addInput($nofollow);
 
 		$blank = new Typecho_Widget_Helper_Form_Element_Select('blank',
@@ -102,7 +102,8 @@ class Keywords_Plugin implements Typecho_Plugin_Interface
 				$txt = trim($row['0']);
 				if ($txt) {
 					$link = trim($row['1']);
-					$set = trim($row['2']);
+					$set = '';
+					if(isset($row['2'])){$set = trim($row['2']);}
 					$rel = '';
 					$open = '_blank';
 
@@ -147,7 +148,6 @@ class Keywords_Plugin implements Typecho_Plugin_Interface
 				$kwarray[] = explode('|',$kwset);
 			}
 		}
-
 		if ($autolink) {
 			$db = Typecho_Db::get();
 			$nofollow = $settings->nofollow ? 'n' : '';
@@ -156,7 +156,7 @@ class Keywords_Plugin implements Typecho_Plugin_Interface
 			if (in_array('catslink',$autolink)) {
 				$catselect = $db->select()->from('table.metas')->where('type = ?','category');
 				$catdata = $db->fetchAll($catselect,array(Typecho_Widget::widget('Widget_Abstract_Metas'),'filter'));
-
+				
 				//并入分类链接
 				$cats = array();
 				foreach ($catdata as $cat) {
