@@ -58,7 +58,7 @@
 [Avatars](Avatars) | 评论头像墙排行插件(支持缓存) | 1.2.5 | [羽中](https://github.com/jzwalk) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/Avatars.zip)
 [BackToTop](BackToTop) | 三款萌娘点击返回顶部按钮插件 | 1.0 | [夏目贵志](https://github.com/xiamuguizhi) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/BackToTop.zip)
 [CatClaw](CatClaw) | 影视[一][二号](https://blog.zezeshe.com/archives/typecho-film-theme.html)模板免登录采集插件 | 1.8.1 | [jrotty](https://github.com/jrotty) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/CatClaw.zip)
-[CateFilter](CateFilter) | 首页过滤指定分类文章隐藏插件 | 1.2.2 | [Rakiy](https://github.com/rakiy) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/CateFilter.zip)
+[CateFilter](CateFilter) | 首页过滤指定分类文章隐藏插件 | 1.2.4 | [Rakiy](https://github.com/rakiy) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/CateFilter.zip)
 [ChangyanCallback](ChangyanCallback) | 搜狐畅言社会化评论回推用插件 | 1.0.0 | [mrgeneral](https://github.com/mrgeneralgoo) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/ChangyanCallback.zip)
 [changyandandian](changyandandian) | 搜狐畅言单点登录插件 | 1.0.0 | [泽泽社长](https://github.com/jrotty) |[Download](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/changyandandian.zip)
 [Ckeditor4Typecho](Ckeditor4Typecho) | CKEditor4所见即所得编辑器插件 | 1.0.0 | [zhulin3141](https://github.com/zhulin3141) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/Ckeditor4Typecho.zip)
