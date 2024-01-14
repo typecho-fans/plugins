@@ -63,7 +63,7 @@
 [ArkEditor](https://github.com/CrazyBoyM/ArkEditor) | 沉浸式写作Markdown编辑器插件 | 1.0.0 | [方舟互联](https://github.com/CrazyBoyM) | [下载](https://github.com/CrazyBoyM/ArkEditor/archive/master.zip)
 [ArmX](https://github.com/natcube/ArmX) | [ArmX](https://github.com/natcube/ArmX/tree/master/themes/armx)主题用七合一扩展增强插件 | 1.0.0 | [NatLiu](https://github.com/natcube) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/ArmX.zip)
 [ArticleImg](https://github.com/istobran/Typecho-Plugin-ArticleImg) | 自建数据表设置文章封面图片插件 | 1.0.0 | [BangZ](https://github.com/istobran) | [下载](https://github.com/istobran/Typecho-Plugin-ArticleImg/archive/master.zip)
-[ArticlePoster](https://github.com/MoLeft/ArticlePoster) | Typecho文章内容生成海报图插件 | 1.0.7 | [MoLeft](https://github.com/MoLeft) | [下载](https://github.com/MoLeft/ArticlePoster/archive/master.zip)
+[ArticlePoster](https://github.com/MoLeft/ArticlePoster) | Typecho文章内容生成海报图插件 | 1.0.8 | [MoLeft](https://github.com/MoLeft) | [下载](https://github.com/MoLeft/ArticlePoster/archive/master.zip)
 [AtAndInform](https://blog.ghostry.cn/program/zi-ji-xie-le-ge-cha-jian---ou-ye.html) | 文章@评论者时发送邮件提醒插件 | 1.0.0 | [ghostry](https://blog.ghostry.cn) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/AtAndInform.zip)
 [AutoBackup](https://xiamp.net/archives/automatic-backup-of-typecho-database-to-mailbox-plugin-autobackup.html) | 数据库备份到邮箱 | 1.3.2 | [Ryan](https://github.com/benzBrake) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/AutoBackup_Ryan.zip)
 [AutoBaiduSubmit](https://github.com/jinfeijie/AutoBaiduSubmit) | 访问页面自动提交链接至百度插件 | 1.0.2 | [JinFeiJie](https://github.com/jinfeijie) | [下载](https://github.com/jinfeijie/AutoBaiduSubmit/archive/1.0.2.zip)
