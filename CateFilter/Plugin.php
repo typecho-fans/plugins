@@ -4,7 +4,7 @@
  * 
  * @package CateFilter
  * @author Rakiy
- * @version 1.2.4
+ * @version 1.2.5
  * @link 
  */
 class CateFilter_Plugin implements Typecho_Plugin_Interface
@@ -73,8 +73,7 @@ class CateFilter_Plugin implements Typecho_Plugin_Interface
         //if('/feed' == strtolower(Typecho_Router::getPathInfo()) || '/feed/' == strtolower(Typecho_Router::getPathInfo())) return $select;
         $CateIds = Typecho_Widget::widget('Widget_Options')->plugin('CateFilter')->CateId;
         if(empty($CateIds)) return $select;       //数组为空，则直接返回
-        $select = $select->select('table.contents.cid', 'table.contents.title', 'table.contents.slug', 'table.contents.created', 'table.contents.authorId','table.contents.modified', 'table.contents.type', 'table.contents.status', 'table.contents.text', 'table.contents.commentsNum', 'table.contents.order','table.contents.template', 'table.contents.password', 'table.contents.allowComment', 'table.contents.allowPing', 'table.contents.allowFeed','table.contents.parent')->join('table.relationships','table.relationships.cid = table.contents.cid','right')->join('table.metas','table.relationships.mid = table.metas.mid','right')->where('table.metas.type=?','category');
-        $CateIds = array_unique($CateIds);  //去除重复值
+        $select = $select->join('table.relationships','table.relationships.cid = table.contents.cid','right')->join('table.metas','table.relationships.mid = table.metas.mid','right')->where('table.metas.type=?','category');
         foreach ($CateIds as $k => $v) {
             $select = $select->where('table.relationships.mid != '.intval($v))->group('cid');//确保每个值都是数字；排除重复文章
         } 
