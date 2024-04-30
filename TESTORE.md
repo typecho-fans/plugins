@@ -27,7 +27,7 @@
 
  > 下表中的下载链接文字可用于附加图标：`下载`即非社区版，`不可用`显示为:no_entry:，`特殊`显示:warning:意为安装或启用方法特殊。
 
-### 插件信息 (480)
+### 插件信息 (481)
 
 ###### TeStore使用下表“名称”创建安装文件夹，“版本”提示升级，请务必确保文本准确；添加时注意按字母排序，自增上方括号内总数，简介不要太长。
 ```
@@ -126,6 +126,7 @@
 [Comment2Slack](https://github.com/AceHalo/typecho-comment2slack) | 评论通知推送至[Slack](https://slack.com)协作平台插件 | 0.0.1 | [kaze](https://github.com/AceHalo) | [下载](https://github.com/AceHalo/typecho-comment2slack/archive/master.zip)
 [Comment2Telegram](https://github.com/MoeLoli/Comment2Telegram) | 评论操作通知推送至[Telegram](https://telegram.org)插件 | 1.3.2 | [Sora Jin](https://github.com/MoeLoli) | [下载](https://github.com/MoeLoli/Comment2Telegram/archive/master.zip)
 [Comment2Wechat](https://github.com/YianAndCode/Comment2Wechat) | 评论推送至微信插件(兼容XmlRpc) | 1.1.0 | [Y!an](https://github.com/YianAndCode) | [下载](https://github.com/YianAndCode/Comment2Wechat/archive/master.zip)
+[CommentToTelegram](https://github.com/opswill/CommentToTelegram) | 推送评论到Telegram，支持代理、评论管理及回复 | 1.0.0 | [opswill](https://github.com/opswill) | [下载](https://github.com/opswill/CommentToTelegram/releases/download/v1.0.0/CommentToTelegram-1.0.0.zip)
 [CommentApprove](https://github.com/ennnnny/typecho/tree/master/CommentApprove) | 按邮箱自定义三种评论者身份插件 | 0.1.0 | [kuye](https://github.com/ennnnny) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/CommentApprove.zip)
 [CommentAuditor](https://github.com/gspsp/CommentAuditor) | 支持自建规则API评论内容审核插件 | 1.0.7 | [ihesro](https://b.nit9.cn/cross.html) | [下载](https://github.com/gspsp/CommentAuditor/archive/master.zip)
 [CommentGun](https://github.com/xddxdd/typecho-commentgun) | 简化版MailGun评论邮件提醒插件 | 1.0.0 | [Lan Tian](https://github.com/xddxdd) | [下载](https://github.com/xddxdd/typecho-commentgun/archive/master.zip)
