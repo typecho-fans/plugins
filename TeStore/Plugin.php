@@ -4,8 +4,8 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
  * 读取Github上维护的专用表格实现插件仓库各项功能
  * 
  * @package TeStore
- * @author 羽中, zhulin3141
- * @version 1.1.5
+ * @author 羽中, zhulin3141, Ryan
+ * @version 1.1.6
  * @dependence 13.12.12-*
  * @link https://www.yzmb.me/archives/net/testore-for-typecho
  * @copyright Copyright (c) 2014-2020 Yuzhong Zheng (jzwalk)
@@ -91,7 +91,7 @@ class TeStore_Plugin implements Typecho_Plugin_Interface
 		$form->addInput($cache);
 
 		$proxy = new Typecho_Widget_Helper_Form_Element_Radio('proxy',
-		array(''=>_t('否'),'cdn.jsdelivr.net/gh'=>_t('jsDelivr镜像'),'gitcdn.xyz/repo'=>_t('GitCDN镜像1'),'gitcdn.link/repo'=>_t('GitCDN镜像2')),'',_t('使用代理加速'),_t('GitHub连接不畅时可选'));
+		array(''=>_t('否'),'cdn.jsdelivr.net/gh'=>_t('jsDelivr镜像'),'jsd.onmicrosoft.cn/gh'=>_t('渺软镜像'),'jsd.cdn.zzko.cn/gh'=>_t('Chinajsdelivr')),'',_t('使用代理加速'),_t('GitHub连接不畅时可选'));
 		$form->addInput($proxy);
 
 		$curl = new Typecho_Widget_Helper_Form_Element_Checkbox('curl',
