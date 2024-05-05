@@ -470,7 +470,7 @@
 [WeiboFile](https://github.com/muzishanshi/WeiboFile) | 微博等多平台图床+视频上传插件 | 1.0.20 | [二呆](https://github.com/muzishanshi) | [下载](https://github.com/muzishanshi/WeiboFile/archive/master.zip)
 [WeiboSync](https://github.com/ShangJixin/Typecho-Plugin-WeiboSync) | 文章标题链接推送至新浪微博插件 | 1.0.1 | [尚寂新](https://github.com/ShangJixin) | [特殊](https://github.com/ShangJixin/Typecho-Plugin-WeiboSync/archive/master.zip)
 [WikimoeBangumi](https://github.com/eeg1412/typecho_bangumi_plugin) | 用API获取Bangumi追番信息插件 | 1.0.0 | [广树](https://github.com/eeg1412) | [下载](https://github.com/eeg1412/typecho_bangumi_plugin/archive/master.zip)
-[WindsCkEditor](https://github.com/awinds/WindsCkEditor) | WindsCkEditor，集成最新CkEditor4编辑器，支持插入Code，支持图片上传，支持原附件插入 | [awinds](https://github.com/awinds) | [下载](https://github.com/awinds/WindsCkEditor/archive/refs/heads/main.zip)
+[WindsCkEditor](https://github.com/awinds/WindsCkEditor) | WindsCkEditor，集成最新CkEditor4编辑器，支持插入Code，支持图片上传，支持原附件插入 | 1.0.2 | [awinds](https://github.com/awinds) | [下载](https://github.com/awinds/WindsCkEditor/archive/refs/heads/main.zip)
 [WordCount](https://github.com/jrotty/WordCount) | Typecho文章字数实时计算器插件 | 1.6 | [Jrotty](https://github.com/jrotty) | [下载](https://github.com/jrotty/WordCount/archive/master.zip)
 [WordpressToTypecho](https://github.com/typecho/plugins/tree/master/WordpressToTypecho) | Wordpress数据库导入Typecho插件 | 1.0.3 Beta | [qining](https://github.com/joyqi) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/WordpressToTypecho.zip)
 [WordsCounter](https://github.com/elatisy/Typecho_WordsCounter) | Typecho文章或全站字数统计插件 | 1.0.0 | [Elatis](https://github.com/elatisy) | [下载](https://github.com/elatisy/Typecho_WordsCounter/archive/master.zip)
