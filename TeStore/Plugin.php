@@ -91,7 +91,7 @@ class TeStore_Plugin implements Typecho_Plugin_Interface
 		$form->addInput($cache);
 
 		$proxy = new Typecho_Widget_Helper_Form_Element_Radio('proxy',
-		array(''=>_t('否'),'cdn.jsdelivr.net/gh'=>_t('jsDelivr镜像'),'jsd.onmicrosoft.cn/gh'=>_t('渺软镜像'),'jsd.cdn.zzko.cn/gh'=>_t('Chinajsdelivr')),'',_t('使用代理加速'),_t('GitHub连接不畅时可选'));
+		array(''=>_t('否'),'cdn.jsdelivr.net/gh'=>_t('jsDelivr镜像'),'jsd.onmicrosoft.cn/gh'=>_t('渺软镜像')),'',_t('使用代理加速'),_t('GitHub连接不畅时可选'));
 		$form->addInput($proxy);
 
 		$curl = new Typecho_Widget_Helper_Form_Element_Checkbox('curl',
