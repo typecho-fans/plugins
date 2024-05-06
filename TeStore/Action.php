@@ -229,11 +229,13 @@ class TeStore_Action extends Typecho_Widget
                     $zip = $cdn ? $cdn : $zip;
                     $proxy = $proxy ? $proxy : 'cdn.jsdelivr.net/gh';
                     $zip = str_replace(array('github.com', 'raw.githubusercontent.com'), $proxy, $zip);
-                    $zip = $proxy == 'cdn.jsdelivr.net/gh' ? str_replace(array('blob/', 'raw/', 'master/'), '', $zip) : str_replace(array('blob/', 'raw/'), '', $zip);
+                    $zip = substr($proxy, -3) === "/gh" ? str_replace(array('blob/', 'raw/', 'master/'), '', $zip) : str_replace(array('blob/', 'raw/'), '', $zip);
                 }
+
                 //下载至临时目录
                 $zipFile = $this->useCurl ? $this->curlGet($zip) : @file_get_contents($zip, 0,
                     stream_context_create(array('http' => array('timeout' => 20)))); //设20秒超时
+
                 if (!$zipFile) {
                     $result['error'] = _t('下载压缩包出错');
                 } else {
