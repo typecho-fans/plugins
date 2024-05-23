@@ -29,7 +29,7 @@
 
  > 下表中的下载链接文字可在TeStore附加图标：`Download`即社区版，`N/A`为不可用，`Special`是安装或用法特殊。
 
-### 作品索引 (126)
+### 作品索引 (132)
 
 ###### TeStore使用下表“名称”创建安装文件夹，“版本”提示升级，请确保文本准确；注意按字母排序添加，自增上方括号内总数，简介不要太长。
 ```
@@ -72,6 +72,7 @@
 [Contribute](Contribute) | 前台免注册投稿及审查发布插件 | 1.0.0 | [ShingChi](https://github.com/shingchi) | [Special](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/Contribute.zip)
 [CosForTypecho](CosForTypecho) | Typecho用腾讯云COS存储插件 | 1.0.1 | [Charmeryl](https://github.com/jqjiang819) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/CosForTypecho.zip)
 [CSDN](CSDN) | 将CSDN博文迁移至Typecho插件 | 1.0.0 | [MDY](https://github.com/ddddyyyy) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/CSDN.zip)
+[CustomRSS](https://github.com/ibluehe/CustomRSS) | Typecho生成rss.xml的RSS订阅 | 1.0.1 | [蓝河](https://bluehe.cn/) | [Download](https://github.com/ibluehe/CustomRSS/archive/refs/heads/main.zip)
 [DbManager](DbManager) | Mysql数据库导入导出优化插件 | 2.0.1 | [ShingChi](https://github.com/shingchi) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/DbManager.zip)
 [DevTool](DevTool) | 扩展开发常用数据查看测试插件 | 1.0.0 | [zhulin3141](https://github.com/zhulin3141) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/DevTool.zip)
 [DownloadFile](DownloadFile) | 附件下载与上传名保持一致插件 | 1.0.0 | [DT27](https://github.com/DT27) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/DownloadFile.zip)
