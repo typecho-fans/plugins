@@ -94,7 +94,7 @@ class TeStore_Action extends Typecho_Widget
                             $page = str_replace(array('github.com', 'raw.githubusercontent.com'), $proxy, $page);
                             $page = str_replace(array('blob/', 'raw/', 'master/'), '', $page);
                         } else {
-                            $page = rtrim($proxy, "/") . $page;
+                            $page = Typecho_Common::url($page, $proxy);
                         }
                     }
                     $html .= $this->useCurl ? $this->curlGet($page) : @file_get_contents($page,0,
@@ -223,14 +223,19 @@ class TeStore_Action extends Typecho_Widget
                     $this->makedir($tempDir); //创建临时目录
                 }
                 $proxy = $this->settings->proxy;
+                $isRaw = strpos($zip, 'raw.githubusercontent.com') || strpos($zip, 'raw/master');
                 //替换为加速地址
-                if ($proxy || strpos($zip, 'raw.githubusercontent.com') || strpos($zip, 'raw/master')) {
-                    $cdn = $this->ZIP_CDN($plugin, $author);
-                    $zip = $cdn ? $cdn : $zip;
-                    $proxy = $proxy ? $proxy : 'cdn.jsdelivr.net/gh';
-                    $zip = str_replace(array('github.com', 'raw.githubusercontent.com'), $proxy, $zip);
-                    $zip = substr($proxy, -3) === "/gh" ? str_replace(array('blob/', 'raw/', 'master/'), '', $zip) : str_replace(array('blob/', 'raw/'), '', $zip);
-                }
+                if ($proxy || $isRaw) {
+                    if (substr($proxy, -3) === "/gh") {
+                        $cdn = $this->ZIP_CDN($plugin, $author);
+                        $zip = $cdn ? $cdn : $zip;
+                        $proxy = $proxy ? $proxy : 'cdn.jsdelivr.net/gh';
+                        $zip = str_replace(array('github.com', 'raw.githubusercontent.com'), $proxy, $zip);
+                        $zip = substr($proxy, -3) === "/gh" ? str_replace(array('blob/', 'raw/', 'master/'), '', $zip) : str_replace(array('blob/', 'raw/'), '', $zip);
+                    } else {
+                        $zip = Typecho_Common::url($zip, $proxy);
+                    }
+               }
 
                 //下载至临时目录
                 $zipFile = $this->useCurl ? $this->curlGet($zip) : @file_get_contents($zip, 0,
