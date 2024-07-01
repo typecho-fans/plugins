@@ -2,7 +2,7 @@
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 /**
  * 读取Github上维护的专用表格实现插件仓库各项功能
- * 
+ *
  * @package TeStore
  * @author 羽中, zhulin3141, Ryan
  * @version 1.1.6
@@ -15,7 +15,7 @@ class TeStore_Plugin implements Typecho_Plugin_Interface
 {
 	/**
 	 * 激活插件方法,如果激活失败,直接抛出异常
-	 * 
+	 *
 	 * @access public
 	 * @return void
 	 * @throws Typecho_Plugin_Exception
@@ -46,7 +46,7 @@ class TeStore_Plugin implements Typecho_Plugin_Interface
 
 	/**
 	 * 禁用插件方法,如果禁用失败,直接抛出异常
-	 * 
+	 *
 	 * @static
 	 * @access public
 	 * @return void
@@ -62,7 +62,7 @@ class TeStore_Plugin implements Typecho_Plugin_Interface
 
 	/**
 	 * 获取插件配置面板
-	 * 
+	 *
 	 * @access public
 	 * @param Typecho_Widget_Helper_Form $form 配置面板
 	 * @return void
@@ -91,7 +91,7 @@ class TeStore_Plugin implements Typecho_Plugin_Interface
 		$form->addInput($cache);
 
 		$proxy = new Typecho_Widget_Helper_Form_Element_Radio('proxy',
-		array(''=>_t('否'),'cdn.jsdelivr.net/gh'=>_t('jsDelivr镜像'),'jsd.onmicrosoft.cn/gh'=>_t('渺软镜像')),'',_t('使用代理加速'),_t('GitHub连接不畅时可选'));
+		array(''=>_t('否'),'cdn.jsdelivr.net/gh'=>_t('jsDelivr镜像'),'jsd.onmicrosoft.cn/gh'=>_t('渺软镜像'), 'https://ghmirror.pp.ua' => _('GitHub Proxy')),'',_t('使用代理加速'),_t('GitHub连接不畅时可选'));
 		$form->addInput($proxy);
 
 		$curl = new Typecho_Widget_Helper_Form_Element_Checkbox('curl',
@@ -105,7 +105,7 @@ class TeStore_Plugin implements Typecho_Plugin_Interface
 
 	/**
 	 * 检查cURL支持
-	 * 
+	 *
 	 * @param array $settings
 	 * @return string
 	 */
@@ -121,7 +121,7 @@ class TeStore_Plugin implements Typecho_Plugin_Interface
 
 	/**
 	 * 个人用户的配置面板
-	 * 
+	 *
 	 * @access public
 	 * @param Typecho_Widget_Helper_Form $form
 	 * @return void
@@ -130,7 +130,7 @@ class TeStore_Plugin implements Typecho_Plugin_Interface
 
 	/**
 	 * 输出导航按钮
-	 * 
+	 *
 	 * @access public
 	 * @return void
 	 */
@@ -144,7 +144,7 @@ class TeStore_Plugin implements Typecho_Plugin_Interface
 
 	/**
 	 * 判断目录可写
-	 * 
+	 *
 	 * @access public
 	 * @return boolean
 	 */
