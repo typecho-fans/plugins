@@ -361,6 +361,7 @@
 [SetCategoryPwd](https://github.com/coder-wu/typecho-pwd-plugin) | Typecho批量加密分类下文章插件 | 1.0.0 beta | [coderwu](https://github.com/coder-wu) | [下载](https://github.com/coder-wu/typecho-pwd-plugin/archive/master.zip)
 [ShenJianShou](https://www.wamuban.com/plugin/2097.html) | 神箭手采集器官方版内容发布插件 | 4.2.4 | [神箭手云](http://www.shenjian.io) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/ShenJianShou.zip)
 [Shields](https://github.com/journey-ad/Shields-Typecho-Plugin) | 自解析[Shields.io](https://shields.io)版GitHub按钮插件 | 1.0.0 | [journey.ad](https://github.com/journey-ad) | [下载](https://github.com/journey-ad/Shields-Typecho-Plugin/archive/master.zip)
+[ShikiHighlighter](https://github.com/Emt-lin/ShikiHighlighter_for_Typecho) | 根据 [Shiki 式](https://shiki.style/) 制作的代码高亮样式，动态按需加载。 | 1.0.0 | [Emt-lin](https://github.com/Emt-lin) | [下载](https://github.com/Emt-lin/ShikiHighlighter_for_Typecho/releases/download/v1.0.0/ShikiHighlighter.zip)
 [Shop](https://github.com/ilanlanya/typecho-plugin-shop) | Typecho非官方线上主题商店插件 | 1.0.0 | [LiCxi](https://github.com/ilanlanya) | [不可用](https://github.com/ilanlanya/typecho-plugin-shop/archive/master.zip)
 [ShortCode](https://github.com/moeshin/Typecho-Plugin-ShortCode) | Typecho自定义短代码API功能插件 | 1.0.1 | [小さな手は](https://github.com/moeshin) | [下载](https://github.com/moeshin/Typecho-Plugin-ShortCode/archive/master.zip)
 [ShortLinks](ShortLinks) | 基于[GoLinks](GoLinks)增强外链转换插件 | 1.2.0 | [Ryan](https://github.com/benzBrake) | [下载](https://github.com/benzBrake/ShortLinks/archive/refs/heads/master.zip)
