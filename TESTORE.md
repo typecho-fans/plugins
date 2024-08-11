@@ -164,7 +164,7 @@
 [Editor](https://plugins.typecho.me/plugins/ckeditor-syntax-highlighter.html) | 整合代码高亮CKEditor编辑器插件 | 1.0.1 | QFisH | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/Editor_QFisH.zip)
 [Email](https://gitee.com/freej2015/typecho-email) | 邮件发送用户登录或评论提醒插件 | 1.0.0 | [yaecho](https://gitee.com/freej2015) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/Email.zip)
 [EmojiHelper](https://qqdie.com/archives/emojihelper-typecho-plugins.html) | 改数据库编码兼容Emoji表情插件 | 2.0 | [泽泽社长](https://github.com/jrotty) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/EmojiHelper.zip)
-[ExImg](https://github.com/fmujie/expandImg) | 双击图片放大特效插件(多彩背景) | 1.0.0 | [fmujie](https://github.com/fmujie) | [下载](https://github.com/fmujie/expandImg/archive/master.zip)
+[ExImg](https://github.com/fmujie/expandImg) | 双击图片放大特效插件(多彩背景) | 1.0.1 | [fmujie](https://github.com/fmujie) | [下载](https://github.com/fmujie/expandImg/archive/master.zip)
 [ExSearch](https://github.com/AlanDecode/Typecho-Plugin-ExSearch) | Ajax版搜索动态显示实时结果插件 | 0.1 | [熊猫小A](https://github.com/AlanDecode) | [下载](https://github.com/AlanDecode/Typecho-Plugin-ExSearch/archive/master.zip)
 [ExternalTool](https://github.com/phpgao/ExternalTool) | 检测文章内链接添加外链标记插件 | 0.2 | [老高](https://github.com/phpgao) | [下载](https://github.com/phpgao/ExternalTool/archive/master.zip)
 [ExtraVerification](https://github.com/imwis/ExtraVerification) | Google双重验证登录机制整合插件 | 1.1.0 | [Wis](https://github.com/imwis) | [特殊](https://github.com/imwis/ExtraVerification/releases/download/1.1.0/ExtraVerification_1.1.0.zip)
