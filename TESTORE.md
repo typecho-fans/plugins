@@ -70,7 +70,7 @@
 [AutoIndent](https://github.com/chen2bing/AutoIndent) | 使用jQuery自动缩进段落首行插件 | 1.0 | [cbb](https://github.com/chen2bing) | [下载](https://github.com/chen2bing/AutoIndent/archive/master.zip)
 [AutoKaTeX](https://github.com/Skywt2003/AutoKaTeX) | Typecho新版[KaTeX](https://github.com/Khan/KaTeX)自动渲染插件 | 0.1.0 | [SkyWT](https://github.com/Skywt2003) | [下载](https://github.com/Skywt2003/AutoKaTeX/archive/master.zip)
 [AutoSaveImage](https://www.cxiansheng.cn/server/278) | 自动下载替换文章内远程图片插件 | 1.0.0 | [dream](https://www.cxiansheng.cn) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/AutoSaveImage.zip)
-[AutoSSL](https://github.com/Aurorum-Studio/Typecho-AutoSSL) | 在线轻松生成免费SSL证书，解决SSL证书的烦恼 | 0.2.2 | [Aurorum](https://github.com/Aurorum-Studio) | [下载](https://github.com/Aurorum-Studio/Typecho-AutoSSL/archive/refs/tags/v.0.2.2-no-readme.zip)
+[AutoSSL](https://github.com/Aurorum-Studio/Typecho-AutoSSL) | 在线轻松生成免费SSL证书，解决SSL证书的烦恼 | 0.2.2 | [Aurorum](https://github.com/Aurorum-Studio) | [下载](https://github.com/Aurorum-Studio/Typecho-AutoSSL/archive/refs/tags/v.0.2.2-alpha.zip)
 [Avartar](https://github.com/typecho/plugins/blob/master/Avartar.php) | 自定义替换Gravatar头像代理插件 | 1.0.0 Beta | [loftor](https://github.com/loftor-git) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/Avartar.zip)
 [AvatarQQ](https://github.com/web1n/AvatarQQ) | 为QQ邮箱评论者显示QQ头像插件 | 1.0 | [web1n](https://github.com/web1n) | [下载](https://github.com/web1n/AvatarQQ/archive/master.zip)
 [B3logForHacPai](https://github.com/DT27/B3logForHacPai) | 黑客派社区API实时同步推送插件 | 1.0.1 | [DT27](https://github.com/DT27) | [下载](https://github.com/DT27/B3logForHacPai/archive/master.zip)
