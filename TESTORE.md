@@ -401,7 +401,7 @@
 [TEDUriReplace](https://www.typechodev.com/plugins/%E5%85%B6%E4%BB%96%E6%8F%92%E4%BB%B6/typecho-url-replace.html) | 非数据库式批量替换文章内容插件 | 1.0 | [lgl](https://www.typechodev.com) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/TEDUriReplace.zip)
 [TableOfContents](https://github.com/phpgao/TableOfContents) | 下拉式文章内容目录自动生成插件 | 0.3 | [老高](https://github.com/phpgao) | [下载](https://github.com/phpgao/TableOfContents/archive/master.zip)
 [TagImg](https://github.com/iwege/typecho-tagimg) | 按Tag标签调用文章关联图片插件 | 1.0.4 | [iwege](https://github.com/iwege) | [下载](https://github.com/iwege/typecho-tagimg/archive/master.zip)
-[Tbeautify](https://github.com/1997akkk/Tbeautify) | 网站特效美化插件,包含春节灯笼,看板娘,置灰模式等10特效 | 1.0.1 | [流情](https://liuqingwushui.top) | [下载](https://github.com/1997akkk/Tbeautify/archive/refs/heads/main.zip)
+[Tbeautify](https://github.com/1997akkk/Tbeautify) | 网站特效美化插件,春节灯笼,看板娘,置灰等十特效 | 1.0.1 | [流情](https://liuqingwushui.top) | [下载](https://github.com/1997akkk/Tbeautify/archive/refs/heads/main.zip)
 [TeComment](https://github.com/jiangmuzi/TeComment) | 评论增强插件(表情工具栏Ajax等) | 2.0.0 | [绛木子](https://github.com/jiangmuzi) | [下载](https://github.com/jiangmuzi/TeComment/archive/master.zip)
 [TeConnect](https://github.com/jiangmuzi/TeConnect) | 经典版QQ/微博账号注册登录插件 | 1.0 | [绛木子](https://github.com/jiangmuzi) | [特殊](https://github.com/jiangmuzi/TeConnect/archive/master.zip)
 [TeConnect](https://github.com/ledccn/TeConnect) | 增强版15款平台账号注册登录插件 | 2.0 | [大卫科技Blog](https://github.com/ledccn) | [下载](https://github.com/ledccn/TeConnect/archive/master.zip)
