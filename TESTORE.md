@@ -27,7 +27,7 @@
 
  > 下表中的下载链接文字可用于附加图标：`下载`即非社区版，`不可用`显示为:no_entry:，`特殊`显示:warning:意为安装或启用方法特殊。
 
-### 插件信息 (483)
+### 插件信息 (485)
 
 ###### TeStore使用下表“名称”创建安装文件夹，“版本”提示升级，请务必确保文本准确；添加时注意按字母排序，自增上方括号内总数，简介不要太长。
 ```
@@ -86,6 +86,7 @@
 [BanbanStyle](https://github.com/lei2rock/Typecho-Assets/tree/master/plugins/BanbanStyle) | [Handsome](https://www.ihewro.com/archives/489)主题常用功能集成插件 | 0.3.1 | [lei2rock](https://github.com/lei2rock) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/BanbanStyle.zip)
 [BangumiList](https://github.com/ShadowySpirits/BangumiList) | 短代码输出Bangumi追番列表插件 | 1.0.0 | [SSpirits](https://github.com/ShadowySpirits) | [下载](https://github.com/ShadowySpirits/BangumiList/archive/master.zip)
 [Beblank](https://github.com/ghosx/Beblank) | Js替换页面链接为新窗口打开插件 | 1.0.0 | [Heeeepin](https://github.com/ghosx) | [下载](https://github.com/ghosx/Beblank/archive/master.zip)
+[BeianFooter](https://github.com/JoyNop/BeianFooter) | 自定义ICP备案和公安备案插件 | 1.0.0 | [JoyNop](https://github.com/JoyNop) | [下载](https://github.com/JoyNop/BeianFooter/archive/refs/tags/1.0.0.zip)
 [BiliBangumi](https://gitee.com/stsiao/typecho_bangumi_bili) | [哔哩哔哩](https://www.bilibili.com)账户获取信息版追番插件 | 1.0.0.204 | [飞蚊话](https://gitee.com/stsiao), [广树](https://github.com/eeg1412) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/BiliBangumi.zip)
 [BilibiliEcho](https://github.com/pluveto/BilibiliEcho) | [Bilibili](https://www.bilibili.com)动态同步到Typecho显示插件 | 1.0.0 | [pluvet](https://github.com/pluveto) | [下载](https://github.com/pluveto/BilibiliEcho/archive/master.zip)
 [Bilibili](https://gitee.com/nagato/typecho-plugins/tree/master/Bilibili) | [哔哩哔哩](https://www.bilibili.com)页面链接转为播放器插件 | 1.4.0 beta | [绀野木棉季](https://gitee.com/nagato) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/Bilibili.zip)
