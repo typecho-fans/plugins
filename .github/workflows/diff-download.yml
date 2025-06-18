@@ -17,7 +17,7 @@ jobs:
       hasMD: ${{ steps.grep-diff.outputs.md }}
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
         with:
           fetch-depth: 2
 
@@ -47,7 +47,7 @@ jobs:
     if: needs.md-check.outputs.hasMD
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
 
       - name: "执行PHP脚本"
         run: |
@@ -59,7 +59,7 @@ jobs:
           commit_message: "Upload zips of altered plugins in TESTORE.md"
 
       - name: "上传操作记录"
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
           name: "updates-log"
           path: /home/runner/work/plugins/TMP/updates.log
