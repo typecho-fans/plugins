@@ -2,7 +2,7 @@
     <img src="https://typecho-fans.github.io/text-logo.svg" alt="TF Logo" title="Typecho Fans开源作品社区" align="right" height="100" />
 </a>
 
-ThemeDemo v1.2.1 - 社区维护版
+ThemeDemo v1.2.2 - 社区维护版
 ======================
 <h4 align="center">—— 多主题外观切换演示插件，支持Cookie参数或子路径双模式，可显示导航条。</h4>
 
@@ -37,7 +37,8 @@ ThemeDemo v1.2.1 - 社区维护版
 </table>
 
 ## 版本历史
-
+ * v1.2.2 (25-07-23) [@hongweipeng](https://github.com/hongweipeng)
+   * 修复子路径模式无法使用问题；
  * v1.2.1 (20-07-19 [@jzwalk](https://github.com/jzwalk))
    * 综合之前所有衍生版本功能：
      * 集成Cookie与子路径双模式，增加切换选项；
@@ -60,9 +61,9 @@ ThemeDemo v1.2.1 - 社区维护版
 
 ## 贡献作者
 
-[![jzwalk](https://avatars1.githubusercontent.com/u/252331?v=3&s=100)](https://github.com/jzwalk) | [![shingchi](https://avatars1.githubusercontent.com/u/1904614?v=3&s=100)](https://github.com/shingchi) | [![doudoutime](https://avatars1.githubusercontent.com/u/1299098?v=3&s=100)](https://github.com/doudoutime)
-:---:|:---:|:---:
-[jzwalk](https://github.com/jzwalk) (2020) | [shingchi](https://github.com/shingchi) (2014) | [doudoutime](https://github.com/doudoutime) (2012)
+[![jzwalk](https://avatars1.githubusercontent.com/u/7546325?v=3&s=100)](https://github.com/hongweipeng) | [![jzwalk](https://avatars1.githubusercontent.com/u/252331?v=3&s=100)](https://github.com/jzwalk) | [![shingchi](https://avatars1.githubusercontent.com/u/1904614?v=3&s=100)](https://github.com/shingchi) | [![doudoutime](https://avatars1.githubusercontent.com/u/1299098?v=3&s=100)](https://github.com/doudoutime)
+:---:|:---:|:---:|:---:
+[hongweipeng](https://github.com/hongweipeng) (2025) | [jzwalk](https://github.com/jzwalk) (2020) | [shingchi](https://github.com/shingchi) (2014) | [doudoutime](https://github.com/doudoutime) (2012)
 
 ## 附注/链接
 

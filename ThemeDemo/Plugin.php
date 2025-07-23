@@ -4,8 +4,8 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
  * 模板预览插件 【<a href="https://github.com/typecho-fans/plugins" target="_blank">TF</a>社区维护版】
  *
  * @package ThemeDemo
- * @author ShingChi, doudou
- * @version 1.2.1
+ * @author ShingChi, doudou, hongweipeng
+ * @version 1.2.2
  * @link https://github.com/typecho-fans/plugins/tree/master/ThemeDemo
  */
 /**
@@ -82,7 +82,7 @@ class ThemeDemo_Plugin implements Typecho_Plugin_Interface
 
     /**
      * 输出导航条并配置路由表
-     * 
+     *
      * @access public
      * @return void
      */
@@ -119,10 +119,10 @@ class ThemeDemo_Plugin implements Typecho_Plugin_Interface
 
         //配置路由表
         if ($settings->mode == 'cookie') {
-        	return;
+            return;
         }
         $routes = $options->routingTable;
-        $pathinfo = Typecho_Router::getPathInfo();
+        $pathinfo = Typecho_Request::getInstance()->getPathInfo();
         if (preg_match('([^/]+)', $pathinfo, $matches)) {
             if (!self::check($matches[0])) return;
         } else {
@@ -199,10 +199,10 @@ class ThemeDemo_Plugin implements Typecho_Plugin_Interface
 
         /** 配置模版信息 */
         if (!empty($themeInfo['config'])) {
-                $options->{'theme:' . $themeName} = $themeInfo['config'];
-                foreach (unserialize($themeInfo['config']) as $row => $value) {
-                    $options->{$row} = $value;
-                }
+            $options->{'theme:' . $themeName} = $themeInfo['config'];
+            foreach (unserialize($themeInfo['config']) as $row => $value) {
+                $options->{$row} = $value;
+            }
         }
 
         /** 配置模版 */
