@@ -66,6 +66,9 @@ class MenuTree_Plugin implements Typecho_Plugin_Interface {
         ), 0, _t('文章无标题时隐藏'), _t('文章中无h1、h2、h3...时隐藏'));
         $form->addInput($hidden_set->addRule('enum', _t('必须选择一个模式'), array(0, 1)));
 
+        $anchor_offset = new Typecho_Widget_Helper_Form_Element_Text('anchor_offset', NULL, '0', _t('标题链接偏移量(单位 em)'), _t('填入数字，支持负数'));
+        $form->addInput($anchor_offset);
+
     }
 
     /**
@@ -138,7 +141,7 @@ class MenuTree_Plugin implements Typecho_Plugin_Interface {
             }
         }
         self::$id++;
-        return "<span id=\"{$menu['id']}\" name=\"{$menu['id']}\"></span>" . $html;
+        return "<span id=\"{$menu['id']}\" class=\"anchor\" name=\"{$menu['id']}\"></span>" . $html;
     }
     
     /**
@@ -152,26 +155,31 @@ class MenuTree_Plugin implements Typecho_Plugin_Interface {
         foreach( $tree as $menu ) {
             if( ! isset( $menu['id'] ) && $menu['sub'] ) {
                 $menuHtml .= self::buildMenuHtml( $menu['sub'], false );
-            } elseif( $menu['sub'] ) {
-                $menuHtml .= "<li><a data-scroll href=\"#{$menu['id']}\" title=\"{$menu['title']}\">{$menu['title']}</a>" . self::buildMenuHtml( $menu['sub'] ) . "</li>";
             } else {
-                $menuHtml .= "<li><a data-scroll href=\"#{$menu['id']}\" title=\"{$menu['title']}\">{$menu['title']}</a></li>";
+                $title = htmlspecialchars($menu['title'], ENT_QUOTES);
+                $li = "<li><a data-scroll href=\"#{$menu['id']}\" title=\"{$title}\">{$title}</a>";
+                if ($menu['sub']) {
+                    $li .= self::buildMenuHtml( $menu['sub'] );
+                }
+                $li .= "</li>";
+                $menuHtml .= $li;
             }
         }
         if( $include ) {
             $menuHtml = '<ul>' . $menuHtml . '</ul>';
         }
-        $menuHtml = str_replace("'", '&apos;', $menuHtml);
         return $menuHtml;
     }
 
     /**
      * 判断是否是内容页，避免主页加载插件
      */
-    public static function is_content() {
+    public static function is_content($widget = null) {
         static $is_content = null;
-        if($is_content === null) {
+        if (!$widget) {
             $widget = Typecho_Widget::widget('Widget_Archive');
+        }
+        if($is_content === null) {
             $is_content = !($widget->is('index') || $widget->is('search') || $widget->is('date') || $widget->is('category') || $widget->is('author'));
         }
         return $is_content;
@@ -184,7 +192,7 @@ class MenuTree_Plugin implements Typecho_Plugin_Interface {
      */
     public static function parse( $html, $widget, $lastResult ) {
         $html = empty( $lastResult ) ? $html : $lastResult;
-        if (!self::is_content()) {
+        if (!self::is_content($widget)) {
             return $html;
         }
         $html = preg_replace_callback( '/<h([1-6])[^>]*>.*?<\/h\1>/s', array( 'MenuTree_Plugin', 'parseCallback' ), $html );
@@ -200,7 +208,19 @@ class MenuTree_Plugin implements Typecho_Plugin_Interface {
             return;
         }
         $cssUrl = Helper::options()->pluginUrl . '/MenuTree/menutree.css?v=' . self::$v;
-        echo '<link rel="stylesheet" type="text/css" href="' . $cssUrl . '" />';
+        $anchor_offset = Helper::options()->plugin('MenuTree')->anchor_offset;
+
+        echo <<<EOF
+<link rel="stylesheet" type="text/css" href="{$cssUrl}" />
+<style>
+span.anchor {
+    display: block;
+    position: relative;
+    top: {$anchor_offset}em;
+    visibility: hidden;
+}
+</style>
+EOF;
     }
 
     /**
@@ -222,13 +242,15 @@ class MenuTree_Plugin implements Typecho_Plugin_Interface {
         $html = '<div class="in-page-preview-buttons in-page-preview-buttons-full-reader"><svg data-toggle="dropdown" aria-expanded="false" class="dropdown-toggle icon-list" version="1.1" id="tree_nav" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="104.5 -245.5 51 51" style="enable-background:new 104.5 -245.5 50 50;" xml:space="preserve"><path d="M130.895-218.312c-0.922,0-1.842-0.317-2.59-0.951l-11.01-9.352c-1.684-1.43-1.889-3.955-0.459-5.638c1.43-1.684,3.953-1.89,5.639-0.459l8.42,7.152l8.42-7.152c1.686-1.43,4.211-1.225,5.639,0.459c1.43,1.684,1.225,4.208-0.459,5.638l-11.01,9.352C132.738-218.628,131.816-218.312,130.895-218.312z M133.486-206.289l11.008-9.352c1.684-1.43,1.889-3.955,0.459-5.638c-1.43-1.682-3.955-1.89-5.639-0.458l-8.418,7.152l-8.422-7.152c-1.686-1.431-4.209-1.225-5.639,0.459c-1.43,1.684-1.225,4.208,0.461,5.638l11.012,9.352c0.746,0.634,1.668,0.951,2.588,0.951C131.818-205.337,132.74-205.654,133.486-206.289z"/></svg><div class="dropdown-menu theme pull-right theme-white keep-open" id="toc-list"><h3>内容目录</h3><hr><div class="table-of-contents"><div class="toc"><ul><li>'. self::buildMenuHtml( self::$tree ) .'</div></div></div></li></ul></div>';
         $js = Helper::options()->pluginUrl . '/MenuTree/dropdown.js?v=' . self::$v;
         echo <<<HTML
-            <script src="{$js}"></script>
-            <script type="text/javascript">
-            jQuery('body').append('$html');
-            jQuery('.in-page-preview-buttons .dropdown-menu.keep-open').on('click', function (e) {
+        <script src="{$js}"></script>
+        <script type="text/javascript">
+        (function($) {
+            $('body').append('$html');
+            $('.in-page-preview-buttons .dropdown-menu.keep-open').on('click', function (e) {
               e.stopPropagation();
             });
-            </script>
+        })(jQuery);
+        </script>
 HTML;
         self::$id = 1;
         self::$tree = array();
