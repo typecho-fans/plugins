@@ -39,6 +39,7 @@ ThemeDemo v1.2.2 - 社区维护版
 ## 版本历史
  * v1.2.2 (25-07-23) [@hongweipeng](https://github.com/hongweipeng)
    * 修复子路径模式无法使用问题；
+   * 修复 cookie 模式取值问题；
  * v1.2.1 (20-07-19 [@jzwalk](https://github.com/jzwalk))
    * 综合之前所有衍生版本功能：
      * 集成Cookie与子路径双模式，增加切换选项；

@@ -163,8 +163,9 @@ class ThemeDemo_Plugin implements Typecho_Plugin_Interface
             );
 
             /** 请求模版预览时设置cookie */
-            if (isset($widget->request->theme) && $widget->request->isGet()) {
-                $themeName = $widget->request->theme;
+            $request = $widget->request;
+            if (isset($request->theme) && $request->isGet()) {
+                $themeName = $request->theme;
 
                 if (!empty($themeName) && static::check($themeName)) {
                     $value = static::themeInfo($themeName);
