@@ -220,6 +220,7 @@ function updatePlugins(string $tableFile, array $requested, string $token = '', 
                             $tfLocal = $tf && is_dir($url); //本地社区维护版
                             $datas = [];
                             $plugin = '';
+                            $infos = [];
                             if (!$tfLocal) {
                                 //API查询repo文件树
                                 if ($github || $gitee) {
@@ -262,7 +263,11 @@ function updatePlugins(string $tableFile, array $requested, string $token = '', 
                             } else {
                                 //本地读取主文件信息
                                 $plugin = pluginRoute($url, $name);
-                                $infos = parseInfo($plugin);
+                                if ($plugin) {
+                                    $infos = parseInfo($plugin);
+                                } else {
+                                    $logs .= 'Error: Local directory - "' . $url . '" not valid!' . PHP_EOL;
+                                }
                             }
 
                             $noPlugin = empty($infos['version']); //表格repo信息无效
