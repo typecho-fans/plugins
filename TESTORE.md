@@ -28,7 +28,7 @@
 
  > 下载链接文字可用于附加图标和关键字筛选：如`下载`即非社区版，`不可用`带⛔，`特殊`带⚠️意为启用须遵照文档步骤。
 
-### 插件信息 (485)
+### 插件信息 (489)
 
 ###### TeStore会使用下表“名称”创建文件夹，“版本”数字判断升级，请尽量确保文本准确，按字母排序，简介便于关键字搜索。
 ```
@@ -202,8 +202,8 @@
 [GithubGist](https://github.com/fengqi/typecho-gitst-proxy) | 文内[Gist](https://gist.github.com)替换为代理加速地址插件 | 0.0.1 | [Simple Code](https://github.com/fengqi) | [特殊](https://github.com/fengqi/typecho-gitst-proxy/archive/master.zip)
 [GithubWidgetPlus](https://github.com/sundaqiang/GithubWidgetPlus) | Github名片 | 0.3.0 | [sunadqiang](https://github.com/sundaqiang),[hongweipeng](https://github.com/hongweipeng) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/GithubWidgetPlus.zip)
 [Gitment4typecho](https://github.com/nitu2003/Gitment4typecho) | 基于[Gitment](https://github.com/imsun/gitment)的评论/留言系统插件 | 1.2 | [Taskeren](https://github.com/nitu2003) | [下载](https://github.com/nitu2003/Gitment4typecho/archive/master.zip)
-[GoogleAnalytics](https://github.com/typecho/plugins/tree/master/GoogleAnalytics) | 页面底部插入Google统计代码插件 | 1.0.0 | [mutoo](https://github.com/mutoo) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/GoogleAnalytics.zip)
-[GoogleCodePrettify](https://github.com/typecho/plugins/tree/master/GoogleCodePrettify) | 经典谷歌代码高亮插件(html标签) | 1.0.0 | [qining](https://github.com/joyqi) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/GoogleCodePrettify_qining.zip)
+[GoogleAnalytics](https://github.com/typecho/plugins/tree/master/GoogleAnalytics) | 页面底部插入Google统计代码插件 | 1.0.0 | [mutoo](https://github.com/mutoo) | [最近](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/GoogleAnalytics.zip)
+[GoogleCodePrettify](https://github.com/typecho/plugins/tree/master/GoogleCodePrettify) | 经典谷歌代码高亮插件(html标签) | 1.0.0 | [qining](https://github.com/joyqi) | [最近](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/GoogleCodePrettify_qining.zip)
 [GravatarServer](https://github.com/kraity/typecho-gravatar) | Gravatar服务器插件(支持QQ头像) | 1.1.1 | [权那他](https://github.com/kraity) | [下载](https://github.com/kraity/typecho-gravatar/archive/master.zip)
 [GravatarShortcode](https://github.com/Siphils/GravatarShortcode-Typecho-Plugin) | 文内插入Gravatar头像短代码插件 | 1.0.3 | [Siphils](https://github.com/Siphils) | [下载](https://github.com/Siphils/GravatarShortcode-Typecho-Plugin/archive/master.zip)
 [GravatarShow](https://github.com/szj1006/GravatarShow) | 简易替换Gravatar地址为https插件 | 1.0.0 | [SangSir](https://github.com/szj1006) | [下载](https://github.com/szj1006/GravatarShow/archive/master.zip)
