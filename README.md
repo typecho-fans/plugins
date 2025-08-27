@@ -6,7 +6,7 @@
 [![support](https://img.shields.io/badge/TeStore-Supported-green.svg?style=for-the-badge)](TeStore)
 [![issues](https://img.shields.io/github/issues-closed-raw/typecho-fans/plugins.svg?style=for-the-badge)](https://github.com/typecho-fans/plugins/issues?q=is%3Aissue+is%3Aclosed)
 
-**本目录内插件源码由社区成员自愿共同维护，尽量维持可用，报错可提交[Issues](https://github.com/typecho-fans/plugins/issues)，作者加入请阅读下方须知。🐧交流QQ群：[**40412938**](http://shang.qq.com/wpa/qunwpa?idkey=a5a8afedf099e18ddf9b530db9217251e39001d52aace42888bf470d9b6cb86a)**</div>
+**本目录内插件源码由社区成员自愿共同维护，报错提交[Issues](../../issues)，作者加入请阅读下方须知。🐧交流QQ群：[**40412938**](http://shang.qq.com/wpa/qunwpa?idkey=a5a8afedf099e18ddf9b530db9217251e39001d52aace42888bf470d9b6cb86a)**</div>
 
 ------------------------------
 
@@ -67,7 +67,7 @@
 [CommentFilter](CommentFilter) | 评论昵称/链接/内容/IP过滤插件 | 1.2.1 | [jrotty](https://github.com/jrotty),[ghostry](https://blog.ghostry.cn),[Hanny](http://www.imhan.com) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/CommentFilter.zip)
 [CommentPush](CommentPush) | 评论推送微信QQ钉钉邮箱插件 | 1.7.1 | [gaobinzhan](https://github.com/gaobinzhan),[奥秘Sir](https://blog.say521.cn) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/CommentPush.zip)
 [CommentToMail](CommentToMail) | 发布回复评论邮件自动提醒插件 | 2.0.1 | [Byends](https://github.com/visamz), [DEFE](https://github.com/defeme) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/CommentToMail.zip)
-[CommentNotifier](CommentNotifier) | 评论邮件提醒插件要求Typecho1.2.0版本及以上 | 1.4.3 | [泽泽社长](https://github.com/jrotty) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/CommentNotifier.zip)
+[CommentNotifier](CommentNotifier) | 评论邮件提醒插件（Typecho1.2.0以上） | 1.4.3 | [泽泽社长](https://github.com/jrotty) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/CommentNotifier.zip)
 [ContentIndex](ContentIndex) | 自动生成美化版文章目录树插件 | 1.0.0 | [laobubu](https://github.com/laobubu) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/ContentIndex.zip)
 [Contribute](Contribute) | 前台免注册投稿及审查发布插件 | 1.0.0 | [ShingChi](https://github.com/shingchi) | [Special](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/Contribute.zip)
 [CosForTypecho](CosForTypecho) | Typecho用腾讯云COS存储插件 | 1.0.1 | [Charmeryl](https://github.com/jqjiang819) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/CosForTypecho.zip)
@@ -106,7 +106,7 @@
 [LoveKKComment](LoveKKComment) | 评论邮件通知与密码找回插件 | 1.0.6 | [康粑粑](https://github.com/ylqjgm) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-H_to_L/LoveKKComment.zip)
 [LoveKKWeiBo](LoveKKWeiBo) | 用新浪微博作附件上传图床插件 | 1.0.1 | [康粑粑](https://github.com/ylqjgm) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-H_to_L/LoveKKWeiBo.zip)
 [MagikeEditor](MagikeEditor) | Magike移植Html源码编辑器插件 | 1.1.1 | [羽中](https://github.com/jzwalk), [Hanny](http://www.imhan.com) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/MagikeEditor.zip)
-[MarkdownParse](https://github.com/mrgeneralgoo/typecho-markdown) | Markdown解析(CommonMark+GFM+MathJax+Mermaid+目录) | 2.0.0 | [mrgeneral](https://github.com/mrgeneralgoo) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/MarkdownParse.zip)
+[MarkdownParse](https://github.com/mrgeneralgoo/typecho-markdown) | CommonMark+GFM全能Markdown解析插件 | 2.0.0 | [mrgeneral](https://github.com/mrgeneralgoo) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/MarkdownParse.zip)
 [Memos](https://github.com/fengqi/typecho-memos) | Memos列表读取插件 | 0.1.0 | [fengqi](https://github.com/fengqi) | [Download](https://github.com/fengqi/typecho-memos/archive/refs/tags/v0.1.0.zip)
 [MenuTree](MenuTree) | 代码嵌入式文章内容目录树插件 | 0.1.2 | [BeaconFire](https://github.com/wuruowuxin74),Melon | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/MenuTree.zip)
 [MenuTree](MenuTree_hongweipeng) | 右侧悬浮式文章内容目录树插件 | 0.8.1 | [hongweipeng](https://github.com/hongweipeng) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/MenuTree_hongweipeng.zip)
