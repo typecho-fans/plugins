@@ -1,60 +1,68 @@
-# 手动检测某个已登记GitHub插件版本并强制更新zip
-# 运行方法：点击顶部"Actions" - 左侧选本脚本名 - 右上可见"Run workflow"
 
-name: "手动更新单GitHub插件"
+name: "推送检测改动表格条目"
 
-on: 
-  workflow_dispatch:
-    inputs:
-      repo-url:
-        description: "GitHub插件目录地址(结尾勿带'/'号)"
-        required: true
-        default: "https://github.com/user/repo"
+on:
+  push:
+    branches:
+      - "master"
 
 jobs:
 
-  auto-update:
-    name: "手动更新GitHub插件"
+  diff-update:
+    name: "更新有变动的插件zip"
     runs-on: "ubuntu-latest"
 
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: "生成实时diff"
+        id: match-diff
+        run: |
+          mkdir -p /home/runner/work/plugins/TMP
+          diff=$(git diff HEAD^ HEAD)
+          if echo "$diff" | tee /home/runner/work/plugins/TMP/latest.diff | grep -qE "^\+\+\+ b/(TESTORE\.md|README_test\.md)"
+          then
+              echo md=1 >> $GITHUB_OUTPUT
+          else
+              echo md= >> $GITHUB_OUTPUT
+          fi
 
       - name: "执行PHP脚本"
+        if: steps.match-diff.outputs.md
         run: |
-          php AUTO-UPDATE.php ${{ secrets.GITHUB_TOKEN }} ${{ github.event.inputs.repo-url }}
+          php AUTO-UPDATE.php ${{ secrets.GITHUB_TOKEN }} /home/runner/work/plugins/TMP/latest.diff
 
       - name: "提交更新文件"
-        uses: stefanzweifel/git-auto-commit-action@v4
+        uses: stefanzweifel/git-auto-commit-action@v6
+        if: steps.match-diff.outputs.md
         with:
-          commit_message: "Force update a GitHub plugin in TESTORE.md"
+          commit_message: "Auto update altered plugins in TESTORE.md & README.md"
 
       - name: "上传操作记录"
         uses: actions/upload-artifact@v4
+        if: steps.match-diff.outputs.md
         with:
           name: "updates-log"
           path: /home/runner/work/plugins/TMP/updates.log
 
       - name: "检测压缩文件"
         id: match-zips
+        if: steps.match-diff.outputs.md
         run: |
-          a2c=`find /home/runner/work/plugins/TMP/NEW -type f -name "[a-cA-C]*"`
-          echo "::set-output name=A2C::$a2c"
-          d2g=`find /home/runner/work/plugins/TMP/NEW -type f -name "[d-gD-G]*"`
-          echo "::set-output name=D2G::$d2g"
-          h2l=`find /home/runner/work/plugins/TMP/NEW -type f -name "[h-lH-L]*"`
-          echo "::set-output name=H2L::$h2l"
-          m2r=`find /home/runner/work/plugins/TMP/NEW -type f -name "[m-rM-R]*"`
-          echo "::set-output name=M2R::$m2r"
-          s2z=`find /home/runner/work/plugins/TMP/NEW -type f -name "[s-zS-Z]*"`
-          echo "::set-output name=S2Z::$s2z"
+          echo A2C=$(find /home/runner/work/plugins/NEW -type f -name "[a-cA-C]*") >> $GITHUB_OUTPUT
+          echo D2G=$(find /home/runner/work/plugins/NEW -type f -name "[d-gD-G]*") >> $GITHUB_OUTPUT
+          echo H2L=$(find /home/runner/work/plugins/NEW -type f -name "[h-lH-L]*") >> $GITHUB_OUTPUT
+          echo M2R=$(find /home/runner/work/plugins/NEW -type f -name "[m-rM-R]*") >> $GITHUB_OUTPUT
+          echo S2Z=$(find /home/runner/work/plugins/NEW -type f -name "[s-zS-Z]*") >> $GITHUB_OUTPUT
 
       - name: "发布压缩包A-C"
         uses: svenstaro/upload-release-action@v2
         if: steps.match-zips.outputs.A2C
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
-          file: /home/runner/work/plugins/TMP/NEW/[a-cA-C]*
+          file: /home/runner/work/plugins/NEW/[a-cA-C]*
           tag: "plugins-A_to_C"
           overwrite: true
           file_glob: true
@@ -64,7 +72,7 @@ jobs:
         if: steps.match-zips.outputs.D2G
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
-          file: /home/runner/work/plugins/TMP/NEW/[d-gD-G]*
+          file: /home/runner/work/plugins/NEW/[d-gD-G]*
           tag: "plugins-D_to_G"
           overwrite: true
           file_glob: true
@@ -74,7 +82,7 @@ jobs:
         if: steps.match-zips.outputs.H2L
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
-          file: /home/runner/work/plugins/TMP/NEW/[h-lH-L]*
+          file: /home/runner/work/plugins/NEW/[h-lH-L]*
           tag: "plugins-H_to_L"
           overwrite: true
           file_glob: true
@@ -84,7 +92,7 @@ jobs:
         if: steps.match-zips.outputs.M2R
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
-          file: /home/runner/work/plugins/TMP/NEW/[m-rM-R]*
+          file: /home/runner/work/plugins/NEW/[m-rM-R]*
           tag: "plugins-M_to_R"
           overwrite: true
           file_glob: true
@@ -94,7 +102,7 @@ jobs:
         if: steps.match-zips.outputs.S2Z
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
-          file: /home/runner/work/plugins/TMP/NEW/[s-zS-Z]*
+          file: /home/runner/work/plugins/NEW/[s-zS-Z]*
           tag: "plugins-S_to_Z"
           overwrite: true
           file_glob: true

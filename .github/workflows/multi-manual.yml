@@ -1,17 +1,20 @@
-# 自动检测所有已登记GitHub插件版本并同步更新zip
+# 手动检测已登记插件(支持Gitee等)并强制更新zip
+# 运行：Actions页左上选脚本，右侧Run workflow填写后点绿按钮
 
-name: "定时更新全GitHub插件"
+name: "🧩手动更新任意收录插件"
 
-on:
-  schedule:
-    - cron: "0 19 * * SUN"
-#服务器时间：晚7点，每周日
-#北京时间：凌晨3点，每周一
+on: 
+  workflow_dispatch:
+    inputs:
+      repo-git:
+        description: "插件名称或目录地址，多项可用','号分隔"
+        required: true
+        default: "https://github.com/user/repo"
 
 jobs:
 
-  auto-update:
-    name: "自动更新GitHub插件"
+  manual-update:
+    name: "手动更新Git源插件"
     runs-on: "ubuntu-latest"
 
     steps:
@@ -19,12 +22,12 @@ jobs:
 
       - name: "执行PHP脚本"
         run: |
-          php AUTO-UPDATE.php ${{ secrets.GITHUB_TOKEN }}
+          php AUTO-UPDATE.php ${{ secrets.GITHUB_TOKEN }} ${{ github.event.inputs.repo-git }}
 
       - name: "提交更新文件"
-        uses: stefanzweifel/git-auto-commit-action@v4
+        uses: stefanzweifel/git-auto-commit-action@v6
         with:
-          commit_message: "Auto update GitHub plugins in TESTORE.md"
+          commit_message: "Force update requested plugins in TESTORE.md & README.md"
 
       - name: "上传操作记录"
         uses: actions/upload-artifact@v4
@@ -35,23 +38,18 @@ jobs:
       - name: "检测压缩文件"
         id: match-zips
         run: |
-          a2c=`find /home/runner/work/plugins/TMP/NEW -type f -name "[a-cA-C]*"`
-          echo "::set-output name=A2C::$a2c"
-          d2g=`find /home/runner/work/plugins/TMP/NEW -type f -name "[d-gD-G]*"`
-          echo "::set-output name=D2G::$d2g"
-          h2l=`find /home/runner/work/plugins/TMP/NEW -type f -name "[h-lH-L]*"`
-          echo "::set-output name=H2L::$h2l"
-          m2r=`find /home/runner/work/plugins/TMP/NEW -type f -name "[m-rM-R]*"`
-          echo "::set-output name=M2R::$m2r"
-          s2z=`find /home/runner/work/plugins/TMP/NEW -type f -name "[s-zS-Z]*"`
-          echo "::set-output name=S2Z::$s2z"
+          echo A2C=$(find /home/runner/work/plugins/NEW -type f -name "[a-cA-C]*") >> $GITHUB_OUTPUT
+          echo D2G=$(find /home/runner/work/plugins/NEW -type f -name "[d-gD-G]*") >> $GITHUB_OUTPUT
+          echo H2L=$(find /home/runner/work/plugins/NEW -type f -name "[h-lH-L]*") >> $GITHUB_OUTPUT
+          echo M2R=$(find /home/runner/work/plugins/NEW -type f -name "[m-rM-R]*") >> $GITHUB_OUTPUT
+          echo S2Z=$(find /home/runner/work/plugins/NEW -type f -name "[s-zS-Z]*") >> $GITHUB_OUTPUT
 
       - name: "发布压缩包A-C"
         uses: svenstaro/upload-release-action@v2
         if: steps.match-zips.outputs.A2C
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
-          file: /home/runner/work/plugins/TMP/NEW/[a-cA-C]*
+          file: /home/runner/work/plugins/NEW/[a-cA-C]*
           tag: "plugins-A_to_C"
           overwrite: true
           file_glob: true
@@ -61,7 +59,7 @@ jobs:
         if: steps.match-zips.outputs.D2G
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
-          file: /home/runner/work/plugins/TMP/NEW/[d-gD-G]*
+          file: /home/runner/work/plugins/NEW/[d-gD-G]*
           tag: "plugins-D_to_G"
           overwrite: true
           file_glob: true
@@ -71,7 +69,7 @@ jobs:
         if: steps.match-zips.outputs.H2L
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
-          file: /home/runner/work/plugins/TMP/NEW/[h-lH-L]*
+          file: /home/runner/work/plugins/NEW/[h-lH-L]*
           tag: "plugins-H_to_L"
           overwrite: true
           file_glob: true
@@ -81,7 +79,7 @@ jobs:
         if: steps.match-zips.outputs.M2R
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
-          file: /home/runner/work/plugins/TMP/NEW/[m-rM-R]*
+          file: /home/runner/work/plugins/NEW/[m-rM-R]*
           tag: "plugins-M_to_R"
           overwrite: true
           file_glob: true
@@ -91,7 +89,7 @@ jobs:
         if: steps.match-zips.outputs.S2Z
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
-          file: /home/runner/work/plugins/TMP/NEW/[s-zS-Z]*
+          file: /home/runner/work/plugins/NEW/[s-zS-Z]*
           tag: "plugins-S_to_Z"
           overwrite: true
           file_glob: true

@@ -1,13 +1,12 @@
-# 同步数据至Gitee/jsDelivr等加速地址供TeStore调用
 
-name: "更新Action后同步镜像"
+name: "Actions执行后同步数据"
 
 on:
   workflow_run:
     workflows:
-      - "手动更新单GitHub插件"
-      - "定时更新全GitHub插件"
-      - "推送更新变动插件zip包"
+      - "diff-on-push.yml"
+      - "gh-scheduled.yml"
+      - "multi-manual.yml"
     branches:
       - "master"
     types:
@@ -15,35 +14,33 @@ on:
 
 jobs:
 
-  dispatch-mirror:
-    name: "同步API和Gitee目录"
+  download-sync:
+    name: "下载API并推送Gitee"
     runs-on: "ubuntu-latest"
 
     steps:
-      - name: "获取执行后时间戳"
-        id: "get-update"
-        run: |
-          stamp=`date +%s`
-          echo "::set-output name=upDate::$stamp"
-
       - uses: actions/checkout@v4
-      - name: "获取ZIP_CDN计数"
-        id: "get-total"
-        working-directory: ZIP_CDN
+
+      - name: "ZIP_CDN数据"
         run: |
-          count=`git ls-files | wc -l`
-          echo "::set-output name=toTal::$count"
+          curl -s https://api.github.com/repos/typecho-fans/plugins/contents/ZIP_CDN > ZIP_CDN.json
 
-      - name: "触发API目录更新"
-        uses: peter-evans/repository-dispatch@v1
+      - name: "文档变更时间"
+        run: |
+          date_testore=`curl -s "https://api.github.com/repos/typecho-fans/plugins/commits?path=TESTORE.md&page=1&per_page=1" | jq -r ".[0].commit.committer.date"`
+          date_readme=`curl -s "https://api.github.com/repos/typecho-fans/plugins/commits?path=README.md&page=1&per_page=1" | jq -r ".[0].commit.committer.date"`
+          if [[ $date_testore > $date_readme ]]; then
+            echo $date_testore > UD_TIME.json
+          else
+            echo $date_readme > UD_TIME.json
+          fi
+
+      - name: "提交文件更新"
+        uses: stefanzweifel/git-auto-commit-action@v6
         with:
-          token: ${{ secrets.API_MIRROR }}
-          repository: jzwalk/API_Mirror
-          event-type: sync
-          # 传递两项数据参数
-          client-payload: '{"total": "${{ steps.get-total.outputs.toTal }}", "update": "${{ steps.get-update.outputs.upDate }}"}'
+          commit_message: "Fetch API data & sync repo to Gitee for TeStore accelerations"
 
-      - name: "推送Gitee镜像同步"
+      - name: "同步Gitee镜像"
         uses: Yikun/hub-mirror-action@master
         with:
           src: github/typecho-fans
