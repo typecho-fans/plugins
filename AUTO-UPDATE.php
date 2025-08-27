@@ -17,7 +17,7 @@ if (str_contains($requestUrl, '.diff')) {
     $diffs = explode(PHP_EOL, $record);
 
     //查找有关文档变更
-    $begin = array_search('+++ b/README_test.md', $diffs) ?? (array_search('+++ b/TESTORE.md', $diffs) ?? 0);
+    $begin = array_search('+++ b/README.md', $diffs) ?? (array_search('+++ b/TESTORE.md', $diffs) ?? 0);
     foreach ($diffs as $line => $diff) {
         if ($line > $begin) {
             //匹配变更行repo信息
@@ -40,15 +40,15 @@ if (str_contains($requestUrl, '.diff')) {
 
 //检测文档执行更新
 $movable = [];
-if (file_exists('README_test.md')) {
-    $movable = updatePlugins('README_test.md', $urls, $authKey);
+if (file_exists('README.md')) {
+    $movable = updatePlugins('README.md', $urls, $authKey);
 } else {
     throw new RuntimeException('README.md is missing!');
 }
 if (file_exists('TESTORE.md')) {
     $movable = updatePlugins('TESTORE.md', $urls, $authKey, $movable);
     if ($movable) {
-        updatePlugins('README_test.md', $urls, 'rec', $movable); //rec情况递归
+        updatePlugins('README.md', $urls, 'rec', $movable); //rec情况递归
     }
 } else {
     throw new RuntimeException('TESTORE.md is missing!');
@@ -176,7 +176,7 @@ function updatePlugins(string $tableFile, array $requested, string $token = '', 
                             ) .
                             '.zip';
 
-                        $tf = $tableFile == 'README_test.md';
+                        $tf = $tableFile == 'README.md';
                         $isUrl = str_starts_with($url, 'http://') || str_starts_with($url, 'https://');
                         $zipMeta = end($metas);
                         $latest = $token ? array_slice($listNames, 0, 20) : $added; //zip名表分割或引入前20
@@ -462,7 +462,7 @@ function updatePlugins(string $tableFile, array $requested, string $token = '', 
                                         !in_array(explode('_', $outName)[0], $requested)
                                     ) {
                                         updatePlugins($tableFile, [$outName], '', $latest); //空token情况递归
-                                        updatePlugins($tf ? 'TESTORE.md' : 'README_test.md', [$outName], '', $latest);
+                                        updatePlugins($tf ? 'TESTORE.md' : 'README.md', [$outName], '', $latest);
                                     }
 
                                     //记录插件改动明细
@@ -781,7 +781,7 @@ function dispatchZips(
     $host = parse_url($url, PHP_URL_HOST);
     $github = $host == 'github.com';
     $folder = realpath('../') . '/TMP/' . $index . '_' . $name;
-    $tfLocal = $md == 'README_test.md' && is_dir($url);
+    $tfLocal = $md == 'README.md' && is_dir($url);
     if (!is_dir($folder) && !$tfLocal) {
         mkdir($folder, 0777, true);
     }
