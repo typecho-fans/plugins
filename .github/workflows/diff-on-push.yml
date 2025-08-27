@@ -22,7 +22,7 @@ jobs:
         run: |
           mkdir -p /home/runner/work/plugins/TMP
           diff=$(git diff HEAD^ HEAD)
-          if echo "$diff" | tee /home/runner/work/plugins/TMP/latest.diff | grep -qE "^\+\+\+ b/(TESTORE\.md|README_test\.md)"
+          if echo "$diff" | tee /home/runner/work/plugins/TMP/latest.diff | grep -qE "^\+\+\+ b/(TESTORE\.md|README\.md)"
           then
               echo md=1 >> $GITHUB_OUTPUT
           else
