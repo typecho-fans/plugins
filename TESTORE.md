@@ -28,7 +28,7 @@
 
  > 下载链接文字可用于附加图标和关键字筛选：如`下载`即非社区版，`不可用`带⛔，`特殊`带⚠️意为启用须遵照文档步骤。
 
-### 插件信息 (492)
+### 插件信息 (494)
 
 ###### TeStore会使用下表“名称”创建文件夹，“版本”数字判断升级，请尽量确保文本准确，按字母排序，简介便于关键字搜索。
 ```
@@ -54,6 +54,7 @@
 [AjaxComment](https://github.com/qlwz/AjaxComment-For-Typecho) | 原生JS评论Ajax异步提交功能插件 | 1.0.0.2 | [情留メ蚊子](https://github.com/qlwz) | [下载](https://github.com/qlwz/AjaxComment-For-Typecho/archive/master.zip)
 [Akalin](https://github.com/huhaku/typecho_Akalin) | 指定常用登录地IP后台白名单插件 | 1.0.0 | [huhaku](https://github.com/huhaku) | [下载](https://github.com/huhaku/typecho_Akalin/archive/master.zip)
 [Akismet](https://github.com/typecho/plugins/tree/master/Akismet) | 经典反垃圾评论服务Akismet插件 | 1.1.4 | [qining](https://github.com/joyqi) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/Akismet.zip)
+[Akismet](https://github.com/typecho/plugins/tree/master/PostToQzone) | QQ邮箱同步发布文到Qzone插件 | 1.1.4 | [qining](http://typecho.org) | [不可用](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/PostToQzone.zip)
 [Album](https://github.com/THX-plus/Album) | Typecho模版型页面相册系统插件 | 1.2 | [我本奈何](https://github.com/THX-plus) | [下载](https://github.com/THX-plus/Album/archive/master.zip)
 [AliOSS](https://github.com/chaclee/typecho-oss) | Typecho附件上传阿里云OSS插件 | 1.0.1 | [raintao](https://github.com/chaclee) | [下载](https://github.com/chaclee/typecho-oss/archive/master.zip)
 [AliOssForTypecho](https://github.com/droomo/AliOssForTypecho) | 新OSS云储存插件(本地备份+样式) | 1.1.8 | [droomo.](https://github.com/droomo) | [下载](https://github.com/droomo/AliOssForTypecho/archive/master.zip)
@@ -109,7 +110,6 @@
 [CdnHelper](https://github.com/phpgao/CdnHelper) | 批量替换图片地址为CDN前缀插件 | 0.1 | [老高](https://github.com/phpgao) | [下载](https://github.com/phpgao/CdnHelper/archive/master.zip)
 [CkEditor](https://plugins.typecho.me/plugins/ckeditor-4-0-1-1.html) | 精简版CKEditor可视化编辑器插件 | 1.0.2 | jooies | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/CkEditor.zip)
 [Clipboard2markdown](https://github.com/FaithPatrick/typecho-clipboard2markdown) | Markdown剪贴板内容格式化插件 | 1.0.0 | [大袋鼠](https://github.com/FaithPatrick) | [下载](https://github.com/FaithPatrick/typecho-clipboard2markdown/archive/master.zip)
-[Cloudflare R2](https://github.com/fengqi/typecho-cloudflare-r2) | 上传附件到 Cloudflare R2 | 0.0.1 | [fengqi](https://github.com/fengqi) | [下载](https://github.com/fengqi/typecho-cloudflare-r2/archive/refs/heads/master.zip)
 [CloudflareAnalytics](https://github.com/CinemaMediaGroup/typecho_Cloudflare_Analytics_Plugin) | 定制[Cloudflare](https://www.cloudflare.com)统计页面模板插件 | 1.0.0 | [Cinema](https://github.com/CinemaMediaGroup) | [不可用](https://github.com/CinemaMediaGroup/typecho_Cloudflare_Analytics_Plugin/archive/master.zip)
 [CloudflareIP](https://gitee.com/freej2015/CloudflareIP) | 从[Cloudflare](https://www.cloudflare.com)获取并替换用户IP插件 | 0.0.1 | [yaecho](https://gitee.com/freej2015) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/CloudflareIP.zip)
 [CloudflarePurgeCache](https://github.com/Akyuu/typecho-plugin-cloudflare-purge-cache) | [Cloudflare](https://www.cloudflare.com)静态化API清除缓存插件 | 1.0 | [Alice](https://github.com/Akyuu) | [下载](https://github.com/Akyuu/typecho-plugin-cloudflare-purge-cache/archive/master.zip)
@@ -120,7 +120,7 @@
 [CodeHighlighter](https://github.com/Copterfly/CodeHighlighter-for-Typecho) | [Prism](https://prismjs.com)代码高亮插件(支持复制按钮) | 1.0.0 | [Copterfly](https://github.com/Copterfly) | [下载](https://github.com/Copterfly/CodeHighlighter-for-Typecho/archive/master.zip)
 [CodePrettify](https://github.com/HyanCat/Typecho-CodePrettify) | GooglePrettify高亮插件(需jQuey) | 0.0.1 | [HyanCat](https://github.com/HyanCat) | [下载](https://github.com/HyanCat/Typecho-CodePrettify/archive/master.zip)
 [Collect](https://qqdie.com/archives/lanmao-typecho-caiji.html) | [影视一号模板](https://qqdie.com/archives/typecho-video-template.html)站点用动漫采集插件 | 1.0.0 | Moez | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/Collect.zip)
-[Collection](https://github.com/tennsinn/Typecho_Plugin--Collection) | Typecho记录条目管理进度用插件 | 1.23.7 | [两仪天心](http://tennsinn.com) | [最近](https://github.com/tennsinn/Typecho_Plugin--Collection/archive/master.zip)
+[Collection](https://github.com/tennsinn/Typecho_Plugin--Collection) | Typecho记录条目管理进度用插件 | 1.23.7 | [两仪天心](http://tennsinn.com) | [下载](https://github.com/tennsinn/Typecho_Plugin--Collection/archive/master.zip)
 [ColorfulTags](https://github.com/invelop/Typecho-ColorfulTags) | Typecho生成彩色版3D标签云插件 | 1.6 | [锋临](https://github.com/invelop) | [下载](https://github.com/invelop/Typecho-ColorfulTags/archive/master.zip)
 [Comment2Bark](https://github.com/isSuperman/Comment2Bark) | 评论推送至iPhone应用[Bark](https://apps.apple.com/cn/app/bark-customed-notifications/id1403753865)版插件 | 1.1 | [isSuperman](https://github.com/isSuperman/Typecho-Plugin-Comment2Bark) | [下载](https://github.com/isSuperman/Comment2Bark/archive/master.zip)
 [Comment2Hook](https://github.com/SuperPHP/Typecho_Comment2Hook_Plugin) | 评论推送Webhooks三合一版插件 | 1.1.0 | [medmin](https://github.com/medmin) | [下载](https://github.com/SuperPHP/Typecho_Comment2Hook_Plugin/archive/master.zip)
@@ -150,11 +150,10 @@
 [Copyright](https://github.com/Yves-X/Copyright-for-Typecho) | 自定义字段文末附加版权信息插件 | 1.0.4 | [Yves X](https://github.com/Yves-X) | [下载](https://github.com/Yves-X/Copyright-for-Typecho/archive/master.zip)
 [CreativeCommons](https://github.com/zhangpeng96/typecho-creative-commons) | 文末自动加知识共享版权声明插件 | 0.6.2 | [zhangpeng96](https://github.com/zhangpeng96) | [下载](https://github.com/zhangpeng96/typecho-creative-commons/archive/master.zip)
 [Creole](https://github.com/typecho/plugins/tree/master/Creole) | Wiki式Creole写作语法解析器插件 | 0.2 | [明城](https://github.com/mingcheng) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/Creole.zip)
-[Crypter](https://github.com/typecho/plugins/tree/master/PostToQzone) | QQ邮箱同步发布文到Qzone插件 | 1.0 beta | [blankyao](https://github.com/blankyao) | [不可用](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/PostToQzone.zip)
 [CustomCssAndJs](https://github.com/kyuuseiryuu/typecho-plugin-custom-css-js) | 输出定制头部Css或尾部Js代码插件 | 1.0 | [KyuuSeiryuu](https://github.com/kyuuseiryuu) | [下载](https://github.com/kyuuseiryuu/typecho-plugin-custom-css-js/archive/master.zip)
-[CustomRSS](https://github.com/ibluehe/CustomRSS) | Typecho生成rss.xml的RSS订阅 | 1.0.3 | [寻鹤](https://bluehe.cn/) | [最近](https://github.com/ibluehe/CustomRSS/archive/refs/heads/main.zip)
-[CustomRSS](https://github.com/ibluehe/CustomRSS) | 生成rss.xml格式RSS订阅 | 1.0.3 | [寻鹤](https://bluehe.cn/) | [Latest](https://github.com/ibluehe/CustomRSS/archive/refs/heads/main.zip)
-[CustomRSS](https://github.com/ibluehe/CustomRSS) | 生成rss.xml格式RSS订阅 | 1.0.3 | [寻鹤](https://bluehe.cn/) | [最近](https://github.com/ibluehe/CustomRSS/archive/refs/heads/main.zip)
+[CustomRSS](https://github.com/ibluehe/CustomRSS) | Typecho生成rss.xml的RSS订阅 | 1.0.3 | [寻鹤](https://bluehe.cn/) | [下载](https://github.com/ibluehe/CustomRSS/archive/refs/heads/main.zip)
+[CustomRSS](https://github.com/ibluehe/CustomRSS) | 生成rss.xml格式RSS订阅 | 1.0.3 | [寻鹤](https://bluehe.cn/) | [Download](https://github.com/ibluehe/CustomRSS/archive/refs/heads/main.zip)
+[CustomRSS](https://github.com/ibluehe/CustomRSS) | 生成rss.xml格式RSS订阅 | 1.0.3 | [寻鹤](https://bluehe.cn/) | [下载](https://github.com/ibluehe/CustomRSS/archive/refs/heads/main.zip)
 [DDSBLinks](https://github.com/Nyarime/DDSBLinks) | [DD.SB](https://dd.sb)短链接版跳转外链转换插件 | 1.1.0 b2 | [BBleae](https://baka.studio) & [Nyarime](https://github.com/Nyarime) | [下载](https://github.com/Nyarime/DDSBLinks/archive/master.zip)
 [DPlayer](https://github.com/MoePlayer/DPlayer-Typecho) | 全能音视频播放器插件(支持弹幕) | 1.1.1 | [player](https://github.com/WordPress/WordPress/blob/master/wp-includes/shortcodes.php) | [下载](https://github.com/MoePlayer/DPlayer-Typecho/archive/master.zip)
 [DarkReader](https://github.com/jackytsu/typecho-darkreader) | [Dark Reader](https://darkreader.org)关灯效果阅读器插件 | 1.0.0 | [南宫小骏](https://github.com/jackytsu) | [下载](https://github.com/jackytsu/typecho-darkreader/archive/master.zip)
@@ -203,7 +202,7 @@
 [GitHubGit](https://github.com/typecho/plugins/tree/master/GitHubGit) | 同步至GitHub静态博客Jekyll插件 | 0.0.1 | [weakish](https://github.com/weakish) | [特殊](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/GitHubGit.zip)
 [GitHubShow](https://github.com/HyanCat/Typecho-GitHubShow) | jQuery版短代码式GitHub挂件插件 | 0.0.2 | [HyanCat](https://github.com/HyanCat) | [下载](https://github.com/HyanCat/Typecho-GitHubShow/archive/master.zip)
 [GitWidget](https://gitee.com/SimonH/typecho-gitwidget) | Github或Gitee项目预览小挂件插件 | 1.0.0 | [Simon.H](https://gitee.com/SimonH) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/GitWidget.zip)
-[GithubFile](https://github.com/MliKiowa/GithubFile) | 轻松使用GitHub做附件图床的插件 | 1.4.0 | [Mlikiowa](https://github.com/MliKiowa) | [最新](https://github.com/MliKiowa/GithubFile/archive/master.zip)
+[GithubFile](https://github.com/MliKiowa/GithubFile) | 轻松使用GitHub做附件图床的插件 | 1.4.0 | [Mlikiowa](https://github.com/MliKiowa) | [新版](https://github.com/MliKiowa/GithubFile/archive/master.zip)
 [GithubGist](https://github.com/fengqi/typecho-gitst-proxy) | 文内[Gist](https://gist.github.com)替换为代理加速地址插件 | 0.0.1 | [Simple Code](https://github.com/fengqi) | [特殊](https://github.com/fengqi/typecho-gitst-proxy/archive/master.zip)
 [GithubWidgetPlus](https://github.com/sundaqiang/GithubWidgetPlus) | Github名片 | 0.3.0 | [sunadqiang](https://github.com/sundaqiang),[hongweipeng](https://github.com/hongweipeng) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/GithubWidgetPlus.zip)
 [Gitment4typecho](https://github.com/nitu2003/Gitment4typecho) | 基于[Gitment](https://github.com/imsun/gitment)的评论/留言系统插件 | 1.2 | [Taskeren](https://github.com/nitu2003) | [下载](https://github.com/nitu2003/Gitment4typecho/archive/master.zip)
