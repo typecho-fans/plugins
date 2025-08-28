@@ -4,9 +4,9 @@ name: "Actions执行后同步数据"
 on:
   workflow_run:
     workflows:
-      - "diff-on-push.yml"
-      - "gh-scheduled.yml"
-      - "multi-manual.yml"
+      - "🧩手动更新任意收录插件"
+      - "定时更新GitHub源插件"
+      - "推送检测改动表格条目"
     branches:
       - "master"
     types:
