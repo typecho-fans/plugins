@@ -77,7 +77,7 @@ function updatePlugins(string $tableFile, array $requested, string $token = '', 
     $release = 0;
     $done = 0;
     $nameList = 'ZIP_CDN/NAME_LIST.log';
-    $listConent = file_exists($nameList) ? explode('README.md ALL' . PHP_EOL, file_get_contents($nameList)) : [];
+    $listConent = file_exists($nameList) ? explode('README.md ALL' . PHP_EOL, trim(file_get_contents($nameList))) : [];
     $listNames = $listConent ? explode(PHP_EOL, $listConent[0]) : [];
     $movable = [];
     $allNames = $tf ? ['README.md ALL'] : (isset($listConent[1]) ? explode(PHP_EOL, $listConent[1]) : []);
@@ -553,7 +553,7 @@ function updatePlugins(string $tableFile, array $requested, string $token = '', 
         if ($tf) {
             $listNames = array_merge($listNames, $allNames); //临时记录全表
         }
-        file_put_contents($nameList, implode(PHP_EOL, $listNames));
+        file_put_contents($nameList, implode(PHP_EOL, array_filter($listNames)));
 
         if ($allNames) {
             //检查重复项

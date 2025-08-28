@@ -36,7 +36,7 @@
 ```
 
 名称 | 简介 | 版本 | 作者 | zip包
----- | ----: | :---: | ----: | :----:
+---- | ----: | :---: | ---- | :----:
 [AMP](AMP) | 生成AMP/MIP移动标准页面 | 0.7.6.1 | [Holmesian](https://github.com/holmesian) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/AMP.zip)
 [AbbrSlug](AbbrSlug) | 生成数字文章缩略名 | 1.0.0 | [羽叶](https://github.com/cyea) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/AbbrSlug.zip)
 [AjaxComments](AjaxComments) | 嵌套评论Ajax异步提交效果 | 1.2.0 | [Byends](https://github.com/visamz), Willin Kan | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/AjaxComments.zip)
