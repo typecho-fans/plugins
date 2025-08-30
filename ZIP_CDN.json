@@ -306,16 +306,16 @@
   {
     "name": "Akismet_qining.zip",
     "path": "ZIP_CDN/Akismet_qining.zip",
-    "sha": "6a0ec385e28bae4c14208b303596900d8d81eba7",
-    "size": 2644,
+    "sha": "c7c0d70bd46ad5f59849967ff0ae5fb282fcf97b",
+    "size": 528232,
     "url": "https://api.github.com/repos/typecho-fans/plugins/contents/ZIP_CDN/Akismet_qining.zip?ref=master",
     "html_url": "https://github.com/typecho-fans/plugins/blob/master/ZIP_CDN/Akismet_qining.zip",
-    "git_url": "https://api.github.com/repos/typecho-fans/plugins/git/blobs/6a0ec385e28bae4c14208b303596900d8d81eba7",
+    "git_url": "https://api.github.com/repos/typecho-fans/plugins/git/blobs/c7c0d70bd46ad5f59849967ff0ae5fb282fcf97b",
     "download_url": "https://raw.githubusercontent.com/typecho-fans/plugins/master/ZIP_CDN/Akismet_qining.zip",
     "type": "file",
     "_links": {
       "self": "https://api.github.com/repos/typecho-fans/plugins/contents/ZIP_CDN/Akismet_qining.zip?ref=master",
-      "git": "https://api.github.com/repos/typecho-fans/plugins/git/blobs/6a0ec385e28bae4c14208b303596900d8d81eba7",
+      "git": "https://api.github.com/repos/typecho-fans/plugins/git/blobs/c7c0d70bd46ad5f59849967ff0ae5fb282fcf97b",
       "html": "https://github.com/typecho-fans/plugins/blob/master/ZIP_CDN/Akismet_qining.zip"
     }
   },
@@ -2141,22 +2141,6 @@
       "self": "https://api.github.com/repos/typecho-fans/plugins/contents/ZIP_CDN/Creole_%E6%98%8E%E5%9F%8E.zip?ref=master",
       "git": "https://api.github.com/repos/typecho-fans/plugins/git/blobs/3fc48d9cca588552b26bb80cd1c261a8c69ba323",
       "html": "https://github.com/typecho-fans/plugins/blob/master/ZIP_CDN/Creole_%E6%98%8E%E5%9F%8E.zip"
-    }
-  },
-  {
-    "name": "Crypter_blankyao.zip",
-    "path": "ZIP_CDN/Crypter_blankyao.zip",
-    "sha": "c7c0d70bd46ad5f59849967ff0ae5fb282fcf97b",
-    "size": 528232,
-    "url": "https://api.github.com/repos/typecho-fans/plugins/contents/ZIP_CDN/Crypter_blankyao.zip?ref=master",
-    "html_url": "https://github.com/typecho-fans/plugins/blob/master/ZIP_CDN/Crypter_blankyao.zip",
-    "git_url": "https://api.github.com/repos/typecho-fans/plugins/git/blobs/c7c0d70bd46ad5f59849967ff0ae5fb282fcf97b",
-    "download_url": "https://raw.githubusercontent.com/typecho-fans/plugins/master/ZIP_CDN/Crypter_blankyao.zip",
-    "type": "file",
-    "_links": {
-      "self": "https://api.github.com/repos/typecho-fans/plugins/contents/ZIP_CDN/Crypter_blankyao.zip?ref=master",
-      "git": "https://api.github.com/repos/typecho-fans/plugins/git/blobs/c7c0d70bd46ad5f59849967ff0ae5fb282fcf97b",
-      "html": "https://github.com/typecho-fans/plugins/blob/master/ZIP_CDN/Crypter_blankyao.zip"
     }
   },
   {
@@ -4930,16 +4914,16 @@
   {
     "name": "NAME_LIST.log",
     "path": "ZIP_CDN/NAME_LIST.log",
-    "sha": "8a9b8913462e0588e89a904d69cb4d4a4fd5abfe",
-    "size": 3416,
+    "sha": "9a97ca6a7292dd3eb264e5cbdb6b2ad88fec2ac7",
+    "size": 3435,
     "url": "https://api.github.com/repos/typecho-fans/plugins/contents/ZIP_CDN/NAME_LIST.log?ref=master",
     "html_url": "https://github.com/typecho-fans/plugins/blob/master/ZIP_CDN/NAME_LIST.log",
-    "git_url": "https://api.github.com/repos/typecho-fans/plugins/git/blobs/8a9b8913462e0588e89a904d69cb4d4a4fd5abfe",
+    "git_url": "https://api.github.com/repos/typecho-fans/plugins/git/blobs/9a97ca6a7292dd3eb264e5cbdb6b2ad88fec2ac7",
     "download_url": "https://raw.githubusercontent.com/typecho-fans/plugins/master/ZIP_CDN/NAME_LIST.log",
     "type": "file",
     "_links": {
       "self": "https://api.github.com/repos/typecho-fans/plugins/contents/ZIP_CDN/NAME_LIST.log?ref=master",
-      "git": "https://api.github.com/repos/typecho-fans/plugins/git/blobs/8a9b8913462e0588e89a904d69cb4d4a4fd5abfe",
+      "git": "https://api.github.com/repos/typecho-fans/plugins/git/blobs/9a97ca6a7292dd3eb264e5cbdb6b2ad88fec2ac7",
       "html": "https://github.com/typecho-fans/plugins/blob/master/ZIP_CDN/NAME_LIST.log"
     }
   },
