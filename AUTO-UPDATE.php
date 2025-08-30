@@ -111,7 +111,7 @@ function updatePlugins(string $tableFile, array $requested, string $token = '', 
         foreach ($lines as $line => $column) {
             //说明部分更新收录总数
             if ($line < $tableLine + 1) {
-                if ($line == $tableLine - 11) {
+                if ($line == $tableLine - 8) {
                     preg_match('/(?<=\()[^\)]*/', $column, $total);
                     if ($total) {
                         $column = str_replace($total[0], $counts - ($tableLine + 1), $column);
