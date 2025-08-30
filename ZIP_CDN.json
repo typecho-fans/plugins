@@ -2818,16 +2818,16 @@
   {
     "name": "Geetest_小胖狐.zip",
     "path": "ZIP_CDN/Geetest_小胖狐.zip",
-    "sha": "baf07cf4a01b7ae2b657553d621db385f420a2e9",
-    "size": 44063,
+    "sha": "3c2ced4c5c1e3ea399e026177b62c26bc314be59",
+    "size": 44085,
     "url": "https://api.github.com/repos/typecho-fans/plugins/contents/ZIP_CDN/Geetest_%E5%B0%8F%E8%83%96%E7%8B%90.zip?ref=master",
     "html_url": "https://github.com/typecho-fans/plugins/blob/master/ZIP_CDN/Geetest_%E5%B0%8F%E8%83%96%E7%8B%90.zip",
-    "git_url": "https://api.github.com/repos/typecho-fans/plugins/git/blobs/baf07cf4a01b7ae2b657553d621db385f420a2e9",
+    "git_url": "https://api.github.com/repos/typecho-fans/plugins/git/blobs/3c2ced4c5c1e3ea399e026177b62c26bc314be59",
     "download_url": "https://raw.githubusercontent.com/typecho-fans/plugins/master/ZIP_CDN/Geetest_小胖狐.zip",
     "type": "file",
     "_links": {
       "self": "https://api.github.com/repos/typecho-fans/plugins/contents/ZIP_CDN/Geetest_%E5%B0%8F%E8%83%96%E7%8B%90.zip?ref=master",
-      "git": "https://api.github.com/repos/typecho-fans/plugins/git/blobs/baf07cf4a01b7ae2b657553d621db385f420a2e9",
+      "git": "https://api.github.com/repos/typecho-fans/plugins/git/blobs/3c2ced4c5c1e3ea399e026177b62c26bc314be59",
       "html": "https://github.com/typecho-fans/plugins/blob/master/ZIP_CDN/Geetest_%E5%B0%8F%E8%83%96%E7%8B%90.zip"
     }
   },
@@ -4738,16 +4738,16 @@
   {
     "name": "NAME_LIST.log",
     "path": "ZIP_CDN/NAME_LIST.log",
-    "sha": "a473ff24842119f94fa03cb290aa717dab57feee",
-    "size": 3610,
+    "sha": "5797ef851f3106dd9f1ad36fa3554ad91927dd8d",
+    "size": 3682,
     "url": "https://api.github.com/repos/typecho-fans/plugins/contents/ZIP_CDN/NAME_LIST.log?ref=master",
     "html_url": "https://github.com/typecho-fans/plugins/blob/master/ZIP_CDN/NAME_LIST.log",
-    "git_url": "https://api.github.com/repos/typecho-fans/plugins/git/blobs/a473ff24842119f94fa03cb290aa717dab57feee",
+    "git_url": "https://api.github.com/repos/typecho-fans/plugins/git/blobs/5797ef851f3106dd9f1ad36fa3554ad91927dd8d",
     "download_url": "https://raw.githubusercontent.com/typecho-fans/plugins/master/ZIP_CDN/NAME_LIST.log",
     "type": "file",
     "_links": {
       "self": "https://api.github.com/repos/typecho-fans/plugins/contents/ZIP_CDN/NAME_LIST.log?ref=master",
-      "git": "https://api.github.com/repos/typecho-fans/plugins/git/blobs/a473ff24842119f94fa03cb290aa717dab57feee",
+      "git": "https://api.github.com/repos/typecho-fans/plugins/git/blobs/5797ef851f3106dd9f1ad36fa3554ad91927dd8d",
       "html": "https://github.com/typecho-fans/plugins/blob/master/ZIP_CDN/NAME_LIST.log"
     }
   },
@@ -8514,16 +8514,16 @@
   {
     "name": "fancyboxJQ_尚寂新.zip",
     "path": "ZIP_CDN/fancyboxJQ_尚寂新.zip",
-    "sha": "441a9a12f6fe90e26ee43839dbeca5be1fc0ecac",
-    "size": 14776,
+    "sha": "96e953bd125d73f1bdd7ab06ed5169902f84d993",
+    "size": 14784,
     "url": "https://api.github.com/repos/typecho-fans/plugins/contents/ZIP_CDN/fancyboxJQ_%E5%B0%9A%E5%AF%82%E6%96%B0.zip?ref=master",
     "html_url": "https://github.com/typecho-fans/plugins/blob/master/ZIP_CDN/fancyboxJQ_%E5%B0%9A%E5%AF%82%E6%96%B0.zip",
-    "git_url": "https://api.github.com/repos/typecho-fans/plugins/git/blobs/441a9a12f6fe90e26ee43839dbeca5be1fc0ecac",
+    "git_url": "https://api.github.com/repos/typecho-fans/plugins/git/blobs/96e953bd125d73f1bdd7ab06ed5169902f84d993",
     "download_url": "https://raw.githubusercontent.com/typecho-fans/plugins/master/ZIP_CDN/fancyboxJQ_尚寂新.zip",
     "type": "file",
     "_links": {
       "self": "https://api.github.com/repos/typecho-fans/plugins/contents/ZIP_CDN/fancyboxJQ_%E5%B0%9A%E5%AF%82%E6%96%B0.zip?ref=master",
-      "git": "https://api.github.com/repos/typecho-fans/plugins/git/blobs/441a9a12f6fe90e26ee43839dbeca5be1fc0ecac",
+      "git": "https://api.github.com/repos/typecho-fans/plugins/git/blobs/96e953bd125d73f1bdd7ab06ed5169902f84d993",
       "html": "https://github.com/typecho-fans/plugins/blob/master/ZIP_CDN/fancyboxJQ_%E5%B0%9A%E5%AF%82%E6%96%B0.zip"
     }
   },
