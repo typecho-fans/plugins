@@ -357,7 +357,7 @@ function updatePlugins(string $tableFile, array $requested, string $token = '', 
                                 }
 
                                 //处理repo作者名
-                                $authorInfo = strip_tags(trim($infos['author']));
+                                $authorInfo = trim(strip_tags($infos['author']));
                                 preg_match('/[\t ]*(,|&|，)[ \t]*/', $authorInfo, $seps);
                                 $sep = '';
                                 if ($seps) {
