@@ -1952,6 +1952,22 @@
     }
   },
   {
+    "name": "CompressHTML_情留メ蚊子 .zip",
+    "path": "ZIP_CDN/CompressHTML_情留メ蚊子 .zip",
+    "sha": "3f56fbd974fa9e3b400e46ec8b3e7355ff713f7b",
+    "size": 3490,
+    "url": "https://api.github.com/repos/typecho-fans/plugins/contents/ZIP_CDN/CompressHTML_%E6%83%85%E7%95%99%E3%83%A1%E8%9A%8A%E5%AD%90%20.zip?ref=master",
+    "html_url": "https://github.com/typecho-fans/plugins/blob/master/ZIP_CDN/CompressHTML_%E6%83%85%E7%95%99%E3%83%A1%E8%9A%8A%E5%AD%90%20.zip",
+    "git_url": "https://api.github.com/repos/typecho-fans/plugins/git/blobs/3f56fbd974fa9e3b400e46ec8b3e7355ff713f7b",
+    "download_url": "https://raw.githubusercontent.com/typecho-fans/plugins/master/ZIP_CDN/CompressHTML_情留メ蚊子 .zip",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/typecho-fans/plugins/contents/ZIP_CDN/CompressHTML_%E6%83%85%E7%95%99%E3%83%A1%E8%9A%8A%E5%AD%90%20.zip?ref=master",
+      "git": "https://api.github.com/repos/typecho-fans/plugins/git/blobs/3f56fbd974fa9e3b400e46ec8b3e7355ff713f7b",
+      "html": "https://github.com/typecho-fans/plugins/blob/master/ZIP_CDN/CompressHTML_%E6%83%85%E7%95%99%E3%83%A1%E8%9A%8A%E5%AD%90%20.zip"
+    }
+  },
+  {
     "name": "ConnectToTwitter_blankyao.zip",
     "path": "ZIP_CDN/ConnectToTwitter_blankyao.zip",
     "sha": "da602d8946862cd366f471f37eec7935ec86a25b",
@@ -4608,22 +4624,6 @@
     }
   },
   {
-    "name": "MuPlayer_HyanCat .zip",
-    "path": "ZIP_CDN/MuPlayer_HyanCat .zip",
-    "sha": "49fbeecd20af6e63d604e08820350a1bbf804e41",
-    "size": 64331,
-    "url": "https://api.github.com/repos/typecho-fans/plugins/contents/ZIP_CDN/MuPlayer_HyanCat%20.zip?ref=master",
-    "html_url": "https://github.com/typecho-fans/plugins/blob/master/ZIP_CDN/MuPlayer_HyanCat%20.zip",
-    "git_url": "https://api.github.com/repos/typecho-fans/plugins/git/blobs/49fbeecd20af6e63d604e08820350a1bbf804e41",
-    "download_url": "https://raw.githubusercontent.com/typecho-fans/plugins/master/ZIP_CDN/MuPlayer_HyanCat%20.zip",
-    "type": "file",
-    "_links": {
-      "self": "https://api.github.com/repos/typecho-fans/plugins/contents/ZIP_CDN/MuPlayer_HyanCat%20.zip?ref=master",
-      "git": "https://api.github.com/repos/typecho-fans/plugins/git/blobs/49fbeecd20af6e63d604e08820350a1bbf804e41",
-      "html": "https://github.com/typecho-fans/plugins/blob/master/ZIP_CDN/MuPlayer_HyanCat%20.zip"
-    }
-  },
-  {
     "name": "MultiTheme_HackRose.zip",
     "path": "ZIP_CDN/MultiTheme_HackRose.zip",
     "sha": "2c235010991d9cb0884f052de0668e0d284437a7",
@@ -4722,16 +4722,16 @@
   {
     "name": "NAME_LIST.log",
     "path": "ZIP_CDN/NAME_LIST.log",
-    "sha": "d47ba3408bffa632b6235584a0fafb8921bc2307",
-    "size": 3529,
+    "sha": "9b227c459563012b0b9e9f225d832ce6157d5262",
+    "size": 3591,
     "url": "https://api.github.com/repos/typecho-fans/plugins/contents/ZIP_CDN/NAME_LIST.log?ref=master",
     "html_url": "https://github.com/typecho-fans/plugins/blob/master/ZIP_CDN/NAME_LIST.log",
-    "git_url": "https://api.github.com/repos/typecho-fans/plugins/git/blobs/d47ba3408bffa632b6235584a0fafb8921bc2307",
+    "git_url": "https://api.github.com/repos/typecho-fans/plugins/git/blobs/9b227c459563012b0b9e9f225d832ce6157d5262",
     "download_url": "https://raw.githubusercontent.com/typecho-fans/plugins/master/ZIP_CDN/NAME_LIST.log",
     "type": "file",
     "_links": {
       "self": "https://api.github.com/repos/typecho-fans/plugins/contents/ZIP_CDN/NAME_LIST.log?ref=master",
-      "git": "https://api.github.com/repos/typecho-fans/plugins/git/blobs/d47ba3408bffa632b6235584a0fafb8921bc2307",
+      "git": "https://api.github.com/repos/typecho-fans/plugins/git/blobs/9b227c459563012b0b9e9f225d832ce6157d5262",
       "html": "https://github.com/typecho-fans/plugins/blob/master/ZIP_CDN/NAME_LIST.log"
     }
   },
@@ -6989,6 +6989,22 @@
       "self": "https://api.github.com/repos/typecho-fans/plugins/contents/ZIP_CDN/ThinPicture_Nicholas.zip?ref=master",
       "git": "https://api.github.com/repos/typecho-fans/plugins/git/blobs/689aaed9163f569f215139b80b62f870c0522948",
       "html": "https://github.com/typecho-fans/plugins/blob/master/ZIP_CDN/ThinPicture_Nicholas.zip"
+    }
+  },
+  {
+    "name": "Thumbnail_CaiXin Liao .zip",
+    "path": "ZIP_CDN/Thumbnail_CaiXin Liao .zip",
+    "sha": "a840bb6f71126c6b066d723050bee2dc34d3211b",
+    "size": 3958,
+    "url": "https://api.github.com/repos/typecho-fans/plugins/contents/ZIP_CDN/Thumbnail_CaiXin%20Liao%20.zip?ref=master",
+    "html_url": "https://github.com/typecho-fans/plugins/blob/master/ZIP_CDN/Thumbnail_CaiXin%20Liao%20.zip",
+    "git_url": "https://api.github.com/repos/typecho-fans/plugins/git/blobs/a840bb6f71126c6b066d723050bee2dc34d3211b",
+    "download_url": "https://raw.githubusercontent.com/typecho-fans/plugins/master/ZIP_CDN/Thumbnail_CaiXin%20Liao%20.zip",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/typecho-fans/plugins/contents/ZIP_CDN/Thumbnail_CaiXin%20Liao%20.zip?ref=master",
+      "git": "https://api.github.com/repos/typecho-fans/plugins/git/blobs/a840bb6f71126c6b066d723050bee2dc34d3211b",
+      "html": "https://github.com/typecho-fans/plugins/blob/master/ZIP_CDN/Thumbnail_CaiXin%20Liao%20.zip"
     }
   },
   {
