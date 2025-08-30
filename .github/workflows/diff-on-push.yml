@@ -21,7 +21,7 @@ jobs:
         id: match-diff
         run: |
           mkdir -p /home/runner/work/plugins/TMP
-          diff=$(git diff HEAD^ HEAD)
+          diff=$(git diff HEAD^2 HEAD 2>/dev/null || git diff HEAD^ HEAD)
           if echo "$diff" | tee /home/runner/work/plugins/TMP/latest.diff | grep -qE "^\+\+\+ b/(TESTORE\.md|README\.md)"
           then
               echo md=1 >> $GITHUB_OUTPUT

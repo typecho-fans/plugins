@@ -17,7 +17,7 @@ if (str_contains($requestUrl, '.diff')) {
     $diffs = explode(PHP_EOL, $record);
 
     //查找有关文档变更
-    $begin = array_search('+++ b/README_test.md', $diffs) ?: array_search('+++ b/TESTORE.md', $diffs) ?: 0;
+    $begin = array_search('+++ b/README.md', $diffs) ?: array_search('+++ b/TESTORE.md', $diffs) ?: 0;
     foreach ($diffs as $line => $diff) {
         if ($line > $begin) {
             //匹配变更行repo信息
@@ -28,7 +28,7 @@ if (str_contains($requestUrl, '.diff')) {
                 }
             }
             //至非文档部分跳出
-            if (preg_match('/^diff --git a\/(?!README_test\.md|TESTORE\.md).*/', $diff)) {
+            if (preg_match('/^diff --git a\/(?!README\.md|TESTORE\.md).*/', $diff)) {
                 break;
             }
         }
@@ -40,15 +40,15 @@ if (str_contains($requestUrl, '.diff')) {
 
 //检测文档执行更新
 $movable = [];
-if (file_exists('README_test.md')) {
-    $movable = updatePlugins('README_test.md', $urls, $authKey);
+if (file_exists('README.md')) {
+    $movable = updatePlugins('README.md', $urls, $authKey);
 } else {
     throw new RuntimeException('README.md is missing!');
 }
 if (file_exists('TESTORE.md')) {
     $movable = updatePlugins('TESTORE.md', $urls, $authKey, $movable);
     if ($movable) {
-        updatePlugins('README_test.md', $urls, 'rec', $movable); //rec情况递归
+        updatePlugins('README.md', $urls, 'rec', $movable); //rec情况递归
     }
 } else {
     throw new RuntimeException('TESTORE.md is missing!');
@@ -68,7 +68,7 @@ function updatePlugins(string $tableFile, array $requested, string $token = '', 
     //预设出循环变量
     $logs = '-------' . $tableFile . '-------' . PHP_EOL . date('Y-m-d', time()) . PHP_EOL;
     $descriptions = [];
-    $tf = $tableFile == 'README_test.md';
+    $tf = $tableFile == 'README.md';
     $all = 0;
     $revise = 0;
     $creat = 0;
@@ -78,11 +78,11 @@ function updatePlugins(string $tableFile, array $requested, string $token = '', 
     $done = 0;
     $nameList = 'ZIP_CDN/NAME_LIST.log';
     $listConent = file_exists($nameList)
-        ? explode('README_test.md ALL' . PHP_EOL, trim(file_get_contents($nameList)))
+        ? explode('README.md ALL' . PHP_EOL, trim(file_get_contents($nameList)))
         : [];
     $listNames = $listConent ? explode(PHP_EOL, $listConent[0]) : [];
     $movable = [];
-    $allNames = $tf ? ['README_test.md ALL'] : (isset($listConent[1]) ? explode(PHP_EOL, $listConent[1]) : []);
+    $allNames = $tf ? ['README.md ALL'] : (isset($listConent[1]) ? explode(PHP_EOL, $listConent[1]) : []);
     $tables = [];
     $normal = $token && $token !== 'rec';
 
@@ -479,7 +479,7 @@ function updatePlugins(string $tableFile, array $requested, string $token = '', 
                                         !in_array(explode('_', $outName)[0], $requested)
                                     ) {
                                         updatePlugins($tableFile, [$outName], '', $latest); //空token情况递归
-                                        updatePlugins($tf ? 'TESTORE.md' : 'README_test.md', [$outName], '', $latest);
+                                        updatePlugins($tf ? 'TESTORE.md' : 'README.md', [$outName], '', $latest);
                                     }
 
                                     //记录插件改动明细
@@ -816,7 +816,7 @@ function dispatchZips(
     $host = parse_url($url, PHP_URL_HOST);
     $github = $host == 'github.com';
     $folder = realpath('../') . '/TMP/' . $index . '_' . $name;
-    $tf = $md == 'README_test.md';
+    $tf = $md == 'README.md';
     $tfLocal = $tf && is_dir($url);
     if (!is_dir($folder) && !$tfLocal) {
         mkdir($folder, 0777, true);
