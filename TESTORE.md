@@ -35,10 +35,7 @@
 同名插件TeStore根据作者名区分，注意“作者”文本要与Plugin.php内署名一致(多人用,或&号分隔)。
 ```
 
-<style>
-table th:nth-of-type(2) {width:400px;}
-</style>
-名称 | 简介 | 版本 | 作者 | zip包
+名称 | <img width=400/>简介 | 版本 | 作者 | zip包
 ---- | ----: | :----: | :---- | :----:
 [AAThemeDemo](https://github.com/benzBrake/AAThemeDemo) | ThemeDemo2 修复版，仅支持Typecho1.2+ | 1.0.0 | [Ryan](http://doufu.ru), [doudou](http://doufu.ru) | [最新](https://github.com/benzBrake/AAThemeDemo/archive/refs/heads/master.zip)
 [APlayerAtBottom](https://github.com/jstar0/APlayerAtBottom) | 网易云解析吸底式音乐播放器插件 | 1.1.3 | [小太](https://github.com/SatoSouta) | [下载](https://github.com/jstar0/APlayerAtBottom/archive/refs/heads/master.zip)

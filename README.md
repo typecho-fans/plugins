@@ -35,10 +35,7 @@
 同名TeStore根据作者名区分，注意“作者”文本要与Plugin.php内署名一致(多人用,或&号分隔)。
 ```
 
-<style>
-table th:nth-of-type(2) {width:300px;}
-</style>
-名称 | 简介 | 版本 | 作者 | zip包
+名称 | <img width=300/>简介 | 版本 | 作者 | zip包
 ---- | ----: | :----: | :---- | :----:
 [AMP](AMP) | 生成AMP/MIP移动标准页面 | 0.7.6.1 | [Holmesian](https://github.com/holmesian) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/AMP.zip)
 [AbbrSlug](AbbrSlug) | 生成数字文章缩略名 | 1.0.0 | [羽叶](https://github.com/cyea) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/AbbrSlug.zip)
