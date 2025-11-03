@@ -28,7 +28,7 @@
 
  > 下载链接文字可用于附加图标和关键字筛选：如`下载`即非社区版，`不可用`带⛔，`特殊`带⚠️意为启用须遵照文档步骤。
 
-### 插件信息 (469)
+### 插件信息 (470)
 
 ###### TeStore会使用下表“名称”创建文件夹，“版本”数字判断升级，请尽量确保文本准确，按字母排序，简介便于关键字搜索。
 ```
@@ -144,6 +144,7 @@
 [Copyright](https://github.com/Yves-X/Copyright-for-Typecho) | 自定义字段文末附加版权信息插件 | 1.0.4 | [Yves X](https://github.com/Yves-X) | [下载](https://github.com/Yves-X/Copyright-for-Typecho/archive/master.zip)
 [CreativeCommons](https://github.com/zhangpeng96/typecho-creative-commons) | 文末自动加知识共享版权声明插件 | 0.6.2 | [zhangpeng96](https://github.com/zhangpeng96) | [下载](https://github.com/zhangpeng96/typecho-creative-commons/archive/master.zip)
 [Creole](https://github.com/typecho/plugins/tree/master/Creole) | Wiki式Creole写作语法解析器插件 | 0.2 | [明城](https://github.com/mingcheng) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/Creole.zip)
+[CustomAvatar](https://github.com/xyz66882/CustomAvatar) | 自定义评论区头像 | 1.0.5 | [小智xyz](https://github.com/xyz66882/CustomAvatar) | [下载](https://github.com/xyz66882/CustomAvatar/archive/refs/heads/main.zip)
 [CustomCssAndJs](https://github.com/kyuuseiryuu/typecho-plugin-custom-css-js) | 输出定制头部Css或尾部Js代码插件 | 1.0 | [KyuuSeiryuu](https://github.com/kyuuseiryuu) | [下载](https://github.com/kyuuseiryuu/typecho-plugin-custom-css-js/archive/master.zip)
 [CustomRSS](https://github.com/ibluehe/CustomRSS) | Typecho生成rss.xml的RSS订阅 | 1.0.3 | [寻鹤](https://bluehe.cn/) | [下载](https://github.com/ibluehe/CustomRSS/archive/refs/heads/main.zip)
 [DDSBLinks](https://github.com/Nyarime/DDSBLinks) | [DD.SB](https://dd.sb)短链接版跳转外链转换插件 | 1.1.0 b2 | [BBleae](https://baka.studio) & [Nyarime](https://github.com/Nyarime) | [下载](https://github.com/Nyarime/DDSBLinks/archive/master.zip)
@@ -469,7 +470,7 @@
 [Words](https://github.com/tennsinn/Typecho-Plugins/tree/master/Words) | Typecho自建数据仿微博碎语插件 | 1.1.2 | [息E-敛](https://github.com/tennsinn) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/Words.zip)
 [WowScroll](https://github.com/Sanakey/WowScroll) | 页面元素载入时显示动画特效插件 | 1.1.1 | [Sanakey](https://github.com/Sanakey) | [下载](https://github.com/Sanakey/WowScroll/archive/master.zip)
 [WxFollowView](https://github.com/Moidea/WxFollowView) | Typecho文章关注公众号获取密码插件 | 2.0 | [Roogle](http://www.moidea.info) | [下载](https://github.com/Moidea/WxFollowView/releases/download/2.0/WxFollowView.zip)
-[XCaptcha](https://github.com/CairBin/XCaptcha) | 支持Google、altcha、极验证、hCaptcha、Cloudflare等验证码插件 | 1.3.0 | [CairBin](https://blog.cairbin.top) | [下载](https://github.com/CairBin/XCaptcha/archive/main.zip)
+[XCaptcha](https://github.com/CairBin/XCaptcha) | 支持Google、altcha、极验证、hCaptcha、Cloudflare等验证码插件 | 1.3.0 | [CairBin](https://blog.cairbin.top) | [最近](https://github.com/CairBin/XCaptcha/archive/main.zip)
 [XEditor](https://xiamp.net/archives/automatic-backup-of-typecho-database-to-mailbox-plugin-autobackup.html) | 基于 Vditor 的 Markdown 编辑器 | 1.1.2 | [Ryan](https://github.com/benzBrake) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/XEditor.zip)
 [XMUserAgent](https://github.com/benzBrake/XMUserAgent) | Typecho UserAgent 渲染插件 | 0.3 | [Ryan](https://doufu.ru/), [Hakula](https://doufu.ru/) | [下载](https://github.com/benzBrake/XMUserAgent/archive/master.zip)
 [XmlRpcAid](https://github.com/AkronGL/Casual/tree/master/usr/plugins/XmlRpcAid) | [南博](https://nabo.krait.cn)App用更新XmlRpc文件插件 | 2.0.0 | [乔千](https://github.com/MliKiowa) | [下载](https://github.com/AkronGL/Casual/archive/refs/heads/master.zip)
@@ -507,4 +508,3 @@
 [waterMark](https://github.com/internelp/waterMark) | 图片自动添加Gif/Png格式水印插件 | 1.0.2 | [应用侠](https://github.com/internelp) | [下载](https://github.com/internelp/waterMark/archive/master.zip)
 [ymplayer](https://github.com/kokororin/typecho-plugin-ymplayer) | Html5可伸缩海报音乐播放器插件 | 0.7 | [kokororin](https://github.com/kokororin) | [特殊](https://github.com/kokororin/typecho-plugin-ymplayer/archive/master.zip)
 [zbgray](http://forum.typecho.org/viewtopic.php?f=6&t=11271) | Typecho简易祭日用整站变灰插件 | 1.0.0 | jyzb02 | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/zbgray.zip)
-
