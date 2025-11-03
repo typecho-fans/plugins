@@ -70,7 +70,6 @@
 [ContentIndex](ContentIndex) | 自动生成美化版文章目录树 | 1.0.0 | [laobubu](https://github.com/laobubu) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/ContentIndex.zip)
 [Contribute](Contribute) | 前台免注册投稿及审查发布 | 1.0.0 | [ShingChi](https://github.com/shingchi) | [Special](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/Contribute.zip)
 [CosForTypecho](CosForTypecho) | Typecho用腾讯云COS存储 | 1.0.1 | [Charmeryl](https://github.com/jqjiang819) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/CosForTypecho.zip)
-[CustomAvatar](https://github.com/xyz66882/CustomAvatar) | 自定义评论区头像 | 1.0.5 | [小智xyz](https://github.com/xyz66882/CustomAvatar) | [Download](https://github.com/xyz66882/CustomAvatar/archive/refs/heads/main.zip)
 [DbManager](DbManager) | Mysql数据库导入导出优化 | 2.0.1 | [ShingChi](https://github.com/shingchi) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/DbManager.zip)
 [DevTool](DevTool) | 扩展开发常用数据查看测试 | 1.0.0 | [zhulin3141](https://github.com/zhulin3141) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/DevTool.zip)
 [DownloadFile](DownloadFile) | 附件下载与上传名保持一致 | 1.0.0 | [DT27](https://github.com/DT27) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/DownloadFile.zip)
