@@ -2080,6 +2080,22 @@
     }
   },
   {
+    "name": "CustomAvatar_小智xyz.zip",
+    "path": "ZIP_CDN/CustomAvatar_小智xyz.zip",
+    "sha": "106bb7344640279a35996d1d5316b33942751041",
+    "size": 12578,
+    "url": "https://api.github.com/repos/typecho-fans/plugins/contents/ZIP_CDN/CustomAvatar_%E5%B0%8F%E6%99%BAxyz.zip?ref=master",
+    "html_url": "https://github.com/typecho-fans/plugins/blob/master/ZIP_CDN/CustomAvatar_%E5%B0%8F%E6%99%BAxyz.zip",
+    "git_url": "https://api.github.com/repos/typecho-fans/plugins/git/blobs/106bb7344640279a35996d1d5316b33942751041",
+    "download_url": "https://raw.githubusercontent.com/typecho-fans/plugins/master/ZIP_CDN/CustomAvatar_小智xyz.zip",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/typecho-fans/plugins/contents/ZIP_CDN/CustomAvatar_%E5%B0%8F%E6%99%BAxyz.zip?ref=master",
+      "git": "https://api.github.com/repos/typecho-fans/plugins/git/blobs/106bb7344640279a35996d1d5316b33942751041",
+      "html": "https://github.com/typecho-fans/plugins/blob/master/ZIP_CDN/CustomAvatar_%E5%B0%8F%E6%99%BAxyz.zip"
+    }
+  },
+  {
     "name": "CustomCssAndJs_KyuuSeiryuu.zip",
     "path": "ZIP_CDN/CustomCssAndJs_KyuuSeiryuu.zip",
     "sha": "91fb05016b10ad7d5e78393ae47a092d1fe1428d",
@@ -4738,16 +4754,16 @@
   {
     "name": "NAME_LIST.log",
     "path": "ZIP_CDN/NAME_LIST.log",
-    "sha": "5797ef851f3106dd9f1ad36fa3554ad91927dd8d",
-    "size": 3682,
+    "sha": "40fb2e105510f052dfea70c179da105cc942cb86",
+    "size": 3703,
     "url": "https://api.github.com/repos/typecho-fans/plugins/contents/ZIP_CDN/NAME_LIST.log?ref=master",
     "html_url": "https://github.com/typecho-fans/plugins/blob/master/ZIP_CDN/NAME_LIST.log",
-    "git_url": "https://api.github.com/repos/typecho-fans/plugins/git/blobs/5797ef851f3106dd9f1ad36fa3554ad91927dd8d",
+    "git_url": "https://api.github.com/repos/typecho-fans/plugins/git/blobs/40fb2e105510f052dfea70c179da105cc942cb86",
     "download_url": "https://raw.githubusercontent.com/typecho-fans/plugins/master/ZIP_CDN/NAME_LIST.log",
     "type": "file",
     "_links": {
       "self": "https://api.github.com/repos/typecho-fans/plugins/contents/ZIP_CDN/NAME_LIST.log?ref=master",
-      "git": "https://api.github.com/repos/typecho-fans/plugins/git/blobs/5797ef851f3106dd9f1ad36fa3554ad91927dd8d",
+      "git": "https://api.github.com/repos/typecho-fans/plugins/git/blobs/40fb2e105510f052dfea70c179da105cc942cb86",
       "html": "https://github.com/typecho-fans/plugins/blob/master/ZIP_CDN/NAME_LIST.log"
     }
   },
@@ -8189,6 +8205,22 @@
       "self": "https://api.github.com/repos/typecho-fans/plugins/contents/ZIP_CDN/WxFollowView_Roogle.zip?ref=master",
       "git": "https://api.github.com/repos/typecho-fans/plugins/git/blobs/b772cf5d7343c2a69125c5be48443ab06865a326",
       "html": "https://github.com/typecho-fans/plugins/blob/master/ZIP_CDN/WxFollowView_Roogle.zip"
+    }
+  },
+  {
+    "name": "XCaptcha_CairBin.zip",
+    "path": "ZIP_CDN/XCaptcha_CairBin.zip",
+    "sha": "80d77b16c1cc0b8d9b29399bd326854279cb584e",
+    "size": 298185,
+    "url": "https://api.github.com/repos/typecho-fans/plugins/contents/ZIP_CDN/XCaptcha_CairBin.zip?ref=master",
+    "html_url": "https://github.com/typecho-fans/plugins/blob/master/ZIP_CDN/XCaptcha_CairBin.zip",
+    "git_url": "https://api.github.com/repos/typecho-fans/plugins/git/blobs/80d77b16c1cc0b8d9b29399bd326854279cb584e",
+    "download_url": "https://raw.githubusercontent.com/typecho-fans/plugins/master/ZIP_CDN/XCaptcha_CairBin.zip",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/typecho-fans/plugins/contents/ZIP_CDN/XCaptcha_CairBin.zip?ref=master",
+      "git": "https://api.github.com/repos/typecho-fans/plugins/git/blobs/80d77b16c1cc0b8d9b29399bd326854279cb584e",
+      "html": "https://github.com/typecho-fans/plugins/blob/master/ZIP_CDN/XCaptcha_CairBin.zip"
     }
   },
   {
