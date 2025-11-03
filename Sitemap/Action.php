@@ -80,6 +80,8 @@ class Sitemap_Action extends Typecho_Widget implements Widget_Interface_Do
 					->where('table.relationships.mid = ?', $cates->mid)
 					->order('table.relationships.cid', Typecho_Db::SORT_DESC)
 					->limit(1));
+		    //文章的分类跳过
+            if (empty($art_rs['modified'])) continue;
 			echo "\t<url>\n";
 			echo "\t\t<loc>".$cates->permalink."</loc>\n";
 			echo "\t\t<lastmod>".date('Y-m-d',$art_rs['modified'])."</lastmod>\n";
@@ -95,6 +97,9 @@ class Sitemap_Action extends Typecho_Widget implements Widget_Interface_Do
 					->where('table.relationships.mid = ?', $tag['mid'])
 					->order('table.relationships.cid', Typecho_Db::SORT_DESC)
 					->limit(1));
+			// 文章的标签跳过
+            if (empty($art_rt['modified'])) continue;
+					
 			$routeExists = (NULL != Typecho_Router::get($type));
 			$tag['pathinfo'] = $routeExists ? Typecho_Router::url($type, $tag) : '#';
 			$tag['permalink'] = Typecho_Common::url($tag['pathinfo'], $options->index);
