@@ -28,7 +28,7 @@
 
  > 下载链接文字可用于附加图标和关键字筛选：如`下载`即非社区版，`不可用`带⛔，`特殊`带⚠️意为启用须遵照文档步骤。
 
-### 插件信息 (470)
+### 插件信息 (471)
 
 ###### TeStore会使用下表“名称”创建文件夹，“版本”数字判断升级，请尽量确保文本准确，按字母排序，简介便于关键字搜索。
 ```
@@ -156,7 +156,7 @@
 [Digg](https://plugins.typecho.me/plugins/digg.html) | 顶踩投票文章并输出排行列表插件 | 1.1.0 | [doudou](https://github.com/doudoutime) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/Digg.zip)
 [DomainTheme_Element_Select](https://github.com/hongweipeng/DomainTheme_for_typecho) | 自建数据表按子域名切换主题插件 | 0.0.1 | [hongweipeng](https://github.com/hongweipeng) | [下载](https://github.com/hongweipeng/DomainTheme_for_typecho/archive/master.zip)
 [DoubanBoard](https://github.com/AlanDecode/Typecho-Plugin-DoubanBoard) | 博客展示豆瓣书单或影单内容插件 | 0.5 | [熊猫小A](https://github.com/AlanDecode) | [下载](https://github.com/AlanDecode/Typecho-Plugin-DoubanBoard/archive/master.zip)
-[DoubanBooklist](https://github.com/FaithPatrick/DoubanBookList) | 博客展示豆瓣正在和已读书单插件 | 1.0.0 | [Patrick95](https://github.com/FaithPatrick) | [最近](https://github.com/FaithPatrick/DoubanBookList/archive/master.zip)
+[DoubanBooklist](https://github.com/FaithPatrick/DoubanBookList) | 博客展示豆瓣正在和已读书单插件 | 1.0.0 | [Patrick95](https://github.com/FaithPatrick) | [下载](https://github.com/FaithPatrick/DoubanBookList/archive/master.zip)
 [DrakNight](https://qqdie.com/archives/draknight-typecho-plugin.html) | Typecho定时自启动夜间模式插件 | 1.0.0 | [术与道](https://github.com/shuyudao) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/DrakNight.zip)
 [Dynamics](https://github.com/kraity/Dynamics) | [南博](https://nabo.krait.cn)App用发布动态说说模块插件 | 2.1.2 | [南博工作室](https://github.com/krait-team/Dynamics-typecho/graphs/contributors) | [下载](https://github.com/kraity/Dynamics/archive/master.zip)
 [EditorAdv](https://github.com/leafvmaple/typecho-plugin-EditorAdv) | 系统MD编辑器整合代码高亮插件 | 0.2 | [Leafvmaple](https://github.com/leafvmaple) | [下载](https://github.com/leafvmaple/typecho-plugin-EditorAdv/archive/master.zip)
