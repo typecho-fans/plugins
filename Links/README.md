@@ -63,6 +63,26 @@ Links v1.3.1 - 社区维护版
 
 * ##### 新版插件可以直接在启用-禁用链接旁的原生设置面板中自定义各输出模式源码规则并指定默认图片尺寸。
 
+
+##### 主题
+
+- 模板目录为 `templates/<name>/`。
+- 必要文件：`manifest.json`、`template.html`。
+- 可选文件：`style.css`、`script.js`（`manifest.json` 中 `inject` 决定是否注入）。
+- 模板占位符：`{name}` `{url}` `{image}` `{description}` `{sort}` `{lid}` 等。
+
+###### 主题开发请查阅：https://blog.lhl.one/artical/902.html
+
+
+##### 主题相关问题
+
+1. 样式被主题覆盖
+- 尽力避免使用 `<a>` 标签直接输出，模板采用 `role="link"` + `data-href` 的跳转方案；如仍被覆盖可在自定义模板中引入更强选择器或 `!important`。
+
+2. 模板资源未注入
+- 确认模板下 `manifest.json` 中 `inject.css`/`inject.js` 设置为 `true` 并且前端没有被 CSP 等策略阻止。
+
+
 </td>
 </tr>
 </table>
@@ -149,6 +169,7 @@ Links v1.3.1 - 社区维护版
 
 本社区维护版已包含以下各版本功能并做优化调整：
 
+* [增强版(lhl77)](https://github.com/lhl77/Typecho-Plugin-LinksPlus) - 添加 文章重写 和 UI 优化
 * [微调版(he0119)](https://github.com/he0119/typecho-links) - 添加noopener外链标记。
 * [维护版(Mejituu)](https://github.com/Mejituu/Links) - 修复激活报错，新增邮箱配置及多项优化。
 * [修复版(jrotty)](https://qqdie.com/archives/links-typecho-plugin.html) - 修复Action越权漏洞。
@@ -163,63 +184,3 @@ Links v1.3.1 - 社区维护版
 > Links原作未附协议声明，原作者保留所有权利。 © [Hanny](http://www.imhan.com) 按照这个模板修改
 
 
-## 增强版功能清单
-
-- 多模板输出（内置主题，支持自定义模板目录 `templates/`）
-- 模板可携带 CSS/JS 注入，支持模板级别交互
-- 正文重写（支持按 cid 重写、块标记、可多次重写）
-
-## 原版功能保留
-- 支持 `<links>...</links>` 标签与参数（向后兼容）
-- 后台友链管理：添加/编辑/分类/拖拽排序/启用禁用
-
----
-
-## 环境要求
-
-- Typecho（1.2.x+）
-- PHP 7.2+
-
----
-
-## 配置说明
-
-后台 → 插件 → Links Plus：
-
-### 模板选择
-- 支持文件模板（`templates/<name>/`），`manifest.json` 控制 CSS/JS 注入。
-
-### 正文重写
-- 当主题不走 `contentEx` 导致 `<links>...</links>` 无法解析时，可使用“正文重写”将占位符替换为友链 HTML。
-- 支持按 `cid` 重写、块标记 `<!-- LINKS_PLUS_START -->...<!-- LINKS_PLUS_END -->`，并可选择输出模板。
-
-### 高级自定义
-- 保留旧版源码规则（SHOW_TEXT/SHOW_IMG/SHOW_MIX）用于兼容；优先推荐使用文件模板管理输出。
-
----
-
-## 后台管理
-
-- 后台 → 扩展 → 友情链接（管理界面为 MD3 风格卡片与表格管理）
-- 支持批量导入/导出、按分类过滤、图片尺寸设置、默认图片配置等
-
----
-
-## 主题
-
-- 模板目录为 `templates/<name>/`。
-- 必要文件：`manifest.json`、`template.html`。
-- 可选文件：`style.css`、`script.js`（`manifest.json` 中 `inject` 决定是否注入）。
-- 模板占位符：`{name}` `{url}` `{image}` `{description}` `{sort}` `{lid}` 等。
-
-### 主题开发请查阅：https://blog.lhl.one/artical/902.html
-
----
-
-## 常见问题
-
-1. 样式被主题覆盖
-- 尽力避免使用 `<a>` 标签直接输出，模板采用 `role="link"` + `data-href` 的跳转方案；如仍被覆盖可在自定义模板中引入更强选择器或 `!important`。
-
-2. 模板资源未注入
-- 确认模板下 `manifest.json` 中 `inject.css`/`inject.js` 设置为 `true` 并且前端没有被 CSP 等策略阻止。
