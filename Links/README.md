@@ -140,7 +140,7 @@ Links v1.3.1 - 社区维护版
 ## 贡献作者
 
 [![lhl77](https://avatars1.githubusercontent.com/u/70808385?s=100&v=3)](https://github.com/lhl77)|[![jzwalk](https://avatars1.githubusercontent.com/u/252331?v=3&s=100)](https://github.com/jzwalk) | [![he0119](https://avatars1.githubusercontent.com/u/5219550?v=3&s=100)](https://github.com/he0119) | [![Mejituu](https://avatars1.githubusercontent.com/u/36153418?v=3&s=100)](https://github.com/Mejituu) | [![jrotty](https://avatars1.githubusercontent.com/u/16165576?v=3&s=100)](https://github.com/jrotty) | [![Hanny](https://secure.gravatar.com/avatar/?d=mp&s=100)](http://www.imhan.com)
-|:---:|:---:|:---:|:---:|:---:|
+| --- | --- | --- | --- | --- |
 [lhl77](https://github.com/lhl77) (2026)|[jzwalk](https://github.com/jzwalk) (2020) | [he0119](https://github.com/he0119) (2020) | [Mejituu](https://github.com/Mejituu) (2020) | [jrotty](https://github.com/jrotty) (2019) | [Hanny](http://www.imhan.com) (2009)
 
 *为避免作者栏显示过长，插件信息仅选取登记2个署名，如有异议可协商修改。
