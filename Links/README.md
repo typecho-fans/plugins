@@ -1,4 +1,5 @@
-<a href="https://typecho-fans.github.io">
+
+# <a href="https://typecho-fans.github.io">
 		<img src="https://typecho-fans.github.io/text-logo.svg" alt="TF Logo" title="Typecho Fans开源作品社区" align="right" height="100" />
 </a>
 
@@ -70,13 +71,13 @@ Links v1.3.1 - 社区维护版
 ## 版本历史
 
  * v1.3.1 at 2025-02-09 by [@lhl77](https://github.com/lhl77)
- * 优化 一些细节 [@lhl77](https://github.com/lhl77)
- * 
+	 * 优化 一些细节 [@lhl77](https://github.com/lhl77)
+
  * v1.3.0 at 2025-02-09 by [@lhl77](https://github.com/lhl77)
- * 优化 UI - Material Design 3 [@lhl77](https://github.com/lhl77)
- * 添加 Links Plus到菜单，更加方便操作 [@lhl77](https://github.com/lhl77)
- * 添加 模板，能够更灵活地自定义输出结构，支持 CSS/JS 注入 [@lhl77](https://github.com/lhl77)
- * 添加 正文重写，免去修改/重新开发主题的步骤 [@lhl77](https://github.com/lhl77)
+	 * 优化 UI - Material Design 3 [@lhl77](https://github.com/lhl77)
+	 * 添加 Links Plus到菜单，更加方便操作 [@lhl77](https://github.com/lhl77)
+	 * 添加 模板，能够更灵活地自定义输出结构，支持 CSS/JS 注入 [@lhl77](https://github.com/lhl77)
+	 * 添加 正文重写，免去修改/重新开发主题的步骤 [@lhl77](https://github.com/lhl77)
 
  * v1.2.7 (24-6-21 [@jrotty](https://github.com/jrotty))
 	 * 解决php8.2一处报错问题
