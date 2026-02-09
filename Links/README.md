@@ -140,7 +140,7 @@ Links v1.3.1 - 社区维护版
 ## 贡献作者
 
 [![lhl77](https://avatars1.githubusercontent.com/u/70808385?s=100&v=3)](https://github.com/lhl77)|[![jzwalk](https://avatars1.githubusercontent.com/u/252331?v=3&s=100)](https://github.com/jzwalk) | [![he0119](https://avatars1.githubusercontent.com/u/5219550?v=3&s=100)](https://github.com/he0119) | [![Mejituu](https://avatars1.githubusercontent.com/u/36153418?v=3&s=100)](https://github.com/Mejituu) | [![jrotty](https://avatars1.githubusercontent.com/u/16165576?v=3&s=100)](https://github.com/jrotty) | [![Hanny](https://secure.gravatar.com/avatar/?d=mp&s=100)](http://www.imhan.com)
-:---:|:---:|:---:|:---:|:---:
+|:---:|:---:|:---:|:---:|:---:|
 [lhl77](https://github.com/lhl77) (2026)|[jzwalk](https://github.com/jzwalk) (2020) | [he0119](https://github.com/he0119) (2020) | [Mejituu](https://github.com/Mejituu) (2020) | [jrotty](https://github.com/jrotty) (2019) | [Hanny](http://www.imhan.com) (2009)
 
 *为避免作者栏显示过长，插件信息仅选取登记2个署名，如有异议可协商修改。
@@ -162,22 +162,6 @@ Links v1.3.1 - 社区维护版
 
 > Links原作未附协议声明，原作者保留所有权利。 © [Hanny](http://www.imhan.com) 按照这个模板修改
 
-## 目录
-
-- [功能](#增强版功能清单)
-- [环境要求](#环境要求)
-- [安装](#安装)
-- [说明](#配置说明)
-	- [模板选择](#模板选择)
-	- [正文重写](#正文重写)
-	- [高级自定义](#高级自定义)
-    - [后台管理](#后台管理)
-- [主题](#主题)
-- [常见问题](#常见问题)
-- [仓库与帮助](#仓库与帮助)
-- [许可](#许可)
-
----
 
 ## 增强版功能清单
 
@@ -195,18 +179,6 @@ Links v1.3.1 - 社区维护版
 
 - Typecho（1.2.x+）
 - PHP 7.2+
-
----
-
-## 安装
-
-1. 下载本插件并解压到：
-	- `usr/plugins/Links/`
-2. 确认目录结构包含：
-	- `usr/plugins/Links/Plugin.php`
-	- `usr/plugins/Links/manage-links.php`
-	- `usr/plugins/Links/templates/`（内含模板）
-3. 后台 → 控制台 → 插件，启用 **Links Plus**。
 
 ---
 
@@ -251,18 +223,3 @@ Links v1.3.1 - 社区维护版
 
 2. 模板资源未注入
 - 确认模板下 `manifest.json` 中 `inject.css`/`inject.js` 设置为 `true` 并且前端没有被 CSP 等策略阻止。
-
----
-
-## 仓库与帮助
-
-- 插件仓库： https://github.com/lhl77/Typecho-Plugin-LinksPlus
-- 使用帮助： https://blog.lhl.one/artical/902.html 
-
-如果你需要更详细的开发/模板示例，可以在仓库 Issues 或 PR 提问。
-
----
-
-## 许可
-
-MIT（以仓库 `LICENSE` 为准）
