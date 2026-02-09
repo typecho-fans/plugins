@@ -1,5 +1,4 @@
-
-# <a href="https://typecho-fans.github.io">
+<a href="https://typecho-fans.github.io">
 		<img src="https://typecho-fans.github.io/text-logo.svg" alt="TF Logo" title="Typecho Fans开源作品社区" align="right" height="100" />
 </a>
 
