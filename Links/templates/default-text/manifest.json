@@ -1,0 +1,10 @@
+{
+  "name": "default-text",
+  "title": "默认文字友链",
+  "version": "1.0.0",
+  "description": "仅文字链接列表",
+  "inject": {
+    "css": true,
+    "js": false
+  }
+}

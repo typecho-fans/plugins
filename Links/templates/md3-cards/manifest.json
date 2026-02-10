@@ -1,0 +1,10 @@
+{
+  "name": "md3-cards",
+  "title": "Material Design Cards 1",
+  "version": "1.0.0",
+  "description": "MD3 风格的友链卡片网格（含 CSS 注入）。",
+  "inject": {
+    "css": true,
+  "js": true
+  }
+}

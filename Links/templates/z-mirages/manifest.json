@@ -1,0 +1,10 @@
+{
+  "name": "z-mirages",
+  "title": "(主题专用) Mirages",
+  "version": "1.0.0",
+  "description": "Mirages 主题用：Markdown 友链格式输出，无注入。",
+  "inject": {
+    "css": false,
+    "js": false
+  }
+}
