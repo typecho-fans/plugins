@@ -1,0 +1,10 @@
+{
+  "name": "mirages-modify",
+  "title": "Material Design Cards 2",
+  "version": "1.0.0",
+  "description": "仿 Mirages 的 HTML 卡片网格输出，md3风格，含 CSS/JS 注入。",
+  "inject": {
+    "css": true,
+    "js": true
+  }
+}

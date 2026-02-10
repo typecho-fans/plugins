@@ -1,0 +1,10 @@
+{
+  "name": "default-img",
+  "title": "默认图片友链",
+  "version": "1.0.0",
+  "description": "仅图片 Logo 列表",
+  "inject": {
+    "css": true,
+    "js": false
+  }
+}
