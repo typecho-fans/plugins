@@ -1,0 +1,15 @@
+/* Zhihu 风格的跳转页样式 */
+body.lg-zhihu{font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,'PingFang SC','Hiragino Sans GB','Microsoft Yahei',sans-serif;background:#f4f7f9;color:#111;margin:0;padding:40px 20px}
+.zh-header{max-width:900px;margin:0 auto 18px;padding:10px 0}
+.zh-title{font-size:34px;color:#333;font-weight:600}
+.zh-main{max-width:900px;margin:0 auto}
+.zh-card{background:#fff;border:1px solid #e6e9ec;border-radius:6px;padding:22px;box-shadow:0 6px 18px rgba(16,24,40,0.04)}
+.zh-card__title{font-size:18px;margin:0 0 8px;color:#111}
+.zh-card__body{padding:8px 0;border-top:1px solid transparent}
+.zh-note{color:#555;margin:8px 0}
+.zh-url{color:#0b74de;margin:12px 0;word-break:break-all}
+.zh-card__actions{display:flex;justify-content:flex-end;margin-top:12px}
+.zh-btn{display:inline-block;padding:8px 14px;border-radius:6px;text-decoration:none;border:1px solid transparent;font-weight:600}
+.zh-btn--primary{background:#0b74de;color:#fff;border-color:rgba(11,116,222,0.12);box-shadow:0 6px 18px rgba(11,116,222,0.12)}
+.zh-footer{max-width:900px;margin:18px auto 0;color:#888;font-size:13px}
+@media (max-width:640px){body.lg-zhihu{padding:20px} .zh-card{padding:16px} .zh-card__actions{justify-content:center}}
