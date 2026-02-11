@@ -28,7 +28,7 @@
 
  > 下载链接文字可用于附加图标和关键字筛选：如`下载`即非社区版，`不可用`带⛔，`特殊`带⚠️意为启用须遵照文档步骤。
 
-### 插件信息 (471)
+### 插件信息 (475)
 
 ###### TeStore会使用下表“名称”创建文件夹，“版本”数字判断升级，请尽量确保文本准确，按字母排序，简介便于关键字搜索。
 ```
@@ -249,14 +249,14 @@
 [LightAudioPlayer](https://github.com/zxc135781/Light-AudioPlayer-Plugin) | 极简式单曲Html5音乐播放器插件 | 1.0 | [Mike](https://github.com/zxc135781) | [下载](https://github.com/zxc135781/Light-AudioPlayer-Plugin/archive/master.zip)
 [Lightbox](https://plugins.typecho.me/plugins/lightbox.html) | 基于jQuery图片灯箱弹窗效果插件 | 2.5.1 | AC Yang | [不可用](https://github.com/typecho-fans/plugins/releases/download/plugins-H_to_L/Lightbox.zip)
 [Link2own](https://github.com/SnowWarri0r/Typecho-ShortLinks-Plugin) | [Handsome](https://www.ihewro.com/archives/489)用内链跳转至外链插件 | 0.1 | [SnowWarri0r ihesro](https://github.com/SnowWarri0r) | [下载](https://github.com/SnowWarri0r/Typecho-ShortLinks-Plugin/archive/Main.zip)
-[LinkGo](https://github.com/lhl77/Typecho-Plugin-LinkGo)     |                               内链跳转外链，跳转页支持多主题 |         1.0.0         | [LHL](https://github.com/lhl77)                              | [下载](https://github.com/lhl77/Typecho-Plugin-LinkGo/releases/download/v1.0.0/LinkGo.zip) |
-[LinksPlus](https://github.com/lhl77/Typecho-Plugin-LinksPlus) |                 友情链接插件，支持多种输出方式，内置多种主题 |         1.3.2         | [LHL](https://github.com/lhl77)                              | [下载](https://github.com/lhl77/Typecho-Plugin-LinksPlus/releases/download/v1.3.2/Links_v1.3.2.zip) |
+[LinkGo](https://github.com/lhl77/Typecho-Plugin-LinkGo)     |                               内链跳转外链，跳转页支持多主题 |         1.0.0         | [LHL](https://github.com/lhl77)                              | [最近](https://github.com/lhl77/Typecho-Plugin-LinkGo/releases/download/v1.0.0/LinkGo.zip) |
+[Links](https://github.com/lhl77/Typecho-Plugin-LinksPlus) |                 友情链接插件，支持多种输出方式，内置多种主题 |         1.3.2         | [LHL](https://github.com/lhl77)                              | [最近](https://github.com/lhl77/Typecho-Plugin-LinksPlus/releases/download/v1.3.2/Links_v1.3.2.zip) |
 [LinxApi](https://github.com/kirileec/LinxApi) | 文章列表API插件(支持发布与编辑) | 1.0 | [linx](https://github.com/kirileec) | [下载](https://github.com/kirileec/LinxApi/archive/master.zip)
 [Live2D](https://github.com/wangyu1997/Live2D-Typecho-Plugin) | [Live2D](https://www.live2d.com)看板娘交互式功能集成插件 | 1.0 | [熊猫小A](https://github.com/AlanDecode) | [下载](https://github.com/wangyu1997/Live2D-Typecho-Plugin/archive/master.zip)
 [Live2dHistoire](https://www.wikimoe.com/?post=97) | [Live2D](https://www.live2d.com)可陪聊伊斯&蕾姆挂件插件 | 1.1.3 | [广树](https://github.com/eeg1412) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-H_to_L/Live2dHistoire.zip)
 [Live2d](https://gitee.com/kumaomao/live2d_typecho) | [Live2D](https://www.live2d.com)看板娘插件(可截图换材质) | 1.0.0 | [kumaomao](https://gitee.com/kumaomao) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-H_to_L/Live2d_kumaomao.zip)
 [LivePhotoKit](https://github.com/MoeLoli/LivephotoKit-Typecho) | 文章内插入[LivePhoto](https://baike.baidu.com/item/Live%20Photo/19969095)动图视频插件 | 1.1.0 | [Sora Jin](https://github.com/MoeLoli) | [下载](https://github.com/MoeLoli/LivephotoKit-Typecho/archive/master.zip)
-[LoginBeautify](https://github.com/lhl77/Typecho-Plugin-LoginBeautify/) |                                    Material 风格登录界面美化 |         1.0.1         | [LHL](https://github.com/lhl77)                              | [下载](https://github.com/lhl77/Typecho-Plugin-LoginBeautify/releases/download/v1.0.1/LoginBeautify_v1.0.1.zip) |
+[LoginBeautify](https://github.com/lhl77/Typecho-Plugin-LoginBeautify/) |                                    Material 风格登录界面美化 |         1.0.1         | [LHL](https://github.com/lhl77)                              | [最近](https://github.com/lhl77/Typecho-Plugin-LoginBeautify/releases/download/v1.0.1/LoginBeautify_v1.0.1.zip) |
 [LoginLimit](https://github.com/ClayMoreBoy/LoginLimit_for_Typecho) | Typecho限后台登录次数防黑插件 | 0.9.0 | [hongweipeng](https://github.com/hongweipeng) | [特殊](https://github.com/ClayMoreBoy/LoginLimit_for_Typecho/archive/refs/heads/master.zip)
 [LoginVisible](https://github.com/zerosumi/DS-Typecho-LoginVisible) | 文章部分内容对登录用户可见插件 | 0.7 | [zerosumi](https://github.com/zerosumi) | [下载](https://github.com/zerosumi/DS-Typecho-LoginVisible/archive/master.zip)
 [LovelyCat](https://github.com/vensins/LovelyCat) | (娱乐向)基于[Live2D](https://www.live2d.com)黑猫挂件插件 | 1.0.0 | [Mr&#95;ven](https://github.com/vensins) | [下载](https://github.com/vensins/LovelyCat/archive/master.zip)
@@ -291,12 +291,12 @@
 [NavMenu](https://github.com/doghap/NavMenu) | Typecho自定义菜单管理配置插件 | 1.0.0 | [merdan](https://github.com/doghap) | [下载](https://github.com/doghap/NavMenu/archive/NavMenu.zip)
 [NewPost](https://github.com/iLay1678/NewPost) | 通过API接口地址发布导入文章插件 | 1.1 | [ilay](https://github.com/iLay1678) | [下载](https://github.com/iLay1678/NewPost/archive/master.zip)
 [Nos](https://github.com/163yun/nos-typecho-plugin) | Typecho网易云对象存储NOS插件 | 1.0.0 | [白宦成](https://github.com/bestony) | [下载](https://github.com/163yun/nos-typecho-plugin/archive/master.zip)
-[NotAllowIp](https://github.com/tangmaoguo/NotAllowIp-Typecho-Plugin) | Typecho设禁止访问IP黑名单插件 | 1.0.0 | [BlackStyle](https://github.com/tangmaoguo) | [最近](https://github.com/tangmaoguo/NotAllowIp-Typecho-Plugin/archive/master.zip)
+[NotAllowIp](https://github.com/tangmaoguo/NotAllowIp-Typecho-Plugin) | Typecho设禁止访问IP黑名单插件 | 1.0.0 | [BlackStyle](https://github.com/tangmaoguo) | [下载](https://github.com/tangmaoguo/NotAllowIp-Typecho-Plugin/archive/master.zip)
 [Notes](https://github.com/ghostboyzone/typecho-notes-plugin) | Markdown编辑器版便签系统插件 | 0.0.1 | [GhostBoyZone](https://github.com/ghostboyzone) | [下载](https://github.com/ghostboyzone/typecho-notes-plugin/archive/master.zip)
 [Notice](https://github.com/RainshawGao/Typecho-Plugin-Notice) | 评论异步通知插件 | 1.0.6 | [Rainshaw](https://github.com/RainshawGao/) | [下载](https://github.com/RainshawGao/Typecho-Plugin-Notice/archive/master.zip)
 [Nprogress](https://github.com/Vndroid/Nprogress) | jQuery版全局多彩进度条特效插件 | 1.1.1 | [Cain](https://github.com/Vndroid) | [下载](https://github.com/Vndroid/Nprogress/archive/master.zip)
 [ObsUpload](https://github.com/iddddg/ObsUpload) | Typecho附件上传华为云OBS插件 | 1.0.0 | [淡定定定哥](https://github.com/iddddg) | [下载](https://github.com/iddddg/ObsUpload/archive/master.zip)
-[OssImg](https://github.com/v03413/Typecho_Plugins/tree/master/OssImg) | 基于[OssForTypecho](https://github.com/typecho-fans/plugins/tree/master/OssForTypecho)图床外链插件 | 1.0.0 | [&#95;莫名&#95;](https://github.com/v03413) | [最近](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/OssImg.zip)
+[OssImg](https://github.com/v03413/Typecho_Plugins/tree/master/OssImg) | 基于[OssForTypecho](https://github.com/typecho-fans/plugins/tree/master/OssForTypecho)图床外链插件 | 1.0.0 | [&#95;莫名&#95;](https://github.com/v03413) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/OssImg.zip)
 [PaceJs](https://github.com/ChirmyRam/PaceJs-for-Typecho) | Typecho多彩页面加载进度条插件 | 1.0.0 | [没那么简单](https://github.com/github-zjh) | [下载](https://github.com/ChirmyRam/PaceJs-for-Typecho/archive/master.zip)
 [PageToLinks](https://github.com/typecho/plugins/blob/master/PageToLinks.php) | 独立页面友情链接输出侧边栏插件 | 1.0.0 | [qining](https://github.com/joyqi) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/PageToLinks.zip)
 [PageViews](https://github.com/PonyCool/typecho-plugins/tree/master/PageViews) | 统计文章/页面点击及总浏览量插件 | 1.2.0 | [Pony](https://github.com/PonyCool) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/PageViews_.zip)
@@ -397,12 +397,12 @@
 [TeComment](https://github.com/jiangmuzi/TeComment) | 评论增强插件(表情工具栏Ajax等) | 2.0.0 | [绛木子](https://github.com/jiangmuzi) | [下载](https://github.com/jiangmuzi/TeComment/archive/master.zip)
 [TeConnect](https://github.com/jiangmuzi/TeConnect) | 经典版QQ/微博账号注册登录插件 | 1.0 | [绛木子](https://github.com/jiangmuzi) | [特殊](https://github.com/jiangmuzi/TeConnect/archive/master.zip)
 [TeConnect](https://github.com/ledccn/TeConnect) | 增强版15款平台账号注册登录插件 | 2.0 | [大卫科技Blog](https://github.com/ledccn) | [下载](https://github.com/ledccn/TeConnect/archive/master.zip)
-[TelegramNotice](https://github.com/lhl77/Typecho-Plugin-TelegramNotice) | Telegram 推送评论通知与审核（支持多 Chat ID 群发、邮箱绑定、评论回复）。 |         1.1.0         | [LHL](https://github.com/lhl77)                              | [下载](https://github.com/lhl77/Typecho-Plugin-TelegramNotice/archive/refs/tags/v1.1.0.zip) |
 [TePostRatings](https://gitee.com/jiangmuzi/TePostRatings) | 简易版文章星级投票评分功能插件 | 0.0.2 | [绛木子](https://github.com/jiangmuzi) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/TePostViews.zip)
 [TePostViews](https://inwao.com/PostViews.html) | 按点击或评论数输出热门文章插件 | 1.0.0 | [inwao world](https://inwao.com),[绛木子](https://github.com/jiangmuzi) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/TePostViews.zip)
 [TeStat](https://github.com/jiangmuzi/TeStat) | 文章浏览/点赞/运行数据统计插件 | 1.1 | [绛木子](https://github.com/jiangmuzi) | [下载](https://github.com/jiangmuzi/TeStat/archive/master.zip)
 [TeThumbnail](https://github.com/jiangmuzi/TeThumbnail) | 文章模板输出自动生成缩略图插件 | 1.0.0 | [绛木子](https://github.com/jiangmuzi) | [下载](https://github.com/jiangmuzi/TeThumbnail/archive/master.zip)
 [TeePay](https://github.com/mhcyong/TeePay) | 自媒体付费阅读插件(免费基础版) | 1.5.4 | [胖蒜网](https://github.com/mhcyong) | [下载](https://github.com/mhcyong/TeePay/archive/master.zip)
+[TelegramNotice](https://github.com/lhl77/Typecho-Plugin-TelegramNotice) | Telegram 推送评论通知与审核（支持多 Chat ID 群发、邮箱绑定、评论回复）。 |         1.1.0         | [LHL](https://github.com/lhl77)                              | [最新](https://github.com/lhl77/Typecho-Plugin-TelegramNotice/archive/refs/tags/v1.1.0.zip) |
 [TextEditor](https://plugins.typecho.me/plugins/text-editor.html) | 基于[MooTools](https://mootools.net)Html文章编辑器插件 | 0.3.3 | [vfasky](http://vfasky.com) | [不可用](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/TextEditor.zip)
 [Textends](https://github.com/jiangmuzi/Textends) | 常用模版输出效果多功能扩展插件 | 1.0.0 | [绛木子](https://github.com/jiangmuzi) | [下载](https://github.com/jiangmuzi/Textends/archive/master.zip)
 [Textile2](https://github.com/typecho/plugins/tree/master/Textile2) | [MT](https://www.movabletype.org)式Textile2写作语法解析器插件 | 2.1.1 | Jim Riggs | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/Textile2.zip)
