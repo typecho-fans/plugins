@@ -56,7 +56,7 @@ class TeStore_Action extends Typecho_Widget
         $pluginFile = is_dir($pluginDir) ? $pluginDir . '/Plugin.php' : $pluginDir . '.php';
         if (is_file($pluginFile)) {
             $parse = Typecho_Plugin::parseInfo($pluginFile);
-            $infos = array(strip_tags($parse['author']), strip_tags($parse['version'])); //兼容html混写
+            $infos = array(strip_tags($parse['author']), strip_tags($parse['version'])); //兼容 html 混写
         }
         return $infos;
     }
@@ -98,8 +98,8 @@ class TeStore_Action extends Typecho_Widget
                         }
                     }
                     $html .= $this->useCurl ? $this->curlGet($page) : @file_get_contents($page,0,
-                        stream_context_create(array('http'=>array('timeout'=>20)))); //设20秒超时
-                    //转码MD格式
+                        stream_context_create(array('http'=>array('timeout'=>20)))); //设 20 秒超时
+                    //转码 MD 格式
                     if ($proxy || $isRaw) {
                         $html = htmlspecialchars_decode(Markdown::convert($html)); //fix 17.10.30 Markdown
                     }
@@ -121,7 +121,7 @@ class TeStore_Action extends Typecho_Widget
                 $urls = array();
                 foreach ($trs as $trKey => $trVal) {
                     if ($trVal->parentNode->tagName == 'tbody') {
-                        //获取td纯文本
+                        //获取 td 纯文本
                         foreach ($trVal->childNodes as $tdKey => $td) {
                             $tdVal = $td->nodeValue;
                             if ($tdVal) {
@@ -129,17 +129,37 @@ class TeStore_Action extends Typecho_Widget
                             }
                         }
                         $tds = $trs->item($trKey)->getElementsByTagName('td');
-                        //获取td元数据
+                        $rowUrls = array(); // 每行单独收集 URL
+                        //获取 td 元数据
                         foreach ($tds as $tdKey => $tdVal) {
                             if ($tdKey !== 1 && $tdKey !== 2) {
                                 $a = $tds->item($tdKey)->getElementsByTagName('a');
                                 $href = $a->item(0) ? $a->item(0)->getAttribute('href') : '';
                                 if ($tdKey == 3) {
-                                    $href = str_replace(array('<td align="right">', '</td>'), '', $dom->saveXML($tds->item($tdKey))); //全取作者栏html
+                                    // 获取 td 内部的 HTML 内容（作者栏）
+                                    $innerHTML = '';
+                                    $tdNode = $tds->item($tdKey);
+                                    foreach ($tdNode->childNodes as $child) {
+                                        if ($child->nodeType == XML_ELEMENT_NODE) {
+                                            // 元素节点：保留完整标签
+                                            $innerHTML .= $dom->saveHTML($child);
+                                        } else if ($child->nodeType == XML_TEXT_NODE) {
+                                            // 文本节点：直接使用文本内容
+                                            $innerHTML .= $child->nodeValue;
+                                        }
+                                    }
+                                    $href = $innerHTML;
                                 }
-                                $urls[] = trim($href);
+                                $rowUrls[] = trim($href);
                             }
                         }
+                        // 确保每行都有 3 个 URL 元素，不足的补空字符串
+                        while (count($rowUrls) < 3) {
+                            $rowUrls[] = '';
+                        }
+                        // 只取前 3 个元素，防止多余
+                        $rowUrls = array_slice($rowUrls, 0, 3);
+                        $urls = array_merge($urls, $rowUrls);
                     }
                 }
                 $texts = array_values($texts);
@@ -154,7 +174,13 @@ class TeStore_Action extends Typecho_Widget
                 foreach ($texts as $key => $val) {
                     $names[] = isset($val[0]) ? $val[0] : $val[1]; //fix for PHP 7.0+
                     $vals = array_values(array_filter($val));
-                    unset($vals[3]); //去除作者栏text
+                    // 表格有 5 列：[0:名称，1:简介，2:版本，3:作者，4:zip 标记]
+                    // 需要保留：[0:名称，1:简介，2:版本，4:zip 标记]，删除 3:作者
+                    // array_filter 后重新索引，所以作者在索引 3 的位置
+                    if (isset($vals[3])) {
+                        unset($vals[3]); //去除作者栏 text
+                        $vals = array_values($vals); //重新索引，确保连续
+                    }
                     $datas[] = array_combine($keys, array_merge($vals, $urls[$key]));
                 }
                 //按插件名排序
@@ -239,7 +265,7 @@ class TeStore_Action extends Typecho_Widget
 
                 //下载至临时目录
                 $zipFile = $this->useCurl ? $this->curlGet($zip) : @file_get_contents($zip, 0,
-                    stream_context_create(array('http' => array('timeout' => 20)))); //设20秒超时
+                    stream_context_create(array('http' => array('timeout' => 20)))); //设 20 秒超时
 
                 if (!$zipFile) {
                     $result['error'] = _t('下载压缩包出错');
@@ -270,7 +296,7 @@ class TeStore_Action extends Typecho_Widget
                                     }
                                 }
 
-                                //定位Plugin.php
+                                //定位 Plugin.php
                                 $trueDir = '';
                                 $parentDir = '';
                                 foreach ($tmpRoutes as $tmpRoute) {
@@ -389,7 +415,7 @@ class TeStore_Action extends Typecho_Widget
     }
 
     /**
-     * 检测可加速zip地址
+     * 检测可加速 zip 地址
      *
      * @access public
      * @param string $name 插件名称
@@ -407,11 +433,11 @@ class TeStore_Action extends Typecho_Widget
         if ($cacheTime && is_file($cacheFile) && (time() - filemtime($cacheFile)) <= $cacheTime * 3600) {
             $data = file_get_contents($cacheFile);
             $datas = Json::decode($data, true);
-            //读取API数据
+            //读取 API 数据
         } else {
             $api = 'https://api.github.com/repositories/14101953/contents/ZIP_CDN';
             $data = $this->useCurl ? $this->curlGet($api) : @file_get_contents($api, 0,
-                stream_context_create(array('http' => array('header' => array('User-Agent: PHP'), 'timeout' => 20)))); //API要求header
+                stream_context_create(array('http' => array('header' => array('User-Agent: PHP'), 'timeout' => 20)))); //API 要求 header
             if ($data) {
                 $datas = Json::decode($data, true);
                 //生成缓存文件
@@ -488,7 +514,7 @@ class TeStore_Action extends Typecho_Widget
     }
 
     /**
-     * 使用cURL方法下载
+     * 使用 cURL 方法下载
      *
      * @access private
      * @return string
@@ -502,7 +528,7 @@ class TeStore_Action extends Typecho_Widget
         curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, 1);
         curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, 2);
         curl_setopt($curl, CURLOPT_CAINFO, 'usr/plugins/TeStore/data/cacert.pem'); //证书识别库
-        curl_setopt($curl, CURLOPT_TIMEOUT, 30); //设30秒超时
+        curl_setopt($curl, CURLOPT_TIMEOUT, 30); //设 30 秒超时
         curl_setopt($curl, CURLOPT_URL, $url);
 
         $result = curl_exec($curl);
