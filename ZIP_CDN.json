@@ -4066,32 +4066,32 @@
   {
     "name": "LinkGo_LHL.zip",
     "path": "ZIP_CDN/LinkGo_LHL.zip",
-    "sha": "67a22dfb2976bb5bf6851a295794170f4e1a375b",
-    "size": 19242,
+    "sha": "776ec361cd24a3666119ecff7491c6d6c6da3b7f",
+    "size": 28642,
     "url": "https://api.github.com/repos/typecho-fans/plugins/contents/ZIP_CDN/LinkGo_LHL.zip?ref=master",
     "html_url": "https://github.com/typecho-fans/plugins/blob/master/ZIP_CDN/LinkGo_LHL.zip",
-    "git_url": "https://api.github.com/repos/typecho-fans/plugins/git/blobs/67a22dfb2976bb5bf6851a295794170f4e1a375b",
+    "git_url": "https://api.github.com/repos/typecho-fans/plugins/git/blobs/776ec361cd24a3666119ecff7491c6d6c6da3b7f",
     "download_url": "https://raw.githubusercontent.com/typecho-fans/plugins/master/ZIP_CDN/LinkGo_LHL.zip",
     "type": "file",
     "_links": {
       "self": "https://api.github.com/repos/typecho-fans/plugins/contents/ZIP_CDN/LinkGo_LHL.zip?ref=master",
-      "git": "https://api.github.com/repos/typecho-fans/plugins/git/blobs/67a22dfb2976bb5bf6851a295794170f4e1a375b",
+      "git": "https://api.github.com/repos/typecho-fans/plugins/git/blobs/776ec361cd24a3666119ecff7491c6d6c6da3b7f",
       "html": "https://github.com/typecho-fans/plugins/blob/master/ZIP_CDN/LinkGo_LHL.zip"
     }
   },
   {
     "name": "Links_LHL.zip",
     "path": "ZIP_CDN/Links_LHL.zip",
-    "sha": "e2c401fb76802ca1cd8236a350c9950c1361ff39",
-    "size": 449800,
+    "sha": "c87e684edbf782daeea3761d819680bf13268380",
+    "size": 457594,
     "url": "https://api.github.com/repos/typecho-fans/plugins/contents/ZIP_CDN/Links_LHL.zip?ref=master",
     "html_url": "https://github.com/typecho-fans/plugins/blob/master/ZIP_CDN/Links_LHL.zip",
-    "git_url": "https://api.github.com/repos/typecho-fans/plugins/git/blobs/e2c401fb76802ca1cd8236a350c9950c1361ff39",
+    "git_url": "https://api.github.com/repos/typecho-fans/plugins/git/blobs/c87e684edbf782daeea3761d819680bf13268380",
     "download_url": "https://raw.githubusercontent.com/typecho-fans/plugins/master/ZIP_CDN/Links_LHL.zip",
     "type": "file",
     "_links": {
       "self": "https://api.github.com/repos/typecho-fans/plugins/contents/ZIP_CDN/Links_LHL.zip?ref=master",
-      "git": "https://api.github.com/repos/typecho-fans/plugins/git/blobs/e2c401fb76802ca1cd8236a350c9950c1361ff39",
+      "git": "https://api.github.com/repos/typecho-fans/plugins/git/blobs/c87e684edbf782daeea3761d819680bf13268380",
       "html": "https://github.com/typecho-fans/plugins/blob/master/ZIP_CDN/Links_LHL.zip"
     }
   },
@@ -4178,16 +4178,16 @@
   {
     "name": "LoginBeautify_LHL.zip",
     "path": "ZIP_CDN/LoginBeautify_LHL.zip",
-    "sha": "bf294f5a7a3203573a0866e2542d4f906b440c97",
-    "size": 17084,
+    "sha": "949af43da65bc7eec0af47cbe08fa24d1f5b3812",
+    "size": 2394372,
     "url": "https://api.github.com/repos/typecho-fans/plugins/contents/ZIP_CDN/LoginBeautify_LHL.zip?ref=master",
     "html_url": "https://github.com/typecho-fans/plugins/blob/master/ZIP_CDN/LoginBeautify_LHL.zip",
-    "git_url": "https://api.github.com/repos/typecho-fans/plugins/git/blobs/bf294f5a7a3203573a0866e2542d4f906b440c97",
+    "git_url": "https://api.github.com/repos/typecho-fans/plugins/git/blobs/949af43da65bc7eec0af47cbe08fa24d1f5b3812",
     "download_url": "https://raw.githubusercontent.com/typecho-fans/plugins/master/ZIP_CDN/LoginBeautify_LHL.zip",
     "type": "file",
     "_links": {
       "self": "https://api.github.com/repos/typecho-fans/plugins/contents/ZIP_CDN/LoginBeautify_LHL.zip?ref=master",
-      "git": "https://api.github.com/repos/typecho-fans/plugins/git/blobs/bf294f5a7a3203573a0866e2542d4f906b440c97",
+      "git": "https://api.github.com/repos/typecho-fans/plugins/git/blobs/949af43da65bc7eec0af47cbe08fa24d1f5b3812",
       "html": "https://github.com/typecho-fans/plugins/blob/master/ZIP_CDN/LoginBeautify_LHL.zip"
     }
   },
@@ -4802,16 +4802,16 @@
   {
     "name": "NAME_LIST.log",
     "path": "ZIP_CDN/NAME_LIST.log",
-    "sha": "ce49d4f048fd81a4656491920c29a41a6da43a27",
-    "size": 3777,
+    "sha": "631ec420e849d049eeb75117a57dd01609496308",
+    "size": 3754,
     "url": "https://api.github.com/repos/typecho-fans/plugins/contents/ZIP_CDN/NAME_LIST.log?ref=master",
     "html_url": "https://github.com/typecho-fans/plugins/blob/master/ZIP_CDN/NAME_LIST.log",
-    "git_url": "https://api.github.com/repos/typecho-fans/plugins/git/blobs/ce49d4f048fd81a4656491920c29a41a6da43a27",
+    "git_url": "https://api.github.com/repos/typecho-fans/plugins/git/blobs/631ec420e849d049eeb75117a57dd01609496308",
     "download_url": "https://raw.githubusercontent.com/typecho-fans/plugins/master/ZIP_CDN/NAME_LIST.log",
     "type": "file",
     "_links": {
       "self": "https://api.github.com/repos/typecho-fans/plugins/contents/ZIP_CDN/NAME_LIST.log?ref=master",
-      "git": "https://api.github.com/repos/typecho-fans/plugins/git/blobs/ce49d4f048fd81a4656491920c29a41a6da43a27",
+      "git": "https://api.github.com/repos/typecho-fans/plugins/git/blobs/631ec420e849d049eeb75117a57dd01609496308",
       "html": "https://github.com/typecho-fans/plugins/blob/master/ZIP_CDN/NAME_LIST.log"
     }
   },
@@ -6957,22 +6957,6 @@
       "self": "https://api.github.com/repos/typecho-fans/plugins/contents/ZIP_CDN/TeePay_%E8%83%96%E8%92%9C%E7%BD%91.zip?ref=master",
       "git": "https://api.github.com/repos/typecho-fans/plugins/git/blobs/2c63661e0b9d4147c5206a8dbcc7260ed93c4e09",
       "html": "https://github.com/typecho-fans/plugins/blob/master/ZIP_CDN/TeePay_%E8%83%96%E8%92%9C%E7%BD%91.zip"
-    }
-  },
-  {
-    "name": "TelegramNotice_LHL.zip",
-    "path": "ZIP_CDN/TelegramNotice_LHL.zip",
-    "sha": "9ddfb455db0dc40ffda5061e951a0694d33ad58e",
-    "size": 26042,
-    "url": "https://api.github.com/repos/typecho-fans/plugins/contents/ZIP_CDN/TelegramNotice_LHL.zip?ref=master",
-    "html_url": "https://github.com/typecho-fans/plugins/blob/master/ZIP_CDN/TelegramNotice_LHL.zip",
-    "git_url": "https://api.github.com/repos/typecho-fans/plugins/git/blobs/9ddfb455db0dc40ffda5061e951a0694d33ad58e",
-    "download_url": "https://raw.githubusercontent.com/typecho-fans/plugins/master/ZIP_CDN/TelegramNotice_LHL.zip",
-    "type": "file",
-    "_links": {
-      "self": "https://api.github.com/repos/typecho-fans/plugins/contents/ZIP_CDN/TelegramNotice_LHL.zip?ref=master",
-      "git": "https://api.github.com/repos/typecho-fans/plugins/git/blobs/9ddfb455db0dc40ffda5061e951a0694d33ad58e",
-      "html": "https://github.com/typecho-fans/plugins/blob/master/ZIP_CDN/TelegramNotice_LHL.zip"
     }
   },
   {
