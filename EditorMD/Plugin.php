@@ -6,7 +6,7 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
  * @package EditorMD
  * @author DT27
  * @version 1.4.0
- * @link https://dt27.org/php/editormd-for-typecho/
+ * @link https://dt27.cn/php/editormd-for-typecho/
  */
 class EditorMD_Plugin implements Typecho_Plugin_Interface
 {

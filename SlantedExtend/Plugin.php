@@ -1,14 +1,14 @@
 <?php
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 /**
- * <a href="https://dt27.org/Slanted-for-Typecho/" target="_blank">Slanted 主题</a>扩展插件
+ * <a href="https://dt27.cn/Slanted-for-Typecho/" target="_blank">Slanted 主题</a>扩展插件
  *
  * 浏览量统计部分来自 	willin kan 的 Views 插件
  *
  * @package SlantedExtend
  * @author DT27
  * @version 1.0.0
- * @link https://dt27.org/SlantedExtend/
+ * @link https://dt27.cn/SlantedExtend/
  */
 class SlantedExtend_Plugin implements Typecho_Plugin_Interface
 {
