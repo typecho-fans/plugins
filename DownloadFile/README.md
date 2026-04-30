@@ -1,4 +1,4 @@
-# [DownloadFile](https://dt27.org/php/DownloadFile-for-Typecho/)
+# [DownloadFile](https://dt27.cn/php/DownloadFile-for-Typecho/)
 **Typecho 文件下载插件，使下载的文件保持上传时的文件名。**
 
 ![DownloadFile](https://o46i15605.qnssl.com/_image/2016-05-26 09-31-51.jpg)
@@ -17,5 +17,5 @@
 5. 根据需要更新设置
 
 ## License
-> Copyright © 2016 [DT27](https://dt27.org)  
+> Copyright © 2016 [DT27](https://dt27.cn)  
 > License: [GNU General Public License v3.0](https://github.com/DT27/DownloadFile/blob/master/LICENSE.txt)
