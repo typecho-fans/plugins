@@ -6,7 +6,7 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
  * @package DownloadFile
  * @author DT27
  * @version 1.0.0
- * @link https://dt27.org/
+ * @link https://dt27.cn/
  */
 class DownloadFile_Plugin implements Typecho_Plugin_Interface
 {

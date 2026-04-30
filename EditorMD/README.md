@@ -1,6 +1,6 @@
-# [EditorMD](https://dt27.org/php/editormd-for-typecho/)
+# [EditorMD](https://dt27.cn/php/editormd-for-typecho/)
 
-![EditorMD](https://dt27.org/usr/uploads/2016/03/2477390697.png)
+![EditorMD](https://dt27.cn/usr/uploads/2016/03/2477390697.png)
 
 **Markdown 编辑器 [Editor.md](https://pandao.github.io/editor.md/) for Typecho**
 
@@ -9,7 +9,7 @@
 - 支持 [Emoji 表情](http://www.emoji-cheat-sheet.com/)
 - 支持 [ToC（Table of Contents）](https://pandao.github.io/editor.md/examples/toc.html)、[Github Task lists](https://pandao.github.io/editor.md/examples/task-lists.html) 等 Markdown 扩展语法 <sup>*</sup>
 - 支持 TeX 科学公式（基于 [KaTeX](http://khan.github.io/KaTeX/)）、流程图 [Flowchart](https://pandao.github.io/editor.md/examples/flowchart.html) 和 时序图 [Sequence Diagram](https://pandao.github.io/editor.md/examples/sequence-diagram.html) <sup>**</sup>
-- 发布非 Markdown 文章时可禁用该文章 Markdown 解析，以免出现兼容问题。比如使用[APlayer插件](https://github.com/zgq354/APlayer-Typecho-Plugin)的[纯音乐页面](https://dt27.org/meiju/chen_yi_xun_zhou_jie_lun_-_jian_dan_ai_live/)。
+- 发布非 Markdown 文章时可禁用该文章 Markdown 解析，以免出现兼容问题。比如使用[APlayer插件](https://github.com/zgq354/APlayer-Typecho-Plugin)的[纯音乐页面](https://dt27.cn/meiju/chen_yi_xun_zhou_jie_lun_-_jian_dan_ai_live/)。
 
 _<sup>*</sup>需要在插件设置中手动启用，启用后将使用 [marked.js](https://github.com/chjj/marked) 接管前台 Markdown 解析，但接管前台解析后，会导致与文章内容有关的插件失效。_
 
@@ -24,5 +24,5 @@ _<sup>**</sup>语法完整示例：[https://pandao.github.io/editor.md/examples/
 5. 根据需要更新设置
 
 ## License
-> Copyright © 2016 [DT27](https://dt27.org)  
+> Copyright © 2016 [DT27](https://dt27.cn)  
 > License: [The MIT License.](https://github.com/DT27/EditorMD/blob/master/LICENSE)
