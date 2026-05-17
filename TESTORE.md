@@ -28,7 +28,7 @@
 
  > 下载链接文字可用于附加图标和关键字筛选：如`下载`即非社区版，`不可用`带⛔，`特殊`带⚠️意为启用须遵照文档步骤。
 
-### 插件信息 (475)
+### 插件信息 (476)
 
 ###### TeStore会使用下表“名称”创建文件夹，“版本”数字判断升级，请尽量确保文本准确，按字母排序，简介便于关键字搜索。
 ```
@@ -39,7 +39,6 @@
 ---- | ----: | :----: | :---- | :----:
 [AAThemeDemo](https://github.com/benzBrake/AAThemeDemo) | ThemeDemo2 修复版，仅支持Typecho1.2+ | 1.0.0 | [Ryan](http://doufu.ru), [doudou](http://doufu.ru) | [最新](https://github.com/benzBrake/AAThemeDemo/archive/refs/heads/master.zip)
 [APlayerAtBottom](https://github.com/jstar0/APlayerAtBottom) | 网易云解析吸底式音乐播放器插件 | 1.1.3 | [小太](https://github.com/SatoSouta) | [下载](https://github.com/jstar0/APlayerAtBottom/archive/refs/heads/master.zip)
-[AdminBeautify](https://github.com/lhl77/AdminBeautify) |  最美 Typecho 后台主题, 后台美化主题插件, Material Design 3风格  | 2.1.17 | [LHL](https://github.com/lhl77) | [下载](https://github.com/lhl77/Typecho-Plugin-AdminBeautify/archive/refs/heads/main.zip)
 [APlayer](https://github.com/zgq354/APlayer-Typecho-Plugin) | 网易云解析Html5音乐播放器插件 | 1.4.11 | [ZGQ](https://github.com/zgq354) | [下载](https://github.com/zgq354/APlayer-Typecho-Plugin/archive/master.zip)
 [Acc](https://github.com/qt06/typecho-plugin-accessibility) | Typecho无障碍读屏标记修正插件 | 1.0.0 | [杨永全](https://github.com/qt06) | [下载](https://github.com/qt06/typecho-plugin-accessibility/archive/master.zip)
 [Access](https://github.com/kokororin/typecho-plugin-Access) | Typecho查看访客记录统计表插件 | 2.1.0 | [Kokororin](https://github.com/kokororin) | [下载](https://github.com/kokororin/typecho-plugin-Access/archive/master.zip)
@@ -47,6 +46,7 @@
 [ActivatePowerMode](https://gitee.com/hoexhe/ActivatePowerMode) | (娱乐向)疯狂打字机输入特效插件 | 1.0.0 | [Hoe](https://gitee.com/hoexhe) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/ActivatePowerMode.zip)
 [ActiveSubmit](https://github.com/invelop/Typecho-ActiveSubmit) | 主动推送链接至百度插件(含分类) | 1.0 | [承影](https://github.com/invelop) | [下载](https://github.com/invelop/Typecho-ActiveSubmit/archive/master.zip)
 [AddTheme](https://github.com/cikiChe/addtheme) | 在线自动下载主题 | 0.0.1 | [ciki](https://github.com/cikiChe/addtheme) | [下载](https://github.com/cikiChe/addtheme/archive/refs/tags/v0.02.zip)
+[AdminBeautify](https://github.com/lhl77/AdminBeautify) |  最美 Typecho 后台主题, 后台美化主题插件, Material Design 3风格  | 2.1.42 | [LHL](https://github.com/lhl77) | [最近](https://github.com/lhl77/Typecho-Plugin-AdminBeautify/archive/refs/heads/main.zip)
 [AdminLogin](https://github.com/v03413/Typecho_Plugins/tree/master/AdminLogin) | 微信/QQ号后台扫码登录注册插件 | 0.1.2 | [&#95;莫名&#95;](https://github.com/v03413) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/AdminLogin_.zip)
 [Adminer](https://github.com/kokororin/typecho-plugin-adminer) | 后台集成Adminer数据库管理插件 | 1.0 | [kokororin](https://github.com/kokororin) | [下载](https://github.com/kokororin/typecho-plugin-adminer/archive/master.zip)
 [AdsPlugin](https://github.com/ScientistPun/AdsPlugin_for_typecho) | Typecho自建数据广告位管理插件 | 1.0.0 | [ScientistPun](https://github.com/ScientistPun) | [下载](https://github.com/ScientistPun/AdsPlugin_for_typecho/archive/master.zip)
