@@ -39,6 +39,7 @@
 ---- | ----: | :----: | :---- | :----:
 [AAThemeDemo](https://github.com/benzBrake/AAThemeDemo) | ThemeDemo2 修复版，仅支持Typecho1.2+ | 1.0.0 | [Ryan](http://doufu.ru), [doudou](http://doufu.ru) | [最新](https://github.com/benzBrake/AAThemeDemo/archive/refs/heads/master.zip)
 [APlayerAtBottom](https://github.com/jstar0/APlayerAtBottom) | 网易云解析吸底式音乐播放器插件 | 1.1.3 | [小太](https://github.com/SatoSouta) | [下载](https://github.com/jstar0/APlayerAtBottom/archive/refs/heads/master.zip)
+[AdminBeautify](https://github.com/lhl77/AdminBeautify) |  最美 Typecho 后台主题, 后台美化主题插件, Material Design 3风格  | 2.1.17 | [LHL](https://github.com/lhl77) | [下载](https://github.com/lhl77/Typecho-Plugin-AdminBeautify/archive/refs/heads/main.zip)
 [APlayer](https://github.com/zgq354/APlayer-Typecho-Plugin) | 网易云解析Html5音乐播放器插件 | 1.4.11 | [ZGQ](https://github.com/zgq354) | [下载](https://github.com/zgq354/APlayer-Typecho-Plugin/archive/master.zip)
 [Acc](https://github.com/qt06/typecho-plugin-accessibility) | Typecho无障碍读屏标记修正插件 | 1.0.0 | [杨永全](https://github.com/qt06) | [下载](https://github.com/qt06/typecho-plugin-accessibility/archive/master.zip)
 [Access](https://github.com/kokororin/typecho-plugin-Access) | Typecho查看访客记录统计表插件 | 2.1.0 | [Kokororin](https://github.com/kokororin) | [下载](https://github.com/kokororin/typecho-plugin-Access/archive/master.zip)
