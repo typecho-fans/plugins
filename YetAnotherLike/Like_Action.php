@@ -123,8 +123,7 @@ class Like_Action extends Widget implements ActionInterface {
             return;
         }
         # 此时确定已经点赞，删除点赞者列表中的likerid部分
-        $pattern = '/' . preg_quote($likerid, '/') . "./";
-        $userlist = preg_replace($pattern, '', $userlist);
+        $userlist = str_replace(",{$likerid},", ',', $userlist);
         $stmt = $this->db->update("table.fields")->rows([
             'str_value' => $userlist
         ])->where("cid = ?", $cid)->where("name = ?", $LIKE_FIELD_NAME);
