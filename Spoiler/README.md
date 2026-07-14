@@ -35,6 +35,7 @@
 ```
 
 效果：
+
 ![显示提示语的遮挡，盖住了文章内容](screenshots/spoiler.png)
 
 另外，如果使用某些主题（已经测试过 Butterfly ），它也能检测页面的 `[note type="warning"]` / `[note type="danger"]` 来自动创建遮罩。
@@ -51,6 +52,7 @@
 ```
 
 效果：
+
 ![显示提示语的遮挡，提示语和 note 标签中的文本一致](screenshots/spoiler2.png)
 
 实际上，它只检测 HTML 输出中同时拥有 `note` 和 `warning` / `danger` 类的元素，而 Butterfly 等主题会自动输出这些类。
