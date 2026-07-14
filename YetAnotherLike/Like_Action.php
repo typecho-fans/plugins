@@ -7,6 +7,7 @@ use Typecho\Widget\Request as WidgetRequest;
 use Typecho\Widget\Response as WidgetResponse;
 use Widget\ActionInterface;
 use Widget\Options;
+use Widget\Security;
 
 if (!defined('__TYPECHO_ROOT_DIR__')) {
     exit;
@@ -23,6 +24,13 @@ class Like_Action extends Widget implements ActionInterface {
 
     public function action()
     {
+        if (!$this->request->isPost()) {
+            $this->response->setStatus(405);
+            return;
+        }
+
+        Security::alloc()->protect();
+
         if ($this->request->is('up')) {
             $this->up();
             return;
@@ -133,7 +141,7 @@ class Like_Action extends Widget implements ActionInterface {
         echo $liker_count;
     }
 
-    static function getClientIp() {
+    private static function getClientIp() {
         return $_SERVER['REMOTE_ADDR'];
     }
 

@@ -23,14 +23,9 @@ if ($user->hasLogin()) {
     $likerid = strval($user->uid);
 }
 else {
-    $likerid = getClientIp();
+    $likerid = $_SERVER['REMOTE_ADDR'];
 }
 $liked = strpos($userlist, ",{$likerid},") === false ? "" : " liked";
-
-
-function getClientIp() {
-    return $_SERVER['REMOTE_ADDR'];
-}
 
 ?>
 
@@ -110,66 +105,83 @@ function getClientIp() {
 
 </style>
 
-<div class="like-bar" data-cid="<?= $cid ?>">
-  <button class="like-btn<?= $liked ?>">
+<div class="like-bar" data-yet-another-like data-cid="<?= htmlspecialchars((string) $cid, ENT_QUOTES, 'UTF-8') ?>">
+  <button type="button" class="like-btn<?= $liked ?>">
     <span class="like-icon">❤</span>
     <span>点赞</span>
   </button>
 
   <span class="like-count">
-    已获 <strong id="count-number"><?= $like_count ?></strong> 个赞
+    已获 <strong class="like-count-number"><?= $like_count ?></strong> 个赞
   </span>
 </div>
 
 <script>
     (() => {
+        const state = window.TypechoPluginYetAnotherLike || {};
+        state.endpoint = <?= json_encode(
+            \Widget\Security::alloc()->getIndex('/action/like'),
+            JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT
+        ) ?>;
+        window.TypechoPluginYetAnotherLike = state;
 
+        if (state.clickHandler) {
+            return;
+        }
 
-        const endpoint = `<?php \Widget\Options::alloc()->index("/action/like") ?>`;
-        const $ = document.querySelector.bind(document);
-
-        document.addEventListener("click", function(e){
-            const btn = e.target.closest(".like-btn");
-            if(!btn) return;
-
-            const cid = btn.closest(".like-bar").dataset.cid;
-            
-            if ($(".like-btn").classList.contains("liked")) {
-                fetch(endpoint + "?cancel=1&cid=" + cid).then((res) => {
-                    if (!res.ok) {
-                        throw new Error("网络错误");
-                    }
-                    return res.text();
-                }).then((text) => {
-                    if (text === "! you have not liked") {
-                        alert("您还没有点过赞，无法取消");
-                        return;
-                    }
-                    $("#count-number").innerText = text;
-                    $(".like-btn").classList.remove("liked");
-                })
-            }
-            else {
-                fetch(endpoint + "?up=1&cid=" + cid).then((res) => {
-                    if (!res.ok) {
-                        throw new Error("网络错误");
-                    }
-                    return res.text();
-                }).then((text) => {
-                    if (text === "! please login") {
-                        alert("请登录再点赞文章！");
-                        return;
-                    }
-                    if (text === "! already liked") {
-                        alert("您已经点过赞了！");
-                        return;
-                    }
-                    $("#count-number").innerText = text;
-                    $(".like-btn").classList.add("liked");
-                })
+        state.clickHandler = async (event) => {
+            const button = event.target.closest('.like-bar[data-yet-another-like] .like-btn');
+            if (!button || button.disabled) {
+                return;
             }
 
-        });
+            const bar = button.closest('.like-bar[data-yet-another-like]');
+            const count = bar.querySelector('.like-count-number');
+            const action = button.classList.contains('liked') ? 'cancel' : 'up';
+            const params = new URLSearchParams({cid: bar.dataset.cid});
+            params.set(action, '1');
+            button.disabled = true;
+
+            try {
+                const response = await fetch(state.endpoint, {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'},
+                    body: params.toString()
+                });
+                const text = (await response.text()).trim();
+
+                if (!response.ok) {
+                    throw new Error(`HTTP ${response.status}`);
+                }
+                if (text === '! please login') {
+                    alert('请登录再点赞文章！');
+                    return;
+                }
+                if (text === '! already liked') {
+                    alert('您已经点过赞了！');
+                    return;
+                }
+                if (text === '! you have not liked') {
+                    alert('您还没有点过赞，无法取消');
+                    return;
+                }
+                if (!/^\d+$/.test(text)) {
+                    throw new Error('服务器返回了无效的点赞数');
+                }
+
+                count.textContent = text;
+                button.classList.toggle('liked', action === 'up');
+            }
+            catch (error) {
+                console.error('YetAnotherLike:', error);
+                alert('点赞请求失败，请稍后重试');
+            }
+            finally {
+                button.disabled = false;
+            }
+        };
+
+        document.addEventListener('click', state.clickHandler);
     })();
 
 </script>

@@ -62,7 +62,7 @@ class Plugin implements PluginInterface
 
 
     public static function like() {
-        include "like-button.php";
+        include __DIR__ . '/like-button.php';
     }
 
     public static function likeCount() {
