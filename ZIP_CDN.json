@@ -4818,16 +4818,16 @@
   {
     "name": "NAME_LIST.log",
     "path": "ZIP_CDN/NAME_LIST.log",
-    "sha": "c6ef10ec6b00171a25ae15b728737fd57538cdc2",
-    "size": 3776,
+    "sha": "0b9823566ee782dbcbf08a134e70f4acfcb7e902",
+    "size": 3801,
     "url": "https://api.github.com/repos/typecho-fans/plugins/contents/ZIP_CDN/NAME_LIST.log?ref=master",
     "html_url": "https://github.com/typecho-fans/plugins/blob/master/ZIP_CDN/NAME_LIST.log",
-    "git_url": "https://api.github.com/repos/typecho-fans/plugins/git/blobs/c6ef10ec6b00171a25ae15b728737fd57538cdc2",
+    "git_url": "https://api.github.com/repos/typecho-fans/plugins/git/blobs/0b9823566ee782dbcbf08a134e70f4acfcb7e902",
     "download_url": "https://raw.githubusercontent.com/typecho-fans/plugins/master/ZIP_CDN/NAME_LIST.log",
     "type": "file",
     "_links": {
       "self": "https://api.github.com/repos/typecho-fans/plugins/contents/ZIP_CDN/NAME_LIST.log?ref=master",
-      "git": "https://api.github.com/repos/typecho-fans/plugins/git/blobs/c6ef10ec6b00171a25ae15b728737fd57538cdc2",
+      "git": "https://api.github.com/repos/typecho-fans/plugins/git/blobs/0b9823566ee782dbcbf08a134e70f4acfcb7e902",
       "html": "https://github.com/typecho-fans/plugins/blob/master/ZIP_CDN/NAME_LIST.log"
     }
   },
@@ -8349,6 +8349,22 @@
       "self": "https://api.github.com/repos/typecho-fans/plugins/contents/ZIP_CDN/XmlRpcAid_%E4%B9%94%E5%8D%83.zip?ref=master",
       "git": "https://api.github.com/repos/typecho-fans/plugins/git/blobs/612efe212fbbe3c06d1e11dfb0192526e9f44941",
       "html": "https://github.com/typecho-fans/plugins/blob/master/ZIP_CDN/XmlRpcAid_%E4%B9%94%E5%8D%83.zip"
+    }
+  },
+  {
+    "name": "YetAnotherLike_Ect07.zip",
+    "path": "ZIP_CDN/YetAnotherLike_Ect07.zip",
+    "sha": "0cf9ff292f41d704915985cd141b1264a23912ba",
+    "size": 10920,
+    "url": "https://api.github.com/repos/typecho-fans/plugins/contents/ZIP_CDN/YetAnotherLike_Ect07.zip?ref=master",
+    "html_url": "https://github.com/typecho-fans/plugins/blob/master/ZIP_CDN/YetAnotherLike_Ect07.zip",
+    "git_url": "https://api.github.com/repos/typecho-fans/plugins/git/blobs/0cf9ff292f41d704915985cd141b1264a23912ba",
+    "download_url": "https://raw.githubusercontent.com/typecho-fans/plugins/master/ZIP_CDN/YetAnotherLike_Ect07.zip",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/typecho-fans/plugins/contents/ZIP_CDN/YetAnotherLike_Ect07.zip?ref=master",
+      "git": "https://api.github.com/repos/typecho-fans/plugins/git/blobs/0cf9ff292f41d704915985cd141b1264a23912ba",
+      "html": "https://github.com/typecho-fans/plugins/blob/master/ZIP_CDN/YetAnotherLike_Ect07.zip"
     }
   },
   {
