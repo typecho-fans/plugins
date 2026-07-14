@@ -134,21 +134,6 @@ class Like_Action extends Widget implements ActionInterface {
     }
 
     static function getClientIp() {
-        // 1. 检查是否有 Nginx 传入的 X-Forwarded-For（可能包含多个IP，第一个为客户端真实IP）
-        if (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {
-            $ips = explode(',', $_SERVER['HTTP_X_FORWARDED_FOR']);
-            $ip = trim($ips[0]);
-            if (filter_var($ip, FILTER_VALIDATE_IP)) {
-                return $ip;
-            }
-        }
-
-        // 2. 检查 Nginx 传入的 X-Real-IP
-        if (!empty($_SERVER['HTTP_X_REAL_IP']) && filter_var($_SERVER['HTTP_X_REAL_IP'], FILTER_VALIDATE_IP)) {
-            return $_SERVER['HTTP_X_REAL_IP'];
-        }
-
-        // 3. 兜底方案，直接获取（无代理或本地环境时有效）
         return $_SERVER['REMOTE_ADDR'];
     }
 
