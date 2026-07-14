@@ -25,7 +25,7 @@ if ($user->hasLogin()) {
 else {
     $likerid = getClientIp();
 }
-$liked = str_contains($userlist, ",{$likerid},") ? " liked" : "";
+$liked = strpos($userlist, ",{$likerid},") === false ? "" : " liked";
 
 
 function getClientIp() {

@@ -68,7 +68,7 @@ class Like_Action extends Widget implements ActionInterface {
             $like_field_is_null = false;
             $userlist = $already_exists["str_value"];
         }
-        if (str_contains($userlist, ",{$likerid},")) {
+        if (strpos($userlist, ",{$likerid},") !== false) {
             echo "! already liked";
             return;
         }
@@ -118,7 +118,7 @@ class Like_Action extends Widget implements ActionInterface {
             return;
         }
         $userlist = $userlist_row["str_value"];
-        if (!str_contains($userlist, ",{$likerid},")) {
+        if (strpos($userlist, ",{$likerid},") === false) {
             echo "! you have not liked";
             return;
         }
