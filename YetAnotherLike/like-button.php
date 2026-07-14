@@ -134,6 +134,7 @@ function getClientIp() {
 </div>
 
 <script>
+    const endpoint = `<?php \Widget\Options::alloc()->index("/action/like") ?>`;
     const $ = document.querySelector.bind(document);
 
     document.addEventListener("click", function(e){
@@ -143,7 +144,7 @@ function getClientIp() {
         const cid = btn.closest(".like-bar").dataset.cid;
         
         if ($(".like-btn").classList.contains("liked")) {
-            fetch("/action/like?cancel=1&cid=" + cid).then((res) => {
+            fetch(endpoint + "?cancel=1&cid=" + cid).then((res) => {
                 if (!res.ok) {
                     throw new Error("网络错误");
                 }
@@ -158,7 +159,7 @@ function getClientIp() {
             })
         }
         else {
-            fetch("/action/like?up=1&cid=" + cid).then((res) => {
+            fetch(endpoint + "?up=1&cid=" + cid).then((res) => {
                 if (!res.ok) {
                     throw new Error("网络错误");
                 }
