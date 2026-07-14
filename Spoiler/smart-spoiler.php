@@ -1,0 +1,161 @@
+<?php
+namespace TypechoPlugin\Spoiler;
+
+use Widget\Options;
+
+$htmlSpoilerText = "";
+
+
+// 检测 warning/danger note 的存在
+if (Options::alloc()->plugin('Spoiler')->enableNoteTags == "0") {
+    $contentHtml = \Widget\Archive::alloc()->content;
+
+    $dom = new \DOMDocument();
+
+    // 因为不是完整HTML，所以包一层root
+    $dom->loadHTML('<?xml encoding="UTF-8"><div id="__root">'.$contentHtml.'</div>');
+
+    $xpath = new \DOMXPath($dom);
+
+    // 经典的query trick
+    $queryWarning = "//*[contains(concat(' ', normalize-space(@class), ' '), ' note ')
+                and
+                contains(concat(' ', normalize-space(@class), ' '), ' warning ')]";
+
+    $queryDanger = "//*[contains(concat(' ', normalize-space(@class), ' '), ' note ')
+                and
+                contains(concat(' ', normalize-space(@class), ' '), ' danger ')]";
+
+    $node = $xpath->query($queryDanger)->item(0);
+
+    if (!$node) $node = $xpath->query($queryWarning)->item(0);
+
+    if ($node) {
+        $innerHTML = '';
+
+        foreach ($node->childNodes as $child) {
+            $innerHTML .= $dom->saveHTML($child);
+        }
+
+        $htmlSpoilerText = $innerHTML;
+    }
+}
+
+
+
+// 检测 SPOILER 注释
+if (Options::alloc()->plugin('Spoiler')->enableHtmlComments == "0") {
+    $pageText = \Widget\Archive::alloc()->text;
+
+    if (preg_match('/<!--SPOILER\s*(.*?)\s*-->/s', $pageText, $matches)) {
+        $spoilerText = $matches[1];
+        $htmlSpoilerText = nl2br(htmlspecialchars($spoilerText));
+    }
+}
+
+
+
+// 如果有了Spoiler，则插入
+if ($htmlSpoilerText !== "") {
+    echo <<<HTML
+<div class="spoiler-overlay">
+    <div class="spoiler-message">
+{$htmlSpoilerText}
+    </div>
+
+    <div class="spoiler-actions">
+        <button type="button" class="spoiler-back-btn">返回</button>
+        <button type="button" class="spoiler-continue-btn">继续</button>
+    </div>
+</div>
+
+<script>
+    (() => {
+        // 在PJAX主题下防止多次加载
+        if (window.SpoilerPluginLoaded) return;
+        window.SpoilerPluginLoaded = true;
+
+        document.addEventListener("click", function(e) {
+            const continueBtn = e.target.closest(".spoiler-continue-btn");
+            if (continueBtn) {
+                document.querySelector(".spoiler-overlay").style.display = "none";
+            }
+            const backBtn = e.target.closest(".spoiler-back-btn");
+            if (backBtn) {
+                if (window.history.length <= 1) {
+                    window.location.href = "/";
+                }
+                else {
+                    window.history.back();
+                }
+                
+            }
+        })
+    })();
+    
+</script>
+
+<style>
+    /* 遮罩 */
+    .spoiler-overlay {
+        position: absolute;
+        inset: 0;
+        /* 等同于 top/right/bottom/left: 0 */
+        z-index: 99999;
+
+        background: rgba(0, 0, 0, 0.55);
+        backdrop-filter: blur(20px);
+        color: #fff;
+
+        padding: 48px;
+        box-sizing: border-box;
+    }
+
+    /* 提示文字 */
+    .spoiler-message {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        text-align: center;
+        white-space: pre-wrap;
+        word-break: break-word;
+
+        font-size: 16px;
+
+        max-width: 80%;
+        margin: 24px auto;
+    }
+
+    /* 右下角按钮 */
+    .spoiler-actions {
+        display: flex;
+        justify-content: flex-end;
+        gap: 12px;
+    }
+
+    .spoiler-actions button {
+        min-width: 88px;
+        padding: 8px 18px;
+
+        border: none;
+        border-radius: 4px;
+
+        cursor: pointer;
+
+        font-size: 14px;
+    }
+
+    .spoiler-actions button:first-child {
+        background: #7e878f;
+        color: #fff;
+    }
+
+    .spoiler-actions button:last-child {
+        background: #0d6efd;
+        color: #fff;
+    }
+</style>
+HTML;
+}
