@@ -28,7 +28,7 @@
 
  > 下表中下载链接文字可在TeStore附加图标：`Download`即社区版，`N/A`为不可用，`Special`是安装或用法特殊。
 
-### 作品索引 (129)
+### 作品索引 (130)
 
 ###### TeStore会使用下表“名称”创建文件夹，“版本”数字判断升级，请尽量确保文本准确，按字母排序，简介便于关键字搜索。
 ```
@@ -158,6 +158,7 @@
 [WeChatShare](WeChatShare) | 定制文章微信/QQ分享链接 | 1.0.6 | [Fuzqing](https://github.com/fuzqing) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/WeChatShare.zip)
 [WeiboSync](WeiboSync) | 博客文章更新推送新浪微博 | 1.0.0 | [vfhky](https://github.com/vfhky) | [Special](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/WeiboSync.zip)
 [XiaMiPlayer](XiaMiPlayer) | 虾米音乐jPlayer极简播放器 | 3.1.4 | [公子](https://github.com/lizheming) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/XiaMiPlayer.zip)
+[YetAnotherLike](YetAnotherLike) | 支持登录用户或IP识别的文章点赞 | 1.0.0 | [Ect07](https://ect.fyi/) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/YetAnotherLike.zip)
 [YoduBGM](YoduBGM) | 迷你按钮型BGM音乐播放器 | 1.7.0 | [Jrotty](https://github.com/jrotty) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/YoduBGM.zip)
 [YoduPlayer](YoduPlayer) | 悬浮式音乐播放器(支持Pjax) | 2.4.6 | [Jrotty](https://github.com/jrotty) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/YoduPlayer.zip)
 [Zan](Zan) | 自定义字段输出文章点赞数 | 1.0.0 | [冰剑](https://github.com/binjoo) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/Zan.zip)
