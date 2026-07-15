@@ -39,8 +39,13 @@ if (Options::alloc()->plugin('Spoiler')->enableNoteTags == "0") {
     if (!$node) $node = $xpath->query($queryWarning)->item(0);
 
     if ($node) {
-        // 仅提取纯文本并转义，防止通过 note 标签注入恶意 HTML/JS
-        $htmlSpoilerText = htmlspecialchars($node->textContent, ENT_QUOTES, 'UTF-8');
+        $innerHTML = '';
+
+        foreach ($node->childNodes as $child) {
+            $innerHTML .= $dom->saveHTML($child);
+        }
+
+        $htmlSpoilerText = $innerHTML;
     }
 }
 
