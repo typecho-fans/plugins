@@ -41,7 +41,7 @@ class Plugin implements PluginInterface
      */
     public static function config(Form $form)
     {
-        $enableHtmlComments = new Radio('enableHtmlComments', array('0'=> '启用', '1'=> '禁用'), 0, 'HTML注释语法',
+        $enableHtmlComments = new Radio('enableHtmlComments', array('0'=> '禁用', '1'=> '启用'), 1, 'HTML注释语法',
             nl2br(htmlspecialchars("使用形如“
 !!!
 <!--SPOILER
@@ -51,7 +51,7 @@ class Plugin implements PluginInterface
 -->
 !!!
 ”的语法创建一个遮罩。")));
-        $enableNoteTags = new Radio('enableNoteTags', array('0'=> '启用', '1'=> '禁用'), 0, '检测note标签',
+        $enableNoteTags = new Radio('enableNoteTags', array('0'=> '禁用', '1'=> '启用'), 1, '检测note标签',
             nl2br(htmlspecialchars("检测页面的 [note type=\"warning\"] / [note type=\"danger\"] 来自动创建遮罩。
 实际上它只检测HTML输出中同时含有 note 和 warning / danger 类的元素。Butterfly等主题会自动输出这些类。
 在它们同时存在时，遮罩文案优先级为 SPOILER注释 > danger > warning 。")));

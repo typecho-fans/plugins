@@ -13,7 +13,7 @@ $htmlSpoilerText = "";
 
 
 // 检测 warning/danger note 的存在
-if (Options::alloc()->plugin('Spoiler')->enableNoteTags == "0") {
+if (Options::alloc()->plugin('Spoiler')->enableNoteTags === "1") {
     $contentHtml = $archiveContent;
 
     $dom = new \DOMDocument();
@@ -52,7 +52,7 @@ if (Options::alloc()->plugin('Spoiler')->enableNoteTags == "0") {
 
 
 // 检测 SPOILER 注释
-if (Options::alloc()->plugin('Spoiler')->enableHtmlComments == "0") {
+if (Options::alloc()->plugin('Spoiler')->enableHtmlComments === "1") {
     $pageText = $archiveText;
 
     if (preg_match('/<!--SPOILER\s*(.*?)\s*-->/s', $pageText, $matches)) {
