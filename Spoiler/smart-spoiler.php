@@ -18,8 +18,10 @@ if (Options::alloc()->plugin('Spoiler')->enableNoteTags == "0") {
 
     $dom = new \DOMDocument();
 
-    // 因为不是完整HTML，所以包一层root
+    // 用户文章的HTML可能不规范, 用libxml内部错误处理避免PHP Warning
+    libxml_use_internal_errors(true);
     $dom->loadHTML('<?xml encoding="UTF-8"><div id="__root">'.$contentHtml.'</div>');
+    libxml_clear_errors();
 
     $xpath = new \DOMXPath($dom);
 
