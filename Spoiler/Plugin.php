@@ -1,10 +1,11 @@
 <?php
 
 namespace TypechoPlugin\Spoiler;
- 
+
 use Typecho\Plugin\PluginInterface;
 use Typecho\Widget\Helper\Form;
 use Typecho\Widget\Helper\Form\Element\Radio;
+use Widget\Archive;
 
 if (!defined('__TYPECHO_ROOT_DIR__')) {
     exit;
@@ -27,14 +28,14 @@ class Plugin implements PluginInterface
     public static function activate()
     {
     }
- 
+
     /**
-     * 禁用插件方法  
+     * 禁用插件方法
      */
     public static function deactivate()
     {
     }
- 
+
     /**
      * 获取插件配置面板
      */
@@ -57,7 +58,7 @@ class Plugin implements PluginInterface
         $form->addInput($enableHtmlComments);
         $form->addInput($enableNoteTags);
     }
- 
+
     /**
      * 个人用户的配置面板
      */
@@ -65,9 +66,30 @@ class Plugin implements PluginInterface
     {
     }
 
+    /**
+     * 根据上下文获取文章信息，渲染 Spoiler 遮罩
+     */
+    public static function smartSpoiler()
+    {
+        $archive = Archive::alloc();
+        $archiveContent = $archive->content;
+        $archiveText   = $archive->text;
 
-    public static function smartSpoiler() {
         include "smart-spoiler.php";
     }
-    
+
+    /**
+     * 手动传入 text 和 content，渲染 Spoiler 遮罩
+     *
+     * @param string $text    页面纯文本内容
+     * @param string $content 页面 HTML 内容
+     */
+    public static function lessSmartSpoiler($text, $content)
+    {
+        $archiveContent = $content;
+        $archiveText    = $text;
+
+        include "smart-spoiler.php";
+    }
+
 }

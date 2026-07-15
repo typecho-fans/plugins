@@ -20,6 +20,11 @@
 
 只需把它放在遮挡需要覆盖的范围（一般包括文章和评论区）下，作为子元素。父元素需要是 `position: relative` 的。
 
+```
+<?php \TypechoPlugin\Spoiler\Plugin::lessSmartSpoiler($this->text, $this->content) ?>
+```
+`lessSmartSpoiler()`可以手动传入文章的 `text` 和 `content`。绝大多数情况下，`smartSpoiler()` 已经足够解决问题。
+
 ## 使用方式
 
 在文章 Markdown 中使用
@@ -35,7 +40,6 @@
 ```
 
 效果：
-
 ![显示提示语的遮挡，盖住了文章内容](screenshots/spoiler.png)
 
 另外，如果使用某些主题（已经测试过 Butterfly ），它也能检测页面的 `[note type="warning"]` / `[note type="danger"]` 来自动创建遮罩。
@@ -52,7 +56,6 @@
 ```
 
 效果：
-
 ![显示提示语的遮挡，提示语和 note 标签中的文本一致](screenshots/spoiler2.png)
 
 实际上，它只检测 HTML 输出中同时拥有 `note` 和 `warning` / `danger` 类的元素，而 Butterfly 等主题会自动输出这些类。

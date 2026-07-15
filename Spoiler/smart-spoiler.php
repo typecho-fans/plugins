@@ -3,12 +3,18 @@ namespace TypechoPlugin\Spoiler;
 
 use Widget\Options;
 
+// $archiveContent 和 $archiveText 由调用方设置
+// $archiveContent: 页面 HTML 内容
+// $archiveText: 页面纯文本内容
+if (!isset($archiveContent)) $archiveContent = '';
+if (!isset($archiveText))   $archiveText   = '';
+
 $htmlSpoilerText = "";
 
 
 // 检测 warning/danger note 的存在
 if (Options::alloc()->plugin('Spoiler')->enableNoteTags == "0") {
-    $contentHtml = \Widget\Archive::alloc()->content;
+    $contentHtml = $archiveContent;
 
     $dom = new \DOMDocument();
 
@@ -45,7 +51,7 @@ if (Options::alloc()->plugin('Spoiler')->enableNoteTags == "0") {
 
 // 检测 SPOILER 注释
 if (Options::alloc()->plugin('Spoiler')->enableHtmlComments == "0") {
-    $pageText = \Widget\Archive::alloc()->text;
+    $pageText = $archiveText;
 
     if (preg_match('/<!--SPOILER\s*(.*?)\s*-->/s', $pageText, $matches)) {
         $spoilerText = $matches[1];
@@ -88,11 +94,11 @@ if ($htmlSpoilerText !== "") {
                 else {
                     window.history.back();
                 }
-                
+
             }
         })
     })();
-    
+
 </script>
 
 <style>
