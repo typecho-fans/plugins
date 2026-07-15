@@ -132,6 +132,7 @@
 [Snowstorm](Snowstorm) | (娱乐向)动态飘雪背景效果 | 1.0.1 | [阳光](https://github.com/rakiy) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/Snowstorm.zip)
 [Soso](Soso) | Typecho搜索过滤/限制/增强 | 1.2.2 | [泽泽社长](https://github.com/jrotty) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/Soso.zip)
 [SplitArchivePage](SplitArchivePage) | Typecho文章应用分页效果 | 0.1.7 | [Noisky](https://github.com/noisky) & [gouki](https://neatstudio.com) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/SplitArchivePage.zip)
+[Spoiler](Spoiler) | 支持登录用户或IP识别的文章点赞 | 1.0.0 | [Ect07](https://ect.fyi/) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/Spoiler.zip)
 [Stat](Stat) | 文章浏览数排行(支持附件) | 1.0.4 | [羽中](https://github.com/jzwalk), [Jozhn](https://github.com/jozhn), [Hanny](http://www.imhan.com) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/Stat.zip)
 [Sticky](Sticky) | Typecho首页/分类文章置顶 | 1.0.1 | [Ryan](https://github.com/benzBrake), Willin Kan | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/Sticky.zip)
 [Subscriber](Subscriber) | 指定文章/内容登录会员可见 | 1.0.0beta | [羽中](https://github.com/jzwalk) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/Subscriber.zip)
