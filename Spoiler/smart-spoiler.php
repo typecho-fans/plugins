@@ -86,7 +86,7 @@ if ($htmlSpoilerText !== "") {
         document.addEventListener("click", function(e) {
             const continueBtn = e.target.closest(".spoiler-continue-btn");
             if (continueBtn) {
-                document.querySelector(".spoiler-overlay").style.display = "none";
+                continueBtn.closest(".spoiler-overlay").style.display = "none";
             }
             const backBtn = e.target.closest(".spoiler-back-btn");
             if (backBtn) {
