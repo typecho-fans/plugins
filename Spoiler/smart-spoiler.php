@@ -109,7 +109,7 @@ if ($htmlSpoilerText !== "") {
         position: absolute;
         inset: 0;
         /* 等同于 top/right/bottom/left: 0 */
-        z-index: 99999;
+        z-index: 90;
 
         background: rgba(0, 0, 0, 0.55);
         backdrop-filter: blur(20px);
