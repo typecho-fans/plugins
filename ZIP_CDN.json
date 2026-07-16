@@ -4818,16 +4818,16 @@
   {
     "name": "NAME_LIST.log",
     "path": "ZIP_CDN/NAME_LIST.log",
-    "sha": "0b9823566ee782dbcbf08a134e70f4acfcb7e902",
-    "size": 3801,
+    "sha": "e75496d5e31472879b894bfdeaba4fe0ff5ef1bf",
+    "size": 3819,
     "url": "https://api.github.com/repos/typecho-fans/plugins/contents/ZIP_CDN/NAME_LIST.log?ref=master",
     "html_url": "https://github.com/typecho-fans/plugins/blob/master/ZIP_CDN/NAME_LIST.log",
-    "git_url": "https://api.github.com/repos/typecho-fans/plugins/git/blobs/0b9823566ee782dbcbf08a134e70f4acfcb7e902",
+    "git_url": "https://api.github.com/repos/typecho-fans/plugins/git/blobs/e75496d5e31472879b894bfdeaba4fe0ff5ef1bf",
     "download_url": "https://raw.githubusercontent.com/typecho-fans/plugins/master/ZIP_CDN/NAME_LIST.log",
     "type": "file",
     "_links": {
       "self": "https://api.github.com/repos/typecho-fans/plugins/contents/ZIP_CDN/NAME_LIST.log?ref=master",
-      "git": "https://api.github.com/repos/typecho-fans/plugins/git/blobs/0b9823566ee782dbcbf08a134e70f4acfcb7e902",
+      "git": "https://api.github.com/repos/typecho-fans/plugins/git/blobs/e75496d5e31472879b894bfdeaba4fe0ff5ef1bf",
       "html": "https://github.com/typecho-fans/plugins/blob/master/ZIP_CDN/NAME_LIST.log"
     }
   },
@@ -6541,6 +6541,22 @@
       "self": "https://api.github.com/repos/typecho-fans/plugins/contents/ZIP_CDN/Spider_Syan.zip?ref=master",
       "git": "https://api.github.com/repos/typecho-fans/plugins/git/blobs/bd7cc289c929e23c42ec41f71970b837f467c12d",
       "html": "https://github.com/typecho-fans/plugins/blob/master/ZIP_CDN/Spider_Syan.zip"
+    }
+  },
+  {
+    "name": "Spoiler_Ect07.zip",
+    "path": "ZIP_CDN/Spoiler_Ect07.zip",
+    "sha": "a8eefb44792581bd4c70c3611acb3b4cd30a43d0",
+    "size": 116218,
+    "url": "https://api.github.com/repos/typecho-fans/plugins/contents/ZIP_CDN/Spoiler_Ect07.zip?ref=master",
+    "html_url": "https://github.com/typecho-fans/plugins/blob/master/ZIP_CDN/Spoiler_Ect07.zip",
+    "git_url": "https://api.github.com/repos/typecho-fans/plugins/git/blobs/a8eefb44792581bd4c70c3611acb3b4cd30a43d0",
+    "download_url": "https://raw.githubusercontent.com/typecho-fans/plugins/master/ZIP_CDN/Spoiler_Ect07.zip",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/typecho-fans/plugins/contents/ZIP_CDN/Spoiler_Ect07.zip?ref=master",
+      "git": "https://api.github.com/repos/typecho-fans/plugins/git/blobs/a8eefb44792581bd4c70c3611acb3b4cd30a43d0",
+      "html": "https://github.com/typecho-fans/plugins/blob/master/ZIP_CDN/Spoiler_Ect07.zip"
     }
   },
   {
