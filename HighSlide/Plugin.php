@@ -253,7 +253,8 @@ $(function(){
 	public static function galleryinstall()
 	{
 		$installdb = Typecho_Db::get();
-		$type = array_pop(explode('_',$installdb->getAdapterName()));
+		$adapterParts = explode('_',(string)$installdb->getAdapterName());
+		$type = array_pop($adapterParts);
 		$prefix = $installdb->getPrefix();
 
 		$scripts = file_get_contents('usr/plugins/HighSlide/'.$type.'.sql');
@@ -351,6 +352,8 @@ $(function(){
 		$options = Helper::options();
 		$settings = $options->plugin('HighSlide');
 		$localsite = $options->siteUrl;
+		$targetUrl = is_string($url) ? $url : '';
+		$hasUrl = '' !== $targetUrl;
 
 		$qiniusite = $settings->qiniudomain;
 		$qiniusite = $qiniusite=='http://' ? '' : $qiniusite;
@@ -364,34 +367,34 @@ $(function(){
 		//获取路径前缀
 		$dname = '';
 		$durl = '';
-		if ($url) {
-			$source = parse_url($url);
-			$dname = dirname($url);
-			$durl = 0===strpos($dname,$localsite) ? $localsite : $source['scheme'].'://'.$source['host'];
+		if ($hasUrl) {
+			$source = parse_url($targetUrl);
+			$dname = dirname($targetUrl);
+			$durl = 0===strpos($dname,$localsite) ? $localsite : (isset($source['scheme'],$source['host']) ? $source['scheme'].'://'.$source['host'] : '');
 		}
 
 		//按储存来源获取地址
 		switch (true) {
-			case !$url && $settings->storage=='local' || 0===strpos($url,$localsite) :
+			case (!$hasUrl && $settings->storage=='local') || ($hasUrl && 0===strpos($targetUrl,$localsite)) :
 			$site = $localsite;
 			$from = 'local';
 			break;
-			case !$url && $settings->storage=='qiniu' || $qiniusite && 0===strpos($url,$qiniusite) :
+			case (!$hasUrl && $settings->storage=='qiniu') || ($hasUrl && $qiniusite && 0===strpos($targetUrl,$qiniusite)) :
 			$site = $qiniusite;
 			$from = 'qiniu';
 			break;
-			case !$url && $settings->storage=='scs' || 0===strpos($url,$scssite) :
-			if ($url) {
-				$dname = dirname(str_replace($scssite,'',$url)); //fix 子目录
+			case (!$hasUrl && $settings->storage=='scs') || ($hasUrl && 0===strpos($targetUrl,$scssite)) :
+			if ($hasUrl) {
+				$dname = dirname(str_replace($scssite,'',$targetUrl)); //fix 子目录
 			}
 			$site = $scssite;
 			$from = 'scs';
 			break;
-			case !$url && $settings->storage=='nos' || $nossite && 0===strpos($url,$nossite) :
+			case (!$hasUrl && $settings->storage=='nos') || ($hasUrl && $nossite && 0===strpos($targetUrl,$nossite)) :
 			$site = $nossite;
 			$from = 'nos';
 			break;
-			case !$url && $settings->storage=='cos' || $cossite && 0===strpos($url,$cossite) :
+			case (!$hasUrl && $settings->storage=='cos') || ($hasUrl && $cossite && 0===strpos($targetUrl,$cossite)) :
 			$site = $cossite;
 			$from = 'cos';
 			break;
@@ -405,7 +408,7 @@ $(function(){
 
 		return new Typecho_Config(array(
 			'dir'=>$filedir,
-			'url'=>$url ? $url : Typecho_Common::url($filedir,$site),
+			'url'=>$hasUrl ? $targetUrl : Typecho_Common::url($filedir,$site),
 			'site'=>$site,
 			'from'=>$from //判断url来源
 		));
@@ -625,15 +628,37 @@ $(function(){
 	public static function autohighslide($content,$widget,$lastResult)
 	{
 		$content = empty($lastResult) ? $content : $lastResult;
+		$raw = (string)$content;
+		$content = $raw;
 
-		if ($widget instanceof Widget_Archive) {
+		try {
+			$canCheckRoute = is_object($widget) && method_exists($widget, 'is');
 			$options = Helper::options();
 			$settings = $options->plugin('HighSlide');
 			$type = self::replacelist();
 
-			//判断替换范围
-			if ($widget->is(''.$type['index'].'') || $widget->is(''.$type['archive'].'') || $widget->is(''.$type['post'].'') || $widget->is(''.$type['page'].'')) {
+			$inScope = true;
+			$isPage = false;
+			if ($canCheckRoute) {
+				$inScope = $widget->is(''.$type['index'].'') || $widget->is(''.$type['archive'].'') || $widget->is(''.$type['post'].'') || $widget->is(''.$type['page'].'');
+				$isPage = $widget->is('page');
+			} else {
+				$widgetType = '';
+				if (is_object($widget)) {
+					try {
+						$widgetType = (string)$widget->type;
+					} catch (Exception $e) {
+						$widgetType = '';
+					} catch (Error $e) {
+						$widgetType = '';
+					}
+				}
+				$isPage = $widgetType === 'page';
+				$inScope = $widgetType === '' ? true : in_array($widgetType,array('post','page'),true);
+			}
 
+			//判断替换范围
+			if ($inScope) {
 				$content = preg_replace('/<a(.*?)href=\"([^\s]+)\.(jpg|gif|png|bmp)\"(.*?)>(.*?)<\/a>/si'
 					,'<a$1href="$2.$3" class="highslide" onclick="return hs.expand(this,{slideshowGroup:\'images\'})"$4>$5</a>',$content);
 
@@ -643,21 +668,23 @@ $(function(){
 						,'<a href="$2" class="highslide" onclick="return hs.expand(this,{slideshowGroup:\'images\'})">$1</a>',$content);
 				}
 				//兼容旧版附件
-				if (strpos($content,'/attachment/')) {
+				if (false !== strpos($content,'/attachment/')) {
 					$content = preg_replace_callback('/<a(.*?)href=\"([^\s]+)\/attachment\/(\d*)\/\"(.*?)>/i',array('HighSlide_Plugin','linkparse'),$content);
 				}
 			}
 
 			//相册标签替换
-			if ($settings->mode=='highslide-full.packed.js' && $widget->is('page')) {
+			if ($settings->mode=='highslide-full.packed.js' && ($isPage || false!==stripos($content,'[GALLERY'))) {
 				$content = preg_replace_callback('/\[GALLERY([\-\d|,]*?)\]/i',array('HighSlide_Plugin','galleryparse'),$content);
 			}
 
-			$version = explode('/',$options->version);
+			$version = explode('/',(string)$options->version);
+			$versionSuffix = isset($version[1]) ? $version[1] : (isset($version[0]) ? $version[0] : '');
 			$sign = '</hs>';
 			$pattern = '/<(hs)(.*?)>(.*?)<\/\\1>/si';
 			//markdown fix
-			if ($version['1']=='17.10.30' && $widget->isMarkdown && !stripos($content,'</hs>')) {
+			$isMarkdown = is_object($widget) && !empty($widget->isMarkdown);
+			if ($versionSuffix=='17.10.30' && $isMarkdown && !stripos($content,'</hs>')) {
 				$sign = '&lt;/hs&gt;';
 				$pattern = '/&lt;(hs)(.*?)&gt;(.*?)&lt;\/\\1&gt;/si';
 			}
@@ -665,9 +692,143 @@ $(function(){
 			if ($settings->mode=='highslide-full.packed.js' && false!==stripos($content,$sign)) {
 				$content = preg_replace_callback($pattern,array('HighSlide_Plugin','htmlparse'),$content);
 			}
+		} catch (Exception $e) {
+			error_log('[HighSlide] autohighslide failed: '.$e->getMessage());
+			return $raw;
+		} catch (Error $e) {
+			error_log('[HighSlide] autohighslide failed: '.$e->getMessage());
+			return $raw;
 		}
 
 		return $content;
+	}
+
+	/**
+	 * 正文过滤（兼容 content 钩子）
+	 *
+	 * @access public
+	 * @param string $text
+	 * @param mixed $widget
+	 * @return string
+	 */
+	public static function content($text,$widget)
+	{
+		try {
+			$source = self::hookSource($text, $widget);
+			$parsed = self::hookParse($source, $widget);
+			if (trim((string)$parsed) === '' && trim($source) !== '') {
+				$parsed = $source;
+			}
+			return self::autohighslide((string)$parsed,$widget,NULL);
+		} catch (Exception $e) {
+			error_log('[HighSlide] content hook failed: '.$e->getMessage());
+			return (string)$text;
+		} catch (Error $e) {
+			error_log('[HighSlide] content hook failed: '.$e->getMessage());
+			return (string)$text;
+		}
+	}
+
+	/**
+	 * 摘要过滤（兼容 excerpt 钩子）
+	 *
+	 * @access public
+	 * @param string $text
+	 * @param mixed $widget
+	 * @return string
+	 */
+	public static function excerpt($text,$widget)
+	{
+		try {
+			$source = self::hookSource($text, $widget);
+			$parsed = self::hookParse($source, $widget);
+			if (trim((string)$parsed) === '' && trim($source) !== '') {
+				$parsed = $source;
+			}
+			return self::autohighslide((string)$parsed,$widget,NULL);
+		} catch (Exception $e) {
+			error_log('[HighSlide] excerpt hook failed: '.$e->getMessage());
+			return (string)$text;
+		} catch (Error $e) {
+			error_log('[HighSlide] excerpt hook failed: '.$e->getMessage());
+			return (string)$text;
+		}
+	}
+
+	/**
+	 * 内容钩子源文本兜底
+	 *
+	 * @access private
+	 * @param mixed $text
+	 * @param mixed $widget
+	 * @return string
+	 */
+	private static function hookSource($text, $widget)
+	{
+		$source = (string)$text;
+		if (trim($source) !== '') {
+			return $source;
+		}
+
+		// 某些插件会把前一个过滤结果置空，兜底回原始 text
+		if (is_object($widget)) {
+			try {
+				$fallback = isset($widget->text) ? (string)$widget->text : '';
+				if (trim($fallback) !== '') {
+					return $fallback;
+				}
+			} catch (Exception $e) {
+				// ignore
+			} catch (Error $e) {
+				// ignore
+			}
+		}
+
+		return $source;
+	}
+
+	/**
+	 * 内容钩子解析（兼容新旧内核）
+	 *
+	 * @access private
+	 * @param string $source
+	 * @param mixed $widget
+	 * @return string
+	 */
+	private static function hookParse($source, $widget)
+	{
+		$source = (string)$source;
+		if ($source === '' || preg_match('/<[^>]+>/', $source) === 1) {
+			return $source;
+		}
+
+		if (!is_object($widget)) {
+			return $source;
+		}
+
+		$isMarkdown = !empty($widget->isMarkdown);
+
+		// 旧内核 markdown/autoP 为公开方法，优先复用
+		if ($isMarkdown && is_callable(array($widget, 'markdown'))) {
+			return (string)$widget->markdown($source);
+		}
+		if (!$isMarkdown && is_callable(array($widget, 'autoP'))) {
+			return (string)$widget->autoP($source);
+		}
+
+		// 新内核方法可能是 protected，退回到工具类解析
+		if ($isMarkdown && class_exists('\\Utils\\Markdown')) {
+			return (string)\Utils\Markdown::convert($source);
+		}
+		if (!$isMarkdown && class_exists('\\Utils\\AutoP')) {
+			static $autoP = NULL;
+			if ($autoP === NULL) {
+				$autoP = new \Utils\AutoP();
+			}
+			return (string)$autoP->parse($source);
+		}
+
+		return $source;
 	}
 
 	/**
@@ -679,6 +840,10 @@ $(function(){
 	private static function replacelist()
 	{
 		$rplist = Helper::options()->plugin('HighSlide')->rplist;
+		if (!is_array($rplist)) {
+			$rplist = trim((string)$rplist);
+			$rplist = $rplist === '' ? array() : preg_split('/[\s,]+/', $rplist);
+		}
 		$rplists = array('index'=>'','archive'=>'','post'=>'','page'=>'');
 
 		if ($rplist) {
@@ -720,7 +885,7 @@ $(function(){
 
 			$sorts = array_filter(explode(',',$param));
 			foreach ($sorts as $sort) {
-				$gallerys = $db->fetchAll($db->select()->from('table.gallery')->where('sort = ?',''.$sort.'')->order('table.gallery.order',Typecho_Db::SORT_ASC));
+				$gallerys = $db->fetchAll($db->select()->from('table.gallery')->where('sort = ?',''.$sort.'')->order('order',Typecho_Db::SORT_ASC));
 
 				if ($gallerys) {
 					//输出封面部分
@@ -792,6 +957,10 @@ $(function(){
 	{
 		$settings = Helper::options()->plugin('HighSlide');
 		$fullwrap = $settings->fullwrap;
+		if (!is_array($fullwrap)) {
+			$fullwrap = trim((string)$fullwrap);
+			$fullwrap = $fullwrap === '' ? array() : preg_split('/[\s,]+/', $fullwrap);
+		}
 		//准备默认设置
 		$id = 'highslide-html';
 		$text = 'text';
@@ -837,7 +1006,7 @@ $(function(){
 
 		$output = '<a href="'.$href.'" onclick="return hs.htmlExpand(this,{';
 		$output .= $href=='#' ? 'contentId:\''.$id.'\'' : 'objectType:\'ajax\''; //ajax判断
-		$output .= in_array('draggable-header',($fullwrap ? $fullwrap : array())) && $title ? ',headingText:\''.$title.'\'' : ''; //标题栏显示
+		$output .= in_array('draggable-header',$fullwrap,true) && $title ? ',headingText:\''.$title.'\'' : ''; //标题栏显示
 		$output .= $width.$height.'})" class="highslide">'.$text.'</a>';
 		$output .= '<div class="highslide-html-content" id="'.$id.'"><div class="highslide-header"><ul><li class="highslide-move"><a href="#" onclick="return false" title="'.$Movetitle.'"><span>'.$Movetext.'</span></a></li>';
 		$output .= '<li class="highslide-close"><a href="#" onclick="return hs.close(this)" title="'.$Closetitle.'"><span>'.$Closetext.'</span></a></li></ul></div>';
@@ -860,10 +1029,13 @@ $(function(){
 		$cid = $match['3'];
 		$attach = $db->fetchRow($db->select()->from('table.contents')->where('type = ?','attachment')->where('cid = ?',$cid));
 		if ($attach) {
-			$text = unserialize($attach['text']);
-			$output = '<a'.$match['1'].'href="'.Typecho_Common::url($text['path'],Helper::options()->siteUrl).'" class="highslide" onclick="return hs.expand(this,{slideshowGroup:\'images\'})"'.$match['4'].'>';
-			return $output;
+			$text = @unserialize($attach['text']);
+			if (is_array($text) && !empty($text['path'])) {
+				$output = '<a'.$match['1'].'href="'.Typecho_Common::url($text['path'],Helper::options()->siteUrl).'" class="highslide" onclick="return hs.expand(this,{slideshowGroup:\'images\'})"'.$match['4'].'>';
+				return $output;
+			}
 		}
+		return $match[0];
 	}
 
 	/**
@@ -874,11 +1046,12 @@ $(function(){
 	 */
 	public static function attachpanel()
 	{
-		$options = Helper::options();
-		$settings = $options->plugin('HighSlide');
-		$security = Helper::security();
-		$request = Typecho_Request::getInstance();
-		$cid = !empty($request->cid) ? '?cid='.$request->filter('int')->cid : '';
+		try {
+			$options = Helper::options();
+			$settings = $options->plugin('HighSlide');
+			$security = Helper::security();
+			$request = Typecho_Request::getInstance();
+			$cid = !empty($request->cid) ? '?cid='.$request->filter('int')->cid : '';
 ?>
 <link rel="stylesheet" type="text/css" media="all" href="<?php $options->pluginUrl('HighSlide/css/imgareaselect-animated.css'); ?>"/>
 <script src="<?php $options->pluginUrl('HighSlide/js/imgareaselect.js'); ?>"></script>
@@ -1136,6 +1309,11 @@ $(function(){
 });
 </script>
 <?php
+		} catch (Exception $e) {
+			error_log('[HighSlide] attachpanel failed: '.$e->getMessage());
+		} catch (Error $e) {
+			error_log('[HighSlide] attachpanel failed: '.$e->getMessage());
+		}
 	}
 
 	/**
@@ -1504,6 +1682,10 @@ hs.wrapperClassName = "controls-in-heading";';
 				//边框样式
 				$outline = $settings->outline;
 				$wrap = $settings->fullwrap;
+				if (!is_array($wrap)) {
+					$wrap = trim((string)$wrap);
+					$wrap = $wrap === '' ? array() : preg_split('/[\s,]+/', $wrap);
+				}
 				$wrap = $wrap ? ' '.implode(' ',$wrap) : '';
 				switch (true) {
 					case 'glossy-dark'==$outline || 'rounded-black'==$outline :
