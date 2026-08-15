@@ -4818,16 +4818,16 @@
   {
     "name": "NAME_LIST.log",
     "path": "ZIP_CDN/NAME_LIST.log",
-    "sha": "e75496d5e31472879b894bfdeaba4fe0ff5ef1bf",
-    "size": 3819,
+    "sha": "36aacd01654eb07f2b1cf82164ea76533376c661",
+    "size": 3891,
     "url": "https://api.github.com/repos/typecho-fans/plugins/contents/ZIP_CDN/NAME_LIST.log?ref=master",
     "html_url": "https://github.com/typecho-fans/plugins/blob/master/ZIP_CDN/NAME_LIST.log",
-    "git_url": "https://api.github.com/repos/typecho-fans/plugins/git/blobs/e75496d5e31472879b894bfdeaba4fe0ff5ef1bf",
+    "git_url": "https://api.github.com/repos/typecho-fans/plugins/git/blobs/36aacd01654eb07f2b1cf82164ea76533376c661",
     "download_url": "https://raw.githubusercontent.com/typecho-fans/plugins/master/ZIP_CDN/NAME_LIST.log",
     "type": "file",
     "_links": {
       "self": "https://api.github.com/repos/typecho-fans/plugins/contents/ZIP_CDN/NAME_LIST.log?ref=master",
-      "git": "https://api.github.com/repos/typecho-fans/plugins/git/blobs/e75496d5e31472879b894bfdeaba4fe0ff5ef1bf",
+      "git": "https://api.github.com/repos/typecho-fans/plugins/git/blobs/36aacd01654eb07f2b1cf82164ea76533376c661",
       "html": "https://github.com/typecho-fans/plugins/blob/master/ZIP_CDN/NAME_LIST.log"
     }
   },
@@ -6365,6 +6365,22 @@
       "self": "https://api.github.com/repos/typecho-fans/plugins/contents/ZIP_CDN/Sitemap_caixw.zip?ref=master",
       "git": "https://api.github.com/repos/typecho-fans/plugins/git/blobs/dec8f67da3931ce8e867e9fec78792675a80e7ee",
       "html": "https://github.com/typecho-fans/plugins/blob/master/ZIP_CDN/Sitemap_caixw.zip"
+    }
+  },
+  {
+    "name": "Sitemap_迷你日志_Hanny.zip",
+    "path": "ZIP_CDN/Sitemap_迷你日志_Hanny.zip",
+    "sha": "6e8660ae9b56032849004500305fb20d2601de73",
+    "size": 6602,
+    "url": "https://api.github.com/repos/typecho-fans/plugins/contents/ZIP_CDN/Sitemap_%E8%BF%B7%E4%BD%A0%E6%97%A5%E5%BF%97_Hanny.zip?ref=master",
+    "html_url": "https://github.com/typecho-fans/plugins/blob/master/ZIP_CDN/Sitemap_%E8%BF%B7%E4%BD%A0%E6%97%A5%E5%BF%97_Hanny.zip",
+    "git_url": "https://api.github.com/repos/typecho-fans/plugins/git/blobs/6e8660ae9b56032849004500305fb20d2601de73",
+    "download_url": "https://raw.githubusercontent.com/typecho-fans/plugins/master/ZIP_CDN/Sitemap_迷你日志_Hanny.zip",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/typecho-fans/plugins/contents/ZIP_CDN/Sitemap_%E8%BF%B7%E4%BD%A0%E6%97%A5%E5%BF%97_Hanny.zip?ref=master",
+      "git": "https://api.github.com/repos/typecho-fans/plugins/git/blobs/6e8660ae9b56032849004500305fb20d2601de73",
+      "html": "https://github.com/typecho-fans/plugins/blob/master/ZIP_CDN/Sitemap_%E8%BF%B7%E4%BD%A0%E6%97%A5%E5%BF%97_Hanny.zip"
     }
   },
   {
