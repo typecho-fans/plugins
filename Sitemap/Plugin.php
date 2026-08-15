@@ -6,12 +6,16 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
  * 
  * @package Sitemap
  * @author 迷你日志, Hanny
- * @version 1.0.5
+ * @version 1.0.6
  * @dependence 9.9.2-*
  * @link https://github.com/typecho-fans/plugins/blob/master/Sitemap
  *
  * 
- * varsion 1.0.5 at 2022--9-10 by 泽泽社长
+ * version 1.0.6 at 2026-08-15 by NHPT
+ * 使用 Typecho 内容组件生成文章永久链接
+ * 支持按标签文章数量过滤 Sitemap 中的低内容标签页
+ *
+ * version 1.0.5 at 2022-09-10 by 泽泽社长
  * 分类链接支持{directory}多级分类
  * 
  * version 1.0.4 at 2020-07-02 by Typecho Fans (合并多人修改)
@@ -62,7 +66,17 @@ class Sitemap_Plugin implements Typecho_Plugin_Interface
      * @param Typecho_Widget_Helper_Form $form 配置面板
      * @return void
      */
-    public static function config(Typecho_Widget_Helper_Form $form){}
+    public static function config(Typecho_Widget_Helper_Form $form)
+    {
+        $minTagCount = new Typecho_Widget_Helper_Form_Element_Text(
+            'minTagCount',
+            NULL,
+            '1',
+            _t('标签最少文章数'),
+            _t('仅输出文章数达到该值的标签页，默认 1 表示保留全部非空标签；建议设置为 2 或更高')
+        );
+        $form->addInput($minTagCount);
+    }
     
     /**
      * 个人用户的配置面板

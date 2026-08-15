@@ -2,7 +2,7 @@
     <img src="https://typecho-fans.github.io/text-logo.svg" alt="TF Logo" title="Typecho Fans开源作品社区" align="right" height="100" />
 </a>
 
-Sitemap v1.0.5 - 社区维护版
+Sitemap v1.0.6 - 社区维护版
 ======================
 <h4 align="center">—— 动态生成符合搜索引擎收录标准的Xml格式站点地图插件，支持输出分类/标签页地址。</h4>
 
@@ -27,7 +27,8 @@ Sitemap v1.0.5 - 社区维护版
 **使用方法**：
 ##### 1. 下载本插件，放在 `usr/plugins/` 目录中，确保文件夹名为 Sitemap；
 ##### 2. 激活插件；
-##### 3. 访问http://[example].com/sitemap.xml即可看到页面效果。
+##### 3. 可在插件设置中配置“标签最少文章数”，设置为 `2` 可排除只有一篇文章的低内容标签页；
+##### 4. 访问http://[example].com/sitemap.xml即可看到页面效果。
 
 </td>
 </tr>
@@ -35,6 +36,9 @@ Sitemap v1.0.5 - 社区维护版
 
 ## 版本历史
 
+ * v1.0.6 (26-08-15 [@NHPT](https://github.com/NHPT))
+   * 使用 Typecho 内容组件生成文章永久链接，避免 Sitemap 输出需要重定向的分类路径；
+   * 支持按标签文章数量过滤低内容标签页，默认保留全部非空标签。
  * v1.0.5 (22-09-210 [@jrotty](https://github.com/jrotty))
    * 分类链接支持{directory}多级分类
  * v1.0.4 (20-7-02 [@jzwalk](https://github.com/jzwalk))

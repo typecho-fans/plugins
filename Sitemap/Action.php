@@ -14,18 +14,22 @@ class Sitemap_Action extends Typecho_Widget implements Widget_Interface_Do
 		->where('table.contents.type = ?', 'page')
 		->order('table.contents.created', Typecho_Db::SORT_DESC));
 
-		$articles = $db->fetchAll($db->select()->from('table.contents')
+		$articleCount = $db->fetchObject($db->select(array('COUNT(table.contents.cid)' => 'num'))->from('table.contents')
 		->where('table.contents.status = ?', 'publish')
-		->where('table.contents.created < ?', $options->gmtTime)
-		->where('table.contents.type = ?', 'post')
-		->order('table.contents.created', Typecho_Db::SORT_DESC));
+		->where('table.contents.created < ?', $options->time)
+		->where('table.contents.type = ?', 'post'))->num;
+
+		Typecho_Widget::widget(
+			'Widget_Contents_Post_Recent@sitemapArticles',
+			'pageSize=' . max(1, (int) $articleCount)
+		)->to($articles);
 		
 		Typecho_Widget::widget('Widget_Metas_Category_List@cate')->to($cates);
-		
 
 		$tags = $db->fetchAll($db->select()->from('table.metas')
 		->where('table.metas.type = ?', 'tag')
 		->order('table.metas.mid', Typecho_Db::SORT_DESC));
+		$minTagCount = max(1, (int) $options->plugin('Sitemap')->minTagCount);
 
 		header("Content-Type: application/xml");
 		echo "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n";
@@ -49,26 +53,10 @@ class Sitemap_Action extends Typecho_Widget implements Widget_Interface_Do
 			echo "\t\t<priority>0.6</priority>\n";
 			echo "\t</url>\n";
 		}
-		foreach($articles AS $article) {
-			$type = $article['type'];
-			$article['categories'] = $db->fetchAll($db->select()->from('table.metas')
-					->join('table.relationships', 'table.relationships.mid = table.metas.mid')
-					->where('table.relationships.cid = ?', $article['cid'])
-					->where('table.metas.type = ?', 'category')
-					->order('table.metas.order', Typecho_Db::SORT_ASC));
-			$article['category'] = urlencode(current(Typecho_Common::arrayFlatten($article['categories'], 'slug')));
-			$article['slug'] = urlencode($article['slug']);
-			$article['date'] = new Typecho_Date($article['created']);
-			$article['year'] = $article['date']->year;
-			$article['month'] = $article['date']->month;
-			$article['day'] = $article['date']->day;
-			$routeExists = (NULL != Typecho_Router::get($type));
-			$article['pathinfo'] = $routeExists ? Typecho_Router::url($type, $article) : '#';
-			$article['permalink'] = Typecho_Common::url($article['pathinfo'], $options->index);
-
+		while($articles->next()) {
 			echo "\t<url>\n";
-			echo "\t\t<loc>".$article['permalink']."</loc>\n";
-			echo "\t\t<lastmod>".date('Y-m-d',$article['modified'])."</lastmod>\n";
+			echo "\t\t<loc>".$articles->permalink."</loc>\n";
+			echo "\t\t<lastmod>".date('Y-m-d',$articles->modified)."</lastmod>\n";
 			echo "\t\t<changefreq>always</changefreq>\n";
 			echo "\t\t<priority>0.8</priority>\n";
 			echo "\t</url>\n";
@@ -91,14 +79,16 @@ class Sitemap_Action extends Typecho_Widget implements Widget_Interface_Do
 		}
 		foreach($tags AS $tag) {
 			$type = $tag['type'];
-			$art_rt = $db->fetchRow($db->select()->from('table.contents')
+			$tagArticles = $db->fetchAll($db->select('table.contents.modified')->from('table.contents')
 					->join('table.relationships', 'table.contents.cid = table.relationships.cid')
 					->where('table.contents.status = ?', 'publish')
+					->where('table.contents.created < ?', $options->time)
+					->where('table.contents.type = ?', 'post')
 					->where('table.relationships.mid = ?', $tag['mid'])
-					->order('table.relationships.cid', Typecho_Db::SORT_DESC)
-					->limit(1));
-			// 文章的标签跳过
-            if (empty($art_rt['modified'])) continue;
+					->order('table.contents.modified', Typecho_Db::SORT_DESC)
+					->limit($minTagCount));
+			if (count($tagArticles) < $minTagCount) continue;
+			$latestTagArticle = current($tagArticles);
 					
 			$routeExists = (NULL != Typecho_Router::get($type));
 			$tag['pathinfo'] = $routeExists ? Typecho_Router::url($type, $tag) : '#';
@@ -106,7 +96,7 @@ class Sitemap_Action extends Typecho_Widget implements Widget_Interface_Do
 
 			echo "\t<url>\n";
 			echo "\t\t<loc>".$tag['permalink']."</loc>\n";
-			echo "\t\t<lastmod>".date('Y-m-d',$art_rt['modified'])."</lastmod>\n";
+			echo "\t\t<lastmod>".date('Y-m-d',$latestTagArticle['modified'])."</lastmod>\n";
 			echo "\t\t<changefreq>daily</changefreq>\n";
 			echo "\t\t<priority>0.5</priority>\n";
 			echo "\t</url>\n";
