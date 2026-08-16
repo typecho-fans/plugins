@@ -29,16 +29,20 @@ class Watermark_Action extends Typecho_Widget implements Widget_Interface_Do
         }
 
         $source = Watermark_Plugin::resolveImagePath($relativePath);
-        if (false === $source || Watermark_Plugin::isAnimatedGif($source['absolute'])) {
-            if (false !== $source) {
-                $this->outputFile($source['absolute']);
-                return;
-            }
+        if (false === $source) {
             $this->notFound();
             return;
         }
 
         $config = Watermark_Plugin::pluginOptions($options);
+        if (
+            !Watermark_Plugin::isImageEligible($source, $config)
+            || Watermark_Plugin::isAnimatedGif($source['absolute'])
+        ) {
+            $this->outputFile($source['absolute']);
+            return;
+        }
+
         $types = Watermark_Plugin::watermarkTypes($config);
         $useImage = in_array('pic', $types, true);
         $useText = in_array('text', $types, true);
@@ -124,7 +128,18 @@ class Watermark_Action extends Typecho_Widget implements Widget_Interface_Do
                 (int) Watermark_Plugin::configValue($config, 'vm_m_x', 0),
                 (int) Watermark_Plugin::configValue($config, 'vm_m_y', 0),
                 min(100, max(0, (int) Watermark_Plugin::configValue($config, 'vm_alpha', 0))),
-                $cacheFile
+                $cacheFile,
+                'tile' === Watermark_Plugin::configValue($config, 'vm_layout', 'single')
+                    ? 'tile'
+                    : 'single',
+                min(180, max(-180, (int) Watermark_Plugin::configValue($config, 'vm_angle', 0))),
+                max(0, (int) Watermark_Plugin::configValue($config, 'vm_gap_x', 80)),
+                max(0, (int) Watermark_Plugin::configValue($config, 'vm_gap_y', 60)),
+                min(100, max(0, (int) Watermark_Plugin::configValue(
+                    $config,
+                    'vm_text_alpha',
+                    0
+                )))
             );
         } catch (Throwable $exception) {
             if (isset($watermark)) {
