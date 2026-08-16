@@ -1746,16 +1746,16 @@
   {
     "name": "CommentFilter_jrotty_ghostry_Hanny.zip",
     "path": "ZIP_CDN/CommentFilter_jrotty_ghostry_Hanny.zip",
-    "sha": "8bfb9fd52a41f17d0002cec6c9c4f8bb274a890e",
-    "size": 5544,
+    "sha": "7c876fd059145018a0b48dd6dcc0a294e7b29d3d",
+    "size": 6711,
     "url": "https://api.github.com/repos/typecho-fans/plugins/contents/ZIP_CDN/CommentFilter_jrotty_ghostry_Hanny.zip?ref=master",
     "html_url": "https://github.com/typecho-fans/plugins/blob/master/ZIP_CDN/CommentFilter_jrotty_ghostry_Hanny.zip",
-    "git_url": "https://api.github.com/repos/typecho-fans/plugins/git/blobs/8bfb9fd52a41f17d0002cec6c9c4f8bb274a890e",
+    "git_url": "https://api.github.com/repos/typecho-fans/plugins/git/blobs/7c876fd059145018a0b48dd6dcc0a294e7b29d3d",
     "download_url": "https://raw.githubusercontent.com/typecho-fans/plugins/master/ZIP_CDN/CommentFilter_jrotty_ghostry_Hanny.zip",
     "type": "file",
     "_links": {
       "self": "https://api.github.com/repos/typecho-fans/plugins/contents/ZIP_CDN/CommentFilter_jrotty_ghostry_Hanny.zip?ref=master",
-      "git": "https://api.github.com/repos/typecho-fans/plugins/git/blobs/8bfb9fd52a41f17d0002cec6c9c4f8bb274a890e",
+      "git": "https://api.github.com/repos/typecho-fans/plugins/git/blobs/7c876fd059145018a0b48dd6dcc0a294e7b29d3d",
       "html": "https://github.com/typecho-fans/plugins/blob/master/ZIP_CDN/CommentFilter_jrotty_ghostry_Hanny.zip"
     }
   },
@@ -4834,16 +4834,16 @@
   {
     "name": "NAME_LIST.log",
     "path": "ZIP_CDN/NAME_LIST.log",
-    "sha": "22bd7b6e4b77584d4938d1b7df249776ad110de4",
+    "sha": "fa41a9ff3a2f7f70f02d7ee7905e51e713cddc6d",
     "size": 3909,
     "url": "https://api.github.com/repos/typecho-fans/plugins/contents/ZIP_CDN/NAME_LIST.log?ref=master",
     "html_url": "https://github.com/typecho-fans/plugins/blob/master/ZIP_CDN/NAME_LIST.log",
-    "git_url": "https://api.github.com/repos/typecho-fans/plugins/git/blobs/22bd7b6e4b77584d4938d1b7df249776ad110de4",
+    "git_url": "https://api.github.com/repos/typecho-fans/plugins/git/blobs/fa41a9ff3a2f7f70f02d7ee7905e51e713cddc6d",
     "download_url": "https://raw.githubusercontent.com/typecho-fans/plugins/master/ZIP_CDN/NAME_LIST.log",
     "type": "file",
     "_links": {
       "self": "https://api.github.com/repos/typecho-fans/plugins/contents/ZIP_CDN/NAME_LIST.log?ref=master",
-      "git": "https://api.github.com/repos/typecho-fans/plugins/git/blobs/22bd7b6e4b77584d4938d1b7df249776ad110de4",
+      "git": "https://api.github.com/repos/typecho-fans/plugins/git/blobs/fa41a9ff3a2f7f70f02d7ee7905e51e713cddc6d",
       "html": "https://github.com/typecho-fans/plugins/blob/master/ZIP_CDN/NAME_LIST.log"
     }
   },
