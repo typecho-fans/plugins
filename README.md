@@ -74,7 +74,7 @@
 [DevTool](DevTool) | 扩展开发常用数据查看测试 | 1.0.0 | [zhulin3141](https://github.com/zhulin3141) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/DevTool.zip)
 [DownloadFile](DownloadFile) | 附件下载与上传名保持一致 | 1.0.0 | [DT27](https://github.com/DT27) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/DownloadFile.zip)
 [DynamicLines](DynamicLines) | (娱乐向)动态蛛网背景效果 | 1.0.0 | [Mario](https://github.com/1379) | [Download](https://github.com/1379/DynamicLines-typecho-plugin/archive/master.zip)
-[EditorMD](EditorMD) | 豪华全能Markdown编辑器 | 1.4.0 | [DT27](https://github.com/DT27) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/EditorMD.zip)
+[EditorMD](EditorMD) | 豪华全能Markdown编辑器 | 1.5.0 | [DT27](https://github.com/DT27) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/EditorMD.zip)
 [Editor](Editor) | 简明清爽Markdown编辑器 | 1.0.2 | [公子](https://github.com/lizheming) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/Editor.zip)
 [EmlogToTypecho](EmlogToTypecho) | Emlog数据库导入到Typecho | 1.0.0 | [ShingChi](https://github.com/shingchi) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/EmlogToTypecho.zip)
 [GAuthenticator](GAuthenticator) | Google两步验证(带二维码) | 0.0.6 | [WeiCN](https://github.com/naicfeng) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/GAuthenticator.zip)
