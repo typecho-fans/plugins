@@ -2,7 +2,7 @@
     <img src="https://typecho-fans.github.io/text-logo.svg" alt="TF Logo" title="Typecho Fans开源作品社区" align="right" height="100" />
 </a>
 
-CommentFilter v1.2.1 - 社区维护版
+CommentFilter v1.3.0 - 社区维护版
 ======================
 <h4 align="center">—— 全能评论过滤器插件，支持按内容/IP/昵称/链接等拦截垃圾评论。</h4>
 
@@ -29,8 +29,13 @@ CommentFilter v1.2.1 - 社区维护版
 ##### 2. 激活插件，选择并填写各项过滤规则配置；
 ##### 3. 保存设置，即可自动监管全站新发评论。
 
+**兼容环境**：
+* ##### Typecho 1.2 或 1.3；
+* ##### PHP 7.4 或 PHP 8.x。
+
 **注意事项**：
-* ##### 已通过session增加评论内容临时变量，可在模板输出让评论者看到自己的未审核评论。
+* ##### PHP session 已启动时会保存本次评论内容，模板输出该内容时仍须进行 HTML 转义。
+* ##### IP 规则支持精确地址、IPv4 通配符以及 IPv4/IPv6 CIDR。
 * ##### 此插件历史悠久，如果被spammer针对发现效果不佳可尝试另一款插件[SmartSpam](http://www.yovisun.com/archive/typecho-plugin-smartspam.html)。
 
 </td>
@@ -39,6 +44,12 @@ CommentFilter v1.2.1 - 社区维护版
 
 ## 版本历史
 
+ * v1.3.0 (26-8-16)
+   * 兼容 Typecho 1.3 和 PHP 8，避免未定义请求字段及首次评论查询产生警告；
+   * 首次评论只信任同昵称、同邮箱且已通过审核的历史评论；
+   * 忽略过滤配置中的空行，避免所有评论被错误拦截；
+   * IP 规则改为精确匹配，并增加 IPv4 通配符及 IPv4/IPv6 CIDR 支持；
+   * 评论表单脚本不再覆盖主题的 `window.onload`。
  * v1.2.1 (20-6-27 [@jzwalk](https://github.com/jzwalk))
    * 上传至GitHub的Typecho-Fans目录，产生社区维护版；
    * 合并1个衍生版本功能：

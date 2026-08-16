@@ -6,8 +6,11 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
  * 
  * @package CommentFilter
  * @author jrotty,ghostry,Hanny
- * @version 1.2.1
+ * @version 1.3.0
  * @link https://github.com/typecho-fans/plugins/tree/master/CommentFilter
+ *
+ * version 1.3.0 at 2026-08-16
+ * 兼容 Typecho 1.3 和 PHP 8，修复空行规则、IP 误匹配及评论表单初始化
  *
  * version 1.2.1 at 2020-06-27[typecho-fans合并2012-12-31 ghostry修改版]
  * 增加首次评论过滤，评论者可以在评论底部看到自己的未审核评论
@@ -70,7 +73,7 @@ class CommentFilter_Plugin implements Typecho_Plugin_Interface
         $form->addInput($opt_ip);
 
         $words_ip = new Typecho_Widget_Helper_Form_Element_Textarea('words_ip', NULL, "0.0.0.0",
-			_t('屏蔽IP'), _t('多条IP请用换行符隔开<br />支持用*号匹配IP段，如：192.168.*.*'));
+			_t('屏蔽IP'), _t('多条IP请用换行符隔开<br />支持通配符和 IPv4/IPv6 CIDR，如：192.168.*.*、192.168.0.0/16、2001:db8::/32'));
         $form->addInput($words_ip);
 
         $opt_nocn = new Typecho_Widget_Helper_Form_Element_Radio('opt_nocn', array("none" => "无动作", "waiting" => "标记为待审核", "spam" => "标记为垃圾", "abandon" => "评论失败"), "none",
@@ -78,7 +81,7 @@ class CommentFilter_Plugin implements Typecho_Plugin_Interface
         $form->addInput($opt_nocn);
 
         $opt_nopl = new Typecho_Widget_Helper_Form_Element_Radio('opt_nopl', array("none" => "无动作", "waiting" => "标记为待审核", "spam" => "标记为垃圾", "abandon" => "评论失败"), "none",
-			_t('首次评论操作'), "如果评论人没有评论过，则强行按该操作执行");
+			_t('首次评论操作'), "如果评论者没有同昵称、同邮箱且已通过审核的历史评论，则执行该操作");
         $form->addInput($opt_nopl);
 
         $opt_ban = new Typecho_Widget_Helper_Form_Element_Radio('opt_ban', array("none" => "无动作", "waiting" => "标记为待审核", "spam" => "标记为垃圾", "abandon" => "评论失败"), "abandon",
@@ -133,10 +136,16 @@ class CommentFilter_Plugin implements Typecho_Plugin_Interface
 		$filter_set = $options->plugin('CommentFilter');
 		$opt = "none";
 		$error = "";
+		$comment_ip = isset($comment['ip']) ? (string) $comment['ip'] : '';
+		$comment_text = isset($comment['text']) ? (string) $comment['text'] : '';
+		$comment_author = isset($comment['author']) ? (string) $comment['author'] : '';
+		$comment_mail = isset($comment['mail']) ? (string) $comment['mail'] : '';
+		$comment_url = isset($comment['url']) ? (string) $comment['url'] : '';
 
 		//机器评论处理
 		if ($opt == "none" && $filter_set->opt_spam != "none") {
-			if ($_POST['filter_spam'] != '48616E6E79') {
+			$spam_token = isset($_POST['filter_spam']) ? (string) $_POST['filter_spam'] : '';
+			if ($spam_token !== '48616E6E79') {
 				$error = "请勿使用第三方工具进行评论";
 				$opt = $filter_set->opt_spam;
 			}			
@@ -144,7 +153,7 @@ class CommentFilter_Plugin implements Typecho_Plugin_Interface
 
 		//屏蔽IP段处理
 		if ($opt == "none" && $filter_set->opt_ip != "none") {
-			if (CommentFilter_Plugin::check_ip($filter_set->words_ip, $comment['ip'])) {
+			if (CommentFilter_Plugin::check_ip($filter_set->words_ip, $comment_ip)) {
 				$error = "评论发布者的IP已被管理员屏蔽";
 				$opt = $filter_set->opt_ip;
 			}			
@@ -152,7 +161,7 @@ class CommentFilter_Plugin implements Typecho_Plugin_Interface
 
 		//纯中文评论处理
 		if ($opt == "none" && $filter_set->opt_nocn != "none") {
-			if (preg_match("/[\x{4e00}-\x{9fa5}]/u", $comment['text']) == 0) {
+			if (preg_match("/[\x{4e00}-\x{9fa5}]/u", $comment_text) == 0) {
 				$error = "评论内容请不少于一个中文汉字";
 				$opt = $filter_set->opt_nocn;
 			}
@@ -160,22 +169,29 @@ class CommentFilter_Plugin implements Typecho_Plugin_Interface
 
 		//首次评论操作
 		if($opt == "none" && $filter_set->opt_nopl != "none"){
-			if($comment['mail']){
-				 $db = Typecho_Db::get();
-            $select=$db->select('mail')
-                    ->from('table.comments')
-                    ->where('mail = ?', $comment['mail']);
-            $result = $db->query($select);
-            $row = $db->fetchRow($result);
-			if(!$row['mail']){
-				$opt = $filter_set->opt_nopl;
+			$row = false;
+			if($comment_mail !== ''){
+				$db = Typecho_Db::get();
+				$row = $db->fetchRow($db->select('coid')
+					->from('table.comments')
+					->where(
+						'author = ? AND mail = ? AND type = ? AND status = ?',
+						$comment_author,
+						$comment_mail,
+						'comment',
+						'approved'
+					)
+					->limit(1));
 			}
+			if(!$row){
+				$error = "首次评论已被限制";
+				$opt = $filter_set->opt_nopl;
 			}
 		}
 
 		//检查禁止词汇
 		if ($opt == "none" && $filter_set->opt_ban != "none") {
-			if (CommentFilter_Plugin::check_in($filter_set->words_ban, $comment['text'])) {
+			if (CommentFilter_Plugin::check_in($filter_set->words_ban, $comment_text)) {
 				$error = "评论内容中包含禁止词汇";
 				$opt = $filter_set->opt_ban;
 			}
@@ -183,7 +199,7 @@ class CommentFilter_Plugin implements Typecho_Plugin_Interface
 
 		//检查敏感词汇
 		if ($opt == "none" && $filter_set->opt_chk != "none") {
-			if (CommentFilter_Plugin::check_in($filter_set->words_chk, $comment['text'])) {
+			if (CommentFilter_Plugin::check_in($filter_set->words_chk, $comment_text)) {
 				$error = "评论内容中包含敏感词汇";
 				$opt = $filter_set->opt_chk;
 			}
@@ -191,7 +207,7 @@ class CommentFilter_Plugin implements Typecho_Plugin_Interface
 
 		//检查关键昵称词汇
 		if ($opt == "none" && $filter_set->opt_author != "none") {
-			if (CommentFilter_Plugin::check_in($filter_set->words_author, $comment['author'])) {
+			if (CommentFilter_Plugin::check_in($filter_set->words_author, $comment_author)) {
 				$error = "该类型昵称已被禁止评论";
 				$opt = $filter_set->opt_author;
 			}
@@ -199,7 +215,7 @@ class CommentFilter_Plugin implements Typecho_Plugin_Interface
 
 		//检查评论者链接
 		if ($opt == "none" && $filter_set->opt_url != "none") {
-			if (CommentFilter_Plugin::check_in($filter_set->words_url, $comment['url'])) {
+			if (CommentFilter_Plugin::check_in($filter_set->words_url, $comment_url)) {
 				$error = "该类型评论者超链接被禁止评论";
 				$opt = $filter_set->opt_url;
 			}
@@ -207,7 +223,7 @@ class CommentFilter_Plugin implements Typecho_Plugin_Interface
 
 		//执行操作
 		if ($opt == "abandon") {
-			Typecho_Cookie::set('__typecho_remember_text', $comment['text']);
+			Typecho_Cookie::set('__typecho_remember_text', $comment_text);
             throw new Typecho_Widget_Exception($error);
 		}
 		else if ($opt == "spam") {
@@ -216,10 +232,28 @@ class CommentFilter_Plugin implements Typecho_Plugin_Interface
 		else if ($opt == "waiting") {
 			$comment['status'] = 'waiting';
 		}
-		$_SESSION['comment']=$comment;
-		Typecho_Cookie::delete('__typecho_remember_text');
+		if (function_exists('session_status') && PHP_SESSION_ACTIVE === session_status()) {
+			$_SESSION['comment'] = $comment;
+		}
         return $comment;
     }
+
+    /**
+     * 将多行配置整理为非空规则列表
+     *
+     */
+	private static function parse_words($words_str)
+	{
+		$lines = preg_split('/\r\n|\r|\n/', (string) $words_str);
+		$words = array();
+		foreach ($lines as $line) {
+			$word = trim($line);
+			if ($word !== '') {
+				$words[] = $word;
+			}
+		}
+		return $words;
+	}
 
     /**
      * 检查$str中是否含有$words_str中的词汇
@@ -227,12 +261,8 @@ class CommentFilter_Plugin implements Typecho_Plugin_Interface
      */
 	private static function check_in($words_str, $str)
 	{
-		$words = explode("\n", $words_str);
-		if (empty($words)) {
-			return false;
-		}
-		foreach ($words as $word) {
-            if (false !== strpos($str, trim($word))) {
+		foreach (self::parse_words($words_str) as $word) {
+            if (false !== strpos((string) $str, $word)) {
                 return true;
             }
 		}
@@ -245,24 +275,94 @@ class CommentFilter_Plugin implements Typecho_Plugin_Interface
      */
 	private static function check_ip($words_ip, $ip)
 	{
-		$words = explode("\n", $words_ip);
-		if (empty($words)) {
+		$ip = trim((string) $ip);
+		if (false === filter_var($ip, FILTER_VALIDATE_IP)) {
 			return false;
 		}
-		foreach ($words as $word) {
-			$word = trim($word);
-			if (false !== strpos($word, '*')) {
-				$word = "/^".str_replace('*', '\d{1,3}', $word)."$/";
-				if (preg_match($word, $ip)) {
-					return true;
-				}
-			} else {
-				if (false !== strpos($ip, $word)) {
-					return true;
-				}
+		foreach (self::parse_words($words_ip) as $word) {
+			if (self::match_ip_rule($word, $ip)) {
+				return true;
 			}
 		}
 		return false;
+	}
+
+    /**
+     * 匹配单个精确、通配符或 CIDR IP 规则
+     *
+     */
+	private static function match_ip_rule($rule, $ip)
+	{
+		if (false !== strpos($rule, '/')) {
+			return self::ip_in_cidr($ip, $rule);
+		}
+
+		if (false !== strpos($rule, '*')) {
+			if (false === filter_var($ip, FILTER_VALIDATE_IP, FILTER_FLAG_IPV4)) {
+				return false;
+			}
+
+			$rule_parts = explode('.', $rule);
+			$ip_parts = explode('.', $ip);
+			if (count($rule_parts) !== 4) {
+				return false;
+			}
+
+			foreach ($rule_parts as $index => $part) {
+				if ($part === '*') {
+					continue;
+				}
+				if (!ctype_digit($part) || (int) $part > 255
+					|| (int) $part !== (int) $ip_parts[$index]) {
+					return false;
+				}
+			}
+			return true;
+		}
+
+		$rule_binary = @inet_pton($rule);
+		$ip_binary = @inet_pton($ip);
+		return false !== $rule_binary && false !== $ip_binary
+			&& $rule_binary === $ip_binary;
+	}
+
+    /**
+     * 判断 IP 是否位于 IPv4 或 IPv6 CIDR 网段
+     *
+     */
+	private static function ip_in_cidr($ip, $cidr)
+	{
+		$parts = explode('/', $cidr, 2);
+		if (count($parts) !== 2 || !ctype_digit($parts[1])) {
+			return false;
+		}
+
+		$ip_binary = @inet_pton($ip);
+		$network_binary = @inet_pton($parts[0]);
+		if (false === $ip_binary || false === $network_binary
+			|| strlen($ip_binary) !== strlen($network_binary)) {
+			return false;
+		}
+
+		$prefix = (int) $parts[1];
+		$max_bits = strlen($ip_binary) * 8;
+		if ($prefix < 0 || $prefix > $max_bits) {
+			return false;
+		}
+
+		$bytes = (int) floor($prefix / 8);
+		$remaining_bits = $prefix % 8;
+		if ($bytes > 0
+			&& substr($ip_binary, 0, $bytes) !== substr($network_binary, 0, $bytes)) {
+			return false;
+		}
+		if ($remaining_bits === 0) {
+			return true;
+		}
+
+		$mask = (0xFF << (8 - $remaining_bits)) & 0xFF;
+		return (ord($ip_binary[$bytes]) & $mask)
+			=== (ord($network_binary[$bytes]) & $mask);
 	}
 
     /**
@@ -275,37 +375,26 @@ class CommentFilter_Plugin implements Typecho_Plugin_Interface
 		$filter_set = $options->plugin('CommentFilter');
 		if ($filter_set->opt_spam != "none" && $archive->is('single') && $archive->allow('comment')) {
 			echo '<script type="text/javascript">
-function get_form(input) {
-	var node = input;
-	while (node) {
-		node = node.parentNode;
-		if (node.nodeName.toLowerCase() == "form") {
-			return node;
+(function () {
+	function add_filter_spam_input() {
+		var input = document.querySelector("textarea[name=text]");
+		if (!input || !input.form
+			|| input.form.querySelector("input[name=filter_spam]")) {
+			return;
 		}
+		var hidden = document.createElement("input");
+		hidden.type = "hidden";
+		hidden.name = "filter_spam";
+		hidden.value = "48616E6E79";
+		input.form.appendChild(hidden);
 	}
-	return null;
-};
-window.onload = function() {
-	var inputs = document.getElementsByTagName("textarea");
-	var i, input_author;
-	input_author = null;
-	for (i=0; i<inputs.length; i++) {
-		if (inputs[i].name.toLowerCase() == "text") {
-			input_author = inputs[i];
-			break;
-		}
-	}
-	var form_comment = get_form(input_author);
-	if (form_comment) {
-		var input_hd = document.createElement("input");
-		input_hd.type = "hidden";
-		input_hd.name = "filter_spam";
-		input_hd.value = "48616E6E79";
-		form_comment.appendChild(input_hd);
+
+	if (document.readyState === "loading") {
+		document.addEventListener("DOMContentLoaded", add_filter_spam_input);
 	} else {
-		alert("find input author error!");
+		add_filter_spam_input();
 	}
-}
+}());
 </script>
 ';
 		}
