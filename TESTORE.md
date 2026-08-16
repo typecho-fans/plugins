@@ -37,7 +37,7 @@
 
 名称 | 简介 | 版本 | 作者 | zip包
 ---- | ----: | :----: | :---- | :----:
-[AAThemeDemo](https://github.com/benzBrake/AAThemeDemo) | ThemeDemo2 修复版，仅支持Typecho1.2+ | 1.0.0 | [Ryan](http://doufu.ru), [doudou](http://doufu.ru) | [最新](https://github.com/benzBrake/AAThemeDemo/archive/refs/heads/master.zip)
+[AAThemeDemo](https://github.com/benzBrake/AAThemeDemo) | ThemeDemo2 修复版，仅支持Typecho1.2+ | 1.0.0 | [Ryan](http://doufu.ru), [doudou](http://doufu.ru) | [新版](https://github.com/benzBrake/AAThemeDemo/archive/refs/heads/master.zip)
 [APlayerAtBottom](https://github.com/jstar0/APlayerAtBottom) | 网易云解析吸底式音乐播放器插件 | 1.1.3 | [小太](https://github.com/SatoSouta) | [下载](https://github.com/jstar0/APlayerAtBottom/archive/refs/heads/master.zip)
 [APlayer](https://github.com/zgq354/APlayer-Typecho-Plugin) | 网易云解析Html5音乐播放器插件 | 1.4.11 | [ZGQ](https://github.com/zgq354) | [下载](https://github.com/zgq354/APlayer-Typecho-Plugin/archive/master.zip)
 [Acc](https://github.com/qt06/typecho-plugin-accessibility) | Typecho无障碍读屏标记修正插件 | 1.0.0 | [杨永全](https://github.com/qt06) | [下载](https://github.com/qt06/typecho-plugin-accessibility/archive/master.zip)
@@ -69,7 +69,7 @@
 [AutoBackup](https://xiamp.net/archives/automatic-backup-of-typecho-database-to-mailbox-plugin-autobackup.html) | 数据库备份到邮箱 | 1.3.2 | [Ryan](https://github.com/benzBrake) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/AutoBackup_Ryan.zip)
 [AutoBaiduSubmit](https://github.com/jazzi/AutoBaiduSubmit) | 访问页面自动提交链接至百度插件 | 1.0.2 | [JinFeiJie](https://github.com/jinfeijie) | [下载](https://github.com/jazzi/AutoBaiduSubmit/archive/refs/heads/master.zip)
 [AutoKaTeX](https://github.com/Skywt2003/AutoKaTeX) | Typecho新版[KaTeX](https://github.com/Khan/KaTeX)自动渲染插件 | 0.1.0 | [SkyWT](https://github.com/Skywt2003) | [下载](https://github.com/Skywt2003/AutoKaTeX/archive/master.zip)
-[AutoSSL](https://github.com/Aurorum-Studio/Typecho-AutoSSL) | 在线轻松生成免费SSL证书 | v.0.2.2 | [Aurorum-Studios](https://open.aurorum.co/t/aurorum-studio-typecho-autossl) | [最近](https://github.com/Aurorum-Studio/Typecho-AutoSSL/archive/refs/tags/v.v.0.2.2-alpha.zip)
+[AutoSSL](https://github.com/Aurorum-Studio/Typecho-AutoSSL) | 在线轻松生成免费SSL证书 | v.0.2.2 | [Aurorum-Studios](https://open.aurorum.co/t/aurorum-studio-typecho-autossl) | [下载](https://github.com/Aurorum-Studio/Typecho-AutoSSL/archive/refs/tags/v.v.0.2.2-alpha.zip)
 [AutoSaveImage](https://www.cxiansheng.cn/server/278) | 自动下载替换文章内远程图片插件 | 1.0.0 | [dream](https://www.cxiansheng.cn) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/AutoSaveImage.zip)
 [Avartar](https://github.com/typecho/plugins/blob/master/Avartar.php) | 自定义替换Gravatar头像代理插件 | 1.0.0 Beta | [loftor](https://github.com/loftor-git) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/Avartar.zip)
 [AvatarQQ](https://github.com/web1n/AvatarQQ) | 为QQ邮箱评论者显示QQ头像插件 | 1.0 | [web1n](https://github.com/web1n) | [下载](https://github.com/web1n/AvatarQQ/archive/master.zip)
