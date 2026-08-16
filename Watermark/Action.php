@@ -1,104 +1,216 @@
 <?php
-/**
- * Watermark Plugin
- *
- * @copyright  Copyright (c) 2013 DEFE (http://defe.me)
- * @license    GNU General Public License 2.0
- * 
- */
+if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 
+/**
+ * Watermark action.
+ *
+ * @copyright Copyright (c) 2013 DEFE
+ * @license GNU General Public License 2.0
+ */
 class Watermark_Action extends Typecho_Widget implements Widget_Interface_Do
 {
-    
-    public function mark($img){
-		
-	$options = $this->widget('Widget_Options');
-        $cfg = $options->plugin('Watermark');
-        
-        $img1 = self::lujin( __TYPECHO_ROOT_DIR__ . base64_decode($img));        
-	$dir='.'.__TYPECHO_PLUGIN_DIR__ . '/Watermark/';
-		
-	$ck_p = 0;
-	$ck_t = 0;	
-        if(in_array('pic',$cfg->vm_type) && file_exists($dir . $cfg->vm_pic)) $ck_p = 1;
-        if(in_array('text',$cfg->vm_type) && file_exists($dir . $cfg->vm_font)) $ck_t = 1;
-        
-        $pos_p = $cfg->vm_pos_pic;
-        $pos_t = $cfg->vm_pos_text;
-        $font = $dir . $cfg->vm_font;
-        $text = $cfg->vm_text;
-        $size = $cfg->vm_size;
-        $color = $cfg->vm_color;
-        $mic_x = $cfg->vm_m_x;
-        $mic_y = $cfg->vm_m_y;
-        $width = $cfg->vm_width;
-	$wmpic = $cfg->vm_pic?$cfg->vm_pic:'WM.png';
-        $alpha = $cfg->vm_alpha;
-        $file = false;
-        
-        if(file_exists($img1)){
-            require_once($dir.'class.php');
-            $wm = new WaterMark();
-            $wm->setImSrc($img1,$width); // 设置背景图		
-            $wm->setImWater($dir.$wmpic); // 设置水印图
-            $wm->setFont($font, $text, $size, $color); // 设置水印文字相关（字体库、文本、字体大小、颜色）
-            if( isset($cfg->vm_cache) && 'cache' == $cfg->vm_cache){
-                $file = base64_decode($img);
-                $ext = pathinfo($file, PATHINFO_EXTENSION);
-                $dir_cache =  __TYPECHO_ROOT_DIR__ . '/usr/img';
-                if(!is_dir($dir_cache)) @mkdir($dir_cache, 0777);//检测缓存目录是否存在，自动创建
-                $file = './usr/img/'.md5($file).'.'.$ext;      
-            }
-            $wm->mark($ck_p, $pos_p, $ck_t, $pos_t, $mic_x, $mic_y, $alpha, $file);       
-        }else{
-            $this->widget('Widget_Archive@404', 'type=404')->render();
-        }
-    }
     /**
-     * 清除水印图片缓存
-     * @return boolean
-     */    
-    public function clear(){
-        $this->widget('Widget_User')->pass('administrator');
-        $dir_cache = __TYPECHO_ROOT_DIR__. '/usr/img/';        
-        if (is_writable($dir_cache)){
-            chdir($dir_cache);
-            $dh=opendir('.');
-            $num = 0;
-            while(false !== ($et=readdir($dh))){
-                if(is_file($et)){
-                    if(!@unlink($et)){
-                        return false;
-                        echo "缓存文件 {$et} 未能删除，请检查目录权限"; 
-                        break;
-                    }
-                    echo "清除文件：{$et} <br>";
-                    $num++;
-                }               
-            }           
-            closedir($dh);
-            echo "共清除 {$num} 个缓存文件<br>";       
-            chdir('..');
-            if(@rmdir('img')) echo '缓存文件目录已删除';             
-        }
-    }
-    
-    /**
-     * 合并重复路径
-     * @param string $uri
-     * @return string
+     * 输出水印图片。
+     *
+     * @param string $encodedPath
+     * @param string $signature
      */
-    public static function lujin($uri){
-        $uri = str_replace("\\","/",$uri);
-        $a = explode('/', $uri);
-        $b = array_unique($a);
-        return implode('/', $b);
+    public function mark($encodedPath, $signature)
+    {
+        $options = $this->widget('Widget_Options');
+        $relativePath = Watermark_Plugin::decodePath($encodedPath);
+        if (
+            false === $relativePath
+            || !is_string($signature)
+            || !hash_equals(Watermark_Plugin::signPath($relativePath, $options), $signature)
+        ) {
+            $this->notFound();
+            return;
+        }
+
+        $source = Watermark_Plugin::resolveImagePath($relativePath);
+        if (false === $source || Watermark_Plugin::isAnimatedGif($source['absolute'])) {
+            if (false !== $source) {
+                $this->outputFile($source['absolute']);
+                return;
+            }
+            $this->notFound();
+            return;
+        }
+
+        $config = Watermark_Plugin::pluginOptions($options);
+        $types = Watermark_Plugin::watermarkTypes($config);
+        $useImage = in_array('pic', $types, true);
+        $useText = in_array('text', $types, true);
+
+        $watermarkFile = false;
+        if ($useImage) {
+            $watermarkFile = Watermark_Plugin::resolvePluginAsset(
+                Watermark_Plugin::configValue($config, 'vm_pic', 'WM.png'),
+                array('gif', 'jpg', 'jpeg', 'png', 'webp')
+            );
+            $useImage = false !== $watermarkFile;
+        }
+
+        $fontFile = false;
+        if ($useText) {
+            $fontFile = Watermark_Plugin::resolvePluginAsset(
+                Watermark_Plugin::configValue($config, 'vm_font', 'lh.ttf'),
+                array('ttf', 'ttc')
+            );
+            $useText = false !== $fontFile
+                && function_exists('imagettfbbox')
+                && function_exists('imagettftext');
+        }
+
+        if (!$useImage && !$useText) {
+            $this->outputFile($source['absolute']);
+            return;
+        }
+
+        $cacheFile = false;
+        if (
+            'cache' === Watermark_Plugin::configValue($config, 'vm_cache', 'nocache')
+            && Watermark_Plugin::ensureCacheDirectory()
+        ) {
+            $candidate = Watermark_Plugin::cacheFile(
+                $source['relative'],
+                $source['absolute'],
+                $config
+            );
+            if (false !== $candidate) {
+                $cacheFile = $candidate;
+                if (is_file($cacheFile)) {
+                    $this->outputFile($cacheFile);
+                    return;
+                }
+            }
+        }
+
+        require_once __DIR__ . '/class.php';
+
+        try {
+            $watermark = new WaterMark();
+            $width = max(0, (int) Watermark_Plugin::configValue($config, 'vm_width', 0));
+            if (!$watermark->setImSrc($source['absolute'], $width)) {
+                $this->outputFile($source['absolute']);
+                return;
+            }
+
+            if ($useImage && !$watermark->setImWater($watermarkFile)) {
+                $useImage = false;
+            }
+
+            if ($useText) {
+                $watermark->setFont(
+                    $fontFile,
+                    (string) Watermark_Plugin::configValue($config, 'vm_text', 'Typecho)))'),
+                    max(1, (int) Watermark_Plugin::configValue($config, 'vm_size', 16)),
+                    (string) Watermark_Plugin::configValue($config, 'vm_color', '255,0,0')
+                );
+            }
+
+            if (!$useImage && !$useText) {
+                $watermark->output();
+                $watermark->clean();
+                return;
+            }
+
+            $watermark->mark(
+                $useImage,
+                $this->position(Watermark_Plugin::configValue($config, 'vm_pos_pic', 9)),
+                $useText,
+                $this->position(Watermark_Plugin::configValue($config, 'vm_pos_text', 9)),
+                (int) Watermark_Plugin::configValue($config, 'vm_m_x', 0),
+                (int) Watermark_Plugin::configValue($config, 'vm_m_y', 0),
+                min(100, max(0, (int) Watermark_Plugin::configValue($config, 'vm_alpha', 0))),
+                $cacheFile
+            );
+        } catch (Throwable $exception) {
+            if (isset($watermark)) {
+                $watermark->clean();
+            }
+            $this->outputFile($source['absolute']);
+        }
     }
 
-    public function action(){
-        $this->on($this->request->is('mark'))->mark($this->request->mark);         
-        $this->on($this->request->is('clear'))->clear();
+    /**
+     * 清除插件专用缓存。
+     */
+    public function clear()
+    {
+        $this->widget('Widget_User')->pass('administrator');
+        $security = $this->widget('Widget_Security');
+        $token = (string) $this->request->get('_');
+        if (!hash_equals($security->getToken('watermark-clear'), $token)) {
+            $this->response->setStatus(403);
+            echo _t('安全校验失败，请返回插件设置页重试');
+            return;
+        }
+
+        echo _t('已清除 %d 个水印缓存文件', Watermark_Plugin::clearCache());
+    }
+
+    /**
+     * 分发请求。
+     */
+    public function action()
+    {
+        if ($this->request->is('mark')) {
+            $this->mark(
+                (string) $this->request->get('mark'),
+                (string) $this->request->get('signature')
+            );
+            return;
+        }
+
+        if ($this->request->is('clear')) {
+            $this->clear();
+            return;
+        }
+
+        $this->notFound();
+    }
+
+    /**
+     * 约束水印位置。
+     *
+     * @param mixed $value
+     * @return int
+     */
+    private function position($value)
+    {
+        $value = (int) $value;
+        return $value >= 0 && $value <= 9 ? $value : 9;
+    }
+
+    /**
+     * 输出原始或缓存图片。
+     *
+     * @param string $path
+     */
+    private function outputFile($path)
+    {
+        $imageInfo = @getimagesize($path);
+        if (!$imageInfo || empty($imageInfo['mime'])) {
+            $this->notFound();
+            return;
+        }
+
+        while (ob_get_level() > 0) {
+            ob_end_clean();
+        }
+        header('Content-Type: ' . $imageInfo['mime']);
+        header('Content-Length: ' . filesize($path));
+        readfile($path);
+    }
+
+    /**
+     * 返回 404。
+     */
+    private function notFound()
+    {
+        $this->response->setStatus(404);
+        echo 'Not Found';
     }
 }
-
-?>
