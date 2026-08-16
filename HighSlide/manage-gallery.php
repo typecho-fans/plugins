@@ -5,6 +5,14 @@ $fileurl = $route->url;
 $settings = $options->plugin('HighSlide');
 $datas = $db->fetchAll($db->select('gid,image,thumb,sort')->from('table.gallery'));
 $isgid = isset($request->gid);
+$versionParts = explode('/', (string)$options->version);
+$prefixVersion = trim((string)array_shift($versionParts));
+// 版本字符串可能附带后缀（如 1.3.0-rc），先提取可比较的主版本号
+if (preg_match('/^\d+(?:\.\d+){0,2}/', $prefixVersion, $matches)) {
+	$prefixVersion = $matches[0];
+}
+// Typecho 1.3+ 已切换为原生上传，旧版本继续走 plupload
+$useNativeUploader = $prefixVersion !== '' && version_compare($prefixVersion, '1.3.0', '>=');
 
 //输出图片列表
 if ($request->is('action=loadlist')) {
@@ -268,6 +276,9 @@ if (preg_match('/^([0-9]+)([a-z]{1,2})$/i',$phpMaxFilesize,$matches)) {
 					<div id="tab-files" class="tab-content">
 						<div id="upload-panel" class="p">
 							<div class="upload-area" draggable="true"><?php _e('拖放文件到这里或<br>%s选择文件上传%s','<a href="###" class="upload-file"><i class="i-upload"></i>','</a>'); ?></div>
+<?php if ($useNativeUploader) { ?>
+							<input type="file" id="hs-native-file" accept="image/*" multiple style="display:none;"/>
+<?php } ?>
 							<div style="margin-left:10px;"><strong><?php _e('如何将上传后的图片录入相册:'); ?></strong><br/><?php _e('1. 在图片上拖动鼠标, 点击左下角图标截取缩略图'); ?><br/><?php _e('2. 复制图片地址到下方表单, 填写各项后点击添加'); ?></div>
 							<ul id="file-list" style="<?php if ($isgid) { ?>background-color:#FFF9E8;<?php } ?>max-height:1000px;"></ul>
 						</div>
@@ -291,13 +302,17 @@ include 'common-js.php';
 include 'form-js.php';
 ?>
 
+<?php if (!$useNativeUploader) { ?>
 <script src="<?php $options->adminUrl('js/moxie.js?v='.$suffixVersion); ?>"></script>
 <script src="<?php $options->adminUrl('js/plupload.js?v='.$suffixVersion); ?>"></script>
+<?php } ?>
 <script src="<?php $options->pluginUrl('HighSlide/js/imgareaselect.js'); ?>"></script>
 <link rel="stylesheet" type="text/css" media="all" href="<?php $options->pluginUrl('HighSlide/css/imgareaselect-animated.css'); ?>"/>
 
 <script type="text/javascript">
 $(document).ready(function(){
+var useNativeUploader = <?php echo $useNativeUploader ? 'true' : 'false'; ?>;
+var uploadEndpoint = '<?php $security->index("/action/gallery-edit?do=upload"); ?>';
 <?php
 	//核心提示窗口
 	if ($settings->mode=='highslide.packed.js' && !isset($request->tab) && !isset($request->group)) {
@@ -391,25 +406,44 @@ $(document).ready(function(){
 		$('<li id="'+file.id+'" class="loading">'
 			+file.name+'</li>').prependTo('#file-list');
 	}
+	function normalizeUploadErrorCode(code){
+		if (typeof plupload !== 'undefined') {
+			switch (code) {
+				case plupload.FILE_SIZE_ERROR:
+					return 'FILE_SIZE_ERROR';
+				case plupload.FILE_EXTENSION_ERROR:
+					return 'FILE_EXTENSION_ERROR';
+				case plupload.FILE_DUPLICATE_ERROR:
+					return 'FILE_DUPLICATE_ERROR';
+				case plupload.HTTP_ERROR:
+					return 'HTTP_ERROR';
+			}
+		}
+		return code;
+	}
 	function fileUploadError(error){
-		var file = error.file,code = error.code,word;
+		var file = error.file || {},
+			code = normalizeUploadErrorCode(error.code),
+			word;
 		switch (code) {
-			case plupload.FILE_SIZE_ERROR:
+			case 'FILE_SIZE_ERROR':
 				word = '<?php _e('文件大小超过限制'); ?>';
 				break;
-			case plupload.FILE_EXTENSION_ERROR:
+			case 'FILE_EXTENSION_ERROR':
 				word = '<?php _e('文件扩展名不被支持'); ?>';
 				break;
-			case plupload.FILE_DUPLICATE_ERROR:
+			case 'FILE_DUPLICATE_ERROR':
 				word = '<?php _e('文件已经上传过'); ?>';
 				break;
-			case plupload.HTTP_ERROR:
+			case 'HTTP_ERROR':
 			default:
 				word = '<?php _e('上传出现错误'); ?>';
 				break;
 		}
-		var fileError = '<?php _e('%s 上传失败'); ?>'.replace('%s',file.name),
-			li,exist = $('#'+file.id);
+		var fileName = file && file.name ? file.name : '<?php _e('未知文件'); ?>',
+			fileId = file && file.id ? file.id : '',
+			fileError = '<?php _e('%s 上传失败'); ?>'.replace('%s',fileName),
+			li,exist = fileId ? $('#'+fileId) : $();
 		if (exist.length>0) {
 			li = exist.removeClass('loading').html(fileError);
 		} else {
@@ -448,49 +482,120 @@ $(document).ready(function(){
 	}
 
 	//typecho上传事件
-	var uploader = new plupload.Uploader({
-		browse_button:$('.upload-file').get(0),
-		url:'<?php $security->index('/action/gallery-edit?do=upload'); ?>',
-		runtimes:'html5,flash,html4',
-		flash_swf_url:'<?php $options->adminUrl('js/Moxie.swf'); ?>',
-		drop_element:$('.upload-area').get(0),
-		filters:{
-			max_file_size:'<?php echo $phpMaxFilesize ?>',
-			mime_types:[{'title':'<?php _e('允许上传的文件'); ?>','extensions':'gif,jpg,jpeg,png,tiff,bmp'}],
-			prevent_duplicates:true
-		},
-		init:{
-			FilesAdded:function(up,files){
-				plupload.each(files,function(file){
-					fileUploadStart(file);
-				});
-
-				completeFile = null;
-				uploader.start();
+	if (!useNativeUploader) {
+		var uploader = new plupload.Uploader({
+			browse_button:$('.upload-file').get(0),
+			url:uploadEndpoint,
+			runtimes:'html5,flash,html4',
+			flash_swf_url:'<?php $options->adminUrl('js/Moxie.swf'); ?>',
+			drop_element:$('.upload-area').get(0),
+			filters:{
+				max_file_size:'<?php echo $phpMaxFilesize ?>',
+				mime_types:[{'title':'<?php _e('允许上传的文件'); ?>','extensions':'gif,jpg,jpeg,png,tiff,bmp'}],
+				prevent_duplicates:true
 			},
-			UploadComplete:function(){
-			},
-			FileUploaded:function(up,file,result){
-				if (200==result.status) {
-					var data = $.parseJSON(result.response);
+			init:{
+				FilesAdded:function(up,files){
+					plupload.each(files,function(file){
+						fileUploadStart(file);
+					});
 
-					if (data) {
-						fileUploadComplete(file.id,data[0],data[1]);
-						return;
+					completeFile = null;
+					uploader.start();
+				},
+				UploadComplete:function(){
+				},
+				FileUploaded:function(up,file,result){
+					if (200==result.status) {
+						var data = $.parseJSON(result.response);
+
+						if (data) {
+							fileUploadComplete(file.id,data[0],data[1]);
+							return;
+						}
 					}
-				}
 
-				fileUploadError({
-					code:plupload.HTTP_ERROR,
-					file:file
-				});
-			},
-			Error:function(up,error){
-				fileUploadError(error);
+					fileUploadError({
+						code:'HTTP_ERROR',
+						file:file
+					});
+				},
+				Error:function(up,error){
+					fileUploadError(error);
+				}
 			}
+		});
+		uploader.init();
+	} else {
+		initNativeUploader();
+	}
+
+	function initNativeUploader(){
+		var $uploadLink = $('.upload-file'),
+			$uploadInput = $('#hs-native-file'),
+			$uploadArea = $('.upload-area');
+
+		if ($uploadInput.length === 0) {
+			$uploadInput = $('<input type="file" id="hs-native-file" accept="image/*" multiple style="display:none;"/>').appendTo('#upload-panel');
 		}
-	});
-	uploader.init();
+
+		var handleFiles = function(files){
+			if (!files || !files.length) {
+				return;
+			}
+			$.each(files, function(index, file){
+				var fileId = 'native-' + Date.now() + '-' + index + '-' + Math.floor(Math.random()*1000);
+				fileUploadStart({ id:fileId, name:file.name });
+				uploadSingleFile(file, fileId);
+			});
+		};
+
+		$uploadLink.on('click.nativeUploader', function(e){
+			e.preventDefault();
+			$uploadInput.trigger('click');
+		});
+
+		$uploadInput.on('change.nativeUploader', function(e){
+			handleFiles(e.target.files);
+			$(this).val('');
+		});
+
+		$uploadArea.on('dragover.nativeUploader', function(e){
+			e.preventDefault();
+			e.stopPropagation();
+		}).on('drop.nativeUploader', function(e){
+			e.preventDefault();
+			e.stopPropagation();
+			var dt = e.originalEvent && e.originalEvent.dataTransfer;
+			if (dt) {
+				handleFiles(dt.files);
+			}
+		});
+
+		function uploadSingleFile(file, fileId){
+			var formData = new FormData();
+			formData.append('file', file, encodeURIComponent(file.name));
+			$.ajax({
+				url: uploadEndpoint,
+				type: 'POST',
+				data: formData,
+				processData: false,
+				contentType: false,
+				dataType: 'json',
+				success: function(response){
+					if (response && response[0]) {
+						fileUploadComplete(fileId, response[0]);
+					} else {
+						fileUploadError({ code: 'HTTP_ERROR', file: { id: fileId, name: file.name } });
+					}
+				},
+				error: function(jqXHR){
+					var code = jqXHR && jqXHR.status === 413 ? 'FILE_SIZE_ERROR' : 'HTTP_ERROR';
+					fileUploadError({ code: code, file: { id: fileId, name: file.name } });
+				}
+			});
+		}
+	}
 
 	//裁切蒙板事件
 	function iasEffectEvent(el){
