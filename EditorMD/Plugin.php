@@ -5,7 +5,8 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
  * 
  * @package EditorMD
  * @author DT27
- * @version 1.4.0
+ * @version 1.5.0
+ * @dependence 1.2.0-*
  * @link https://dt27.cn/php/editormd-for-typecho/
  */
 class EditorMD_Plugin implements Typecho_Plugin_Interface
@@ -111,6 +112,9 @@ class EditorMD_Plugin implements Typecho_Plugin_Interface
         $options = Helper::options();
         $cssUrl = $options->pluginUrl.'/EditorMD/css/editormd.min.css';
         $jsUrl = $options->pluginUrl.'/EditorMD/js/editormd.min.js';
+        $markedUrl = $options->pluginUrl.'/EditorMD/lib/marked.min.js';
+        $purifyUrl = $options->pluginUrl.'/EditorMD/lib/purify.min.js';
+        $safeMarkedUrl = $options->pluginUrl.'/EditorMD/js/safe-marked.js';
         $editormd = Typecho_Widget::widget('Widget_Options')->plugin('EditorMD');
         ?>
         <link rel="stylesheet" href="<?php echo $cssUrl; ?>" />
@@ -118,9 +122,18 @@ class EditorMD_Plugin implements Typecho_Plugin_Interface
             var emojiPath = '<?php echo $options->pluginUrl; ?>';
             var uploadURL = '<?php Helper::security()->index('/action/upload?cid=CID'); ?>';
         </script>
+        <script type="text/javascript" src="<?php echo $markedUrl; ?>"></script>
+        <script type="text/javascript" src="<?php echo $purifyUrl; ?>"></script>
         <script type="text/javascript" src="<?php echo $jsUrl; ?>"></script>
+        <script type="text/javascript" src="<?php echo $safeMarkedUrl; ?>"></script>
         <script>
             $(document).ready(function() {
+                if (!window.EditorMDSanitizeMarked
+                    || !window.EditorMDSanitizeMarked()
+                    || !window.EditorMDGuardMarkedLoader
+                    || !window.EditorMDGuardMarkedLoader()) {
+                    return;
+                }
 
                 var textarea = $('#text').parent("p");
                 var isMarkdown = $('[name=markdown]').val()?1:0;
@@ -145,7 +158,7 @@ class EditorMD_Plugin implements Typecho_Plugin_Interface
                         height: 640,
                         path: '<?php echo $options->pluginUrl ?>/EditorMD/lib/',
                         toolbarAutoFixed: false,
-                        htmlDecode: true,
+                        htmlDecode: false,
                         emoji: <?php echo $editormd->emoji ? 'true' : 'false'; ?>,
                         tex: <?php echo $editormd->isTex ? 'true' : 'false'; ?>,
                         toc: <?php echo $editormd->isToc ? 'true' : 'false'; ?>,
@@ -221,87 +234,109 @@ class EditorMD_Plugin implements Typecho_Plugin_Interface
 
                     // 优化图片及文件附件插入 Thanks to Markxuxiao
                     Typecho.insertFileToEditor = function (file, url, isImage) {
-                        html = isImage ? '![' + file + '](' + url + ')'
+                        var html = isImage ? '![' + file + '](' + url + ')'
                             : '[' + file + '](' + url + ')';
                         postEditormd.insertValue(html);
                     };
 
                     // 支持黏贴图片直接上传
+                    var pasteUploadIndex = 0;
+                    var uploadClipboardImage = function(blob) {
+                        if (!blob) {
+                            return;
+                        }
+
+                        var extensions = {
+                            'image/jpeg': 'jpg',
+                            'image/pjpeg': 'jpg',
+                            'image/png': 'png',
+                            'image/gif': 'gif',
+                            'image/webp': 'webp'
+                        };
+                        var ext = extensions[blob.type];
+                        if (!ext || !blob.size) {
+                            return;
+                        }
+
+                        var uploadId = pasteUploadIndex++;
+                        var formData = new FormData();
+                        formData.append(
+                            'blob',
+                            blob,
+                            new Date().getTime() + '-' + uploadId + '.' + ext
+                        );
+
+                        var uploadingText = '![图片上传中(' + uploadId + ')...]';
+                        var uploadFailText = '![图片上传失败(' + uploadId + ')]';
+                        postEditormd.insertValue(uploadingText);
+
+                        $.ajax({
+                            method: 'post',
+                            url: uploadURL.replace(
+                                'CID',
+                                encodeURIComponent($('input[name="cid"]').val() || '')
+                            ),
+                            data: formData,
+                            dataType: 'json',
+                            contentType: false,
+                            processData: false,
+                            success: function(data) {
+                                if (data && data[0]) {
+                                    var attachment = data[1] || {};
+                                    var attachmentId = parseInt(attachment.cid, 10);
+                                    var imageUrl = attachment.url || data[0];
+
+                                    postEditormd.setValue(
+                                        postEditormd.getValue().replace(
+                                            uploadingText,
+                                            '![](' + imageUrl + ')'
+                                        )
+                                    );
+
+                                    if (
+                                        attachmentId > 0
+                                        && !$('input[name="attachment[]"][value="'
+                                            + attachmentId + '"]').length
+                                    ) {
+                                        $('<input>', {
+                                            type: 'hidden',
+                                            name: 'attachment[]',
+                                            value: attachmentId
+                                        }).appendTo($('#text').closest('form'));
+                                    }
+                                } else {
+                                    postEditormd.setValue(
+                                        postEditormd.getValue().replace(
+                                            uploadingText,
+                                            uploadFailText
+                                        )
+                                    );
+                                }
+                            },
+                            error: function() {
+                                postEditormd.setValue(
+                                    postEditormd.getValue().replace(
+                                        uploadingText,
+                                        uploadFailText
+                                    )
+                                );
+                            }
+                        });
+                    };
+
                     $(document).on('paste', function(event) {
                         event = event.originalEvent;
                         var cbd = event.clipboardData;
-                        var ua = window.navigator.userAgent;
                         if (!(event.clipboardData && event.clipboardData.items)) {
                             return;
                         }
 
-                        if (cbd.items && cbd.items.length === 2 && cbd.items[0].kind === "string" && cbd.items[1].kind === "file" &&
-                            cbd.types && cbd.types.length === 2 && cbd.types[0] === "text/plain" && cbd.types[1] === "Files" &&
-                            ua.match(/Macintosh/i) && Number(ua.match(/Chrome\/(\d{2})/i)[1]) < 49){
-                            return;
-                        }
-
-                        var itemLength = cbd.items.length;
-
-                        if (itemLength == 0) {
-                            return;
-                        }
-
-                        if (itemLength == 1 && cbd.items[0].kind == 'string') {
-                            return;
-                        }
-
-                        if ((itemLength == 1 && cbd.items[0].kind == 'file')
-                                || itemLength > 1
-                            ) {
-                            for (var i = 0; i < cbd.items.length; i++) {
-                                var item = cbd.items[i];
-
-                                if(item.kind == "file") {
-                                    var blob = item.getAsFile();
-                                    if (blob.size === 0) {
-                                        return;
-                                    }
-                                    var ext = 'jpg';
-                                    switch(blob.type) {
-                                        case 'image/jpeg':
-                                        case 'image/pjpeg':
-                                            ext = 'jpg';
-                                            break;
-                                        case 'image/png':
-                                            ext = 'png';
-                                            break;
-                                        case 'image/gif':
-                                            ext = 'gif';
-                                            break;
-                                    }
-                                    var formData = new FormData();
-                                    formData.append('blob', blob, Math.floor(new Date().getTime() / 1000) + '.' + ext);
-                                    var uploadingText = '![图片上传中(' + i + ')...]';
-                                    var uploadFailText = '![图片上传失败(' + i + ')]'
-                                    postEditormd.insertValue(uploadingText);
-                                    $.ajax({
-                                        method: 'post',
-                                        url: uploadURL.replace('CID', $('input[name="cid"]').val()),
-                                        data: formData,
-                                        contentType: false,
-                                        processData: false,
-                                        success: function(data) {
-                                            if (data[0]) {
-                                                postEditormd.setValue(postEditormd.getValue().replace(uploadingText, '![](' + data[0] + ')'));
-                                            } else {
-                                                postEditormd.setValue(postEditormd.getValue().replace(uploadingText, uploadFailText));
-                                            }
-                                        },
-                                        error: function() {
-                                            postEditormd.setValue(postEditormd.getValue().replace(uploadingText, uploadFailText));
-                                        }
-                                    });
-                                }
+                        for (var i = 0; i < cbd.items.length; i++) {
+                            var item = cbd.items[i];
+                            if (item.kind === 'file') {
+                                uploadClipboardImage(item.getAsFile());
                             }
-
                         }
-
                     });
 
             });
@@ -311,20 +346,23 @@ class EditorMD_Plugin implements Typecho_Plugin_Interface
     /**
      * emoji 解析器
      */
-    public static function footerJS($conent)
+    public static function footerJS($content)
     {
         $options = Helper::options();
         $pluginUrl = $options->pluginUrl.'/EditorMD';
         $editormd = Typecho_Widget::widget('Widget_Options')->plugin('EditorMD');
+        $needsMarkdown = $editormd->isActive == 1 && self::$count > 0;
         if($editormd->emoji){
 ?>
 <link rel="stylesheet" href="<?php echo $pluginUrl; ?>/css/emojify.min.css" />
-<?php }if($editormd->emoji || ($editormd->isActive == 1 && $conent->isMarkdown)){ ?>
+        <?php }if($editormd->emoji || $needsMarkdown){ ?>
 <script type="text/javascript">
     window.jQuery || document.write(unescape('%3Cscript%20type%3D%22text/javascript%22%20src%3D%22<?php echo $pluginUrl; ?>/lib/jquery.min.js%22%3E%3C/script%3E'));
 </script>
-<?php }if($editormd->isActive == 1 && $conent->isMarkdown){ ?>
+<?php }if($needsMarkdown){ ?>
 <script src="<?php echo $pluginUrl; ?>/lib/marked.min.js"></script>
+<script src="<?php echo $pluginUrl; ?>/lib/purify.min.js"></script>
+<script src="<?php echo $pluginUrl; ?>/js/safe-marked.js"></script>
 <script src="<?php echo $pluginUrl; ?>/js/editormd.min.js"></script>
 <?php if($editormd->isSeq == 1||$editormd->isFlow == 1){ ?>
 <script src="<?php echo $pluginUrl; ?>/lib/raphael.min.js"></script>
@@ -336,20 +374,31 @@ class EditorMD_Plugin implements Typecho_Plugin_Interface
 <script src="<?php echo $pluginUrl; ?>/lib/sequence-diagram.min.js"></script>
 <?php }}if($editormd->emoji){ ?>
 <script src="<?php echo $pluginUrl; ?>/js/emojify.min.js"></script>
-<?php }if($editormd->emoji||($editormd->isActive == 1 && $conent->isMarkdown)){?>
+<?php }if($editormd->emoji||$needsMarkdown){?>
 <script type="text/javascript">
 $(function() {
-<?php if($editormd->isActive == 1 && $conent->isMarkdown){ ?>
+<?php if($needsMarkdown){ ?>
+    if (!window.EditorMDSanitizeMarked
+        || !window.EditorMDSanitizeMarked()) {
+        return;
+    }
+
     var parseMarkdown = function () {
         var markdowns = document.getElementsByClassName("md_content");
         $(markdowns).each(function () {
-            var markdown = $(this).children("#append-test").text();
+            var source = $(this).children(".editormd-source");
+            if (!source.length) {
+                return;
+            }
+            var markdown = source.map(function () {
+                return $(this).val();
+            }).get().join('\n\n');
             //$('#md_content_'+i).text('');
             var editormdView;
             editormdView = editormd.markdownToHTML($(this).attr("id"), {
                 markdown: markdown,//+ "\r\n" + $("#append-test").text(),
                 toolbarAutoFixed: false,
-                htmlDecode: true,
+                htmlDecode: false,
                 emoji: <?php echo $editormd->emoji ? 'true' : 'false'; ?>,
                 tex: <?php echo $editormd->isTex ? 'true' : 'false'; ?>,
                 toc: <?php echo $editormd->isToc ? 'true' : 'false'; ?>,
@@ -362,7 +411,7 @@ $(function() {
     };
     parseMarkdown();
     $(document).on('pjax:complete', function () {
-        parseMarkdown()
+        parseMarkdown();
     });
 <?php }if($editormd->emoji){ ?>
     emojify.setConfig({
@@ -397,20 +446,83 @@ if(isset(Typecho_Widget::widget('Widget_Options')->plugins['activated']['APlayer
 <?php
 }
     }
-    public static function content($text, $conent){
-        self::$count++;
+    public static function content($text, $content){
         $editormd = Typecho_Widget::widget('Widget_Options')->plugin('EditorMD');
-        $text = $conent->isMarkdown ? ($editormd->isActive == 1?$text:$conent->markdown($text))
-            : $conent->autoP($text);
-        if($editormd->isActive == 1 && $conent->isMarkdown)
-            return '<div id="md_content_'.self::$count.'" class="md_content" style="min-height: 50px;"><textarea id="append-test" style="display:none;">'.$text.'</textarea></div>';
-        else
-            return $text;
+        if ($content->isMarkdown) {
+            return $editormd->isActive == 1
+                ? self::renderMarkdown($text)
+                : self::markdown($text);
+        }
+
+        return self::autoP($text);
     }
-    public static function excerpt($text, $conent){
+
+    public static function excerpt($text, $content){
+        if (self::isTypecho13()) {
+            return $text;
+        }
+
+        return self::content($text, $content);
+    }
+
+    private static function renderMarkdown($text)
+    {
+        $segments = explode('<!--more-->', (string) $text);
+        foreach ($segments as &$segment) {
+            $segment = '<textarea class="editormd-source" style="display:none;">'
+                . htmlspecialchars($segment, ENT_NOQUOTES | ENT_SUBSTITUTE, 'UTF-8')
+                . '</textarea>';
+        }
+        unset($segment);
+
         self::$count++;
-        $text = $conent->isMarkdown ? $conent->markdown($text)
-            : $conent->autoP($text);
-        return $text;
+        return '<div id="md_content_' . self::$count
+            . '" class="md_content" style="min-height: 50px;">'
+            . implode('<!--more-->', $segments)
+            . '</div>';
+    }
+
+    private static function markdown($text)
+    {
+        $handle = Typecho_Plugin::factory('Widget_Abstract_Contents');
+        if (self::isTypecho13()) {
+            $result = $handle->trigger($parsed)->filter('markdown', (string) $text);
+        } else {
+            $result = $handle->trigger($parsed)->markdown((string) $text);
+        }
+
+        return $parsed ? $result : Markdown::convert((string) $text);
+    }
+
+    private static function autoP($text)
+    {
+        if (!$text) {
+            return $text;
+        }
+
+        $handle = Typecho_Plugin::factory('Widget_Abstract_Contents');
+        if (self::isTypecho13()) {
+            $result = $handle->trigger($parsed)->filter('autoP', (string) $text);
+        } else {
+            $result = $handle->trigger($parsed)->autoP((string) $text);
+        }
+        if ($parsed) {
+            return $result;
+        }
+
+        static $parser;
+        if (!$parser) {
+            $parser = new AutoP();
+        }
+
+        return $parser->parse((string) $text);
+    }
+
+    private static function isTypecho13()
+    {
+        return method_exists(
+            Typecho_Plugin::factory('Widget_Abstract_Contents'),
+            'filter'
+        );
     }
 }
