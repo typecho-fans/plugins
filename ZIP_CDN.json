@@ -4834,16 +4834,16 @@
   {
     "name": "NAME_LIST.log",
     "path": "ZIP_CDN/NAME_LIST.log",
-    "sha": "fa41a9ff3a2f7f70f02d7ee7905e51e713cddc6d",
-    "size": 3909,
+    "sha": "c99c9a7f9a4374572922a063d698394ceb982ccf",
+    "size": 3914,
     "url": "https://api.github.com/repos/typecho-fans/plugins/contents/ZIP_CDN/NAME_LIST.log?ref=master",
     "html_url": "https://github.com/typecho-fans/plugins/blob/master/ZIP_CDN/NAME_LIST.log",
-    "git_url": "https://api.github.com/repos/typecho-fans/plugins/git/blobs/fa41a9ff3a2f7f70f02d7ee7905e51e713cddc6d",
+    "git_url": "https://api.github.com/repos/typecho-fans/plugins/git/blobs/c99c9a7f9a4374572922a063d698394ceb982ccf",
     "download_url": "https://raw.githubusercontent.com/typecho-fans/plugins/master/ZIP_CDN/NAME_LIST.log",
     "type": "file",
     "_links": {
       "self": "https://api.github.com/repos/typecho-fans/plugins/contents/ZIP_CDN/NAME_LIST.log?ref=master",
-      "git": "https://api.github.com/repos/typecho-fans/plugins/git/blobs/fa41a9ff3a2f7f70f02d7ee7905e51e713cddc6d",
+      "git": "https://api.github.com/repos/typecho-fans/plugins/git/blobs/c99c9a7f9a4374572922a063d698394ceb982ccf",
       "html": "https://github.com/typecho-fans/plugins/blob/master/ZIP_CDN/NAME_LIST.log"
     }
   },
@@ -7952,19 +7952,19 @@
     }
   },
   {
-    "name": "Watermark_DEFE.zip",
-    "path": "ZIP_CDN/Watermark_DEFE.zip",
-    "sha": "e14e0b4a07300366ad8bc5319a33d055c0123b7b",
-    "size": 1333988,
-    "url": "https://api.github.com/repos/typecho-fans/plugins/contents/ZIP_CDN/Watermark_DEFE.zip?ref=master",
-    "html_url": "https://github.com/typecho-fans/plugins/blob/master/ZIP_CDN/Watermark_DEFE.zip",
-    "git_url": "https://api.github.com/repos/typecho-fans/plugins/git/blobs/e14e0b4a07300366ad8bc5319a33d055c0123b7b",
-    "download_url": "https://raw.githubusercontent.com/typecho-fans/plugins/master/ZIP_CDN/Watermark_DEFE.zip",
+    "name": "Watermark_DEFE_NHPT.zip",
+    "path": "ZIP_CDN/Watermark_DEFE_NHPT.zip",
+    "sha": "b390e67a842f066765bb5657ddaa12c3097cba70",
+    "size": 1342123,
+    "url": "https://api.github.com/repos/typecho-fans/plugins/contents/ZIP_CDN/Watermark_DEFE_NHPT.zip?ref=master",
+    "html_url": "https://github.com/typecho-fans/plugins/blob/master/ZIP_CDN/Watermark_DEFE_NHPT.zip",
+    "git_url": "https://api.github.com/repos/typecho-fans/plugins/git/blobs/b390e67a842f066765bb5657ddaa12c3097cba70",
+    "download_url": "https://raw.githubusercontent.com/typecho-fans/plugins/master/ZIP_CDN/Watermark_DEFE_NHPT.zip",
     "type": "file",
     "_links": {
-      "self": "https://api.github.com/repos/typecho-fans/plugins/contents/ZIP_CDN/Watermark_DEFE.zip?ref=master",
-      "git": "https://api.github.com/repos/typecho-fans/plugins/git/blobs/e14e0b4a07300366ad8bc5319a33d055c0123b7b",
-      "html": "https://github.com/typecho-fans/plugins/blob/master/ZIP_CDN/Watermark_DEFE.zip"
+      "self": "https://api.github.com/repos/typecho-fans/plugins/contents/ZIP_CDN/Watermark_DEFE_NHPT.zip?ref=master",
+      "git": "https://api.github.com/repos/typecho-fans/plugins/git/blobs/b390e67a842f066765bb5657ddaa12c3097cba70",
+      "html": "https://github.com/typecho-fans/plugins/blob/master/ZIP_CDN/Watermark_DEFE_NHPT.zip"
     }
   },
   {
