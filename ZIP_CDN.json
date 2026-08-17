@@ -4834,16 +4834,16 @@
   {
     "name": "NAME_LIST.log",
     "path": "ZIP_CDN/NAME_LIST.log",
-    "sha": "c99c9a7f9a4374572922a063d698394ceb982ccf",
-    "size": 3914,
+    "sha": "9ee0c82538816da60a5cd7b001cb36ab515a6cdf",
+    "size": 3933,
     "url": "https://api.github.com/repos/typecho-fans/plugins/contents/ZIP_CDN/NAME_LIST.log?ref=master",
     "html_url": "https://github.com/typecho-fans/plugins/blob/master/ZIP_CDN/NAME_LIST.log",
-    "git_url": "https://api.github.com/repos/typecho-fans/plugins/git/blobs/c99c9a7f9a4374572922a063d698394ceb982ccf",
+    "git_url": "https://api.github.com/repos/typecho-fans/plugins/git/blobs/9ee0c82538816da60a5cd7b001cb36ab515a6cdf",
     "download_url": "https://raw.githubusercontent.com/typecho-fans/plugins/master/ZIP_CDN/NAME_LIST.log",
     "type": "file",
     "_links": {
       "self": "https://api.github.com/repos/typecho-fans/plugins/contents/ZIP_CDN/NAME_LIST.log?ref=master",
-      "git": "https://api.github.com/repos/typecho-fans/plugins/git/blobs/c99c9a7f9a4374572922a063d698394ceb982ccf",
+      "git": "https://api.github.com/repos/typecho-fans/plugins/git/blobs/9ee0c82538816da60a5cd7b001cb36ab515a6cdf",
       "html": "https://github.com/typecho-fans/plugins/blob/master/ZIP_CDN/NAME_LIST.log"
     }
   },
@@ -7024,6 +7024,22 @@
     }
   },
   {
+    "name": "TeoSeo_Astarry.zip",
+    "path": "ZIP_CDN/TeoSeo_Astarry.zip",
+    "sha": "8d1805de8f881916d673f37e705beea4189d95c5",
+    "size": 228350,
+    "url": "https://api.github.com/repos/typecho-fans/plugins/contents/ZIP_CDN/TeoSeo_Astarry.zip?ref=master",
+    "html_url": "https://github.com/typecho-fans/plugins/blob/master/ZIP_CDN/TeoSeo_Astarry.zip",
+    "git_url": "https://api.github.com/repos/typecho-fans/plugins/git/blobs/8d1805de8f881916d673f37e705beea4189d95c5",
+    "download_url": "https://raw.githubusercontent.com/typecho-fans/plugins/master/ZIP_CDN/TeoSeo_Astarry.zip",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/typecho-fans/plugins/contents/ZIP_CDN/TeoSeo_Astarry.zip?ref=master",
+      "git": "https://api.github.com/repos/typecho-fans/plugins/git/blobs/8d1805de8f881916d673f37e705beea4189d95c5",
+      "html": "https://github.com/typecho-fans/plugins/blob/master/ZIP_CDN/TeoSeo_Astarry.zip"
+    }
+  },
+  {
     "name": "TextEditor_vfasky.zip",
     "path": "ZIP_CDN/TextEditor_vfasky.zip",
     "sha": "27beb21eb08ad48261c04b3ee9622ed0c31381e3",
@@ -7954,16 +7970,16 @@
   {
     "name": "Watermark_DEFE_NHPT.zip",
     "path": "ZIP_CDN/Watermark_DEFE_NHPT.zip",
-    "sha": "b390e67a842f066765bb5657ddaa12c3097cba70",
-    "size": 1342123,
+    "sha": "ee672a2df906fc718074d132b5df2e6cb941907f",
+    "size": 1345601,
     "url": "https://api.github.com/repos/typecho-fans/plugins/contents/ZIP_CDN/Watermark_DEFE_NHPT.zip?ref=master",
     "html_url": "https://github.com/typecho-fans/plugins/blob/master/ZIP_CDN/Watermark_DEFE_NHPT.zip",
-    "git_url": "https://api.github.com/repos/typecho-fans/plugins/git/blobs/b390e67a842f066765bb5657ddaa12c3097cba70",
+    "git_url": "https://api.github.com/repos/typecho-fans/plugins/git/blobs/ee672a2df906fc718074d132b5df2e6cb941907f",
     "download_url": "https://raw.githubusercontent.com/typecho-fans/plugins/master/ZIP_CDN/Watermark_DEFE_NHPT.zip",
     "type": "file",
     "_links": {
       "self": "https://api.github.com/repos/typecho-fans/plugins/contents/ZIP_CDN/Watermark_DEFE_NHPT.zip?ref=master",
-      "git": "https://api.github.com/repos/typecho-fans/plugins/git/blobs/b390e67a842f066765bb5657ddaa12c3097cba70",
+      "git": "https://api.github.com/repos/typecho-fans/plugins/git/blobs/ee672a2df906fc718074d132b5df2e6cb941907f",
       "html": "https://github.com/typecho-fans/plugins/blob/master/ZIP_CDN/Watermark_DEFE_NHPT.zip"
     }
   },
