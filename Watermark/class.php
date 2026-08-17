@@ -213,6 +213,11 @@ class WaterMark
      * @param int $offsetY
      * @param int $alpha
      * @param string|false $save
+     * @param string $layout
+     * @param int $angle
+     * @param int $gapX
+     * @param int $gapY
+     * @param int $textAlpha
      */
     public function mark(
         $useImage = false,
@@ -222,75 +227,59 @@ class WaterMark
         $offsetX = 0,
         $offsetY = 0,
         $alpha = 0,
-        $save = false
+        $save = false,
+        $layout = 'single',
+        $angle = 0,
+        $gapX = 80,
+        $gapY = 60,
+        $textAlpha = 0
     ) {
+        $layout = 'tile' === $layout ? 'tile' : 'single';
+        $alpha = min(100, max(0, (int) $alpha));
+        $textAlpha = min(100, max(0, (int) $textAlpha));
+        $angle = min(180, max(-180, (int) $angle));
+        $gapX = max(0, (int) $gapX);
+        $gapY = max(0, (int) $gapY);
+
         if ($useImage && $this->isImage($this->waterImage)) {
-            if ($this->checkRange($this->imWaterWidth, $this->imWaterHeight)) {
-                list($positionX, $positionY) = $this->getPosition(
-                    $imagePosition,
-                    $this->imWaterWidth,
-                    $this->imWaterHeight
-                );
-                if ($alpha > 0) {
-                    $this->copyWithAlpha(
-                        $this->srcImage,
-                        $this->waterImage,
-                        $positionX,
-                        $positionY,
-                        $this->imWaterWidth,
-                        $this->imWaterHeight,
-                        $alpha
+            $layer = $this->createImageWatermarkLayer($angle, $alpha);
+            if ($this->isImage($layer)) {
+                $width = imagesx($layer);
+                $height = imagesy($layer);
+                if ('tile' === $layout) {
+                    $this->drawTiledLayer($layer, $gapX, $gapY);
+                } elseif ($this->checkRange($width, $height)) {
+                    list($positionX, $positionY) = $this->getPosition(
+                        $imagePosition,
+                        $width,
+                        $height
                     );
-                } else {
-                    imagecopy(
-                        $this->srcImage,
-                        $this->waterImage,
-                        $positionX,
-                        $positionY,
-                        0,
-                        0,
-                        $this->imWaterWidth,
-                        $this->imWaterHeight
-                    );
+                    $this->drawLayer($layer, $positionX, $positionY);
                 }
+                imagedestroy($layer);
             }
         }
 
         if ($useText && is_file($this->font) && '' !== $this->fontText) {
-            $box = imagettfbbox($this->fontSize, 0, $this->font, $this->fontText);
-            if (is_array($box)) {
-                $xCoordinates = array($box[0], $box[2], $box[4], $box[6]);
-                $yCoordinates = array($box[1], $box[3], $box[5], $box[7]);
-                $minX = min($xCoordinates);
-                $maxX = max($xCoordinates);
-                $minY = min($yCoordinates);
-                $maxY = max($yCoordinates);
-                $width = $maxX - $minX;
-                $height = $maxY - $minY;
-                if ($this->checkRange($width, $height)) {
+            $layer = $this->createTextWatermarkLayer($angle, $textAlpha);
+            if ($this->isImage($layer)) {
+                $width = imagesx($layer);
+                $height = imagesy($layer);
+                if ('tile' === $layout) {
+                    $this->drawTiledLayer($layer, $gapX, $gapY);
+                } elseif ($this->checkRange($width, $height)) {
                     list($positionX, $positionY) = $this->getPosition(
                         $textPosition,
                         $width,
                         $height
                     );
-                    $color = $this->parseColor($this->fontColor);
-                    $gdColor = imagecolorallocate(
-                        $this->srcImage,
-                        $color['r'],
-                        $color['g'],
-                        $color['b']
-                    );
-                    imagettftext(
-                        $this->srcImage,
-                        $this->fontSize,
-                        0,
-                        $positionX - $minX + (int) $offsetX,
-                        $positionY - $minY + (int) $offsetY,
-                        $gdColor,
-                        $this->font,
-                        $this->fontText
+                    $this->drawLayer(
+                        $layer,
+                        $positionX + (int) $offsetX,
+                        $positionY + (int) $offsetY
                     );
                 }
+                imagedestroy($layer);
             }
         }
 
@@ -441,6 +430,213 @@ class WaterMark
     }
 
     /**
+     * 创建已应用透明度和旋转的图片水印图层。
+     *
+     * @param int $angle
+     * @param int $transparency
+     * @return mixed
+     */
+    private function createImageWatermarkLayer($angle, $transparency)
+    {
+        if ($transparency >= 100) {
+            return false;
+        }
+
+        $layer = $this->createTransparentImage($this->imWaterWidth, $this->imWaterHeight);
+        if (!$this->isImage($layer)) {
+            return false;
+        }
+        imagecopy(
+            $layer,
+            $this->waterImage,
+            0,
+            0,
+            0,
+            0,
+            $this->imWaterWidth,
+            $this->imWaterHeight
+        );
+        $this->applyTransparency($layer, $transparency);
+
+        return $this->rotateLayer($layer, $angle);
+    }
+
+    /**
+     * 创建已应用透明度和旋转的文字水印图层。
+     *
+     * @param int $angle
+     * @param int $transparency
+     * @return mixed
+     */
+    private function createTextWatermarkLayer($angle, $transparency)
+    {
+        if ($transparency >= 100) {
+            return false;
+        }
+
+        $box = imagettfbbox($this->fontSize, 0, $this->font, $this->fontText);
+        if (!is_array($box)) {
+            return false;
+        }
+
+        $xCoordinates = array($box[0], $box[2], $box[4], $box[6]);
+        $yCoordinates = array($box[1], $box[3], $box[5], $box[7]);
+        $minX = min($xCoordinates);
+        $maxX = max($xCoordinates);
+        $minY = min($yCoordinates);
+        $maxY = max($yCoordinates);
+        $padding = 2;
+        $width = max(1, $maxX - $minX + $padding * 2);
+        $height = max(1, $maxY - $minY + $padding * 2);
+        $layer = $this->createTransparentImage($width, $height);
+        if (!$this->isImage($layer)) {
+            return false;
+        }
+
+        imagealphablending($layer, true);
+        $color = $this->parseColor($this->fontColor);
+        $gdColor = imagecolorallocatealpha(
+            $layer,
+            $color['r'],
+            $color['g'],
+            $color['b'],
+            (int) round(127 * $transparency / 100)
+        );
+        imagettftext(
+            $layer,
+            $this->fontSize,
+            0,
+            $padding - $minX,
+            $padding - $minY,
+            $gdColor,
+            $this->font,
+            $this->fontText
+        );
+        imagesavealpha($layer, true);
+
+        return $this->rotateLayer($layer, $angle);
+    }
+
+    /**
+     * 创建透明真彩图层。
+     *
+     * @param int $width
+     * @param int $height
+     * @return mixed
+     */
+    private function createTransparentImage($width, $height)
+    {
+        $image = imagecreatetruecolor(max(1, (int) $width), max(1, (int) $height));
+        if (!$this->isImage($image)) {
+            return false;
+        }
+
+        imagealphablending($image, false);
+        imagesavealpha($image, true);
+        $clear = imagecolorallocatealpha($image, 0, 0, 0, 127);
+        imagefill($image, 0, 0, $clear);
+
+        return $image;
+    }
+
+    /**
+     * 旋转透明图层。
+     *
+     * @param mixed $layer
+     * @param int $angle
+     * @return mixed
+     */
+    private function rotateLayer($layer, $angle)
+    {
+        if (0 === (int) $angle) {
+            return $layer;
+        }
+
+        $clear = imagecolorallocatealpha($layer, 0, 0, 0, 127);
+        $rotated = imagerotate($layer, (int) $angle, $clear);
+        if (!$this->isImage($rotated)) {
+            return $layer;
+        }
+
+        imagealphablending($rotated, false);
+        imagesavealpha($rotated, true);
+        imagedestroy($layer);
+
+        return $rotated;
+    }
+
+    /**
+     * 绘制一个水印图层，并安全裁剪超出原图的部分。
+     *
+     * @param mixed $layer
+     * @param int $destinationX
+     * @param int $destinationY
+     */
+    private function drawLayer($layer, $destinationX, $destinationY)
+    {
+        $destinationX = (int) $destinationX;
+        $destinationY = (int) $destinationY;
+        $sourceX = max(0, -$destinationX);
+        $sourceY = max(0, -$destinationY);
+        $targetX = max(0, $destinationX);
+        $targetY = max(0, $destinationY);
+        $width = min(imagesx($layer) - $sourceX, $this->imSrcWidth - $targetX);
+        $height = min(imagesy($layer) - $sourceY, $this->imSrcHeight - $targetY);
+        if ($width <= 0 || $height <= 0) {
+            return;
+        }
+
+        imagealphablending($this->srcImage, true);
+        imagecopy(
+            $this->srcImage,
+            $layer,
+            $targetX,
+            $targetY,
+            $sourceX,
+            $sourceY,
+            $width,
+            $height
+        );
+    }
+
+    /**
+     * 在整张原图上交错平铺水印图层。
+     *
+     * @param mixed $layer
+     * @param int $gapX
+     * @param int $gapY
+     */
+    private function drawTiledLayer($layer, $gapX, $gapY)
+    {
+        $width = imagesx($layer);
+        $height = imagesy($layer);
+        $stepX = max(1, $width + max(0, (int) $gapX));
+        $stepY = max(1, $height + max(0, (int) $gapY));
+        $columns = max(1, (int) ceil(($this->imSrcWidth + $width * 2) / $stepX));
+        $rows = max(1, (int) ceil(($this->imSrcHeight + $height * 2) / $stepY));
+
+        // 控制极端配置下的绘制次数，同时保持水印覆盖整个画布。
+        if ($columns * $rows > 4096) {
+            $factor = sqrt(($columns * $rows) / 4096);
+            $stepX = max($stepX, (int) ceil($stepX * $factor));
+            $stepY = max($stepY, (int) ceil($stepY * $factor));
+        }
+
+        $row = 0;
+        for ($y = -$height; $y < $this->imSrcHeight; $y += $stepY) {
+            $shift = 1 === $row % 2 ? (int) floor($stepX / 2) : 0;
+            $startX = -$width + $shift;
+            if ($startX > 0) {
+                $startX -= $stepX;
+            }
+            for ($x = $startX; $x < $this->imSrcWidth; $x += $stepX) {
+                $this->drawLayer($layer, $x, $y);
+            }
+            $row++;
+        }
+    }
+
+    /**
      * 解析文字颜色。
      *
      * @param string $color
@@ -473,37 +669,21 @@ class WaterMark
     }
 
     /**
-     * 合并带透明度的图片水印。
+     * 将全局透明度叠加到图层原有 Alpha。
      *
-     * @param mixed $destination
-     * @param mixed $source
-     * @param int $destinationX
-     * @param int $destinationY
-     * @param int $width
-     * @param int $height
+     * @param mixed $layer
      * @param int $transparency
      */
-    private function copyWithAlpha(
-        $destination,
-        $source,
-        $destinationX,
-        $destinationY,
-        $width,
-        $height,
-        $transparency
-    ) {
-        if ($transparency >= 100) {
+    private function applyTransparency($layer, $transparency)
+    {
+        $transparency = min(100, max(0, (int) $transparency));
+        if ($transparency <= 0) {
             return;
         }
 
-        $layer = imagecreatetruecolor($width, $height);
-        imagealphablending($layer, false);
-        imagesavealpha($layer, true);
-        $clear = imagecolorallocatealpha($layer, 0, 0, 0, 127);
-        imagefill($layer, 0, 0, $clear);
-        imagecopy($layer, $source, 0, 0, 0, 0, $width, $height);
-
         $opacity = (100 - $transparency) / 100;
+        $width = imagesx($layer);
+        $height = imagesy($layer);
         for ($y = 0; $y < $height; $y++) {
             for ($x = 0; $x < $width; $x++) {
                 $color = imagecolorsforindex($layer, imagecolorat($layer, $x, $y));
@@ -522,19 +702,7 @@ class WaterMark
                 );
             }
         }
-
-        imagealphablending($destination, true);
-        imagecopy(
-            $destination,
-            $layer,
-            $destinationX,
-            $destinationY,
-            0,
-            0,
-            $width,
-            $height
-        );
-        imagedestroy($layer);
+        imagesavealpha($layer, true);
     }
 
     /**
