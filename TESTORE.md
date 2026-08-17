@@ -28,7 +28,7 @@
 
  > 下载链接文字可用于附加图标和关键字筛选：如`下载`即非社区版，`不可用`带⛔，`特殊`带⚠️意为启用须遵照文档步骤。
 
-### 插件信息 (476)
+### 插件信息 (477)
 
 ###### TeStore会使用下表“名称”创建文件夹，“版本”数字判断升级，请尽量确保文本准确，按字母排序，简介便于关键字搜索。
 ```
@@ -402,9 +402,9 @@
 [TePostViews](https://inwao.com/PostViews.html) | 按点击或评论数输出热门文章插件 | 1.0.0 | [inwao world](https://inwao.com),[绛木子](https://github.com/jiangmuzi) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/TePostViews.zip)
 [TeStat](https://github.com/jiangmuzi/TeStat) | 文章浏览/点赞/运行数据统计插件 | 1.1 | [绛木子](https://github.com/jiangmuzi) | [下载](https://github.com/jiangmuzi/TeStat/archive/master.zip)
 [TeThumbnail](https://github.com/jiangmuzi/TeThumbnail) | 文章模板输出自动生成缩略图插件 | 1.0.0 | [绛木子](https://github.com/jiangmuzi) | [下载](https://github.com/jiangmuzi/TeThumbnail/archive/master.zip)
-[TeoSeo](https://github.com/Astarry-1127/TeoSeo) | Typecho 1.3 SEO/GEO 插件：自动 sitemap、IndexNow/百度推送、AI 摘要与关键词、结构化数据 | 1.3.0 | [Astarry](https://github.com/Astarry-1127) | [下载](https://github.com/Astarry-1127/TeoSeo/archive/refs/heads/main.zip)
 [TeePay](https://github.com/mhcyong/TeePay) | 自媒体付费阅读插件(免费基础版) | 1.5.4 | [胖蒜网](https://github.com/mhcyong) | [下载](https://github.com/mhcyong/TeePay/archive/master.zip)
 [TelegramNotice](https://github.com/lhl77/Typecho-Plugin-TelegramNotice) | Telegram 推送评论通知与审核（支持多 Chat ID 群发、邮箱绑定、评论回复）| 1.1.0 | [LHL](https://github.com/lhl77) | [下载](https://github.com/lhl77/Typecho-Plugin-TelegramNotice/releases/download/v1.1.0/master.zip)
+[TeoSeo](https://github.com/Astarry-1127/TeoSeo) | Typecho 1.3 SEO/GEO 插件：自动 sitemap、IndexNow/百度推送、AI 摘要与关键词、结构化数据 | 1.3.0 | [Astarry](https://github.com/Astarry-1127) | [最近](https://github.com/Astarry-1127/TeoSeo/archive/refs/heads/main.zip)
 [TextEditor](https://plugins.typecho.me/plugins/text-editor.html) | 基于[MooTools](https://mootools.net)Html文章编辑器插件 | 0.3.3 | [vfasky](http://vfasky.com) | [不可用](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/TextEditor.zip)
 [Textends](https://github.com/jiangmuzi/Textends) | 常用模版输出效果多功能扩展插件 | 1.0.0 | [绛木子](https://github.com/jiangmuzi) | [下载](https://github.com/jiangmuzi/Textends/archive/master.zip)
 [Textile2](https://github.com/typecho/plugins/tree/master/Textile2) | [MT](https://www.movabletype.org)式Textile2写作语法解析器插件 | 2.1.1 | Jim Riggs | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/Textile2.zip)
