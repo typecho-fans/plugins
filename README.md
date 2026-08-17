@@ -154,7 +154,7 @@
 [UserSign](UserSign) | 为博客用户添加个性签名档 | 0.0.1 | [hmoe](https://github.com/hmoe) | [Special](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/UserSign.zip)
 [Version](Version) | 文章页面可恢复多历史版本 | 1.3 | [innc11](https://github.com/innc11) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/Version.zip)
 [Views](Views) | Typecho文章浏览计数排行 | 1.0.1 | Willin Kan | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/Views.zip)
-[Watermark](Watermark) | 文章图片自动添加定制水印 | 1.3.0 | [DEFE](http://defe.me), [NHPT](http://defe.me) | [Latest](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/Watermark.zip)
+[Watermark](Watermark) | 文章图片自动添加定制水印 | 1.4.0 | [DEFE](https://github.com/defeme), [NHPT](https://github.com/NHPT) | [Latest](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/Watermark.zip)
 [WeChatHelper](WeChatHelper) | 微信公众号功能自定义集成 | 2.2.1 | [冰剑](https://github.com/binjoo) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/WeChatHelper.zip)
 [WeChatShare](WeChatShare) | 定制文章微信/QQ分享链接 | 1.0.6 | [Fuzqing](https://github.com/fuzqing) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/WeChatShare.zip)
 [WeiboSync](WeiboSync) | 博客文章更新推送新浪微博 | 1.0.0 | [vfhky](https://github.com/vfhky) | [Special](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/WeiboSync.zip)

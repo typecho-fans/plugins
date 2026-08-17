@@ -6,13 +6,13 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
  *
  * @package Watermark
  * @author DEFE, NHPT
- * @version 1.3.0
+ * @version 1.4.0
  * @dependence 1.2.0-*
- * @link http://defe.me
+ * @link https://github.com/typecho-fans/plugins/tree/master/Watermark
  */
 class Watermark_Plugin implements Typecho_Plugin_Interface
 {
-    const VERSION = '1.3.0';
+    const VERSION = '1.4.0';
     const CACHE_RELATIVE_DIR = 'usr/cache/watermark';
     const UPLOAD_RELATIVE_DIR = 'usr/uploads';
 
@@ -70,6 +70,15 @@ class Watermark_Plugin implements Typecho_Plugin_Interface
         );
         $form->addInput($vmType);
 
+        $vmLayout = new Typecho_Widget_Helper_Form_Element_Radio(
+            'vm_layout',
+            array('single' => _t('单点'), 'tile' => _t('全图平铺')),
+            'single',
+            _t('水印布局'),
+            _t('单点模式保持原有位置设置；全图平铺模式按间距重复绘制水印')
+        );
+        $form->addInput($vmLayout);
+
         $positions = array(
             _t('随机'),
             _t('顶端左侧'),
@@ -98,6 +107,36 @@ class Watermark_Plugin implements Typecho_Plugin_Interface
             _t('水印文字位置')
         );
         $form->addInput($vmPosText);
+
+        $vmAngle = new Typecho_Widget_Helper_Form_Element_Text(
+            'vm_angle',
+            NULL,
+            '0',
+            _t('旋转角度'),
+            _t('取 -180 到 180 之间的整数，正数逆时针旋转')
+        );
+        $vmAngle->input->setAttribute('class', 'mini');
+        $form->addInput($vmAngle->addRule('isInteger', _t('必须是整数')));
+
+        $vmGapX = new Typecho_Widget_Helper_Form_Element_Text(
+            'vm_gap_x',
+            NULL,
+            '80',
+            _t('平铺水平间距'),
+            _t('相邻水印之间的水平空白像素，仅全图平铺模式生效')
+        );
+        $vmGapX->input->setAttribute('class', 'mini');
+        $form->addInput($vmGapX->addRule('isInteger', _t('必须是整数')));
+
+        $vmGapY = new Typecho_Widget_Helper_Form_Element_Text(
+            'vm_gap_y',
+            NULL,
+            '60',
+            _t('平铺垂直间距'),
+            _t('相邻水印之间的垂直空白像素，仅全图平铺模式生效')
+        );
+        $vmGapY->input->setAttribute('class', 'mini');
+        $form->addInput($vmGapY->addRule('isInteger', _t('必须是整数')));
 
         $images = array();
         $fonts = array();
@@ -198,6 +237,38 @@ class Watermark_Plugin implements Typecho_Plugin_Interface
         $vmWidth->input->setAttribute('class', 'mini');
         $form->addInput($vmWidth->addRule('isInteger', _t('必须是整数')));
 
+        $vmMinWidth = new Typecho_Widget_Helper_Form_Element_Text(
+            'vm_min_width',
+            NULL,
+            '0',
+            _t('原图最小宽度'),
+            _t('原图宽度小于该值时不添加水印，0 表示不限制')
+        );
+        $vmMinWidth->input->setAttribute('class', 'mini');
+        $form->addInput($vmMinWidth->addRule('isInteger', _t('必须是整数')));
+
+        $vmMinHeight = new Typecho_Widget_Helper_Form_Element_Text(
+            'vm_min_height',
+            NULL,
+            '0',
+            _t('原图最小高度'),
+            _t('原图高度小于该值时不添加水印，0 表示不限制')
+        );
+        $vmMinHeight->input->setAttribute('class', 'mini');
+        $form->addInput($vmMinHeight->addRule('isInteger', _t('必须是整数')));
+
+        $vmExclude = new Typecho_Widget_Helper_Form_Element_Textarea(
+            'vm_exclude',
+            NULL,
+            '',
+            _t('图片排除列表'),
+            _t(
+                '每行一条规则，支持完整上传路径、上传目录相对路径、文件名及 *、? 通配符；'
+                . '例如 /usr/uploads/avatar/、2026/logo.png、logo-*'
+            )
+        );
+        $form->addInput($vmExclude);
+
         $vmAlpha = new Typecho_Widget_Helper_Form_Element_Text(
             'vm_alpha',
             NULL,
@@ -207,6 +278,16 @@ class Watermark_Plugin implements Typecho_Plugin_Interface
         );
         $vmAlpha->input->setAttribute('class', 'mini');
         $form->addInput($vmAlpha->addRule('isInteger', _t('必须是整数')));
+
+        $vmTextAlpha = new Typecho_Widget_Helper_Form_Element_Text(
+            'vm_text_alpha',
+            NULL,
+            '0',
+            _t('文字透明度'),
+            _t('取 0-100 之间的整数，0 为不透明，100 为全透明')
+        );
+        $vmTextAlpha->input->setAttribute('class', 'mini');
+        $form->addInput($vmTextAlpha->addRule('isInteger', _t('必须是整数')));
 
         $options = Typecho_Widget::widget('Widget_Options');
         $security = Typecho_Widget::widget('Widget_Security');
@@ -588,12 +669,16 @@ class Watermark_Plugin implements Typecho_Plugin_Interface
     {
         $options = Typecho_Widget::widget('Widget_Options');
         $source = self::resolveSourceUrl($url, $options);
-        if (false === $source || self::isAnimatedGif($source['absolute'])) {
+        if (false === $source) {
             return $url;
         }
 
         $config = self::pluginOptions($options);
-        if (!self::watermarkTypes($config)) {
+        if (
+            !self::watermarkTypes($config)
+            || !self::isImageEligible($source, $config)
+            || self::isAnimatedGif($source['absolute'])
+        ) {
             return $url;
         }
         if ('cache' === self::configValue($config, 'vm_cache', 'nocache')) {
@@ -728,7 +813,13 @@ class Watermark_Plugin implements Typecho_Plugin_Interface
             substr($absolutePath, strlen($allowedPrefix))
         );
 
-        return array('relative' => $relative, 'absolute' => $absolutePath);
+        return array(
+            'relative' => $relative,
+            'absolute' => $absolutePath,
+            'width' => (int) $imageInfo[0],
+            'height' => (int) $imageInfo[1],
+            'type' => (int) $imageInfo[2]
+        );
     }
 
     /**
@@ -801,6 +892,144 @@ class Watermark_Plugin implements Typecho_Plugin_Interface
     }
 
     /**
+     * 判断图片是否满足排除列表与最小尺寸限制。
+     *
+     * @param array $source
+     * @param object $config
+     * @return bool
+     */
+    public static function isImageEligible(array $source, $config)
+    {
+        if (empty($source['relative']) || empty($source['absolute'])) {
+            return false;
+        }
+        if (self::isExcludedPath($source['relative'], $config)) {
+            return false;
+        }
+
+        $width = isset($source['width']) ? (int) $source['width'] : 0;
+        $height = isset($source['height']) ? (int) $source['height'] : 0;
+        if ($width <= 0 || $height <= 0) {
+            $imageInfo = @getimagesize($source['absolute']);
+            if (!$imageInfo) {
+                return false;
+            }
+            $width = (int) $imageInfo[0];
+            $height = (int) $imageInfo[1];
+        }
+
+        $minimumWidth = max(0, (int) self::configValue($config, 'vm_min_width', 0));
+        $minimumHeight = max(0, (int) self::configValue($config, 'vm_min_height', 0));
+
+        return $width >= $minimumWidth && $height >= $minimumHeight;
+    }
+
+    /**
+     * 判断上传图片路径是否命中排除规则。
+     *
+     * @param string $relativePath
+     * @param object $config
+     * @return bool
+     */
+    public static function isExcludedPath($relativePath, $config)
+    {
+        $rules = self::configValue($config, 'vm_exclude', '');
+        if (is_array($rules)) {
+            $rules = implode("\n", $rules);
+        }
+        if (!is_string($rules) || '' === trim($rules)) {
+            return false;
+        }
+
+        $path = '/' . ltrim(str_replace('\\', '/', $relativePath), '/');
+        $basename = basename($path);
+        $lines = preg_split('/\r\n|\r|\n/', $rules);
+        $checked = 0;
+        foreach ($lines as $line) {
+            $rule = trim($line);
+            if ('' === $rule || '#' === $rule[0]) {
+                continue;
+            }
+            if (++$checked > 200) {
+                break;
+            }
+
+            $rule = substr(str_replace('\\', '/', $rule), 0, 512);
+            $containsSlash = false !== strpos($rule, '/');
+            if (!$containsSlash) {
+                $target = $basename;
+                $pattern = $rule;
+            } else {
+                $target = $path;
+                $pattern = 0 === strpos($rule, '/')
+                    ? $rule
+                    : '/' . self::UPLOAD_RELATIVE_DIR . '/' . ltrim($rule, '/');
+            }
+
+            if ('/' === substr($pattern, -1)) {
+                if (0 === strpos($target, $pattern)) {
+                    return true;
+                }
+                continue;
+            }
+            if (self::wildcardMatch($pattern, $target)) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    /**
+     * 匹配只包含 * 与 ? 的简单路径通配规则。
+     *
+     * @param string $pattern
+     * @param string $value
+     * @return bool
+     */
+    private static function wildcardMatch($pattern, $value)
+    {
+        $patternLength = strlen($pattern);
+        $valueLength = strlen($value);
+        $patternIndex = 0;
+        $valueIndex = 0;
+        $starIndex = -1;
+        $starValueIndex = 0;
+
+        while ($valueIndex < $valueLength) {
+            if (
+                $patternIndex < $patternLength
+                && (
+                    '?' === $pattern[$patternIndex]
+                    || $pattern[$patternIndex] === $value[$valueIndex]
+                )
+            ) {
+                $patternIndex++;
+                $valueIndex++;
+                continue;
+            }
+            if ($patternIndex < $patternLength && '*' === $pattern[$patternIndex]) {
+                $starIndex = $patternIndex++;
+                $starValueIndex = $valueIndex;
+                continue;
+            }
+            if ($starIndex >= 0) {
+                $patternIndex = $starIndex + 1;
+                $valueIndex = ++$starValueIndex;
+                continue;
+            }
+
+            return false;
+        }
+
+        while ($patternIndex < $patternLength && '*' === $pattern[$patternIndex]) {
+            $patternIndex++;
+        }
+
+        return $patternIndex === $patternLength;
+    }
+
+    /**
      * 创建缓存目录。
      *
      * @return bool
@@ -865,8 +1094,12 @@ class Watermark_Plugin implements Typecho_Plugin_Interface
         $settings = array(
             self::VERSION,
             self::configValue($config, 'vm_type', array()),
+            self::configValue($config, 'vm_layout', 'single'),
             self::configValue($config, 'vm_pos_pic', 9),
             self::configValue($config, 'vm_pos_text', 9),
+            self::configValue($config, 'vm_angle', 0),
+            self::configValue($config, 'vm_gap_x', 80),
+            self::configValue($config, 'vm_gap_y', 60),
             self::configValue($config, 'vm_pic', 'WM.png'),
             self::configValue($config, 'vm_text', 'Typecho)))'),
             self::configValue($config, 'vm_font', 'lh.ttf'),
@@ -875,7 +1108,11 @@ class Watermark_Plugin implements Typecho_Plugin_Interface
             self::configValue($config, 'vm_m_x', 0),
             self::configValue($config, 'vm_m_y', 0),
             self::configValue($config, 'vm_width', 0),
-            self::configValue($config, 'vm_alpha', 0)
+            self::configValue($config, 'vm_min_width', 0),
+            self::configValue($config, 'vm_min_height', 0),
+            self::configValue($config, 'vm_exclude', ''),
+            self::configValue($config, 'vm_alpha', 0),
+            self::configValue($config, 'vm_text_alpha', 0)
         );
 
         $watermarkFile = self::resolvePluginAsset(
