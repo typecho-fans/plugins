@@ -4,8 +4,11 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 /**
  * GD 水印处理器。
  *
+ * @author NHPT, DEFE
  * @copyright Copyright (c) 2013 DEFE
+ * @copyright Modifications Copyright (c) 2026 NHPT
  * @license GNU General Public License 2.0
+ * @link https://github.com/NHPT/Watermark
  */
 class WaterMark
 {
@@ -218,6 +221,9 @@ class WaterMark
      * @param int $gapX
      * @param int $gapY
      * @param int $textAlpha
+     * @param bool $output
+     * @param bool $requireApplied
+     * @return bool
      */
     public function mark(
         $useImage = false,
@@ -232,7 +238,9 @@ class WaterMark
         $angle = 0,
         $gapX = 80,
         $gapY = 60,
-        $textAlpha = 0
+        $textAlpha = 0,
+        $output = true,
+        $requireApplied = false
     ) {
         $layout = 'tile' === $layout ? 'tile' : 'single';
         $alpha = min(100, max(0, (int) $alpha));
@@ -240,6 +248,7 @@ class WaterMark
         $angle = min(180, max(-180, (int) $angle));
         $gapX = max(0, (int) $gapX);
         $gapY = max(0, (int) $gapY);
+        $applied = false;
 
         if ($useImage && $this->isImage($this->waterImage)) {
             $layer = $this->createImageWatermarkLayer($angle, $alpha);
@@ -248,6 +257,7 @@ class WaterMark
                 $height = imagesy($layer);
                 if ('tile' === $layout) {
                     $this->drawTiledLayer($layer, $gapX, $gapY);
+                    $applied = true;
                 } elseif ($this->checkRange($width, $height)) {
                     list($positionX, $positionY) = $this->getPosition(
                         $imagePosition,
@@ -255,6 +265,7 @@ class WaterMark
                         $height
                     );
                     $this->drawLayer($layer, $positionX, $positionY);
+                    $applied = true;
                 }
                 imagedestroy($layer);
             }
@@ -267,6 +278,7 @@ class WaterMark
                 $height = imagesy($layer);
                 if ('tile' === $layout) {
                     $this->drawTiledLayer($layer, $gapX, $gapY);
+                    $applied = true;
                 } elseif ($this->checkRange($width, $height)) {
                     list($positionX, $positionY) = $this->getPosition(
                         $textPosition,
@@ -278,16 +290,27 @@ class WaterMark
                         $positionX + (int) $offsetX,
                         $positionY + (int) $offsetY
                     );
+                    $applied = true;
                 }
                 imagedestroy($layer);
             }
         }
 
-        if ($save) {
-            $this->save($save);
+        if ($requireApplied && !$applied) {
+            $this->clean();
+            return false;
         }
-        $this->output();
+
+        $saved = true;
+        if ($save) {
+            $saved = $this->save($save);
+        }
+        if ($output) {
+            $this->output();
+        }
         $this->clean();
+
+        return $saved;
     }
 
     /**
@@ -333,8 +356,17 @@ class WaterMark
             return true;
         }
         if ($valid && is_file($file)) {
-            @unlink($temporary);
-            return true;
+            $backup = @tempnam($directory, '.watermark-backup-');
+            if (false !== $backup) {
+                @unlink($backup);
+                if (@rename($file, $backup)) {
+                    if (@rename($temporary, $file)) {
+                        @unlink($backup);
+                        return true;
+                    }
+                    @rename($backup, $file);
+                }
+            }
         }
 
         @unlink($temporary);
