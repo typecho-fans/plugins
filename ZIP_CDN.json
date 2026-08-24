@@ -594,16 +594,16 @@
   {
     "name": "AutoBackup_Ryan.zip",
     "path": "ZIP_CDN/AutoBackup_Ryan.zip",
-    "sha": "7cbe410653b9ece2f770146edf730d261171d7a6",
-    "size": 190415,
+    "sha": "efaca539a2ccb5a80bcd2dc9a99ddf683a642a0e",
+    "size": 217019,
     "url": "https://api.github.com/repos/typecho-fans/plugins/contents/ZIP_CDN/AutoBackup_Ryan.zip?ref=master",
     "html_url": "https://github.com/typecho-fans/plugins/blob/master/ZIP_CDN/AutoBackup_Ryan.zip",
-    "git_url": "https://api.github.com/repos/typecho-fans/plugins/git/blobs/7cbe410653b9ece2f770146edf730d261171d7a6",
+    "git_url": "https://api.github.com/repos/typecho-fans/plugins/git/blobs/efaca539a2ccb5a80bcd2dc9a99ddf683a642a0e",
     "download_url": "https://raw.githubusercontent.com/typecho-fans/plugins/master/ZIP_CDN/AutoBackup_Ryan.zip",
     "type": "file",
     "_links": {
       "self": "https://api.github.com/repos/typecho-fans/plugins/contents/ZIP_CDN/AutoBackup_Ryan.zip?ref=master",
-      "git": "https://api.github.com/repos/typecho-fans/plugins/git/blobs/7cbe410653b9ece2f770146edf730d261171d7a6",
+      "git": "https://api.github.com/repos/typecho-fans/plugins/git/blobs/efaca539a2ccb5a80bcd2dc9a99ddf683a642a0e",
       "html": "https://github.com/typecho-fans/plugins/blob/master/ZIP_CDN/AutoBackup_Ryan.zip"
     }
   },
@@ -4850,16 +4850,16 @@
   {
     "name": "NAME_LIST.log",
     "path": "ZIP_CDN/NAME_LIST.log",
-    "sha": "0f455c3923d21ef2e349cc2933b1d26f5fb81b59",
+    "sha": "715ee10c8f2edecad586f200dc4a1cdfb4ee56b8",
     "size": 3954,
     "url": "https://api.github.com/repos/typecho-fans/plugins/contents/ZIP_CDN/NAME_LIST.log?ref=master",
     "html_url": "https://github.com/typecho-fans/plugins/blob/master/ZIP_CDN/NAME_LIST.log",
-    "git_url": "https://api.github.com/repos/typecho-fans/plugins/git/blobs/0f455c3923d21ef2e349cc2933b1d26f5fb81b59",
+    "git_url": "https://api.github.com/repos/typecho-fans/plugins/git/blobs/715ee10c8f2edecad586f200dc4a1cdfb4ee56b8",
     "download_url": "https://raw.githubusercontent.com/typecho-fans/plugins/master/ZIP_CDN/NAME_LIST.log",
     "type": "file",
     "_links": {
       "self": "https://api.github.com/repos/typecho-fans/plugins/contents/ZIP_CDN/NAME_LIST.log?ref=master",
-      "git": "https://api.github.com/repos/typecho-fans/plugins/git/blobs/0f455c3923d21ef2e349cc2933b1d26f5fb81b59",
+      "git": "https://api.github.com/repos/typecho-fans/plugins/git/blobs/715ee10c8f2edecad586f200dc4a1cdfb4ee56b8",
       "html": "https://github.com/typecho-fans/plugins/blob/master/ZIP_CDN/NAME_LIST.log"
     }
   },
