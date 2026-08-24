@@ -284,7 +284,7 @@
 [Mou](https://github.com/fmujie/Mou) | 漂浮字鼠标特效插件(带图片跟随) | 1.0.0 | [fmujie](https://github.com/fmujie) | [下载](https://github.com/fmujie/Mou/archive/master.zip)
 [MouseCheck](https://github.com/caoruichn/typecho-plugin) | 漂浮字鼠标特效插件(可设颜色等) | 1.0.1 | [caorui](https://github.com/caoruichn) | [下载](https://github.com/caoruichn/typecho-plugin/archive/master.zip)
 [MouseFloating](https://github.com/icy2003/typecho-MouseFloating) | 定制随机漂浮字跟随鼠标特效插件 | 1.0.0 | [icy2003](https://github.com/icy2003) | [下载](https://github.com/icy2003/typecho-MouseFloating/archive/master.zip)
-[MuPlayer](https://github.com/HyanCat/Typecho-MuPlayer) | 原百度[MuPlayer](https://github.com/BaiduMusic/muplayer)音乐播放器插件 | 0.0.3 | [HyanCat](http://hyancat.com) | [最近](https://github.com/HyanCat/Typecho-MuPlayer/archive/master.zip)
+[MuPlayer](https://github.com/HyanCat/Typecho-MuPlayer) | 原百度[MuPlayer](https://github.com/BaiduMusic/muplayer)音乐播放器插件 | 0.0.3 | [HyanCat](http://hyancat.com) | [下载](https://github.com/HyanCat/Typecho-MuPlayer/archive/master.zip)
 [MultiTheme](https://github.com/jqnote/Typecho-MultiTheme) | Typecho主题切换插件(定制参数) | 1.0.0 | [HackRose](https://github.com/jqnote) | [下载](https://github.com/jqnote/Typecho-MultiTheme/archive/master.zip)
 [Music](https://github.com/bianhua521/Tyoecho_Music) | [彼岸花](https://heshi.love)多平台解析音乐播放器插件 | 1.0.0 | [彼岸花](https://github.com/bianhua521) | [下载](https://github.com/bianhua521/Tyoecho_Music/archive/master.zip)
 [MyBangumi](https://github.com/panedioic/MyBangumi) | 自建数据显示追番和短评信息插件 | 0.1 | [Panedioic](https://github.com/panedioic) | [下载](https://github.com/panedioic/MyBangumi/archive/master.zip)
