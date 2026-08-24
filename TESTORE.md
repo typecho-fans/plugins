@@ -28,7 +28,7 @@
 
  > 下载链接文字可用于附加图标和关键字筛选：如`下载`即非社区版，`不可用`带⛔，`特殊`带⚠️意为启用须遵照文档步骤。
 
-### 插件信息 (477)
+### 插件信息 (478)
 
 ###### TeStore会使用下表“名称”创建文件夹，“版本”数字判断升级，请尽量确保文本准确，按字母排序，简介便于关键字搜索。
 ```
@@ -181,6 +181,7 @@
 [FlashMp3Player](https://github.com/typecho/plugins/tree/master/FlashMp3Player) | Flash版音乐播放器Dewplayer插件 | 1.0.1 | [qining](https://github.com/joyqi) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/FlashMp3Player.zip)
 [FlowChart](http://forum.typecho.org/viewtopic.php?f=6&t=10874) | Markdown语法flow生成流程图插件 | 1.2.1 | [ZhangZijing(Venteto)](https://github.com/pluveto) | [下载](https://github.com/hujy23/FlowChart-typecho-plugin/archive/master.zip)
 [FreewindReward](https://github.com/kevinlu98/FreewindReward) | Freewind主题专属打赏插件 | 1.0.0 | [Mr丶冷文](https://kevinlu98.cn/) | [下载](https://github.com/kevinlu98/FreewindReward/releases/download/1.0/FreewindReward.zip)
+[FriendLinks](https://github.com/NHPT/FriendLinks) | 独立友情链接管理展示、健康检测与通知插件 | 1.0.0 | [NHPT](https://github.com/NHPT) | [下载](https://github.com/NHPT/FriendLinks/releases/download/v1.0.0/FriendLinks-v1.0.0.zip)
 [FriendsCard](https://github.com/Indexyz/FriendsCard) | 短代码输出友情链接名片效果插件 | 1.0.0 | [Indexyz](https://github.com/Indexyz) | [下载](https://github.com/Indexyz/FriendsCard/archive/master.zip)
 [FtpUpload](https://imnerd.org/FtpUpload-Plugin-For-Typecho.html) | 编辑器附加FTP上传文件按钮插件 | 1.0 | [怡红公子](http://github.com/lizheming) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/FtpUpload.zip)
 [GEETEST](https://gitee.com/loiou/GEETEST) | 极验证多功能定制评论验证码插件 | 1.0.0 | [LOIOU](https://gitee.com/loiou) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-D_to_G/GEETEST_LOIOU.zip)
