@@ -3,7 +3,7 @@
 ## Typecho Fans 内部目录 (社区维护版列表)
 
 [![compatible](https://img.shields.io/badge/Typecho-1.2.1+-blue.svg?style=for-the-badge)](https://github.com/typecho/typecho)
-[![support](https://img.shields.io/badge/TeStore-Supported-green.svg?style=for-the-badge)](TeStore)
+[![download TeStore](https://img.shields.io/badge/TeStore-Download-green.svg?style=for-the-badge)](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/TeStore.zip)
 [![issues](https://img.shields.io/github/issues-closed-raw/typecho-fans/plugins.svg?style=for-the-badge)](https://github.com/typecho-fans/plugins/issues?q=is%3Aissue+is%3Aclosed)
 
 **本目录内源码由社区成员自愿共同维护，报错提交[Issues](../../issues)，作者加入请阅读下方须知。🐧交流QQ群：[**40412938**](http://shang.qq.com/wpa/qunwpa?idkey=a5a8afedf099e18ddf9b530db9217251e39001d52aace42888bf470d9b6cb86a)**</div>
@@ -12,7 +12,7 @@
 
 ### 使用帮助
 
-作者可点击右上角绿色按钮克隆Git或Fork项目内容提交修改，一般用户使用下方索引表格Download链接下载所需即可，推荐安装**仓库**:card_file_box:[**TeStore**](TeStore)更便捷地使用列表筛选、一键安装删除及更新提醒等功能。
+作者可点击右上角绿色按钮克隆Git或Fork项目内容提交修改，一般用户使用下方索引表格Download链接下载所需即可，推荐安装:card_file_box:[**TeStore**](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/TeStore.zip)更便捷地使用列表筛选、一键安装删除及更新提醒等功能。
 
 ### 作者须知
 
