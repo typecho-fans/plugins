@@ -4,8 +4,8 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
  * 后台管理IP白名单
  * 
  * @package AllowIp
- * @author Fuzqing
- * @version 1.0.1
+ * @author Fuzqing, Ryan
+ * @version 1.0.2
  * @link https://huangweitong.com
  */
 class AllowIp_Plugin implements Typecho_Plugin_Interface
@@ -14,7 +14,7 @@ class AllowIp_Plugin implements Typecho_Plugin_Interface
      * 插件版本号
      * @var string
      */
-    const _VERSION = '1.0.1';
+    const _VERSION = '1.0.2';
     
     /**
      * 激活插件方法,如果激活失败,直接抛出异常
@@ -27,6 +27,7 @@ class AllowIp_Plugin implements Typecho_Plugin_Interface
     {
         Typecho_Plugin::factory('admin/common.php')->begin = array('AllowIp_Plugin', 'check');
         Typecho_Plugin::factory('Widget_Login')->loginSucceed = array('AllowIp_Plugin', 'check');
+        Typecho_Plugin::factory('Widget_Login')->loginSuccess = array('AllowIp_Plugin', 'check');
     }
     
     /**
@@ -78,7 +79,7 @@ class AllowIp_Plugin implements Typecho_Plugin_Interface
         $realip = isset($_SERVER) ? $_SERVER['REMOTE_ADDR'] : getenv("REMOTE_ADDR");
 
         if($realip !== NULL){
-            $config = json_decode(json_encode(unserialize(Helper::options()->plugin('AllowIp'))));
+            $config = Helper::options()->plugin('AllowIp');
             if(empty($config->allow_ip)) {
                 $options = Typecho_Widget::widget('Widget_Options');
                 $config_url = trim($options->siteUrl,'/').'/'.trim(__TYPECHO_ADMIN_DIR__,'/').'/options-plugin.php?config=AllowIp';
