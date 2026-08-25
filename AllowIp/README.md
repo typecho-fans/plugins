@@ -1,5 +1,7 @@
 # Typecho 后台IP白名单插件 AllowIp
 
+当前版本：1.0.2，兼容 Typecho 1.2.1+（包括 Typecho 1.3）。
+
 ## 插件简介
 
 设置后台管理IP白名单，也就是说只允许IP白名单内的IP登陆访问后台。<br>
@@ -17,3 +19,10 @@
 请打开"Plugin.php"文件中这一行的注释<br>
 //$allow_ip[] = '0.0.0.0';<br>
 打开保存之后就可以登陆了，不过这样子这个IP白名单插件也就没意义了。
+
+## 更新记录
+
+### 1.0.2
+
+- 修复 Typecho 1.3 下读取插件配置时出现 `unserialize()` 警告的问题；
+- 同时兼容 Typecho 1.2.1 的 `loginSucceed` 和 Typecho 1.3 的 `loginSuccess` 登录成功钩子。
