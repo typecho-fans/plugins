@@ -4850,16 +4850,16 @@
   {
     "name": "NAME_LIST.log",
     "path": "ZIP_CDN/NAME_LIST.log",
-    "sha": "715ee10c8f2edecad586f200dc4a1cdfb4ee56b8",
+    "sha": "4d85db90c9bc556767df7cd2ee24f66d0fa34feb",
     "size": 3954,
     "url": "https://api.github.com/repos/typecho-fans/plugins/contents/ZIP_CDN/NAME_LIST.log?ref=master",
     "html_url": "https://github.com/typecho-fans/plugins/blob/master/ZIP_CDN/NAME_LIST.log",
-    "git_url": "https://api.github.com/repos/typecho-fans/plugins/git/blobs/715ee10c8f2edecad586f200dc4a1cdfb4ee56b8",
+    "git_url": "https://api.github.com/repos/typecho-fans/plugins/git/blobs/4d85db90c9bc556767df7cd2ee24f66d0fa34feb",
     "download_url": "https://raw.githubusercontent.com/typecho-fans/plugins/master/ZIP_CDN/NAME_LIST.log",
     "type": "file",
     "_links": {
       "self": "https://api.github.com/repos/typecho-fans/plugins/contents/ZIP_CDN/NAME_LIST.log?ref=master",
-      "git": "https://api.github.com/repos/typecho-fans/plugins/git/blobs/715ee10c8f2edecad586f200dc4a1cdfb4ee56b8",
+      "git": "https://api.github.com/repos/typecho-fans/plugins/git/blobs/4d85db90c9bc556767df7cd2ee24f66d0fa34feb",
       "html": "https://github.com/typecho-fans/plugins/blob/master/ZIP_CDN/NAME_LIST.log"
     }
   },
@@ -6994,16 +6994,16 @@
   {
     "name": "TeStore_羽中_zhulin3141_Ryan.zip",
     "path": "ZIP_CDN/TeStore_羽中_zhulin3141_Ryan.zip",
-    "sha": "506ca33acdbf48574e9ecd33799ee2bd9aba9795",
-    "size": 146221,
+    "sha": "1fbdf2d69474f465fe1b8aa2dc16c26adfc30413",
+    "size": 127510,
     "url": "https://api.github.com/repos/typecho-fans/plugins/contents/ZIP_CDN/TeStore_%E7%BE%BD%E4%B8%AD_zhulin3141_Ryan.zip?ref=master",
     "html_url": "https://github.com/typecho-fans/plugins/blob/master/ZIP_CDN/TeStore_%E7%BE%BD%E4%B8%AD_zhulin3141_Ryan.zip",
-    "git_url": "https://api.github.com/repos/typecho-fans/plugins/git/blobs/506ca33acdbf48574e9ecd33799ee2bd9aba9795",
+    "git_url": "https://api.github.com/repos/typecho-fans/plugins/git/blobs/1fbdf2d69474f465fe1b8aa2dc16c26adfc30413",
     "download_url": "https://raw.githubusercontent.com/typecho-fans/plugins/master/ZIP_CDN/TeStore_羽中_zhulin3141_Ryan.zip",
     "type": "file",
     "_links": {
       "self": "https://api.github.com/repos/typecho-fans/plugins/contents/ZIP_CDN/TeStore_%E7%BE%BD%E4%B8%AD_zhulin3141_Ryan.zip?ref=master",
-      "git": "https://api.github.com/repos/typecho-fans/plugins/git/blobs/506ca33acdbf48574e9ecd33799ee2bd9aba9795",
+      "git": "https://api.github.com/repos/typecho-fans/plugins/git/blobs/1fbdf2d69474f465fe1b8aa2dc16c26adfc30413",
       "html": "https://github.com/typecho-fans/plugins/blob/master/ZIP_CDN/TeStore_%E7%BE%BD%E4%B8%AD_zhulin3141_Ryan.zip"
     }
   },
