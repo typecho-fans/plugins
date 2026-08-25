@@ -1,6 +1,16 @@
-### 新GitHub表格解析版插件仓库TeStore v1.1.5
+### 新GitHub表格解析版插件仓库TeStore v1.1.7
 
 以免服务端思路复活这款插件，通过读取GitHub上的专用表格实现插件仓库的搜索、下载和安装删除等功能。
+
+- v1.1.7(26-8-25)：
+
+1. 将镜像配置拆分为jsDelivr兼容CDN和URL前缀代理，支持内置节点及自定义HTTPS地址；
+
+2. CDN支持cdn.jsdelivr.net、gcore.jsdelivr.net、cdn.jsdmirror.cn和cdn.jsdmirror.com，URL前缀代理支持gh-proxy.org、cdn.gh-proxy.org和box.w0x7ce.eu/proxy；
+
+3. 信息源和插件下载统一检查HTTP状态及内容，镜像无效时自动回退原地址，插件压缩包通过完整性校验后才会安装；
+
+4. 自动兼容旧版jsDelivr、渺软镜像和GitHub Proxy配置，其中已失效的jsd.onmicrosoft.cn迁移至cdn.jsdmirror.cn。
 
 - v1.1.5(20-6-14)：
 
