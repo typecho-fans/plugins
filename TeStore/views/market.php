@@ -41,11 +41,6 @@ if ($this->request->is('action=loadlist')) {
 		$page = $page && isset($pluginData[$page-1]) ? $page-1 : 0;
 		$nav = new Typecho_Widget_Helper_PageNavigator_Box(count($pluginDatas),$page+1,20,
 			$storeUrl.'market?'.($keywords ? 'keywords='.$keywords.'&' : '').($group ? 'group='.$group.'&' : '').'page={page}');
-
-		//准备加速用API数据
-		if ($this->settings->proxy) {
-			$this->ZIP_CDN();
-		}
 	}
 ?>
 				<?php if ($pluginData || $keywords) : ?>
