@@ -40,7 +40,7 @@
 [AMP](AMP) | 生成AMP/MIP移动标准页面 | 0.7.6.1 | [Holmesian](https://github.com/holmesian) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/AMP.zip)
 [AbbrSlug](AbbrSlug) | 生成数字文章缩略名 | 1.0.0 | [羽叶](https://github.com/cyea) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/AbbrSlug.zip)
 [AjaxComments](AjaxComments) | 嵌套评论Ajax异步提交效果 | 1.2.0 | [Byends](https://github.com/visamz), Willin Kan | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/AjaxComments.zip)
-[AllowIp](AllowIp) | 限制访问后台IP白名单 | 1.0.2 | [Fuzqing](https://github.com/fuzqing), [Ryan](https://github.com/benzBrake) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/AllowIp.zip)
+[AllowIp](AllowIp) | 限制访问后台IP白名单 | 1.0.2 | [Fuzqing](https://github.com/fuzqing), [Ryan](https://github.com/benzBrake) | [Latest](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/AllowIp.zip)
 [Announcement](Announcement) | 仿Emlog博客悬浮式公告栏 | 1.0.0 | [skylzl](https://github.com/xiaogouxo) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/Announcement.zip)
 [Another-Like](AnotherLike)  | 基于[Like](Like)动画美化点赞按钮 | 1.0.0 | [idealclover](https://github.com/idealclover)  | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/AnotherLike.zip)
 [AntiSpam](AntiSpam) | 经典反垃圾评论机器人陷阱 | 1.0.3 | Willin Kan | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/AntiSpam.zip)
