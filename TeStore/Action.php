@@ -81,27 +81,13 @@ class TeStore_Action extends Typecho_Widget
             //读取表格地址
         } else {
             $html = '';
-            $isRaw = false;
             $pages = array_filter(preg_split('/(\r|\n|\r\n)/', strip_tags($this->settings->source)));
             foreach ($pages as $page) {
                 $page = trim($page);
                 if ($page) {
-                    $proxy = $this->settings->proxy;
-                    $isRaw = strpos($page,'raw.githubusercontent.com') || strpos($page,'raw/master');
-                    //替换加速地址
-                    if ($proxy || $isRaw) {
-                        if (substr($proxy, -3) === "/gh") {
-                            $page = str_replace(array('github.com', 'raw.githubusercontent.com'), $proxy, $page);
-                            $page = str_replace(array('blob/', 'raw/', 'master/'), '', $page);
-                        } else {
-                            $page = Typecho_Common::url($page, $proxy);
-                        }
-                    }
-                    $html .= $this->useCurl ? $this->curlGet($page) : @file_get_contents($page,0,
-                        stream_context_create(array('http'=>array('timeout'=>20)))); //设 20 秒超时
-                    //转码 MD 格式
-                    if ($proxy || $isRaw) {
-                        $html = htmlspecialchars_decode(Markdown::convert($html)); //fix 17.10.30 Markdown
+                    $sourceHtml = $this->fetchSource($page);
+                    if ($sourceHtml !== false) {
+                        $html .= $sourceHtml;
                     }
                 }
             }
@@ -248,106 +234,90 @@ class TeStore_Action extends Typecho_Widget
                 } else {
                     $this->makedir($tempDir); //创建临时目录
                 }
-                $proxy = $this->settings->proxy;
-                $isRaw = strpos($zip, 'raw.githubusercontent.com') || strpos($zip, 'raw/master');
-                //替换为加速地址
-                if ($proxy || $isRaw) {
-                    if (substr($proxy, -3) === "/gh") {
-                        $cdn = $this->ZIP_CDN($plugin, $author);
-                        $zip = $cdn ? $cdn : $zip;
-                        $proxy = $proxy ? $proxy : 'cdn.jsdelivr.net/gh';
-                        $zip = str_replace(array('github.com', 'raw.githubusercontent.com'), $proxy, $zip);
-                        $zip = substr($proxy, -3) === "/gh" ? str_replace(array('blob/', 'raw/', 'master/'), '', $zip) : str_replace(array('blob/', 'raw/'), '', $zip);
-                    } else {
-                        $zip = Typecho_Common::url($zip, $proxy);
+                $zipUrls = array();
+                $mirror = $this->getMirrorConfig();
+                if ($mirror['type']) {
+                    $cdn = $this->ZIP_CDN($plugin, $author);
+                    if ($cdn) {
+                        $zipUrls[] = $cdn;
                     }
-               }
+                }
+                $zipUrls[] = $zip;
 
-                //下载至临时目录
-                $zipFile = $this->useCurl ? $this->curlGet($zip) : @file_get_contents($zip, 0,
-                    stream_context_create(array('http' => array('timeout' => 20)))); //设 20 秒超时
-
-                if (!$zipFile) {
-                    $result['error'] = _t('下载压缩包出错');
+                //下载至临时目录并校验压缩包
+                $invalidZip = false;
+                $phpZip = $this->downloadZip($zipUrls, $tempFile, $invalidZip);
+                if (!$phpZip) {
+                    $result['error'] = $invalidZip ? _t('压缩包校验错误') : _t('下载压缩包出错');
                 } else {
-                    if (strpos($zipFile, '404') === 0 || strpos($zipFile, 'Couldn\'t find') === 0) {
-                        $result['error'] = _t('未找到下载文件');
+                    //解压至临时目录
+                    if (!$phpZip->extractTo($tempDir)) {
+                        $error = error_get_last();
+                        $result['error'] = $error['message'];
+                        $phpZip->close();
                         @unlink($tempFile);
                     } else {
-                        file_put_contents($tempFile, $zipFile);
-                        $phpZip = new ZipArchive();
-                        $open = $phpZip->open($tempFile, ZipArchive::CHECKCONS);
-                        if ($open !== true) {
-                            $result['error'] = _t('压缩包校验错误');
-                            @unlink($tempFile);
-                        } else {
-                            //解压至临时目录
-                            if (!$phpZip->extractTo($tempDir)) {
-                                $error = error_get_last();
-                                $result['error'] = $error['message'];
-                            } else {
-                                $phpZip->close();
-                                @unlink($tempFile); //删除已解压包
+                        $phpZip->close();
+                        @unlink($tempFile); //删除已解压包
 
-                                //遍历各文件层级
-                                foreach (new RecursiveIteratorIterator(new RecursiveDirectoryIterator($tempDir)) as $fileName) {
-                                    if (!is_dir($fileName)) {
-                                        $tmpRoutes[] = $fileName;
-                                    }
-                                }
-
-                                //定位 Plugin.php
-                                $trueDir = '';
-                                $parentDir = '';
-                                foreach ($tmpRoutes as $tmpRoute) {
-                                    if (!strcasecmp(basename($tmpRoute), 'Plugin.php')) {
-                                        $trueDir = dirname($tmpRoute);
-                                        $parentDir = dirname($trueDir);
-                                    }
-                                }
-
-                                //处理目录型插件
-                                if ($trueDir) {
-                                    $pluginDir = $this->pluginRoot . '/' . $plugin;
-                                    if (is_dir($pluginDir)) {
-                                        @$this->delTree($pluginDir, true); //清理旧版残留
-                                    }
-                                    foreach ($tmpRoutes as $tmpRoute) {
-                                        //按文件路径创建目录
-                                        $fileDir = $parentDir == $tempDir ? $tempDir : $parentDir;
-                                        $tarRoute = str_replace((strpos($tmpRoute, $trueDir) === 0 ? $trueDir : $fileDir),
-                                            $pluginDir, $tmpRoute);
-                                        $tarDir = dirname($tarRoute);
-                                        if (!is_dir($tarDir)) {
-                                            $this->makedir($tarDir);
-                                        }
-                                        //移动文件到各层目录
-                                        if (!rename($tmpRoute, $tarRoute)) {
-                                            $error = error_get_last();
-                                            $result['error'] = $error['message'];
-                                        }
-                                    }
-                                    $result['status'] = true;
-
-                                    //处理单文件型插件
-                                } elseif (count($tmpRoutes) <= 2) {
-                                    foreach ($tmpRoutes as $tmpRoute) {
-                                        $name = basename($tmpRoute);
-                                        if ($name == $plugin . '.php') {
-                                            //移动文件到根目录
-                                            if (!rename($tmpRoute, $this->pluginRoot . '/' . $name)) {
-                                                $result['error'] = _t('移动文件出错');
-                                            } else {
-                                                $result['status'] = true;
-                                            }
-                                        }
-                                    }
-                                }
-
-                                //清空临时目录
-                                @$this->delTree($tempDir, true);
+                        //遍历各文件层级
+                        $tmpRoutes = array();
+                        foreach (new RecursiveIteratorIterator(new RecursiveDirectoryIterator($tempDir)) as $fileName) {
+                            if (!is_dir($fileName)) {
+                                $tmpRoutes[] = $fileName;
                             }
                         }
+
+                        //定位 Plugin.php
+                        $trueDir = '';
+                        $parentDir = '';
+                        foreach ($tmpRoutes as $tmpRoute) {
+                            if (!strcasecmp(basename($tmpRoute), 'Plugin.php')) {
+                                $trueDir = dirname($tmpRoute);
+                                $parentDir = dirname($trueDir);
+                            }
+                        }
+
+                        //处理目录型插件
+                        if ($trueDir) {
+                            $pluginDir = $this->pluginRoot . '/' . $plugin;
+                            if (is_dir($pluginDir)) {
+                                @$this->delTree($pluginDir, true); //清理旧版残留
+                            }
+                            foreach ($tmpRoutes as $tmpRoute) {
+                                //按文件路径创建目录
+                                $fileDir = $parentDir == $tempDir ? $tempDir : $parentDir;
+                                $tarRoute = str_replace((strpos($tmpRoute, $trueDir) === 0 ? $trueDir : $fileDir),
+                                    $pluginDir, $tmpRoute);
+                                $tarDir = dirname($tarRoute);
+                                if (!is_dir($tarDir)) {
+                                    $this->makedir($tarDir);
+                                }
+                                //移动文件到各层目录
+                                if (!rename($tmpRoute, $tarRoute)) {
+                                    $error = error_get_last();
+                                    $result['error'] = $error['message'];
+                                }
+                            }
+                            $result['status'] = true;
+
+                            //处理单文件型插件
+                        } elseif (count($tmpRoutes) <= 2) {
+                            foreach ($tmpRoutes as $tmpRoute) {
+                                $name = basename($tmpRoute);
+                                if ($name == $plugin . '.php') {
+                                    //移动文件到根目录
+                                    if (!rename($tmpRoute, $this->pluginRoot . '/' . $name)) {
+                                        $result['error'] = _t('移动文件出错');
+                                    } else {
+                                        $result['status'] = true;
+                                    }
+                                }
+                            }
+                        }
+
+                        //清空临时目录
+                        @$this->delTree($tempDir, true);
                     }
                 }
             }
@@ -427,41 +397,315 @@ class TeStore_Action extends Typecho_Widget
         $datas = array();
         $cacheDir = $this->pluginRoot . '/TeStore/data/';
         $cacheFile = $cacheDir . 'zip_cdn.json';
+        $failureCacheFile = rtrim(sys_get_temp_dir(), '/\\') . '/testore_zip_cdn_'
+            . md5($cacheFile) . '.failed';
         $cacheTime = $this->settings->cache_time;
+        $cacheData = false;
 
-        //读取缓存文件
-        if ($cacheTime && is_file($cacheFile) && (time() - filemtime($cacheFile)) <= $cacheTime * 3600) {
-            $data = file_get_contents($cacheFile);
-            $datas = Json::decode($data, true);
-            //读取 API 数据
+        if (is_file($cacheFile)) {
+            $cacheData = file_get_contents($cacheFile);
+        }
+
+        // 缓存有效时不发起远程请求。
+        if ($cacheTime && $cacheData !== false && (time() - filemtime($cacheFile)) <= $cacheTime * 3600) {
+            $decoded = Json::decode($cacheData, true);
+            $datas = is_array($decoded) ? $decoded : array();
         } else {
-            $api = 'https://api.github.com/repositories/14101953/contents/ZIP_CDN';
-            $data = $this->useCurl ? $this->curlGet($api) : @file_get_contents($api, 0,
-                stream_context_create(array('http' => array('header' => array('User-Agent: PHP'), 'timeout' => 20)))); //API 要求 header
-            if ($data) {
-                $datas = Json::decode($data, true);
-                //生成缓存文件
+            $failureCached = is_file($failureCacheFile)
+                && (time() - filemtime($failureCacheFile)) <= 300;
+            $data = false;
+
+            if (!$failureCached) {
+                $indexUrl = 'https://raw.githubusercontent.com/typecho-fans/plugins/master/ZIP_CDN.json';
+                foreach ($this->getDownloadCandidates($indexUrl) as $candidate) {
+                    $content = $this->httpGet($candidate);
+                    if ($content === false) {
+                        continue;
+                    }
+                    $decoded = Json::decode($content, true);
+                    if (is_array($decoded) && $decoded) {
+                        $data = $content;
+                        $datas = $decoded;
+                        break;
+                    }
+                }
+            }
+
+            if ($data !== false) {
                 if ($cacheTime) {
                     if (!is_dir($cacheDir)) {
                         $this->makedir($cacheDir);
                     }
                     file_put_contents($cacheFile, $data);
                 }
+                @unlink($failureCacheFile);
+            } else {
+                // 刷新失败时继续使用旧缓存，并短暂记录失败以避免连续超时。
+                if ($cacheData !== false) {
+                    $decoded = Json::decode($cacheData, true);
+                    $datas = is_array($decoded) ? $decoded : array();
+                }
+                @touch($failureCacheFile);
             }
         }
 
-        $zip = '';
+        $exactZip = '';
+        $fallbackZip = '';
         if ($name && $author) {
             foreach ($datas as $data) {
-                if ($data['name'] == $name . '_' . $author . '.zip') { //带作者名优先
-                    $zip = $data['download_url'];
-                } elseif ($data['name'] == $name . '.zip') {
-                    $zip = $data['download_url'];
+                if (!isset($data['name']) || empty($data['download_url'])) {
+                    continue;
+                }
+                if ($data['name'] == $name . '_' . $author . '.zip') {
+                    $exactZip = $data['download_url'];
+                    break;
+                }
+                if ($data['name'] == $name . '.zip') {
+                    $fallbackZip = $data['download_url'];
                 }
             }
         }
 
-        return $zip;
+        return $exactZip ? $exactZip : $fallbackZip;
+    }
+
+    /**
+     * 判断是否启用了镜像
+     *
+     * @access public
+     * @return boolean
+     */
+    public function isMirrorEnabled()
+    {
+        $mirror = $this->getMirrorConfig();
+        return $mirror['type'] !== '' && $mirror['endpoint'] !== '';
+    }
+
+    /**
+     * 读取新镜像配置并兼容旧 proxy 字段
+     *
+     * @access private
+     * @return array
+     */
+    private function getMirrorConfig()
+    {
+        $type = '';
+        $endpoint = '';
+
+        if (isset($this->settings->mirror_type) || isset($this->settings->mirror_endpoint)
+            || isset($this->settings->mirror_custom)) {
+            $type = $this->settings->mirror_type;
+            $selected = isset($this->settings->mirror_endpoint) ? $this->settings->mirror_endpoint : '';
+            if ($selected === 'custom') {
+                $endpoint = isset($this->settings->mirror_custom) ? trim($this->settings->mirror_custom) : '';
+            } else {
+                $endpoint = $selected;
+            }
+        } elseif (isset($this->settings->proxy) && $this->settings->proxy) {
+            if ($this->settings->proxy === 'cdn.jsdelivr.net/gh') {
+                $type = 'cdn';
+                $endpoint = 'https://cdn.jsdelivr.net';
+            } elseif ($this->settings->proxy === 'jsd.onmicrosoft.cn/gh') {
+                $type = 'cdn';
+                $endpoint = 'https://cdn.jsdmirror.cn';
+            } else {
+                $type = 'proxy';
+                $endpoint = $this->settings->proxy;
+            }
+        }
+
+        $endpoint = rtrim($endpoint, '/');
+        if ($type === 'cdn' && substr($endpoint, -3) === '/gh') {
+            $endpoint = substr($endpoint, 0, -3);
+        }
+
+        $parts = $endpoint ? @parse_url($endpoint) : false;
+        if (($type !== 'cdn' && $type !== 'proxy') || !$parts
+            || !isset($parts['scheme']) || strtolower($parts['scheme']) !== 'https'
+            || empty($parts['host']) || isset($parts['query']) || isset($parts['fragment'])
+            || isset($parts['user']) || isset($parts['pass'])) {
+            $type = '';
+            $endpoint = '';
+        }
+
+        return array('type' => $type, 'endpoint' => $endpoint);
+    }
+
+    /**
+     * 生成镜像地址和原地址候选列表
+     *
+     * @access private
+     * @param string $url 原地址
+     * @return array
+     */
+    private function getDownloadCandidates($url)
+    {
+        $candidates = array();
+        $mirrorUrl = $this->buildMirrorUrl($url);
+        if ($mirrorUrl && $mirrorUrl !== $url) {
+            $candidates[] = $mirrorUrl;
+        }
+        $candidates[] = $url;
+        return array_values(array_unique($candidates));
+    }
+
+    /**
+     * 根据镜像类型转换地址
+     *
+     * @access private
+     * @param string $url 原地址
+     * @return string
+     */
+    private function buildMirrorUrl($url)
+    {
+        $mirror = $this->getMirrorConfig();
+        if (!$mirror['type'] || !preg_match('#^https?://#i', $url)) {
+            return $url;
+        }
+
+        if ($mirror['type'] === 'proxy') {
+            $prefix = $mirror['endpoint'] . '/';
+            return strpos($url, $prefix) === 0 ? $url : $prefix . $url;
+        }
+
+        $path = '';
+        if (preg_match('#^https?://raw\.githubusercontent\.com/([^/]+)/([^/]+)/refs/(?:heads|tags)/([^/]+)/(.*)$#i', $url, $matches)) {
+            $path = $matches[1] . '/' . $matches[2] . '@' . $matches[3] . '/' . $matches[4];
+        } elseif (preg_match('#^https?://raw\.githubusercontent\.com/([^/]+)/([^/]+)/([^/]+)/(.*)$#i', $url, $matches)) {
+            $path = $matches[1] . '/' . $matches[2] . '@' . $matches[3] . '/' . $matches[4];
+        } elseif (preg_match('#^https?://github\.com/([^/]+)/([^/]+)/(?:blob|raw)/([^/]+)/(.*)$#i', $url, $matches)) {
+            $path = $matches[1] . '/' . $matches[2] . '@' . $matches[3] . '/' . $matches[4];
+        }
+
+        return $path ? $mirror['endpoint'] . '/gh/' . $path : $url;
+    }
+
+    /**
+     * 下载并验证插件信息源
+     *
+     * @access private
+     * @param string $url 信息源地址
+     * @return string|boolean
+     */
+    private function fetchSource($url)
+    {
+        foreach ($this->getDownloadCandidates($url) as $candidate) {
+            $content = $this->httpGet($candidate);
+            if ($content === false) {
+                continue;
+            }
+            if (stripos($content, '<table') === false) {
+                $content = htmlspecialchars_decode(Markdown::convert($content));
+            }
+            if ($this->hasPluginTable($content)) {
+                return $content;
+            }
+        }
+        return false;
+    }
+
+    /**
+     * 判断内容是否包含可解析的插件表格
+     *
+     * @access private
+     * @param string $html 页面内容
+     * @return boolean
+     */
+    private function hasPluginTable($html)
+    {
+        $dom = new DOMDocument('1.0', 'utf-8');
+        $document = function_exists('mb_convert_encoding') ? mb_convert_encoding($html, 'HTML-ENTITIES', 'UTF-8') : $html;
+        if (!@$dom->loadHTML($document)) {
+            return false;
+        }
+        foreach ($dom->getElementsByTagName('tr') as $row) {
+            $headers = $row->getElementsByTagName('th');
+            if ($headers->length >= 5) {
+                $headerText = '';
+                foreach ($headers as $header) {
+                    $headerText .= ' ' . trim($header->nodeValue);
+                }
+                if (strpos($headerText, '名称') !== false && strpos($headerText, '简介') !== false
+                    && strpos($headerText, '版本') !== false && strpos($headerText, '作者') !== false
+                    && stripos($headerText, 'zip') !== false) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    /**
+     * 下载并验证 ZIP，镜像失败时回退原地址
+     *
+     * @access private
+     * @param array $urls 下载地址
+     * @param string $tempFile 临时文件
+     * @param boolean $invalidZip 是否收到无效压缩包
+     * @return ZipArchive|boolean
+     */
+    private function downloadZip($urls, $tempFile, &$invalidZip)
+    {
+        $invalidZip = false;
+        $candidates = array();
+        foreach ($urls as $url) {
+            $candidates = array_merge($candidates, $this->getDownloadCandidates($url));
+        }
+        foreach (array_values(array_unique($candidates)) as $candidate) {
+            $zipFile = $this->httpGet($candidate);
+            if ($zipFile === false || @file_put_contents($tempFile, $zipFile) === false) {
+                @unlink($tempFile);
+                continue;
+            }
+
+            $phpZip = new ZipArchive();
+            if ($phpZip->open($tempFile, ZipArchive::CHECKCONS) === true) {
+                return $phpZip;
+            }
+            $invalidZip = true;
+            @unlink($tempFile);
+        }
+        return false;
+    }
+
+    /**
+     * 获取远程内容并检查 HTTP 状态
+     *
+     * @access private
+     * @param string $url 请求地址
+     * @param array $headers 请求头
+     * @return string|boolean
+     */
+    private function httpGet($url, $headers = array())
+    {
+        if (!preg_match('#^https?://#i', $url)) {
+            return false;
+        }
+        if ($this->useCurl) {
+            return $this->curlGet($url, $headers);
+        }
+
+        $options = array(
+            'http' => array(
+                'timeout' => 20,
+                'ignore_errors' => true,
+                'follow_location' => 1,
+                'max_redirects' => 5
+            )
+        );
+        if ($headers) {
+            $options['http']['header'] = implode("\r\n", $headers);
+        }
+        $content = @file_get_contents($url, false, stream_context_create($options));
+        $status = 0;
+        if (isset($http_response_header)) {
+            foreach ($http_response_header as $header) {
+                if (preg_match('#^HTTP/\S+\s+(\d{3})#i', $header, $matches)) {
+                    $status = (int)$matches[1];
+                }
+            }
+        }
+        return $content !== false && $content !== '' && $status >= 200 && $status < 400 ? $content : false;
     }
 
     /**
@@ -519,22 +763,30 @@ class TeStore_Action extends Typecho_Widget
      * @access private
      * @return string
      */
-    private function curlGet($url)
+    private function curlGet($url, $headers = array())
     {
         $curl = curl_init();
 
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
         curl_setopt($curl, CURLOPT_HEADER, 0);
+        if (!ini_get('safe_mode') && !ini_get('open_basedir')) {
+            curl_setopt($curl, CURLOPT_FOLLOWLOCATION, 1);
+            curl_setopt($curl, CURLOPT_MAXREDIRS, 5);
+        }
         curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, 1);
         curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, 2);
-        curl_setopt($curl, CURLOPT_CAINFO, 'usr/plugins/TeStore/data/cacert.pem'); //证书识别库
+        curl_setopt($curl, CURLOPT_CAINFO, $this->pluginRoot . '/TeStore/data/cacert.pem'); //证书识别库
         curl_setopt($curl, CURLOPT_TIMEOUT, 30); //设 30 秒超时
+        if ($headers) {
+            curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
+        }
         curl_setopt($curl, CURLOPT_URL, $url);
 
         $result = curl_exec($curl);
+        $status = (int)curl_getinfo($curl, CURLINFO_HTTP_CODE);
         curl_close($curl);
 
-        return $result;
+        return $result !== false && $result !== '' && $status >= 200 && $status < 400 ? $result : false;
     }
 
 }

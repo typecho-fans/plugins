@@ -5,7 +5,7 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
  *
  * @package TeStore
  * @author 羽中, zhulin3141, Ryan
- * @version 1.1.6
+ * @version 1.1.7
  * @dependence 13.12.12-*
  * @link https://www.yzmb.me/archives/net/testore-for-typecho
  * @copyright Copyright (c) 2014-2020 Yuzhong Zheng (jzwalk)
@@ -69,6 +69,33 @@ class TeStore_Plugin implements Typecho_Plugin_Interface
 	 */
 	public static function config(Typecho_Widget_Helper_Form $form)
 	{
+		$settings = NULL;
+		try {
+			$settings = Helper::options()->plugin('TeStore');
+		} catch (Exception $e) {
+			// 首次启用时配置记录尚未创建，使用表单默认值。
+		}
+		$mirrorType = '';
+		$mirrorEndpoint = 'https://cdn.jsdelivr.net';
+		$mirrorCustom = '';
+
+		if (isset($settings->mirror_type) || isset($settings->mirror_endpoint) || isset($settings->mirror_custom)) {
+			$mirrorType = $settings->mirror_type;
+			$mirrorEndpoint = isset($settings->mirror_endpoint) ? $settings->mirror_endpoint : $mirrorEndpoint;
+			$mirrorCustom = isset($settings->mirror_custom) ? $settings->mirror_custom : '';
+		} elseif (isset($settings->proxy) && $settings->proxy) {
+			if ($settings->proxy === 'cdn.jsdelivr.net/gh') {
+				$mirrorType = 'cdn';
+			} elseif ($settings->proxy === 'jsd.onmicrosoft.cn/gh') {
+				$mirrorType = 'cdn';
+				$mirrorEndpoint = 'https://cdn.jsdmirror.cn';
+			} else {
+				$mirrorType = 'proxy';
+				$mirrorEndpoint = 'custom';
+				$mirrorCustom = rtrim($settings->proxy, '/');
+			}
+		}
+
 		$source = new Typecho_Widget_Helper_Form_Element_Textarea('source',
 		NULL,'https://github.com/typecho-fans/plugins/blob/master/TESTORE.md'.PHP_EOL.'https://github.com/typecho-fans/plugins/blob/master/README.md',_t('插件信息来源'),
 		_t('应为可公开访问且包含符合本插件规定表格内容的页面地址, 每行一个, 默认: ').'<br/>
@@ -90,9 +117,35 @@ class TeStore_Plugin implements Typecho_Plugin_Interface
 			'24',_t('数据缓存时限'),_t('设置本地缓存数据时间'));
 		$form->addInput($cache);
 
-		$proxy = new Typecho_Widget_Helper_Form_Element_Radio('proxy',
-		array(''=>_t('否'),'cdn.jsdelivr.net/gh'=>_t('jsDelivr镜像'),'jsd.onmicrosoft.cn/gh'=>_t('渺软镜像'), 'https://ghmirror.pp.ua' => _('GitHub Proxy')),'',_t('使用代理加速'),_t('GitHub连接不畅时可选'));
-		$form->addInput($proxy);
+		$mirrorTypeInput = new Typecho_Widget_Helper_Form_Element_Radio('mirror_type',
+			array(
+				''=>_t('关闭'),
+				'cdn'=>_t('jsDelivr兼容CDN'),
+				'proxy'=>_t('URL前缀代理')
+			),
+			$mirrorType,_t('镜像类型'),_t('CDN仅加速GitHub仓库文件；URL前缀代理可加速所有HTTP(S)信息源和插件下载'));
+		$form->addInput($mirrorTypeInput);
+
+		$mirrorEndpointInput = new Typecho_Widget_Helper_Form_Element_Select('mirror_endpoint',
+			array(
+				'https://cdn.jsdelivr.net'=>_t('CDN - cdn.jsdelivr.net'),
+				'https://gcore.jsdelivr.net'=>_t('CDN - gcore.jsdelivr.net'),
+				'https://cdn.jsdmirror.cn'=>_t('CDN - cdn.jsdmirror.cn'),
+				'https://cdn.jsdmirror.com'=>_t('CDN - cdn.jsdmirror.com'),
+				'https://gh-proxy.org'=>_t('代理 - gh-proxy.org'),
+				'https://cdn.gh-proxy.org'=>_t('代理 - cdn.gh-proxy.org'),
+				'https://box.w0x7ce.eu/proxy'=>_t('代理 - box.w0x7ce.eu/proxy'),
+				'custom'=>_t('自定义地址')
+			),
+			$mirrorEndpoint,_t('镜像节点'),_t('请选择与镜像类型一致的节点；请求失败时自动回退原地址'));
+		$form->addInput($mirrorEndpointInput);
+
+		$mirrorCustomInput = new Typecho_Widget_Helper_Form_Element_Text('mirror_custom',
+			NULL,$mirrorCustom,_t('自定义镜像地址'),_t('仅在镜像节点选择“自定义地址”时生效，必须使用HTTPS；CDN地址可带或不带/gh'));
+		$form->addInput($mirrorCustomInput);
+
+		// 保留旧字段供Typecho回填，保存时由configHandle移除。
+		$form->addInput(new Typecho_Widget_Helper_Form_Element_Hidden('proxy', NULL, ''));
 
 		$curl = new Typecho_Widget_Helper_Form_Element_Checkbox('curl',
 		array(1=>'是'),0,	_t('cURL方式下载'),_t('默认方式无效时可尝试'));
@@ -114,9 +167,55 @@ class TeStore_Plugin implements Typecho_Plugin_Interface
 		if (!class_exists('ZipArchive')) {
 			return _t('主机未安装ZipArchive扩展, 无法安装插件');
 		}
-		if ($settings['curl'] && !extension_loaded('curl')) {
+		if (!empty($settings['curl']) && !extension_loaded('curl')) {
 			return _t('主机未安装cURL扩展, 无法使用此方式下载');
 		}
+
+		$mirrorType = isset($settings['mirror_type']) ? $settings['mirror_type'] : '';
+		$endpoint = isset($settings['mirror_endpoint']) ? $settings['mirror_endpoint'] : '';
+		$custom = isset($settings['mirror_custom']) ? trim($settings['mirror_custom']) : '';
+		$cdnEndpoints = array(
+			'https://cdn.jsdelivr.net',
+			'https://gcore.jsdelivr.net',
+			'https://cdn.jsdmirror.cn',
+			'https://cdn.jsdmirror.com'
+		);
+		$proxyEndpoints = array(
+			'https://gh-proxy.org',
+			'https://cdn.gh-proxy.org',
+			'https://box.w0x7ce.eu/proxy'
+		);
+
+		if ($mirrorType !== '' && $mirrorType !== 'cdn' && $mirrorType !== 'proxy') {
+			return _t('镜像类型无效');
+		}
+		if ($mirrorType === 'cdn' && $endpoint !== 'custom' && !in_array($endpoint, $cdnEndpoints, true)) {
+			return _t('请选择jsDelivr兼容CDN节点');
+		}
+		if ($mirrorType === 'proxy' && $endpoint !== 'custom' && !in_array($endpoint, $proxyEndpoints, true)) {
+			return _t('请选择URL前缀代理节点');
+		}
+		if ($mirrorType && $endpoint === 'custom') {
+			$parts = @parse_url($custom);
+			if (!$parts || !isset($parts['scheme']) || strtolower($parts['scheme']) !== 'https'
+				|| empty($parts['host']) || isset($parts['query']) || isset($parts['fragment'])
+				|| isset($parts['user']) || isset($parts['pass'])) {
+				return _t('自定义镜像地址必须是无查询参数的HTTPS地址');
+			}
+		}
+	}
+
+	/**
+	 * 保存配置并清理旧版 proxy 字段
+	 *
+	 * @param array $settings
+	 * @param boolean $isInit
+	 * @return void
+	 */
+	public static function configHandle(array $settings, $isInit)
+	{
+		unset($settings['proxy']);
+		Helper::configPlugin('TeStore', $settings);
 	}
 
 	/**
