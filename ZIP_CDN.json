@@ -400,19 +400,19 @@
     }
   },
   {
-    "name": "AllowIp_Fuzqing.zip",
-    "path": "ZIP_CDN/AllowIp_Fuzqing.zip",
-    "sha": "e664b52791969c1e94f3840f86fbb63628c070c4",
-    "size": 3100,
-    "url": "https://api.github.com/repos/typecho-fans/plugins/contents/ZIP_CDN/AllowIp_Fuzqing.zip?ref=master",
-    "html_url": "https://github.com/typecho-fans/plugins/blob/master/ZIP_CDN/AllowIp_Fuzqing.zip",
-    "git_url": "https://api.github.com/repos/typecho-fans/plugins/git/blobs/e664b52791969c1e94f3840f86fbb63628c070c4",
-    "download_url": "https://raw.githubusercontent.com/typecho-fans/plugins/master/ZIP_CDN/AllowIp_Fuzqing.zip",
+    "name": "AllowIp_Fuzqing_Ryan.zip",
+    "path": "ZIP_CDN/AllowIp_Fuzqing_Ryan.zip",
+    "sha": "e68550ee6b97b6e134bcd3c5c955d955ade1e48d",
+    "size": 3251,
+    "url": "https://api.github.com/repos/typecho-fans/plugins/contents/ZIP_CDN/AllowIp_Fuzqing_Ryan.zip?ref=master",
+    "html_url": "https://github.com/typecho-fans/plugins/blob/master/ZIP_CDN/AllowIp_Fuzqing_Ryan.zip",
+    "git_url": "https://api.github.com/repos/typecho-fans/plugins/git/blobs/e68550ee6b97b6e134bcd3c5c955d955ade1e48d",
+    "download_url": "https://raw.githubusercontent.com/typecho-fans/plugins/master/ZIP_CDN/AllowIp_Fuzqing_Ryan.zip",
     "type": "file",
     "_links": {
-      "self": "https://api.github.com/repos/typecho-fans/plugins/contents/ZIP_CDN/AllowIp_Fuzqing.zip?ref=master",
-      "git": "https://api.github.com/repos/typecho-fans/plugins/git/blobs/e664b52791969c1e94f3840f86fbb63628c070c4",
-      "html": "https://github.com/typecho-fans/plugins/blob/master/ZIP_CDN/AllowIp_Fuzqing.zip"
+      "self": "https://api.github.com/repos/typecho-fans/plugins/contents/ZIP_CDN/AllowIp_Fuzqing_Ryan.zip?ref=master",
+      "git": "https://api.github.com/repos/typecho-fans/plugins/git/blobs/e68550ee6b97b6e134bcd3c5c955d955ade1e48d",
+      "html": "https://github.com/typecho-fans/plugins/blob/master/ZIP_CDN/AllowIp_Fuzqing_Ryan.zip"
     }
   },
   {
@@ -4850,16 +4850,16 @@
   {
     "name": "NAME_LIST.log",
     "path": "ZIP_CDN/NAME_LIST.log",
-    "sha": "4d85db90c9bc556767df7cd2ee24f66d0fa34feb",
-    "size": 3954,
+    "sha": "261d562e6c32a04adb3b665b17e443b850fdc1e3",
+    "size": 3959,
     "url": "https://api.github.com/repos/typecho-fans/plugins/contents/ZIP_CDN/NAME_LIST.log?ref=master",
     "html_url": "https://github.com/typecho-fans/plugins/blob/master/ZIP_CDN/NAME_LIST.log",
-    "git_url": "https://api.github.com/repos/typecho-fans/plugins/git/blobs/4d85db90c9bc556767df7cd2ee24f66d0fa34feb",
+    "git_url": "https://api.github.com/repos/typecho-fans/plugins/git/blobs/261d562e6c32a04adb3b665b17e443b850fdc1e3",
     "download_url": "https://raw.githubusercontent.com/typecho-fans/plugins/master/ZIP_CDN/NAME_LIST.log",
     "type": "file",
     "_links": {
       "self": "https://api.github.com/repos/typecho-fans/plugins/contents/ZIP_CDN/NAME_LIST.log?ref=master",
-      "git": "https://api.github.com/repos/typecho-fans/plugins/git/blobs/4d85db90c9bc556767df7cd2ee24f66d0fa34feb",
+      "git": "https://api.github.com/repos/typecho-fans/plugins/git/blobs/261d562e6c32a04adb3b665b17e443b850fdc1e3",
       "html": "https://github.com/typecho-fans/plugins/blob/master/ZIP_CDN/NAME_LIST.log"
     }
   },
