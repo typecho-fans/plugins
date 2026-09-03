@@ -6,9 +6,9 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
  * 
  * @package QiniuFile
  * @author LiCxi, 冰剑, abelyao
- * @version 1.3.3
+ * @version 1.3.4
  * @link https://github.com/typecho-fans/plugins/tree/master/QiniuFile
- * @date 2020-06-24
+ * @date 2026-09-04
  */
 
 class QiniuFile_Plugin implements Typecho_Plugin_Interface {
@@ -69,7 +69,7 @@ class QiniuFile_Plugin implements Typecho_Plugin_Interface {
         return new Qiniu\Auth($accesskey, $secretkey);
     }
 
-    public static function deleteFile($filepath) {
+    public static function deleteFile($filepath): bool {
         // 获取插件配置
         $option = self::getConfig();
 
@@ -80,7 +80,7 @@ class QiniuFile_Plugin implements Typecho_Plugin_Interface {
         // 新版SDK删除(php5.3-7.0可用)
         $qiniu = self::initAuto($option->accesskey, $option->secretkey);
         $bucketMgr = new Qiniu\Storage\BucketManager($qiniu);
-        return $bucketMgr->delete($option->bucket, $filepath);
+        return null === $bucketMgr->delete($option->bucket, $filepath);
     }
 
     public static function uploadFile($file, $content = null) {
@@ -165,14 +165,14 @@ class QiniuFile_Plugin implements Typecho_Plugin_Interface {
         return self::uploadFile($file, $content);
     }
     // 删除文件处理函数
-    public static function deleteHandle(array $content) {
-        self::deleteFile($content['attachment']->path);
+    public static function deleteHandle(array $content): bool {
+        return self::deleteFile($content['attachment']->path);
     }
     // 获取实际文件绝对访问路径
-    public static function attachmentHandle(array $content) {
+    public static function attachmentHandle(Typecho\Config $attachment): string {
         $option = self::getConfig();
         $view = '';
-        if($option->imgview > -1 && strpos($content['attachment']->mime, 'image/') !== false && $option->imgstyle == ''){
+        if($option->imgview > -1 && strpos($attachment->mime, 'image/') !== false && $option->imgstyle == ''){
             $array = explode('|', $option->imgparam);
             $param = array('Width' => isset($array['0']) ? $array['0'] : 400,
                            'Height' => isset($array['1']) ? $array['1'] : 300,
@@ -185,6 +185,6 @@ class QiniuFile_Plugin implements Typecho_Plugin_Interface {
             }
             $view = '?imageView2'.str_replace(array('%type%', '%Width%', '%Height%', '%LongEdge%', '%ShortEdge%'), array($option->imgview, $param['Width'], $param['Height'], $param['LongEdge'], $param['ShortEdge']), $view);
         }
-        return Typecho_Common::url($content['attachment']->path, $option->domain).$view.$option->imgstyle;
+        return Typecho_Common::url($attachment->path, $option->domain).$view.$option->imgstyle;
     }
 }

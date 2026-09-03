@@ -2,7 +2,7 @@
     <img src="https://typecho-fans.github.io/text-logo.svg" alt="TF Logo" title="Typecho Fans开源作品社区" align="right" height="100" />
 </a>
 
-QiniuFile v1.3.3 - 社区维护版
+QiniuFile v1.3.4 - 社区维护版
 ======================
 <h4 align="center">—— 新附件使用七牛云储存插件，支持自定路径/本地备份/缩略图/图片样式等。</h4>
 
@@ -39,6 +39,9 @@ QiniuFile v1.3.3 - 社区维护版
 
 ## 版本历史
 
+ * v1.3.4 (26-9-4 [@noisky](https://github.com/noisky))
+   * 适配 Typecho 1.3+ 的附件处理接口，使用 `Config` 对象读取附件信息；
+   * 修复删除附件处理函数返回 `null` 导致后台 500 的问题，并将七牛 SDK 删除结果转换为布尔值。
  * v1.3.3 (20-6-24 [@jzwalk](https://github.com/jzwalk))
    * 使用**7.2.10版SDK**，合并2个衍生版本功能：
      * **本地备份文件**，同步上传/删除([@lscho](https://github.com/lscho))；
@@ -57,9 +60,9 @@ QiniuFile v1.3.3 - 社区维护版
 
 ## 贡献作者
 
-[![jzwalk](https://avatars1.githubusercontent.com/u/252331?v=3&s=100)](https://github.com/jzwalk) | [![gxuzf](https://avatars1.githubusercontent.com/u/61103266?v=3&s=100)](https://github.com/gxuzf) | [![kraity](https://avatars1.githubusercontent.com/u/29883656?v=3&s=100)](https://github.com/kraity) | [![lscho](https://avatars1.githubusercontent.com/u/11583677?v=3&s=100)](https://github.com/lscho) | [![JokerQyou](https://avatars1.githubusercontent.com/u/1465267?v=3&s=100)](https://github.com/JokerQyou) | [![binjoo](https://avatars1.githubusercontent.com/u/219092?v=3&s=100)](https://github.com/binjoo) |[![yb](https://avatars1.githubusercontent.com/u/25887822?v=3&s=100)](https://github.com/yb)
-:---:|:---:|:---:|:---:|:---:|:---:|:---:
-[jzwalk](https://github.com/jzwalk) (2020) | [gxuzf](https://github.com/gxuzf) (2020) | [kraity](https://github.com/kraity) (2019) | [lscho](https://github.com/lscho) (2017) | [JokerQyou](https://github.com/JokerQyou) (2016) | [binjoo](https://github.com/binjoo) (2014) | [yb](https://github.com/yb) (2014)
+[![noisky](https://github.com/noisky.png?size=100)](https://github.com/noisky) | [![jzwalk](https://avatars1.githubusercontent.com/u/252331?v=3&s=100)](https://github.com/jzwalk) | [![gxuzf](https://avatars1.githubusercontent.com/u/61103266?v=3&s=100)](https://github.com/gxuzf) | [![kraity](https://avatars1.githubusercontent.com/u/29883656?v=3&s=100)](https://github.com/kraity) | [![lscho](https://avatars1.githubusercontent.com/u/11583677?v=3&s=100)](https://github.com/lscho) | [![JokerQyou](https://avatars1.githubusercontent.com/u/1465267?v=3&s=100)](https://github.com/JokerQyou) | [![binjoo](https://avatars1.githubusercontent.com/u/219092?v=3&s=100)](https://github.com/binjoo) |[![yb](https://avatars1.githubusercontent.com/u/25887822?v=3&s=100)](https://github.com/yb)
+:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:
+[noisky](https://github.com/noisky) (2026) | [jzwalk](https://github.com/jzwalk) (2020) | [gxuzf](https://github.com/gxuzf) (2020) | [kraity](https://github.com/kraity) (2019) | [lscho](https://github.com/lscho) (2017) | [JokerQyou](https://github.com/JokerQyou) (2016) | [binjoo](https://github.com/binjoo) (2014) | [yb](https://github.com/yb) (2014)
 
 *为避免作者栏显示过长，插件信息仅选取登记3个署名，如有异议可协商修改。
 
