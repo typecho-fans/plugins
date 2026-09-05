@@ -168,3 +168,6 @@
 [reCAPTCHA](reCAPTCHA) | 谷歌reCAPTCHA点击验证码 | 0.0.1 | [啸傲居士](https://github.com/shuxiao9058) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/reCAPTCHA.zip)
 [reCAPTCHAv3](reCAPTCHAv3) | 基于[reCAPTCHA](reCAPTCHA)v3版验证码 | 0.0.2 | [D-Bood](https://github.com/D-Bood) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/reCAPTCHAv3.zip)
 [tagshelper](tagshelper) | 发布文章列出已用标签 | 1.1 | [泽泽社长](https://github.com/jrotty) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/tagshelper.zip)
+
+
+<!-- Security scan triggered at 2026-09-05 07:41:34 -->
