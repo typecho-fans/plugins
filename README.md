@@ -28,7 +28,7 @@
 
  > 下表中下载链接文字可在TeStore附加图标：`Download`即社区版，`N/A`为不可用，`Special`是安装或用法特殊。
 
-### 作品索引 (131)
+### 作品索引 (134)
 
 ###### TeStore会使用下表“名称”创建文件夹，“版本”数字判断升级，请尽量确保文本准确，按字母排序，简介便于关键字搜索。
 ```
@@ -37,6 +37,7 @@
 
 名称 | 简介 | 版本 | 作者 | zip包
 ---- | ----: | :----: | :---- | :----:
+<!-- Security scan triggered at 2026-09-05 07:41:34 -->
 [AMP](AMP) | 生成AMP/MIP移动标准页面 | 0.7.6.1 | [Holmesian](https://github.com/holmesian) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/AMP.zip)
 [AbbrSlug](AbbrSlug) | 生成数字文章缩略名 | 1.0.0 | [羽叶](https://github.com/cyea) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/AbbrSlug.zip)
 [AjaxComments](AjaxComments) | 嵌套评论Ajax异步提交效果 | 1.2.0 | [Byends](https://github.com/visamz), Willin Kan | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/AjaxComments.zip)
@@ -168,6 +169,3 @@
 [reCAPTCHA](reCAPTCHA) | 谷歌reCAPTCHA点击验证码 | 0.0.1 | [啸傲居士](https://github.com/shuxiao9058) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/reCAPTCHA.zip)
 [reCAPTCHAv3](reCAPTCHAv3) | 基于[reCAPTCHA](reCAPTCHA)v3版验证码 | 0.0.2 | [D-Bood](https://github.com/D-Bood) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/reCAPTCHAv3.zip)
 [tagshelper](tagshelper) | 发布文章列出已用标签 | 1.1 | [泽泽社长](https://github.com/jrotty) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/tagshelper.zip)
-
-
-<!-- Security scan triggered at 2026-09-05 07:41:34 -->
