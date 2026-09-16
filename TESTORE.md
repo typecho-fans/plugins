@@ -28,7 +28,7 @@
 
  > 下载链接文字可用于附加图标和关键字筛选：如`下载`即非社区版，`不可用`带⛔，`特殊`带⚠️意为启用须遵照文档步骤。
 
-### 插件信息 (478)
+### 插件信息 (479)
 
 ###### TeStore会使用下表“名称”创建文件夹，“版本”数字判断升级，请尽量确保文本准确，按字母排序，简介便于关键字搜索。
 ```
@@ -370,6 +370,7 @@
 [SiteMap](http://forum.typecho.org/viewtopic.php?f=6&t=9115) | Google/百度双生版站点地图插件 | 1.0.0 | 王And木 | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/SiteMap_.And.zip)
 [SiteMap](https://gitee.com/freej2015/SiteMap) | 简易版发布生成Xml站点地图插件 | 1.0.0 | [yaecho](https://gitee.com/freej2015) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/SiteMap_yaecho.zip)
 [SiteMap](https://github.com/NickVico/sitemap-for-typecho) | 动态生成Html版站点地图页面插件 | 1.0.0 | [nickvico](https://github.com/NickVico) | [下载](https://github.com/NickVico/sitemap-for-typecho/archive/master.zip)
+[SiteRun](https://github.com/touchinglie/SiteRun) | 页脚添加系统运行时长与后台入口插件 | 1.0.0 | [Dow](https://www.dowblog.top/) | [下载](https://github.com/touchinglie/SiteRun/archive/master.zip)
 [SiteRunningTime](https://github.com/zhusaidong/SiteRunningTime) | 在网站底部显示系统运行时长插件 | 1.5.1 | [上官元恒](https://github.com/zhusaidong) | [下载](https://github.com/zhusaidong/SiteRunningTime/archive/master.zip)
 [SitemapSelf](https://github.com/lingsan-code/sitemap-for-typecho) | 自修改多文件缓存版站点地图插件 | 0.1 | [凌三](https://github.com/lingsan-code) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/SitemapSelf.zip)
 [Sitemap](https://defe.me/prg/Sitemap-For-SAE.html) | 缓存版站点地图插件(云引擎专用) | 1.0.0 | [DEFE](https://github.com/defeme), caixw | [最近](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/Sitemap_DEFE_caixw.zip)
