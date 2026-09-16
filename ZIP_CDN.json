@@ -4850,16 +4850,16 @@
   {
     "name": "NAME_LIST.log",
     "path": "ZIP_CDN/NAME_LIST.log",
-    "sha": "261d562e6c32a04adb3b665b17e443b850fdc1e3",
-    "size": 3959,
+    "sha": "7fd5e930a0f4970d5196c8bb1ff96555f30f4b48",
+    "size": 3975,
     "url": "https://api.github.com/repos/typecho-fans/plugins/contents/ZIP_CDN/NAME_LIST.log?ref=master",
     "html_url": "https://github.com/typecho-fans/plugins/blob/master/ZIP_CDN/NAME_LIST.log",
-    "git_url": "https://api.github.com/repos/typecho-fans/plugins/git/blobs/261d562e6c32a04adb3b665b17e443b850fdc1e3",
+    "git_url": "https://api.github.com/repos/typecho-fans/plugins/git/blobs/7fd5e930a0f4970d5196c8bb1ff96555f30f4b48",
     "download_url": "https://raw.githubusercontent.com/typecho-fans/plugins/master/ZIP_CDN/NAME_LIST.log",
     "type": "file",
     "_links": {
       "self": "https://api.github.com/repos/typecho-fans/plugins/contents/ZIP_CDN/NAME_LIST.log?ref=master",
-      "git": "https://api.github.com/repos/typecho-fans/plugins/git/blobs/261d562e6c32a04adb3b665b17e443b850fdc1e3",
+      "git": "https://api.github.com/repos/typecho-fans/plugins/git/blobs/7fd5e930a0f4970d5196c8bb1ff96555f30f4b48",
       "html": "https://github.com/typecho-fans/plugins/blob/master/ZIP_CDN/NAME_LIST.log"
     }
   },
@@ -6333,6 +6333,22 @@
       "self": "https://api.github.com/repos/typecho-fans/plugins/contents/ZIP_CDN/SiteMap_%E7%8E%8BAnd%E6%9C%A8.zip?ref=master",
       "git": "https://api.github.com/repos/typecho-fans/plugins/git/blobs/abca3be6b8b618a3e6dacd1b3757b47eec787621",
       "html": "https://github.com/typecho-fans/plugins/blob/master/ZIP_CDN/SiteMap_%E7%8E%8BAnd%E6%9C%A8.zip"
+    }
+  },
+  {
+    "name": "SiteRun_Dow.zip",
+    "path": "ZIP_CDN/SiteRun_Dow.zip",
+    "sha": "5431ffd08b44a538b3a7d9d26f43bba13306866c",
+    "size": 7235,
+    "url": "https://api.github.com/repos/typecho-fans/plugins/contents/ZIP_CDN/SiteRun_Dow.zip?ref=master",
+    "html_url": "https://github.com/typecho-fans/plugins/blob/master/ZIP_CDN/SiteRun_Dow.zip",
+    "git_url": "https://api.github.com/repos/typecho-fans/plugins/git/blobs/5431ffd08b44a538b3a7d9d26f43bba13306866c",
+    "download_url": "https://raw.githubusercontent.com/typecho-fans/plugins/master/ZIP_CDN/SiteRun_Dow.zip",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/typecho-fans/plugins/contents/ZIP_CDN/SiteRun_Dow.zip?ref=master",
+      "git": "https://api.github.com/repos/typecho-fans/plugins/git/blobs/5431ffd08b44a538b3a7d9d26f43bba13306866c",
+      "html": "https://github.com/typecho-fans/plugins/blob/master/ZIP_CDN/SiteRun_Dow.zip"
     }
   },
   {
