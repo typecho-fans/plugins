@@ -28,7 +28,7 @@
 
  > 下载链接文字可用于附加图标和关键字筛选：如`下载`即非社区版，`不可用`带⛔，`特殊`带⚠️意为启用须遵照文档步骤。
 
-### 插件信息 (479)
+### 插件信息 (480)
 
 ###### TeStore会使用下表“名称”创建文件夹，“版本”数字判断升级，请尽量确保文本准确，按字母排序，简介便于关键字搜索。
 ```
@@ -243,6 +243,7 @@
 [KindEditor](https://github.com/hizhengfu/KindEditor) | 经典所见即所得富文本编辑器插件 | 4.0.1 | [hizhengfu](https://github.com/hizhengfu) | [下载](https://github.com/hizhengfu/KindEditor/archive/master.zip)
 [KirinShiKi](https://github.com/JeffersonQin/KirinShiKi) | 基于handsome主题的[神代綺凜](https://moe.best)式魔改插件 | 3.1.1 | [Sanakey](https://github.com/JeffersonQin/KirinShiKi),[JeffersonQin](https://github.com/JeffersonQin/KirinShiKi) | [下载](https://github.com/JeffersonQin/KirinShiKi/archive/refs/tags/v3.1.1.zip)
 [KodoForTypecho](https://github.com/sy-records/KodoForTypecho) | 七牛云KODO作附件存储空间插件 | 1.0.0 | [沈唁](https://github.com/sy-records) | [下载](https://github.com/sy-records/KodoForTypecho/archive/master.zip)
+[LLMLens](https://github.com/FurYuenji/LLMLens) | 将文章、页面与分类输出为/llms.txt | 1.0.0 | [栀渊Yuenji](https://github.com/FurYuenji) | [下载](https://github.com/FurYuenji/LLMLens/releases/download/v1.0.0/LLMLens.zip)
 [LaTeXTypecho](https://github.com/Imyukehan/LaTeXTypecho) | 使用[MathJax](https://www.mathjax.org)渲染LaTex公式插件 | beta | [Khan](https://github.com/Imyukehan) | [下载](https://github.com/Imyukehan/LaTeXTypecho/archive/master.zip)
 [LaTex](https://github.com/typecho/plugins/tree/master/LaTex) | Markdown版LaTex公式解析插件 | 1.1.0 | [mutoo](https://github.com/mutoo) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-H_to_L/LaTex.zip)
 [LastUpdated](https://github.com/HyanCat/typecho-collection/tree/master/plugins/LastUpdated) | 在模板输出最近更新文章列表插件 | 1.0.0 | cgrabbit | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-H_to_L/LastUpdated_.zip)
@@ -516,4 +517,3 @@
 [waterMark](https://github.com/internelp/waterMark) | 图片自动添加Gif/Png格式水印插件 | 1.0.2 | [应用侠](https://github.com/internelp) | [下载](https://github.com/internelp/waterMark/archive/master.zip)
 [ymplayer](https://github.com/kokororin/typecho-plugin-ymplayer) | Html5可伸缩海报音乐播放器插件 | 0.7 | [kokororin](https://github.com/kokororin) | [特殊](https://github.com/kokororin/typecho-plugin-ymplayer/archive/master.zip)
 [zbgray](http://forum.typecho.org/viewtopic.php?f=6&t=11271) | Typecho简易祭日用整站变灰插件 | 1.0.0 | jyzb02 | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/zbgray.zip)
-[LLMLens](https://github.com/FurYuenji/LLMLens) | 将文章、页面与分类输出为/llms.txt | 1.0.0 | [栀渊Yuenji](https://github.com/FurYuenji) | [下载](https://github.com/FurYuenji/LLMLens/releases/download/v1.0.0/LLMLens.zip)
