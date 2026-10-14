@@ -4850,16 +4850,16 @@
   {
     "name": "NAME_LIST.log",
     "path": "ZIP_CDN/NAME_LIST.log",
-    "sha": "7fd5e930a0f4970d5196c8bb1ff96555f30f4b48",
-    "size": 3975,
+    "sha": "f8b02be6640a5f213d5507629016b6d47eba6697",
+    "size": 3996,
     "url": "https://api.github.com/repos/typecho-fans/plugins/contents/ZIP_CDN/NAME_LIST.log?ref=master",
     "html_url": "https://github.com/typecho-fans/plugins/blob/master/ZIP_CDN/NAME_LIST.log",
-    "git_url": "https://api.github.com/repos/typecho-fans/plugins/git/blobs/7fd5e930a0f4970d5196c8bb1ff96555f30f4b48",
+    "git_url": "https://api.github.com/repos/typecho-fans/plugins/git/blobs/f8b02be6640a5f213d5507629016b6d47eba6697",
     "download_url": "https://raw.githubusercontent.com/typecho-fans/plugins/master/ZIP_CDN/NAME_LIST.log",
     "type": "file",
     "_links": {
       "self": "https://api.github.com/repos/typecho-fans/plugins/contents/ZIP_CDN/NAME_LIST.log?ref=master",
-      "git": "https://api.github.com/repos/typecho-fans/plugins/git/blobs/7fd5e930a0f4970d5196c8bb1ff96555f30f4b48",
+      "git": "https://api.github.com/repos/typecho-fans/plugins/git/blobs/f8b02be6640a5f213d5507629016b6d47eba6697",
       "html": "https://github.com/typecho-fans/plugins/blob/master/ZIP_CDN/NAME_LIST.log"
     }
   },
@@ -5165,6 +5165,22 @@
       "self": "https://api.github.com/repos/typecho-fans/plugins/contents/ZIP_CDN/PartiallyPassword_wuxianucw.zip?ref=master",
       "git": "https://api.github.com/repos/typecho-fans/plugins/git/blobs/8eabd22b23673cf1786034613afd1a9637181f4f",
       "html": "https://github.com/typecho-fans/plugins/blob/master/ZIP_CDN/PartiallyPassword_wuxianucw.zip"
+    }
+  },
+  {
+    "name": "Passkey_Jake Liu.zip",
+    "path": "ZIP_CDN/Passkey_Jake Liu.zip",
+    "sha": "713408f548db59c1cd932ee44e1790d361f93aac",
+    "size": 33364,
+    "url": "https://api.github.com/repos/typecho-fans/plugins/contents/ZIP_CDN/Passkey_Jake%20Liu.zip?ref=master",
+    "html_url": "https://github.com/typecho-fans/plugins/blob/master/ZIP_CDN/Passkey_Jake%20Liu.zip",
+    "git_url": "https://api.github.com/repos/typecho-fans/plugins/git/blobs/713408f548db59c1cd932ee44e1790d361f93aac",
+    "download_url": "https://raw.githubusercontent.com/typecho-fans/plugins/master/ZIP_CDN/Passkey_Jake%20Liu.zip",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/typecho-fans/plugins/contents/ZIP_CDN/Passkey_Jake%20Liu.zip?ref=master",
+      "git": "https://api.github.com/repos/typecho-fans/plugins/git/blobs/713408f548db59c1cd932ee44e1790d361f93aac",
+      "html": "https://github.com/typecho-fans/plugins/blob/master/ZIP_CDN/Passkey_Jake%20Liu.zip"
     }
   },
   {
