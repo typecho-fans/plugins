@@ -28,7 +28,7 @@
 
  > 下载链接文字可用于附加图标和关键字筛选：如`下载`即非社区版，`不可用`带⛔，`特殊`带⚠️意为启用须遵照文档步骤。
 
-### 插件信息 (480)
+### 插件信息 (481)
 
 ###### TeStore会使用下表“名称”创建文件夹，“版本”数字判断升级，请尽量确保文本准确，按字母排序，简介便于关键字搜索。
 ```
@@ -307,6 +307,7 @@
 [ParsedownExtra](https://github.com/GoldJohnKing/ParsedownExtra-for-Typecho) | [ParsedownExtra](https://github.com/erusev/parsedown-extra)解析插件(带TOC) | 1.0 | [Gold John King](https://github.com/GoldJohnKing) | [下载](https://github.com/GoldJohnKing/ParsedownExtra-for-Typecho/archive/master.zip)
 [Parsedown](https://github.com/kokororin/typecho-plugin-Parsedown) | [MD](https://baike.baidu.com/item/markdown/3245829)解析器替换为Parsedown插件 | 1.0 | [Kokororin](https://github.com/kokororin) | [下载](https://github.com/kokororin/typecho-plugin-Parsedown/archive/master.zip)
 [PartiallyPassword](https://github.com/wuxianucw/PartiallyPassword) | 文章部分内容输入密码可阅读插件 | 3.1.2 | [wuxianucw](https://github.com/wuxianucw) | [下载](https://github.com/wuxianucw/PartiallyPassword/archive/master.zip)
+[Passkey](https://github.com/LittleJake/typecho-passkey) | Typecho Passkey (WebAuthn) 免密码登录插件，要求 HTTPS | 1.0.0 | [Jake Liu](https://github.com/LittleJake) | [下载](https://github.com/LittleJake/typecho-passkey/archive/refs/heads/main.zip)
 [Ping](https://github.com/Liudon/typecho-plugins/tree/master/Ping) | 向指定服务地址发送Ping通知插件 | 1.0.1 | [Liudon(i.mu@qq.com)](http://www.liudon.org) | [下载](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/Ping_.zip)
 [Pio](https://github.com/Dreamer-Paul/Pio) | [Live2D](https://www.live2d.com)位置小贴士等多项定制插件 | 2.4 | [Dreamer-Paul](https://github.com/Dreamer-Paul) | [下载](https://github.com/Dreamer-Paul/Pio/archive/master.zip)
 [PlayAtWill](https://github.com/vfhky/PlayAtWill) | 迷你型Flash音乐播放器2合1插件 | 1.0.0 | [vfhky](https://github.com/vfhky) | [下载](https://github.com/vfhky/PlayAtWill/archive/master.zip)
