@@ -4,7 +4,7 @@
  * 
  * @package alexa排名挂件
  * @author Jrotty
- * @version 1.0
+ * @version 1.1
  * @link http://qqdie.com/archives/alexa.html
  */
 class alexarank_Plugin implements Typecho_Plugin_Interface
@@ -44,10 +44,29 @@ content: "<?php ";
 
     public static function alexa()
     {
+        echo self::rank(Typecho_Widget::widget('Widget_Options')->plugin('alexarank')->yumi);
+    }
 
-		    $xmlalx = simplexml_load_file('http://data.alexa.com/data?cli=10&dat=snbamz&url='.Typecho_Widget::widget('Widget_Options')->plugin('alexarank')->yumi);
-			$rankalx=isset($xmlalx->SD[1]->POPULARITY)?$xmlalx->SD[1]->POPULARITY->attributes()->TEXT:0;
-echo $rankalx;
-
+    /**
+     * data.alexa.com no longer exists (Alexa was retired in 2022), so the rank now comes from
+     * the free NetAPI Top 1M (https://netapi.com/top-1-mln-websites/), updated daily.
+     * Cached for 12 hours in the system temp directory; 0 = not in the top 1 million.
+     */
+    private static function rank($domain)
+    {
+        $cache = sys_get_temp_dir() . '/alexarank_' . md5($domain) . '.txt';
+        if (is_file($cache) && filemtime($cache) > time() - 43200) {
+            return (int)file_get_contents($cache);
+        }
+        $ctx = stream_context_create(array('http' => array('timeout' => 5)));
+        $json = @file_get_contents('https://netapi.com/api-json/?method=domain-rank&domain=' . rawurlencode($domain), false, $ctx);
+        $data = $json ? json_decode($json, true) : null;
+        if (!is_array($data) || !array_key_exists('rank', $data)) {
+            // keep the last known value when the request fails
+            return is_file($cache) ? (int)file_get_contents($cache) : 0;
+        }
+        $rank = (int)$data['rank'];
+        @file_put_contents($cache, $rank);
+        return $rank;
     }
 }
