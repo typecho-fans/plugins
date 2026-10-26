@@ -34,7 +34,7 @@ if (str_contains($requestUrl, '.diff')) {
         }
     }
     //指定插件信息情况
-} else {
+} elseif ($requestUrl) {
     $urls = explode(',', $requestUrl);
 }
 
@@ -422,7 +422,7 @@ function updatePlugins(string $tableFile, array $requested, string $token = '', 
 
                                 //表格版本落后则更新(或强制更新)
                                 $version = trim($metas[2]); //取第三个栏位文本
-                                if (version_compare(trim($infos['version']), $version, '>') || !empty($requested)) {
+                                if (version_compare(trim($infos['version']), $version, '>') || ($requested && $requested !== ['cron'])) {
                                     ++$update; //记录更新次数
 
                                     //更新加速文件夹用zip
