@@ -163,7 +163,7 @@
 [YoduBGM](YoduBGM) | 迷你按钮型BGM音乐播放器 | 1.7.0 | [Jrotty](https://github.com/jrotty) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/YoduBGM.zip)
 [YoduPlayer](YoduPlayer) | 悬浮式音乐播放器(支持Pjax) | 2.4.6 | [Jrotty](https://github.com/jrotty) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/YoduPlayer.zip)
 [Zan](Zan) | 自定义字段输出文章点赞数 | 1.0.0 | [冰剑](https://github.com/binjoo) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/Zan.zip)
-[alexarank](alexarank) | 在主题模板中输出Alexa排名 | 1.0 | [Jrotty](https://github.com/jrotty) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/alexarank.zip)
+[alexarank](alexarank) | 在主题模板中输出网站排名(原Alexa,现NetAPI Top 1M) | 1.1 | [Jrotty](https://github.com/jrotty) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-S_to_Z/alexarank.zip)
 [changyandandian](changyandandian) | 搜狐畅言单点登录 | 1.0.0 | [泽泽社长](https://github.com/jrotty) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-A_to_C/changyandandian.zip)
 [reCAPTCHA](reCAPTCHA) | 谷歌reCAPTCHA点击验证码 | 0.0.1 | [啸傲居士](https://github.com/shuxiao9058) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/reCAPTCHA.zip)
 [reCAPTCHAv3](reCAPTCHAv3) | 基于[reCAPTCHA](reCAPTCHA)v3版验证码 | 0.0.2 | [D-Bood](https://github.com/D-Bood) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/reCAPTCHAv3.zip)
