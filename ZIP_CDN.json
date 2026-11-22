@@ -4882,16 +4882,16 @@
   {
     "name": "NAME_LIST.log",
     "path": "ZIP_CDN/NAME_LIST.log",
-    "sha": "eb7005efbf9e242a1c86ac19b7c5216b78978054",
-    "size": 4058,
+    "sha": "99d17f45299d1797ddea81401013ab1ad86c3307",
+    "size": 4092,
     "url": "https://api.github.com/repos/typecho-fans/plugins/contents/ZIP_CDN/NAME_LIST.log?ref=master",
     "html_url": "https://github.com/typecho-fans/plugins/blob/master/ZIP_CDN/NAME_LIST.log",
-    "git_url": "https://api.github.com/repos/typecho-fans/plugins/git/blobs/eb7005efbf9e242a1c86ac19b7c5216b78978054",
+    "git_url": "https://api.github.com/repos/typecho-fans/plugins/git/blobs/99d17f45299d1797ddea81401013ab1ad86c3307",
     "download_url": "https://raw.githubusercontent.com/typecho-fans/plugins/master/ZIP_CDN/NAME_LIST.log",
     "type": "file",
     "_links": {
       "self": "https://api.github.com/repos/typecho-fans/plugins/contents/ZIP_CDN/NAME_LIST.log?ref=master",
-      "git": "https://api.github.com/repos/typecho-fans/plugins/git/blobs/eb7005efbf9e242a1c86ac19b7c5216b78978054",
+      "git": "https://api.github.com/repos/typecho-fans/plugins/git/blobs/99d17f45299d1797ddea81401013ab1ad86c3307",
       "html": "https://github.com/typecho-fans/plugins/blob/master/ZIP_CDN/NAME_LIST.log"
     }
   },
@@ -5458,16 +5458,16 @@
   {
     "name": "PrettifySkipMermaid_heky12356.zip",
     "path": "ZIP_CDN/PrettifySkipMermaid_heky12356.zip",
-    "sha": "5389a1b8596b18b87e456209aa1c7fd10c4b1e69",
-    "size": 14196,
+    "sha": "224abd54071033062c1ecc86de82fd157832e861",
+    "size": 13973,
     "url": "https://api.github.com/repos/typecho-fans/plugins/contents/ZIP_CDN/PrettifySkipMermaid_heky12356.zip?ref=master",
     "html_url": "https://github.com/typecho-fans/plugins/blob/master/ZIP_CDN/PrettifySkipMermaid_heky12356.zip",
-    "git_url": "https://api.github.com/repos/typecho-fans/plugins/git/blobs/5389a1b8596b18b87e456209aa1c7fd10c4b1e69",
+    "git_url": "https://api.github.com/repos/typecho-fans/plugins/git/blobs/224abd54071033062c1ecc86de82fd157832e861",
     "download_url": "https://raw.githubusercontent.com/typecho-fans/plugins/master/ZIP_CDN/PrettifySkipMermaid_heky12356.zip",
     "type": "file",
     "_links": {
       "self": "https://api.github.com/repos/typecho-fans/plugins/contents/ZIP_CDN/PrettifySkipMermaid_heky12356.zip?ref=master",
-      "git": "https://api.github.com/repos/typecho-fans/plugins/git/blobs/5389a1b8596b18b87e456209aa1c7fd10c4b1e69",
+      "git": "https://api.github.com/repos/typecho-fans/plugins/git/blobs/224abd54071033062c1ecc86de82fd157832e861",
       "html": "https://github.com/typecho-fans/plugins/blob/master/ZIP_CDN/PrettifySkipMermaid_heky12356.zip"
     }
   },
