@@ -5456,6 +5456,22 @@
     }
   },
   {
+    "name": "PrettifySkipMermaid_heky12356.zip",
+    "path": "ZIP_CDN/PrettifySkipMermaid_heky12356.zip",
+    "sha": "5389a1b8596b18b87e456209aa1c7fd10c4b1e69",
+    "size": 14196,
+    "url": "https://api.github.com/repos/typecho-fans/plugins/contents/ZIP_CDN/PrettifySkipMermaid_heky12356.zip?ref=master",
+    "html_url": "https://github.com/typecho-fans/plugins/blob/master/ZIP_CDN/PrettifySkipMermaid_heky12356.zip",
+    "git_url": "https://api.github.com/repos/typecho-fans/plugins/git/blobs/5389a1b8596b18b87e456209aa1c7fd10c4b1e69",
+    "download_url": "https://raw.githubusercontent.com/typecho-fans/plugins/master/ZIP_CDN/PrettifySkipMermaid_heky12356.zip",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/typecho-fans/plugins/contents/ZIP_CDN/PrettifySkipMermaid_heky12356.zip?ref=master",
+      "git": "https://api.github.com/repos/typecho-fans/plugins/git/blobs/5389a1b8596b18b87e456209aa1c7fd10c4b1e69",
+      "html": "https://github.com/typecho-fans/plugins/blob/master/ZIP_CDN/PrettifySkipMermaid_heky12356.zip"
+    }
+  },
+  {
     "name": "PrismJs_Penguin.zip",
     "path": "ZIP_CDN/PrismJs_Penguin.zip",
     "sha": "535fba7ebb82fe5ed96633f78d7287b221ecd1a7",
