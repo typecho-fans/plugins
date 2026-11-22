@@ -115,7 +115,7 @@
 [PasteImage](PasteImage) | 编辑器粘贴图片时自动上传 | 1.0.0 | [qing](https://github.com/zgq354) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/PasteImage.zip)
 [PostRating](PostRating) | Typecho文章星级评分管理 | 1.1.0 | [wuwovr](https://github.com/hitop), Willin Kan | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/PostRating.zip)
 [PostsCategoryChange](PostsCategoryChange) | Typecho文章修改分类/状态 | 0.0.4 | [Fuzqing](https://github.com/fuzqing) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/PostsCategoryChange.zip)
-[PrettifySkipMermaid](PrettifySkipMermaid) | 谷歌Prettify代码高亮并跳过Mermaid图表 | 2.0.2 | [heky12356](https://github.com/heky12356) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/PrettifySkipMermaid.zip)
+[PrettifySkipMermaid](PrettifySkipMermaid) | 谷歌Prettify代码高亮并跳过Mermaid图表 | 2.0.2 | [heky12356](https://github.com/heky12356) | [Latest](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/PrettifySkipMermaid.zip)
 [Prism](Prism) | 经典[Prism](https://prismjs.com)代码高亮([MD](https://baike.baidu.com/item/markdown/3245829)版) | 1.0.2 | [冰剑](https://github.com/binjoo) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/Prism.zip)
 [QNUpload](QNUpload) | 经典版(PHP5.2-5.6)七牛附件 | 1.3.1 | [rakiy](https://github.com/rakiy) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/QNUpload.zip)
 [QiniuFile](QiniuFile) | 新七牛附件(自定路径+截图) | 1.3.3 | [LiCxi](https://github.com/gxuzf), [冰剑](https://github.com/binjoo), [abelyao](https://github.com/abelyao) | [Download](https://github.com/typecho-fans/plugins/releases/download/plugins-M_to_R/QiniuFile.zip)
